@@ -11,6 +11,7 @@ typedef struct{
     SDL_Rect hitbox;
     float dirx;
     float diry;
+    int exist;
 } Entity;
 
 void end_sdl(
@@ -56,6 +57,7 @@ Entity * initEntity(int w, int h, int nb_entity, int window_w, int window_h){
         new_entity[i].hitbox.y = rand() % (window_h - h);
         new_entity[i].dirx = rand() % 11 - 5;
         new_entity[i].diry = rand() % 11 - 5;
+        new_entity[i].exist = 1;
     }
 
     return new_entity;
@@ -87,14 +89,14 @@ void entityMove(Entity * entity, int window_w, int window_h){
     entity->hitbox.y = new_y;
 }
 
-void drawEntity(SDL_Renderer * renderer, Entity * entity){
+void drawEntity(SDL_Renderer * renderer, Entity * entity, int r, int g, int b, int a){
     if (renderer == NULL){
         return;
     }
     SDL_SetRenderDrawColor(
         renderer,
-        250, 0, 0,
-        255
+        r, g, b,
+        a
     );
 
     SDL_RenderFillRect(renderer, &(entity->hitbox));
@@ -140,6 +142,7 @@ int main(int argc, char **argv){
     SDL_GetWindowSize(window, &window_w, &window_h);
 
     Entity * auto_player = initEntity(400, 400, 1, window_w, window_h);
+    Entity * list_ennemies = initEntity(50, 50, NUMBER_OF_ENNEMIES, window_w, window_h);
 
     while (running){
         while(SDL_PollEvent(&event)){
@@ -155,8 +158,19 @@ int main(int argc, char **argv){
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
+        for (int i=0; i<NUMBER_OF_ENNEMIES; ++i){
+            if (list_ennemies[i].exist == 1){
+                entityMove(&list_ennemies[i], window_w, window_h);
+            }
+        }
+        for (int i=0; i<NUMBER_OF_ENNEMIES; ++i){
+            if (list_ennemies[i].exist == 1){
+                drawEntity(renderer, &list_ennemies[i], 0, 0, 255, 255);
+            }
+        }
+
         entityMove(auto_player, window_w, window_h);
-        drawEntity(renderer, auto_player);
+        drawEntity(renderer, auto_player, 255, 0, 0, 255);
 
         SDL_RenderPresent(renderer);
         SDL_Delay(10);
