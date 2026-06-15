@@ -60,8 +60,18 @@ int main(int argc, char **argv) {
                 case SDL_KEYDOWN: // Si une touche est pressée
                     if (event.key.keysym.sym == SDLK_SPACE) {  // Si c'est la touche Espace
                         pause = !pause;             // Mettre ou enlever la pause
-                    }
+                    } else if (event.key.keysym.sym == SDLK_RIGHT) {
+                        vx++;
+                    } else if (event.key.keysym.sym == SDLK_LEFT) {
+                        vx--;
+                    } else if (event.key.keysym.sym == SDLK_UP) {
+                        vy--;
+                    } else if (event.key.keysym.sym == SDLK_DOWN) {
+                        vy++;
+                    } 
                     break;
+
+                    
 
                 case SDL_WINDOWEVENT:
                     if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
