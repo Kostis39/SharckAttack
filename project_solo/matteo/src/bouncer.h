@@ -8,6 +8,6 @@
 #include <SDL2/SDL_video.h>
 #include <math.h>
 
-void spawnBounce(int size);
+void spawnBounce(int size, int speed);
 
 #endif

@@ -1,11 +1,13 @@
 #include "bouncer.h"
+#include <SDL2/SDL_video.h>
 
-void spawnBounce(int size) {
+void spawnBounce(int size, int speed) {
     SDL_Window *bouncy = NULL; // Future fenêtre de gauche
     int x = 0, y = 0;
     int running = 1;
     SDL_Event event;
-    float velocity[2] = {10, 10};
+    float velocity[2] = {1, 1};
+    SDL_DisplayMode dm;
     int maxX;
     int maxY;
     /* Initialisation de la SDL  + gestion de l'échec possible */
@@ -17,9 +19,11 @@ void spawnBounce(int size) {
     bouncy = SDL_CreateWindow("bouncing around", 0, 0, size, size,
                               SDL_WINDOW_BORDERLESS);
 
-    SDL_GL_GetDrawableSize(bouncy, &maxX, &maxY);
-    maxY = 1080;
-    maxX = 1920;
+    SDL_GetCurrentDisplayMode(0, &dm);
+    velocity[0] *= speed;
+    velocity[1] *= speed;
+    maxY = dm.h;
+    maxX = dm.w;
 
     while (running) { // Boucle Principale
         while (SDL_PollEvent(&event)) {
@@ -42,7 +46,7 @@ void spawnBounce(int size) {
         SDL_SetWindowPosition(bouncy, x, y);
 
         printf("Window pos: (%d,%d)\n", x, y);
-        printf("Bornesup: %d \n\n", maxX - (size + 1));
+        printf("Bornesup: (%d %d)\n\n", maxX - (size + 1), maxY - (size + 1));
     }
     SDL_DestroyWindow(bouncy);
     SDL_Quit();
