@@ -62,9 +62,6 @@ int moveWindow(game_window * window, int screen_w, int screen_h)
 
     SDL_SetWindowPosition(window->main_window, (int) new_x, (int) new_y);
 
-    window->dirx = 0;
-    window->diry = 0;
-
     return 1;
 }
 
@@ -131,16 +128,16 @@ int main(int argc, char **argv)
                             window->speed /= (window->speed / 1.5 <= 4) ? 1 : 1.5;
                             break;
                         case SDLK_z:
-                            window->diry += -1;
+                            window->diry = -1;
                             break;
                         case SDLK_s:
-                            window->diry += 1;
+                            window->diry = 1;
                             break;
                         case SDLK_q:
-                            window->dirx += -1;
+                            window->dirx = -1;
                             break;
                         case SDLK_d:
-                            window->dirx += 1;
+                            window->dirx = 1;
                             break;
                         case SDLK_ESCAPE:
                             running = SDL_FALSE;
@@ -148,8 +145,27 @@ int main(int argc, char **argv)
                         default:
                             break;
                     }
-                    printf("Get: %d, %d, s=%f \n", window->dirx, window->diry, window->speed);
                     break;
+                case SDL_KEYUP:
+                    switch (event.key.keysym.sym) {
+                        case SDLK_z:
+                            window->diry = 0;
+                            break;
+                        case SDLK_s:
+                            window->diry = 0;
+                            break;
+                        case SDLK_q:
+                            window->dirx = 0;
+                            break;
+                        case SDLK_d:
+                            window->dirx = 0;
+                            break;
+                        case SDLK_ESCAPE:
+                            running = SDL_FALSE;
+                            break;
+                        default:
+                            break;
+                    }
                 default:
                     break;
             }
