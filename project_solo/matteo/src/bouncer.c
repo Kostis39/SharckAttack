@@ -29,7 +29,8 @@ void spawnBounce(int size) {
                 running = 0;
             }
         }
-
+        double norm = velocity[0] * velocity[0] + velocity[1] * velocity[1];
+        norm = sqrtf(norm);
         x += velocity[0];
         y += velocity[1];
         if (x > maxX - (size + 1) || x < 1) {
