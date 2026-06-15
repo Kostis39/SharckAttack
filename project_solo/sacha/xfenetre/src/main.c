@@ -8,7 +8,7 @@ typedef struct {
     int posy;
     int height;
     int width;
-    int speed;
+    float speed;
 } game_window;
 
 game_window * initWindow(){
@@ -21,7 +21,7 @@ game_window * initWindow(){
     new_window->posy = 0;
     new_window->height = 0;
     new_window->width = 0;
-    new_window->speed = 12;
+    new_window->speed = 1;
     return new_window;
 }
 
@@ -85,7 +85,7 @@ int main(int argc, char **argv)
         "Fenêtre Principal",              // codage en utf8, donc accents possibles
         window->posx, window->posy,
         window->width, window->height,
-        SDL_WINDOW_RESIZABLE);             // redimensionnable
+        SDL_WINDOW_BORDERLESS);             // redimensionnable
 
     if (window->main_window == NULL) {
         SDL_Log("Error : SDL main window creation - %s\n",
@@ -103,6 +103,12 @@ int main(int argc, char **argv)
                     break;
                 case SDL_KEYDOWN:
                     switch (event.key.keysym.sym) {
+                        case SDLK_RSHIFT:
+                            window->speed *= (window->speed*1.5 >= 15) ? 1 : 1.5;
+                            break;
+                        case SDLK_LSHIFT:
+                            window->speed /= (window->speed / 1.5 <= 4) ? 1 : 1.5;
+                            break;
                         case SDLK_z:
                             moveWindow(window, my_screen.w, my_screen.h, 0, -1);
                             break;
@@ -122,7 +128,7 @@ int main(int argc, char **argv)
                             break;
                     }
                     SDL_SetWindowPosition(window->main_window, window->posx, window->posy);
-                    printf("%d, %d \n", window->posx, window->posy);
+                    printf("%d, %d, s=%f \n", window->posx, window->posy, window->speed);
                     break;
                 default:
                     break;
