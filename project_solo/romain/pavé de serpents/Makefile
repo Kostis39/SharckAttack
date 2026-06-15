@@ -8,8 +8,8 @@ OBJECTS=$(patsubst $(SOURCES_FOLDER)%.c,$(OBJECTS_FOLDER)%.o,$(SOURCES))
 
 OUTPUT_NAME=textures
 
-SDL_FLAGS=`sdl2-config --cflags`
-SDL_LIB=`sdl2-config --libs` -lSDL2_image 
+SDL_FLAGS=`sdl2-config --cflags` 
+SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm 
 
 link: $(OBJECTS) 
 	if [ ! -d $(OUTPUT_FOLDER) ]; then mkdir $(OUTPUT_FOLDER); fi
