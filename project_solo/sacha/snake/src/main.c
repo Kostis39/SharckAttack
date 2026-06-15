@@ -11,7 +11,10 @@ typedef struct{
     SDL_Rect hitbox;
     float dirx;
     float diry;
-    int exist;
+    int red;
+    int green;
+    int blue;
+    int alpha;
 } Entity;
 
 void end_sdl(
@@ -55,9 +58,12 @@ Entity * initEntity(int w, int h, int nb_entity, int window_w, int window_h){
         new_entity[i].hitbox.w = w;
         new_entity[i].hitbox.x = rand() % (window_w - w);
         new_entity[i].hitbox.y = rand() % (window_h - h);
-        new_entity[i].dirx = rand() % 11 - 5;
-        new_entity[i].diry = rand() % 11 - 5;
-        new_entity[i].exist = 1;
+        new_entity[i].dirx  = rand() % 11 - 5;
+        new_entity[i].diry  = rand() % 11 - 5;
+        new_entity[i].red   = rand() % 255;
+        new_entity[i].green = rand() % 255;
+        new_entity[i].blue  = rand() % 255;
+        new_entity[i].alpha = rand() % 255;
     }
 
     return new_entity;
@@ -89,14 +95,14 @@ void entityMove(Entity * entity, int window_w, int window_h){
     entity->hitbox.y = new_y;
 }
 
-void drawEntity(SDL_Renderer * renderer, Entity * entity, int r, int g, int b, int a){
+void drawEntity(SDL_Renderer * renderer, Entity * entity){
     if (renderer == NULL){
         return;
     }
     SDL_SetRenderDrawColor(
         renderer,
-        r, g, b,
-        a
+        entity->red, entity->green, entity->blue,
+        entity->alpha
     );
 
     SDL_RenderFillRect(renderer, &(entity->hitbox));
@@ -141,8 +147,7 @@ int main(int argc, char **argv){
     int window_w, window_h;
     SDL_GetWindowSize(window, &window_w, &window_h);
 
-    Entity * auto_player = initEntity(400, 400, 1, window_w, window_h);
-    Entity * list_ennemies = initEntity(50, 50, NUMBER_OF_ENNEMIES, window_w, window_h);
+    Entity * list_entities = initEntity(50, 50, NUMBER_OF_ENNEMIES, window_w, window_h);
 
     while (running){
         while(SDL_PollEvent(&event)){
@@ -159,18 +164,11 @@ int main(int argc, char **argv){
         SDL_RenderClear(renderer);
 
         for (int i=0; i<NUMBER_OF_ENNEMIES; ++i){
-            if (list_ennemies[i].exist == 1){
-                entityMove(&list_ennemies[i], window_w, window_h);
-            }
+            entityMove(&list_entities[i], window_w, window_h);
         }
         for (int i=0; i<NUMBER_OF_ENNEMIES; ++i){
-            if (list_ennemies[i].exist == 1){
-                drawEntity(renderer, &list_ennemies[i], 0, 0, 255, 255);
-            }
+            drawEntity(renderer, &list_entities[i]);
         }
-
-        entityMove(auto_player, window_w, window_h);
-        drawEntity(renderer, auto_player, 255, 0, 0, 255);
 
         SDL_RenderPresent(renderer);
         SDL_Delay(10);
@@ -179,7 +177,6 @@ int main(int argc, char **argv){
     SDL_Delay(10);
 
     end_sdl(1, "Normal ending", window, renderer);
-    free(auto_player);
 
     return 0;
 }
