@@ -1,14 +1,14 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 typedef struct {
     SDL_Window *main_window;
-    int posx;
-    int posy;
-    int height;
-    int width;
-    int speed;
+    float posx, posy;
+    int height, width;
+    float speed;
+    SDL_bool key_up, key_down, key_left, key_right;
 } game_window;
 
 game_window * initWindow(){
@@ -17,41 +17,62 @@ game_window * initWindow(){
         return NULL;
     }
     new_window->main_window = NULL;
-    new_window->posx = 0;
-    new_window->posy = 0;
+    new_window->posx = 0.0f;
+    new_window->posy = 0.0f;
     new_window->height = 0;
     new_window->width = 0;
-    new_window->speed = 12;
+    new_window->speed = 10.0f;
+    new_window->key_up = SDL_FALSE;
+    new_window->key_down = SDL_FALSE;
+    new_window->key_left = SDL_FALSE;
+    new_window->key_right = SDL_FALSE;
+
     return new_window;
 }
 
-int moveWindow(game_window * window, int max_x, int max_y, int add_x, int add_y)
-{
+int moveWindow(game_window * window, int screen_w, int screen_h){
     if (window == NULL){
         return 0;
     }
 
-    int new_x = window->posx + add_x * window->speed;
-    int new_y = window->posy + add_y * window->speed;
+    int reel_x;
+    int reel_y;
 
-    if (new_x < 0) {
-        new_x = 0;
-    }if (new_y < 0) {
-        new_y = 0;
-    }if (new_x > max_x - window->width) {
-        new_x = max_x - window->width;
-    }if (new_y > max_y - window->height) {
-        new_y = max_y - window->height;
+    int dirx = (window->key_right && !window->key_left) ? 1
+                 : (window->key_left  && !window->key_right) ? -1 : 0;
+    int diry = (window->key_down  && !window->key_up)   ? 1
+                 : (window->key_up    && !window->key_down)  ? -1 : 0;
+
+    SDL_GetWindowPosition(window->main_window, &reel_x, &reel_y);
+    if (reel_x != (int) window->posx) window->posx = reel_x;
+    if (reel_y != (int) window->posy) window->posy = reel_y;
+
+    float lenght = sqrt(dirx*dirx + diry*diry);
+    if (lenght != 0){
+        float new_x = window->posx + dirx/lenght * window->speed;
+        float new_y = window->posy + diry/lenght * window->speed;
+
+        if (new_x < 0) {
+            new_x = 0;
+        }if (new_y < 0) {
+            new_y = 0;
+        }if (new_x > screen_w - window->width) {
+            new_x = screen_w - window->width;
+        }if (new_y > screen_h - window->height) {
+            new_y = screen_h - window->height;
+        }
+
+        window->posx = new_x;
+        window->posy = new_y;
+
+        SDL_SetWindowPosition(window->main_window, (int) new_x, (int) new_y);
     }
-
-    window->posx = new_x;
-    window->posy = new_y;
 
     return 1;
 }
 
-int main(int argc, char **argv)
-{
+
+int main(int argc, char **argv){
     (void)argc;
     (void)argv;
 
@@ -61,8 +82,9 @@ int main(int argc, char **argv)
 
     SDL_DisplayMode my_screen;
 
+
     game_window * window = initWindow();
-    window->height = 300;
+    window->height = 32;
     window->width = 400;
     
 
@@ -82,15 +104,16 @@ int main(int argc, char **argv)
 
     /* Création de la fenêtre principal */
     window->main_window = SDL_CreateWindow(
-        "Fenêtre Principal",              // codage en utf8, donc accents possibles
+        "Fenêtre Principal",
         window->posx, window->posy,
         window->width, window->height,
-        SDL_WINDOW_RESIZABLE);             // redimensionnable
+        SDL_WINDOW_BORDERLESS | SDL_WINDOW_RESIZABLE);
 
-    if (window->main_window == NULL) {
+
+    if (window->main_window == NULL ) {
         SDL_Log("Error : SDL main window creation - %s\n",
-                SDL_GetError());             // échec de la création de la fenêtre
-        SDL_Quit();                        // On referme la SDL
+                SDL_GetError());
+        SDL_Quit();
         exit(EXIT_FAILURE);
     }
 
@@ -103,17 +126,60 @@ int main(int argc, char **argv)
                     break;
                 case SDL_KEYDOWN:
                     switch (event.key.keysym.sym) {
+                        case SDLK_ESCAPE:
+                            running = SDL_FALSE;
+                            break;
+                        case SDLK_1:
+                            SDL_MinimizeWindow(window->main_window);
+                            break;
+                        case SDLK_2:
+                            SDL_MaximizeWindow(window->main_window);
+                            break;
+                        case SDLK_RSHIFT:
+                            window->speed *= (window->speed*1.5 >= 60) ? 1 : 1.5;
+                            break;
+                        case SDLK_LSHIFT:
+                            window->speed /= (window->speed / 1.5 <= 4) ? 1 : 1.5;
+                            break;
+                        case SDLK_a:
+                            window->width += 100;
+                            window->height += 100;
+                            SDL_SetWindowSize(window->main_window, window->width, window->height);
+                            break;
+                        case SDLK_e:
+                            window->width = (window->width - 100 > 100) ? window->width - 100 : 100;
+                            window->height = (window->height - 100 > 100) ? window->height - 100 : 100;
+                            SDL_SetWindowSize(window->main_window, window->width, window->height);
+                            break;
                         case SDLK_z:
-                            moveWindow(window, my_screen.w, my_screen.h, 0, -1);
+                            window->key_up = SDL_TRUE;
                             break;
                         case SDLK_s:
-                            moveWindow(window, my_screen.w, my_screen.h, 0, 1);
+                            window->key_down = SDL_TRUE;
                             break;
                         case SDLK_q:
-                            moveWindow(window, my_screen.w, my_screen.h, -1, 0);
+                            window->key_left = SDL_TRUE;
                             break;
                         case SDLK_d:
-                            moveWindow(window, my_screen.w, my_screen.h, 1, 0);
+                            window->key_right = SDL_TRUE;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case SDL_KEYUP:
+                    switch (event.key.keysym.sym) {
+                        case SDLK_z:
+                            window->key_up = SDL_FALSE;
+                            break;
+                        case SDLK_s:
+                            window->key_down = SDL_FALSE;
+                            break;
+                        case SDLK_q:
+                            window->key_left = SDL_FALSE;
+                            break;
+                        case SDLK_d:
+                            window->key_right = SDL_FALSE;
                             break;
                         case SDLK_ESCAPE:
                             running = SDL_FALSE;
@@ -121,18 +187,15 @@ int main(int argc, char **argv)
                         default:
                             break;
                     }
-                    SDL_SetWindowPosition(window->main_window, window->posx, window->posy);
-                    printf("%d, %d \n", window->posx, window->posy);
-                    break;
                 default:
                     break;
-                }
+            }
         }
+        moveWindow(window, my_screen.w, my_screen.h);
     }
 
     SDL_Delay(20);
 
-    /* et on referme tout ce qu'on a ouvert en ordre inverse de la création */
     SDL_DestroyWindow(window->main_window);
     free(window);
 
