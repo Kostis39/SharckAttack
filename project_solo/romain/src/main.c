@@ -34,30 +34,82 @@ int main(int argc, char **argv) {
 
     SDL_bool program_on = SDL_TRUE;               // Booléen pour dire que le programme doit continuer
     SDL_Event event;                              // c'est le type IMPORTANT !!
+    SDL_bool pause = SDL_FALSE;
 
-    int x, y;
+    int x = 100, y = 100;
+    int vx = 3, vy = 3;
     int w, h;
+    int ecran_w, ecran_h;
 
+    SDL_DisplayMode DM;
+    SDL_GetCurrentDisplayMode(0, &DM);
+    ecran_w = DM.w;
+    ecran_h = DM.h;
 
-    while (program_on){                           // Voilà la boucle des évènements 
+    ecran_h -= 44;
+    
+    SDL_GetWindowSize(window, &w, &h);
 
-        if (SDL_PollEvent(&event)){                 // si la file d'évènements n'est pas vide : défiler l'élément en tête
-                                                    // de file dans 'event'
-            switch(event.type){                       // En fonction de la valeur du type de cet évènement
-                case SDL_QUIT :                           // Un évènement simple, on a cliqué sur la x de la fenêtre
-                    program_on = SDL_FALSE;                 // Il est temps d'arrêter le programme
+    while (program_on) {
+        while (SDL_PollEvent(&event)) {
+            switch(event.type) {
+                case SDL_QUIT:
+                    program_on = SDL_FALSE;
                     break;
 
-                default:                                  // L'évènement défilé ne nous intéresse pas
+                case SDL_KEYDOWN: // Si une touche est pressée
+                    if (event.key.keysym.sym == SDLK_SPACE) {  // Si c'est la touche Espace
+                        pause = !pause;             // Mettre ou enlever la pause
+                    }
+                    break;
+
+                case SDL_WINDOWEVENT:
+                    if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
+                        SDL_GetWindowSize(window, &w, &h); // Si on redimensionne la fenêtre
+                    } else if (event.window.event == SDL_WINDOWEVENT_MOVED) {
+                        SDL_GetWindowPosition(window, &x, &y); // Si on bouge la fenêtre
+                    }
+                    break;
+                default:
                     break;
             }
         }
-        // Affichages et calculs souvent ici
-        SDL_GetWindowPosition(window,&x,&y);
-        SDL_GetWindowSize(window,&w,&h);
 
-        printf("(%d, %d), (%d, %d)\n", x, y, w, h);
-    }  
+        
+
+        if (!pause) {
+
+            int new_x = x + vx;
+            int new_y = y + vy;
+
+            if (new_x <= 0) { // Bord gauche
+                new_x = 0;
+                vx = -vx;
+            }
+            else if (new_x + w >= ecran_w) { // Bord droit
+                new_x = ecran_w - w;
+                vx = -vx;
+            }
+
+            if (new_y <= 26) { // Bord haut
+                new_y = 0;
+                vy = -vy;
+            }
+            else if (new_y + h >= ecran_h) { // Bord bas
+                new_y = ecran_h - h;
+                vy = -vy;
+            }
+
+            SDL_SetWindowPosition(window, new_x, new_y); // Affiche à la nouvelle position
+
+            x = new_x;
+            y = new_y;
+            
+            printf("Position : (%d, %d), Taille : (%d, %d), Vitesse : (%d, %d)\n", x, y, w, h, vx, vy);
+
+            SDL_Delay(10);
+        }
+    } 
 
     SDL_DestroyWindow(window);    //ferme la fenêtre
 
