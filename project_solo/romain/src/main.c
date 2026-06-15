@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
     SDL_bool pause = SDL_FALSE;
 
     int x = 100, y = 100;
-    int vx = 3, vy = 3;
+    int vx = 0, vy = 0;
     int w, h;
     int ecran_w, ecran_h;
 
@@ -61,13 +61,17 @@ int main(int argc, char **argv) {
                     if (event.key.keysym.sym == SDLK_SPACE) {  // Si c'est la touche Espace
                         pause = !pause;             // Mettre ou enlever la pause
                     } else if (event.key.keysym.sym == SDLK_RIGHT) {
-                        vx++;
+                        if (vx >= 0) vx++;
+                        else vx--;
                     } else if (event.key.keysym.sym == SDLK_LEFT) {
-                        vx--;
+                        if (vx > 0) vx--;
+                        else if (vx < 0) vx++;
                     } else if (event.key.keysym.sym == SDLK_UP) {
-                        vy--;
+                        if (vy >= 0) vy++;
+                        else vy--;
                     } else if (event.key.keysym.sym == SDLK_DOWN) {
-                        vy++;
+                        if (vy > 0) vy--;
+                        else if (vy < 0) vy++;
                     } 
                     break;
 
@@ -114,8 +118,6 @@ int main(int argc, char **argv) {
 
             x = new_x;
             y = new_y;
-            
-            printf("Position : (%d, %d), Taille : (%d, %d), Vitesse : (%d, %d)\n", x, y, w, h, vx, vy);
 
             SDL_Delay(10);
         }
