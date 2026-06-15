@@ -52,14 +52,17 @@ void end_sdl(
 
 Entity * initEntity(int w, int h, int nb_entity, int window_w, int window_h){
     Entity * new_entity = calloc(nb_entity, sizeof(Entity));
+    int dirx, diry;
 
     for (int i=0; i<nb_entity; ++i){
-        new_entity[i].hitbox.h = h;
-        new_entity[i].hitbox.w = w;
+        dirx = rand() % 11 - 5;
+        diry = rand() % 11 - 5;
+        new_entity[i].hitbox.h = rand() % h + 20;
+        new_entity[i].hitbox.w = rand() % w + 20;
         new_entity[i].hitbox.x = rand() % (window_w - w);
         new_entity[i].hitbox.y = rand() % (window_h - h);
-        new_entity[i].dirx  = rand() % 11 - 5;
-        new_entity[i].diry  = rand() % 11 - 5;
+        new_entity[i].dirx  = dirx ? dirx : 1;
+        new_entity[i].diry  = diry ? diry : 1;
         new_entity[i].red   = rand() % 255;
         new_entity[i].green = rand() % 255;
         new_entity[i].blue  = rand() % 255;
@@ -69,26 +72,48 @@ Entity * initEntity(int w, int h, int nb_entity, int window_w, int window_h){
     return new_entity;
 }
 
-void entityMove(Entity * entity, int window_w, int window_h){
-    int new_x = entity->hitbox.x + entity->dirx;
-    int new_y = entity->hitbox.y + entity->diry;
-    
+void entityMove(Entity * entity, Entity * list_entities, int nb_entities, int window_w, int window_h){
+    int old_x = entity->hitbox.x;
+    int old_y = entity->hitbox.y;
+    int new_x = old_x + entity->dirx;
+    int new_y = old_y + entity->diry;
+
+    SDL_Rect futur_pos = { new_x, new_y, entity->hitbox.w, entity->hitbox.h };
+
     if (new_x <= 0) {
         new_x = 0;
-        entity->dirx = rand() % 11 - 5;
-        entity->diry = rand() % 11 - 5;
+        entity->dirx = -entity->dirx;
     }if (new_y <= 0) {
         new_y = 0;
-        entity->dirx = rand() % 11 - 5;
-        entity->diry = rand() % 11 - 5;
+        entity->diry = -entity->diry;
     }if (new_x >= window_w - entity->hitbox.w) {
         new_x = window_w - entity->hitbox.w;
-        entity->dirx = rand() % 11 - 5;
-        entity->diry = rand() % 11 - 5;
+        entity->dirx = -entity->dirx;
     }if (new_y >= window_h - entity->hitbox.h) {
         new_y = window_h - entity->hitbox.h;
-        entity->dirx = rand() % 11 - 5;
-        entity->diry = rand() % 11 - 5;
+        entity->diry = -entity->diry;
+    }
+
+    for (int i=0; i<nb_entities; ++i){
+        if (&list_entities[i] != entity){
+            if (SDL_HasIntersection(&futur_pos, &list_entities[i].hitbox)){
+
+                SDL_Rect test_x = { new_x, old_y, entity->hitbox.w, entity->hitbox.h };
+                if (SDL_HasIntersection(&test_x, &list_entities[i].hitbox)) {
+                    new_x = old_x;
+                    entity->dirx = -entity->dirx;
+                }
+
+                SDL_Rect test_y = { old_x, new_y, entity->hitbox.w, entity->hitbox.h };
+                if (SDL_HasIntersection(&test_y, &list_entities[i].hitbox)) {
+                    new_y = old_y;
+                    entity->diry = -entity->diry;
+                }
+
+                futur_pos.x = new_x;
+                futur_pos.y = new_y;
+            }
+        }
     }
 
     entity->hitbox.x = new_x;
@@ -164,7 +189,7 @@ int main(int argc, char **argv){
         SDL_RenderClear(renderer);
 
         for (int i=0; i<NUMBER_OF_ENNEMIES; ++i){
-            entityMove(&list_entities[i], window_w, window_h);
+            entityMove(&list_entities[i], list_entities, NUMBER_OF_ENNEMIES, window_w, window_h);
         }
         for (int i=0; i<NUMBER_OF_ENNEMIES; ++i){
             drawEntity(renderer, &list_entities[i]);
@@ -177,6 +202,6 @@ int main(int argc, char **argv){
     SDL_Delay(10);
 
     end_sdl(1, "Normal ending", window, renderer);
-
+    free(list_entities);
     return 0;
 }
