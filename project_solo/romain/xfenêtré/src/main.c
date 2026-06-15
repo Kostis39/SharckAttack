@@ -1,9 +1,8 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
+#include <SDL2/SDL_image.h>
+#define IMG_PATH "src/dvd_logo.png"
 
-/************************************/
-/*  exemple de création de fenêtres */
-/************************************/
 
 int main(int argc, char **argv) {
     (void)argc;
@@ -20,7 +19,7 @@ int main(int argc, char **argv) {
 
     /* Création de la fenêtre */
     window = SDL_CreateWindow(
-    "Fenêtre",                             // codage en utf8, donc accents possibles
+    "DVD",                                 // codage en utf8, donc accents possibles
     0, 0,                                  // coin haut gauche en haut gauche de l'écran
     400, 300,                              // largeur = 400, hauteur = 300
     SDL_WINDOW_RESIZABLE);                 // redimensionnable
@@ -37,7 +36,7 @@ int main(int argc, char **argv) {
     SDL_bool pause = SDL_FALSE;
 
     int x = 100, y = 100;
-    int vx = 0, vy = 0;
+    int vx = 3, vy = 3;
     int w, h;
     int ecran_w, ecran_h;
 
@@ -47,8 +46,17 @@ int main(int argc, char **argv) {
     ecran_h = DM.h;
 
     ecran_h -= 44;
-    
+
     SDL_GetWindowSize(window, &w, &h);
+
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+    SDL_Surface *my_image = IMG_Load(IMG_PATH);
+    SDL_Texture* my_texture = SDL_CreateTextureFromSurface(renderer, my_image);
+
+    
+    SDL_FreeSurface(my_image);
+    
 
     while (program_on) {
         while (SDL_PollEvent(&event)) {
@@ -74,8 +82,6 @@ int main(int argc, char **argv) {
                         else if (vy < 0) vy++;
                     } 
                     break;
-
-                    
 
                 case SDL_WINDOWEVENT:
                     if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
@@ -119,11 +125,18 @@ int main(int argc, char **argv) {
             x = new_x;
             y = new_y;
 
+
+            SDL_RenderCopy(renderer, my_texture, NULL, NULL);
+
+            SDL_RenderPresent(renderer);
+
             SDL_Delay(10);
         }
     } 
 
-    SDL_DestroyWindow(window);    //ferme la fenêtre
+    SDL_DestroyTexture(my_texture);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
 
     SDL_Quit(); //ferme la SDL
 

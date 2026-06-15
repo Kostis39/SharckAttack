@@ -6,10 +6,10 @@ CFLAGS=-Wall -Werror -Wextra -g
 SOURCES=$(wildcard $(SOURCES_FOLDER)/*.c)
 OBJECTS=$(patsubst $(SOURCES_FOLDER)%.c,$(OBJECTS_FOLDER)%.o,$(SOURCES))
 
-OUTPUT_NAME=xwindow
+OUTPUT_NAME=textures
 
 SDL_FLAGS=`sdl2-config --cflags`
-SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm
+SDL_LIB=`sdl2-config --libs` -lSDL2_image 
 
 link: $(OBJECTS) 
 	if [ ! -d $(OUTPUT_FOLDER) ]; then mkdir $(OUTPUT_FOLDER); fi
