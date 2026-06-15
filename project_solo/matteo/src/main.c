@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     /* SDL_Quit(); // la SDL */
 
     // Exécution de Xwindow
-    spawnBounce(500,5);
+    spawnBounce(500, 5);
 
     return 0;
 }
