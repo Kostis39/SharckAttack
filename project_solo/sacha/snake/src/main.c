@@ -5,10 +5,13 @@
 #include <string.h>
 #include <time.h>
 
+#define NUMBER_OF_ENNEMIES 8
+
 typedef struct{
-    float x;
-    float y;
-} Vector;
+    SDL_Rect hitbox;
+    float dirx;
+    float diry;
+} Entity;
 
 void end_sdl(
     char ok,                // fin normale : ok = 0 ; anormale ok = 1
@@ -43,8 +46,49 @@ void end_sdl(
     }
 }
 
-void draw(SDL_Window * window, SDL_Renderer * renderer, SDL_Rect * rect, Vector * dir, int window_w, int window_h){
-    if (renderer == NULL || window == NULL){
+Entity * initEntity(int w, int h, int nb_entity, int window_w, int window_h){
+    Entity * new_entity = calloc(nb_entity, sizeof(Entity));
+
+    for (int i=0; i<nb_entity; ++i){
+        new_entity[i].hitbox.h = h;
+        new_entity[i].hitbox.w = w;
+        new_entity[i].hitbox.x = rand() % (window_w - w);
+        new_entity[i].hitbox.y = rand() % (window_h - h);
+        new_entity[i].dirx = rand() % 11 - 5;
+        new_entity[i].diry = rand() % 11 - 5;
+    }
+
+    return new_entity;
+}
+
+void entityMove(Entity * entity, int window_w, int window_h){
+    int new_x = entity->hitbox.x + entity->dirx;
+    int new_y = entity->hitbox.y + entity->diry;
+    
+    if (new_x <= 0) {
+        new_x = 0;
+        entity->dirx = rand() % 11 - 5;
+        entity->diry = rand() % 11 - 5;
+    }if (new_y <= 0) {
+        new_y = 0;
+        entity->dirx = rand() % 11 - 5;
+        entity->diry = rand() % 11 - 5;
+    }if (new_x >= window_w - entity->hitbox.w) {
+        new_x = window_w - entity->hitbox.w;
+        entity->dirx = rand() % 11 - 5;
+        entity->diry = rand() % 11 - 5;
+    }if (new_y >= window_h - entity->hitbox.h) {
+        new_y = window_h - entity->hitbox.h;
+        entity->dirx = rand() % 11 - 5;
+        entity->diry = rand() % 11 - 5;
+    }
+
+    entity->hitbox.x = new_x;
+    entity->hitbox.y = new_y;
+}
+
+void drawEntity(SDL_Renderer * renderer, Entity * entity){
+    if (renderer == NULL){
         return;
     }
     SDL_SetRenderDrawColor(
@@ -53,32 +97,7 @@ void draw(SDL_Window * window, SDL_Renderer * renderer, SDL_Rect * rect, Vector 
         255
     );
 
-    
-    int new_x = rect->x + dir->x;
-    int new_y = rect->y + dir->y;
-    
-    if (new_x <= 0) {
-        new_x = 0;
-        dir->x = rand() % 11 - 5;
-        dir->y = rand() % 11 - 5;
-    }if (new_y <= 0) {
-        new_y = 0;
-        dir->x = rand() % 11 - 5;
-        dir->y = rand() % 11 - 5;
-    }if (new_x >= window_w - rect->w) {
-        new_x = window_w - rect->w;
-        dir->x = rand() % 11 - 5;
-        dir->y = rand() % 11 - 5;
-    }if (new_y >= window_h - rect->h) {
-        new_y = window_h - rect->h;
-        dir->x = rand() % 11 - 5;
-        dir->y = rand() % 11 - 5;
-    }
-
-    rect->x = new_x;
-    rect->y = new_y;
-
-    SDL_RenderFillRect(renderer, rect);
+    SDL_RenderFillRect(renderer, &(entity->hitbox));
 
 }
 
@@ -120,16 +139,7 @@ int main(int argc, char **argv){
     int window_w, window_h;
     SDL_GetWindowSize(window, &window_w, &window_h);
 
-    SDL_Rect r1;
-    r1.x = rand() % window_w;
-    r1.y = rand() % window_h;
-    r1.w = 400;
-    r1.h = 400;
-    Vector vector_r1;
-    vector_r1.x = rand() % 11 - 5;
-    vector_r1.y = rand() % 11 - 5;
-
-
+    Entity * auto_player = initEntity(400, 400, 1, window_w, window_h);
 
     while (running){
         while(SDL_PollEvent(&event)){
@@ -145,7 +155,8 @@ int main(int argc, char **argv){
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
-        draw(window, renderer, &r1, &vector_r1, window_w, window_h);
+        entityMove(auto_player, window_w, window_h);
+        drawEntity(renderer, auto_player);
 
         SDL_RenderPresent(renderer);
         SDL_Delay(10);
@@ -154,6 +165,7 @@ int main(int argc, char **argv){
     SDL_Delay(10);
 
     end_sdl(1, "Normal ending", window, renderer);
+    free(auto_player);
 
     return 0;
 }
