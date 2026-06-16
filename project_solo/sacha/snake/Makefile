@@ -6,7 +6,7 @@ CFLAGS=-Wall -Wextra -g
 SOURCES=$(wildcard $(SOURCES_FOLDER)/*.c)
 OBJECTS=$(patsubst $(SOURCES_FOLDER)%.c,$(OBJECTS_FOLDER)%.o,$(SOURCES))
 
-OUTPUT_NAME=xwindow_sacha
+OUTPUT_NAME=snake_sacha
 
 SDL_FLAGS=`sdl2-config --cflags` 
 SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm
