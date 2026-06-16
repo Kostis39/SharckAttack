@@ -1,22 +1,20 @@
-#ifndef BOUNCER_H
-#define BOUNCER_H
+#ifndef SPRITE_H
+#define SPRITE_H
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_events.h>
+#include <SDL2/SDL_image.h>
 #include <SDL2/SDL_keycode.h>
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_timer.h>
 #include <SDL2/SDL_video.h>
 #include <math.h>
 #include <stdio.h>
 
-typedef struct RGBColor {
-    Uint8 r;
-    Uint8 g;
-    Uint8 b;
-} RGBColor;
+/* typedef struct player { */
+/* } player_t; */
 
-RGBColor hsv2rgb(float H, float S, float V);
-void spawnBounce(int size, float speed);
+SDL_Texture *load_texture_from_image(char *file, SDL_Renderer *r);
 
 #endif
