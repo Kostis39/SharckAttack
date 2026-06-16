@@ -5,67 +5,47 @@
 #include <stdbool.h>
 #include <string.h>
 
-#define WINDOW_WIDTH  800
-#define WINDOW_HEIGHT 600
+#define LARGEUR_FENETRE  800
+#define HAUTEUR_FENETRE  600
 
-#define SCROLL_SPEED 4
+#define VITESSE_DEFILEMENT 4
 
 typedef struct {
     SDL_Texture *texture;
     int w, h;
 } Tex;
 
-void end_sdl(char ok,                                               // fin normale : ok = 0 ; anormale ok = 1
-             char const* msg,                                       // message à afficher
-             SDL_Window* window,                                    // fenêtre à fermer
-             SDL_Renderer* renderer) {                              // renderer à fermer
-    char msg_formated[255];                                      
-    int l;                                         
-
-    if (!ok) {                                                        // Affichage de ce qui ne va pas
-        strncpy(msg_formated, msg, 250);                                   
-        l = strlen(msg_formated);                                      
-        strcpy(msg_formated + l, " : %s\n");                                 
-        SDL_Log(msg_formated, SDL_GetError());                                 
-    }                                            
-
-    if (renderer != NULL) {                                           // Destruction si nécessaire du renderer
-        SDL_DestroyRenderer(renderer);                                  
-        renderer = NULL;
-    }
-    if (window != NULL)   {                                           // Destruction si nécessaire de la fenêtre
-        SDL_DestroyWindow(window);                                      
-        window= NULL;
-    }
-
-    SDL_Quit();                                          
-
-    if (!ok) {                             // On quitte si cela ne va pas            
-        exit(EXIT_FAILURE);                                        
-    }                                            
+// Fonction de fermeture
+static void end_sdl(bool ok, char const *msg,
+                    SDL_Window *window, SDL_Renderer *renderer) {
+    if (!ok) SDL_Log("%s : %s\n", msg, SDL_GetError());
+    if (renderer) SDL_DestroyRenderer(renderer);
+    if (window) SDL_DestroyWindow(window);
+    SDL_Quit();
+    if (!ok) exit(EXIT_FAILURE);
 }
 
-SDL_Texture* load_texture_from_image(char *file_image_name, SDL_Window *window, SDL_Renderer *renderer) {
-    SDL_Surface *my_image = NULL;           // Variable de passage
-    SDL_Texture *my_texture = NULL;         // La texture
+// Chargement d'une texture depuis une image
+static SDL_Texture* load_texture_from_image(char *file_image_name,
+                                            SDL_Window *window,
+                                            SDL_Renderer *renderer) {
+    SDL_Surface *my_image = IMG_Load(file_image_name);
+    if (!my_image)
+        end_sdl(false, "Chargement de l'image impossible", window, renderer);
 
-    my_image = IMG_Load(file_image_name);   // Chargement de l'image dans la surface
-    if (my_image == NULL)
-        end_sdl(0, "Chargement de l'image impossible", window, renderer);
-
-    my_texture = SDL_CreateTextureFromSurface(renderer, my_image);
+    SDL_Texture *my_texture = SDL_CreateTextureFromSurface(renderer, my_image);
     SDL_FreeSurface(my_image);
-    if (my_texture == NULL)
-        end_sdl(0, "Echec de la transformation de la surface en texture", window, renderer);
+    if (!my_texture)
+        end_sdl(false, "Echec de la transformation en texture", window, renderer);
 
     return my_texture;
 }
 
-
+// Dessine le sol en répétant la texture avec un décalage
 void draw_texture_repeat(Tex t, int offset, SDL_Renderer *renderer, int y_pos) {
-    int start = (t.w - (offset % t.w)) % t.w;   // Décalage avec l'offset, sans sortir de l'intervalle
+    int start = (t.w - (offset % t.w)) % t.w; // Décalage initial
 
-    for (int x = start - t.w; x < WINDOW_WIDTH; x += t.w) { // Position de toutes les images
+    for (int x = start - t.w; x < LARGEUR_FENETRE; x += t.w) {
         SDL_Rect dst = {x, y_pos, t.w, t.h};
         SDL_RenderCopy(renderer, t.texture, NULL, &dst);
     }
@@ -77,42 +57,76 @@ int main(int argc, char *argv[]) {
 
     // Initialisation SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0)
-        end_sdl(0, "ERROR SDL INIT", NULL, NULL);
+        end_sdl(false, "SDL_Init", NULL, NULL);
     if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
-        end_sdl(0, "ERROR IMG INIT", NULL, NULL);
+        end_sdl(false, "IMG_Init", NULL, NULL);
 
     SDL_Window *window = SDL_CreateWindow("Sol défilant",
                                           SDL_WINDOWPOS_CENTERED,
                                           SDL_WINDOWPOS_CENTERED,
-                                          WINDOW_WIDTH, WINDOW_HEIGHT,
+                                          LARGEUR_FENETRE, HAUTEUR_FENETRE,
                                           SDL_WINDOW_SHOWN);
-    if (window == NULL)
-        end_sdl(0, "ERROR WINDOW CREATION", NULL, NULL);
+    if (!window)
+        end_sdl(false, "SDL_CreateWindow", NULL, NULL);
 
     SDL_Renderer *renderer = SDL_CreateRenderer(window, -1,
                                                 SDL_RENDERER_ACCELERATED |
                                                 SDL_RENDERER_PRESENTVSYNC);
-    if (renderer == NULL)
-        end_sdl(0, "ERROR RENDERER CREATION", window, NULL);
+    if (!renderer)
+        end_sdl(false, "SDL_CreateRenderer", window, NULL);
 
-    // Chargement de la texture du sol
+    // Chargement du sol
     Tex ground;
     ground.texture = load_texture_from_image("assets/ground.png", window, renderer);
     SDL_QueryTexture(ground.texture, NULL, NULL, &ground.w, &ground.h);
 
-    int ground_y = WINDOW_HEIGHT - ground.h;   // Pour mettre l'image en bas
+    int ground_y = HAUTEUR_FENETRE - ground.h;
     int scroll_offset = 0;
+    int direction = 0;   // -1 : gauche, +1 : droite, 0 : arrêt
 
+    bool program_on = true;
     SDL_Event event;
-    int running = 1;
 
-    while (running) {
+    while (program_on) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT)
-                running = 0;
+            switch (event.type) {
+                case SDL_QUIT:
+                    program_on = false;
+                    break;
+
+                case SDL_KEYDOWN:
+                    switch (event.key.keysym.sym) {
+                        case SDLK_q:
+                            direction = -1;
+                            break;
+                        case SDLK_d:
+                            direction =  1;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
+                case SDL_KEYUP:
+                    switch (event.key.keysym.sym) {
+                        case SDLK_q:
+                            direction = 0;
+                            break;
+                        case SDLK_d:
+                            direction = 0;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
         }
 
-        scroll_offset += SCROLL_SPEED;
+        // Mise à jour du décalage
+        scroll_offset += direction * VITESSE_DEFILEMENT;
 
         // Rendu
         SDL_SetRenderDrawColor(renderer, 135, 206, 235, 255); // Couleur du ciel
@@ -124,6 +138,6 @@ int main(int argc, char *argv[]) {
     }
 
     SDL_DestroyTexture(ground.texture);
-    end_sdl(1, "Fin normale", window, renderer);
+    end_sdl(true, "Fin normale", window, renderer);
     return EXIT_SUCCESS;
 }

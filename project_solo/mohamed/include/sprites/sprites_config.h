@@ -1,0 +1,19 @@
+#ifndef SPRITES_CONFIG_H
+#define SPRITES_CONFIG_H
+
+#define WINDOW_WIDTH 1220
+#define WINDOW_HEIGHT 600
+
+#define GROUND_HEIGHT 120
+
+#define PLAYER_SPEED 6
+#define JUMP_SPEED -11.0f
+#define GRAVITY 0.55f
+
+#define SPRITE_COLUMNS 8
+#define SPRITE_ROWS 4
+#define FRAME_DELAY 90
+
+#define ATTACK_DURATION 250
+
+#endif
