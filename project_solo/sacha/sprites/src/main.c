@@ -98,7 +98,28 @@ Entity * initPlayer(SDL_Window * window, SDL_Renderer * renderer, int window_w, 
     return player;
 }
 
-int movePlayer(Entity * player, int screen_w, int screen_h, SDL_Rect * camera){
+void moveCamera(SDL_Rect * camera, SDL_Rect * window_rect, int direction_x, int direction_y){
+    int next_camera_x = camera->x - direction_x;
+    int next_camera_y = camera->y - direction_y;
+
+    if (next_camera_x >= 0){
+        next_camera_x = 0;
+    }
+    if (next_camera_x <= window_rect->w - camera->w){
+        next_camera_x = window_rect->w - camera->w;
+    }
+    if (next_camera_y >= 0){
+        next_camera_y = 0;
+    }
+    if (next_camera_y <= window_rect->h - camera->h){
+        next_camera_y = window_rect->h - camera->h;
+    }
+
+    camera->x = next_camera_x;
+    camera->y = next_camera_y;
+}
+
+int movePlayer(Entity * player, int screen_w, int screen_h, SDL_Rect * camera, SDL_Rect * world_rect){
     if (player == NULL){
         return 0;
     }
@@ -116,16 +137,19 @@ int movePlayer(Entity * player, int screen_w, int screen_h, SDL_Rect * camera){
 
         if (new_x < 0) {
             new_x = 0;
-            camera->x -= dirx * player->speed;
-        }if (new_y < 0) {
+            moveCamera(camera, world_rect, dirx * player->speed, 0);
+        }
+        if (new_y < 0) {
             new_y = 0;
-            camera->y -= diry * player->speed;
-        }if (new_x > screen_w - player->hitbox.w) {
+            moveCamera(camera, world_rect, 0, diry * player->speed);
+        }
+        if (new_x > screen_w - player->hitbox.w) {
             new_x = screen_w - player->hitbox.w;
-            camera->x -= dirx * player->speed;
-        }if (new_y > screen_h - player->hitbox.h) {
+            moveCamera(camera, world_rect, dirx * player->speed, 0);
+        }
+        if (new_y > screen_h - player->hitbox.h) {
             new_y = screen_h - player->hitbox.h;
-            camera->y -= diry * player->speed;
+            moveCamera(camera, world_rect, 0, diry * player->speed);
         }
 
         player->hitbox.x = new_x;
@@ -277,7 +301,7 @@ int main(int argc, char **argv){
                     break;
             }
         }
-        movePlayer(player, window_w, window_h, &rect_camera);
+        movePlayer(player, window_w, window_h, &rect_camera, &rect_window);
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
