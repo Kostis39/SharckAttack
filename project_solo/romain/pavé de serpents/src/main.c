@@ -69,6 +69,15 @@ void dessinerRectangle(SDL_Renderer *r, Position p) {
 	SDL_RenderDrawLine(r, x3, y3, x0, y0);
 }
 
+static bool initialiserSerpent(Serpent *s) {
+	float angle    = -(float)M_PI / 2.0f;
+	s->angle_tete  = angle;
+	s->angle_cible = angle;
+	Position depart = { LARGEUR / 2.0f, HAUTEUR / 2.0f, angle };
+	s->file = fileCreate(NB_SEGMENTS, depart);
+	return s->file.donnees != NULL;
+}
+
 // Parcourt la file et dessine chaque segment
 void dessinerSerpent(SDL_Renderer *renderer, const Serpent *s) {
 	File *f = &s->file;
