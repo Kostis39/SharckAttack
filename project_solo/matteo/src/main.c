@@ -1,5 +1,7 @@
 #include "bouncer.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_timer.h>
 /* #include <stdio.h> */
 
 /************************************/
@@ -44,7 +46,52 @@ int main(int argc, char **argv) {
     /* SDL_Quit(); // la SDL */
 
     // Exécution de Xwindow
-    spawnBounce(500, 5);
 
+    SDL_Event event;
+    int maxX;
+    int maxY;
+    int running = 1;
+    /* Initialisation de la SDL  + gestion de l'échec possible */
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+        SDL_Log("Error : SDL initialisation - %s\n",
+                SDL_GetError()); // l'initialisation de la SDL a échoué
+        exit(EXIT_FAILURE);
+    }
+
+    SDL_DisplayMode dm;
+    SDL_GetCurrentDisplayMode(0, &dm);
+
+    maxY = dm.h;
+    maxX = dm.w;
+
+    /* spawnBounce(500, 5); */
+    BouncingWindow_t *bouncy = spawnBounce(500, 5, maxX, maxY);
+
+    SDL_Renderer *ren =
+        SDL_CreateRenderer(bouncy->bouncer, -1, SDL_RENDERER_ACCELERATED);
+    RendererBounce_t renderRGB;
+    renderRGB.prevTime = SDL_GetTicks();
+    renderRGB.ren = ren;
+    renderRGB.hue = 0.0f;
+
+    while (running) {
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_KEYDOWN) {
+                if (event.key.keysym.sym == SDLK_ESCAPE)
+                    running = 0;
+                if (event.key.keysym.sym == SDLK_KP_PLUS)
+                    bouncy->size += 100;
+                if (event.key.keysym.sym == SDLK_KP_MINUS)
+                    bouncy->size -= 100;
+            }
+        }
+        bouncy = UpdateBounce(bouncy);
+        renderRGB = *RenderBounce(&renderRGB);
+    }
+
+    SDL_DestroyRenderer(ren);
+    SDL_DestroyWindow(bouncy->bouncer);
+    free(bouncy);
+    SDL_Quit();
     return 0;
 }
