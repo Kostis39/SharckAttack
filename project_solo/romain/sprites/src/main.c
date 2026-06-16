@@ -27,12 +27,11 @@ typedef struct {
     SDL_Texture *spritesheet;
     int frame_w, frame_h; // Dimensions d'une sous image
     int x, y;
-    int direction; // -1 gauche, +1 droite, 0 immobile
-    bool en_mouvement;
+    int orientation; // -1 gauche, 1 droite
+    bool immobile; // true = arrêt, false = en mouvement
     int frame_index;
     int compteur_anim;
 } Personnage;
-
 
 static void end_sdl(bool ok, char const *msg,
                     SDL_Window *window, SDL_Renderer *renderer) {
@@ -75,16 +74,14 @@ void init_personnage(Personnage *p, SDL_Window *window, SDL_Renderer *renderer) 
     p->x = (LARGEUR_FENETRE - p->frame_w) / 2;
     p->y = HAUTEUR_FENETRE - p->frame_h - 80;
 
-    p->direction = 0;
-    p->en_mouvement = false;
+    p->orientation = 1; // Regarde vers la droite au départ
+    p->immobile = true; // Immobile au début
     p->frame_index = 0;
     p->compteur_anim = 0;
 }
 
 void update_personnage(Personnage *p) {
-    p->en_mouvement = (p->direction != 0);
-
-    if (p->en_mouvement) {
+    if (!p->immobile) { // En mouvement
         p->compteur_anim++;
         if (p->compteur_anim >= DELAI_ANIMATION) {
             p->compteur_anim = 0;
@@ -93,8 +90,8 @@ void update_personnage(Personnage *p) {
                 p->frame_index = 1; // On revient à la première frame
             }
         }
-    } else {
-        p->frame_index = 0; // Frame repos
+    } else { // Immobile
+        p->frame_index = 0;
         p->compteur_anim = 0;
     }
 }
@@ -114,7 +111,7 @@ void draw_personnage(SDL_Renderer *renderer, const Personnage *p) {
         p->frame_h
     };
 
-    SDL_RendererFlip flip = (p->direction == 1) ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL; // Fait la symétrie de l'image si on va à gauche
+    SDL_RendererFlip flip = (p->orientation == -1) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE; // Fait la symétrie de l'image si on va à gauche
 
     SDL_RenderCopyEx(renderer, p->spritesheet, &src, &dst, 0.0, NULL, flip);
 }
@@ -143,18 +140,15 @@ int main(int argc, char *argv[]) {
     if (!renderer)
         end_sdl(false, "SDL_CreateRenderer", window, NULL);
 
-
     Tex ground;
     ground.texture = load_texture_from_image("assets/ground.png", window, renderer);
     SDL_QueryTexture(ground.texture, NULL, NULL, &ground.w, &ground.h);
     int ground_y = HAUTEUR_FENETRE - ground.h;
 
-
     Personnage perso;
     init_personnage(&perso, window, renderer);
 
     int scroll_offset = 0;
-    int direction = 0;
 
     bool program_on = true;
     SDL_Event event;
@@ -169,10 +163,12 @@ int main(int argc, char *argv[]) {
                 case SDL_KEYDOWN:
                     switch (event.key.keysym.sym) {
                         case SDLK_q:
-                            direction = -1;
+                            perso.orientation = -1;
+                            perso.immobile = false;
                             break;
                         case SDLK_d:
-                            direction =  1;
+                            perso.orientation = 1;
+                            perso.immobile = false;
                             break;
                         default:
                             break;
@@ -182,10 +178,10 @@ int main(int argc, char *argv[]) {
                 case SDL_KEYUP:
                     switch (event.key.keysym.sym) {
                         case SDLK_q:
-                            direction = 0;
+                            perso.immobile = true;
                             break;
                         case SDLK_d:
-                            direction = 0;
+                            perso.immobile = true;
                             break;
                         default:
                             break;
@@ -197,16 +193,17 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        scroll_offset += direction * VITESSE_DEFILEMENT; // Mise à jour du décalage du sol
-        
-        perso.direction = direction;
+        if (!perso.immobile) {
+            scroll_offset += perso.orientation * VITESSE_DEFILEMENT; // Mise à jour du décalage du sol
+        }
+
         update_personnage(&perso); // Mise à jour de l'animation du perso
 
+        // Rendu
         SDL_SetRenderDrawColor(renderer, 135, 206, 235, 255); // ciel
         SDL_RenderClear(renderer);
 
         draw_texture_repeat(ground, scroll_offset, renderer, ground_y); // Affiche le sol
-
         draw_personnage(renderer, &perso); // Affiche le perso
 
         SDL_RenderPresent(renderer);
