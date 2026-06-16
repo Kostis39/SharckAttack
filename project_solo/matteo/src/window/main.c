@@ -1,8 +1,6 @@
 #include "bouncer.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_render.h>
-#include <SDL2/SDL_timer.h>
-/* #include <stdio.h> */
+
+#define NUM_WINDOWS 5
 
 /************************************/
 /*  exemple de création de fenêtres */
@@ -64,11 +62,22 @@ int main(int argc, char **argv) {
     maxY = dm.h;
     maxX = dm.w;
 
-    /* spawnBounce(500, 5); */
-    BouncingWindow_t *bouncy = spawnBounce(500, 5, maxX, maxY);
+    /* Tableau de fenêtres */
+    BouncingWindow_t *windows[NUM_WINDOWS];
+    int initialSize = 500;
+    int sizeStep = 40;
+    for (int i = 0; i < NUM_WINDOWS; i++) {
+        int size = initialSize - i * sizeStep;
+        if (size < 50)
+            size = 50;
+        windows[i] = spawnBounce(size, 5, maxX, maxY);
+        /* Décalage temporel : décale la position initiale de chaque fenêtre */
+        windows[i]->x += (float)(i * 120);
+        windows[i]->y += (float)(i * 80);
+    }
 
     SDL_Renderer *ren =
-        SDL_CreateRenderer(bouncy->bouncer, -1, SDL_RENDERER_ACCELERATED);
+        SDL_CreateRenderer(windows[0]->bouncer, -1, SDL_RENDERER_ACCELERATED);
     RendererBounce_t renderRGB;
     renderRGB.prevTime = SDL_GetTicks();
     renderRGB.ren = ren;
@@ -80,18 +89,22 @@ int main(int argc, char **argv) {
                 if (event.key.keysym.sym == SDLK_ESCAPE)
                     running = 0;
                 if (event.key.keysym.sym == SDLK_KP_PLUS)
-                    bouncy->size += 100;
+                    windows[0]->size += 100;
                 if (event.key.keysym.sym == SDLK_KP_MINUS)
-                    bouncy->size -= 100;
+                    windows[0]->size -= 100;
             }
         }
-        bouncy = UpdateBounce(bouncy);
+        for (int i = 0; i < NUM_WINDOWS; i++) {
+            windows[i] = UpdateBounce(windows[i]);
+        }
         renderRGB = *RenderBounce(&renderRGB);
     }
 
     SDL_DestroyRenderer(ren);
-    SDL_DestroyWindow(bouncy->bouncer);
-    free(bouncy);
+    for (int i = 0; i < NUM_WINDOWS; i++) {
+        SDL_DestroyWindow(windows[i]->bouncer);
+        free(windows[i]);
+    }
     SDL_Quit();
     return 0;
 }

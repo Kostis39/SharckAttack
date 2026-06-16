@@ -50,7 +50,7 @@ BouncingWindow_t *spawnBounce(int size, float baseSpeed, int maxX, int maxY) {
     bouncy->size = size;
     bouncy->velocity[0] *= bouncy->speed;
     bouncy->velocity[1] *= bouncy->speed;
-    bouncy->maxY = maxX;
+    bouncy->maxX = maxX;
     bouncy->maxY = maxY;
     bouncy->x = 0.0f;
     bouncy->y = 0.0f;
