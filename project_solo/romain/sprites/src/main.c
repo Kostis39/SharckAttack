@@ -5,17 +5,35 @@
 #include <stdbool.h>
 #include <string.h>
 
-#define LARGEUR_FENETRE  800
-#define HAUTEUR_FENETRE  600
+#define LARGEUR_FENETRE 800
+#define HAUTEUR_FENETRE 600
+#define VITESSE_DEFILEMENT 3
 
-#define VITESSE_DEFILEMENT 4
+// Information du spritesheet
+#define DEB_X 182
+#define DEB_Y 200
+#define TAILLE_IMG 227
+#define NB_IMAGE 6
+
+#define DELAI_ANIMATION 6 // Nombre d'itérations avant de changer de frame
 
 typedef struct {
     SDL_Texture *texture;
     int w, h;
 } Tex;
 
-// Fonction de fermeture
+// Personnage
+typedef struct {
+    SDL_Texture *spritesheet;
+    int frame_w, frame_h; // Dimensions d'une sous image
+    int x, y;
+    int direction; // -1 gauche, +1 droite, 0 immobile
+    bool en_mouvement;
+    int frame_index;
+    int compteur_anim;
+} Personnage;
+
+
 static void end_sdl(bool ok, char const *msg,
                     SDL_Window *window, SDL_Renderer *renderer) {
     if (!ok) SDL_Log("%s : %s\n", msg, SDL_GetError());
@@ -25,8 +43,7 @@ static void end_sdl(bool ok, char const *msg,
     if (!ok) exit(EXIT_FAILURE);
 }
 
-// Chargement d'une texture depuis une image
-static SDL_Texture* load_texture_from_image(char *file_image_name,
+static SDL_Texture* load_texture_from_image(const char *file_image_name,
                                             SDL_Window *window,
                                             SDL_Renderer *renderer) {
     SDL_Surface *my_image = IMG_Load(file_image_name);
@@ -41,14 +58,65 @@ static SDL_Texture* load_texture_from_image(char *file_image_name,
     return my_texture;
 }
 
-// Dessine le sol en répétant la texture avec un décalage
 void draw_texture_repeat(Tex t, int offset, SDL_Renderer *renderer, int y_pos) {
-    int start = (t.w - (offset % t.w)) % t.w; // Décalage initial
-
+    int start = (t.w - (offset % t.w)) % t.w;
     for (int x = start - t.w; x < LARGEUR_FENETRE; x += t.w) {
         SDL_Rect dst = {x, y_pos, t.w, t.h};
         SDL_RenderCopy(renderer, t.texture, NULL, &dst);
     }
+}
+
+void init_personnage(Personnage *p, SDL_Window *window, SDL_Renderer *renderer) {
+    p->spritesheet = load_texture_from_image("assets/spritesheet.png", window, renderer);
+
+    p->frame_w = TAILLE_IMG;
+    p->frame_h = TAILLE_IMG;
+
+    p->x = (LARGEUR_FENETRE - p->frame_w) / 2;
+    p->y = HAUTEUR_FENETRE - p->frame_h - 80;
+
+    p->direction = 0;
+    p->en_mouvement = false;
+    p->frame_index = 0;
+    p->compteur_anim = 0;
+}
+
+void update_personnage(Personnage *p) {
+    p->en_mouvement = (p->direction != 0);
+
+    if (p->en_mouvement) {
+        p->compteur_anim++;
+        if (p->compteur_anim >= DELAI_ANIMATION) {
+            p->compteur_anim = 0;
+            p->frame_index++; // Nouvelle frame
+            if (p->frame_index >= NB_IMAGE) {
+                p->frame_index = 1; // On revient à la première frame
+            }
+        }
+    } else {
+        p->frame_index = 0; // Frame repos
+        p->compteur_anim = 0;
+    }
+}
+
+void draw_personnage(SDL_Renderer *renderer, const Personnage *p) {
+    SDL_Rect src = {
+        DEB_X + p->frame_index * TAILLE_IMG,
+        DEB_Y,
+        TAILLE_IMG,
+        TAILLE_IMG
+    };
+
+    SDL_Rect dst = {
+        p->x,
+        p->y,
+        p->frame_w,
+        p->frame_h
+    };
+
+    SDL_RendererFlip flip = (p->direction == 1) ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL; // Fait la symétrie de l'image si on va à gauche
+
+    SDL_RenderCopyEx(renderer, p->spritesheet, &src, &dst, 0.0, NULL, flip);
 }
 
 int main(int argc, char *argv[]) {
@@ -61,7 +129,7 @@ int main(int argc, char *argv[]) {
     if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
         end_sdl(false, "IMG_Init", NULL, NULL);
 
-    SDL_Window *window = SDL_CreateWindow("Sol défilant",
+    SDL_Window *window = SDL_CreateWindow("Sol défilant avec personnage",
                                           SDL_WINDOWPOS_CENTERED,
                                           SDL_WINDOWPOS_CENTERED,
                                           LARGEUR_FENETRE, HAUTEUR_FENETRE,
@@ -75,14 +143,18 @@ int main(int argc, char *argv[]) {
     if (!renderer)
         end_sdl(false, "SDL_CreateRenderer", window, NULL);
 
-    // Chargement du sol
+
     Tex ground;
     ground.texture = load_texture_from_image("assets/ground.png", window, renderer);
     SDL_QueryTexture(ground.texture, NULL, NULL, &ground.w, &ground.h);
-
     int ground_y = HAUTEUR_FENETRE - ground.h;
+
+
+    Personnage perso;
+    init_personnage(&perso, window, renderer);
+
     int scroll_offset = 0;
-    int direction = 0;   // -1 : gauche, +1 : droite, 0 : arrêt
+    int direction = 0;
 
     bool program_on = true;
     SDL_Event event;
@@ -125,19 +197,25 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        // Mise à jour du décalage
-        scroll_offset += direction * VITESSE_DEFILEMENT;
+        scroll_offset += direction * VITESSE_DEFILEMENT; // Mise à jour du décalage du sol
+        
+        perso.direction = direction;
+        update_personnage(&perso); // Mise à jour de l'animation du perso
 
-        // Rendu
-        SDL_SetRenderDrawColor(renderer, 135, 206, 235, 255); // Couleur du ciel
+        SDL_SetRenderDrawColor(renderer, 135, 206, 235, 255); // ciel
         SDL_RenderClear(renderer);
-        draw_texture_repeat(ground, scroll_offset, renderer, ground_y);
+
+        draw_texture_repeat(ground, scroll_offset, renderer, ground_y); // Affiche le sol
+
+        draw_personnage(renderer, &perso); // Affiche le perso
+
         SDL_RenderPresent(renderer);
 
         SDL_Delay(10);
     }
 
     SDL_DestroyTexture(ground.texture);
+    SDL_DestroyTexture(perso.spritesheet);
     end_sdl(true, "Fin normale", window, renderer);
     return EXIT_SUCCESS;
 }
