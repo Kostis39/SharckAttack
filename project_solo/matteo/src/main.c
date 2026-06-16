@@ -1,9 +1,4 @@
 #include "bouncer.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_render.h>
-#include <SDL2/SDL_timer.h>
-#include <stdlib.h>
-/* #include <stdio.h> */
 
 #define NUM_WINDOWS 5
 
