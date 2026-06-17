@@ -58,14 +58,20 @@ int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     return 1;
 }
 
-void TerminalUserEvent(char *entry, World *world, bool *next_iteration) {
-    if (entry == NULL)
-        return;
-
-    switch (entry[0]) {
-    case '\0':
-        *next_iteration = true;
-        break;
+int TerminalUserEvent(World *world) {
+    /**
+     * @brief Gère les actions possible à partir de SDL et execute les actions
+     * adéquat: Si zqsd : déplace la vision du monde respectivement en haut
+     * droite bas gauche Si a et e : zoom la vision du monde Si espace : passe à
+     * l'itération suivante
+     * @param event L'événement à traiter.
+     * @param world Le monde à modifier.
+     * @return 0 si la boucle est interrompue, avec SPC ou SDL_QUIT
+     * @return 1 sinon
+     */
+    char input;
+    scanf("%c%*c", &input);
+    switch (input) {
     case 'z':
         DecrementOffsetY(world);
         break;
@@ -84,9 +90,12 @@ void TerminalUserEvent(char *entry, World *world, bool *next_iteration) {
     case 'e':
         DecrementZoom(world);
         break;
+    case 'k': // kill
+        return 0;
     default:
         break;
     }
+    return 1;
 }
 
 int main(int argc, char *argv[]) {
@@ -113,3 +122,73 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+
+/*
+(void)argc;
+(void)argv;
+
+srand(time(NULL));
+
+// Création du monde
+World *world = InitWorld(WORLD_SIZE);
+
+if (world == NULL)
+{
+printf("Erreur : impossible de créer le monde\n");
+return 1;
+}
+
+// Remplissage aléatoire du monde
+RandomizeWorld(world);
+
+// Création de l'affichage SDL
+SDLDisplay display;
+
+if (!InitSDLDisplay(&display, WINDOW_SIZE))
+{
+printf("Erreur : impossible d'initialiser SDLDisplay\n");
+DeleteWorld(world);
+free(world);
+return 1;
+}
+
+bool programOn = true;
+
+while (programOn)
+{
+SDL_Event event;
+
+// On gère seulement la fermeture de la fenêtre
+while (SDL_PollEvent(&event))
+{
+if (event.type == SDL_QUIT)
+{
+programOn = false;
+}
+}
+
+// On prépare uniquement la partie du monde à afficher
+WorldToDisplay *worldToDisplay = WorldToDisplayFromWorld(world);
+
+if (worldToDisplay != NULL)
+{
+// Affichage SDL
+RenderSDLDisplay(&display, worldToDisplay);
+
+// Libération du WorldToDisplay
+FreeWorldToDisplay(worldToDisplay);
+free(worldToDisplay);
+}
+
+SDL_Delay(16);
+}
+
+// Nettoyage final
+DestroySDLDisplay(&display);
+
+DeleteWorld(world);
+free(world);
+
+return 0;
+*/
