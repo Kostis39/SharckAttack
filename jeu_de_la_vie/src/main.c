@@ -1,3 +1,8 @@
+/**
+ * \file main.c
+ * \brief Point d'entrée du programme — boucle principale du Jeu de la Vie.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -10,8 +15,23 @@
 #include "terminalDisplay.h"
 #include "world.h"
 
+/** \brief Taille par défaut de la grille du monde. */
 #define WORLD_SIZE 10
 
+/**
+ * \brief Gère les événements SDL (clavier, quit).
+ *
+ * Touches supportées :
+ * - Z/Q/S/D : déplacer la vue
+ * - A/E : zoomer / dézoomer
+ * - Espace : pause
+ * - Échap / fermeture : quitter
+ *
+ * \param event Événement SDL à traiter.
+ * \param world Pointeur vers le monde.
+ * \param isPaused Pointeur vers l'état de pause.
+ * \return 0 pour quitter, 1 pour continuer.
+ */
 int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     /**
      * @brief Gère les actions possible à partir de SDL et execute les actions
@@ -58,6 +78,17 @@ int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     return 1;
 }
 
+/**
+ * \brief Gère les événements en mode terminal (entrée standard).
+ *
+ * Touches supportées :
+ * - Z/Q/S/D : déplacer la vue
+ * - A/E : zoomer / dézoomer
+ * - K : quitter
+ *
+ * \param world Pointeur vers le monde.
+ * \return 0 pour quitter, 1 pour continuer.
+ */
 int TerminalUserEvent(World *world) {
     /**
      * @brief Gère les actions possible à partir de SDL et execute les actions
@@ -98,6 +129,15 @@ int TerminalUserEvent(World *world) {
     return 1;
 }
 
+/**
+ * \brief Point d'entrée du programme.
+ *
+ * Initialise le monde, le remplit aléatoirement et lance l'affichage terminal.
+ *
+ * \param argc Nombre d'arguments.
+ * \param argv Tableau d'arguments.
+ * \return EXIT_SUCCESS en cas de succès.
+ */
 int main(int argc, char *argv[]) {
     (void)argc;
     (void)argv;

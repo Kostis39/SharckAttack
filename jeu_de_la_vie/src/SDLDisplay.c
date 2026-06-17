@@ -1,3 +1,8 @@
+/**
+ * \file SDLDisplay.c
+ * \brief Implémentation de l'affichage SDL2 pour le Jeu de la Vie.
+ */
+
 #include "../include/SDLDisplay.h"
 
 #include <stdio.h>

@@ -1,6 +1,11 @@
 #ifndef CELL_H
 #define CELL_H
 
+/**
+ * \file cell.h
+ * \brief Définition de la structure Cell et des fonctions associées.
+ */
+
 #include <stdbool.h>
 #include <stdlib.h>
 
