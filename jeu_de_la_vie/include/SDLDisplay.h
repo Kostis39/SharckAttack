@@ -1,23 +1,34 @@
-#ifndef SDLDISPPLAY_H
-#define SDLDISPPLAY_H
+#ifndef SDL_DISPLAY_H
+#define SDL_DISPLAY_H
 
 #include <SDL2/SDL.h>
 #include <stdbool.h>
-#include "cell.h"
-#include "mj.h"
 
-typedef struct SDLdisplay {
+#include "world.h"
+
+typedef struct
+{
     SDL_Window *window;
     SDL_Renderer *renderer;
 
-    int windowWidth;
-    int windowHeight;
+    int windowSize;
 
-    float zoom;
-    float offsetX;
-    float offsetY;
+    bool isDragging;
+    int lastMouseX;
+    int lastMouseY;
 
-    int 
-}
+} SDLDisplay;
+
+// Initialisation et destruction de l'affichage SDL
+
+bool InitSDLDisplay(SDLDisplay *display, int windowSize);
+
+void DestroySDLDisplay(SDLDisplay *display);
+
+// Affichage du monde
+
+void RenderSDLDisplay(SDLDisplay *display, World *world);
+
+void ClearSDLDisplay(SDLDisplay *display, World *world);
 
 #endif
