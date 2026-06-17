@@ -41,15 +41,13 @@ void SDLUserEvent(SDL_Event event, World *world, bool *next_iteration)
     }
 }
 
-void TerminalUserEvent(char *entry, World *world, bool *next_iteration)
+void TerminalUserEvent(char entry, World *world, bool *next_iteration)
 {
-    if (entry == NULL)
-        return;
-
-    switch (entry[0])
+    switch (entry)
     {
-    case '\0':
+    case '\n':
         *next_iteration = true;
+        break;
     case 'z':
         DecrementOffsetY(world);
         break;
@@ -83,16 +81,50 @@ int main(int argc, char *argv[])
     World *w = InitWorld(WORLD_SIZE);
     RandomizeWorld(w);
 
-    PrintInfoWorld(w);
+    bool program_on = true;
+    bool next_iteration = false;
+    char entry;
 
-    WorldToDisplay *affichage = WorldToDisplayFromWorld(w);
+    WorldToDisplay *display;
+    Cell **perception;
+    Cell **tmp;
 
-    return Display(affichage);
-    // bool program_on = true;
+    while (program_on)
+    {
+        display = WorldToDisplayFromWorld(w);
+        Display(display);
 
-    // while (program_on)
-    // {
-    // }
+        scanf("%c", &entry);
+
+        TerminalUserEvent(entry, w, &next_iteration);
+
+        if (next_iteration)
+        {
+            tmp = InitCell2D(w->size);
+
+            for (int y = 0; y < w->size; y++)
+            {
+                for (int x = 0; x < w->size; x++)
+                {
+                    perception = GetPerseption(w, x, y); // tableau 3x3 autour de la cellule
+                    SetValueTabCell(tmp, x, y, NewState(GetCellWorld(w, x, y), GetNbNeighbors(perception)));
+                }
+            }
+
+            SwitchTabCellWorld(w, tmp);
+
+            next_iteration = false;
+        }
+    }
+
+    // Libération du tableau temporaire
+    for (int i = 0; i < w->size; i++)
+        free(tmp[i]);
+    free(tmp);
+
+    DeletePerception(perception);
+
+    FreeWorldToDisplay(display);
 
     DeleteWorld(w);
 

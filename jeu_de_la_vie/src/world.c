@@ -27,9 +27,11 @@ void RandomizeWorld(World *w)
     }
 }
 
-Cell GetCellWorld(World *w, int x, int y)
+Cell *GetCellWorld(World *w, int x, int y)
 {
-    return w->tab[x % w->size][y % w->size];
+    int nx = ((x % w->size) + w->size) % w->size;
+    int ny = ((y % w->size) + w->size) % w->size;
+    return &w->tab[nx][ny];
 }
 
 int GetSizeWorld(World *w)
@@ -71,7 +73,7 @@ Cell **GetPerseption(World *w, int x, int y)
 
         for (int j = 0; j < 3; j++)
         {
-            perception[i][j] = GetCellWorld(w, x - 1 + j, y - 1 + i);
+            perception[i][j] = *GetCellWorld(w, x - 1 + j, y - 1 + i);
         }
     }
     return perception;
@@ -175,7 +177,7 @@ WorldToDisplay *WorldToDisplayFromWorld(World *w)
 
         for (int j = 0; j < result->size; j++)
         {
-            result->tab[i][j] = GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
+            result->tab[i][j] = *GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
         }
     }
     return result;

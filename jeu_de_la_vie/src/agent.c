@@ -1,4 +1,4 @@
- #include "../include/agent.h"
+#include "../include/agent.h"
 
 int GetNbNeighbors(Cell **c)
 {
@@ -15,7 +15,8 @@ int GetNbNeighbors(Cell **c)
     {
         for (int x = 0; x < around; ++x)
         {
-            ++nbNeightbors;
+            if (c[x][y].state && (x != 1 || y != 1))
+                ++nbNeightbors;
         }
     }
     return nbNeightbors;
