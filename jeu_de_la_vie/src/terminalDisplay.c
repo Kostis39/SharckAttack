@@ -1,23 +1,23 @@
-#include "../include/terminalDisplay.h"
+#include "terminalDisplay.h"
 int Display(WorldToDisplay *monde) {
-  /**
-   * @brief Affiche le monde selon ses paramètres
-   * Affichage du monde en version terminale
-   * @param monde Le monde à afficher.
-   * @return 0 si succès
-   * @return -1 si le monde n'entre pas en terminal
-   */
+    /**
+     * @brief Affiche le monde selon ses paramètres
+     * Affichage du monde en version terminale
+     * @param monde Le monde à afficher.
+     * @return 0 si succès
+     * @return -1 si le monde n'entre pas en terminal
+     */
 
-  for (int i; i < monde->size; ++i) {
-    for (int j; j < monde->size; ++j) {
-      if (monde->tab[i][j].state) {
-        printf("\033[30;107m\u2588\u2588");
-      } else {
+    for (int y = 0; y < monde->size; ++y) {
+        for (int x = 0; x < monde->size; ++x) {
+            if (monde->tab[x][y].state) {
+                printf("\033[30;107m\u2588\u2588");
+            } else {
 
-        printf("\033[30;40m\u2588\u2588");
-      }
+                printf("\033[30;40m\u2588\u2588");
+            }
+        }
+        printf("\n");
     }
-    printf("\n");
-  }
-  return 0;
+    return 0;
 }
