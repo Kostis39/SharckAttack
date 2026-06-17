@@ -3,17 +3,25 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
-
-typedef struct {
-  bool state; // 0 mort, 1 vie
+/**
+ * \struct Cell
+ * \brief Représente une cellule, elle est soit vivante soit morte.
+ */
+typedef struct
+{
+  bool state; /**< Staut de la cellule, True: vivant, False: mort. */
 } Cell;
 
-typedef struct {
-  Cell **tab;
-  int size;
-  int zoomDisplay;      // Taille du tableau à afficher
-  int OffsetX, OffsetY; // Coordonnées du coin supérieur gauche pour le tableau
-                        // à afficher
+/**
+ * \struct World
+ * \brief Représente le monde du jeu de la vie.
+ */
+typedef struct
+{
+  Cell **tab;           /**< Tableau carre 2D de cellules */
+  int size;             /**< Taille du tableau, la meme taille en width et height */
+  int zoomDisplay;      /**< Taille en width et height du nouveau tableau zoomé */
+  int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de savoir comment l'afficher */
 } World;
 
 // Fonction Cell
