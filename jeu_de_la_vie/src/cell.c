@@ -1,6 +1,6 @@
 #include "cell.h"
 
-bool GetStateCell(Cell *c)
+bool IsAlive(Cell *c)
 {
     return c->state;
 }

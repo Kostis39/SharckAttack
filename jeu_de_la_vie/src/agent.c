@@ -23,7 +23,7 @@ int GetNbNeighbors(Cell **c)
 
 bool NewState(Cell *c, int nbNeightbors)
 {
-    if (GetStateCell(c))
+    if (IsAlive(c))
     {
         return nbNeightbors == 2 || nbNeightbors == 3;
     }
