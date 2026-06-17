@@ -11,16 +11,16 @@
  */
 typedef struct
 {
-  Cell **tab;           /**< Tableau carre 2D de cellules */
-  int size;             /**< Taille du tableau, la meme taille en width et height */
-  float zoomDisplay;    /**< coefficient du zoom */
-  int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de savoir comment l'afficher */
+    Cell **tab;           /**< Tableau carre 2D de cellules */
+    int size;             /**< Taille du tableau, la meme taille en width et height */
+    float zoomDisplay;    /**< coefficient du zoom */
+    int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de savoir comment l'afficher */
 } World;
 
 typedef struct
 {
-  Cell **tab; /**< Tableau à afficher carre 2D de cellule vivante ou morte */
-  int size;   /**< Taille du tableau à afficher, la meme taille en width et height */
+    Cell **tab; /**< Tableau à afficher carre 2D de cellule vivante ou morte */
+    int size;   /**< Taille du tableau à afficher, la meme taille en width et height */
 } WorldToDisplay;
 
 // Fonction World Display
@@ -39,6 +39,7 @@ int GetOffsetXWorld(World *w);
 int GetOffsetYWorld(World *w);
 
 World *InitWorld(int size);
+void RandomizeWorld(World *w);
 
 Cell **GetPerseption(World *w, int x, int y);
 void DeletePerception(Cell **perception);

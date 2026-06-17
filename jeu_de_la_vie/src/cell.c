@@ -15,7 +15,7 @@ void SetStateCell(Cell *c, bool val)
     c->state = val;
 }
 
-Cell **InitCell2DToFalse(int size)
+Cell **InitCell2D(int size)
 {
     Cell **tab = calloc(size, sizeof(Cell *));
     for (int y = 0; y < size; ++y)
