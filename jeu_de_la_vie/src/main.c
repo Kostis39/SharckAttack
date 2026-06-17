@@ -18,30 +18,20 @@
 /** \brief Taille par défaut de la grille du monde. */
 #define WORLD_SIZE 10
 
-/**
- * \brief Gère les événements SDL (clavier, quit).
- *
- * Touches supportées :
- * - Z/Q/S/D : déplacer la vue
- * - A/E : zoomer / dézoomer
- * - Espace : pause
- * - Échap / fermeture : quitter
- *
- * \param event Événement SDL à traiter.
- * \param world Pointeur vers le monde.
- * \param isPaused Pointeur vers l'état de pause.
- * \return 0 pour quitter, 1 pour continuer.
- */
 int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     /**
-     * @brief Gère les actions possible à partir de SDL et execute les actions
-     * adéquat: Si zqsd : déplace la vision du monde respectivement en haut
-     * droite bas gauche Si a et e : zoom la vision du monde Si espace : passe à
-     * l'itération suivante
-     * @param event L'événement à traiter.
-     * @param world Le monde à modifier.
-     * @return 0 si la boucle est interrompue, avec SPC ou SDL_QUIT
-     * @return 1 sinon
+     * \brief Gère les événements SDL (clavier, quit).
+     *
+     * Touches supportées :
+     * - Z/Q/S/D : déplacer la vue
+     * - A/E : zoomer / dézoomer
+     * - Espace : pause
+     * - Échap / fermeture : quitter
+     *
+     * \param event Événement SDL à traiter.
+     * \param world Pointeur vers le monde.
+     * \param isPaused Pointeur vers l'état de pause.
+     * \return 0 pour quitter, 1 pour continuer.
      */
     switch (event.type) {
     case SDL_QUIT:
@@ -78,31 +68,24 @@ int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     return 1;
 }
 
-/**
- * \brief Gère les événements en mode terminal (entrée standard).
- *
- * Touches supportées :
- * - Z/Q/S/D : déplacer la vue
- * - A/E : zoomer / dézoomer
- * - K : quitter
- *
- * \param world Pointeur vers le monde.
- * \return 0 pour quitter, 1 pour continuer.
- */
 int TerminalUserEvent(World *world) {
     /**
-     * @brief Gère les actions possible à partir de SDL et execute les actions
-     * adéquat: Si zqsd : déplace la vision du monde respectivement en haut
-     * droite bas gauche Si a et e : zoom la vision du monde Si espace : passe à
-     * l'itération suivante
-     * @param event L'événement à traiter.
-     * @param world Le monde à modifier.
-     * @return 0 si la boucle est interrompue, avec SPC ou SDL_QUIT
-     * @return 1 sinon
+     * \brief Gère les événements en mode terminal (entrée standard).
+     *
+     * Touches supportées :
+     * - Z/Q/S/D : déplacer la vue
+     * - A/E : zoomer / dézoomer
+     * - K : quitter
+     *
+     * \param world Pointeur vers le monde.
+     * \return 0 pour quitter, 1 pour continuer.
      */
     char input;
-    scanf("%c%*c", &input);
+    scanf("%c", &input);
     switch (input) {
+    case '\n':
+        *next_iteration = true;
+        break;
     case 'z':
         DecrementOffsetY(world);
         break;
@@ -129,16 +112,17 @@ int TerminalUserEvent(World *world) {
     return 1;
 }
 
-/**
- * \brief Point d'entrée du programme.
- *
- * Initialise le monde, le remplit aléatoirement et lance l'affichage terminal.
- *
- * \param argc Nombre d'arguments.
- * \param argv Tableau d'arguments.
- * \return EXIT_SUCCESS en cas de succès.
- */
 int main(int argc, char *argv[]) {
+    /**
+     * \brief Point d'entrée du programme.
+     *
+     * Initialise le monde, le remplit aléatoirement et lance l'affichage
+     * terminal.
+     *
+     * \param argc Nombre d'arguments.
+     * \param argv Tableau d'arguments.
+     * \return 0 si tout s'est bien passé
+     */
     (void)argc;
     (void)argv;
 
@@ -147,18 +131,117 @@ int main(int argc, char *argv[]) {
     World *w = InitWorld(WORLD_SIZE);
     RandomizeWorld(w);
 
-    PrintInfoWorld(w);
+    bool program_on = true;
+    bool next_iteration = false;
 
-    WorldToDisplay *affichage = WorldToDisplayFromWorld(w);
+    WorldToDisplay *display;
+    Cell **perception;
+    Cell **tmp;
 
-    return Display(affichage);
-    // bool program_on = true;
+    while (program_on) {
+        display = WorldToDisplayFromWorld(w);
+        Display(display);
 
-    // while (program_on)
-    // {
-    // }
+        TerminalUserEvent(w, &next_iteration);
+
+        if (next_iteration) {
+            tmp = InitCell2D(w->size);
+
+            for (int y = 0; y < w->size; y++) {
+                for (int x = 0; x < w->size; x++) {
+                    perception = GetPerseption(
+                        w, x, y); // tableau 3x3 autour de la cellule
+                    SetValueTabCell(tmp, x, y,
+                                    NewState(GetCellWorld(w, x, y),
+                                             GetNbNeighbors(perception)));
+                }
+            }
+
+            SwitchTabCellWorld(w, tmp);
+
+            next_iteration = false;
+        }
+    }
+
+    // Libération du tableau temporaire
+    for (int i = 0; i < w->size; i++)
+        free(tmp[i]);
+    free(tmp);
+
+    DeletePerception(perception);
+
+    FreeWorldToDisplay(display);
 
     DeleteWorld(w);
 
     return 0;
 }
+
+/*
+(void)argc;
+(void)argv;
+
+srand(time(NULL));
+
+// Création du monde
+World *world = InitWorld(WORLD_SIZE);
+
+if (world == NULL)
+{
+printf("Erreur : impossible de créer le monde\n");
+return 1;
+}
+
+// Remplissage aléatoire du monde
+RandomizeWorld(world);
+
+// Création de l'affichage SDL
+SDLDisplay display;
+
+if (!InitSDLDisplay(&display, WINDOW_SIZE))
+{
+printf("Erreur : impossible d'initialiser SDLDisplay\n");
+DeleteWorld(world);
+free(world);
+return 1;
+}
+
+bool programOn = true;
+
+while (programOn)
+{
+SDL_Event event;
+
+// On gère seulement la fermeture de la fenêtre
+while (SDL_PollEvent(&event))
+{
+if (event.type == SDL_QUIT)
+{
+programOn = false;
+}
+}
+
+// On prépare uniquement la partie du monde à afficher
+WorldToDisplay *worldToDisplay = WorldToDisplayFromWorld(world);
+
+if (worldToDisplay != NULL)
+{
+// Affichage SDL
+RenderSDLDisn cas de succès.play(&display, worldToDisplay);
+
+// Libération du WorldToDisplay
+FreeWorldToDisplay(worldToDisplay);
+free(worldToDisplay);
+}
+
+SDL_Delay(16);
+}
+
+// Nettoyage final
+DestroySDLDisplay(&display);
+
+DeleteWorld(world);
+free(world);
+
+return 0;
+*/

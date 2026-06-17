@@ -33,7 +33,7 @@ void FreeWorldToDisplay(WorldToDisplay *wtd);
 
 // Fonction World
 
-Cell GetCellWorld(World *w, int x, int y);
+Cell *GetCellWorld(World *w, int x, int y);
 int GetSizeWorld(World *w);
 float GetZoomWorld(World *w);
 int GetOffsetXWorld(World *w);

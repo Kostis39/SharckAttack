@@ -21,7 +21,8 @@ int GetNbNeighbors(Cell **c) {
 
     for (int y = 0; y < around; ++y) {
         for (int x = 0; x < around; ++x) {
-            ++nbNeightbors;
+            if (c[x][y].state && (x != 1 || y != 1))
+                ++nbNeightbors;
         }
     }
     return nbNeightbors;

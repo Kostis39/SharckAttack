@@ -6,7 +6,8 @@
 #include "mj.h"
 
 /**
- * \brief Copie l'état du monde temporaire vers le monde principal, puis réinitialise le temporaire.
+ * \brief Copie l'état du monde temporaire vers le monde principal, puis
+ * réinitialise le temporaire.
  *
  * Cette fonction réalise un double-buffering : les nouveaux états sont calculés
  * dans worldTmp puis appliqués à worldNow. Le tableau temporaire est ensuite
@@ -15,18 +16,15 @@
  * \param worldNow Pointeur vers le monde principal.
  * \param worldTmp Tableau temporaire contenant les nouveaux états.
  */
-void SwitchTabCellWorld(World *worldNow, Cell **worldTmp)
-{
+void SwitchTabCellWorld(World *worldNow, Cell **worldTmp) {
     if (worldNow == NULL || worldNow->tab == NULL || worldTmp == NULL)
         return;
 
     int size = worldNow->size;
-    for (int y = 0; y < size; ++y)
-    {
-        for (int x = 0; x < size; ++x)
-        {
-            SetStateCell(&worldNow->tab[y][x], IsAlive(&worldTmp[y][x]));
-            SetStateCell(&worldTmp[y][x], false);
+    for (int y = 0; y < size; ++y) {
+        for (int x = 0; x < size; ++x) {
+            SetStateCell(&worldNow->tab[x][y], IsAlive(&worldTmp[x][y]));
+            SetStateCell(&worldTmp[x][y], false);
         }
     }
 }
@@ -38,7 +36,6 @@ void SwitchTabCellWorld(World *worldNow, Cell **worldTmp)
  * \param y Coordonnée y.
  * \param val Nouvel état : true pour vivante, false pour morte.
  */
-void SetValueTabCell(Cell **tab, int x, int y, bool val)
-{
+void SetValueTabCell(Cell **tab, int x, int y, bool val) {
     SetStateCell(&tab[y][x], val);
 }
