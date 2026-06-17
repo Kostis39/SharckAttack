@@ -2,62 +2,6 @@
 
 #define COEFF_ZOOM 0.1f
 
-// Fonction Cell
-
-bool GetStateCell(Cell *c)
-{
-    return c->state;
-}
-
-void SwitchStateCell(Cell *c)
-{
-    c->state = !c->state;
-}
-
-void SetStateCell(Cell *c, bool val)
-{
-    c->state = val;
-}
-
-Cell **InitCell2DToFalse(int size)
-{
-    Cell **tab = calloc(size, sizeof(Cell *));
-    for (int y = 0; y < size; ++y)
-    {
-        tab[y] = calloc(size, sizeof(Cell));
-    }
-    return tab;
-}
-
-Cell **InitCell2DToFalse(int size)
-{
-    Cell **tab = calloc(size, sizeof(Cell *));
-    if (tab == NULL)
-    {
-        return NULL;
-    }
-    for (int y = 0; y < size; ++y)
-    {
-        tab[y] = calloc(size, sizeof(Cell));
-        if (tab[y] == NULL)
-        {
-            return NULL;
-        }
-    }
-    return tab;
-}
-
-void FillCell2DToFalse(Cell **tab, int size)
-{
-    for (int y = 0; y < size; ++y)
-    {
-        for (int x = 0; x < size; ++x)
-        {
-            SetStateCell(&tab[y][x], false);
-        }
-    }
-}
-
 World *InitWorld(int size)
 {
     World *world = calloc(size, sizeof(World));

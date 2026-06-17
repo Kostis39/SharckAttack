@@ -1,16 +1,9 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+#include "cell.h"
 #include <stdbool.h>
 #include <stdlib.h>
-/**
- * \struct Cell
- * \brief Représente une cellule, elle est soit vivante soit morte.
- */
-typedef struct
-{
-  bool state; /**< Staut de la cellule, True: vivant, False: mort. */
-} Cell;
 
 /**
  * \struct World
@@ -30,12 +23,6 @@ typedef struct
   int size;   /**< Taille du tableau à afficher, la meme taille en width et height */
 } WorldToDisplay;
 
-// Fonction Cell
-
-bool GetStateCell(Cell *c);
-void SwitchStateCell(Cell *c);
-void SetStateCell(Cell *c, bool val);
-
 // Fonction World Display
 
 Cell **GetTabOfWorlToDisplay(WorldToDisplay *world);
@@ -50,10 +37,6 @@ int GetSizeWorld(World *w);
 float GetZoomWorld(World *w);
 int GetOffsetXWorld(World *w);
 int GetOffsetYWorld(World *w);
-
-Cell **InitCell2D(int size);
-void FillCell2DToFalse(Cell **tab, int size);
-void FillCell2DToRandom(Cell **tab, int size);
 
 World *InitWorld(int size);
 
