@@ -21,7 +21,7 @@ typedef struct
 
 bool GetStateCell(Cell *c);
 void SwitchStateCell(Cell *c);
-void SetStateCell(Cell *c);
+void SetStateCell(Cell *c, bool val);
 
 // Fonction World
 
