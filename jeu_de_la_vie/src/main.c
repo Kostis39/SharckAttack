@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "world.h"
 #include "cell.h"
@@ -8,7 +9,7 @@
 #include "SDLDisplay.h"
 #include "terminalDisplay.h"
 
-#define WORLD_SIZE 50
+#define WORLD_SIZE 10
 
 void SDLUserEvent(SDL_Event event, World *world)
 {
@@ -72,6 +73,8 @@ int main(int argc, char *argv[])
     (void)argc;
     (void)argv;
 
+    srand(time(NULL));
+
     World *w = InitWorld(WORLD_SIZE);
     RandomizeWorld(w);
 
@@ -80,7 +83,7 @@ int main(int argc, char *argv[])
 
     WorldToDisplay *affichage = WorldToDisplayFromWorld(w);
 
-    int ok = Display(affichage);
+    return Display(affichage);
     // bool program_on = true;
 
     // while (program_on)
