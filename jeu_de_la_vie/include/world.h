@@ -38,7 +38,7 @@ void SetStateCell(Cell *c, bool val);
 
 // Fonction World Display
 
-Cell **GetTabOfWorlToDisplay(WorldToDisplay *world);
+Cell **GetTabOfWorldToDisplay(WorldToDisplay *world);
 int GetSizeOfWorldToDisplay(WorldToDisplay *world);
 WorldToDisplay *WorldToDisplayFromWorld(World *w);
 void FreeWorldToDisplay(WorldToDisplay *wtd);
