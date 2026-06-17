@@ -17,6 +17,16 @@ void SetStateCell(Cell *c, bool val)
     c->state = val;
 }
 
+Cell **GetTabOfWorlToDisplay(WorldToDisplay *world)
+{
+    return world->tab;
+}
+
+int GetSizeOfWorldToDisplay(WorldToDisplay *world)
+{
+    return world->size;
+}
+
 // Fonction World
 
 Cell GetCellWorld(World *w, int x, int y)
