@@ -1,4 +1,4 @@
-#include "sprites/player.h"
+#include "player.h"
 
 void init_player(Player *player,
                  int frame_w,

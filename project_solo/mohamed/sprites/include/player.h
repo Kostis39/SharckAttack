@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include <SDL2/SDL.h>
-#include "sprites/sprites_config.h"
+#include "sprites_config.h"
 
 typedef struct {
     SDL_Rect dst;
