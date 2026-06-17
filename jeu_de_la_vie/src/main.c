@@ -13,6 +13,15 @@
 
 void SDLUserEvent(SDL_Event event, World *world, bool *next_iteration)
 {
+    /**
+     * @brief Gère les actions possible à partir de SDL et execute les actions adéquat:
+     * Si zqsd : déplace la vision du monde respectivement en haut droite bas gauche
+     * Si a et e : zoom la vision du monde
+     * Si espace : passe à l'itération suivante
+     * @param event L'événement à traiter.
+     * @param world Le monde à modifier.
+     * @param next_iteration Un boolean notifiant si on doit passer à la nouvelle itération.
+     */
     switch (event.type)
     {
     case SDLK_SPACE:
@@ -43,6 +52,15 @@ void SDLUserEvent(SDL_Event event, World *world, bool *next_iteration)
 
 void TerminalUserEvent(char *entry, World *world, bool *next_iteration)
 {
+    /**
+     * @brief Gère les actions possible à partir du terminal et execute les actions adéquat:
+     * Si zqsd : déplace la vision du monde respectivement en haut droite bas gauche
+     * Si a et e : zoom la vision du monde
+     * Si espace : passe à l'itération suivante
+     * @param entry L'événement à traiter.
+     * @param world Le monde à modifier.
+     * @param next_iteration Un boolean notifiant si on doit passer à la nouvelle itération.
+     */
     if (entry == NULL)
         return;
 
