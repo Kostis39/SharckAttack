@@ -29,4 +29,5 @@ World *InitWorld(int size)
     world->OffsetY = 0;
     world->size = size;
     world->zoomDisplay = 1;
+    return world;
 }
