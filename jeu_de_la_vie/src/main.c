@@ -37,6 +37,36 @@ void SDLUserEvent(SDL_Event event, World *world)
     }
 }
 
+void TerminalUserEvent(char *entry, World *world)
+{
+    if (entry == NULL || entry[0] == '\0')
+        return;
+
+    switch (entry[0])
+    {
+    case 'z':
+        DecrementOffsetY(world);
+        break;
+    case 's':
+        IncrementOffsetY(world);
+        break;
+    case 'q':
+        DecrementOffsetX(world);
+        break;
+    case 'd':
+        IncrementOffsetX(world);
+        break;
+    case 'a':
+        IncrementZoom(world);
+        break;
+    case 'e':
+        DecrementZoom(world);
+        break;
+    default:
+        break;
+    }
+}
+
 int main(int argc, char *argv[])
 {
     (void)argc;
