@@ -1,4 +1,6 @@
 #include "sprite.h"
+#include <SDL2/SDL_events.h>
+#include <SDL2/SDL_keycode.h>
 #include <SDL2/SDL_rect.h>
 #include <SDL2/SDL_render.h>
 #include <stdlib.h>
@@ -10,6 +12,8 @@ typedef struct player {
   int nbSprite;
   int currentFrame;
   int scale;
+  int mapW;
+  int mapH;
   SDL_Texture *imageTexture;
 } player_t;
 
@@ -33,6 +37,8 @@ player_t *spawnPlayer(char *path, SDL_Renderer *ren, int mapW, int mapH,
   p->src.x = 0;
   p->src.y = 0;
 
+  p->mapW = mapW;
+  p->mapH = mapH;
   p->pos.w = p->src.w * p->scale;
   p->pos.h = p->src.h * p->scale;
   p->pos.x = (mapW - p->pos.w) / 2;
@@ -42,7 +48,29 @@ player_t *spawnPlayer(char *path, SDL_Renderer *ren, int mapW, int mapH,
   return p;
 }
 
-player_t *animate(player_t *p) { return p; }
+player_t *animate(player_t *p) {
+  p->currentFrame = (p->currentFrame + 1) % p->nbSprite;
+  p->src.x = p->currentFrame * p->src.w;
+  return p;
+}
+
+player_t *playerState(player_t *p, SDL_Texture *newImage, int frameCount,
+                      int direction) {
+  int texW, texH;
+  SDL_QueryTexture(newImage, NULL, NULL, &texW, &texH);
+  p->src.w = texW / frameCount;
+  p->src.h = texH;
+  p->src.x = 0;
+  p->nbSprite = frameCount;
+  p->currentFrame = 0;
+  p->imageTexture = newImage;
+  p->pos.w = p->src.w * p->scale;
+  p->pos.h = p->src.h * p->scale;
+  p->pos.x = (p->mapW - p->pos.w) / 2;
+  p->pos.y = (p->mapH - p->pos.h) / 2;
+  p->direction = direction;
+  return p;
+}
 
 int main(int argc, char **argv) {
   (void)argc;
@@ -81,7 +109,13 @@ int main(int argc, char **argv) {
 
   player_t *player =
       spawnPlayer("assets/robotSprite.png", ren, maxX, maxY, 12, 4);
-
+  SDL_Texture *playerRunning =
+      load_texture_from_image("assets/robotSprite_run.png", ren);
+  SDL_Texture *playerIdle =
+      load_texture_from_image("assets/robotSprite.png", ren);
+  Uint32 lastAnimTime = SDL_GetTicks();
+  const Uint32 animDelay = 80;
+  int direction = 1;
   while (running) {
     while (SDL_PollEvent(&event)) {
       if (event.type == SDL_KEYDOWN) {
@@ -89,12 +123,41 @@ int main(int argc, char **argv) {
         case SDLK_ESCAPE:
           running = 0;
           break;
+
+        case SDLK_LEFT:
+          if (event.key.repeat == 0) {
+            direction = -1;
+            playerState(player, playerRunning, 12, direction);
+          }
+          break;
+
+        case SDLK_RIGHT:
+          if (event.key.repeat == 0) {
+            direction = 1;
+            playerState(player, playerRunning, 12, direction);
+          }
+          break;
+        }
+      } else if (event.type == SDL_KEYUP) {
+        if (event.key.keysym.sym == SDLK_LEFT ||
+            event.key.keysym.sym == SDLK_RIGHT) {
+          playerState(player, playerIdle, 12, direction);
         }
       }
     }
+
+    Uint32 now = SDL_GetTicks();
+    if (now - lastAnimTime >= animDelay) {
+      animate(player);
+      lastAnimTime = now;
+    }
+
     SDL_RenderCopy(ren, background, &source,
                    &destination); // Création de l'élément à afficher
-    SDL_RenderCopy(ren, player->imageTexture, &player->src, &player->pos);
+    SDL_RendererFlip flip =
+        (player->direction == -1) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
+    SDL_RenderCopyEx(ren, player->imageTexture, &player->src, &player->pos, 0,
+                     NULL, flip);
     SDL_RenderPresent(ren);
   }
   SDL_DestroyTexture(player->imageTexture);
