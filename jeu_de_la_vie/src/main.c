@@ -25,7 +25,7 @@ void SDLUserEvent(SDL_Event event, World *world, bool *next_iteration)
     switch (event.type)
     {
     case SDLK_SPACE:
-        *next_iteration += 1;
+        *next_iteration = true;
         break;
     case SDLK_z:
         DecrementOffsetY(world);
@@ -67,7 +67,7 @@ void TerminalUserEvent(char *entry, World *world, bool *next_iteration)
     switch (entry[0])
     {
     case '\0':
-        *next_iteration += 1;
+        *next_iteration = true;
     case 'z':
         DecrementOffsetY(world);
         break;

@@ -6,4 +6,5 @@ obj/
 bin/
 build/
 
-
+compile_commands.json
+.cache
