@@ -5,12 +5,16 @@
 
 typedef struct player {
   SDL_Rect pos;
+  SDL_Rect src;
   int direction;
+  int nbSprite;
+  int currentFrame;
+  int scale;
   SDL_Texture *imageTexture;
-
 } player_t;
 
-player_t *spawnPlayer(char *path, SDL_Renderer *ren, int mapW, int mapH) {
+player_t *spawnPlayer(char *path, SDL_Renderer *ren, int mapW, int mapH,
+                      int nbSprite, int scale) {
   player_t *p = malloc(sizeof(player_t));
   if (!p)
     exit(EXIT_FAILURE);
@@ -21,15 +25,24 @@ player_t *spawnPlayer(char *path, SDL_Renderer *ren, int mapW, int mapH) {
 
   int texW, texH;
   SDL_QueryTexture(p->imageTexture, NULL, NULL, &texW, &texH);
+  p->scale = scale;
+  p->nbSprite = nbSprite;
+  p->currentFrame = 0;
+  p->src.w = texW / nbSprite;
+  p->src.h = texH;
+  p->src.x = 0;
+  p->src.y = 0;
 
-  p->pos.w = texW;
-  p->pos.h = texH;
-  p->pos.x = (mapW - texW) / 2;
-  p->pos.y = (mapH - texH) / 2;
+  p->pos.w = p->src.w * p->scale;
+  p->pos.h = p->src.h * p->scale;
+  p->pos.x = (mapW - p->pos.w) / 2;
+  p->pos.y = (mapH - p->pos.h) / 2;
   p->direction = 0;
 
   return p;
 }
+
+player_t *animate(player_t *p) { return p; }
 
 int main(int argc, char **argv) {
   (void)argc;
@@ -66,7 +79,8 @@ int main(int argc, char **argv) {
     SDL_QueryTexture(background, NULL, NULL, &source.w, &source.h);
   }
 
-  player_t *player = spawnPlayer("assets/robotSprite.png", ren, maxX, maxY);
+  player_t *player =
+      spawnPlayer("assets/robotSprite.png", ren, maxX, maxY, 12, 4);
 
   while (running) {
     while (SDL_PollEvent(&event)) {
@@ -80,7 +94,7 @@ int main(int argc, char **argv) {
     }
     SDL_RenderCopy(ren, background, &source,
                    &destination); // Création de l'élément à afficher
-    SDL_RenderCopy(ren, player->imageTexture, NULL, &player->pos);
+    SDL_RenderCopy(ren, player->imageTexture, &player->src, &player->pos);
     SDL_RenderPresent(ren);
   }
   SDL_DestroyTexture(player->imageTexture);

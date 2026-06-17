@@ -50,6 +50,7 @@ int GetSizeWorld(World *w);
 float GetZoomWorld(World *w);
 int GetOffsetXWorld(World *w);
 int GetOffsetYWorld(World *w);
+Cell **InitCell2DToFalse(int size);
 
 Cell **GetPerseption(World *w, int x, int y);
 void DeletePerception(Cell **perception);

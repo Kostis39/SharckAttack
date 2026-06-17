@@ -19,6 +19,26 @@ void SetStateCell(Cell *c, bool val)
     c->state = val;
 }
 
+Cell **InitCell2DToFalse(int size)
+{
+    Cell **tab = calloc(size, sizeof(Cell *));
+    for (int y = 0; y < size; ++y)
+    {
+        tab[y] = calloc(size, sizeof(Cell));
+    }
+    return tab;
+}
+
+Cell **InitCell2DToFalse(int size)
+{
+    Cell **tab = calloc(size, sizeof(Cell *));
+    for (int y = 0; y < size; ++y)
+    {
+        tab[y] = calloc(size, sizeof(Cell));
+    }
+    return tab;
+}
+
 // Fonction World Display
 
 Cell **GetTabOfWorlToDisplay(WorldToDisplay *wtd)
@@ -36,13 +56,13 @@ WorldToDisplay *WorldToDisplayFromWorld(World *w)
     WorldToDisplay *result;
     result->size = w->size / w->zoomDisplay;
 
-    result->tab = malloc(result->size * sizeof(Cell *));
+    result->tab = calloc(result->size, sizeof(Cell *));
     if (!result->tab)
         return NULL;
 
     for (int i = 0; i < result->size; i++)
     {
-        result->tab[i] = malloc(result->size * sizeof(Cell));
+        result->tab[i] = calloc(result->size, sizeof(Cell));
         if (!result->tab[i])
         {
             for (int j = 0; j < i; j++)
@@ -99,13 +119,13 @@ int GetOffsetYWorld(World *w)
 
 Cell **GetPerseption(World *w, int x, int y)
 {
-    Cell **perception = malloc(3 * sizeof(Cell *));
+    Cell **perception = calloc(3, sizeof(Cell *));
     if (!perception)
         return NULL;
 
     for (int i = 0; i < 3; i++)
     {
-        perception[i] = malloc(3 * sizeof(Cell));
+        perception[i] = calloc(3, sizeof(Cell));
         if (!perception[i])
         {
             for (int j = 0; j < i; j++)
