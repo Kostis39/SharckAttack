@@ -2,26 +2,26 @@
 
 #include <stdio.h>
 
+/*
+    Couleurs utilisées pour l'affichage.
+    RGB = Red, Green, Blue.
+*/
+
+#define DEAD_CELL_R 255
+#define DEAD_CELL_G 255
+#define DEAD_CELL_B 255
+
+#define ALIVE_CELL_R 0
+#define ALIVE_CELL_G 0
+#define ALIVE_CELL_B 0
+
+#define GRID_R 0
+#define GRID_G 100
+#define GRID_B 255
+
 #define BACKGROUND_R 20
 #define BACKGROUND_G 20
 #define BACKGROUND_B 20
-
-#define CELL_R 230
-#define CELL_G 230
-#define CELL_B 230
-
-// Permet d'avoir un modulo toujours positif
-int ModuloPositive(int value, int modulo)
-{
-    int result = value % modulo;
-
-    if (result < 0)
-    {
-        result += modulo;
-    }
-
-    return result;
-}
 
 // Initialise la fenêtre SDL
 bool InitSDLDisplay(SDLDisplay *display, int windowSize)
@@ -72,7 +72,7 @@ bool InitSDLDisplay(SDLDisplay *display, int windowSize)
     return true;
 }
 
-// Détruit la fenêtre SDL
+// Détruit proprement la fenêtre et le renderer
 void DestroySDLDisplay(SDLDisplay *display)
 {
     if (display == NULL)
@@ -95,7 +95,7 @@ void DestroySDLDisplay(SDLDisplay *display)
     SDL_Quit();
 }
 
-// Efface la fenêtre
+// Efface la fenêtre avant de redessiner
 void ClearSDLDisplay(SDLDisplay *display)
 {
     if (display == NULL || display->renderer == NULL)
@@ -114,7 +114,7 @@ void ClearSDLDisplay(SDLDisplay *display)
     SDL_RenderClear(display->renderer);
 }
 
-// Donne la taille d'une cellule affichée
+// Calcule la taille d'une cellule en pixels
 int GetCellSizeSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay)
 {
     if (display == NULL || worldToDisplay == NULL)
@@ -139,3 +139,153 @@ int GetCellSizeSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay)
     return cellSize;
 }
 
+// Affiche le tableau reçu sous forme de grille SDL
+void RenderSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay)
+{
+    if (display == NULL || worldToDisplay == NULL)
+    {
+        return;
+    }
+
+    ClearSDLDisplay(display);
+
+    Cell **tab = GetTabOfWorldToDisplay(worldToDisplay);
+    int displaySize = GetSizeOfWorldToDisplay(worldToDisplay);
+    int cellSize = GetCellSizeSDLDisplay(display, worldToDisplay);
+
+    if (tab == NULL || displaySize <= 0)
+    {
+        SDL_RenderPresent(display->renderer);
+        return;
+    }
+
+    for (int y = 0; y < displaySize; y++)
+    {
+        for (int x = 0; x < displaySize; x++)
+        {
+            SDL_Rect cellRect;
+
+            cellRect.x = x * cellSize;
+            cellRect.y = y * cellSize;
+            cellRect.w = cellSize;
+            cellRect.h = cellSize;
+
+            if (IsAlive(&(tab[y][x])))
+            {
+                // Cellule vivante : noir
+                SDL_SetRenderDrawColor(
+                    display->renderer,
+                    ALIVE_CELL_R,
+                    ALIVE_CELL_G,
+                    ALIVE_CELL_B,
+                    255
+                );
+            }
+            else
+            {
+                // Cellule morte : blanc
+                SDL_SetRenderDrawColor(
+                    display->renderer,
+                    DEAD_CELL_R,
+                    DEAD_CELL_G,
+                    DEAD_CELL_B,
+                    255
+                );
+            }
+
+            SDL_RenderFillRect(display->renderer, &cellRect);
+
+            // Dessine le contour de la cellule pour voir la grille
+            if (cellSize >= 3)
+            {
+                SDL_SetRenderDrawColor(
+                    display->renderer,
+                    GRID_R,
+                    GRID_G,
+                    GRID_B,
+                    255
+                );
+
+                SDL_RenderDrawRect(display->renderer, &cellRect);
+            }
+        }
+    }
+
+    SDL_RenderPresent(display->renderer);
+}
+
+// Convertit un clic souris en coordonnées dans le monde
+bool GetCellCoordSDLDisplay(
+    SDLDisplay *display,
+    World *world,
+    int mouseX,
+    int mouseY,
+    int *cellX,
+    int *cellY
+)
+{
+    if (display == NULL || world == NULL || cellX == NULL || cellY == NULL)
+    {
+        return false;
+    }
+
+    if (mouseX < 0 || mouseY < 0)
+    {
+        return false;
+    }
+
+    if (mouseX >= display->windowSize || mouseY >= display->windowSize)
+    {
+        return false;
+    }
+
+    int worldSize = GetSizeWorld(world);
+    float zoom = GetZoomWorld(world);
+
+    if (worldSize <= 0 || zoom <= 0)
+    {
+        return false;
+    }
+
+    /*
+        Le nombre de cellules affichées dépend du zoom.
+        Exemple :
+        worldSize = 50
+        zoom = 1.0  => on affiche 50 cellules
+        zoom = 2.0  => on affiche 25 cellules
+    */
+    int displaySize = (int)(worldSize / zoom);
+
+    if (displaySize <= 0)
+    {
+        return false;
+    }
+
+    int cellSize = display->windowSize / displaySize;
+
+    if (cellSize <= 0)
+    {
+        return false;
+    }
+
+    int displayX = mouseX / cellSize;
+    int displayY = mouseY / cellSize;
+
+    int offsetX = GetOffsetXWorld(world);
+    int offsetY = GetOffsetYWorld(world);
+
+    *cellX = offsetX + displayX;
+    *cellY = offsetY + displayY;
+
+    if (*cellX < 0 || *cellX >= worldSize)
+    {
+        return false;
+    }
+
+    if (*cellY < 0 || *cellY >= worldSize)
+    {
+        return false;
+    }
+
+    return true;
+}
