@@ -12,6 +12,8 @@ typedef struct player {
   int nbSprite;
   int currentFrame;
   int scale;
+  int mapW;
+  int mapH;
   SDL_Texture *imageTexture;
 } player_t;
 
@@ -35,6 +37,8 @@ player_t *spawnPlayer(char *path, SDL_Renderer *ren, int mapW, int mapH,
   p->src.x = 0;
   p->src.y = 0;
 
+  p->mapW = mapW;
+  p->mapH = mapH;
   p->pos.w = p->src.w * p->scale;
   p->pos.h = p->src.h * p->scale;
   p->pos.x = (mapW - p->pos.w) / 2;
@@ -62,6 +66,8 @@ player_t *playerState(player_t *p, SDL_Texture *newImage, int frameCount,
   p->imageTexture = newImage;
   p->pos.w = p->src.w * p->scale;
   p->pos.h = p->src.h * p->scale;
+  p->pos.x = (p->mapW - p->pos.w) / 2;
+  p->pos.y = (p->mapH - p->pos.h) / 2;
   p->direction = direction;
   return p;
 }
