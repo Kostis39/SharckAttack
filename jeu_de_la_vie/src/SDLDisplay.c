@@ -4,16 +4,17 @@
 
 /*
     Couleurs utilisées pour l'affichage.
-    RGB = Red, Green, Blue.
+    Une cellule vivante est noire.
+    Une cellule morte est blanche.
 */
-
-#define DEAD_CELL_R 255
-#define DEAD_CELL_G 255
-#define DEAD_CELL_B 255
 
 #define ALIVE_CELL_R 0
 #define ALIVE_CELL_G 0
 #define ALIVE_CELL_B 0
+
+#define DEAD_CELL_R 255
+#define DEAD_CELL_G 255
+#define DEAD_CELL_B 255
 
 #define GRID_R 0
 #define GRID_G 100
@@ -212,80 +213,4 @@ void RenderSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay)
     }
 
     SDL_RenderPresent(display->renderer);
-}
-
-// Convertit un clic souris en coordonnées dans le monde
-bool GetCellCoordSDLDisplay(
-    SDLDisplay *display,
-    World *world,
-    int mouseX,
-    int mouseY,
-    int *cellX,
-    int *cellY
-)
-{
-    if (display == NULL || world == NULL || cellX == NULL || cellY == NULL)
-    {
-        return false;
-    }
-
-    if (mouseX < 0 || mouseY < 0)
-    {
-        return false;
-    }
-
-    if (mouseX >= display->windowSize || mouseY >= display->windowSize)
-    {
-        return false;
-    }
-
-    int worldSize = GetSizeWorld(world);
-    float zoom = GetZoomWorld(world);
-
-    if (worldSize <= 0 || zoom <= 0)
-    {
-        return false;
-    }
-
-    /*
-        Le nombre de cellules affichées dépend du zoom.
-        Exemple :
-        worldSize = 50
-        zoom = 1.0  => on affiche 50 cellules
-        zoom = 2.0  => on affiche 25 cellules
-    */
-    int displaySize = (int)(worldSize / zoom);
-
-    if (displaySize <= 0)
-    {
-        return false;
-    }
-
-    int cellSize = display->windowSize / displaySize;
-
-    if (cellSize <= 0)
-    {
-        return false;
-    }
-
-    int displayX = mouseX / cellSize;
-    int displayY = mouseY / cellSize;
-
-    int offsetX = GetOffsetXWorld(world);
-    int offsetY = GetOffsetYWorld(world);
-
-    *cellX = offsetX + displayX;
-    *cellY = offsetY + displayY;
-
-    if (*cellX < 0 || *cellX >= worldSize)
-    {
-        return false;
-    }
-
-    if (*cellY < 0 || *cellY >= worldSize)
-    {
-        return false;
-    }
-
-    return true;
 }
