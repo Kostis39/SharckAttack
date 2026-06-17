@@ -4,6 +4,7 @@
 #include "cell.h"
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * \struct World
@@ -40,6 +41,8 @@ int GetOffsetYWorld(World *w);
 
 World *InitWorld(int size);
 void RandomizeWorld(World *w);
+
+void PrintInfoWorld(World *w);
 
 Cell **GetPerseption(World *w, int x, int y);
 void DeletePerception(Cell **perception);

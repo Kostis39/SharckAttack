@@ -48,8 +48,7 @@ int main(int argc, char *argv[])
     World *w = InitWorld(WORLD_SIZE);
     RandomizeWorld(w);
 
-    printf("World: size=%d, zoom=%.2f, OffsetX=%d, OffsetY=%d\n",
-           w->size, w->zoomDisplay, w->OffsetX, w->OffsetY);
+    PrintInfoWorld(w);
 
     WorldToDisplay *affichage = WorldToDisplayFromWorld(w);
 
