@@ -19,3 +19,5 @@ typedef struct SDLdisplay {
 
     int 
 }
+
+#endif
