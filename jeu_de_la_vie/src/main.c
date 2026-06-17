@@ -15,12 +15,13 @@
 #include "world.h"
 
 /** \brief Taille par défaut de la grille du monde. */
-#define WORLD_SIZE 10
+#define WORLD_SIZE 50
 
 /** \brief Taille de la fenêtre SDL*/
 #define WINDOW_SIZE 800
 
-int SDLUserEvent(SDL_Event event, World *world, bool *next_iteration) {
+int SDLUserEvent(SDL_Event event, World *world, bool *next_iteration,
+                 SDLDisplay *display, WorldToDisplay *worldToDisplay) {
     /**
      * \brief Gère les événements SDL (clavier, quit).
      *
@@ -69,6 +70,27 @@ int SDLUserEvent(SDL_Event event, World *world, bool *next_iteration) {
             IncrementZoom(world);
         else if (event.wheel.y < 0)
             DecrementZoom(world);
+        break;
+
+    case SDL_MOUSEBUTTONDOWN:
+        if (event.button.button == SDL_BUTTON_LEFT) {
+            int mouseX = event.button.x;
+            int mouseY = event.button.y;
+
+            int cellSize = GetCellSizeSDLDisplay(display, worldToDisplay);
+
+            int X = mouseX / cellSize;
+            int Y = mouseY / cellSize;
+
+            int realX = world->OffsetY + X;
+            int realY = world->OffsetX + Y;
+
+            // Gestion du modulo
+            realX = ((realX % world->size) + world->size) % world->size;
+            realY = ((realY % world->size) + world->size) % world->size;
+
+            SwitchStateCell(&world->tab[realY][realX]);
+        }
         break;
 
     default:
@@ -183,7 +205,8 @@ void runSDL(World *w) {
     while (program_on) {
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
-            if (!SDLUserEvent(event, w, &next_iteration))
+            if (!SDLUserEvent(event, w, &next_iteration, &display,
+                              worldToDisplay))
                 program_on = false;
         }
 
