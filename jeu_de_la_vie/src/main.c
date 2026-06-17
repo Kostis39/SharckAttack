@@ -76,33 +76,36 @@ int TerminalUserEvent(World *world, bool *next_iteration) {
      * - Z/Q/S/D : déplacer la vue
      * - A/E : zoomer / dézoomer
      * - K : quitter
+     * - N : nouvelle itération
      *
      * \param world Pointeur vers le monde.
+     * \param next_iteration Pointeur vers l'info qui indique si on change
+     * d'itération
      * \return 0 pour quitter, 1 pour continuer.
      */
     char input;
-    scanf("%c", &input);
+    scanf(" %c", &input);
     switch (input) {
-    case '\n':
+    case 'n':
         *next_iteration = true;
         break;
     case 'z':
-        DecrementOffsetY(world);
-        break;
-    case 's':
-        IncrementOffsetY(world);
-        break;
-    case 'q':
         DecrementOffsetX(world);
         break;
-    case 'd':
+    case 's':
         IncrementOffsetX(world);
         break;
+    case 'q':
+        DecrementOffsetY(world);
+        break;
+    case 'd':
+        IncrementOffsetY(world);
+        break;
     case 'a':
-        IncrementZoom(world);
+        DecrementZoom(world);
         break;
     case 'e':
-        DecrementZoom(world);
+        IncrementZoom(world);
         break;
     case 'k': // kill
         return 0;
@@ -142,16 +145,18 @@ int main(int argc, char *argv[]) {
 
     WorldToDisplay *display;
     Cell **perception;
-    Cell **tmp;
+    Cell **tmp = InitCell2D(w->size);
 
     while (program_on) {
         display = WorldToDisplayFromWorld(w);
         Display(display);
+        FreeWorldToDisplay(display);
 
-        TerminalUserEvent(w, &next_iteration);
+        if (!TerminalUserEvent(w, &next_iteration))
+            program_on = false;
 
         if (next_iteration) {
-            tmp = InitCell2D(w->size);
+            FillCell2DToFalse(tmp, w->size);
 
             for (int y = 0; y < w->size; y++) {
                 for (int x = 0; x < w->size; x++) {
@@ -169,17 +174,11 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    // Libération du tableau temporaire
-    for (int i = 0; i < w->size; i++)
-        free(tmp[i]);
-    free(tmp);
+    DeleteCell2D(tmp, w->size);
 
     DeletePerception(perception);
 
-    FreeWorldToDisplay(display);
-
     DeleteWorld(w);
-
     return 0;
 }
 

@@ -215,18 +215,18 @@ WorldToDisplay *WorldToDisplayFromWorld(World *w) {
     if (!result->tab)
         return NULL;
 
-    for (int i = 0; i < result->size; i++) {
-        result->tab[i] = calloc(result->size, sizeof(Cell));
-        if (!result->tab[i]) {
-            for (int j = 0; j < i; j++)
-                free(result->tab[j]);
+    for (int y = 0; y < result->size; y++) {
+        result->tab[y] = calloc(result->size, sizeof(Cell));
+        if (!result->tab[y]) {
+            for (int row = 0; row < y; row++)
+                free(result->tab[row]);
             free(result->tab);
             return NULL;
         }
 
-        for (int j = 0; j < result->size; j++) {
-            result->tab[i][j] =
-                *GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
+        for (int x = 0; x < result->size; x++) {
+            result->tab[y][x] =
+                *GetCellWorld(w, w->OffsetX + x, w->OffsetY + y);
         }
     }
     return result;
