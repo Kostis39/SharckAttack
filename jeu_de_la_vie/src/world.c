@@ -1,5 +1,7 @@
 #include "world.h"
 
+#define COEFF_ZOOM 0.1f
+
 // Fonction Cell
 
 bool GetStateCell(Cell *c)
@@ -17,14 +19,75 @@ void SetStateCell(Cell *c, bool val)
     c->state = val;
 }
 
-Cell **GetTabOfWorlToDisplay(WorldToDisplay *world)
+Cell **InitCell2DToFalse(int size)
 {
-    return world->tab;
+    Cell **tab = calloc(size, sizeof(Cell *));
+    for (int y = 0; y < size; ++y)
+    {
+        tab[y] = calloc(size, sizeof(Cell));
+    }
+    return tab;
 }
 
-int GetSizeOfWorldToDisplay(WorldToDisplay *world)
+Cell **InitCell2DToFalse(int size)
 {
-    return world->size;
+    Cell **tab = calloc(size, sizeof(Cell *));
+    for (int y = 0; y < size; ++y)
+    {
+        tab[y] = calloc(size, sizeof(Cell));
+    }
+    return tab;
+}
+
+// Fonction World Display
+
+Cell **GetTabOfWorlToDisplay(WorldToDisplay *wtd)
+{
+    return wtd->tab;
+}
+
+int GetSizeOfWorldToDisplay(WorldToDisplay *wtd)
+{
+    return wtd->size;
+}
+
+WorldToDisplay *WorldToDisplayFromWorld(World *w)
+{
+    WorldToDisplay *result;
+    result->size = w->size / w->zoomDisplay;
+
+    result->tab = calloc(result->size, sizeof(Cell *));
+    if (!result->tab)
+        return NULL;
+
+    for (int i = 0; i < result->size; i++)
+    {
+        result->tab[i] = calloc(result->size, sizeof(Cell));
+        if (!result->tab[i])
+        {
+            for (int j = 0; j < i; j++)
+                free(result->tab[j]);
+            free(result->tab);
+            return NULL;
+        }
+
+        for (int j = 0; j < result->size; j++)
+        {
+            result->tab[i][j] = GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
+        }
+    }
+    return result;
+}
+
+void FreeWorldToDisplay(WorldToDisplay *wtd)
+{
+    if (!wtd)
+        return;
+    for (int i = 0; i < wtd->size; i++)
+    {
+        free(wtd->tab[i]);
+    }
+    free(wtd->tab);
 }
 
 // Fonction World
@@ -39,7 +102,7 @@ int GetSizeWorld(World *w)
     return w->size;
 }
 
-int GetZoomWorld(World *w)
+float GetZoomWorld(World *w)
 {
     return w->zoomDisplay;
 }
@@ -56,13 +119,13 @@ int GetOffsetYWorld(World *w)
 
 Cell **GetPerseption(World *w, int x, int y)
 {
-    Cell **perception = malloc(3 * sizeof(Cell *));
+    Cell **perception = calloc(3, sizeof(Cell *));
     if (!perception)
         return NULL;
 
     for (int i = 0; i < 3; i++)
     {
-        perception[i] = malloc(3 * sizeof(Cell));
+        perception[i] = calloc(3, sizeof(Cell));
         if (!perception[i])
         {
             for (int j = 0; j < i; j++)
@@ -79,14 +142,29 @@ Cell **GetPerseption(World *w, int x, int y)
     return perception;
 }
 
+void DeletePerception(Cell **perception)
+{
+    if (!perception)
+        return;
+    for (int i = 0; i < 3; i++)
+    {
+        free(perception[i]);
+    }
+    free(perception);
+}
+
 void IncrementZoom(World *w)
 {
-    w->zoomDisplay++;
+    w->zoomDisplay + COEFF_ZOOM;
+    if (w->zoomDisplay > w->size)
+        w->size;
 }
 
 void DecrementZoom(World *w)
 {
-    w->zoomDisplay--;
+    w->zoomDisplay - COEFF_ZOOM;
+    if (w->zoomDisplay < 1)
+        w->zoomDisplay = 1;
 }
 
 void IncrementOffsetX(World *w)
@@ -107,4 +185,15 @@ void IncrementOffsetY(World *w)
 void DecrementOffsetY(World *w)
 {
     w->OffsetY--;
+}
+
+void DeleteWorld(World *w)
+{
+    if (!w)
+        return;
+    for (int i = 0; i < w->size; i++)
+    {
+        free(w->tab[i]);
+    }
+    free(w->tab);
 }

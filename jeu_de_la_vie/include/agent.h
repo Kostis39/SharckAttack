@@ -3,7 +3,7 @@
 
 #include "world.h"
 
-int GetNbNeighbors(Cell *c);
+int GetNbNeighbors(Cell **c);
 bool NewState(Cell *c);
 
 #endif

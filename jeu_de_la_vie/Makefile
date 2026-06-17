@@ -2,7 +2,7 @@ OUTPUT_FOLDER=bin
 OBJECTS_FOLDER=build
 SOURCES_FOLDER=src
 INCLUDES=-I$(SOURCES_FOLDER)
-CFLAGS=-Wall -Wextra -g
+CFLAGS=-Wall -Wextra -g -Iinclude
 SOURCES=$(wildcard $(SOURCES_FOLDER)/*.c)
 OBJECTS=$(patsubst $(SOURCES_FOLDER)%.c,$(OBJECTS_FOLDER)%.o,$(SOURCES))
 

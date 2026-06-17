@@ -13,22 +13,39 @@ typedef struct
 
     int windowSize;
 
-    bool isDragging;
-    int lastMouseX;
-    int lastMouseY;
-
 } SDLDisplay;
 
-// Initialisation et destruction de l'affichage SDL
-
+// Initialise la fenêtre SDL
 bool InitSDLDisplay(SDLDisplay *display, int windowSize);
 
+// Détruit la fenêtre SDL
 void DestroySDLDisplay(SDLDisplay *display);
 
-// Affichage du monde
+// Efface la fenêtre
+void ClearSDLDisplay(SDLDisplay *display);
 
-void RenderSDLDisplay(SDLDisplay *display, World *world);
+// Affiche le tableau donné
+void RenderSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay);
 
-void ClearSDLDisplay(SDLDisplay *display, World *world);
+// Donne la taille d'une cellule affichée
+int GetCellSizeSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay);
+
+// Convertit un clic souris en coordonnées dans le vrai monde
+bool GetCellCoordSDLDisplay(
+    SDLDisplay *display,
+    World *world,
+    int mouseX,
+    int mouseY,
+    int *cellX,
+    int *cellY
+);
+
+// Change l'état de la cellule cliquée
+void SwitchCellFromMouseSDLDisplay(
+    SDLDisplay *display,
+    World *world,
+    int mouseX,
+    int mouseY
+);
 
 #endif
