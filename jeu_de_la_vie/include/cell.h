@@ -13,7 +13,7 @@ typedef struct
     bool state; /**< Staut de la cellule, True: vivant, False: mort. */
 } Cell;
 
-bool GetStateCell(Cell *c);
+bool IsAlive(Cell *c);
 void SwitchStateCell(Cell *c);
 void SetStateCell(Cell *c, bool val);
 
