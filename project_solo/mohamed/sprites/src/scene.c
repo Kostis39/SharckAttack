@@ -1,4 +1,4 @@
-#include "sprites/scene.h"
+#include "scene.h"
 
 static void draw_rect_layer(SDL_Renderer *renderer,
                             int scroll_x,

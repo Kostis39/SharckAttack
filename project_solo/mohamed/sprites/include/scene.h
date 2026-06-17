@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include <SDL2/SDL.h>
-#include "sprites/sprites_config.h"
+#include "sprites_config.h"
 
 void draw_background(SDL_Renderer *renderer,
                      SDL_Texture *background,

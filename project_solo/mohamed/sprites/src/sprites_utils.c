@@ -1,4 +1,4 @@
-#include "sprites/sprites_utils.h"
+#include "sprites_utils.h"
 #include <stdio.h>
 
 void clean(SDL_Window *window,

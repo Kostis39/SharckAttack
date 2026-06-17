@@ -4,11 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "sprites/sprites_config.h"
-#include "sprites/sprites_utils.h"
-#include "sprites/scene.h"
-#include "sprites/player.h"
-#include "sprites/enemy.h"
+#include "sprites_config.h"
+#include "sprites_utils.h"
+#include "scene.h"
+#include "player.h"
+#include "enemy.h"
 
 int main(int argc, char **argv) {
     (void)argc;
