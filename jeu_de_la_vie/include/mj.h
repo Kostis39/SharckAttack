@@ -4,5 +4,6 @@
 #include "world.h"
 
 void SwitchTabCellWorld(World *worldAct, Cell **worldTmp);
+void SetValueTabCell(Cell **tab, int x, int y, bool val);
 
 #endif
