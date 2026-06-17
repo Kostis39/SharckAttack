@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define IMG_PATH "src/dvd_logo.png"
+#define IMG_PATH "assets/dvd_logo.png"
 #define MAX_FENETRES 10
 
 typedef struct {
