@@ -14,6 +14,17 @@ World *InitWorld(int size)
     return world;
 }
 
+void RandomizeWorld(World *w)
+{
+    for (int y = 0; y < w->size; y++)
+    {
+        for (int x = 0; x < w->size; x++)
+        {
+            w->tab[y][x].state = (rand() % 2 == 0);
+        }
+    }
+}
+
 // Fonction World Display
 
 Cell **GetTabOfWorlToDisplay(WorldToDisplay *wtd)
