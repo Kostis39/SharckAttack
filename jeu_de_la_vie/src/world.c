@@ -2,6 +2,8 @@
 
 #define COEFF_ZOOM 0.1f
 
+// Fonction World
+
 World *InitWorld(int size)
 {
     World *world = calloc(size, sizeof(World));
@@ -24,62 +26,6 @@ void RandomizeWorld(World *w)
         }
     }
 }
-
-// Fonction World Display
-
-Cell **GetTabOfWorlToDisplay(WorldToDisplay *wtd)
-{
-    return wtd->tab;
-}
-
-int GetSizeOfWorldToDisplay(WorldToDisplay *wtd)
-{
-    return wtd->size;
-}
-
-WorldToDisplay *WorldToDisplayFromWorld(World *w)
-{
-    WorldToDisplay *result = calloc(1, sizeof(WorldToDisplay));
-    if (!result)
-        return NULL;
-
-    result->size = w->size / w->zoomDisplay;
-
-    result->tab = calloc(result->size, sizeof(Cell *));
-    if (!result->tab)
-        return NULL;
-
-    for (int i = 0; i < result->size; i++)
-    {
-        result->tab[i] = calloc(result->size, sizeof(Cell));
-        if (!result->tab[i])
-        {
-            for (int j = 0; j < i; j++)
-                free(result->tab[j]);
-            free(result->tab);
-            return NULL;
-        }
-
-        for (int j = 0; j < result->size; j++)
-        {
-            result->tab[i][j] = GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
-        }
-    }
-    return result;
-}
-
-void FreeWorldToDisplay(WorldToDisplay *wtd)
-{
-    if (!wtd)
-        return;
-    for (int i = 0; i < wtd->size; i++)
-    {
-        free(wtd->tab[i]);
-    }
-    free(wtd->tab);
-}
-
-// Fonction World
 
 Cell GetCellWorld(World *w, int x, int y)
 {
@@ -185,4 +131,63 @@ void DeleteWorld(World *w)
         free(w->tab[i]);
     }
     free(w->tab);
+}
+
+void PrintInfoWorld(World *w)
+{
+    printf("World : size=%d, zoom=%.2f, OffsetX=%d, OffsetY=%d\n", w->size, w->zoomDisplay, w->OffsetX, w->OffsetY);
+}
+
+// Fonction World Display
+
+Cell **GetTabOfWorlToDisplay(WorldToDisplay *wtd)
+{
+    return wtd->tab;
+}
+
+int GetSizeOfWorldToDisplay(WorldToDisplay *wtd)
+{
+    return wtd->size;
+}
+
+WorldToDisplay *WorldToDisplayFromWorld(World *w)
+{
+    WorldToDisplay *result = calloc(1, sizeof(WorldToDisplay));
+    if (!result)
+        return NULL;
+
+    result->size = w->size / w->zoomDisplay;
+
+    result->tab = calloc(result->size, sizeof(Cell *));
+    if (!result->tab)
+        return NULL;
+
+    for (int i = 0; i < result->size; i++)
+    {
+        result->tab[i] = calloc(result->size, sizeof(Cell));
+        if (!result->tab[i])
+        {
+            for (int j = 0; j < i; j++)
+                free(result->tab[j]);
+            free(result->tab);
+            return NULL;
+        }
+
+        for (int j = 0; j < result->size; j++)
+        {
+            result->tab[i][j] = GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
+        }
+    }
+    return result;
+}
+
+void FreeWorldToDisplay(WorldToDisplay *wtd)
+{
+    if (!wtd)
+        return;
+    for (int i = 0; i < wtd->size; i++)
+    {
+        free(wtd->tab[i]);
+    }
+    free(wtd->tab);
 }
