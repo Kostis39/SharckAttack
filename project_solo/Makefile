@@ -2,14 +2,14 @@ OUTPUT_FOLDER=bin
 OBJECTS_FOLDER=build
 SOURCES_FOLDER=src
 INCLUDES=-I$(SOURCES_FOLDER)
-CFLAGS=-Wall -Wextra -g
+CFLAGS=-Wall -Werror -Wextra -g
 SOURCES=$(wildcard $(SOURCES_FOLDER)/*.c)
 OBJECTS=$(patsubst $(SOURCES_FOLDER)%.c,$(OBJECTS_FOLDER)%.o,$(SOURCES))
 
-OUTPUT_NAME=snake_sacha
+OUTPUT_NAME=sprites
 
-SDL_FLAGS=`sdl2-config --cflags` 
-SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm
+SDL_FLAGS=`sdl2-config --cflags`
+SDL_LIB=`sdl2-config --libs` -lSDL2_image 
 
 link: $(OBJECTS) 
 	if [ ! -d $(OUTPUT_FOLDER) ]; then mkdir $(OUTPUT_FOLDER); fi
