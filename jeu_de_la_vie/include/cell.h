@@ -1,0 +1,24 @@
+#ifndef CELL_H
+#define CELL_H
+
+#include <stdbool.h>
+#include <stdlib.h>
+
+/**
+ * \struct Cell
+ * \brief Représente une cellule, elle est soit vivante soit morte.
+ */
+typedef struct
+{
+    bool state; /**< Staut de la cellule, True: vivant, False: mort. */
+} Cell;
+
+bool GetStateCell(Cell *c);
+void SwitchStateCell(Cell *c);
+void SetStateCell(Cell *c, bool val);
+
+Cell **InitCell2D(int size);
+void FillCell2DToFalse(Cell **tab, int size);
+void FillCell2DToRandom(Cell **tab, int size);
+
+#endif

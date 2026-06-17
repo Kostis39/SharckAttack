@@ -1,16 +1,9 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+#include "cell.h"
 #include <stdbool.h>
 #include <stdlib.h>
-/**
- * \struct Cell
- * \brief Représente une cellule, elle est soit vivante soit morte.
- */
-typedef struct
-{
-    bool state; /**< Staut de la cellule, True: vivant, False: mort. */
-} Cell;
 
 /**
  * \struct World
@@ -18,27 +11,21 @@ typedef struct
  */
 typedef struct
 {
-    Cell **tab;           /**< Tableau carre 2D de cellules */
-    int size;             /**< Taille du tableau, la meme taille en width et height */
-    float zoomDisplay;    /**< coefficient du zoom */
-    int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de savoir comment l'afficher */
+  Cell **tab;           /**< Tableau carre 2D de cellules */
+  int size;             /**< Taille du tableau, la meme taille en width et height */
+  float zoomDisplay;    /**< coefficient du zoom */
+  int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de savoir comment l'afficher */
 } World;
 
 typedef struct
 {
-    Cell **tab; /**< Tableau à afficher carre 2D de cellule vivante ou morte */
-    int size;   /**< Taille du tableau à afficher, la meme taille en width et height */
+  Cell **tab; /**< Tableau à afficher carre 2D de cellule vivante ou morte */
+  int size;   /**< Taille du tableau à afficher, la meme taille en width et height */
 } WorldToDisplay;
-
-// Fonction Cell
-
-bool GetStateCell(Cell *c);
-void SwitchStateCell(Cell *c);
-void SetStateCell(Cell *c, bool val);
 
 // Fonction World Display
 
-Cell **GetTabOfWorlToDisplay(WorldToDisplay *world);
+Cell **GetTabOfWorldToDisplay(WorldToDisplay *world);
 int GetSizeOfWorldToDisplay(WorldToDisplay *world);
 WorldToDisplay *WorldToDisplayFromWorld(World *w);
 void FreeWorldToDisplay(WorldToDisplay *wtd);
@@ -50,7 +37,8 @@ int GetSizeWorld(World *w);
 float GetZoomWorld(World *w);
 int GetOffsetXWorld(World *w);
 int GetOffsetYWorld(World *w);
-Cell **InitCell2DToFalse(int size);
+
+World *InitWorld(int size);
 
 Cell **GetPerseption(World *w, int x, int y);
 void DeletePerception(Cell **perception);
