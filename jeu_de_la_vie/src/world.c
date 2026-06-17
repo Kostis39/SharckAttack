@@ -32,11 +32,42 @@ Cell **InitCell2DToFalse(int size)
 Cell **InitCell2DToFalse(int size)
 {
     Cell **tab = calloc(size, sizeof(Cell *));
+    if (tab == NULL)
+    {
+        return NULL;
+    }
     for (int y = 0; y < size; ++y)
     {
         tab[y] = calloc(size, sizeof(Cell));
+        if (tab[y] == NULL)
+        {
+            return NULL;
+        }
     }
     return tab;
+}
+
+void FillCell2DToFalse(Cell **tab, int size)
+{
+    for (int y = 0; y < size; ++y)
+    {
+        for (int x = 0; x < size; ++x)
+        {
+            SetStateCell(&tab[y][x], false);
+        }
+    }
+}
+
+World *InitWorld(int size)
+{
+    World *world = calloc(size, sizeof(World));
+    world->tab = InitCell2D(size);
+    FillCell2DToFalse(world->tab, size);
+    world->OffsetX = 0;
+    world->OffsetY = 0;
+    world->size = size;
+    world->zoomDisplay = 1;
+    return world;
 }
 
 // Fonction World Display

@@ -1,5 +1,5 @@
 #include "../include/terminalDisplay.h"
-int Display(World *monde) {
+int Display(WorldToDisplay *monde) {
   /**
    * @brief Affiche le monde selon ses paramètres
    * Affichage du monde en version terminale
