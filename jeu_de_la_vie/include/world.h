@@ -24,6 +24,12 @@ typedef struct
   int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de savoir comment l'afficher */
 } World;
 
+typedef struct
+{
+  Cell **tab; /**< Tableau à afficher carre 2D de cellule vivante ou morte */
+  int size;   /**< Taille du tableau à afficher, la meme taille en width et height */
+} WorldToDisplay;
+
 // Fonction Cell
 
 bool GetStateCell(Cell *c);
