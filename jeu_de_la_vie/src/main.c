@@ -58,7 +58,7 @@ int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     return 1;
 }
 
-int TerminalUserEvent(World *world) {
+int TerminalUserEvent(World *world, bool *next_iteration) {
     /**
      * @brief Gère les actions possible à partir de SDL et execute les actions
      * adéquat: Si zqsd : déplace la vision du monde respectivement en haut
@@ -70,8 +70,11 @@ int TerminalUserEvent(World *world) {
      * @return 1 sinon
      */
     char input;
-    scanf("%c%*c", &input);
+    scanf("%c", &input);
     switch (input) {
+    case '\n':
+        *next_iteration = true;
+        break;
     case 'z':
         DecrementOffsetY(world);
         break;
@@ -109,7 +112,6 @@ int main(int argc, char *argv[]) {
 
     bool program_on = true;
     bool next_iteration = false;
-    char entry;
 
     WorldToDisplay *display;
     Cell **perception;
@@ -119,9 +121,7 @@ int main(int argc, char *argv[]) {
         display = WorldToDisplayFromWorld(w);
         Display(display);
 
-        scanf("%c", &entry);
-
-        TerminalUserEvent(entry, w, &next_iteration);
+        TerminalUserEvent(w, &next_iteration);
 
         if (next_iteration) {
             tmp = InitCell2D(w->size);
