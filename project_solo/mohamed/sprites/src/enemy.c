@@ -1,4 +1,4 @@
-#include "sprites/enemy.h"
+#include "enemy.h"
 
 void draw_enemy(SDL_Renderer *renderer,
                 SDL_Texture *enemy_texture,

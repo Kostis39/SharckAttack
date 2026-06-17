@@ -69,6 +69,7 @@ SDL_Texture* load_texture_from_image(char  *  file_image_name, SDL_Window *windo
 Entity * initPlayer(SDL_Window * window, SDL_Renderer * renderer, int window_w, int window_h){
     Entity * player=calloc(1, sizeof(Entity));
     int zoom = 2;
+    float hitbox_scale = 0.5f;
 
     player->texture = load_texture_from_image(SPRITE_SHEET_PLAYER, window, renderer);
     player->current_frame = 0;
@@ -84,9 +85,9 @@ Entity * initPlayer(SDL_Window * window, SDL_Renderer * renderer, int window_w, 
     player->state.w = offset_x;
     player->state.h = offset_y;
 
-    player->hitbox.w = offset_x*zoom;
-    player->hitbox.h = offset_y*zoom;
-
+    player->hitbox.w = offset_x*zoom*hitbox_scale;
+    player->hitbox.h = offset_y*zoom*hitbox_scale;
+    
     player->hitbox.x =(window_w - player->hitbox.w) /2;
     player->hitbox.y =(window_h - player->hitbox.h) /2;
 
