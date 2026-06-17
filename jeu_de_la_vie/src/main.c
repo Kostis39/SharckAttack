@@ -58,14 +58,20 @@ int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     return 1;
 }
 
-void TerminalUserEvent(char *entry, World *world, bool *next_iteration) {
-    if (entry == NULL)
-        return;
-
-    switch (entry[0]) {
-    case '\0':
-        *next_iteration = true;
-        break;
+int TerminalUserEvent(World *world) {
+    /**
+     * @brief Gère les actions possible à partir de SDL et execute les actions
+     * adéquat: Si zqsd : déplace la vision du monde respectivement en haut
+     * droite bas gauche Si a et e : zoom la vision du monde Si espace : passe à
+     * l'itération suivante
+     * @param event L'événement à traiter.
+     * @param world Le monde à modifier.
+     * @return 0 si la boucle est interrompue, avec SPC ou SDL_QUIT
+     * @return 1 sinon
+     */
+    char input;
+    scanf("%c%*c", &input);
+    switch (input) {
     case 'z':
         DecrementOffsetY(world);
         break;
@@ -84,9 +90,12 @@ void TerminalUserEvent(char *entry, World *world, bool *next_iteration) {
     case 'e':
         DecrementZoom(world);
         break;
+    case 'k': // kill
+        return 0;
     default:
         break;
     }
+    return 1;
 }
 
 int main(int argc, char *argv[]) {
