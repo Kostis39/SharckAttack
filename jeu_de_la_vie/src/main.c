@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #include "SDLDisplay.h"
@@ -154,8 +155,6 @@ void runTerminal(World *w) {
     Cell **perception;
     Cell **tmp = InitCell2D(w->size);
 
-    RandomizeWorld(w);
-
     while (program_on) {
         display = WorldToDisplayFromWorld(w);
         Display(display);
@@ -200,8 +199,6 @@ void runSDL(World *w) {
     Cell **perception;
     Cell **tmp = InitCell2D(w->size);
 
-    RandomizeWorld(w);
-
     while (program_on) {
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
@@ -241,13 +238,27 @@ void runSDL(World *w) {
 }
 
 int main(int argc, char *argv[]) {
-    (void)argc;
-
     srand(time(NULL));
+
+    bool useSDL = false;
+    bool useBlank = false;
+
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "sdl") == 0)
+            useSDL = true;
+        if (strcmp(argv[i], "blank") == 0)
+            useBlank = true;
+    }
 
     World *w = InitWorld(WORLD_SIZE);
 
-    if (argc > 1 && strcmp(argv[1], "sdl") == 0) {
+    if (useBlank) {
+        FillCell2DToFalse(w->tab, w->size);
+    } else {
+        RandomizeWorld(w);
+    }
+
+    if (useSDL) {
         runSDL(w);
     } else {
         runTerminal(w);
