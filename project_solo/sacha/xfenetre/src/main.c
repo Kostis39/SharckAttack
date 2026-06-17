@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define MAX_WINDOWS 8
+
 typedef struct {
     SDL_Window *main_window;
     float posx, posy;
@@ -86,7 +88,9 @@ int main(int argc, char **argv){
     game_window * window = initWindow();
     window->height = 32;
     window->width = 400;
-    
+
+    SDL_Window* lst_window[MAX_WINDOWS] = {NULL};
+    int windowCount = 0;
 
     /* Initialisation de la SDL + gestion de l'échec possible */
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -130,10 +134,19 @@ int main(int argc, char **argv){
                             running = SDL_FALSE;
                             break;
                         case SDLK_1:
-                            SDL_MinimizeWindow(window->main_window);
+                            if (windowCount < MAX_WINDOWS) {
+                                char title[50];
+                                sprintf(title, "Fenêtre %d", windowCount + 1);
+                                lst_window[windowCount] = SDL_CreateWindow(title, window->posx, window->posy, window->width, window->height, SDL_WINDOW_SHOWN);
+                                windowCount++;
+                            }
                             break;
                         case SDLK_2:
-                            SDL_MaximizeWindow(window->main_window);
+                            if (windowCount > 0) {
+                                windowCount--;
+                                SDL_DestroyWindow(lst_window[windowCount]);
+                                lst_window[windowCount] = NULL;
+                            }
                             break;
                         case SDLK_RSHIFT:
                             window->speed *= (window->speed*1.5 >= 60) ? 1 : 1.5;
