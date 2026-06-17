@@ -1,4 +1,4 @@
-#include "agent.h"
+ #include "../include/agent.h"
 
 int GetNbNeighbors(Cell **c)
 {
