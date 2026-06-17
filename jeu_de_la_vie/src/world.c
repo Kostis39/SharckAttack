@@ -31,7 +31,7 @@ int GetSizeWorld(World *w)
 
 int GetZoomWorld(World *w)
 {
-    return w->zommDisplay;
+    return w->zoomDisplay;
 }
 
 int GetOffsetXWorld(World *w)
@@ -71,12 +71,12 @@ Cell **GetPerseption(World *w, int x, int y)
 
 void IncrementZoom(World *w)
 {
-    w->zommDisplay++;
+    w->zoomDisplay++;
 }
 
 void DecrementZoom(World *w)
 {
-    w->zommDisplay--;
+    w->zoomDisplay--;
 }
 
 void IncrementOffsetX(World *w)
