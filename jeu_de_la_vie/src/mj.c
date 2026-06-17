@@ -10,7 +10,7 @@ void SwitchTabCellWorld(World *worldNow, Cell **worldTmp)
     {
         for (int x = 0; x < size; ++x)
         {
-            SetStateCell(&worldNow->tab[y][x], GetStateCell(&worldTmp[y][x]));
+            SetStateCell(&worldNow->tab[y][x], IsAlive(&worldTmp[y][x]));
             SetStateCell(&worldTmp[y][x], false);
         }
     }
