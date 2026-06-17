@@ -1,6 +1,10 @@
 /**
  * \file SDLDisplay.c
  * \brief Implémentation de l'affichage SDL2 pour le Jeu de la Vie.
+ *
+ * Ce fichier contient les fonctions nécessaires pour initialiser SDL2,
+ * créer une fenêtre graphique, afficher le monde sous forme de grille,
+ * puis libérer proprement les ressources utilisées.
  */
 
 #include "SDLDisplay.h"
@@ -30,7 +34,16 @@
 #define BACKGROUND_G 20
 #define BACKGROUND_B 20
 
-// Initialise la fenêtre SDL
+/**
+ * \brief Initialise l'affichage SDL2.
+ *
+ * Cette fonction initialise la bibliothèque SDL2, crée une fenêtre carrée
+ * puis crée un renderer permettant de dessiner le Jeu de la Vie.
+ *
+ * \param display Pointeur vers la structure SDLDisplay à initialiser.
+ * \param windowSize Taille de la fenêtre en pixels.
+ * \return true si l'initialisation a réussi, false sinon.
+ */
 bool InitSDLDisplay(SDLDisplay *display, int windowSize) {
     if (display == NULL) {
         return false;
@@ -43,9 +56,12 @@ bool InitSDLDisplay(SDLDisplay *display, int windowSize) {
 
     display->windowSize = windowSize;
 
-    display->window = SDL_CreateWindow("Jeu de la Vie", SDL_WINDOWPOS_CENTERED,
-                                       SDL_WINDOWPOS_CENTERED, windowSize,
-                                       windowSize, SDL_WINDOW_SHOWN);
+    display->window = SDL_CreateWindow("Jeu de la Vie",
+                                       SDL_WINDOWPOS_CENTERED,
+                                       SDL_WINDOWPOS_CENTERED,
+                                       windowSize,
+                                       windowSize,
+                                       SDL_WINDOW_SHOWN);
 
     if (display->window == NULL) {
         printf("Erreur SDL_CreateWindow : %s\n", SDL_GetError());
@@ -53,9 +69,10 @@ bool InitSDLDisplay(SDLDisplay *display, int windowSize) {
         return false;
     }
 
-    display->renderer = SDL_CreateRenderer(display->window, -1,
+    display->renderer = SDL_CreateRenderer(display->window,
+                                           -1,
                                            SDL_RENDERER_ACCELERATED |
-                                               SDL_RENDERER_PRESENTVSYNC);
+                                           SDL_RENDERER_PRESENTVSYNC);
 
     if (display->renderer == NULL) {
         printf("Erreur SDL_CreateRenderer : %s\n", SDL_GetError());
@@ -67,7 +84,14 @@ bool InitSDLDisplay(SDLDisplay *display, int windowSize) {
     return true;
 }
 
-// Détruit proprement la fenêtre et le renderer
+/**
+ * \brief Détruit proprement l'affichage SDL2.
+ *
+ * Cette fonction détruit le renderer, détruit la fenêtre SDL,
+ * puis quitte la bibliothèque SDL2.
+ *
+ * \param display Pointeur vers la structure SDLDisplay à détruire.
+ */
 void DestroySDLDisplay(SDLDisplay *display) {
     if (display == NULL) {
         return;
@@ -86,19 +110,38 @@ void DestroySDLDisplay(SDLDisplay *display) {
     SDL_Quit();
 }
 
-// Efface la fenêtre avant de redessiner
+/**
+ * \brief Efface la fenêtre SDL2.
+ *
+ * Cette fonction remplit toute la fenêtre avec la couleur de fond
+ * afin de préparer le prochain affichage.
+ *
+ * \param display Pointeur vers la structure SDLDisplay utilisée.
+ */
 void ClearSDLDisplay(SDLDisplay *display) {
     if (display == NULL || display->renderer == NULL) {
         return;
     }
 
-    SDL_SetRenderDrawColor(display->renderer, BACKGROUND_R, BACKGROUND_G,
-                           BACKGROUND_B, 255);
+    SDL_SetRenderDrawColor(display->renderer,
+                           BACKGROUND_R,
+                           BACKGROUND_G,
+                           BACKGROUND_B,
+                           255);
 
     SDL_RenderClear(display->renderer);
 }
 
-// Calcule la taille d'une cellule en pixels
+/**
+ * \brief Calcule la taille d'une cellule à afficher.
+ *
+ * La taille d'une cellule est calculée à partir de la taille de la fenêtre
+ * et du nombre de cellules du monde à afficher.
+ *
+ * \param display Pointeur vers la structure SDLDisplay utilisée.
+ * \param worldToDisplay Pointeur vers le monde à afficher.
+ * \return Taille d'une cellule en pixels.
+ */
 int GetCellSizeSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay) {
     if (display == NULL || worldToDisplay == NULL) {
         return 1;
@@ -119,7 +162,17 @@ int GetCellSizeSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay) {
     return cellSize;
 }
 
-// Affiche le tableau reçu sous forme de grille SDL
+/**
+ * \brief Affiche le monde dans la fenêtre SDL2.
+ *
+ * Cette fonction parcourt toutes les cellules du monde et les dessine
+ * dans la fenêtre. Les cellules vivantes sont affichées en noir,
+ * les cellules mortes en blanc, avec une grille bleue si les cellules
+ * sont assez grandes.
+ *
+ * \param display Pointeur vers la structure SDLDisplay utilisée.
+ * \param worldToDisplay Pointeur vers le monde à afficher.
+ */
 void RenderSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay) {
     if (display == NULL || worldToDisplay == NULL) {
         return;
@@ -146,21 +199,27 @@ void RenderSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay) {
             cellRect.h = cellSize;
 
             if (IsAlive(&(tab[x][y]))) {
-                // Cellule vivante : noir
-                SDL_SetRenderDrawColor(display->renderer, ALIVE_CELL_R,
-                                       ALIVE_CELL_G, ALIVE_CELL_B, 255);
+                SDL_SetRenderDrawColor(display->renderer,
+                                       ALIVE_CELL_R,
+                                       ALIVE_CELL_G,
+                                       ALIVE_CELL_B,
+                                       255);
             } else {
-                // Cellule morte : blanc
-                SDL_SetRenderDrawColor(display->renderer, DEAD_CELL_R,
-                                       DEAD_CELL_G, DEAD_CELL_B, 255);
+                SDL_SetRenderDrawColor(display->renderer,
+                                       DEAD_CELL_R,
+                                       DEAD_CELL_G,
+                                       DEAD_CELL_B,
+                                       255);
             }
 
             SDL_RenderFillRect(display->renderer, &cellRect);
 
-            // Dessine le contour de la cellule pour voir la grille
             if (cellSize >= 3) {
-                SDL_SetRenderDrawColor(display->renderer, GRID_R, GRID_G,
-                                       GRID_B, 255);
+                SDL_SetRenderDrawColor(display->renderer,
+                                       GRID_R,
+                                       GRID_G,
+                                       GRID_B,
+                                       255);
 
                 SDL_RenderDrawRect(display->renderer, &cellRect);
             }
