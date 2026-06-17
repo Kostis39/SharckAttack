@@ -37,5 +37,5 @@ void SwitchTabCellWorld(World *worldNow, Cell **worldTmp) {
  * \param val Nouvel état : true pour vivante, false pour morte.
  */
 void SetValueTabCell(Cell **tab, int x, int y, bool val) {
-    SetStateCell(&tab[y][x], val);
+    SetStateCell(&tab[x][y], val);
 }

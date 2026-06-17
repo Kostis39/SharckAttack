@@ -42,8 +42,10 @@ void RandomizeWorld(World *w) {
  * \param y Coordonnée y.
  * \return La cellule aux coordonnées (x, y).
  */
-Cell GetCellWorld(World *w, int x, int y) {
-    return w->tab[x % w->size][y % w->size];
+Cell *GetCellWorld(World *w, int x, int y) {
+    int nx = ((x % w->size) + w->size) % w->size;
+    int ny = ((y % w->size) + w->size) % w->size;
+    return &w->tab[nx][ny];
 }
 
 /**
@@ -97,7 +99,7 @@ Cell **GetPerseption(World *w, int x, int y) {
         }
 
         for (int j = 0; j < 3; j++) {
-            perception[i][j] = GetCellWorld(w, x - 1 + j, y - 1 + i);
+            perception[i][j] = *GetCellWorld(w, x - 1 + j, y - 1 + i);
         }
     }
     return perception;
@@ -187,7 +189,7 @@ void PrintInfoWorld(World *w) {
  * \param wtd Pointeur vers le WorldToDisplay.
  * \return Pointeur vers le tableau 2D de cellules.
  */
-Cell **GetTabOfWorlToDisplay(WorldToDisplay *wtd) { return wtd->tab; }
+Cell **GetTabOfWorldToDisplay(WorldToDisplay *wtd) { return wtd->tab; }
 
 /**
  * \brief Retourne la taille du WorldToDisplay.
@@ -223,7 +225,8 @@ WorldToDisplay *WorldToDisplayFromWorld(World *w) {
         }
 
         for (int j = 0; j < result->size; j++) {
-            result->tab[i][j] = GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
+            result->tab[i][j] =
+                *GetCellWorld(w, w->OffsetX + j, w->OffsetY + i);
         }
     }
     return result;

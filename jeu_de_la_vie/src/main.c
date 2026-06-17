@@ -68,7 +68,7 @@ int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
     return 1;
 }
 
-int TerminalUserEvent(World *world) {
+int TerminalUserEvent(World *world, bool *next_iteration) {
     /**
      * \brief Gère les événements en mode terminal (entrée standard).
      *
@@ -129,7 +129,13 @@ int main(int argc, char *argv[]) {
     srand(time(NULL));
 
     World *w = InitWorld(WORLD_SIZE);
-    RandomizeWorld(w);
+    // RandomizeWorld(w);
+
+    w->tab[2][2].state = true;
+    w->tab[2][3].state = true;
+    w->tab[2][4].state = true;
+    w->tab[2][5].state = true;
+    w->tab[2][6].state = true;
 
     bool program_on = true;
     bool next_iteration = false;
