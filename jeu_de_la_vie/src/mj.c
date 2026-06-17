@@ -20,3 +20,13 @@ void SetValueTabCell(Cell **tab, int x, int y, bool val)
 {
     SetStateCell(&tab[y][x], val);
 }
+
+World *InitWorld(int size)
+{
+    World *world = calloc(size, sizeof(World));
+    world->tab = InitCell2DToFalse(size);
+    world->OffsetX = 0;
+    world->OffsetY = 0;
+    world->size = size;
+    world->zoomDisplay = 1;
+}

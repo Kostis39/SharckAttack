@@ -17,6 +17,16 @@ void SetStateCell(Cell *c, bool val)
     c->state = val;
 }
 
+Cell **InitCell2DToFalse(int size)
+{
+    Cell **tab = calloc(size, sizeof(Cell *));
+    for (int y = 0; y < size; ++y)
+    {
+        tab[y] = calloc(size, sizeof(Cell));
+    }
+    return tab;
+}
+
 Cell **GetTabOfWorlToDisplay(WorldToDisplay *world)
 {
     return world->tab;

@@ -5,5 +5,6 @@
 
 void SwitchTabCellWorld(World *worldNow, Cell **worldTmp);
 void SetValueTabCell(Cell **tab, int x, int y, bool val);
+World *InitWorld(int size);
 
 #endif

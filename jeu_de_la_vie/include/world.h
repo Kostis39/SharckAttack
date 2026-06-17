@@ -48,6 +48,7 @@ int GetSizeWorld(World *w);
 int GetZoomWorld(World *w);
 int GetOffsetXWorld(World *w);
 int GetOffsetYWorld(World *w);
+Cell **InitCell2DToFalse(int size);
 
 Cell **GetPerseption(World *w, int x, int y);
 
