@@ -2,54 +2,57 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "world.h"
+#include "SDLDisplay.h"
+#include "SDL_events.h"
+#include "agent.h"
 #include "cell.h"
 #include "mj.h"
-#include "agent.h"
-#include "SDLDisplay.h"
 #include "terminalDisplay.h"
+#include "world.h"
 
 #define WORLD_SIZE 10
 
-void SDLUserEvent(SDL_Event event, World *world, bool *next_iteration)
-{
-    switch (event.type)
-    {
-    case SDLK_SPACE:
-        *next_iteration = true;
-        break;
-    case SDLK_z:
-        DecrementOffsetY(world);
-        break;
-    case SDLK_s:
-        IncrementOffsetY(world);
-        break;
-    case SDLK_q:
-        DecrementOffsetX(world);
-        break;
-    case SDLK_d:
-        IncrementOffsetX(world);
-        break;
-    case SDLK_a:
-        IncrementZoom(world);
-        break;
-    case SDLK_e:
-        DecrementZoom(world);
-        break;
-    default:
-        break;
+int SDLUserEvent(SDL_Event event, World *world, bool *next_iteration) {
+    switch (event.type) {
+    case SDL_QUIT:
+        return 0;
+        switch (event.key.keysym.sym) {
+        case SDLK_SPACE:
+            *next_iteration = true;
+            break;
+        case SDLK_z:
+            DecrementOffsetY(world);
+            break;
+        case SDLK_s:
+            IncrementOffsetY(world);
+            break;
+        case SDLK_q:
+            DecrementOffsetX(world);
+            break;
+        case SDLK_d:
+            IncrementOffsetX(world);
+            break;
+        case SDLK_a:
+            IncrementZoom(world);
+            break;
+        case SDLK_e:
+            DecrementZoom(world);
+            break;
+        default:
+            break;
+        }
     }
+    return 1;
 }
 
-void TerminalUserEvent(char *entry, World *world, bool *next_iteration)
-{
+void TerminalUserEvent(char *entry, World *world, bool *next_iteration) {
     if (entry == NULL)
         return;
 
-    switch (entry[0])
-    {
+    switch (entry[0]) {
     case '\0':
         *next_iteration = true;
+        break;
     case 'z':
         DecrementOffsetY(world);
         break;
@@ -73,8 +76,7 @@ void TerminalUserEvent(char *entry, World *world, bool *next_iteration)
     }
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     (void)argc;
     (void)argv;
 
