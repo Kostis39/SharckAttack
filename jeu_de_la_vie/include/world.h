@@ -1,20 +1,19 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include <stdlib.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
-typedef struct
-{
-    bool state; // 0 mort, 1 vie
+typedef struct {
+  bool state; // 0 mort, 1 vie
 } Cell;
 
-typedef struct
-{
-    Cell **tab;
-    int size;
-    int zommDisplay;      // Taille du tableau à afficher
-    int OffsetX, OffsetY; // Coordonnées du coin supérieur gauche pour le tableau à afficher
+typedef struct {
+  Cell **tab;
+  int size;
+  int zoomDisplay;      // Taille du tableau à afficher
+  int OffsetX, OffsetY; // Coordonnées du coin supérieur gauche pour le tableau
+                        // à afficher
 } World;
 
 // Fonction Cell
