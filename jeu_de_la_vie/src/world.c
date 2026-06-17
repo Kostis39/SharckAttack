@@ -140,7 +140,7 @@ void PrintInfoWorld(World *w)
 
 // Fonction World Display
 
-Cell **GetTabOfWorlToDisplay(WorldToDisplay *wtd)
+Cell **GetTabOfWorldToDisplay(WorldToDisplay *wtd)
 {
     return wtd->tab;
 }
