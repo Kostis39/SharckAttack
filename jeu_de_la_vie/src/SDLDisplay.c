@@ -145,7 +145,7 @@ void RenderSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay) {
             cellRect.w = cellSize;
             cellRect.h = cellSize;
 
-            if (IsAlive(&(tab[y][x]))) {
+            if (IsAlive(&(tab[x][y]))) {
                 // Cellule vivante : noir
                 SDL_SetRenderDrawColor(display->renderer, ALIVE_CELL_R,
                                        ALIVE_CELL_G, ALIVE_CELL_B, 255);

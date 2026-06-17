@@ -173,6 +173,7 @@ void DeleteWorld(World *w) {
         free(w->tab[i]);
     }
     free(w->tab);
+    free(w);
 }
 
 /**
