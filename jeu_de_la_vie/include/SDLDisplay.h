@@ -30,22 +30,4 @@ void RenderSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay);
 // Donne la taille d'une cellule affichée
 int GetCellSizeSDLDisplay(SDLDisplay *display, WorldToDisplay *worldToDisplay);
 
-// Convertit un clic souris en coordonnées dans le vrai monde
-bool GetCellCoordSDLDisplay(
-    SDLDisplay *display,
-    World *world,
-    int mouseX,
-    int mouseY,
-    int *cellX,
-    int *cellY
-);
-
-// Change l'état de la cellule cliquée
-void SwitchCellFromMouseSDLDisplay(
-    SDLDisplay *display,
-    World *world,
-    int mouseX,
-    int mouseY
-);
-
 #endif
