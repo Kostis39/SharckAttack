@@ -28,7 +28,10 @@ int GetSizeOfWorldToDisplay(WorldToDisplay *wtd)
 
 WorldToDisplay *WorldToDisplayFromWorld(World *w)
 {
-    WorldToDisplay *result;
+    WorldToDisplay *result = calloc(1, sizeof(WorldToDisplay));
+    if (!result)
+        return NULL;
+
     result->size = w->size / w->zoomDisplay;
 
     result->tab = calloc(result->size, sizeof(Cell *));
@@ -130,14 +133,14 @@ void DeletePerception(Cell **perception)
 
 void IncrementZoom(World *w)
 {
-    w->zoomDisplay + COEFF_ZOOM;
+    w->zoomDisplay += COEFF_ZOOM;
     if (w->zoomDisplay > w->size)
-        w->size;
+        w->zoomDisplay = w->size;
 }
 
 void DecrementZoom(World *w)
 {
-    w->zoomDisplay - COEFF_ZOOM;
+    w->zoomDisplay -= COEFF_ZOOM;
     if (w->zoomDisplay < 1)
         w->zoomDisplay = 1;
 }
