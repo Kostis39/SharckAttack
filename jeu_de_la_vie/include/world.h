@@ -36,6 +36,11 @@ bool GetStateCell(Cell *c);
 void SwitchStateCell(Cell *c);
 void SetStateCell(Cell *c, bool val);
 
+// Fonction World Display
+
+Cell **GetTabOfWorlToDisplay(WorldToDisplay *world);
+int GetSizeOfWorldToDisplay(WorldToDisplay *world);
+
 // Fonction World
 
 Cell GetCellWorld(World *w, int x, int y);
