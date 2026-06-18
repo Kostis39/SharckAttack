@@ -8,7 +8,7 @@ Vector Vector_sub(Vector a, Vector b) { return (Vector){a.x - b.x, a.y - b.y}; }
 
 Vector Vector_scale(Vector v, float k) { return (Vector){v.x * k, v.y * k}; }
 
-float Vector_length(Vector v) { return sqrtf(v.x * v.x + v.y * v.y); }
+float Vector_norm(Vector v) { return sqrtf(v.x * v.x + v.y * v.y); }
 
 float Vector_distance(Vector a, Vector b) {
     return Vector_length(Vector_sub(a, b));
