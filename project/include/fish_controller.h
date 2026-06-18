@@ -3,7 +3,7 @@
 
 #include "fish.h"
 
-typedef struct fishPerception {
+typedef struct FishPerception {
     Fish self;
 
     Vector *neighbor_position;
