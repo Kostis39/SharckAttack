@@ -7,9 +7,7 @@ typedef struct {
     Vector velocity;
 } Shark;
 
-Shark *Shark_create(Vector pos); // Créer un requin avec une position en
-                                 // parmètre et une vitesse aléatoire
-
-// Vector shark_choose_action(Shark *shark, SharkPerception *perception)
+Shark *Shark_createRandom(int width, int height);
+void Shark_destroy(Shark *shark);
 
 #endif

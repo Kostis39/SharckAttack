@@ -12,10 +12,10 @@ typedef struct {
     Fish *fishes;
     int nb_fish;
 
-    Shark shark;
+    Shark *shark;
 } World;
 
-void WorldInit(World *world, int width, int height, int nb_fish);
-void World_Destroy(World *world);
+World *World_init(int width, int height, int nb_fish);
+void World_destroy(World *world);
 
 #endif
