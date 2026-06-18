@@ -2,21 +2,31 @@
 #define AGENT_FISH_H
 
 #include "fish.h"
+<<<<<<< HEAD
 #include "vector.h"
 
+=======
+/** @struct FishPerception
+ * @brief Structure représentant la perception qu'a un poisson du monde.
+ */
+>>>>>>> 5ad3942f732ad0c8cdb90f19a0c485a4cec28a22
 typedef struct FishPerception {
-    Fish self;
+    Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
-    Vector *neighbor_position;
-    Vector *neighbor_speed_vector;
-    int nb_neighbor; // nombre de voisins perçus
+    Vector *neighbor_position; /**< Tableau dynamique des positions des voisins
+                                  perçus */
+    Vector *neighbor_speed_vector; /**< Tableau dynamique des vecteurs vitesses
+                                      des voisins perçus */
+    int nb_neighbor; /**< Nombre de voisins perçus par le poisson */
 
-    bool shark_visible; // true si le requin est visible par le possion
-    Vector shark_position;
-    Vector shark_velocity;
+    bool shark_visible; /**< Indique si le requin est visible par le poisson :
+                           true ou non : false */
+    Vector shark_position; /**< Position du requin dans le monde, si visible */
+    Vector shark_velocity; /**< Vecteur direction/vitesse du requin dans le
+                              monde, si visible */
 
-    int width;
-    int height;
+    int width;  /**< Largeur en pixel de notre monde */
+    int height; /**< Hauteur en pixel de notre monde */
 } FishPerception;
 
 /* Règles réactives individuelles : chacune transforme une FishPerc  en une

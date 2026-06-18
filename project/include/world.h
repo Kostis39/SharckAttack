@@ -5,15 +5,19 @@
 #include "shark.h"
 #include "vector.h"
 #include <stdlib.h>
-
+/**
+ * @struct World
+ * @brief Structure représentant le monde du jeu, contenant les poissons et le
+ * requin.
+ */
 typedef struct {
-    int width;
-    int height;
+    int width;  /**< Largeur en pixel de notre monde */
+    int height; /**< Hauteur en pixel de notre monde */
 
-    Fish *fishes;
-    int nb_fish;
+    Fish *fishes; /**< Tableau dynamique de poissons présents dans le monde */
+    int nb_fish;  /**< Nombre de poissons présents dans le monde */
 
-    Shark *shark;
+    Shark *shark; /**< Pointeur vers le requin présent dans le monde */
 } World;
 
 World *World_init(int width, int height, int nb_fish);
