@@ -4,5 +4,7 @@
 #include "fish_controller.h"
 #include "world.h"
 /* #include "shark.h" */
-FishPerception get_fish_perception(Fish *fish, World *world);
+FishPerception Get_fish_perception(Fish *fish, World *world);
+// SharkPerception get_shark_perception(World *world);
+void Update_fishes(World *world);
 #endif
