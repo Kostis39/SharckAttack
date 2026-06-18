@@ -8,6 +8,7 @@ Durant l'après-midi nous avons réalisé l'activité proposé autour du **X fen
 ## Mardi
 
 ### Mattéo
+Gros *refactoring* de code pour nettoyer le code correspondant au XFenêtré. Cela permet une meilleure division des mini-projets, le coût est temporel.
 
 ### Sacha
 
@@ -23,6 +24,21 @@ Et rajouter la fonctionnalité d'ajout de fenêtre dans X fenêtré en fin de jo
 
 #### Résultat
 
+## Mercredi 
+
+Réalisation entière du jeu de la vie avec rendu SDL et rendu terminal.
+ 
+Divisions du code en multiples composants, pour une meilleure modularité et lisibilité.
+
+Création d'une documentation avec `Doxygen`.
+
+## Jeudi
+
+Conception du projet SMA, éventuelle création d'un diagramme style UML simplifié.
+
+Avancement au plus possible sur le projet en lui même.
+
+Puis réalisation de la présentation du vendredi.
 
 # Projet SMA
 
