@@ -1,10 +1,10 @@
 #ifndef PERCEPTION_H
 #define PERCEPTION_H
 
-#include "vector.h"
 #include "fish.h"
-
-struct World;
+#include "vector.h"
+#include "world.h"
+#include <stdbool.h>
 
 typedef struct {
     Fish self;
@@ -21,7 +21,7 @@ typedef struct {
     int height;
 } FishPerception;
 
-FishPerception *get_fish_perception(Fish *, struct World *);
+FishPerception *get_fish_perception(Fish, World *);
 // SharkPerception* get_shark_perception(World*);
 
 #endif
