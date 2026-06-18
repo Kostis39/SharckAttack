@@ -8,11 +8,11 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
     perception.self = *fish;
 
     perception.neighbor_separation = calloc(FISH_NB, sizeof(Fish));
-    perception.nb_neighbor_separation = 0;
+    perception.nb_sep = 0;
     perception.neighbor_alignment = calloc(FISH_NB, sizeof(Fish));
-    perception.nb_neighbor_alignment = 0;
+    perception.nb_align = 0;
     perception.neighbor_cohesion = calloc(FISH_NB, sizeof(Fish));
-    perception.nb_neighbor_cohesion = 0;
+    perception.nb_cohes = 0;
 
     perception.shark_visible = false;
     perception.width = world->width;
@@ -43,7 +43,7 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
         }
 
         Vector to_other = Vector_sub(other->position, fish->position);
-        float distance = Vector_norm(to_other);
+        float distance = Vector_length(to_other);
 
         float angle = Vector_angle(fish->velocity, to_other);
         if (fabsf(angle) > fish->vision_angle / 2.0f) {
@@ -51,17 +51,14 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
         }
 
         if (distance <= separation_limit) {
-            perception.neighbor_separation[perception.nb_neighbor_separation] =
-                *other;
-            perception.nb_neighbor_separation++;
+            perception.neighbor_separation[perception.nb_sep] = *other;
+            perception.nb_sep++;
         } else if (distance <= alignment_limit) {
-            perception.neighbor_alignment[perception.nb_neighbor_alignment] =
-                *other;
-            perception.nb_neighbor_alignment++;
+            perception.neighbor_alignment[perception.nb_align] = *other;
+            perception.nb_align++;
         } else if (distance <= cohesion_limit) {
-            perception.neighbor_cohesion[perception.nb_neighbor_cohesion] =
-                *other;
-            perception.nb_neighbor_cohesion++;
+            perception.neighbor_cohesion[perception.nb_cohes] = *other;
+            perception.nb_cohes++;
         }
     }
 
