@@ -68,8 +68,8 @@ void Clear_sdl_display(SDLDisplay *display) {
     SDL_RenderClear(display->renderer);
 }
 
-void Draw_fish(SDL_Renderer *renderer, Fish *fish) {
-    if (renderer == NULL || fish == NULL)
+void Draw_fish(SDLDisplay *display, Fish *fish) {
+    if (display == NULL || display->renderer == NULL || fish == NULL)
         return;
 
     if (fish->alive == false)
@@ -87,9 +87,47 @@ void Draw_fish(SDL_Renderer *renderer, Fish *fish) {
     int x3 = x - FISH_SIZE;
     int y3 = y + FISH_SIZE;
 
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+    SDL_SetRenderDrawColor(display->renderer, 0, 0, 255, 255);
 
-    SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
-    SDL_RenderDrawLine(renderer, x2, y2, x3, y3);
-    SDL_RenderDrawLine(renderer, x3, y3, x1, y1);
+    SDL_RenderDrawLine(display->renderer, x1, y1, x2, y2);
+    SDL_RenderDrawLine(display->renderer, x2, y2, x3, y3);
+    SDL_RenderDrawLine(display->renderer, x3, y3, x1, y1);
+}
+
+void Draw_shark(SDLDisplay *display, Shark *shark) {
+    if (display == NULL || display->renderer == NULL || shark == NULL)
+        return;
+
+    int x = shark->pos.x;
+    int y = shark->pos.y;
+
+    int x1 = x + SHARK_SIZE;
+    int y1 = y;
+
+    int x2 = x - SHARK_SIZE;
+    int y2 = y - SHARK_SIZE;
+
+    int x3 = x - SHARK_SIZE;
+    int y3 = y + SHARK_SIZE;
+
+    SDL_SetRenderDrawColor(display->renderer, 255, 0, 0, 255);
+
+    SDL_RenderDrawLine(display->renderer, x1, y1, x2, y2);
+    SDL_RenderDrawLine(display->renderer, x2, y2, x3, y3);
+    SDL_RenderDrawLine(display->renderer, x3, y3, x1, y1);
+}
+
+void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
+    if (display == NULL || display->renderer == NULL)
+        return;
+
+    Clear_sdl_display(display);  // efface l'ancien ecran
+
+    for (int i = 0; i < nb_fish; i++) {
+        Draw_fish(display, &fishes[i]); // dessine les poissons
+    }
+
+    Draw_shark(display, shark); // dessine le requin
+
+    SDL_RenderPresent(display->renderer); // affiche le resultat
 }
