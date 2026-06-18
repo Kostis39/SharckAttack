@@ -9,7 +9,7 @@
 typedef struct {
     Vector position;
     Vector velocity;
-    bool alive; // true = vivant, false = mort
+    bool is_alive; // true = vivant, false = mort
 } Fish;
 
 Fish Fish_create_random_pos(int width, int height);
