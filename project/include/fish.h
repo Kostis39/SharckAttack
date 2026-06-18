@@ -24,6 +24,6 @@ Vector RulesCohesion(Fish *self, FishPerception *p);
 
 /* Combine les 3 règles ci-dessus (poids définis dans config.h)
    en une unique accélération désirée, transmise au Maître du Jeu */
-Vector AgentCompute(Fish *self, FishPerception *p);
+Vector fish_choose_action(Fish *fish, FishPerception *perception);
 
 #endif

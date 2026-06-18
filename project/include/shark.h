@@ -13,4 +13,5 @@ typedef struct {
 Shark *SharkCreate(Vector pos); // Créer un requin avec une position en parmètre
                                 // et une vitesse aléatoire
 
+// Vector shark_choose_action(Shark *shark, SharkPerception *perception);
 #endif
