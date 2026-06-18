@@ -14,6 +14,8 @@ typedef struct {
     Vector velocity; /**< Vecteur direction/vitesse du poisson dans le monde */
     bool
         is_alive; /**< Indique si le poisson est vivant : true ou non : false */
+    float radius; /**< Rayon de perception du poisson, utilisé pour détecter les
+                 voisins et le requin */
 } Fish;
 
 Fish Fish_create_random_pos(int width, int height);

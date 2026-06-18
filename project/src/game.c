@@ -59,5 +59,5 @@ void Game_destroy(Game *game) {
 
     World_destroy(&game->world);
 
-    SDLDisplay_destroy(&game->display);
+    Destroy_sdl_display(&game->display);
 }
