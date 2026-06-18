@@ -5,8 +5,8 @@
 #include "shark.h"
 
 typedef struct {
-    float width;
-    float height;
+    int width;
+    int height;
 
     Fish *fishes;
     int nb_fish;

@@ -6,7 +6,7 @@
 #include "world.h"
 
 typedef struct {
-    Fish *self;
+    Fish self;
 
     Vector *neighbor_position;
     Vector *neighbor_speed_vector;
@@ -15,6 +15,9 @@ typedef struct {
     bool shark_visible; // true si le requin est visible par le possion
     Vector shark_position;
     Vector shark_velocity;
+
+    int width;
+    int height;
 } FishPerception;
 
 FishPerception FishPerceptionCompute(World *world, int i);
