@@ -1,5 +1,7 @@
 # Carnet de bord
 
+[Lien vers le Google Sheet](https://docs.google.com/spreadsheets/d/1okuXoZ2LoURtgW37XICQSCUkHs4YVd-0aNOmB7Mmh0k/edit?usp=sharing)
+
 ## Lundi
 Le lundi a commencé par la mise en place du *repository* gitlab, de l'arborescence de fichier et de la création d'un modèle de `Makefile` assez généraliste.
 
