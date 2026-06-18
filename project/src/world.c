@@ -18,7 +18,7 @@ void World_destroy(World *world) {
 }
 
 void World_replace(World *world, World *world_tmp) {
-    fish_destroy_array(world->fishes);
+    Fish_destroy_array(world->fishes);
     world->nb_fish = world_tmp->nb_fish;
     world->fishes = Fish_copy_array(world_tmp->fishes, world_tmp->nb_fish);
     Shark_copy(world->shark, world_tmp->shark);
