@@ -23,6 +23,7 @@ Vector Vector_normalize(Vector v);
 
 /* Tronque v à une longueur max, sans changer sa direction */
 Vector Vector_limit(Vector v, float max_length);
+float Vector_angle(Vector a, Vector b);
 
 Vector apply_collision_rect(Vector pos, Vector vel, int min_x, int max_x,
                             int min_y, int max_y);

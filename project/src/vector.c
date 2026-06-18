@@ -21,6 +21,17 @@ Vector Vector_normalize(Vector v) {
     return Vector_scale(v, 1.0f / len);
 }
 
+/**
+ * @brief Fonction qui limite la longueur d'un vecteur à une valeur maximale
+ * donnée. Si la longueur du vecteur dépasse cette valeur, le vecteur est
+ * normalisé et mis à l'échelle pour correspondre à la longueur maximale. Si la
+ * longueur du vecteur est inférieure ou égale à la longueur maximale, le
+ * vecteur est retourné inchangé.
+ *
+ * @param v Le vecteur à limiter
+ * @param max_length La longueur maximale autorisée pour le vecteur
+ * @return Vector Le vecteur limité à la longueur maximale spécifiée
+ */
 Vector Vector_limit(Vector v, float max_length) {
     float len = Vector_length(v);
     if (len > max_length)
