@@ -2,6 +2,7 @@
 #define FISH_H
 
 #include "vector.h"
+#include <stdbool.h>
 
 struct FishPerception;
 

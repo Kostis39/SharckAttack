@@ -3,6 +3,8 @@
 
 #include "fish.h"
 #include "vector.h"
+#include "world.h"
+#include <stdbool.h>
 
 typedef struct {
     Fish self;
