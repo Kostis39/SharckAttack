@@ -18,10 +18,13 @@ Vector Rules_separation(Fish *near, int nb) {
     centre.x /= nb;
     centre.y /= nb;
     float norm = Vector_length(centre);
+    if (norm == 0.0f)
+        return Vector_init();
     escape.x = -centre.x / norm;
     escape.y = -centre.y / norm;
     return escape;
 }
+
 Vector Rules_alignment(Fish *med, int nb) {
     if (nb == 0)
         return Vector_init();
@@ -33,7 +36,11 @@ Vector Rules_alignment(Fish *med, int nb) {
     }
     avg.x /= nb;
     avg.y /= nb;
-    return avg;
+
+    float norm = Vector_length(avg);
+    if (norm == 0.0f)
+        return Vector_init();
+    return Vector_scale(avg, 1.0f / norm);
 }
 Vector Rules_cohesion(Fish *far, int nb) {
     if (nb == 0)
@@ -48,6 +55,8 @@ Vector Rules_cohesion(Fish *far, int nb) {
     centre.x /= nb;
     centre.y /= nb;
     float norm = Vector_length(centre);
+    if (norm == 0.0f)
+        return Vector_init();
     group.x = centre.x / norm;
     group.y = centre.y / norm;
     return group;

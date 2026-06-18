@@ -1,4 +1,5 @@
 #include "vector.h"
+#include "config.h"
 
 void Vector_print(Vector v) { printf("(%f, %f)\n", v.x, v.y); }
 
@@ -50,4 +51,29 @@ float Vector_angle(Vector a, Vector b) {
 
     // atan2(sin, cos) donne l'angle signé dans [-π, π]
     return atan2f(cross, dot);
+}
+
+void apply_border_repulsion(Vector *pos, Vector *vel) {
+
+    // Bord gauche
+    if (pos->x < 0.0f) {
+        pos->x = 0.0f;
+        vel->x = -vel->x;
+    }
+    // Bord droit
+    else if (pos->x > WIDTH) {
+        pos->x = WIDTH;
+        vel->x = -vel->x;
+    }
+
+    // Bord haut
+    if (pos->y < 0.0f) {
+        pos->y = 0.0f;
+        vel->y = -vel->y;
+    }
+    // Bord bas
+    else if (pos->y > HEIGHT) {
+        pos->y = HEIGHT;
+        vel->y = -vel->y;
+    }
 }

@@ -29,4 +29,6 @@ Fish *Fish_copy_array(Fish *fish_array, int nb_fish);
 
 void Fish_destroy_array(Fish *fish_array);
 
+void fish_apply_action(Fish *fish, Vector action);
+
 #endif

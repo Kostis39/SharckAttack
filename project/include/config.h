@@ -2,9 +2,9 @@
 #define CONFIG_H
 
 /* Population */
-#define FISH_NB 10
+#define FISH_NB 50
 
-#define RADIUS_SEPARATION 20
+#define RADIUS_SEPARATION 30
 #define RADIUS_ALIGNEMENT 40
 #define RADIUS_COHESION 60
 #define VISION_ANGLE (M_PI * 0.75f)
@@ -15,9 +15,11 @@
 #define COHESION 1.0f
 
 /* Contraintes de mouvement */
-#define FISH_SPEED_MAX 40
+#define FISH_SPEED_MAX 2
 
-#define SHARK_SPEED_MAX 45
+#define SHARK_SPEED_MAX 3
+
+#define TURN_SPEED 0.3f
 
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
