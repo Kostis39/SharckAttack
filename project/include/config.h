@@ -21,4 +21,7 @@
 #define SHARK_SPEED_MAX 150.0f
 #define SHARK_SPEED_MIN 40.0f
 
+#define FISH_SIZE 10
+#define SHARK_SIZE 22
+
 #endif /* CONFIG_H */
