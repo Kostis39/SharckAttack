@@ -10,9 +10,9 @@
 #define MAX_VOISINS 32          /* taille max du tableau de voisins perçus */
 
 /* Poids des règles réactives, combinées dans AgentCompute() */
-#define POIDS_SEPARATION 1.5f
-#define POIDS_ALIGNEMENT 1.0f
-#define POIDS_COHESION 1.0f
+#define SEPARATION 1.5f
+#define ALIGNMENT 1.0f
+#define COHESION 1.0f
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 40
