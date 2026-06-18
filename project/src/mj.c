@@ -42,8 +42,7 @@ void UpdateWorld(World *world, World *tmp_world) {
         FishPerception perception =
             get_fish_perception(&world->fishes[i], world);
 
-        tmp_world->fishes[i].velocity =
-            fish_choose_action(&world->fishes[i], &perception);
+        tmp_world->fishes[i].velocity = fish_choose_action(&perception);
 
         // Mise à jour de la position
         tmp_world->fishes[i].position = Vector_add(

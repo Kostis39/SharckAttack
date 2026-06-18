@@ -4,7 +4,7 @@
 
 /* float getDistance(Fish *f1, Fish *f2) { */
 
-/* } */
+/* } */ 
 Vector Rules_separation(Fish *near, int nb) {
     Vector centre = Vector_init();
     Vector escape = Vector_init();
@@ -53,3 +53,4 @@ Vector fish_choose_action(FishPerception *p) {
                               Vector_scale(cohesion, COHESION)));
     return weighted_velocity;
 }
+

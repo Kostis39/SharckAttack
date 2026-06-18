@@ -1,4 +1,5 @@
 #include "render_sdl.h"
+#include "vector.h"
 #include <stdio.h>
 #include <stdlib.h>
 
