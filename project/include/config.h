@@ -16,9 +16,9 @@
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 150.0f
-#define FISH_SPEED_MAX 40.0f
+#define FISH_SPEED_MIN 40.0f
 
 #define SHARK_SPEED_MAX 150.0f
-#define SHARK_SPEED_MAX 40.0f
+#define SHARK_SPEED_MIN 40.0f
 
 #endif /* CONFIG_H */
