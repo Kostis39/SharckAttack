@@ -43,8 +43,7 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
     return true;
 }
 
-void destroy_sdl_display(SDLDisplay *display)
-{
+void Destroy_sdl_display(SDLDisplay *display) {
     if (display == NULL)
         return;
 
@@ -61,11 +60,14 @@ void destroy_sdl_display(SDLDisplay *display)
     SDL_Quit();
 }
 
-void clear_sdl_display(SDLDisplay *display)
-{
+void Clear_sdl_display(SDLDisplay *display) {
     if (display == NULL || display->renderer == NULL)
         return;
 
     SDL_SetRenderDrawColor(display->renderer, 10, 20, 35, 255);
     SDL_RenderClear(display->renderer);
+}
+
+void Draw_shark(SDL_Renderer *renderer, Shark *shark) {
+    
 }
