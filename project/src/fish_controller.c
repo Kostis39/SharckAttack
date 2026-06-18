@@ -1,73 +1,63 @@
 #include "fish_controller.h"
 #include "config.h"
 #include "vector.h"
+#include <math.h>
 
-/* float getDistance(Fish *f1, Fish *f2) { */
-
-/* } */
-Vector Rules_separation(Fish *near, int nb) {
+Vector Rules_separation(Fish *self, Fish *near, int nb) {
     if (nb == 0)
         return Vector_init();
 
-    Vector centre = Vector_init();
-    Vector escape = Vector_init();
+    Vector close = Vector_init();
+
     for (int i = 0; i < nb; ++i) {
-        centre.x += near[i].position.x;
-        centre.y += near[i].position.y;
+        close = Vector_add(close, Vector_sub(self->position, near[i].position));
     }
-    centre.x /= nb;
-    centre.y /= nb;
-    float norm = Vector_length(centre);
-    if (norm == 0.0f)
-        return Vector_init();
-    escape.x = -centre.x / norm;
-    escape.y = -centre.y / norm;
-    return escape;
+
+    return close;
 }
 
-Vector Rules_alignment(Fish *med, int nb) {
+Vector Rules_alignment(Fish *self, Fish *med, int nb) {
     if (nb == 0)
         return Vector_init();
 
-    Vector avg = Vector_init();
-    for (int i = 0; nb > i; ++i) {
-        avg.x += med[i].velocity.x;
-        avg.y += med[i].velocity.y;
-    }
-    avg.x /= nb;
-    avg.y /= nb;
-
-    float norm = Vector_length(avg);
-    if (norm == 0.0f)
-        return Vector_init();
-    return Vector_scale(avg, 1.0f / norm);
-}
-Vector Rules_cohesion(Fish *far, int nb) {
-    if (nb == 0)
-        return Vector_init();
-
-    Vector centre = Vector_init();
-    Vector group = Vector_init();
+    Vector avg_vel = Vector_init();
     for (int i = 0; i < nb; ++i) {
-        centre.x += far[i].position.x;
-        centre.y += far[i].position.y;
+        avg_vel = Vector_add(avg_vel, med[i].velocity);
     }
-    centre.x /= nb;
-    centre.y /= nb;
-    float norm = Vector_length(centre);
-    if (norm == 0.0f)
-        return Vector_init();
-    group.x = centre.x / norm;
-    group.y = centre.y / norm;
-    return group;
+    avg_vel = Vector_scale(avg_vel, 1.0f / nb);
+
+    return Vector_sub(avg_vel, self->velocity);
 }
+
+Vector Rules_cohesion(Fish *self, Fish *far, int nb) {
+    if (nb == 0)
+        return Vector_init();
+
+    Vector center = Vector_init();
+    for (int i = 0; i < nb; ++i) {
+        center = Vector_add(center, far[i].position);
+    }
+    center = Vector_scale(center, 1.0f / nb);
+
+    return Vector_sub(center, self->position);
+}
+
 Vector fish_choose_action(FishPerception *p) {
-    Vector separation = Rules_separation(p->neighbor_separation, p->nb_sep);
-    Vector alignement = Rules_alignment(p->neighbor_alignment, p->nb_align);
-    Vector cohesion = Rules_cohesion(p->neighbor_cohesion, p->nb_cohes);
-    Vector weighted_velocity =
-        Vector_add(Vector_scale(separation, SEPARATION),
-                   Vector_add(Vector_scale(alignement, ALIGNMENT),
-                              Vector_scale(cohesion, COHESION)));
+    Vector separation =
+        Rules_separation(&p->self, p->neighbor_separation, p->nb_sep);
+    Vector alignement =
+        Rules_alignment(&p->self, p->neighbor_alignment, p->nb_align);
+    Vector cohesion =
+        Rules_cohesion(&p->self, p->neighbor_cohesion, p->nb_cohes);
+
+    // Combinaison 3 trois forces
+    Vector weighted_velocity = Vector_init();
+    weighted_velocity =
+        Vector_add(weighted_velocity, Vector_scale(separation, SEPARATION));
+    weighted_velocity =
+        Vector_add(weighted_velocity, Vector_scale(alignement, ALIGNMENT));
+    weighted_velocity =
+        Vector_add(weighted_velocity, Vector_scale(cohesion, COHESION));
+
     return weighted_velocity;
 }

@@ -55,25 +55,17 @@ float Vector_angle(Vector a, Vector b) {
 
 void apply_border_repulsion(Vector *pos, Vector *vel) {
 
-    // Bord gauche
-    if (pos->x < 0.0f) {
-        pos->x = 0.0f;
-        vel->x = -vel->x;
-    }
-    // Bord droit
-    else if (pos->x > WIDTH) {
-        pos->x = WIDTH;
-        vel->x = -vel->x;
+    // Bords gauche/droit
+    if (pos->x < BORDER_MARGIN) {
+        vel->x += TURN_FACTOR;
+    } else if (pos->x > WIDTH - BORDER_MARGIN) {
+        vel->x -= TURN_FACTOR;
     }
 
-    // Bord haut
-    if (pos->y < 0.0f) {
-        pos->y = 0.0f;
-        vel->y = -vel->y;
-    }
-    // Bord bas
-    else if (pos->y > HEIGHT) {
-        pos->y = HEIGHT;
-        vel->y = -vel->y;
+    // Bords haut/bas
+    if (pos->y < BORDER_MARGIN) {
+        vel->y += TURN_FACTOR;
+    } else if (pos->y > HEIGHT - BORDER_MARGIN) {
+        vel->y -= TURN_FACTOR;
     }
 }

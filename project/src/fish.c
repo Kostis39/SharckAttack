@@ -46,6 +46,16 @@ void fish_apply_action(Fish *fish, Vector action) {
 
     fish->velocity = Vector_limit(fish->velocity, FISH_SPEED_MAX);
 
+    float speed = Vector_length(fish->velocity);
+
+    if (speed > FISH_SPEED_MAX) {
+        fish->velocity =
+            Vector_scale(Vector_normalize(fish->velocity), FISH_SPEED_MAX);
+    } else if (speed < FISH_SPEED_MIN) {
+        fish->velocity =
+            Vector_scale(Vector_normalize(fish->velocity), FISH_SPEED_MIN);
+    }
+
     // Mettre à jour la position
     fish->position = Vector_add(fish->position, fish->velocity);
 
