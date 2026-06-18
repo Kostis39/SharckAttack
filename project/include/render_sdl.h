@@ -8,9 +8,13 @@
 #include "shark.h"
 #include "world.h"
 
+/**
+ * @struct SDLDisplay
+ * @brief Structure représentant l'affichage SDL du jeu.
+ */
 typedef struct {
-    SDL_Window *window;
-    SDL_Renderer *renderer;
+    SDL_Window *window;     /**< Pointeur vers la fenêtre SDL */
+    SDL_Renderer *renderer; /**< Pointeur vers le rendu SDL */
 } SDLDisplay;
 
 bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height);

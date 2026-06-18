@@ -1,25 +1,20 @@
+#include "render_sdl.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "render_sdl.h"
 
 bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
-    if(display == NULL) {
+    if (display == NULL) {
         return false;
     }
 
-    if(SDL_Init(SDL_INIT_VIDEO) != 0) {
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         fprintf(stderr, "Erreur : %s\n", SDL_GetError());
         return false;
     }
 
-    display->window = SDL_CreateWindow(
-        title,
-        SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED,
-        width,
-        height,
-        SDL_WINDOW_SHOWN
-    );
+    display->window =
+        SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                         width, height, SDL_WINDOW_SHOWN);
 
     if (display->window == NULL) {
         fprintf(stderr, "Erreur SDL_CreateWindow : %s\n", SDL_GetError());
@@ -27,11 +22,8 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
         return false;
     }
 
-    display->renderer = SDL_CreateRenderer(
-        display->window,
-        -1,
-        SDL_RENDERER_ACCELERATED
-    );
+    display->renderer =
+        SDL_CreateRenderer(display->window, -1, SDL_RENDERER_ACCELERATED);
 
     if (display->renderer == NULL) {
         fprintf(stderr, "Erreur SDL_CreateRenderer : %s\n", SDL_GetError());
@@ -72,7 +64,7 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
     if (display == NULL || display->renderer == NULL || fish == NULL)
         return;
 
-    if (fish->alive == false)
+    if (fish->is_alive == false)
         return;
 
     int x = fish->position.x;

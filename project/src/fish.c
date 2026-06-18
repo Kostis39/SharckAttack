@@ -6,7 +6,8 @@ Fish Fish_create_random_pos(int width, int height) {
     fish.position.y = rand() % height;
     fish.velocity.x = (rand() % FISH_SPEED_MAX) - (FISH_SPEED_MAX / 2);
     fish.velocity.y = (rand() % FISH_SPEED_MAX) - (FISH_SPEED_MAX / 2);
-    fish.alive = true;
+    fish.is_alive = true;
+    fish.radius = PERCEPTION_RADIUS;
     return fish;
 }
 

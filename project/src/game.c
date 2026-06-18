@@ -30,3 +30,34 @@ void Game_pause(Game *game) {
         return;
     game->paused = !game->paused;
 }
+
+void Game_run(Game *game) {
+    if (!game)
+        return;
+
+    bool quit = false;
+
+    while (!quit) {
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            // à faire
+        }
+
+        if (!game->paused) {
+            Game_step(game);
+        }
+
+        Render_world(&game->display, &game->world);
+
+        SDL_Delay(10);
+    }
+}
+
+void Game_destroy(Game *game) {
+    if (!game)
+        return;
+
+    World_destroy(&game->world);
+
+    Destroy_sdl_display(&game->display);
+}

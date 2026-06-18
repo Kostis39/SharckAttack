@@ -1,12 +1,17 @@
 #ifndef SHARK_H
 #define SHARK_H
 
+#include "config.h"
 #include "vector.h"
 #include <stdlib.h>
 
+/**
+ * @struct Shark
+ * @brief Structure représentant le requin dans le jeu.
+ */
 typedef struct {
-    Vector pos;
-    Vector velocity;
+    Vector pos;      /**< Position du requin dans le monde */
+    Vector velocity; /**< Vecteur direction/vitesse du requin dans le monde */
 } Shark;
 
 Shark *Shark_createRandom(int width, int height);

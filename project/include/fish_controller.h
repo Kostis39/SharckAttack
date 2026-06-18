@@ -2,24 +2,30 @@
 #define AGENT_FISH_H
 
 #include "fish.h"
+/** @struct FishPerception
+ * @brief Structure représentant la perception qu'a un poisson du monde.
+ */
+typedef struct FishPerception {
+    Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
-typedef struct fishPerception {
-    Fish self;
+    Vector *neighbor_position; /**< Tableau dynamique des positions des voisins
+                                  perçus */
+    Vector *neighbor_speed_vector; /**< Tableau dynamique des vecteurs vitesses
+                                      des voisins perçus */
+    int nb_neighbor; /**< Nombre de voisins perçus par le poisson */
 
-    Vector *neighbor_position;
-    Vector *neighbor_speed_vector;
-    int nb_neighbor; // nombre de voisins perçus
+    bool shark_visible; /**< Indique si le requin est visible par le poisson :
+                           true ou non : false */
+    Vector shark_position; /**< Position du requin dans le monde, si visible */
+    Vector shark_velocity; /**< Vecteur direction/vitesse du requin dans le
+                              monde, si visible */
 
-    bool shark_visible; // true si le requin est visible par le possion
-    Vector shark_position;
-    Vector shark_velocity;
-
-    int width;
-    int height;
+    int width;  /**< Largeur en pixel de notre monde */
+    int height; /**< Hauteur en pixel de notre monde */
 } FishPerception;
 
-/* Règles réactives individuelles : chacune transforme une FishPerception
-   en une force désirée, sans aucun état interne ni mémoire. */
+/* Règles réactives individuelles : chacune transforme une FishPerc  en une
+ * force désirée, sans aucun état interne ni mémoire. */
 Vector Rules_separation(Fish *self, FishPerception *p);
 Vector Rules_alignment(Fish *self, FishPerception *p);
 Vector Rules_cohesion(Fish *self, FishPerception *p);
