@@ -123,3 +123,10 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
 
     SDL_RenderPresent(display->renderer); // affiche le resultat
 }
+
+void Render_world(SDLDisplay *display, World *world) {
+    if (display == NULL || world == NULL)
+        return;
+
+    Draw_world(display, world->fishes, world->nb_fish, world->shark);
+}
