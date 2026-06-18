@@ -1,13 +1,15 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#define M_PI 3.14159265358979323846f
+
 /* Population */
 #define FISH_NB 80
 
-#define PERCEPTION_RADIUS                                                      \
-    60.0f /* rayon de perception générale (alignement, cohésion) */
-#define SEPARATION_RADIUS 20.0f /* rayon plus court, déclenche la répulsion */
-#define MAX_VOISINS 32          /* taille max du tableau de voisins perçus */
+#define RADIUS_SEPARATION 20
+#define RADIUS_ALIGNEMENT 40
+#define RADIUS_COHESION 60
+#define VISION_ANGLE (M_PI * 0.75f)
 
 /* Poids des règles réactives, combinées dans AgentCompute() */
 #define SEPARATION 1.5f

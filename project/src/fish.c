@@ -7,7 +7,10 @@ Fish Fish_create_random_pos(int width, int height) {
     fish.velocity.x = (rand() % FISH_SPEED_MAX) - (FISH_SPEED_MAX / 2);
     fish.velocity.y = (rand() % FISH_SPEED_MAX) - (FISH_SPEED_MAX / 2);
     fish.is_alive = true;
-    // fish.radius = PERCEPTION_RADIUS;
+    fish.radius_separation = RADIUS_SEPARATION;
+    fish.radius_alignement = RADIUS_ALIGNEMENT;
+    fish.radius_cohesion = RADIUS_COHESION;
+    fish.vision_angle = VISION_ANGLE;
     return fish;
 }
 

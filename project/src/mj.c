@@ -19,18 +19,16 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
     perception.height = world->height;
 
     if (world->shark != NULL) {
-        float distance = Vector_distance(fish->position, world->shark->pos);
-        if (distance <= PERCEPTION_RADIUS) {
-            perception.shark_visible = true;
-            perception.shark_position = world->shark->pos;
-            perception.shark_velocity = world->shark->velocity;
-        }
+        perception.shark_visible = true;
+        perception.shark_position = world->shark->pos;
+        perception.shark_velocity = world->shark->velocity;
     }
 
-    // Les trois zones de perception sont concentriques et s'enchaînent :
-    // [0, separation_limit] -> séparation
-    // ]separation_limit, alignment_limit] -> alignement
-    // ]alignment_limit, cohesion_limit] -> cohésion
+    /**Les trois zones de perception sont concentriques et s'enchaînent :
+     * [0, separation_limit] -> séparation
+     * ]separation_limit, alignment_limit] -> alignement
+     * ]alignment_limit, cohesion_limit] -> cohésion
+     */
     float separation_limit = fish->radius_separation;
     float alignment_limit = separation_limit + fish->radius_alignement;
     float cohesion_limit = alignment_limit + fish->radius_cohesion;
