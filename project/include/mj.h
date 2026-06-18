@@ -7,14 +7,13 @@
 
 typedef struct {
     World world;
-    // Display display;
+    SDLDisplay display;
 
     float time;
     bool paused;
 
     int fish_eaten;
 } Game;
-;
 
 bool game_init(Game *game, int width, int height, int nb_fish);
 

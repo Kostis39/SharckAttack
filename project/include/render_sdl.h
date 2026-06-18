@@ -1,12 +1,12 @@
 #ifndef RENDER_SDL_H
 #define RENDER_SDL_H
 
-#include <stdbool.h>
 #include <SDL2/SDL.h>
+#include <stdbool.h>
 
-#include "world.h"
 #include "fish.h"
 #include "shark.h"
+#include "world.h"
 
 typedef struct {
     SDL_Window *window;
