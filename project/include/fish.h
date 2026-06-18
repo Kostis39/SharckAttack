@@ -13,8 +13,11 @@ typedef struct {
     bool alive; // true = vivant, false = mort
 } Fish;
 
-Fish *FishCreate(Vector pos); // Créer un poisson avec une position en parmètre
-                              // et une vitesse aléatoire
+Fish FishCreate(Vector pos); // Créer un poisson avec une position en parmètre
+                             // et une vitesse aléatoire
+// Créer un tableau de poissons avec position et vitesse aléatoire
+Fish *Fish_create_random_array(int nb_fish, int width, int height);
+void Fish_destroy(Fish *fish_array, int nb_fish);
 
 /* Règles réactives individuelles : chacune transforme une FishPerception
    en une force désirée, sans aucun état interne ni mémoire. */
