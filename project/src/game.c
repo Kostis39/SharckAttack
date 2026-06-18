@@ -4,7 +4,7 @@
 #include "shark.h"
 #include "world.h"
 #include <stdlib.h>
-
+/*
 bool Game_init(Game *game, int width, int height, int nb_fish) {
     if (!game)
         return false;
@@ -61,3 +61,4 @@ void Game_destroy(Game *game) {
 
     Destroy_sdl_display(&game->display);
 }
+ */

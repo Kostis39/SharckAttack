@@ -1,11 +1,11 @@
 #ifndef FISH_H
 #define FISH_H
 
-/* #include "config.h" */
+#include "config.h"
 #include "vector.h"
-/* #include <math.h> */
+#include <math.h>
 #include <stdbool.h>
-/* #include <stdlib.h> */
+#include <stdlib.h>
 /**
  * @struct Fish
  * @brief Structure représentant un poisson dans le jeu.
