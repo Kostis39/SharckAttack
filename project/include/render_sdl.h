@@ -23,6 +23,8 @@ void Clear_sdl_display(SDLDisplay *display);
 
 void Draw_fish(SDLDisplay *display, Fish *fish);
 void Draw_shark(SDLDisplay *display, Shark *shark);
+
 void Draw_world(SDLDisplay *display, Fish *fiches, int nb_fish, Shark *shark);
+void Render_world(SDLDisplay *display, World *world); 
 
 #endif
