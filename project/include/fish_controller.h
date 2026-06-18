@@ -1,6 +1,7 @@
 #ifndef AGENT_FISH_H
 #define AGENT_FISH_H
 
+#include "config.h"
 #include "fish.h"
 #include "vector.h"
 
@@ -10,20 +11,20 @@
 typedef struct {
     Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
-    Fish *neighbor_separation;  /**< Tableau dynamique de poissons voisins pour
-                                   la séparation */
-    int nb_neighbor_separation; /**< Nombre de poissons voisins pour la
-                                   séparation */
+    Fish *neighbor_separation; /**< Tableau dynamique de poissons voisins pour
+                                  la séparation */
+    int nb_sep;                /**< Nombre de poissons voisins pour la
+                                                  séparation */
 
-    Fish *neighbor_alignment;  /**< Tableau dynamique de poissons voisins pour
-                                  l'alignement */
-    int nb_neighbor_alignment; /**< Nombre de poissons voisins pour l'alignement
-                                */
-
-    Fish *neighbor_cohesion;  /**< Tableau dynamique de poissons voisins pour la
-                                 cohésion */
-    int nb_neighbor_cohesion; /**< Nombre de poissons voisins pour la cohésion
+    Fish *neighbor_alignment; /**< Tableau dynamique de poissons voisins pour
+                                 l'alignement */
+    int nb_align;             /**< Nombre de poissons voisins pour l'alignement
                                */
+
+    Fish *neighbor_cohesion; /**< Tableau dynamique de poissons voisins pour la
+                                cohésion */
+    int nb_cohes;            /**< Nombre de poissons voisins pour la cohésion
+                              */
 
     bool shark_visible; /**< Indique si le requin est visible par le poisson :
                            true ou non : false */
