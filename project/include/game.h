@@ -1,5 +1,5 @@
-#ifndef MAITRE_JEU_H
-#define MAITRE_JEU_H
+#ifndef GAME_H
+#define GAME_H
 
 #include "render_sdl.h"
 #include "world.h"

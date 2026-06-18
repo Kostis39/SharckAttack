@@ -1,4 +1,4 @@
-#include "mj.h"
+#include "game.h"
 #include "fish.h"
 #include "render_sdl.h"
 #include "shark.h"
@@ -23,4 +23,10 @@ bool Game_init(Game *game, int width, int height, int nb_fish) {
     game->fish_eaten = 0;
 
     return true;
+}
+
+void Game_pause(Game *game) {
+    if (!game)
+        return;
+    game->paused = !game->paused;
 }
