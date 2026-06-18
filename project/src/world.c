@@ -16,3 +16,10 @@ void World_destroy(World *world) {
     free(world);
     world = NULL;
 }
+
+void World_replace(World *world, World *world_tmp) {
+    Fish_destroy_array(world->fishes);
+    world->nb_fish = world_tmp->nb_fish;
+    world->fishes = Fish_copy_array(world_tmp->fishes, world_tmp->nb_fish);
+    Shark_copy(world->shark, world_tmp->shark);
+}

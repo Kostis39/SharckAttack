@@ -9,6 +9,15 @@ Shark *Shark_createRandom(int width, int height) {
     return shark;
 }
 
+int Shark_copy(Shark *shark_dest, Shark *shark_src) {
+    if (shark_dest == NULL || shark_src == NULL) {
+        return -1; // Error: Null pointer
+    }
+    shark_dest->pos = shark_src->pos;
+    shark_dest->velocity = shark_src->velocity;
+    return 0;
+}
+
 void Shark_destroy(Shark *shark) {
     free(shark);
     shark = NULL;

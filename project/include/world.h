@@ -18,5 +18,6 @@ typedef struct {
 
 World *World_init(int width, int height, int nb_fish);
 void World_destroy(World *world);
+void World_update(World *world, World *world_tmp);
 
 #endif
