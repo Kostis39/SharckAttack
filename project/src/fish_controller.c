@@ -4,13 +4,16 @@
 
 /* float getDistance(Fish *f1, Fish *f2) { */
 
-/* } */ 
+/* } */
 Vector Rules_separation(Fish *near, int nb) {
+    if (nb == 0)
+        return Vector_init();
+
     Vector centre = Vector_init();
     Vector escape = Vector_init();
     for (int i = 0; i < nb; ++i) {
-        centre.x += near->position.x;
-        centre.y += near->position.y;
+        centre.x += near[i].position.x;
+        centre.y += near[i].position.y;
     }
     centre.x /= nb;
     centre.y /= nb;
@@ -20,21 +23,27 @@ Vector Rules_separation(Fish *near, int nb) {
     return escape;
 }
 Vector Rules_alignment(Fish *med, int nb) {
-    Vector avg = {0, 0};
+    if (nb == 0)
+        return Vector_init();
+
+    Vector avg = Vector_init();
     for (int i = 0; nb > i; ++i) {
-        avg.x += med->velocity.x;
-        avg.y += med->velocity.y;
+        avg.x += med[i].velocity.x;
+        avg.y += med[i].velocity.y;
     }
     avg.x /= nb;
     avg.y /= nb;
     return avg;
 }
 Vector Rules_cohesion(Fish *far, int nb) {
+    if (nb == 0)
+        return Vector_init();
+
     Vector centre = Vector_init();
     Vector group = Vector_init();
     for (int i = 0; i < nb; ++i) {
-        centre.x += far->position.x;
-        centre.y += far->position.y;
+        centre.x += far[i].position.x;
+        centre.y += far[i].position.y;
     }
     centre.x /= nb;
     centre.y /= nb;
@@ -53,4 +62,3 @@ Vector fish_choose_action(FishPerception *p) {
                               Vector_scale(cohesion, COHESION)));
     return weighted_velocity;
 }
-

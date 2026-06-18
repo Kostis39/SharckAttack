@@ -1,5 +1,7 @@
 #include "vector.h"
 
+void Vector_print(Vector v) { printf("(%f, %f)\n", v.x, v.y); }
+
 Vector Vector_init(void) { return (Vector){0.0f, 0.0f}; }
 
 Vector Vector_add(Vector a, Vector b) { return (Vector){a.x + b.x, a.y + b.y}; }

@@ -1,10 +1,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define M_PI 3.14159265358979323846f
-
 /* Population */
-#define FISH_NB 80
+#define FISH_NB 10
 
 #define RADIUS_SEPARATION 20
 #define RADIUS_ALIGNEMENT 40
