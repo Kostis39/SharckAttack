@@ -19,7 +19,7 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
         width,
         height,
         SDL_WINDOW_SHOWN
-    )
+    );
 
     if (display->window == NULL) {
         fprintf(stderr, "Erreur SDL_CreateWindow : %s\n", SDL_GetError());
@@ -59,4 +59,13 @@ void destroy_sdl_display(SDLDisplay *display)
     }
 
     SDL_Quit();
+}
+
+void clear_sdl_display(SDLDisplay *display)
+{
+    if (display == NULL || display->renderer == NULL)
+        return;
+
+    SDL_SetRenderDrawColor(display->renderer, 10, 20, 35, 255);
+    SDL_RenderClear(display->renderer);
 }
