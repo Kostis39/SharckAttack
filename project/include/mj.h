@@ -1,31 +1,8 @@
-#ifndef MAITRE_JEU_H
-#define MAITRE_JEU_H
-
-#include "render_sdl.h"
+#ifndef MJ_H
+#define MJ_H
+#include "fish.h"
+#include "fish_controller.h"
 #include "world.h"
-
-typedef struct {
-    World world;
-    SDLDisplay display;
-
-    float time;
-    bool paused;
-
-    int fish_eaten;
-} Game;
-
-bool game_init(Game *game, int width, int height, int nb_fish);
-
-void game_step(Game *game);
-
-void game_handle_collisions(Game *game);
-
-void game_pause(Game *game);
-
-void game_end(Game *game);
-
-void game_run(Game *game);
-
-void game_destroy(Game *game);
-
+/* #include "shark.h" */
+FishPerception get_fish_perception(Fish *fish, World *world);
 #endif
