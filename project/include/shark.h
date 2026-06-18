@@ -2,6 +2,8 @@
 #define SHARK_H
 
 #include "vector.h"
+#include <stdlib.h>
+
 typedef struct {
     Vector pos;
     Vector velocity;

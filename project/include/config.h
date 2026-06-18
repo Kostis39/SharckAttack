@@ -15,10 +15,8 @@
 #define POIDS_COHESION 1.0f
 
 /* Contraintes de mouvement */
-#define FISH_SPEED_MAX 150.0f
-#define FISH_SPEED_MIN 40.0f
+#define FISH_SPEED_MAX 40
 
-#define SHARK_SPEED_MAX 150.0f
-#define SHARK_SPEED_MIN 40.0f
+#define SHARK_SPEED_MAX 45
 
 #endif /* CONFIG_H */
