@@ -1,9 +1,8 @@
 #ifndef PERCEPTION_H
 #define PERCEPTION_H
 
-#include "config.h"
+#include "fish.h"
 #include "vector.h"
-#include "world.h"
 
 typedef struct {
     Fish self;

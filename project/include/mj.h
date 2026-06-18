@@ -3,7 +3,6 @@
 
 #include "render_sdl.h"
 #include "world.h"
-#include <stdbool.h>
 
 typedef struct {
     World world;

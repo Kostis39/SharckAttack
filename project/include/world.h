@@ -3,6 +3,8 @@
 
 #include "fish.h"
 #include "shark.h"
+#include "vector.h"
+#include <stdlib.h>
 
 typedef struct {
     int width;
