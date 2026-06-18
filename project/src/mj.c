@@ -1,6 +1,7 @@
 #include "mj.h"
 #include "vector.h"
 #include "world.h"
+#include <math.h>
 
 FishPerception get_fish_perception(Fish *fish, World *world) {
     FishPerception perception;
@@ -23,6 +24,44 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
             perception.shark_visible = true;
             perception.shark_position = world->shark->pos;
             perception.shark_velocity = world->shark->velocity;
+        }
+    }
+
+    // Les trois zones de perception sont concentriques et s'enchaînent :
+    // [0, separation_limit] -> séparation
+    // ]separation_limit, alignment_limit] -> alignement
+    // ]alignment_limit, cohesion_limit] -> cohésion
+    float separation_limit = fish->radius_separation;
+    float alignment_limit = separation_limit + fish->radius_alignement;
+    float cohesion_limit = alignment_limit + fish->radius_cohesion;
+
+    for (int i = 0; i < world->nb_fish; i++) {
+        Fish *other = &world->fishes[i];
+
+        if (other == fish || !other->is_alive) {
+            continue;
+        }
+
+        Vector to_other = Vector_sub(other->position, fish->position);
+        float distance = Vector_norm(to_other);
+
+        float angle = Vector_angle(fish->velocity, to_other);
+        if (fabsf(angle) > fish->vision_angle / 2.0f) {
+            continue;
+        }
+
+        if (distance <= separation_limit) {
+            perception.neighbor_separation[perception.nb_neighbor_separation] =
+                *other;
+            perception.nb_neighbor_separation++;
+        } else if (distance <= alignment_limit) {
+            perception.neighbor_alignment[perception.nb_neighbor_alignment] =
+                *other;
+            perception.nb_neighbor_alignment++;
+        } else if (distance <= cohesion_limit) {
+            perception.neighbor_cohesion[perception.nb_neighbor_cohesion] =
+                *other;
+            perception.nb_neighbor_cohesion++;
         }
     }
 
