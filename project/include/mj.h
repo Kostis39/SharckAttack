@@ -1,10 +1,9 @@
 #ifndef MAITRE_JEU_H
 #define MAITRE_JEU_H
 
-// game_init
+#include "world.h"
 
-// game_step
-
-// game_end
+/** Simule une frame entière */
+void SimulationStep(World *world);
 
 #endif

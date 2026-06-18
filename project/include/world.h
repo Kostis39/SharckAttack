@@ -14,4 +14,7 @@ typedef struct {
     Shark shark;
 } World;
 
+void WorldInit(World *world, int width, int height, int nb_fish);
+void World_Destroy(World *world);
+
 #endif
