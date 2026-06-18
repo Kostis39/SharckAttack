@@ -1,94 +1,144 @@
+/**
+ * \file main.c
+ * \brief Point d'entrée du programme — boucle principale du Jeu de la Vie.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #include "SDLDisplay.h"
-#include "SDL_events.h"
 #include "agent.h"
 #include "cell.h"
 #include "mj.h"
 #include "terminalDisplay.h"
 #include "world.h"
 
-#define WORLD_SIZE 10
+/** \brief Taille par défaut de la grille du monde. */
+#define WORLD_SIZE 50
 
-int SDLUserEvent(SDL_Event event, World *world, int *isPaused) {
+/** \brief Taille de la fenêtre SDL*/
+#define WINDOW_SIZE 800
+
+int SDLUserEvent(SDL_Event event, World *world, bool *next_iteration,
+                 SDLDisplay *display, WorldToDisplay *worldToDisplay) {
     /**
-     * @brief Gère les actions possible à partir de SDL et execute les actions
-     * adéquat: Si zqsd : déplace la vision du monde respectivement en haut
-     * droite bas gauche Si a et e : zoom la vision du monde Si espace : passe à
-     * l'itération suivante
-     * @param event L'événement à traiter.
-     * @param world Le monde à modifier.
-     * @return 0 si la boucle est interrompue, avec SPC ou SDL_QUIT
-     * @return 1 sinon
+     * \brief Gère les événements SDL (clavier, quit).
+     *
+     * Touches supportées :
+     * - Z/Q/S/D : déplacer la vue
+     * - Scroll molette : zoomer / dézoomer
+     * - Espace : nouvelle itération
+     * - Échap : quitter
+     *
+     * \param event Événement SDL à traiter.
+     * \param world Pointeur vers le monde.
+     * \param next_iteration Pointeur vers l'info qui indique si on change
+     * d'itération.
+     * \return 0 pour quitter, 1 pour continuer.
      */
     switch (event.type) {
     case SDL_QUIT:
         return 0;
+
     case SDL_KEYDOWN:
         switch (event.key.keysym.sym) {
         case SDLK_ESCAPE:
             return 0;
         case SDLK_SPACE:
-            *isPaused = !*isPaused;
+            *next_iteration = true;
             break;
         case SDLK_z:
-            DecrementOffsetY(world);
-            break;
-        case SDLK_s:
-            IncrementOffsetY(world);
-            break;
-        case SDLK_q:
             DecrementOffsetX(world);
             break;
-        case SDLK_d:
+        case SDLK_s:
             IncrementOffsetX(world);
             break;
-        case SDLK_a:
-            IncrementZoom(world);
+        case SDLK_q:
+            DecrementOffsetY(world);
             break;
-        case SDLK_e:
-            DecrementZoom(world);
+        case SDLK_d:
+            IncrementOffsetY(world);
             break;
         default:
             break;
         }
+        break;
+
+    case SDL_MOUSEWHEEL:
+        if (event.wheel.y > 0)
+            IncrementZoom(world);
+        else if (event.wheel.y < 0)
+            DecrementZoom(world);
+        break;
+
+    case SDL_MOUSEBUTTONDOWN:
+        if (event.button.button == SDL_BUTTON_LEFT) {
+            int mouseX = event.button.x;
+            int mouseY = event.button.y;
+
+            int cellSize = GetCellSizeSDLDisplay(display, worldToDisplay);
+
+            int X = mouseX / cellSize;
+            int Y = mouseY / cellSize;
+
+            int realX = world->OffsetY + X;
+            int realY = world->OffsetX + Y;
+
+            // Gestion du modulo
+            realX = ((realX % world->size) + world->size) % world->size;
+            realY = ((realY % world->size) + world->size) % world->size;
+
+            SwitchStateCell(&world->tab[realY][realX]);
+        }
+        break;
+
+    default:
+        break;
     }
+
     return 1;
 }
 
-int TerminalUserEvent(World *world) {
+int TerminalUserEvent(World *world, bool *next_iteration) {
     /**
-     * @brief Gère les actions possible à partir de SDL et execute les actions
-     * adéquat: Si zqsd : déplace la vision du monde respectivement en haut
-     * droite bas gauche Si a et e : zoom la vision du monde Si espace : passe à
-     * l'itération suivante
-     * @param event L'événement à traiter.
-     * @param world Le monde à modifier.
-     * @return 0 si la boucle est interrompue, avec SPC ou SDL_QUIT
-     * @return 1 sinon
+     * \brief Gère les événements en mode terminal (entrée standard).
+     *
+     * Touches supportées :
+     * - Z/Q/S/D : déplacer la vue
+     * - A/E : zoomer / dézoomer
+     * - K : quitter
+     * - N : nouvelle itération
+     *
+     * \param world Pointeur vers le monde.
+     * \param next_iteration Pointeur vers l'info qui indique si on change
+     * d'itération.
+     * \return 0 pour quitter, 1 pour continuer.
      */
     char input;
-    scanf("%c%*c", &input);
+    scanf(" %c", &input);
     switch (input) {
+    case 'n':
+        *next_iteration = true;
+        break;
     case 'z':
-        DecrementOffsetY(world);
-        break;
-    case 's':
-        IncrementOffsetY(world);
-        break;
-    case 'q':
         DecrementOffsetX(world);
         break;
-    case 'd':
+    case 's':
         IncrementOffsetX(world);
         break;
+    case 'q':
+        DecrementOffsetY(world);
+        break;
+    case 'd':
+        IncrementOffsetY(world);
+        break;
     case 'a':
-        IncrementZoom(world);
+        DecrementZoom(world);
         break;
     case 'e':
-        DecrementZoom(world);
+        IncrementZoom(world);
         break;
     case 'k': // kill
         return 0;
@@ -98,97 +148,123 @@ int TerminalUserEvent(World *world) {
     return 1;
 }
 
-int main(int argc, char *argv[]) {
-    (void)argc;
-    (void)argv;
+void runTerminal(World *w) {
+    bool program_on = true;
+    bool next_iteration = false;
+    WorldToDisplay *display;
+    Cell **perception;
+    Cell **tmp = InitCell2D(w->size);
 
+    while (program_on) {
+        display = WorldToDisplayFromWorld(w);
+        Display(display);
+        FreeWorldToDisplay(display);
+
+        if (!TerminalUserEvent(w, &next_iteration))
+            program_on = false;
+
+        if (next_iteration) {
+            FillCell2DToFalse(tmp, w->size);
+
+            for (int y = 0; y < w->size; y++) {
+                for (int x = 0; x < w->size; x++) {
+                    perception = GetPerseption(w, x, y);
+
+                    SetValueTabCell(tmp, x, y,
+                                    NewState(GetCellWorld(w, x, y),
+                                             GetNbNeighbors(perception)));
+
+                    DeletePerception(perception);
+                }
+            }
+
+            SwitchTabCellWorld(w, tmp);
+            next_iteration = false;
+        }
+    }
+
+    DeleteCell2D(tmp, w->size);
+}
+
+void runSDL(World *w) {
+    SDLDisplay display;
+    if (!InitSDLDisplay(&display, WINDOW_SIZE)) {
+        fprintf(stderr, "Erreur : impossible d'initialiser SDL\n");
+        return;
+    }
+
+    bool program_on = true;
+    bool next_iteration = false;
+    WorldToDisplay *worldToDisplay;
+    Cell **perception;
+    Cell **tmp = InitCell2D(w->size);
+
+    while (program_on) {
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            if (!SDLUserEvent(event, w, &next_iteration, &display,
+                              worldToDisplay))
+                program_on = false;
+        }
+
+        worldToDisplay = WorldToDisplayFromWorld(w);
+        RenderSDLDisplay(&display, worldToDisplay);
+        FreeWorldToDisplay(worldToDisplay);
+
+        if (next_iteration) {
+            FillCell2DToFalse(tmp, w->size);
+
+            for (int y = 0; y < w->size; y++) {
+                for (int x = 0; x < w->size; x++) {
+                    perception = GetPerseption(w, x, y);
+
+                    SetValueTabCell(tmp, x, y,
+                                    NewState(GetCellWorld(w, x, y),
+                                             GetNbNeighbors(perception)));
+
+                    DeletePerception(perception);
+                }
+            }
+
+            SwitchTabCellWorld(w, tmp);
+            next_iteration = false;
+        }
+
+        SDL_Delay(10);
+    }
+
+    DeleteCell2D(tmp, w->size);
+    DestroySDLDisplay(&display);
+}
+
+int main(int argc, char *argv[]) {
     srand(time(NULL));
 
+    bool useSDL = false;
+    bool useBlank = false;
+
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "sdl") == 0)
+            useSDL = true;
+        if (strcmp(argv[i], "blank") == 0)
+            useBlank = true;
+    }
+
     World *w = InitWorld(WORLD_SIZE);
-    RandomizeWorld(w);
 
-    PrintInfoWorld(w);
+    if (useBlank) {
+        FillCell2DToFalse(w->tab, w->size);
+    } else {
+        RandomizeWorld(w);
+    }
 
-    WorldToDisplay *affichage = WorldToDisplayFromWorld(w);
-
-    return Display(affichage);
-    // bool program_on = true;
-
-    // while (program_on)
-    // {
-    // }
+    if (useSDL) {
+        runSDL(w);
+    } else {
+        runTerminal(w);
+    }
 
     DeleteWorld(w);
 
     return 0;
 }
-
-
-/*
-(void)argc;
-(void)argv;
-
-srand(time(NULL));
-
-// Création du monde
-World *world = InitWorld(WORLD_SIZE);
-
-if (world == NULL)
-{
-printf("Erreur : impossible de créer le monde\n");
-return 1;
-}
-
-// Remplissage aléatoire du monde
-RandomizeWorld(world);
-
-// Création de l'affichage SDL
-SDLDisplay display;
-
-if (!InitSDLDisplay(&display, WINDOW_SIZE))
-{
-printf("Erreur : impossible d'initialiser SDLDisplay\n");
-DeleteWorld(world);
-free(world);
-return 1;
-}
-
-bool programOn = true;
-
-while (programOn)
-{
-SDL_Event event;
-
-// On gère seulement la fermeture de la fenêtre
-while (SDL_PollEvent(&event))
-{
-if (event.type == SDL_QUIT)
-{
-programOn = false;
-}
-}
-
-// On prépare uniquement la partie du monde à afficher
-WorldToDisplay *worldToDisplay = WorldToDisplayFromWorld(world);
-
-if (worldToDisplay != NULL)
-{
-// Affichage SDL
-RenderSDLDisplay(&display, worldToDisplay);
-
-// Libération du WorldToDisplay
-FreeWorldToDisplay(worldToDisplay);
-free(worldToDisplay);
-}
-
-SDL_Delay(16);
-}
-
-// Nettoyage final
-DestroySDLDisplay(&display);
-
-DeleteWorld(world);
-free(world);
-
-return 0;
-*/

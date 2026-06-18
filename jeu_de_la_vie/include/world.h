@@ -3,25 +3,25 @@
 
 #include "cell.h"
 #include <stdbool.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * \struct World
  * \brief Représente le monde du jeu de la vie.
  */
-typedef struct
-{
-    Cell **tab;           /**< Tableau carre 2D de cellules */
-    int size;             /**< Taille du tableau, la meme taille en width et height */
+typedef struct {
+    Cell **tab; /**< Tableau carre 2D de cellules */
+    int size;   /**< Taille du tableau, la meme taille en width et height */
     float zoomDisplay;    /**< coefficient du zoom */
-    int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de savoir comment l'afficher */
+    int OffsetX, OffsetY; /**< Coordonnées du coin supérieur gauche, afin de
+                             savoir comment l'afficher */
 } World;
 
-typedef struct
-{
+typedef struct {
     Cell **tab; /**< Tableau à afficher carre 2D de cellule vivante ou morte */
-    int size;   /**< Taille du tableau à afficher, la meme taille en width et height */
+    int size;   /**< Taille du tableau à afficher, la meme taille en width et
+                   height */
 } WorldToDisplay;
 
 // Fonction World Display
@@ -33,7 +33,7 @@ void FreeWorldToDisplay(WorldToDisplay *wtd);
 
 // Fonction World
 
-Cell GetCellWorld(World *w, int x, int y);
+Cell *GetCellWorld(World *w, int x, int y);
 int GetSizeWorld(World *w);
 float GetZoomWorld(World *w);
 int GetOffsetXWorld(World *w);
