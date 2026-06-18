@@ -14,18 +14,18 @@ typedef struct {
     int fish_eaten;
 } Game;
 
-bool game_init(Game *game, int width, int height, int nb_fish);
+bool Game_init(Game *game, int width, int height, int nb_fish);
 
-void game_step(Game *game);
+void Game_step(Game *game);
 
-void game_handle_collisions(Game *game);
+void Game_handle_collisions(Game *game);
 
-void game_pause(Game *game);
+void Game_pause(Game *game);
 
-void game_end(Game *game);
+void Game_end(Game *game);
 
-void game_run(Game *game);
+void Game_run(Game *game);
 
-void game_destroy(Game *game);
+void Game_destroy(Game *game);
 
 #endif
