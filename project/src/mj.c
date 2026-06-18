@@ -40,7 +40,7 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
     return perception;
 }
 
-void UpdateWorld(World *world, World *tmp_world) {
+  void UpdateWorld(World *world, World *tmp_world) {
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
         tmp_world->fishes[i] = world->fishes[i];
@@ -68,3 +68,4 @@ void UpdateWorld(World *world, World *tmp_world) {
     // tmp_world->shark.position =
     //     Vector_add(tmp_world->shark.position, tmp_world->shark.velocity);
 }
+

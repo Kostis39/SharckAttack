@@ -22,4 +22,7 @@
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
+#define WIDTH 500
+#define HEIGHT 500
+
 #endif /* CONFIG_H */
