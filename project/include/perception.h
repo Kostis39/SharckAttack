@@ -21,7 +21,7 @@ typedef struct {
     int height;
 } FishPerception;
 
-FishPerception *get_fish_perception(Fish, World *);
+FishPerception get_fish_perception(Fish fish, World *world);
 // SharkPerception* get_shark_perception(World*);
 
 #endif

@@ -11,7 +11,8 @@ World *World_init(int width, int height, int nb_fish) {
 }
 
 void World_destroy(World *world) {
-    Fish_destroy(world->fishes, world->nb_fish);
+    Fish_destroy_array(world->fishes);
     Shark_destroy(world->shark);
     free(world);
+    world = NULL;
 }
