@@ -70,21 +70,32 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
     int x = fish->position.x;
     int y = fish->position.y;
 
-    int x1 = x + FISH_SIZE;
-    int y1 = y;
+    Vector direction = Vector_normalize(fish->velocity);
 
-    int x2 = x - FISH_SIZE;
-    int y2 = y - FISH_SIZE;
+    if (direction.x == 0 && direction.y == 0) {
+        direction.x = 1;
+        direction.y = 0;
+    }
 
-    int x3 = x - FISH_SIZE;
-    int y3 = y + FISH_SIZE;
+    Vector side;
+    side.x = -direction.y;
+    side.y = direction.x;
+
+    int x1 = x + direction.x * FISH_SIZE;
+    int y1 = y + direction.y * FISH_SIZE;
+
+    int x2 = x - direction.x * FISH_SIZE + side.x * FISH_SIZE / 2;
+    int y2 = y - direction.y * FISH_SIZE + side.y * FISH_SIZE / 2;
+
+    int x3 = x - direction.x * FISH_SIZE - side.x * FISH_SIZE / 2;
+    int y3 = y - direction.y * FISH_SIZE - side.y * FISH_SIZE / 2;
 
     SDL_SetRenderDrawColor(display->renderer, 0, 0, 255, 255);
 
     SDL_RenderDrawLine(display->renderer, x1, y1, x2, y2);
     SDL_RenderDrawLine(display->renderer, x2, y2, x3, y3);
     SDL_RenderDrawLine(display->renderer, x3, y3, x1, y1);
-}
+}  
 
 void Draw_shark(SDLDisplay *display, Shark *shark) {
     if (display == NULL || display->renderer == NULL || shark == NULL)
@@ -93,14 +104,25 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     int x = shark->pos.x;
     int y = shark->pos.y;
 
-    int x1 = x + SHARK_SIZE;
-    int y1 = y;
+    Vector direction = Vector_normalize(shark->velocity);
 
-    int x2 = x - SHARK_SIZE;
-    int y2 = y - SHARK_SIZE;
+    if (direction.x == 0 && direction.y == 0) {
+        direction.x = 1;
+        direction.y = 0;
+    }
 
-    int x3 = x - SHARK_SIZE;
-    int y3 = y + SHARK_SIZE;
+    Vector side;
+    side.x = -direction.y;
+    side.y = direction.x;
+
+    int x1 = x + direction.x * SHARK_SIZE;
+    int y1 = y + direction.y * SHARK_SIZE;
+
+    int x2 = x - direction.x * SHARK_SIZE + side.x * SHARK_SIZE / 2;
+    int y2 = y - direction.y * SHARK_SIZE + side.y * SHARK_SIZE / 2;
+
+    int x3 = x - direction.x * SHARK_SIZE - side.x * SHARK_SIZE / 2;
+    int y3 = y - direction.y * SHARK_SIZE - side.y * SHARK_SIZE / 2;
 
     SDL_SetRenderDrawColor(display->renderer, 255, 0, 0, 255);
 
