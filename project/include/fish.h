@@ -13,8 +13,7 @@ typedef struct {
     bool alive; // true = vivant, false = mort
 } Fish;
 
-Fish Fish_create(Vector pos); // Créer un poisson avec une position en parmètre
-                              // et une vitesse aléatoire
+Fish Fish_create_random_pos(int width, int height);
 // Créer un tableau de poissons avec position et vitesse aléatoire
 Fish *Fish_create_random_array(int nb_fish, int width, int height);
 void Fish_destroy(Fish *fish_array, int nb_fish);
