@@ -2,9 +2,14 @@
 #define AGENT_FISH_H
 
 #include "fish.h"
+<<<<<<< HEAD
+#include "vector.h"
+
+=======
 /** @struct FishPerception
  * @brief Structure représentant la perception qu'a un poisson du monde.
  */
+>>>>>>> 5ad3942f732ad0c8cdb90f19a0c485a4cec28a22
 typedef struct FishPerception {
     Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
@@ -26,10 +31,10 @@ typedef struct FishPerception {
 
 /* Règles réactives individuelles : chacune transforme une FishPerc  en une
  * force désirée, sans aucun état interne ni mémoire. */
-Vector Rules_separation(Fish *self, FishPerception *p);
-Vector Rules_alignment(Fish *self, FishPerception *p);
-Vector Rules_cohesion(Fish *self, FishPerception *p);
+Vector Rules_separation(FishPerception *p);
+Vector Rules_alignment(FishPerception *p);
+Vector Rules_cohesion(FishPerception *p);
 
-Vector fish_choose_action(Fish *fish, FishPerception *perception);
+Vector fish_choose_action(FishPerception *perception);
 
 #endif
