@@ -1,11 +1,14 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-/* #include "config.h" */
-
+#include <math.h>
+/**
+ * @struct Vector
+ * @brief Structure représentant un vecteur 2D.
+ */
 typedef struct {
-    float x;
-    float y;
+    float x; /**< Composante x du vecteur */
+    float y; /**< Composante y du vecteur */
 } Vector;
 
 Vector Vector_init(); // Initialise à 0 x et y
