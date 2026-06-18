@@ -5,15 +5,18 @@
 #include "vector.h"
 #include <stdbool.h>
 #include <stdlib.h>
-
+/**
+ * @struct Fish
+ * @brief Structure représentant un poisson dans le jeu.
+ */
 typedef struct {
-    Vector position;
-    Vector velocity;
-    bool is_alive; // true = vivant, false = mort
+    Vector position; /**< Position du poisson dans le monde */
+    Vector velocity; /**< Vecteur direction/vitesse du poisson dans le monde */
+    bool
+        is_alive; /**< Indique si le poisson est vivant : true ou non : false */
 } Fish;
 
 Fish Fish_create_random_pos(int width, int height);
-// Fish *Fish_create_null_array(int nb_fish, int width, int height);
 Fish *Fish_create_random_array(int nb_fish, int width, int height);
 
 Fish *Fish_copy_array(Fish *fish_array, int nb_fish);
