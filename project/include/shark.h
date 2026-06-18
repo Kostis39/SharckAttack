@@ -10,7 +10,7 @@ typedef struct {
     Vector velocity;
 } Shark;
 
-Shark *SharkCreateRandom(int width, int height);
-void SharkDestroy(Shark *shark);
+Shark *Shark_createRandom(int width, int height);
+void Shark_destroy(Shark *shark);
 
 #endif
