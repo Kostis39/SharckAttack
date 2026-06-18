@@ -7,14 +7,23 @@
 /** @struct FishPerception
  * @brief Structure représentant la perception qu'a un poisson du monde.
  */
-typedef struct FishPerception {
+typedef struct {
     Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
-    Vector *neighbor_position; /**< Tableau dynamique des positions des voisins
-                                  perçus */
-    Vector *neighbor_speed_vector; /**< Tableau dynamique des vecteurs vitesses
-                                      des voisins perçus */
-    int nb_neighbor; /**< Nombre de voisins perçus par le poisson */
+    Fish *neighbor_separation;  /**< Tableau dynamique de poissons voisins pour
+                                   la séparation */
+    int nb_neighbor_separation; /**< Nombre de poissons voisins pour la
+                                   séparation */
+
+    Fish *neighbor_alignment;  /**< Tableau dynamique de poissons voisins pour
+                                  l'alignement */
+    int nb_neighbor_alignment; /**< Nombre de poissons voisins pour l'alignement
+                                */
+
+    Fish *neighbor_cohesion;  /**< Tableau dynamique de poissons voisins pour la
+                                 cohésion */
+    int nb_neighbor_cohesion; /**< Nombre de poissons voisins pour la cohésion
+                               */
 
     bool shark_visible; /**< Indique si le requin est visible par le poisson :
                            true ou non : false */

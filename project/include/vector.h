@@ -23,5 +23,6 @@ Vector Vector_normalize(Vector v);
 
 /* Tronque v à une longueur max, sans changer sa direction */
 Vector Vector_limit(Vector v, float max_length);
+float Vector_angle(Vector a, Vector b);
 
 #endif

@@ -1,25 +1,25 @@
 #ifndef FISH_H
 #define FISH_H
 
-/* #include "config.h" */
+#include "config.h"
 #include "vector.h"
-/* #include <math.h> */
 #include <stdbool.h>
-/* #include <stdlib.h> */
+#include <stdlib.h>
 /**
  * @struct Fish
  * @brief Structure représentant un poisson dans le jeu.
  */
 typedef struct {
-    float repulsion;
-    float orientation;
-    float attraction;
     Vector position; /**< Position du poisson dans le monde */
     Vector velocity; /**< Vecteur direction/vitesse du poisson dans le monde */
     bool
         is_alive; /**< Indique si le poisson est vivant : true ou non : false */
-    float radius; /**< Rayon de perception du poisson, utilisé pour détecter les
-                 voisins et le requin */
+
+    float radius_separation;
+    float radius_alignement;
+    float radius_cohesion; /**< Rayon de perception du poisson pour les règles
+                              de cohésion */
+    float vision_angle;    /**< Angle de vision du poisson en radians */
 } Fish;
 
 Fish Fish_create_random_pos(int width, int height);
