@@ -1,10 +1,10 @@
 #ifndef FISH_H
 #define FISH_H
 
-#include "config.h"
+/* #include "config.h" */
 #include "vector.h"
 #include <stdbool.h>
-#include <stdlib.h>
+/* #include <stdlib.h> */
 
 typedef struct {
     Vector position;
