@@ -28,9 +28,9 @@ typedef struct FishPerception {
 
 /* Règles réactives individuelles : chacune transforme une FishPerc  en une
  * force désirée, sans aucun état interne ni mémoire. */
-Vector Rules_separation(FishPerception *p);
-Vector Rules_alignment(FishPerception *p);
-Vector Rules_cohesion(FishPerception *p);
+Vector Rules_separation(Fish *p, int nb);
+Vector Rules_alignment(Fish *p, int nb);
+Vector Rules_cohesion(Fish *p, int nb);
 
 Vector fish_choose_action(FishPerception *perception);
 
