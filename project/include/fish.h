@@ -13,8 +13,11 @@ typedef struct {
 } Fish;
 
 Fish Fish_create_random_pos(int width, int height);
-// Créer un tableau de poissons avec position et vitesse aléatoire
+// Fish *Fish_create_null_array(int nb_fish, int width, int height);
 Fish *Fish_create_random_array(int nb_fish, int width, int height);
+
+Fish *Fish_copy_array(Fish *fish_array, int nb_fish);
+
 void Fish_destroy_array(Fish *fish_array);
 
 #endif

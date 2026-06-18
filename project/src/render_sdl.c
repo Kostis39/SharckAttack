@@ -68,6 +68,28 @@ void Clear_sdl_display(SDLDisplay *display) {
     SDL_RenderClear(display->renderer);
 }
 
-void Draw_shark(SDL_Renderer *renderer, Shark *shark) {
-    
+void Draw_fish(SDL_Renderer *renderer, Fish *fish) {
+    if (renderer == NULL || fish == NULL)
+        return;
+
+    if (fish->alive == false)
+        return;
+
+    int x = fish->position.x;
+    int y = fish->position.y;
+
+    int x1 = x + FISH_SIZE;
+    int y1 = y;
+
+    int x2 = x - FISH_SIZE;
+    int y2 = y - FISH_SIZE;
+
+    int x3 = x - FISH_SIZE;
+    int y3 = y + FISH_SIZE;
+
+    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+
+    SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
+    SDL_RenderDrawLine(renderer, x2, y2, x3, y3);
+    SDL_RenderDrawLine(renderer, x3, y3, x1, y1);
 }
