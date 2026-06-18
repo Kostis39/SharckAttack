@@ -98,13 +98,13 @@ void Game_run() {
             default:
                 break;
             }
-
-            if (!game.paused) {
-                Game_step(&game);
-            }
-
-            SDL_Delay(10);
         }
+
+        if (!game.paused) {
+            Game_step(&game);
+        }
+
+        SDL_Delay(10);
     }
     Game_destroy(&game);
 }

@@ -74,16 +74,10 @@ void UpdateWorld(World *world, World *tmp_world) {
         // Copie de l'état actuel
         tmp_world->fishes[i] = world->fishes[i];
 
-        printf("vecteur de base :");
-        Vector_print(tmp_world->fishes[i].velocity);
-
         FishPerception perception =
             get_fish_perception(&world->fishes[i], world);
 
         tmp_world->fishes[i].velocity = fish_choose_action(&perception);
-
-        printf("vecteur fish_choose_action :");
-        Vector_print(tmp_world->fishes[i].velocity);
 
         // Mise à jour de la position
         tmp_world->fishes[i].position = Vector_add(
