@@ -4,6 +4,9 @@
 #include "fish.h"
 #include "vector.h"
 
+/** @struct FishPerception
+ * @brief Structure représentant la perception qu'a un poisson du monde.
+ */
 typedef struct FishPerception {
     Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
