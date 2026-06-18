@@ -11,7 +11,15 @@
 typedef struct {
     SDL_Window *window;
     SDL_Renderer *renderer;
-} sdl_display;
+} SDLDisplay;
 
-bool Init_sdl_display(sdl_display *display, char *title, int width, int height);
-void Destroy_sdl_display(sdl_display *display);
+bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height);
+void Destroy_sdl_display(SDLDisplay *display);
+
+void CLear_sdl_display(SDLDisplay *display);
+void Render_world(SDLDisplay *display, World *world);
+
+void Draw_fish(SDL_Renderer *renderer, Fish *fish);
+void Draw_shark(SDL_Renderer *renderer, Shark *shark);
+
+
