@@ -18,8 +18,8 @@ typedef struct fishPerception {
     int height;
 } FishPerception;
 
-/* Règles réactives individuelles : chacune transforme une FishPerception
-   en une force désirée, sans aucun état interne ni mémoire. */
+/* Règles réactives individuelles : chacune transforme une FishPerc  en une
+ * force désirée, sans aucun état interne ni mémoire. */
 Vector Rules_separation(Fish *self, FishPerception *p);
 Vector Rules_alignment(Fish *self, FishPerception *p);
 Vector Rules_cohesion(Fish *self, FishPerception *p);
