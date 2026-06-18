@@ -1,6 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+#include "vector.h"
 #include "fish.h"
 #include "shark.h"
 
