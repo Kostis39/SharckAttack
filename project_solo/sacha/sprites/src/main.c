@@ -1,16 +1,15 @@
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL2/SDL.h>
 #include <string.h>
-#include <SDL2/SDL_image.h>
 
 #define SPRITE_NB_W 6
 #define SPRITE_NB_H 5
 #define SPRITE_SHEET_PLAYER "assets/player.png"
 #define GROUND_TEXTURE "assets/tile.png"
 
-typedef struct
-{
+typedef struct {
     SDL_Rect hitbox, state;
     int current_frame;
     float speed;
@@ -18,31 +17,24 @@ typedef struct
     SDL_Texture *texture;
 } Entity;
 
-void end_sdl(
-    int ok,
-    char const *msg,
-    SDL_Window *window,
-    SDL_Renderer *renderer)
-{
+void end_sdl(int ok, char const *msg, SDL_Window *window,
+             SDL_Renderer *renderer) {
     char msg_formated[255];
     int l;
 
-    if (!ok)
-    {
+    if (!ok) {
         strncpy(msg_formated, msg, 250);
         l = strlen(msg_formated);
         strcpy(msg_formated + l, " : %s\n");
         SDL_Log(msg_formated, SDL_GetError());
     }
 
-    if (renderer != NULL)
-    {
+    if (renderer != NULL) {
         SDL_DestroyRenderer(renderer);
         renderer = NULL;
     }
 
-    if (window != NULL)
-    {
+    if (window != NULL) {
         SDL_DestroyWindow(window);
         window = NULL;
     }
@@ -50,14 +42,13 @@ void end_sdl(
     SDL_Quit();
     IMG_Quit();
 
-    if (!ok)
-    {
+    if (!ok) {
         exit(EXIT_FAILURE);
     }
 }
 
-SDL_Texture *load_texture_from_image(char *file_image_name, SDL_Window *window, SDL_Renderer *renderer)
-{
+SDL_Texture *load_texture_from_image(char *file_image_name, SDL_Window *window,
+                                     SDL_Renderer *renderer) {
     SDL_Surface *my_image = NULL;
     SDL_Texture *my_texture = NULL;
 
@@ -69,22 +60,25 @@ SDL_Texture *load_texture_from_image(char *file_image_name, SDL_Window *window, 
     my_texture = SDL_CreateTextureFromSurface(renderer, my_image);
     SDL_FreeSurface(my_image);
     if (my_texture == NULL)
-        end_sdl(0, "Echec de la transformation de la surface en texture", window, renderer);
+        end_sdl(0, "Echec de la transformation de la surface en texture",
+                window, renderer);
 
     return my_texture;
 }
 
-Entity *initPlayer(SDL_Window *window, SDL_Renderer *renderer, int window_w, int window_h)
-{
+Entity *initPlayer(SDL_Window *window, SDL_Renderer *renderer, int window_w,
+                   int window_h) {
     Entity *player = calloc(1, sizeof(Entity));
-    int zoom = 2;
+    int zoom = 5;
     float hitbox_scale = 0.5f;
 
-    player->texture = load_texture_from_image(SPRITE_SHEET_PLAYER, window, renderer);
+    player->texture =
+        load_texture_from_image(SPRITE_SHEET_PLAYER, window, renderer);
     player->current_frame = 0;
-    player->speed = 10;
+    player->speed = 5;
 
-    SDL_QueryTexture(player->texture, NULL, NULL, &player->state.w, &player->state.h);
+    SDL_QueryTexture(player->texture, NULL, NULL, &player->state.w,
+                     &player->state.h);
 
     int offset_x = player->state.w / SPRITE_NB_W;
     int offset_y = player->state.h / SPRITE_NB_H;
@@ -108,25 +102,21 @@ Entity *initPlayer(SDL_Window *window, SDL_Renderer *renderer, int window_w, int
     return player;
 }
 
-void moveCamera(SDL_Rect *camera, SDL_Rect *window_rect, int direction_x, int direction_y)
-{
+void moveCamera(SDL_Rect *camera, SDL_Rect *window_rect, int direction_x,
+                int direction_y) {
     int next_camera_x = camera->x - direction_x;
     int next_camera_y = camera->y - direction_y;
 
-    if (next_camera_x >= 0)
-    {
+    if (next_camera_x >= 0) {
         next_camera_x = 0;
     }
-    if (next_camera_x <= window_rect->w - camera->w)
-    {
+    if (next_camera_x <= window_rect->w - camera->w) {
         next_camera_x = window_rect->w - camera->w;
     }
-    if (next_camera_y >= 0)
-    {
+    if (next_camera_y >= 0) {
         next_camera_y = 0;
     }
-    if (next_camera_y <= window_rect->h - camera->h)
-    {
+    if (next_camera_y <= window_rect->h - camera->h) {
         next_camera_y = window_rect->h - camera->h;
     }
 
@@ -134,10 +124,9 @@ void moveCamera(SDL_Rect *camera, SDL_Rect *window_rect, int direction_x, int di
     camera->y = next_camera_y;
 }
 
-int movePlayer(Entity *player, int screen_w, int screen_h, SDL_Rect *camera, SDL_Rect *world_rect)
-{
-    if (player == NULL)
-    {
+int movePlayer(Entity *player, int screen_w, int screen_h, SDL_Rect *camera,
+               SDL_Rect *world_rect) {
+    if (player == NULL) {
         return 0;
     }
 
@@ -149,28 +138,23 @@ int movePlayer(Entity *player, int screen_w, int screen_h, SDL_Rect *camera, SDL
                : (player->key_up && !player->key_down) ? -1
                                                        : 0;
 
-    if (dirx != 0 || diry != 0)
-    {
+    if (dirx != 0 || diry != 0) {
         float new_x = player->hitbox.x + dirx * player->speed;
         float new_y = player->hitbox.y + diry * player->speed;
 
-        if (new_x < 0)
-        {
+        if (new_x < 0) {
             new_x = 0;
             moveCamera(camera, world_rect, dirx * player->speed, 0);
         }
-        if (new_y < 0)
-        {
+        if (new_y < 0) {
             new_y = 0;
             moveCamera(camera, world_rect, 0, diry * player->speed);
         }
-        if (new_x > screen_w - player->hitbox.w)
-        {
+        if (new_x > screen_w - player->hitbox.w) {
             new_x = screen_w - player->hitbox.w;
             moveCamera(camera, world_rect, dirx * player->speed, 0);
         }
-        if (new_y > screen_h - player->hitbox.h)
-        {
+        if (new_y > screen_h - player->hitbox.h) {
             new_y = screen_h - player->hitbox.h;
             moveCamera(camera, world_rect, 0, diry * player->speed);
         }
@@ -182,54 +166,40 @@ int movePlayer(Entity *player, int screen_w, int screen_h, SDL_Rect *camera, SDL
     return 1;
 }
 
-void drawEntity(SDL_Renderer *renderer, Entity *entity, Uint32 *last_time)
-{
-    if (renderer == NULL || entity == NULL)
-    {
+void drawEntity(SDL_Renderer *renderer, Entity *entity, Uint32 *last_time) {
+    if (renderer == NULL || entity == NULL) {
         return;
     }
 
     Uint32 current_time = SDL_GetTicks();
     Uint32 frame_delay = 100;
 
-    if ((current_time - *last_time > frame_delay))
-    {
+    if ((current_time - *last_time > frame_delay)) {
         entity->current_frame = (entity->current_frame + 1) % SPRITE_NB_W;
         *last_time = current_time;
     }
-    if (!(entity->key_right || entity->key_left || entity->key_up || entity->key_down))
-    {
+    if (!(entity->key_right || entity->key_left || entity->key_up ||
+          entity->key_down)) {
         entity->state.y = entity->state.h * 4;
-    }
-    else if (entity->key_right && !entity->key_left)
-    {
+    } else if (entity->key_right && !entity->key_left) {
         entity->state.y = entity->state.h * 2;
-    }
-    else if (!entity->key_right && entity->key_left)
-    {
+    } else if (!entity->key_right && entity->key_left) {
         entity->state.y = entity->state.h;
-    }
-    else if (entity->key_down && !entity->key_up)
-    {
+    } else if (entity->key_down && !entity->key_up) {
         entity->state.y = 0;
-    }
-    else if (!entity->key_down && entity->key_up)
-    {
+    } else if (!entity->key_down && entity->key_up) {
         entity->state.y = entity->state.h * 3;
     }
 
     entity->state.x = entity->current_frame * entity->state.w;
 
-    SDL_RenderCopy(renderer, entity->texture,
-                   &entity->state,
-                   &entity->hitbox);
+    SDL_RenderCopy(renderer, entity->texture, &entity->state, &entity->hitbox);
 
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderDrawRect(renderer, &entity->hitbox);
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     (void)argc;
     (void)argv;
 
@@ -240,27 +210,19 @@ int main(int argc, char **argv)
 
     SDL_bool running = SDL_TRUE;
 
-    if (SDL_Init(SDL_INIT_VIDEO) != 0)
-    {
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         end_sdl(0, "ERROR SDL INIT", window, renderer);
     }
 
-    window = SDL_CreateWindow(
-        "Fenêtre Principal",
-        0, 0,
-        0, 0,
-        SDL_WINDOW_FULLSCREEN_DESKTOP);
-    if (window == NULL)
-    {
+    window = SDL_CreateWindow("Fenêtre Principal", 0, 0, 0, 0,
+                              SDL_WINDOW_FULLSCREEN_DESKTOP);
+    if (window == NULL) {
         end_sdl(0, "ERROR WINDOW INIT", window, renderer);
     }
 
     renderer = SDL_CreateRenderer(
-        window,
-        -1,
-        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    if (renderer == NULL)
-    {
+        window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    if (renderer == NULL) {
         end_sdl(0, "ERROR RENDERER INIT", window, renderer);
     }
 
@@ -269,7 +231,8 @@ int main(int argc, char **argv)
 
     Entity *player = initPlayer(window, renderer, window_w, window_h);
 
-    SDL_Texture *ground = load_texture_from_image(GROUND_TEXTURE, window, renderer);
+    SDL_Texture *ground =
+        load_texture_from_image(GROUND_TEXTURE, window, renderer);
     SDL_Rect rect_window = {0};
     rect_window.w = window_w;
     rect_window.h = window_h;
@@ -280,19 +243,15 @@ int main(int argc, char **argv)
 
     Uint32 start_time = SDL_GetTicks();
 
-    while (running)
-    {
-        while (SDL_PollEvent(&event))
-        {
+    while (running) {
+        while (SDL_PollEvent(&event)) {
 
-            switch (event.type)
-            {
+            switch (event.type) {
             case SDL_QUIT:
                 running = SDL_FALSE;
                 break;
             case SDL_KEYDOWN:
-                switch (event.key.keysym.sym)
-                {
+                switch (event.key.keysym.sym) {
                 case SDLK_ESCAPE:
                     running = SDL_FALSE;
                     break;
@@ -319,8 +278,7 @@ int main(int argc, char **argv)
                 }
                 break;
             case SDL_KEYUP:
-                switch (event.key.keysym.sym)
-                {
+                switch (event.key.keysym.sym) {
                 case SDLK_z:
                     player->key_up = SDL_FALSE;
                     break;
