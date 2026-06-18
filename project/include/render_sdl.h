@@ -22,4 +22,4 @@ void Render_world(SDLDisplay *display, World *world);
 void Draw_fish(SDL_Renderer *renderer, Fish *fish);
 void Draw_shark(SDL_Renderer *renderer, Shark *shark);
 
-
+#endif
