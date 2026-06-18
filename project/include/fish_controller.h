@@ -2,14 +2,11 @@
 #define AGENT_FISH_H
 
 #include "fish.h"
-<<<<<<< HEAD
 #include "vector.h"
 
-=======
 /** @struct FishPerception
  * @brief Structure représentant la perception qu'a un poisson du monde.
  */
->>>>>>> 5ad3942f732ad0c8cdb90f19a0c485a4cec28a22
 typedef struct FishPerception {
     Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
