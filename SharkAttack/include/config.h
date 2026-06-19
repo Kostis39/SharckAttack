@@ -9,7 +9,7 @@
 #define RADIUS_SEPARATION 32
 #define RADIUS_ALIGNEMENT 160
 #define RADIUS_COHESION 160
-#define VISION_ANGLE (M_PI * 0.75f)
+#define VISION_ANGLE (PI * 0.75f)
 
 /* Poids des règles réactives */
 #define SEPARATION 0.3f
