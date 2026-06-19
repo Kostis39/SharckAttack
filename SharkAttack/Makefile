@@ -8,11 +8,11 @@ SOURCES_FOLDER=src
 TESTS_FOLDER=tests
 UNITY_FOLDER=unity
 
-CFLAGS=-Wall -Wextra -g -Iinclude
+CFLAGS=-Wall -Wextra -g -Iinclude -Iunity
 SDL_FLAGS=`sdl2-config --cflags`
 SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm
 
-TEST_CFLAGS=$(CFLAGS) -I$(UNITY_FOLDER)
+TEST_CFLAGS=$(CFLAGS)
 TEST_INCLUDES=-I$(SOURCES_FOLDER) -I$(UNITY_FOLDER)
 
 INCLUDES=-I$(SOURCES_FOLDER)
@@ -39,21 +39,24 @@ $(OBJECTS_FOLDER)/%.o: $(SOURCES_FOLDER)/%.c create_objects_directory
 	$(CC) -c $(INCLUDES) $(CFLAGS) $(SDL_FLAGS) -o $@ $<
 
 # --- Gestion des tests ---
+# Objets pour les tests : tous les .c de src SAUF main.c (Unity fournit son main)
+TEST_SRC_OBJECTS=$(filter-out $(OBJECTS_FOLDER)/main.o,$(OBJECTS))
 TEST_SOURCES=$(wildcard $(TESTS_FOLDER)/test_*.c)
 TEST_OBJECTS=$(patsubst $(TESTS_FOLDER)/%.c,$(OBJECTS_FOLDER)/%.o,$(TEST_SOURCES))
 UNITY_OBJECT=$(OBJECTS_FOLDER)/unity.o
 
-# Règle pour compiler unity.c
+# Regle pour compiler unity.c
 $(UNITY_OBJECT): $(UNITY_FOLDER)/unity.c create_objects_directory
 	$(CC) -c $(TEST_INCLUDES) $(TEST_CFLAGS) -o $@ $<
 
-# Règle pour compiler un test individuel (avec Unity)
+# Regle pour compiler un test individuel (avec Unity)
 $(OBJECTS_FOLDER)/%.o: $(TESTS_FOLDER)/%.c create_objects_directory
 	$(CC) -c $(TEST_INCLUDES) $(TEST_CFLAGS) -o $@ $<
 
-# Règle pour générer l'exécutable d'un test
-$(OUTPUT_FOLDER)/test_%: $(OBJECTS_FOLDER)/test_%.o $(UNITY_OBJECT) $(OBJECTS)
-	$(CC) $(OBJECTS) $< $(UNITY_OBJECT) -o $@ $(SDL_LIB)
+# Regle pour generer l'executable d'un test
+$(OUTPUT_FOLDER)/test_%: $(OBJECTS_FOLDER)/test_%.o $(UNITY_OBJECT) $(TEST_SRC_OBJECTS)
+	if [ ! -d $(OUTPUT_FOLDER) ]; then mkdir $(OUTPUT_FOLDER); fi
+	$(CC) $(TEST_SRC_OBJECTS) $< $(UNITY_OBJECT) -o $@ $(SDL_LIB)
 
 # Cible pour compiler tous les tests
 test: $(patsubst $(TESTS_FOLDER)/%.c,$(OUTPUT_FOLDER)/%,$(TEST_SOURCES))
@@ -65,7 +68,7 @@ run_test: test
 		$$test; \
 	done
 
-# Cible pour lancer un test spécifique
+# Cible pour lancer un test specifique
 run_test_%:
 	@$(OUTPUT_FOLDER)/test_$*
 
