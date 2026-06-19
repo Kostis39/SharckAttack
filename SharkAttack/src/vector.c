@@ -24,6 +24,15 @@ Vector Vector_normalize(Vector v) {
     return Vector_scale(v, 1.0f / len);
 }
 
+Vector local_normalize(Vector v) {
+    float len = Vector_length(v);
+    if (len < 0.0001f) {
+        Vector default_vector = {1.0f, 0.0f};
+        return default_vector;
+    }
+    return Vector_scale(v, 1.0f / len);
+}
+
 /**
  * @brief Fonction qui limite la longueur d'un vecteur à une valeur maximale
  * donnée. Si la longueur du vecteur dépasse cette valeur, le vecteur est

@@ -23,6 +23,7 @@ float Vector_distance(Vector a, Vector b);
 
 /* Renvoie v de longueur 1 (vecteur nul renvoyé inchangé si v est nul) */
 Vector Vector_normalize(Vector v);
+Vector local_normalize(Vector v);
 
 /* Tronque v à une longueur max, sans changer sa direction */
 Vector Vector_limit(Vector v, float max_length);

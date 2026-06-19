@@ -9,7 +9,9 @@
 #define RADIUS_SEPARATION 32
 #define RADIUS_ALIGNEMENT 160
 #define RADIUS_COHESION 160
-#define VISION_ANGLE (M_PI * 0.75f)
+#define VISION_ANGLE (PI * 0.25f)
+
+#define SHARK_VISION_RANGE 300
 
 /* Poids des règles réactives */
 #define SEPARATION 0.3f
@@ -17,7 +19,7 @@
 #define COHESION 0.003f
 
 /* Contraintes de mouvement */
-#define FISH_SPEED_MAX 4.0f
+#define FISH_SPEED_MAX 6.0f
 #define FISH_SPEED_MIN 2.0f
 
 #define SHARK_SPEED_MAX 3
@@ -41,5 +43,10 @@
 #define NB_OCCURRENCE 10000
 
 #define RANDOM_SEED 42
+
+#define COLLIDER_RATIO                                                         \
+    10 /* mesure au plus un dixième de la largeur du                          \
+          monde*/
+#define COLLIDERS_NB 5
 
 #endif /* CONFIG_H */

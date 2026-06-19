@@ -11,9 +11,17 @@ int main(int argc, char *argv[]) {
     (void)argv;
     srand(RANDOM_SEED);
 
-    Game_run_SDL();
+    bool use_sdl = false;
 
-    // Game_run_terminal();
+    if (argc > 1 && strcmp(argv[1], "sdl") == 0) {
+        use_sdl = true;
+    }
+
+    if (use_sdl) {
+        Game_run_SDL();
+    } else {
+        Game_run_terminal();
+    }
 
     return 0;
 }
