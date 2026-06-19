@@ -5,7 +5,15 @@
 #include "render_sdl.h"
 #include "shark.h"
 #include "world.h"
+#include <signal.h>
 #include <stdlib.h>
+
+static volatile sig_atomic_t terminal_interrupted = 0;
+
+static void Handle_terminal_interrupt(int signum) {
+    (void)signum;
+    terminal_interrupted = 1;
+}
 
 bool Game_init(Game *game, int width, int height, int nb_fish) {
     if (!game)
@@ -34,38 +42,7 @@ void Game_pause(Game *game) {
     game->paused = !game->paused;
 }
 
-void Game_step(Game *game) {
-    World tmp_world;
-    tmp_world.width = game->world->width;
-    tmp_world.height = game->world->height;
-    tmp_world.nb_fish = game->world->nb_fish;
-
-    tmp_world.fishes = calloc(tmp_world.nb_fish, sizeof(Fish));
-    if (!tmp_world.fishes) {
-        fprintf(stderr, "Erreur malloc dans Game_step (fishes)\n");
-        return;
-    }
-
-    tmp_world.shark = calloc(1, sizeof(Shark));
-    if (!tmp_world.shark) {
-        free(tmp_world.fishes);
-        fprintf(stderr, "Erreur malloc dans Game_step (shark)\n");
-        return;
-    }
-
-    UpdateWorld(game->world, &tmp_world);
-
-    free(game->world->fishes);
-    // Remplacement par le nouveau
-    game->world->fishes = tmp_world.fishes;
-    game->world->nb_fish = tmp_world.nb_fish; // si le nombre a changé
-
-    // Pour le requin, on copie la structure (pas d'échange de pointeur)
-    free(tmp_world.shark);  // on libère le pointeur temporaire
-    tmp_world.shark = NULL; // on évite les fuites de mémoire
-}
-
-void Game_run() {
+void Game_run_SDL() {
     Game game;
     if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB)) {
         fprintf(stderr, "Echec de l'initialisation du jeu.\n");
@@ -101,12 +78,38 @@ void Game_run() {
         }
 
         if (!game.paused) {
-            Game_step(&game);
+            Game_step(game.world);
         }
 
         SDL_Delay(10);
     }
     Game_destroy(&game);
+}
+
+void Game_run_terminal() {
+    terminal_interrupted = 0;
+    signal(SIGINT, Handle_terminal_interrupt);
+
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB);
+    printf("Initial state: (with, height): (%d, %d) Number Fish: %d Shark "
+           "position: (%f, %f)\n",
+           world->width, world->height, world->nb_fish, world->shark->pos.x,
+           world->shark->pos.y);
+    for (int i = 0; i < NB_OCCURRENCE && !terminal_interrupted; i++) {
+        Game_step(world);
+        printf("Iteration %d: Number Fish: %d Shark position: (%f, %f)\n", i,
+               world->nb_fish, world->shark->pos.x, world->shark->pos.y);
+    }
+
+    if (terminal_interrupted) {
+        printf("Boucle interrompue par l'utilisateur.\n");
+    }
+
+    printf("Final state: (with, height): (%d, %d) Number Fish: %d Shark "
+           "position: (%f, %f)\n",
+           world->width, world->height, world->nb_fish, world->shark->pos.x,
+           world->shark->pos.y);
+    World_destroy(world);
 }
 
 void Game_destroy(Game *game) {
