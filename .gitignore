@@ -9,3 +9,6 @@ build/
 compile_commands.json
 .cache
 *.png
+
+.nfs*
+sprites3
