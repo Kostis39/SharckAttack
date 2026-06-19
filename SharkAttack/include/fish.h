@@ -20,6 +20,10 @@ typedef struct {
     float radius_cohesion; /**< Rayon de perception du poisson pour les règles
                               de cohésion */
     float vision_angle;    /**< Angle de vision du poisson en radians */
+
+    int group; /* 0 = sans biais, 1 = scout group 1 (droite), 2 = scout group
+                  2 (gauche) */
+    float biasval;
 } Fish;
 
 Fish Fish_create_random_pos(int width, int height);
