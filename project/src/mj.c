@@ -1,4 +1,5 @@
 #include "mj.h"
+#include "fish.h"
 #include "vector.h"
 #include "world.h"
 #include <math.h>
@@ -19,18 +20,16 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
     perception.height = world->height;
 
     if (world->shark != NULL) {
-        float distance = Vector_distance(fish->position, world->shark->pos);
-        if (distance <= PERCEPTION_RADIUS) {
-            perception.shark_visible = true;
-            perception.shark_position = world->shark->pos;
-            perception.shark_velocity = world->shark->velocity;
-        }
+        perception.shark_visible = true;
+        perception.shark_position = world->shark->pos;
+        perception.shark_velocity = world->shark->velocity;
     }
 
-    // Les trois zones de perception sont concentriques et s'enchaînent :
-    // [0, separation_limit] -> séparation
-    // ]separation_limit, alignment_limit] -> alignement
-    // ]alignment_limit, cohesion_limit] -> cohésion
+    /**Les trois zones de perception sont concentriques et s'enchaînent :
+     * [0, separation_limit] -> séparation
+     * ]separation_limit, alignment_limit] -> alignement
+     * ]alignment_limit, cohesion_limit] -> cohésion
+     */
     float separation_limit = fish->radius_separation;
     float alignment_limit = separation_limit + fish->radius_alignement;
     float cohesion_limit = alignment_limit + fish->radius_cohesion;
@@ -70,6 +69,7 @@ void FishPerception_destroy(FishPerception *perception) {
     free(perception->neighbor_alignment);
     free(perception->neighbor_cohesion);
 }
+
 void UpdateWorld(World *world, World *tmp_world) {
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
@@ -78,11 +78,9 @@ void UpdateWorld(World *world, World *tmp_world) {
         FishPerception perception =
             get_fish_perception(&world->fishes[i], world);
 
-        tmp_world->fishes[i].velocity = fish_choose_action(&perception);
+        Vector action = fish_choose_action(&perception);
 
-        // Mise à jour de la position
-        tmp_world->fishes[i].position = Vector_add(
-            tmp_world->fishes[i].position, tmp_world->fishes[i].velocity);
+        fish_apply_action(&tmp_world->fishes[i], action);
     }
 
     // // Copie de l'état actuel

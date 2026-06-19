@@ -7,7 +7,10 @@ Fish Fish_create_random_pos(int width, int height) {
     fish.velocity.x = (rand() % FISH_SPEED_MAX) - (FISH_SPEED_MAX / 2);
     fish.velocity.y = (rand() % FISH_SPEED_MAX) - (FISH_SPEED_MAX / 2);
     fish.is_alive = true;
-    // fish.radius = PERCEPTION_RADIUS;
+    fish.radius_separation = RADIUS_SEPARATION;
+    fish.radius_alignement = RADIUS_ALIGNEMENT;
+    fish.radius_cohesion = RADIUS_COHESION;
+    fish.vision_angle = VISION_ANGLE;
     return fish;
 }
 
@@ -35,4 +38,26 @@ Fish *Fish_copy_array(Fish *fish_array, int nb_fish) {
 void Fish_destroy_array(Fish *fish_array) {
     free(fish_array);
     fish_array = NULL;
+}
+
+void fish_apply_action(Fish *fish, Vector action) {
+    fish->velocity =
+        Vector_add(fish->velocity, Vector_scale(action, TURN_SPEED));
+
+    fish->velocity = Vector_limit(fish->velocity, FISH_SPEED_MAX);
+
+    float speed = Vector_length(fish->velocity);
+
+    if (speed > FISH_SPEED_MAX) {
+        fish->velocity =
+            Vector_scale(Vector_normalize(fish->velocity), FISH_SPEED_MAX);
+    } else if (speed < FISH_SPEED_MIN) {
+        fish->velocity =
+            Vector_scale(Vector_normalize(fish->velocity), FISH_SPEED_MIN);
+    }
+
+    // Mettre à jour la position
+    fish->position = Vector_add(fish->position, fish->velocity);
+
+    apply_border_repulsion(&fish->position, &fish->velocity);
 }
