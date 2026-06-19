@@ -18,7 +18,8 @@ typedef struct {
     int fish_eaten; /**< Nombre de poissons mangés par le requin */
 } Game;
 
-bool Game_init(Game *game, int width, int height, int nb_fish);
+bool Game_init(Game *game, int width, int height, int nb_fish,
+               int nb_colliders);
 
 void Game_pause(Game *game);
 
