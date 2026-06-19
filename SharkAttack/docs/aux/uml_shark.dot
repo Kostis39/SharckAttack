@@ -1,0 +1,78 @@
+digraph SharkAttack {
+    rankdir=TB;
+    node [shape=record, fontname="Helvetica", fontsize=10];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // ============ STRUCTURES ============
+    subgraph cluster_structs {
+        label="Structures de données";
+        style=dashed;
+        color=gray;
+
+        Vector [label="{Vector|  + x : float\l  + y : float\l|  + Vector_init() : Vector\l  + Vector_add(a, b) : Vector\l  + Vector_sub(a, b) : Vector\l  + Vector_scale(v, k) : Vector\l  + Vector_length(v) : float\l  + Vector_distance(a, b) : float\l  + Vector_normalize(v) : Vector\l  + Vector_limit(v, max) : Vector\l  + Vector_angle(a, b) : float\l  + apply_collision_rect(...) : Vector\l}"];
+
+        Fish [label="{Fish|  + position : Vector\l  + velocity : Vector\l  + is_alive : bool\l  + radius_separation : float\l  + radius_alignement : float\l  + radius_cohesion : float\l  + vision_angle : float\l|  + Fish_create_random_pos(w, h) : Fish\l  + Fish_create_random_array(nb, w, h) : Fish*\l  + Fish_copy_array(arr, nb) : Fish*\l  + Fish_destroy_array(arr) : void\l}"];
+
+        Shark [label="{Shark|  + pos : Vector\l  + velocity : Vector\l  + player : bool\l|  + Shark_createRandom(w, h) : Shark*\l  + Shark_copy(dest, src) : int\l  + Shark_destroy(s) : void\l  + Is_player(s) : bool\l}"];
+
+        FishPerception [label="{FishPerception|  + self : Fish\l  + neighbor_separation : Fish*\l  + nb_sep : int\l  + neighbor_alignment : Fish*\l  + nb_align : int\l  + neighbor_cohesion : Fish*\l  + nb_cohes : int\l  + shark_visible : bool\l  + shark_position : Vector\l  + shark_velocity : Vector\l  + width : int\l  + height : int\l}"];
+
+        World [label="{World|  + width : int\l  + height : int\l  + fishes : Fish*\l  + nb_fish : int\l  + shark : Shark*\l|  + World_init(w, h, nb) : World*\l  + World_destroy(w) : void\l  + World_update(w, tmp) : void\l}"];
+
+        SDLDisplay [label="{SDLDisplay|  + window : SDL_Window*\l  + renderer : SDL_Renderer*\l}"];
+
+        Game [label="{Game|  + world : World\l  + display : SDLDisplay\l  + time : float\l  + paused : bool\l  + fish_eaten : int\l|  + Game_init(g, w, h, nb) : bool\l  + Game_step(g) : void\l  + Game_pause(g) : void\l  + Game_run(g) : void\l  + Game_destroy(g) : void\l}"];
+    }
+
+    // Relations entre structures
+    World -> Fish [arrowhead=crow, label="contient", style=solid, color=blue];
+    World -> Shark [arrowhead=crow, label="contient", style=solid, color=blue];
+    Game -> World [arrowhead=crow, label="possède", style=solid, color=red];
+    Game -> SDLDisplay [arrowhead=crow, label="possède", style=solid, color=red];
+    FishPerception -> Fish [arrowhead=odiamond, label="voisins", style=solid, color=green];
+
+    // ============ MODULES ============
+    subgraph cluster_modules {
+        label="Modules (fichiers .h)";
+        style=dashed;
+        color=lightblue;
+
+        config [label="config.h", shape=note, fillcolor=lightyellow, style=filled];
+        vector_h [label="vector.h", shape=note, fillcolor=lightyellow, style=filled];
+        fish_h [label="fish.h", shape=note, fillcolor=lightyellow, style=filled];
+        fish_ctrl_h [label="fish_controller.h", shape=note, fillcolor=lightyellow, style=filled];
+        shark_h [label="shark.h", shape=note, fillcolor=lightyellow, style=filled];
+        world_h [label="world.h", shape=note, fillcolor=lightyellow, style=filled];
+        mj_h [label="mj.h", shape=note, fillcolor=lightyellow, style=filled];
+        render_h [label="render_sdl.h", shape=note, fillcolor=lightyellow, style=filled];
+        game_h [label="game.h", shape=note, fillcolor=lightyellow, style=filled];
+    }
+
+    // Dépendances entre modules
+    fish_h -> config [style=dashed, color=gray];
+    fish_h -> vector_h [style=dashed, color=gray];
+    fish_ctrl_h -> config [style=dashed, color=gray];
+    fish_ctrl_h -> fish_h [style=dashed, color=gray];
+    fish_ctrl_h -> vector_h [style=dashed, color=gray];
+    shark_h -> config [style=dashed, color=gray];
+    shark_h -> vector_h [style=dashed, color=gray];
+    world_h -> fish_h [style=dashed, color=gray];
+    world_h -> shark_h [style=dashed, color=gray];
+    world_h -> vector_h [style=dashed, color=gray];
+    mj_h -> fish_h [style=dashed, color=gray];
+    mj_h -> fish_ctrl_h [style=dashed, color=gray];
+    mj_h -> world_h [style=dashed, color=gray];
+    render_h -> fish_h [style=dashed, color=gray];
+    render_h -> shark_h [style=dashed, color=gray];
+    render_h -> world_h [style=dashed, color=gray];
+    game_h -> render_h [style=dashed, color=gray];
+    game_h -> world_h [style=dashed, color=gray];
+
+    // Flux fonctionnels
+    mj_h -> FishPerception [style=dotted, color=purple, label="get_fish_perception()"];
+    fish_ctrl_h -> FishPerception [style=dotted, color=purple, label="fish_choose_action()"];
+    fish_ctrl_h -> Vector [style=dotted, color=purple, label="Rules_*()"];
+    render_h -> Fish [style=dotted, color=orange, label="Draw_fish()"];
+    render_h -> Shark [style=dotted, color=orange, label="Draw_shark()"];
+    render_h -> World [style=dotted, color=orange, label="Render_world()"];
+}

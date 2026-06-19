@@ -75,7 +75,7 @@ Entity *initPlayer(SDL_Window *window, SDL_Renderer *renderer, int window_w,
     player->texture =
         load_texture_from_image(SPRITE_SHEET_PLAYER, window, renderer);
     player->current_frame = 0;
-    player->speed = 5;
+    player->speed = 4;
 
     SDL_QueryTexture(player->texture, NULL, NULL, &player->state.w,
                      &player->state.h);
@@ -195,8 +195,10 @@ void drawEntity(SDL_Renderer *renderer, Entity *entity, Uint32 *last_time) {
 
     SDL_RenderCopy(renderer, entity->texture, &entity->state, &entity->hitbox);
 
+    /*
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderDrawRect(renderer, &entity->hitbox);
+    */
 }
 
 int main(int argc, char **argv) {
@@ -313,8 +315,6 @@ int main(int argc, char **argv) {
         SDL_RenderPresent(renderer);
         SDL_Delay(10);
     }
-
-    SDL_Delay(10);
 
     end_sdl(1, "Normal ending", window, renderer);
     SDL_DestroyTexture(player->texture);

@@ -1,0 +1,14 @@
+<map id="Game" name="Game">
+<area shape="rect" id="Node000001" title="Structure représentant l&#39;état du jeu." alt="" coords="95,330,155,357"/>
+<area shape="rect" id="Node000002" href="$structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="45,229,104,257"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,269,105,304,119,330,114,329,100,307,84,273"/>
+<area shape="rect" id="Node000003" href="$structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="5,128,53,156"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="30,169,41,204,60,228,55,229,37,206,30,174"/>
+<area shape="rect" id="Node000004" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="40,5,103,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="36,46,30,58,25,76,24,95,28,128,23,128,18,95,20,75,25,56,38,41"/>
+<area shape="rect" id="Node000005" href="$structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="86,128,145,156"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="84,45,90,56,114,128,109,128,85,58,84,50"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="106,168,82,229,77,227,103,172"/>
+<area shape="rect" id="Node000006" href="$structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="128,229,223,257"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="166,269,149,307,135,331,131,327,144,304,161,272"/>
+</map>
