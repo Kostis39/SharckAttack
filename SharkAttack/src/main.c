@@ -11,6 +11,9 @@ int main(int argc, char *argv[]) {
     (void)argv;
     srand(time(NULL));
 
-    Game_run();
+    Game_run_SDL();
+
+    // Game_run_terminal();
+
     return 0;
 }
