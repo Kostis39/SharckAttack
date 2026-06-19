@@ -30,7 +30,8 @@
 #define WIDTH 1400
 #define HEIGHT 1000
 
-#define BORDER_MARGIN 100 // Distance à partir de laquelle la force s'applique
-#define REPULSION_FACTOR 3.0f // Intensité du virage
+#define REPULSION_ZONE                                                         \
+    100 // Taille des la zone de répulsion (marges de l'écran)
+#define REPULSION_FACTOR 2.0f // Intensité du virage
 
 #endif /* CONFIG_H */

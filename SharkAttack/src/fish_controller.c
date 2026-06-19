@@ -44,19 +44,31 @@ Vector Rules_cohesion(Fish *self, Fish *far, int nb) {
 
 Vector Rules_border_repulsion(Fish *self) {
     Vector repulsion = Vector_init();
+    float ratio;
+    float distance_border;
 
     // Bords gauche/droit
-    if (self->position.x < BORDER_MARGIN) {
-        repulsion.x += REPULSION_FACTOR;
-    } else if (self->position.x > WIDTH - BORDER_MARGIN) {
-        repulsion.x -= REPULSION_FACTOR;
+    if (self->position.x < REPULSION_ZONE) {
+        distance_border = self->position.x;
+        ratio = 1.0f - (distance_border / REPULSION_ZONE);
+        repulsion.x += REPULSION_FACTOR * ratio *
+                       ratio; // ratio au carré pour augmenter la répulsion
+                              // rapidepment proche du bord
+    } else if (self->position.x > WIDTH - REPULSION_ZONE) {
+        distance_border = WIDTH - self->position.x;
+        ratio = 1.0f - (distance_border / REPULSION_ZONE);
+        repulsion.x -= REPULSION_FACTOR * ratio * ratio;
     }
 
     // Bords haut/bas
-    if (self->position.y < BORDER_MARGIN) {
-        repulsion.y += REPULSION_FACTOR;
-    } else if (self->position.y > HEIGHT - BORDER_MARGIN) {
-        repulsion.y -= REPULSION_FACTOR;
+    if (self->position.y < REPULSION_ZONE) {
+        distance_border = self->position.y;
+        ratio = 1.0f - (distance_border / REPULSION_ZONE);
+        repulsion.y += REPULSION_FACTOR * ratio * ratio;
+    } else if (self->position.y > HEIGHT - REPULSION_ZONE) {
+        distance_border = HEIGHT - self->position.y;
+        ratio = 1.0f - (distance_border / REPULSION_ZONE);
+        repulsion.y -= REPULSION_FACTOR * ratio * ratio;
     }
 
     return repulsion;
@@ -83,19 +95,5 @@ Vector fish_choose_action(FishPerception *p) {
 
     weighted_velocity = Vector_add(weighted_velocity, repulsion);
 
-    // calcul de la nouveau vecteur vitesse
-    Vector new_velocity = Vector_add(
-        p->self.velocity, Vector_scale(weighted_velocity, TURN_SPEED));
-
-    float speed = Vector_length(new_velocity);
-
-    if (speed > FISH_SPEED_MAX) {
-        new_velocity =
-            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MAX);
-    } else if (speed < FISH_SPEED_MIN) {
-        new_velocity =
-            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MIN);
-    }
-
-    return new_velocity;
+    return weighted_velocity;
 }
