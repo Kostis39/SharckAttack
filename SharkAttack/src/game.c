@@ -15,7 +15,8 @@ static void Handle_terminal_interrupt(int signum) {
     terminal_interrupted = 1;
 }
 
-bool Game_init(Game *game, int width, int height, int nb_fish) {
+bool Game_init(Game *game, int width, int height, int nb_fish,
+               int nb_collider) {
     if (!game)
         return false;
 
@@ -23,7 +24,7 @@ bool Game_init(Game *game, int width, int height, int nb_fish) {
         return false;
     }
 
-    game->world = World_init(width, height, nb_fish);
+    game->world = World_init(width, height, nb_fish, nb_collider);
     if (!game->world) {
         Destroy_sdl_display(&game->display);
         return false;
@@ -44,7 +45,7 @@ void Game_pause(Game *game) {
 
 void Game_run_SDL() {
     Game game;
-    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB)) {
+    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB)) {
         fprintf(stderr, "Echec de l'initialisation du jeu.\n");
         return;
     }
@@ -90,7 +91,7 @@ void Game_run_terminal() {
     terminal_interrupted = 0;
     signal(SIGINT, Handle_terminal_interrupt);
 
-    World *world = World_init(WIDTH, HEIGHT, FISH_NB);
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB);
     printf("Initial state: (with, height): (%d, %d) Number Fish: %d Shark "
            "position: (%f, %f)\n",
            world->width, world->height, world->nb_fish, world->shark->pos.x,
