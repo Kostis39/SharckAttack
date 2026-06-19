@@ -59,5 +59,20 @@ Vector fish_choose_action(FishPerception *p) {
     weighted_velocity =
         Vector_add(weighted_velocity, Vector_scale(cohesion, COHESION));
 
+    weighted_velocity = Vector_add(p->self.velocity,
+                                   Vector_scale(weighted_velocity, TURN_SPEED));
+
+    weighted_velocity = Vector_limit(weighted_velocity, FISH_SPEED_MAX);
+
+    float speed = Vector_length(weighted_velocity);
+
+    if (speed > FISH_SPEED_MAX) {
+        weighted_velocity =
+            Vector_scale(Vector_normalize(weighted_velocity), FISH_SPEED_MAX);
+    } else if (speed < FISH_SPEED_MIN) {
+        weighted_velocity =
+            Vector_scale(Vector_normalize(weighted_velocity), FISH_SPEED_MIN);
+    }
+
     return weighted_velocity;
 }
