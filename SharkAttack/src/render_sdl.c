@@ -1,10 +1,18 @@
 #include "render_sdl.h"
 #include "vector.h"
+#include "collider.h"
 
 #include <math.h>
 #include <stdio.h>
 
-static int to_int(float x) {
+/**
+ * @brief convertir float en int
+ * 
+ * @param x valeur flottante
+ * @return int valeur entiere
+ */
+
+int to_int(float x) {
     return (int)(x + 0.5f);
 }
 
@@ -19,14 +27,33 @@ static Vector direction_or_default(Vector v) {
     return d;
 }
 
-static void draw_filled_circle(SDL_Renderer *r, int cx, int cy, int radius) {
+/**
+ * @brief dessine un cercle plein
+ * 
+ * @param r renderer sdl utilisé pour dessiner
+ * @param cx coord x du centre du cercle
+ * @param cy coord y du centre du cercle
+ * @param radius rayon du cercle
+ */
+
+void Draw_filled_circle(SDL_Renderer *r, int cx, int cy, int radius) {
     for (int y = -radius; y <= radius; y++) {
         int limit = (int)sqrtf((float)(radius * radius - y * y));
         SDL_RenderDrawLine(r, cx - limit, cy + y, cx + limit, cy + y);
     }
 }
 
-static void draw_filled_ellipse(SDL_Renderer *r, int cx, int cy, int rx, int ry) {
+/**
+ * @brief dessine une ellipse
+ * 
+ * @param r renderer sdl utilisé pour dessiner
+ * @param cx coord x du centre de l'ellipse
+ * @param cy coord y du centre de l'ellipse
+ * @param rx rayon horizontal de l'ellipse
+ * @param ry rayon vertical de l'ellipse
+ */
+
+void Draw_filled_ellipse(SDL_Renderer *r, int cx, int cy, int rx, int ry) {
     if (rx <= 0 || ry <= 0)
         return;
 
@@ -40,7 +67,19 @@ static void draw_filled_ellipse(SDL_Renderer *r, int cx, int cy, int rx, int ry)
     }
 }
 
-static void draw_filled_triangle(SDL_Renderer *r,
+/**
+ * @brief dessine un triangle
+ * 
+ * @param r renderer sdl 
+ * @param x1 coord x du 1er sommet
+ * @param y1 coord y du 1er sommet
+ * @param x2 coord x du 2eme sommet
+ * @param y2 coord y du 2eme sommet
+ * @param x3 coord x du 3eme sommet
+ * @param y3 coord y du 3eme sommet
+ */
+
+void Draw_filled_triangle(SDL_Renderer *r,
                                  int x1, int y1,
                                  int x2, int y2,
                                  int x3, int y3) {
@@ -54,8 +93,18 @@ static void draw_filled_triangle(SDL_Renderer *r,
     }
 }
 
-static void draw_wave(SDL_Renderer *r, int width, int base_y,
-                      int move, int amplitude, float time) {
+/**
+ * @brief dessine une vague
+ * la vague est obtenue avec la fct sin
+ * @param r renderer sdl
+ * @param width largeur de la fenetre
+ * @param base_y hauteur moyenne de la vague
+ * @param move decalage horizontal utilise pour l'animation
+ * @param amplitude amplitude verticale de la vague
+ * @param time temps courant de l'animation
+ */
+
+void Draw_wave(SDL_Renderer *r, int width, int base_y, int move, int amplitude, float time) {
     int old_x = -20;
     int old_y = base_y;
 
@@ -67,7 +116,15 @@ static void draw_wave(SDL_Renderer *r, int width, int base_y,
     }
 }
 
-static void draw_bubbles(SDL_Renderer *r, int width, int height) {
+/**
+ * @brief dessine des bulles
+ * 
+ * @param r renderer sdl utilise pour dessiner
+ * @param width largeur de la fenetre
+ * @param height hauteur de la fenetre
+ */
+
+void Draw_bubbles(SDL_Renderer *r, int width, int height) {
     static int bx[14] = {
         60, 180, 310, 430, 520, 670, 790,
         910, 1040, 1160, 1260, 1350, 250, 740
@@ -91,42 +148,77 @@ static void draw_bubbles(SDL_Renderer *r, int width, int height) {
             bx[i] = (bx[i] + 173) % width;
         }
 
-        draw_filled_circle(r, bx[i], by[i], 2 + (i % 3));
+        Draw_filled_circle(r, bx[i], by[i], 2 + (i % 3));
     }
 }
 
-static void draw_sea_plants(SDL_Renderer *r, int width, int height, float time) {
-    SDL_SetRenderDrawColor(r, 35, 120, 125, 130);
+void Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius) {
+    int s = radius * 2;
+    int p = radius / 3;
 
-    for (int i = 0; i < 7; i++) {
-        int x = 45 + i * 24;
-        int top = height - 75 - (i % 3) * 30;
-        int wind = to_int(sinf(time * 1.5f + i) * 7.0f);
+    SDL_Rect shadow = {cx - radius + 4, cy - radius + 4, s, s};
+    SDL_SetRenderDrawColor(r, 0, 0, 0, 90);
+    SDL_RenderFillRect(r, &shadow);
 
-        SDL_RenderDrawLine(r, x, height, x + wind, top);
-        SDL_RenderDrawLine(r, x + 1, height, x + wind + 1, top);
-    }
+    SDL_Rect body = {cx - radius, cy - radius, s, s};
+    SDL_SetRenderDrawColor(r, 45, 60, 65, 255);
+    SDL_RenderFillRect(r, &body);
 
-    for (int i = 0; i < 7; i++) {
-        int x = width - 180 + i * 24;
-        int top = height - 70 - (i % 4) * 28;
-        int wind = to_int(sinf(time * 1.2f + i) * 7.0f);
+    SDL_SetRenderDrawColor(r, 10, 18, 22, 255);
+    SDL_RenderDrawRect(r, &body);
 
-        SDL_RenderDrawLine(r, x, height, x + wind, top);
-        SDL_RenderDrawLine(r, x + 1, height, x + wind + 1, top);
-    }
+    SDL_Rect center = {cx - p / 2, cy - p / 2, p, p};
+    SDL_RenderFillRect(r, &center);
 
-    SDL_SetRenderDrawColor(r, 115, 75, 160, 145);
+    SDL_SetRenderDrawColor(r, 95, 125, 130, 230);
+    SDL_Rect light = {cx - radius + 5, cy - radius + 5, p, p};
+    SDL_RenderFillRect(r, &light);
+}
 
-    for (int i = 0; i < 4; i++) {
-        int x = 310 + i * 32;
-        int y = height - 45;
+void Draw_demo_mines(SDLDisplay *display) {
+    int width = 0;
+    int height = 0;
+    SDL_GetRendererOutputSize(display->renderer, &width, &height);
+    if (width <= 0 || height <= 0)
+        return;
+    Draw_mine_shape(display->renderer, width / 4, height / 2 + 60, 12);
+    Draw_mine_shape(display->renderer, width / 2, height / 2 + 60, 25);
+    Draw_mine_shape(display->renderer, width - width / 4, height / 2 + 50, 12);
+}
 
-        SDL_RenderDrawLine(r, x, y, x, y - 45);
-        SDL_RenderDrawLine(r, x, y - 22, x - 14, y - 36);
-        SDL_RenderDrawLine(r, x, y - 30, x + 14, y - 50);
+void Draw_collider(SDLDisplay *display, Collider *collider) {
+    if (display == NULL || display->renderer == NULL || collider == NULL)
+        return;
+    int x1 = to_int(collider->bounding_box[0].x);
+    int y1 = to_int(collider->bounding_box[0].y);
+    int x2 = to_int(collider->bounding_box[1].x);
+    int y2 = to_int(collider->bounding_box[1].y);
+    int cx = (x1 + x2) / 2;
+    int cy = (y1 + y2) / 2;
+    int radius = (x2 - x1 < y2 - y1 ? x2 - x1 : y2 - y1) / 2;
+    if (radius < 10)
+        radius = 10;
+    Draw_mine_shape(display->renderer, cx, cy, radius);
+}
+
+void Draw_colliders(SDLDisplay *display, Collider *colliders, int nb_colliders) {
+    if (display == NULL || colliders == NULL || nb_colliders <= 0)
+        return;
+    for (int i = 0; i < nb_colliders; i++) {
+        Draw_collider(display, &colliders[i]);
     }
 }
+
+/**
+ * @brief initialisation de sdl
+ * 
+ * @param display struct contenant la fenetre et le renderer
+ * @param title titre de la fenetre
+ * @param width largeur 
+ * @param height hauteur
+ * @return true si init est reussi
+ * @return false 
+ */
 
 bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
     if (display == NULL)
@@ -167,6 +259,12 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
     return true;
 }
 
+/**
+ * @brief cette fct libere le renderer, detruit la fenetre puis ferme sdl
+ * 
+ * @param display struct sdl a detruire
+ */
+
 void Destroy_sdl_display(SDLDisplay *display) {
     if (display == NULL)
         return;
@@ -183,6 +281,12 @@ void Destroy_sdl_display(SDLDisplay *display) {
 
     SDL_Quit();
 }
+
+/**
+ * @brief efface l ecran et dessine le fond marin
+ * 
+ * @param display struct contenant le renderer sdl
+ */
 
 void Clear_sdl_display(SDLDisplay *display) {
     if (display == NULL || display->renderer == NULL)
@@ -210,34 +314,42 @@ void Clear_sdl_display(SDLDisplay *display) {
     float time = SDL_GetTicks() / 1000.0f;
 
     SDL_SetRenderDrawColor(r, 5, 26, 68, 80);
-    draw_filled_ellipse(r, width / 2, height / 2 + height / 6, width / 2, height / 5);
+    Draw_filled_ellipse(r, width / 2, height / 2 + height / 6, width / 2, height / 5);
 
     SDL_SetRenderDrawColor(r, 3, 16, 45, 110);
-    draw_filled_ellipse(r, width / 2, height + 25, width / 2, height / 4);
+    Draw_filled_ellipse(r, width / 2, height + 25, width / 2, height / 4);
 
-    int move_far = (int)(time * 15) % width;
-    int move_mid = (int)(time * 28) % width;
+    int move_far = (int)(time * 10) % width;
+    int move_mid = (int)(time * 22) % width;
     int move_near = (int)(time * 45) % width;
 
     SDL_SetRenderDrawColor(r, 40, 115, 170, 45);
     for (int y = 140; y < height; y += 170)
-        draw_wave(r, width, y, move_far, 3, time * 0.7f);
+        Draw_wave(r, width, y, move_far, 3, time * 0.7f);
 
     SDL_SetRenderDrawColor(r, 55, 155, 210, 60);
     for (int y = 210; y < height; y += 190)
-        draw_wave(r, width, y, move_mid, 4, time * 1.0f);
+        Draw_wave(r, width, y, move_mid, 4, time * 1.0f);
 
     SDL_SetRenderDrawColor(r, 95, 200, 240, 35);
     for (int y = 320; y < height; y += 240)
-        draw_wave(r, width, y, move_near, 5, time * 1.4f);
+        Draw_wave(r, width, y, move_near, 5, time * 1.4f);
 
     SDL_SetRenderDrawColor(r, 18, 34, 78, 160);
-    draw_filled_triangle(r, 0, height, 0, height - 95, 190, height);
-    draw_filled_triangle(r, width, height, width, height - 125, width - 230, height);
+    Draw_filled_triangle(r, 0, height, 0, height - 95, 190, height);
+    Draw_filled_triangle(r, width, height, width, height - 125, width - 230, height);
 
-    draw_sea_plants(r, width, height, time);
-    draw_bubbles(r, width, height);
+    /*Draw_sea_plants(r, width, height, time);*/
+    Draw_bubbles(r, width, height);
 }
+
+/**
+ * @brief dessine un poisson
+ * le poisson est representé simplement par un corps circulaire, une petite tete,
+ * une queue triangulaire animé et un oeil
+ * @param display struct contenant le renderer
+ * @param fish poisson à dessiner
+ */
 
 void Draw_fish(SDLDisplay *display, Fish *fish) {
     if (display == NULL || display->renderer == NULL || fish == NULL)
@@ -275,26 +387,33 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
     int q3y = to_int(y - dir.y * size * 1.6f + side.y * wave);
 
     SDL_SetRenderDrawColor(r, 20, 75, 190, 255);
-    draw_filled_triangle(r, q1x, q1y, q2x, q2y, q3x, q3y);
+    Draw_filled_triangle(r, q1x, q1y, q2x, q2y, q3x, q3y);
 
     SDL_SetRenderDrawColor(r, 40, 120, 255, 255);
-    draw_filled_circle(r, x, y, size / 2);
+    Draw_filled_circle(r, x, y, size / 2);
 
     int nx = to_int(x + dir.x * size * 0.6f);
     int ny = to_int(y + dir.y * size * 0.6f);
 
     SDL_SetRenderDrawColor(r, 75, 165, 255, 255);
-    draw_filled_circle(r, nx, ny, size / 4);
+    Draw_filled_circle(r, nx, ny, size / 4);
 
     int ex = to_int(x + dir.x * size / 3 - side.x * size / 5);
     int ey = to_int(y + dir.y * size / 3 - side.y * size / 5);
 
     SDL_SetRenderDrawColor(r, 255, 255, 255, 255);
-    draw_filled_circle(r, ex, ey, 2);
+    Draw_filled_circle(r, ex, ey, 2);
 
     SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
-    draw_filled_circle(r, ex, ey, 1);
+    Draw_filled_circle(r, ex, ey, 1);
 }
+
+/**
+ * @brief dessine le requin
+ * 
+ * @param display struct contenant le renderer
+ * @param shark requin à dessiner
+ */
 
 void Draw_shark(SDLDisplay *display, Shark *shark) {
     if (display == NULL || display->renderer == NULL || shark == NULL)
@@ -317,7 +436,7 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     float wave = sinf(time * 5.0f) * size * 0.5f;
 
     SDL_SetRenderDrawColor(r, 0, 0, 0, 65);
-    draw_filled_ellipse(r, x, y + size / 2, size, size / 3);
+    Draw_filled_ellipse(r, x, y + size / 2, size, size / 3);
 
     int bx = to_int(x - dir.x * size);
     int by = to_int(y - dir.y * size);
@@ -332,10 +451,10 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     int q3y = to_int(y - dir.y * size * 1.8f + side.y * wave);
 
     SDL_SetRenderDrawColor(r, 80, 120, 150, 255);
-    draw_filled_triangle(r, q1x, q1y, q2x, q2y, q3x, q3y);
+    Draw_filled_triangle(r, q1x, q1y, q2x, q2y, q3x, q3y);
 
     SDL_SetRenderDrawColor(r, 120, 160, 180, 255);
-    draw_filled_ellipse(r, x, y, size, size / 2);
+    Draw_filled_ellipse(r, x, y, size, size / 2);
 
     int nx = to_int(x + dir.x * size * 1.4f);
     int ny = to_int(y + dir.y * size * 1.4f);
@@ -347,10 +466,10 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     int h2y = to_int(y - side.y * size / 2);
 
     SDL_SetRenderDrawColor(r, 120, 160, 180, 255);
-    draw_filled_triangle(r, nx, ny, h1x, h1y, h2x, h2y);
+    Draw_filled_triangle(r, nx, ny, h1x, h1y, h2x, h2y);
 
     SDL_SetRenderDrawColor(r, 220, 230, 210, 230);
-    draw_filled_ellipse(r,
+    Draw_filled_ellipse(r,
                         to_int(x + side.x * size / 5),
                         to_int(y + side.y * size / 5),
                         size / 2,
@@ -360,7 +479,7 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     int ey = to_int(y + dir.y * size / 2 - side.y * size / 4);
 
     SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
-    draw_filled_circle(r, ex, ey, 3);
+    Draw_filled_circle(r, ex, ey, 3);
 
     for (int i = 0; i < 3; i++) {
         int gx = to_int(x + dir.x * (size / 5 - i * 4));
@@ -374,6 +493,15 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     }
 }
 
+/**
+ * @brief dessine le monde
+ * 
+ * @param display struct contenant le renderer
+ * @param fishes tableau contenant les poissons
+ * @param nb_fish nbr de poissons dans le tableau
+ * @param shark requin du monde
+ */
+
 void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     if (display == NULL || display->renderer == NULL)
         return;
@@ -385,9 +513,17 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     }
 
     Draw_shark(display, shark);
-
+    //Draw_colliders(display, world->colliders, world->nb_colliders).
+    Draw_demo_mines(display);
     SDL_RenderPresent(display->renderer);
 }
+
+/**
+ * @brief fct principale du rendu du monde
+ * 
+ * @param display struct contenant le renderer
+ * @param world monde a afficher
+ */
 
 void Render_world(SDLDisplay *display, World *world) {
     if (display == NULL || world == NULL)
