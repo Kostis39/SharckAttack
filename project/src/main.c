@@ -9,11 +9,11 @@ int main(int argc, char *argv[]) {
     (void)argv;
 
     SDLDisplay display;
-    if (!Init_sdl_display(&display, "Test SDL", 400, 400)) {
+    if (!Init_sdl_display(&display, "Test SDL", 500, 400)) {
         Destroy_sdl_display(&display);
         return 0;
     }
-    World *world = World_init(400, 400, FISH_NB);
+    World *world = World_init(500, 400, FISH_NB);
     if (world == NULL) {
     Destroy_sdl_display(&display);
     return 0;
