@@ -42,4 +42,7 @@
 
 #define RANDOM_SEED 42
 
+#define COLLIDER_RATIO 10 /* mesure au plus un dixième de la largeur du monde \
+                           */
+
 #endif /* CONFIG_H */
