@@ -1,10 +1,6 @@
 #include "mj.h"
-#include "fish.h"
-#include "vector.h"
-#include "world.h"
-#include <math.h>
 
-FishPerception get_fish_perception(Fish *fish, World *world) {
+FishPerception *get_fish_perception(Fish *fish, World *world) {
     FishPerception perception;
     perception.self = *fish;
 
@@ -61,7 +57,7 @@ FishPerception get_fish_perception(Fish *fish, World *world) {
         }
     }
 
-    return perception;
+    return &perception;
 }
 
 void FishPerception_destroy(FishPerception *perception) {
@@ -75,10 +71,12 @@ void UpdateWorld(World *world, World *tmp_world) {
         // Copie de l'état actuel
         tmp_world->fishes[i] = world->fishes[i];
 
-        FishPerception perception =
+        FishPerception *perception =
             get_fish_perception(&world->fishes[i], world);
 
-        Vector action = fish_choose_action(&perception);
+        Vector action = fish_choose_action(perception);
+
+        FishPerception_destroy(perception);
 
         fish_apply_action(&tmp_world->fishes[i], action);
     }
