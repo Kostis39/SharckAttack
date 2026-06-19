@@ -34,4 +34,8 @@
     100 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 2.0f // Intensité du virage
 
+#define BIASVAL 0.3f            // Force du biais
+#define SCOUT_GROUP1_RATIO 0.3f // % des poissons dans le groupe 1
+#define SCOUT_GROUP2_RATIO 0.3f // % des poissons dans le groupe 2
+
 #endif /* CONFIG_H */

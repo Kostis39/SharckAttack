@@ -11,6 +11,17 @@ Fish Fish_create_random_pos(int width, int height) {
     fish.radius_alignement = RADIUS_ALIGNEMENT;
     fish.radius_cohesion = RADIUS_COHESION;
     fish.vision_angle = VISION_ANGLE;
+
+    // Biais
+    float r = rand() / RAND_MAX;
+    if (r < SCOUT_GROUP1_RATIO) {
+        fish.group = 1;
+    } else if (r < SCOUT_GROUP1_RATIO + SCOUT_GROUP2_RATIO) {
+        fish.group = 2;
+    } else {
+        fish.group = 0;
+    }
+    fish.biasval = BIASVAL;
     return fish;
 }
 
@@ -44,6 +55,15 @@ void fish_apply_action(Fish *fish, Vector weighted_velocity) {
     Vector new_velocity =
         Vector_add(fish->velocity, Vector_scale(weighted_velocity, TURN_SPEED));
 
+    if (fish->group == 1) {
+        // Biais vers la droite
+        fish->velocity.x =
+            (1.0f - fish->biasval) * fish->velocity.x + fish->biasval;
+    } else if (fish->group == 2) {
+        // Biais vers la gauche
+        fish->velocity.x =
+            (1.0f - fish->biasval) * fish->velocity.x - fish->biasval;
+    }
     float speed = Vector_length(new_velocity);
 
     if (speed > FISH_SPEED_MAX) {
