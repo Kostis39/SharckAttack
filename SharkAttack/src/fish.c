@@ -45,6 +45,4 @@ void fish_apply_action(Fish *fish, Vector action) {
 
     // Mettre à jour la position
     fish->position = Vector_add(fish->position, fish->velocity);
-
-    apply_border_repulsion(&fish->position, &fish->velocity);
 }

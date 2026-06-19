@@ -42,6 +42,26 @@ Vector Rules_cohesion(Fish *self, Fish *far, int nb) {
     return Vector_sub(center, self->position);
 }
 
+Vector Rules_border_repulsion(Fish *self) {
+    Vector repulsion = Vector_init();
+
+    // Bords gauche/droit
+    if (self->position.x < BORDER_MARGIN) {
+        repulsion.x += REPULSION_FACTOR;
+    } else if (self->position.x > WIDTH - BORDER_MARGIN) {
+        repulsion.x -= REPULSION_FACTOR;
+    }
+
+    // Bords haut/bas
+    if (self->position.y < BORDER_MARGIN) {
+        repulsion.y += REPULSION_FACTOR;
+    } else if (self->position.y > HEIGHT - BORDER_MARGIN) {
+        repulsion.y -= REPULSION_FACTOR;
+    }
+
+    return repulsion;
+}
+
 Vector fish_choose_action(FishPerception *p) {
     Vector separation =
         Rules_separation(&p->self, p->neighbor_separation, p->nb_sep);
@@ -49,6 +69,8 @@ Vector fish_choose_action(FishPerception *p) {
         Rules_alignment(&p->self, p->neighbor_alignment, p->nb_align);
     Vector cohesion =
         Rules_cohesion(&p->self, p->neighbor_cohesion, p->nb_cohes);
+
+    Vector repulsion = Rules_border_repulsion(&p->self);
 
     // Combinaison 3 trois forces
     Vector weighted_velocity = Vector_init();
@@ -59,20 +81,21 @@ Vector fish_choose_action(FishPerception *p) {
     weighted_velocity =
         Vector_add(weighted_velocity, Vector_scale(cohesion, COHESION));
 
-    weighted_velocity = Vector_add(p->self.velocity,
-                                   Vector_scale(weighted_velocity, TURN_SPEED));
+    weighted_velocity = Vector_add(weighted_velocity, repulsion);
 
-    weighted_velocity = Vector_limit(weighted_velocity, FISH_SPEED_MAX);
+    // calcul de la nouveau vecteur vitesse
+    Vector new_velocity = Vector_add(
+        p->self.velocity, Vector_scale(weighted_velocity, TURN_SPEED));
 
-    float speed = Vector_length(weighted_velocity);
+    float speed = Vector_length(new_velocity);
 
     if (speed > FISH_SPEED_MAX) {
-        weighted_velocity =
-            Vector_scale(Vector_normalize(weighted_velocity), FISH_SPEED_MAX);
+        new_velocity =
+            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MAX);
     } else if (speed < FISH_SPEED_MIN) {
-        weighted_velocity =
-            Vector_scale(Vector_normalize(weighted_velocity), FISH_SPEED_MIN);
+        new_velocity =
+            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MIN);
     }
 
-    return weighted_velocity;
+    return new_velocity;
 }
