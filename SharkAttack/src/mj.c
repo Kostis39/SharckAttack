@@ -63,6 +63,60 @@ void FishPerception_destroy(FishPerception *perception) {
     free(perception->neighbor_cohesion);
 }
 
+SharkPerception Get_shark_perception(Shark *shark, World *world) {
+    SharkPerception perception;
+
+    perception.self = *shark;
+
+    perception.width = world->width;
+    perception.height = world->height;
+
+    Vector center = Vector_init();
+    Vector avg_vel = Vector_init();
+    int count = 0;
+
+    float closest_dist;
+
+    // Parcourir tous les poissons
+    for (int i = 0; i < world->nb_fish; i++) {
+        Fish *fish = &world->fishes[i];
+        if (!fish->is_alive)
+            continue;
+
+        // Distance au requin
+        Vector to_fish = Vector_sub(fish->position, shark->pos);
+        float dist = Vector_length(to_fish);
+
+        // Vérifier si le poisson est dans le champ de vision du requin
+        if (dist < SHARK_VISION_RANGE) {
+            center = Vector_add(center, fish->position);
+            avg_vel = Vector_add(avg_vel, fish->velocity);
+            count++;
+
+            // Mettre à jour le poisson le plus proche
+            if (dist < closest_dist) {
+                closest_dist = dist;
+                perception.closest_fish = *fish;
+            }
+        }
+    }
+
+    if (count > 0) {
+        perception.center_of_mass = Vector_scale(center, 1.0f / count);
+        perception.avg_velocity = Vector_scale(avg_vel, 1.0f / count);
+
+        perception.has_closest_fish = true;
+
+    } else { // Aucun poisson visible
+        perception.center_of_mass = Vector_init();
+        perception.avg_velocity = Vector_init();
+
+        perception.has_closest_fish = false;
+    }
+
+    return perception;
+}
+
 void UpdateWorld(World *world, World *tmp_world) {
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
@@ -79,17 +133,19 @@ void UpdateWorld(World *world, World *tmp_world) {
         fish_apply_action(&tmp_world->fishes[i], action);
     }
 
-    // // Copie de l'état actuel
-    // tmp_world->shark = world->shark;
+    // Copie de l'état actuel
+    tmp_world->shark = world->shark;
 
-    // SharkPerception shark_perception = Get_shark_perception(world);
+    SharkPerception *perception = malloc(sizeof(FishPerception));
+    SharkPerception shark_perception =
+        Get_shark_perception(&world->shark, world);
 
-    // tmp_world->shark.velocity =
-    //     shark_choose_action(&world->shark, &shark_perception);
+    tmp_world->shark.velocity =
+        shark_choose_action(&world->shark, &shark_perception);
 
-    // // Mise à jour de la position
-    // tmp_world->shark.position =
-    //     Vector_add(tmp_world->shark.position, tmp_world->shark.velocity);
+    // Mise à jour de la position
+    tmp_world->shark.position =
+        Vector_add(tmp_world->shark.position, tmp_world->shark.velocity);
 }
 
 void Game_step(World *world) {
