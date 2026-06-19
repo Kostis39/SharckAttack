@@ -22,7 +22,8 @@ bool Game_init(Game *game, int width, int height, int nb_fish);
 
 void Game_pause(Game *game);
 
-void Game_run();
+void Game_run_SDL();
+void Game_run_terminal();
 
 void Game_destroy(Game *game);
 

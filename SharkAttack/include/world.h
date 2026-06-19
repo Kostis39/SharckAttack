@@ -6,6 +6,7 @@
 #include "vector.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
  * @struct World
  * @brief Structure représentant le monde du jeu, contenant les poissons et le
