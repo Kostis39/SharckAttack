@@ -9,5 +9,33 @@ A faire:
 - Sacha : test unitaire (vector / fish / mj)
 
 ## Aprem
+Sacha:
 - Ajout de seed aux randoms position/veocity de fish et shark
 Question les paramètres doivent-ils être entre 0 et 1 ??
+- Comprendre le SMA et comment appliquer Reinforce
+
+
+
+Compréhension SMA:
+- Calcul des vecteurs direction de chaque règles (normalise en [-1, 1] pour juste garder la direcction sans la vitesse)
+Agent:
+Phase 1: C'est ici que l'on calcule le vecteur d'intérêts pour les types de règles.
+    Vecteur intérêts: Une liste de plusieurs valeurs définissant l'intérêts de chaque règle.
+    Règle : Alignement / Cohésion / Répulsion
+1. Initialisation arbitraire de ce vecteur
+2. Calcul pour chaque règle Alignement / Cohésion / Répulsion du nouveau coef à ajouter (ce calcul généralement par la norme du vecteur velocité souhaité)
+3. Ajout au vecteur vecteur d'intérêts chaque poids calculer précédement
+
+Phase 2:
+- Softmax avec une température arbitraire
+- Donne vecteur de probabilité (list de proba pour chaque décision)
+
+Phase 3:
+- Multiplie chaque vecteur direction par sa probabilité associé
+- Somme l'ensemble de ces vecteurs pour le renvoyer
+
+Mj:
+- Ajoute le vecteur renvoyé en phase 3 au vecteur velocité
+- Normalise la nouvelle velocité si supérieur à la vitesse max
+- Mise à jour de la position par le vecteur.
+
