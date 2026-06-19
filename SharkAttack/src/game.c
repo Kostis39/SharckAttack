@@ -61,8 +61,8 @@ void Game_step(Game *game) {
     game->world->nb_fish = tmp_world.nb_fish; // si le nombre a changé
 
     // Pour le requin, on copie la structure (pas d'échange de pointeur)
-    //*game->world.shark = *tmp_world.shark;
-    // free(tmp_world.shark); // on libère le pointeur temporaire
+    free(tmp_world.shark);  // on libère le pointeur temporaire
+    tmp_world.shark = NULL; // on évite les fuites de mémoire
 }
 
 void Game_run() {

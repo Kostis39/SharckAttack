@@ -7,7 +7,6 @@
 #include "world.h"
 /* #include "shark.h" */
 
-FishPerception *get_fish_perception(Fish *fish, World *world);
 void FishPerception_destroy(FishPerception *perception);
 
 void UpdateWorld(World *world, World *tmp_world);
