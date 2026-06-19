@@ -28,5 +28,4 @@ Vector Vector_normalize(Vector v);
 Vector Vector_limit(Vector v, float max_length);
 float Vector_angle(Vector a, Vector b);
 
-void apply_border_repulsion(Vector *pos, Vector *vel);
 #endif
