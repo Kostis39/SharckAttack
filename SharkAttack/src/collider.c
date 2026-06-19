@@ -29,6 +29,16 @@ Collider Instantiate_collider(Vector pos, float w, float h) {
 
 Collider *Colliders_random_array(int seed, int x_max, int y_max, int w_max,
                                  int h_max, int count) {
+    /**
+     * @brief initialise un tableau de colliders aléatoirement positionnés
+     * @param seed graine de l'initialisation aléatoire
+     * @param x_max borne supérieure de la position (axe x)
+     * @param y_max borne supérieure de la position (axe y)
+     * on assume que la borne inférieure est toujours le (0,0)
+     * @param w_max borne supérieure de la largeur
+     * @param h_max borne supérieure de la longueur
+     * @param count nombre d'obstacles instanciés
+     * */
     Collider *array = calloc(count, sizeof(*array));
     if (!array) {
         return NULL;
