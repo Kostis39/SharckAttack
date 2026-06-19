@@ -7,20 +7,18 @@
 #include <time.h>
 
 int main(int argc, char *argv[]) {
-    (void)argc;
-    (void)argv;
     srand(RANDOM_SEED);
 
-    bool use_sdl = false;
+    bool use_term = false;
 
-    if (argc > 1 && strcmp(argv[1], "sdl") == 0) {
-        use_sdl = true;
+    if (argc > 1 && strcmp(argv[1], "term") == 0) {
+        use_term = true;
     }
 
-    if (use_sdl) {
-        Game_run_SDL();
-    } else {
+    if (use_term) {
         Game_run_terminal();
+    } else {
+        Game_run_SDL();
     }
 
     return 0;
