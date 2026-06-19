@@ -1,6 +1,7 @@
 #include "collider.h"
 #include "vector.h"
 #include <stdlib.h>
+#include <string.h>
 
 float random_float(float min, float max) {
     /**
@@ -71,4 +72,13 @@ int Colliders_destroy_array(Collider *array) {
         return 0;
     }
     return -1;
+}
+
+Collider *Colliders_copy_array(Collider *collider, int count) {
+    Collider *copy = malloc(count * sizeof(*collider));
+    if (!(collider && copy)) {
+        return NULL;
+    }
+    memcpy(copy, collider, count * sizeof(*collider));
+    return copy;
 }
