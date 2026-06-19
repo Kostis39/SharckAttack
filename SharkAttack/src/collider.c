@@ -59,3 +59,15 @@ Collider *Colliders_random_array(int seed, int x_max, int y_max, int w_max,
     }
     return array;
 }
+
+int Colliders_destroy_array(Collider *array) {
+    /**
+     * @brief libère la mémoire utilisée par les colliders
+     * @return 0 si réussite, 1 sinon
+     * */
+    if (array) {
+        free(array);
+        return 0;
+    }
+    return -1;
+}
