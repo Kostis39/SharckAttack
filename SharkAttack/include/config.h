@@ -6,19 +6,19 @@
 /* Population */
 #define FISH_NB 200
 
-#define RADIUS_SEPARATION 20
-#define RADIUS_ALIGNEMENT 35
-#define RADIUS_COHESION 35
+#define RADIUS_SEPARATION 32
+#define RADIUS_ALIGNEMENT 160
+#define RADIUS_COHESION 160
 #define VISION_ANGLE (M_PI * 0.75f)
 
 /* Poids des règles réactives */
-#define SEPARATION 2.5f
-#define ALIGNMENT 1.0f
-#define COHESION 1.0f
+#define SEPARATION 0.3f
+#define ALIGNMENT 0.3f
+#define COHESION 0.003f
 
 /* Contraintes de mouvement */
-#define FISH_SPEED_MAX 2
-#define FISH_SPEED_MIN 2
+#define FISH_SPEED_MAX 4.0f
+#define FISH_SPEED_MIN 2.0f
 
 #define SHARK_SPEED_MAX 3
 
@@ -39,5 +39,7 @@
 #define SCOUT_GROUP2_RATIO 0.3f // % des poissons dans le groupe 2
 
 #define NB_OCCURRENCE 10000
+
+#define RANDOM_SEED 42
 
 #endif /* CONFIG_H */
