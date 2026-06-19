@@ -2,6 +2,7 @@
 #define VECTOR_H
 
 #include <math.h>
+#include <stdio.h>
 /**
  * @struct Vector
  * @brief Structure représentant un vecteur 2D.
@@ -10,6 +11,8 @@ typedef struct {
     float x; /**< Composante x du vecteur */
     float y; /**< Composante y du vecteur */
 } Vector;
+
+void Vector_print(Vector v);
 
 Vector Vector_init(); // Initialise à 0 x et y
 Vector Vector_add(Vector a, Vector b);
@@ -25,6 +28,5 @@ Vector Vector_normalize(Vector v);
 Vector Vector_limit(Vector v, float max_length);
 float Vector_angle(Vector a, Vector b);
 
-Vector apply_collision_rect(Vector pos, Vector vel, int min_x, int max_x,
-                            int min_y, int max_y);
+void apply_border_repulsion(Vector *pos, Vector *vel);
 #endif

@@ -96,7 +96,7 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
     SDL_RenderDrawLine(display->renderer, x1, y1, x2, y2);
     SDL_RenderDrawLine(display->renderer, x2, y2, x3, y3);
     SDL_RenderDrawLine(display->renderer, x3, y3, x1, y1);
-}  
+}
 
 void Draw_shark(SDLDisplay *display, Shark *shark) {
     if (display == NULL || display->renderer == NULL || shark == NULL)
@@ -136,7 +136,7 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     if (display == NULL || display->renderer == NULL)
         return;
 
-    Clear_sdl_display(display);  // efface l'ancien ecran
+    Clear_sdl_display(display); // efface l'ancien ecran
 
     for (int i = 0; i < nb_fish; i++) {
         Draw_fish(display, &fishes[i]); // dessine les poissons

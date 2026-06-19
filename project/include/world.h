@@ -4,6 +4,7 @@
 #include "fish.h"
 #include "shark.h"
 #include "vector.h"
+#include <stdio.h>
 #include <stdlib.h>
 /**
  * @struct World

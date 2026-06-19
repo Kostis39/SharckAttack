@@ -9,7 +9,7 @@
  * @brief Structure représentant l'état du jeu.
  */
 typedef struct {
-    World world; /**< Le monde du jeu, contenant les poissons et le requin */
+    World *world; /**< Le monde du jeu, contenant les poissons et le requin */
     SDLDisplay display; /**< L'affichage SDL du jeu */
 
     float time;
@@ -24,7 +24,7 @@ void Game_step(Game *game);
 
 void Game_pause(Game *game);
 
-void Game_run(Game *game);
+void Game_run();
 
 void Game_destroy(Game *game);
 
