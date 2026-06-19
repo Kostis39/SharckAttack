@@ -2,11 +2,11 @@
 #define CONFIG_H
 
 /* Population */
-#define FISH_NB 50
+#define FISH_NB 200
 
 #define RADIUS_SEPARATION 20
 #define RADIUS_ALIGNEMENT 35
-#define RADIUS_COHESION 40
+#define RADIUS_COHESION 35
 #define VISION_ANGLE (M_PI * 0.75f)
 
 /* Poids des règles réactives, combinées dans AgentCompute() */
@@ -25,10 +25,10 @@
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
-#define WIDTH 800
-#define HEIGHT 600
+#define WIDTH 1400
+#define HEIGHT 1000
 
 #define BORDER_MARGIN 100 // Distance à partir de laquelle la force s'applique
-#define TURN_FACTOR 0.2f  // Intensité du virage
+#define TURN_FACTOR 0.3f  // Intensité du virage
 
 #endif /* CONFIG_H */
