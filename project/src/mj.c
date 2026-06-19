@@ -1,4 +1,5 @@
 #include "mj.h"
+#include "fish.h"
 #include "vector.h"
 #include "world.h"
 #include <math.h>
@@ -68,6 +69,7 @@ void FishPerception_destroy(FishPerception *perception) {
     free(perception->neighbor_alignment);
     free(perception->neighbor_cohesion);
 }
+
 void UpdateWorld(World *world, World *tmp_world) {
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
@@ -76,11 +78,9 @@ void UpdateWorld(World *world, World *tmp_world) {
         FishPerception perception =
             get_fish_perception(&world->fishes[i], world);
 
-        tmp_world->fishes[i].velocity = fish_choose_action(&perception);
+        Vector action = fish_choose_action(&perception);
 
-        // Mise à jour de la position
-        tmp_world->fishes[i].position = Vector_add(
-            tmp_world->fishes[i].position, tmp_world->fishes[i].velocity);
+        fish_apply_action(&tmp_world->fishes[i], action);
     }
 
     // // Copie de l'état actuel
