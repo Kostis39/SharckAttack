@@ -29,6 +29,6 @@
 #define HEIGHT 1000
 
 #define BORDER_MARGIN 100 // Distance à partir de laquelle la force s'applique
-#define REPULSION_FACTOR 3.0f // Intensité du virage
+#define REPULSION_FACTOR 5.0f // Intensité du virage
 
 #endif /* CONFIG_H */

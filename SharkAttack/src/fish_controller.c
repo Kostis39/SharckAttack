@@ -83,19 +83,5 @@ Vector fish_choose_action(FishPerception *p) {
 
     weighted_velocity = Vector_add(weighted_velocity, repulsion);
 
-    // calcul de la nouveau vecteur vitesse
-    Vector new_velocity = Vector_add(
-        p->self.velocity, Vector_scale(weighted_velocity, TURN_SPEED));
-
-    float speed = Vector_length(new_velocity);
-
-    if (speed > FISH_SPEED_MAX) {
-        new_velocity =
-            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MAX);
-    } else if (speed < FISH_SPEED_MIN) {
-        new_velocity =
-            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MIN);
-    }
-
-    return new_velocity;
+        return weighted_velocity;
 }

@@ -40,9 +40,21 @@ void Fish_destroy_array(Fish *fish_array) {
     fish_array = NULL;
 }
 
-void fish_apply_action(Fish *fish, Vector action) {
-    fish->velocity = action;
+void fish_apply_action(Fish *fish, Vector weighted_velocity) {
+    Vector new_velocity =
+        Vector_add(fish->velocity, Vector_scale(weighted_velocity, TURN_SPEED));
 
-    // Mettre à jour la position
+    float speed = Vector_length(new_velocity);
+
+    if (speed > FISH_SPEED_MAX) {
+        new_velocity =
+            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MAX);
+    } else if (speed < FISH_SPEED_MIN) {
+        new_velocity =
+            Vector_scale(Vector_normalize(new_velocity), FISH_SPEED_MIN);
+    }
+
+    // Mise à jour
+    fish->velocity = new_velocity;
     fish->position = Vector_add(fish->position, fish->velocity);
 }
