@@ -8,11 +8,7 @@
 typedef struct {
     Shark self;
 
-    Fish *visible_fish;
-    int nb_visible_fish;
-
     Fish closest_fish;
-    float closest_prey_dist;
 
     Vector center_of_mass;
     Vector avg_velocity;
