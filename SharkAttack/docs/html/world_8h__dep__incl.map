@@ -1,0 +1,23 @@
+<map id="include/world.h" name="include/world.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,245,33"/>
+<area shape="rect" id="Node000002" href="$game_8h.html" title=" " alt="" coords="145,157,266,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,46,206,157,201,156,187,50"/>
+<area shape="rect" id="Node000003" href="$game_8c.html" title=" " alt="" coords="159,232,251,260"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="108,28,83,36,56,47,31,62,12,82,9,94,12,108,14,149,18,165,30,183,58,206,92,222,127,232,161,241,156,241,125,238,90,227,55,210,26,186,13,168,9,150,7,109,3,94,7,80,28,58,53,42,81,31,112,25"/>
+<area shape="rect" id="Node000004" href="$mj_8h.html" title=" " alt="" coords="21,81,123,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,44,94,83,90,79,154,39"/>
+<area shape="rect" id="Node000005" href="$mj_8c.html" title=" " alt="" coords="40,157,112,184"/>
+<area shape="poly" id="edge11_Node000001_Node000005" title=" " alt="" coords="174,45,137,110,92,158,89,154,132,107,171,49"/>
+<area shape="rect" id="Node000006" href="$render__sdl_8h.html" title=" " alt="" coords="248,81,400,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="224,38,302,80,297,81,223,43"/>
+<area shape="rect" id="Node000009" href="$world_8c.html" title=" " alt="" coords="424,81,515,109"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="251,35,425,80,421,83,251,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="207,198,208,233,203,230,203,202"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="74,122,78,157,73,156,73,127"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="292,116,228,159,225,154,288,118"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="316,121,301,155,281,186,254,213,226,234,224,229,250,209,277,183,296,152,312,125"/>
+<area shape="rect" id="Node000007" href="$main_8c.html" title=" " alt="" coords="341,157,429,184"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="345,118,377,157,372,156,344,123"/>
+<area shape="rect" id="Node000008" href="$render__sdl_8c.html" title=" " alt="" coords="453,157,576,184"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="373,112,483,156,478,157,372,117"/>
+</map>
