@@ -1,4 +1,5 @@
 #include "shark.h"
+#include "render_sdl.h"
 
 Shark *Shark_createRandom(int width, int height) {
     Shark *shark = calloc(1, sizeof(Shark));

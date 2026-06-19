@@ -16,8 +16,8 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
 
     if (world->shark != NULL) {
         perception->shark_visible = true;
-        perception->shark_position = world->shark->pos;
-        perception->shark_velocity = world->shark->velocity;
+        perception->shark.pos = world->shark->pos;
+        perception->shark.velocity = world->shark->velocity;
     }
 
     /**Les trois zones de perception sont concentriques et s'enchaînent :
