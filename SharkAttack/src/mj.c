@@ -7,7 +7,7 @@
 FishPerception get_fish_perception(Fish *fish, World *world) {
     FishPerception perception;
     perception.self = *fish;
-
+    // FIXME: Big big memory leak les callocs sont jamais libérés
     perception.neighbor_separation = calloc(FISH_NB, sizeof(Fish));
     perception.nb_sep = 0;
     perception.neighbor_alignment = calloc(FISH_NB, sizeof(Fish));

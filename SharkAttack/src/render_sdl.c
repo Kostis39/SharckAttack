@@ -1,4 +1,5 @@
 #include "render_sdl.h"
+#include "SDL.h"
 #include "vector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,7 +50,7 @@ void Destroy_sdl_display(SDLDisplay *display) {
         SDL_DestroyWindow(display->window);
         display->window = NULL;
     }
-
+    SDL_QuitSubSystem(SDL_INIT_VIDEO);
     SDL_Quit();
 }
 
