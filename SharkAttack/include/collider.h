@@ -13,8 +13,7 @@ typedef struct {
 #endif
 
 Collider Instantiate_collider(Vector pos, float w, float h);
-Collider *Colliders_random_array(int seed, int x_min, int y_min, int x_max,
-                                 int y_max, int count);
+Collider *Colliders_random_array(int seed, int x_max, int y_max, int count);
 Collider *Colliders_copy_array(int x_min, int y_min, int x_max, int y_max,
                                int count);
 
