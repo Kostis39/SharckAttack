@@ -11,7 +11,7 @@
 #define RADIUS_COHESION 60
 #define VISION_ANGLE (M_PI * 0.75f)
 
-/* Poids des règles réactives, combinées dans AgentCompute() */
+/* Poids des règles réactives*/
 #define SEPARATION 1.5f
 #define ALIGNMENT 1.0f
 #define COHESION 1.0f
