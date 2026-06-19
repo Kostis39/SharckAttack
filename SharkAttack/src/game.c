@@ -34,37 +34,6 @@ void Game_pause(Game *game) {
     game->paused = !game->paused;
 }
 
-void Game_step(Game *game) {
-    World tmp_world;
-    tmp_world.width = game->world->width;
-    tmp_world.height = game->world->height;
-    tmp_world.nb_fish = game->world->nb_fish;
-
-    tmp_world.fishes = calloc(tmp_world.nb_fish, sizeof(Fish));
-    if (!tmp_world.fishes) {
-        fprintf(stderr, "Erreur malloc dans Game_step (fishes)\n");
-        return;
-    }
-
-    tmp_world.shark = calloc(1, sizeof(Shark));
-    if (!tmp_world.shark) {
-        free(tmp_world.fishes);
-        fprintf(stderr, "Erreur malloc dans Game_step (shark)\n");
-        return;
-    }
-
-    UpdateWorld(game->world, &tmp_world);
-
-    free(game->world->fishes);
-    // Remplacement par le nouveau
-    game->world->fishes = tmp_world.fishes;
-    game->world->nb_fish = tmp_world.nb_fish; // si le nombre a changé
-
-    // Pour le requin, on copie la structure (pas d'échange de pointeur)
-    free(tmp_world.shark);  // on libère le pointeur temporaire
-    tmp_world.shark = NULL; // on évite les fuites de mémoire
-}
-
 void Game_run() {
     Game game;
     if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB)) {
@@ -101,7 +70,7 @@ void Game_run() {
         }
 
         if (!game.paused) {
-            Game_step(&game);
+            Game_step(game.world);
         }
 
         SDL_Delay(10);

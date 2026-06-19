@@ -8,6 +8,7 @@
 /* #include "shark.h" */
 
 void FishPerception_destroy(FishPerception *perception);
+void Game_step(World *world);
 
 void UpdateWorld(World *world, World *tmp_world);
 #endif

@@ -20,8 +20,6 @@ typedef struct {
 
 bool Game_init(Game *game, int width, int height, int nb_fish);
 
-void Game_step(Game *game);
-
 void Game_pause(Game *game);
 
 void Game_run();
