@@ -52,20 +52,3 @@ float Vector_angle(Vector a, Vector b) {
     // atan2(sin, cos) donne l'angle signé dans [-π, π]
     return atan2f(cross, dot);
 }
-
-void apply_border_repulsion(Vector *pos, Vector *vel) {
-
-    // Bords gauche/droit
-    if (pos->x < BORDER_MARGIN) {
-        vel->x += TURN_FACTOR;
-    } else if (pos->x > WIDTH - BORDER_MARGIN) {
-        vel->x -= TURN_FACTOR;
-    }
-
-    // Bords haut/bas
-    if (pos->y < BORDER_MARGIN) {
-        vel->y += TURN_FACTOR;
-    } else if (pos->y > HEIGHT - BORDER_MARGIN) {
-        vel->y -= TURN_FACTOR;
-    }
-}
