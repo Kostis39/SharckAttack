@@ -9,7 +9,7 @@
 #define RADIUS_SEPARATION 20
 #define RADIUS_ALIGNEMENT 35
 #define RADIUS_COHESION 35
-#define VISION_ANGLE (M_PI * 0.75f)
+#define VISION_ANGLE (PI * 0.75f)
 
 /* Poids des règles réactives */
 #define SEPARATION 2.5f
@@ -39,5 +39,7 @@
 #define SCOUT_GROUP2_RATIO 0.3f // % des poissons dans le groupe 2
 
 #define NB_OCCURRENCE 10000
+
+#define RANDOM_SEED 42
 
 #endif /* CONFIG_H */

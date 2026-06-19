@@ -7,3 +7,7 @@ A faire:
 - Céer test unitaire pour toutes les fonctions.
 - Détecter bug existant.
 - Sacha : test unitaire (vector / fish / mj)
+
+## Aprem
+- Ajout de seed aux randoms position/veocity de fish et shark
+Question les paramètres doivent-ils être entre 0 et 1 ??
