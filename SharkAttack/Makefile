@@ -5,11 +5,21 @@
 OUTPUT_FOLDER=bin
 OBJECTS_FOLDER=build
 SOURCES_FOLDER=src
-INCLUDES=-I$(SOURCES_FOLDER)
+TESTS_FOLDER=tests
+UNITY_FOLDER=unity
+
 CFLAGS=-Wall -Wextra -g -Iinclude
+SDL_FLAGS=`sdl2-config --cflags`
+SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm
+
+TEST_CFLAGS=$(CFLAGS) -I$(UNITY_FOLDER)
+TEST_INCLUDES=-I$(SOURCES_FOLDER) -I$(UNITY_FOLDER)
+
+INCLUDES=-I$(SOURCES_FOLDER)
 
 TARGET ?= all
 
+# --- Compilation principal ---
 ifeq ($(TARGET),all)
 SOURCES=$(wildcard $(SOURCES_FOLDER)/*.c)
 else
@@ -17,11 +27,7 @@ SOURCES=$(SOURCES_FOLDER)/$(TARGET).c
 endif
 
 OBJECTS=$(patsubst $(SOURCES_FOLDER)/%.c,$(OBJECTS_FOLDER)/%.o,$(SOURCES))
-
 OUTPUT_NAME=Sharkattack
-
-SDL_FLAGS=`sdl2-config --cflags`
-SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm
 
 all: link
 
@@ -32,10 +38,42 @@ link: $(OBJECTS)
 $(OBJECTS_FOLDER)/%.o: $(SOURCES_FOLDER)/%.c create_objects_directory
 	$(CC) -c $(INCLUDES) $(CFLAGS) $(SDL_FLAGS) -o $@ $<
 
+# --- Gestion des tests ---
+TEST_SOURCES=$(wildcard $(TESTS_FOLDER)/test_*.c)
+TEST_OBJECTS=$(patsubst $(TESTS_FOLDER)/%.c,$(OBJECTS_FOLDER)/%.o,$(TEST_SOURCES))
+UNITY_OBJECT=$(OBJECTS_FOLDER)/unity.o
+
+# Règle pour compiler unity.c
+$(UNITY_OBJECT): $(UNITY_FOLDER)/unity.c create_objects_directory
+	$(CC) -c $(TEST_INCLUDES) $(TEST_CFLAGS) -o $@ $<
+
+# Règle pour compiler un test individuel (avec Unity)
+$(OBJECTS_FOLDER)/%.o: $(TESTS_FOLDER)/%.c create_objects_directory
+	$(CC) -c $(TEST_INCLUDES) $(TEST_CFLAGS) -o $@ $<
+
+# Règle pour générer l'exécutable d'un test
+$(OUTPUT_FOLDER)/test_%: $(OBJECTS_FOLDER)/test_%.o $(UNITY_OBJECT) $(OBJECTS)
+	$(CC) $(OBJECTS) $< $(UNITY_OBJECT) -o $@ $(SDL_LIB)
+
+# Cible pour compiler tous les tests
+test: $(patsubst $(TESTS_FOLDER)/%.c,$(OUTPUT_FOLDER)/%,$(TEST_SOURCES))
+
+# Cible pour lancer tous les tests
+run_test: test
+	@for test in $(patsubst $(TESTS_FOLDER)/%.c,$(OUTPUT_FOLDER)/%,$(TEST_SOURCES)); do \
+		echo "Running $$test"; \
+		$$test; \
+	done
+
+# Cible pour lancer un test spécifique
+run_test_%:
+	@$(OUTPUT_FOLDER)/test_$*
+
+
 create_objects_directory:
 	if [ ! -d $(OBJECTS_FOLDER) ]; then mkdir $(OBJECTS_FOLDER); fi
 
-.PHONY: clean
+.PHONY: clean test run_test
 
 clean:
 	rm -rf $(OUTPUT_FOLDER)/ $(OBJECTS_FOLDER)/
