@@ -2,11 +2,12 @@
 #include "vector.h"
 #include <stdlib.h>
 
-float random_float(float min, float max){
+float random_float(float min, float max) {
     /**
      * @brief petite fonction auxiliaire pour déterminer un float dans une
      * range*/
-    return min + ((float)rand()) / ((float)RAND_MAX) * (max - min)}
+    return min + ((float)rand()) / ((float)RAND_MAX) * (max - min);
+}
 
 Collider Instantiate_collider(Vector pos, float w, float h) {
     /**
