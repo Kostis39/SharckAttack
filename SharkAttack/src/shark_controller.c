@@ -7,7 +7,7 @@ Vector shark_choose_action(SharkPerception *perception) {
 
     Vector action = Vector_init();
 
-    if (perception->self.player) { // Mode joueur
+    if (Is_player(&perception->self)) { // Mode joueur
         int mx, my;
         SDL_GetMouseState(&mx, &my);
 

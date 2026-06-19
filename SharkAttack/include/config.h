@@ -11,6 +11,8 @@
 #define RADIUS_COHESION 160
 #define VISION_ANGLE (PI * 0.75f)
 
+#define SHARK_VISION_RANGE 300
+
 /* Poids des règles réactives */
 #define SEPARATION 0.3f
 #define ALIGNMENT 0.3f

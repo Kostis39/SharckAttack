@@ -7,6 +7,7 @@ Shark *Shark_createRandom(int width, int height) {
     shark->pos.y = rand() % height;
     shark->velocity.x = (rand() % SHARK_SPEED_MAX) - (SHARK_SPEED_MAX / 2);
     shark->velocity.y = (rand() % SHARK_SPEED_MAX) - (SHARK_SPEED_MAX / 2);
+    shark->player = true;
     return shark;
 }
 
@@ -24,18 +25,18 @@ void Shark_destroy(Shark *shark) {
     shark = NULL;
 }
 
-void Update_shark(Shark *shark) {
-    int mx, my;
-    SDL_GetMouseState(&mx, &my);
+bool Is_player(Shark *shark) { return shark->player; }
 
-    Vector target = {mx, my};
-    Vector to_target = {target.x - shark->pos.x, target.y - shark->pos.y};
-    Vector direction = local_normalize(to_target);
-    float distance = Vector_length(to_target);
+void Shark_apply_action(Shark *shark, Vector action) {
+    shark->velocity =
+        Vector_add(shark->velocity, Vector_scale(action, TURN_SPEED));
 
-    float speed = distance * SHARK_SPEED_MAX;
+    float speed = Vector_length(shark->velocity);
+    if (speed > SHARK_SPEED_MAX) {
+        shark->velocity =
+            Vector_scale(Vector_normalize(shark->velocity), SHARK_SPEED_MAX);
+    }
 
-    shark->velocity = Vector_scale(direction, speed);
     shark->pos = Vector_add(shark->pos, shark->velocity);
 
     if (shark->pos.x < 0.0f)

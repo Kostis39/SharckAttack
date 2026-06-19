@@ -3,6 +3,8 @@
 #include "config.h"
 #include "fish.h"
 #include "fish_controller.h"
+#include "shark.h"
+#include "shark_controller.h"
 #include "vector.h"
 #include "world.h"
 /* #include "shark.h" */
@@ -11,4 +13,7 @@ void FishPerception_destroy(FishPerception *perception);
 void Game_step(World *world);
 
 void UpdateWorld(World *world, World *tmp_world);
+
+void Get_shark_perception(Shark *shark, World *world,
+                          SharkPerception *shark_perception);
 #endif
