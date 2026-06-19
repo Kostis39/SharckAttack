@@ -1,24 +1,23 @@
 #include "mj.h"
 
-FishPerception *get_fish_perception(Fish *fish, World *world) {
-    FishPerception perception;
-    perception.self = *fish;
+void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
+    perception->self = *fish;
 
-    perception.neighbor_separation = calloc(FISH_NB, sizeof(Fish));
-    perception.nb_sep = 0;
-    perception.neighbor_alignment = calloc(FISH_NB, sizeof(Fish));
-    perception.nb_align = 0;
-    perception.neighbor_cohesion = calloc(FISH_NB, sizeof(Fish));
-    perception.nb_cohes = 0;
+    perception->neighbor_separation = calloc(FISH_NB, sizeof(Fish));
+    perception->nb_sep = 0;
+    perception->neighbor_alignment = calloc(FISH_NB, sizeof(Fish));
+    perception->nb_align = 0;
+    perception->neighbor_cohesion = calloc(FISH_NB, sizeof(Fish));
+    perception->nb_cohes = 0;
 
-    perception.shark_visible = false;
-    perception.width = world->width;
-    perception.height = world->height;
+    perception->shark_visible = false;
+    perception->width = world->width;
+    perception->height = world->height;
 
     if (world->shark != NULL) {
-        perception.shark_visible = true;
-        perception.shark_position = world->shark->pos;
-        perception.shark_velocity = world->shark->velocity;
+        perception->shark_visible = true;
+        perception->shark_position = world->shark->pos;
+        perception->shark_velocity = world->shark->velocity;
     }
 
     /**Les trois zones de perception sont concentriques et s'enchaînent :
@@ -46,18 +45,16 @@ FishPerception *get_fish_perception(Fish *fish, World *world) {
         }
 
         if (distance <= separation_limit) {
-            perception.neighbor_separation[perception.nb_sep] = *other;
-            perception.nb_sep++;
+            perception->neighbor_separation[perception->nb_sep] = *other;
+            perception->nb_sep++;
         } else if (distance <= alignment_limit) {
-            perception.neighbor_alignment[perception.nb_align] = *other;
-            perception.nb_align++;
+            perception->neighbor_alignment[perception->nb_align] = *other;
+            perception->nb_align++;
         } else if (distance <= cohesion_limit) {
-            perception.neighbor_cohesion[perception.nb_cohes] = *other;
-            perception.nb_cohes++;
+            perception->neighbor_cohesion[perception->nb_cohes] = *other;
+            perception->nb_cohes++;
         }
     }
-
-    return &perception;
 }
 
 void FishPerception_destroy(FishPerception *perception) {
@@ -71,12 +68,13 @@ void UpdateWorld(World *world, World *tmp_world) {
         // Copie de l'état actuel
         tmp_world->fishes[i] = world->fishes[i];
 
-        FishPerception *perception =
-            get_fish_perception(&world->fishes[i], world);
+        FishPerception *perception = malloc(sizeof(FishPerception));
+        get_fish_perception(&world->fishes[i], world, perception);
 
         Vector action = fish_choose_action(perception);
 
         FishPerception_destroy(perception);
+        free(perception);
 
         fish_apply_action(&tmp_world->fishes[i], action);
     }
