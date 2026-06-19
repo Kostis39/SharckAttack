@@ -1,6 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+#include "collider.h"
 #include "fish.h"
 #include "shark.h"
 #include "vector.h"
@@ -18,7 +19,9 @@ typedef struct {
     Fish *fishes; /**< Tableau dynamique de poissons présents dans le monde */
     int nb_fish;  /**< Nombre de poissons présents dans le monde */
 
-    Shark *shark; /**< Pointeur vers le requin présent dans le monde */
+    Shark *shark;        /**< Pointeur vers le requin présent dans le monde */
+    Collider *colliders; /**< Tableau dynamiques d'objet de collision présent
+                            dans le monde*/
 } World;
 
 World *World_init(int width, int height, int nb_fish);
