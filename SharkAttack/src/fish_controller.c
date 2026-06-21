@@ -74,6 +74,22 @@ Vector Rules_border_repulsion(Fish *self) {
     return repulsion;
 }
 
+Vector Rules_avoid_shark(Fish *self, Vector shark_position,
+                         bool shark_visible) {
+    if (!shark_visible) {
+        return Vector_init();
+    }
+
+    Vector away_from_shark = Vector_sub(self->position, shark_position);
+    float dist = Vector_length(away_from_shark);
+
+    // Plus le requin est proche, plus la force est grande
+    float intensity =
+        SHARK_AVOIDANCE_FACTOR * (1.0f - dist / RADIUS_SHARK_VISIBILITY);
+
+    return Vector_scale(away_from_shark, intensity);
+}
+
 Vector fish_choose_action(FishPerception *p) {
     Vector separation =
         Rules_separation(&p->self, p->neighbor_separation, p->nb_sep);
@@ -83,6 +99,9 @@ Vector fish_choose_action(FishPerception *p) {
         Rules_cohesion(&p->self, p->neighbor_cohesion, p->nb_cohes);
 
     Vector repulsion = Rules_border_repulsion(&p->self);
+
+    Vector avoid_shark =
+        Rules_avoid_shark(&p->self, p->shark.pos, p->shark_visible);
 
     // Combinaison 3 trois forces
     Vector weighted_velocity = Vector_init();
@@ -94,6 +113,7 @@ Vector fish_choose_action(FishPerception *p) {
         Vector_add(weighted_velocity, Vector_scale(cohesion, COHESION));
 
     weighted_velocity = Vector_add(weighted_velocity, repulsion);
+    weighted_velocity = Vector_add(weighted_velocity, avoid_shark);
 
     return weighted_velocity;
 }

@@ -15,9 +15,13 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
     perception->height = world->height;
 
     if (world->shark != NULL) {
-        perception->shark_visible = true;
-        perception->shark.pos = world->shark->pos;
-        perception->shark.velocity = world->shark->velocity;
+        Vector to_shark = Vector_sub(world->shark->pos, fish->position);
+        float distance = Vector_length(to_shark);
+
+        if (distance < RADIUS_SHARK_VISIBILITY) {
+            perception->shark_visible = true;
+            perception->shark = *world->shark;
+        }
     }
 
     /**Les trois zones de perception sont concentriques et s'enchaînent :

@@ -9,6 +9,7 @@
 #define RADIUS_SEPARATION 32
 #define RADIUS_ALIGNEMENT 160
 #define RADIUS_COHESION 160
+#define RADIUS_SHARK_VISIBILITY 200
 #define VISION_ANGLE (PI * 0.25f)
 
 #define SHARK_VISION_RANGE 300
@@ -17,12 +18,13 @@
 #define SEPARATION 0.3f
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
+#define SHARK_AVOIDANCE_FACTOR 0.03f
 
 /* Contraintes de mouvement */
-#define FISH_SPEED_MAX 6.0f
+#define FISH_SPEED_MAX 4.0f
 #define FISH_SPEED_MIN 2.0f
 
-#define SHARK_SPEED_MAX 3
+#define SHARK_SPEED_MAX 5
 
 #define TURN_SPEED 0.2f
 
