@@ -21,9 +21,9 @@
 #define SHARK_AVOIDANCE 0.1f
 
 /* Poids des règles de shark*/
-#define CENTER 0.5f
-#define ALIGNEMENT 0.3f
-#define PURSUIT 2.0f
+#define CENTER 10.0f
+#define ALIGNEMENT 10.0f
+#define PURSUIT 10.0f
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 4.0f
@@ -37,7 +37,7 @@
 #define SHARK_SIZE 22
 
 #define WIDTH 1200
-#define HEIGHT 500
+#define HEIGHT 800
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)

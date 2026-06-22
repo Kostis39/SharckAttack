@@ -2,6 +2,7 @@
 #define AGENT_SHARK_H
 
 #include "fish.h"
+#include "rules_set.h"
 #include "shark.h"
 #include "vector.h"
 
@@ -9,7 +10,7 @@ typedef struct {
     Shark self;
 
     Fish closest_fish;
-    bool has_closest_fish;
+    bool has_prey;
 
     Vector center_of_mass;
     Vector avg_velocity;
@@ -18,6 +19,7 @@ typedef struct {
     int height;
 } SharkPerception;
 
-Vector shark_choose_action(SharkPerception *perception);
+Vector shark_choose_action(SharkPerception *perception,
+                           RulesSetShark *rules_set);
 
 #endif
