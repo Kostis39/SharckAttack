@@ -83,9 +83,7 @@ Vector shark_choose_action(SharkPerception *perception,
             perception->self.pos, perception->closest_fish.position,
             perception->has_prey, perception->width, perception->height);
 
-        Vector_print(Vector_scale(center, rules_set->center));
-        Vector_print(Vector_scale(alignment, rules_set->alignment));
-        Vector_print(Vector_scale(pursuit, rules_set->pursuit));
+        /* Vector_print(Vector_scale(pursuit, rules_set->pursuit)); */
 
         // 4. Combinaison pondérée des vecteurs
         action = Vector_add(action, Vector_scale(center, rules_set->center));
@@ -93,8 +91,8 @@ Vector shark_choose_action(SharkPerception *perception,
             Vector_add(action, Vector_scale(alignment, rules_set->alignment));
         action = Vector_add(action, Vector_scale(pursuit, rules_set->pursuit));
 
-        Vector_print(action);
-        printf("------\n");
+        /* Vector_print(action); */
+        /* printf("------\n"); */
     }
 
     return action;

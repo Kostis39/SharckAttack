@@ -4,7 +4,6 @@
 #include <time.h>
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders) {
-    srand(time(NULL));
     int seed = rand();
     World *new_world = calloc(1, sizeof(World));
     new_world->width = width;
