@@ -39,8 +39,7 @@
 #define WIDTH 1200
 #define HEIGHT 500
 
-#define REPULSION_ZONE                                                         \
-    100 // Taille des la zone de répulsion (marges de l'écran)
+#define REPULSION_ZONE 10 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 10.0f // Intensité du virage
 
 #define NB_OCCURRENCE 50000
