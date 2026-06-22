@@ -6,6 +6,10 @@
 
 #define RENDERED_COLLIDERS 5
 
+int g_score = 0;
+int g_gain = 0;
+int g_flash = 0;
+
 /**
  * @brief convertir float en int
  *
@@ -449,6 +453,34 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
 
     int nose_x = to_int(x + dir.x * size * 1.45f);
     int nose_y = to_int(y + dir.y * size * 1.45f);
+    if (g_flash > 0) {
+    int a = 12 - g_flash;
+
+    SDL_SetRenderDrawColor(r, 210, 20, 25, 180);
+
+    Draw_filled_circle(r,
+                       to_int(nose_x + dir.x * a),
+                       to_int(nose_y + dir.y * a),
+                       2);
+
+    Draw_filled_circle(r,
+                       to_int(nose_x + side.x * 5 + dir.x * a),
+                       to_int(nose_y + side.y * 5 + dir.y * a),
+                       2);
+
+    Draw_filled_circle(r,
+                       to_int(nose_x - side.x * 5 + dir.x * a),
+                       to_int(nose_y - side.y * 5 + dir.y * a),
+                       2);
+
+    SDL_SetRenderDrawColor(r, 255, 150, 50, 170);
+
+    SDL_RenderDrawLine(r,
+                       nose_x,
+                       nose_y,
+                       to_int(nose_x + dir.x * (a + 8)),
+                       to_int(nose_y + dir.y * (a + 8)));
+}
 
     int tail_x = to_int(x - dir.x * size * 1.05f);
     int tail_y = to_int(y - dir.y * size * 1.05f);
@@ -546,6 +578,56 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     }
 }
 
+void Draw_digit(SDL_Renderer *r, int x, int y, int n, int s) {
+    int mask[10] = {63, 6, 91, 79, 102, 109, 125, 7, 127, 111};
+
+    SDL_Rect seg[7] = {
+        {x+s, y, 4*s, s}, {x+5*s, y+s, s, 4*s},
+        {x+5*s, y+6*s, s, 4*s}, {x+s, y+10*s, 4*s, s},
+        {x, y+6*s, s, 4*s}, {x, y+s, s, 4*s},
+        {x+s, y+5*s, 4*s, s}
+    };
+
+    for (int i = 0; i < 7; i++) {
+        if (mask[n] & (1 << i))
+            SDL_RenderFillRect(r, &seg[i]);
+    }
+}
+
+void Draw_score(SDLDisplay *display) {
+    SDL_Renderer *r = display->renderer;
+    int w = 0, h = 0;
+    SDL_GetRendererOutputSize(r, &w, &h);
+
+    if (w <= 0 || h <= 0)
+        return;
+
+    SDL_Rect box = {w - 95, 12, 78, 34};
+
+    SDL_SetRenderDrawColor(r, 0, 15, 30, 180);
+    SDL_RenderFillRect(r, &box);
+
+    SDL_SetRenderDrawColor(r, 80, 190, 230, 160);
+    SDL_RenderDrawRect(r, &box);
+
+    /* petite icône requin */
+    SDL_SetRenderDrawColor(r, 120, 170, 190, 255);
+    Draw_filled_triangle(r, w - 85, 29, w - 68, 20, w - 68, 38);
+
+    SDL_SetRenderDrawColor(r, 180, 240, 255, 255);
+    Draw_digit(r, w - 55, 19, (g_score / 10) % 10, 2);
+    Draw_digit(r, w - 38, 19, g_score % 10, 2);
+
+    if (g_flash > 0) {
+        SDL_SetRenderDrawColor(r, 255, 220, 80, 255);
+
+        SDL_RenderDrawLine(r, w - 62, 53, w - 52, 53);
+        SDL_RenderDrawLine(r, w - 57, 48, w - 57, 58);
+
+        Draw_digit(r, w - 45, 45, g_gain % 10, 1);
+    }
+}
+
 /**
  * @brief dessine le monde
  *
@@ -580,6 +662,7 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     }
 
     Draw_shark(display, shark);
+    Draw_score(display);
 
     SDL_RenderPresent(display->renderer);
 }
@@ -592,8 +675,21 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
  */
 
 void Render_world(SDLDisplay *display, World *world) {
+    static int old_score = 0;
+
     if (display == NULL || world == NULL)
         return;
+
+    g_score = world->fish_eaten;
+
+    if (g_score > old_score) {
+        g_gain = g_score - old_score;
+        g_flash = 10;   /* effet court quand le requin mange */
+    } else if (g_flash > 0) {
+        g_flash--;      /* l'effet disparaît progressivement */
+    }
+
+    old_score = g_score;
 
     Draw_world(display, world->fishes, world->nb_fish, world->shark);
 }
