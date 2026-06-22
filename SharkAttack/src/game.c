@@ -51,14 +51,15 @@ void Game_run_SDL(bool use_bench) {
 
     bool quit = false;
     int it = 0;
+    SDL_Event event;
     while (!quit) {
         Render_world(&game.display, game.world);
         if (use_bench) {
             it++;
-            if (it + 1 > BENCHMARK_ITERATIONS)
+            if (it > BENCHMARK_ITERATIONS) {
                 quit = true;
+            }
         }
-        SDL_Event event;
         while (SDL_PollEvent(&event)) {
             switch (event.type) {
             case SDL_QUIT:
@@ -84,8 +85,10 @@ void Game_run_SDL(bool use_bench) {
         if (!game.paused) {
             Game_step(game.world);
         }
+        if (!use_bench) {
 
-        SDL_Delay(10);
+            SDL_Delay(10);
+        }
     }
     Game_destroy(&game);
 }

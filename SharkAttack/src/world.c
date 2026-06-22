@@ -1,11 +1,8 @@
 #include "world.h"
 #include "config.h"
 #include <stdlib.h>
-#include <time.h>
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders) {
-    srand(time(NULL));
-    int seed = rand();
     World *new_world = calloc(1, sizeof(World));
     new_world->width = width;
     new_world->height = height;
@@ -13,7 +10,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders) {
     new_world->fishes = Fish_create_random_array(nb_fish, width, height);
     new_world->shark = Shark_create(width, height);
     new_world->colliders =
-        Colliders_random_array(seed, width, height, width / COLLIDER_RATIO,
+        Colliders_random_array(width, height, width / COLLIDER_RATIO,
                                height / COLLIDER_RATIO, nb_colliders);
     new_world->fish_eaten = 0;
     new_world->rules_set_fish = RulesSetFish_init();

@@ -29,7 +29,7 @@ Collider Instantiate_collider(Vector pos, float w, float h) {
     return new_collider;
 }
 
-Collider *Colliders_random_array(int seed, int x_max, int y_max, int w_max,
+Collider *Colliders_random_array(int x_max, int y_max, int w_max,
                                  int h_max, int count) {
     /**
      * @brief initialise un tableau de colliders aléatoirement positionnés
@@ -46,8 +46,7 @@ Collider *Colliders_random_array(int seed, int x_max, int y_max, int w_max,
         return NULL;
     }
     Vector current_pos = Vector_init();
-    int cur_w, cur_h;
-    srand(seed);
+    float cur_w, cur_h;
     for (int i = 0; i < count; ++i) {
         cur_w = random_float(0, w_max);
         cur_h = random_float(0, h_max);
