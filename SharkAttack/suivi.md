@@ -17,7 +17,7 @@ Question les paramètres doivent-ils être entre 0 et 1 ??
 
 
 Compréhension SMA:
-- Calcul des vecteurs direction de chaque règles (normalise en [-1, 1] pour juste garder la direcction sans la vitesse)
+- Calcul des vecteurs direction de chaque règles
 Agent:
 Phase 1: C'est ici que l'on calcule le vecteur d'intérêts pour les types de règles.
     Vecteur intérêts: Une liste de plusieurs valeurs définissant l'intérêts de chaque règle.
@@ -39,3 +39,6 @@ Mj:
 - Normalise la nouvelle velocité si supérieur à la vitesse max
 - Mise à jour de la position par le vecteur.
 
+# 22 Juin 
+## Matin
+- Reformulation de la perception poisson, enlever la création de tableau annexe pour calculer les positions voulu à la volé.
