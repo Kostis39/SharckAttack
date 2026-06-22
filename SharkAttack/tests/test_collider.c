@@ -124,7 +124,7 @@ void test_random_float_same_seed_same_result(void) {
 
 void test_Colliders_random_array_count(void) {
     int count = 5;
-    Collider *arr = Colliders_random_array(42, 800, 600, 50, 50, count);
+    Collider *arr = Colliders_random_array(800, 600, 50, 50, count);
     TEST_ASSERT_NOT_NULL(arr);
 
     // Verifier que chaque collider est initialise (pas de valeurs indefinies)
@@ -138,8 +138,10 @@ void test_Colliders_random_array_count(void) {
 
 void test_Colliders_random_array_reproducible(void) {
     // Meme seed = meme resultat
-    Collider *a = Colliders_random_array(123, 800, 600, 50, 50, 3);
-    Collider *b = Colliders_random_array(123, 800, 600, 50, 50, 3);
+    srand(123);
+    Collider *a = Colliders_random_array(800, 600, 50, 50, 3);
+    srand(123);
+    Collider *b = Colliders_random_array(800, 600, 50, 50, 3);
 
     TEST_ASSERT_NOT_NULL(a);
     TEST_ASSERT_NOT_NULL(b);
@@ -156,8 +158,10 @@ void test_Colliders_random_array_reproducible(void) {
 
 void test_Colliders_random_array_different_seed(void) {
     // Seed different = resultats differents (quasi certainement)
-    Collider *a = Colliders_random_array(1, 800, 600, 50, 50, 3);
-    Collider *b = Colliders_random_array(2, 800, 600, 50, 50, 3);
+    srand(1);
+    Collider *a = Colliders_random_array(800, 600, 50, 50, 3);
+    srand(2);
+    Collider *b = Colliders_random_array(800, 600, 50, 50, 3);
 
     TEST_ASSERT_NOT_NULL(a);
     TEST_ASSERT_NOT_NULL(b);
@@ -178,7 +182,7 @@ void test_Colliders_random_array_different_seed(void) {
 
 void test_Colliders_random_array_null_on_zero_count(void) {
     // count = 0 : comportement a definir, mais pas de crash
-    Collider *arr = Colliders_random_array(42, 800, 600, 50, 50, 0);
+    Collider *arr = Colliders_random_array(800, 600, 50, 50, 0);
     // calloc(0, ...) peut retourner NULL ou un pointeur valide non utilisable
     // On verifie juste qu'on peut appeler destroy sans crash
     if (arr) {
@@ -190,7 +194,7 @@ void test_Colliders_random_array_null_on_zero_count(void) {
 // --- Tests Colliders_copy_array ---
 
 void test_Colliders_copy_array_basic(void) {
-    Collider *orig = Colliders_random_array(42, 800, 600, 50, 50, 3);
+    Collider *orig = Colliders_random_array(800, 600, 50, 50, 3);
     TEST_ASSERT_NOT_NULL(orig);
 
     Collider *copy = Colliders_copy_array(orig, 3);
@@ -213,7 +217,7 @@ void test_Colliders_copy_array_basic(void) {
 
 void test_Colliders_copy_array_independent(void) {
     // Modifier la copie ne doit pas affecter l'original
-    Collider *orig = Colliders_random_array(42, 800, 600, 50, 50, 2);
+    Collider *orig = Colliders_random_array(800, 600, 50, 50, 2);
     Collider *copy = Colliders_copy_array(orig, 2);
 
     TEST_ASSERT_NOT_NULL(orig);
@@ -243,7 +247,7 @@ void test_Colliders_destroy_array_null(void) {
 }
 
 void test_Colliders_destroy_array_valid(void) {
-    Collider *arr = Colliders_random_array(42, 800, 600, 50, 50, 3);
+    Collider *arr = Colliders_random_array(800, 600, 50, 50, 3);
     TEST_ASSERT_NOT_NULL(arr);
     int ret = Colliders_destroy_array(arr);
     TEST_ASSERT_EQUAL(0, ret);
