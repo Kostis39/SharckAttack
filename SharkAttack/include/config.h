@@ -42,7 +42,7 @@
 #define SCOUT_GROUP1_RATIO 0.3f // % des poissons dans le groupe 1
 #define SCOUT_GROUP2_RATIO 0.3f // % des poissons dans le groupe 2
 
-#define NB_OCCURRENCE 10000
+#define NB_OCCURRENCE 1000
 
 #define RANDOM_SEED 42
 
