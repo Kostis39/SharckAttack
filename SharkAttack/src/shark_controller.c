@@ -1,11 +1,11 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
 
-Vector Rules_center(Vector shark_pos, Vector center_of_mass, bool has_prey) {
-    if (!has_prey) {
+Vector Rules_center(Vector shark_pos, Vector center_of_mass,
+                    bool has_prey_visible) {
+    if (!has_prey_visible) {
         return Vector_init();
     }
-
     Vector to_center = Vector_sub(center_of_mass, shark_pos);
     float dist = Vector_length(to_center);
 
@@ -16,8 +16,8 @@ Vector Rules_center(Vector shark_pos, Vector center_of_mass, bool has_prey) {
 }
 
 Vector Rules_alignment_shark(Vector shark_vel, Vector avg_velocity,
-                             bool has_prey) {
-    if (!has_prey) {
+                             bool has_prey_visible) {
+    if (!has_prey_visible) {
         return Vector_init();
     }
 
@@ -73,28 +73,27 @@ Vector shark_choose_action(SharkPerception *perception,
     } else { // Mode bot
         Vector center =
             Rules_center(perception->self.pos, perception->center_of_mass,
-                         perception->has_prey);
+                         perception->has_prey_visible);
 
         Vector alignment = Rules_alignment_shark(perception->self.velocity,
                                                  perception->avg_velocity,
-                                                 perception->has_prey);
+                                                 perception->has_prey_visible);
 
         Vector pursuit = Rules_pursuit(
             perception->self.pos, perception->closest_fish.position,
             perception->has_prey, perception->width, perception->height);
 
-        Vector_print(Vector_scale(center, rules_set->center));
-        Vector_print(Vector_scale(alignment, rules_set->alignment));
-        Vector_print(Vector_scale(pursuit, rules_set->pursuit));
-
-        // 4. Combinaison pondérée des vecteurs
+                // 4. Combinaison pondérée des vecteurs
         action = Vector_add(action, Vector_scale(center, rules_set->center));
         action =
             Vector_add(action, Vector_scale(alignment, rules_set->alignment));
         action = Vector_add(action, Vector_scale(pursuit, rules_set->pursuit));
 
-        Vector_print(action);
-        printf("------\n");
+        // Vector_print(Vector_scale(center, rules_set->center));
+        // Vector_print(Vector_scale(alignment, rules_set->alignment));
+        // Vector_print(Vector_scale(pursuit, rules_set->pursuit));
+        // Vector_print(action);
+        // printf("------\n");
     }
 
     return action;

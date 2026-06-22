@@ -22,7 +22,7 @@
 
 /* Poids des règles de shark*/
 #define CENTER 10.0f
-#define ALIGNEMENT 10.0f
+#define ALIGNEMENT 0.0f
 #define PURSUIT 10.0f
 
 /* Contraintes de mouvement */
@@ -41,7 +41,7 @@
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)
-#define REPULSION_FACTOR 2.0f // Intensité du virage
+#define REPULSION_FACTOR 10.0f // Intensité du virage
 
 #define NB_OCCURRENCE 1000
 
