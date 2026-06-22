@@ -20,7 +20,17 @@ typedef struct {
     int height;
 } SharkPerception;
 
-Vector shark_choose_action(SharkPerception *perception,
-                           RulesSetShark *rules_set);
+/**
+ * @brief Structure représentant le résultat des règles, nommée phi dans le
+ * cours.
+ *
+ */
+typedef struct {
+    Vector center;     /**< Vecteur résultat de la règle center */
+    Vector alignement; /**< Vecteur résultat de la règle alignement */
+    Vector pursuit;    /**< Vecteur résultat de la règle pursuit */
+} SharkPhi;
+
+Vector shark_choose_action(SharkPerception *perception, SharkTeta *rules_set);
 
 #endif

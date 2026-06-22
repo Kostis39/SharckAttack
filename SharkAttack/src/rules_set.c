@@ -9,8 +9,8 @@ RulesSetFish *RulesSetFish_init() {
     return rules_set;
 }
 
-RulesSetShark *RulesSetShark_init() {
-    RulesSetShark *rules_set = malloc(sizeof(RulesSetShark));
+SharkTeta *SharkTeta_init() {
+    SharkTeta *rules_set = malloc(sizeof(SharkTeta));
 
     rules_set->center = CENTER;
     rules_set->alignment = ALIGNEMENT;
@@ -19,7 +19,7 @@ RulesSetShark *RulesSetShark_init() {
 }
 
 void RulesSetFish_destroy(RulesSetFish *rules_set) { free(rules_set); }
-void RulesSetShark_destroy(RulesSetShark *rules_set) {
+void SharkTeta_destroy(SharkTeta *rules_set) {
     if (rules_set != NULL)
         free(rules_set);
 }

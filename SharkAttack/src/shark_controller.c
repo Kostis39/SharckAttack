@@ -47,8 +47,7 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
-Vector shark_choose_action(SharkPerception *perception,
-                           RulesSetShark *rules_set) {
+Vector shark_choose_action(SharkPerception *perception, SharkTeta *rules_set) {
     if (!perception)
         return Vector_init();
 
