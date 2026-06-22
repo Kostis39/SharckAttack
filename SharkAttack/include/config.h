@@ -53,4 +53,6 @@
 #define COLLIDERS_NB 5
 
 #define SHARK_ATTACK_RANGE 30
+
+#define BENCHMARK_ITERATIONS 2000
 #endif /* CONFIG_H */
