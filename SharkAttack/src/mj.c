@@ -119,10 +119,32 @@ void Get_shark_perception(Shark *shark, World *world,
     }
 }
 
+void handle_shark_collisions(World *world) {
+    Vector shark_pos = world->shark->pos;
+
+    for (int i = 0; i < world->nb_fish; i++) {
+        if (!world->fishes[i].is_alive)
+            continue;
+
+        Fish *fish = &world->fishes[i];
+        float dist = Vector_length(Vector_sub(fish->position, shark_pos));
+
+        if (dist < SHARK_ATTACK_RANGE) {
+            fish->is_alive = false;
+            world->fish_eaten++;
+            printf("Nombre de poissons mangés : %d\n", world->fish_eaten);
+        }
+    }
+}
+
 void UpdateWorld(World *world, World *tmp_world) {
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
         tmp_world->fishes[i] = world->fishes[i];
+
+        if (!world->fishes[i].is_alive) {
+            continue;
+        }
 
         FishPerception *perception = malloc(sizeof(FishPerception));
         get_fish_perception(&world->fishes[i], world, perception);
@@ -146,6 +168,8 @@ void UpdateWorld(World *world, World *tmp_world) {
     free(shark_perception);
 
     Shark_apply_action(tmp_world->shark, shark_action);
+
+    handle_shark_collisions(tmp_world);
 }
 
 void Game_step(World *world) {
@@ -153,6 +177,7 @@ void Game_step(World *world) {
     tmp_world.width = world->width;
     tmp_world.height = world->height;
     tmp_world.nb_fish = world->nb_fish;
+    tmp_world.fish_eaten = world->fish_eaten;
 
     tmp_world.fishes = calloc(tmp_world.nb_fish, sizeof(Fish));
     if (!tmp_world.fishes) {
@@ -177,4 +202,5 @@ void Game_step(World *world) {
     // Pour le requin, on copie la structure (pas d'échange de pointeur)
     free(world->shark); // 1. Libérer l'ancien requin
     world->shark = tmp_world.shark;
+    world->fish_eaten = tmp_world.fish_eaten;
 }

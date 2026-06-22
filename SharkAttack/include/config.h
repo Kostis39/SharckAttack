@@ -38,10 +38,6 @@
     100 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 2.0f // Intensité du virage
 
-#define BIASVAL 0.3f            // Force du biais
-#define SCOUT_GROUP1_RATIO 0.3f // % des poissons dans le groupe 1
-#define SCOUT_GROUP2_RATIO 0.3f // % des poissons dans le groupe 2
-
 #define NB_OCCURRENCE 10000
 
 #define RANDOM_SEED 42
@@ -51,4 +47,5 @@
           monde*/
 #define COLLIDERS_NB 5
 
+#define SHARK_ATTACK_RANGE 30
 #endif /* CONFIG_H */

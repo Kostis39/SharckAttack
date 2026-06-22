@@ -32,7 +32,6 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
 
     game->time = 0;
     game->paused = false;
-    game->fish_eaten = 0;
 
     return true;
 }
