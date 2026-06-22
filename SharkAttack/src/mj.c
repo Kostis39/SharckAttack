@@ -45,7 +45,7 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
         Vector to_other = Vector_sub(other->position, fish->position);
         float distance_squared = Vector_length2(to_other);
 
-        float angle = Vector_angle(fish->velocity, to_other);
+        float angle = Vector_angle_fast(fish->velocity, to_other);
         if (fabsf(angle) > fish->vision_angle / 2.0f) {
             continue;
         }
