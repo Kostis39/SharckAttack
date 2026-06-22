@@ -5,7 +5,7 @@ RulesSetFish *RulesSetFish_init() {
     rules_set->alignment = ALIGNMENT;
     rules_set->cohesion = COHESION;
     rules_set->separation = SEPARATION;
-    rules_set->shark_avoidance_factor = SHARK_AVOIDANCE_FACTOR;
+    rules_set->shark_avoidance = SHARK_AVOIDANCE;
     return rules_set;
 }
 

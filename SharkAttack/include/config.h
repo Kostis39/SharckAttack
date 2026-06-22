@@ -18,7 +18,7 @@
 #define SEPARATION 0.3f
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
-#define SHARK_AVOIDANCE_FACTOR 0.03f
+#define SHARK_AVOIDANCE 0.03f
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 4.0f
@@ -32,15 +32,15 @@
 #define SHARK_SIZE 22
 
 #define WIDTH 1200
+<<<<<<< HEAD
 #define HEIGHT 500
+=======
+#define HEIGHT 800
+>>>>>>> 305e4056922a8d0061577ae2cc57355f8235fb99
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 2.0f // Intensité du virage
-
-#define BIASVAL 0.3f            // Force du biais
-#define SCOUT_GROUP1_RATIO 0.3f // % des poissons dans le groupe 1
-#define SCOUT_GROUP2_RATIO 0.3f // % des poissons dans le groupe 2
 
 #define NB_OCCURRENCE 1000
 
@@ -51,4 +51,5 @@
           monde*/
 #define COLLIDERS_NB 5
 
+#define SHARK_ATTACK_RANGE 30
 #endif /* CONFIG_H */
