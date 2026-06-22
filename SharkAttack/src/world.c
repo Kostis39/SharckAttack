@@ -10,7 +10,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders) {
     new_world->height = height;
     new_world->nb_fish = nb_fish;
     new_world->fishes = Fish_create_random_array(nb_fish, width, height);
-    new_world->shark = Shark_createRandom(width, height);
+    new_world->shark = Shark_create(width, height);
     new_world->colliders =
         Colliders_random_array(seed, width, height, width / COLLIDER_RATIO,
                                height / COLLIDER_RATIO, nb_colliders);

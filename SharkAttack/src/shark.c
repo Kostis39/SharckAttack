@@ -1,12 +1,13 @@
 #include "shark.h"
 #include "render_sdl.h"
 
-Shark *Shark_createRandom(int width, int height) {
+Shark *Shark_create(int width, int height) {
     Shark *shark = calloc(1, sizeof(Shark));
-    shark->pos.x = rand() % width;
-    shark->pos.y = rand() % height;
-    shark->velocity.x = (rand() % SHARK_SPEED_MAX) - (SHARK_SPEED_MAX / 2);
-    shark->velocity.y = (rand() % SHARK_SPEED_MAX) - (SHARK_SPEED_MAX / 2);
+    shark->pos.x = width / 2;
+    shark->pos.y = height;
+    shark->velocity.x = (SHARK_SPEED_MAX / 2);
+    shark->velocity.y = (SHARK_SPEED_MAX / 2);
+    shark->radius_vision = SHARK_VISION_RANGE;
     shark->player = false;
     return shark;
 }

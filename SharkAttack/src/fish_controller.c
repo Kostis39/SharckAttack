@@ -80,7 +80,8 @@ Vector fish_choose_action(FishPerception *p, RulesSetFish *rules_set) {
     weighted_velocity = Vector_add(weighted_velocity,
                                    Vector_scale(cohesion, rules_set->cohesion));
 
-    weighted_velocity = Vector_add(weighted_velocity, repulsion);
+    weighted_velocity = Vector_add(weighted_velocity,
+                                   Vector_scale(repulsion, REPULSION_FACTOR));
     weighted_velocity =
         Vector_add(weighted_velocity,
                    Vector_scale(avoid_shark, rules_set->shark_avoidance));

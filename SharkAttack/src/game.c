@@ -99,34 +99,40 @@ void Game_run_terminal() {
     signal(SIGINT, Handle_terminal_interrupt);
 
     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB);
-    printf("Iteration: %d\nFish : Number: %d Separation: %f Alignement: %f "
-           "Cohesion: %f Shark "
-           "Avoidance: %f\n",
-           i, world->nb_fish, world->rules_set_fish->separation,
-           world->rules_set_fish->alignment, world->rules_set_fish->cohesion,
-           world->rules_set_fish->shark_avoidance);
 
     for (i = 0; i < NB_OCCURRENCE && !terminal_interrupted; i++) {
         Game_step(world);
-        printf("Iteration: %d\nFish : Number: %d Separation: %f Alignement: %f "
-               "Cohesion: %f Shark "
-               "Avoidance: %f\n",
-               i, world->nb_fish, world->rules_set_fish->separation,
-               world->rules_set_fish->alignment,
-               world->rules_set_fish->cohesion,
-               world->rules_set_fish->shark_avoidance);
+        printf(
+            "Iteration: %d\n"
+            "Fish : Number fish eaten: %d Separation: %f Alignement: %f "
+            "Cohesion: %f "
+            "Shark "
+            "Avoidance: %f\n"
+            "Shark : Position: (%f, %f) Center: %f Alignement: %f Pursuit: "
+            "%f\n",
+            i, world->fish_eaten, world->rules_set_fish->separation,
+            world->rules_set_fish->alignment, world->rules_set_fish->cohesion,
+            world->rules_set_fish->shark_avoidance, world->shark->pos.x,
+            world->shark->pos.y, world->rules_set_shark->center,
+            world->rules_set_shark->alignment, world->rules_set_shark->pursuit);
+        printf("------\n");
     }
 
     if (terminal_interrupted) {
         printf("Boucle interrompue par l'utilisateur.\n");
     }
 
-    printf("Iteration: %d\nFish : Number: %d Separation: %f Alignement: %f "
+    printf("Iteration: %d\n"
+           "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
            "Cohesion: %f Shark "
-           "Avoidance: %f\n",
-           i, world->nb_fish, world->rules_set_fish->separation,
-           world->rules_set_fish->alignment, world->rules_set_fish->cohesion,
-           world->rules_set_fish->shark_avoidance);
+           "Avoidance: %f\n"
+           "Shark : Position: (%f, %f) Center: %f Alignement: %f Pursuit: %f\n",
+           i, world->nb_fish - world->fish_eaten,
+           world->rules_set_fish->separation, world->rules_set_fish->alignment,
+           world->rules_set_fish->cohesion,
+           world->rules_set_fish->shark_avoidance, world->shark->pos.x,
+           world->shark->pos.y, world->rules_set_shark->center,
+           world->rules_set_shark->alignment, world->rules_set_shark->pursuit);
     World_destroy(world);
 }
 
