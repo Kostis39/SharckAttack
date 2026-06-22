@@ -31,8 +31,8 @@
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
-#define WIDTH 600
-#define HEIGHT 400
+#define WIDTH 1000
+#define HEIGHT 800
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)

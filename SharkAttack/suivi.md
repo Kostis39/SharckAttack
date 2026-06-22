@@ -41,4 +41,10 @@ Mj:
 
 # 22 Juin 
 ## Matin
-- Reformulation de la perception poisson, enlever la création de tableau annexe pour calculer les positions voulu à la volé.
+
+
+- Reformulation de la perception poisson, enlever la création de tableau annexe pour calculer les positions voulu à la volé. Devait faire mais pas fait
+- Ajout d'un rules set pour faciliter le Reinforce fait
+- Compréhension du système global en cours
+
+## Aprem
