@@ -18,7 +18,7 @@
 #define SEPARATION 0.3f
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
-#define SHARK_AVOIDANCE_FACTOR 0.03f
+#define SHARK_AVOIDANCE 0.03f
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 4.0f
@@ -32,7 +32,7 @@
 #define SHARK_SIZE 22
 
 #define WIDTH 1200
-#define HEIGHT 800
+#define HEIGHT 500
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)
