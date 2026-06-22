@@ -122,14 +122,15 @@ void Get_shark_perception(Shark *shark, World *world,
         shark_perception->center_of_mass = Vector_scale(center, 1.0f / count);
         shark_perception->avg_velocity = Vector_scale(avg_vel, 1.0f / count);
 
-        shark_perception->has_prey = true;
+        shark_perception->has_prey_visible = true;
 
     } else { // Aucun poisson visible
         shark_perception->center_of_mass = Vector_init();
         shark_perception->avg_velocity = Vector_init();
 
-        shark_perception->has_prey = false;
+        shark_perception->has_prey_visible = false;
     }
+    shark_perception->has_prey = closest_dist != INFINITY;
 }
 
 void handle_shark_collisions(World *world) {

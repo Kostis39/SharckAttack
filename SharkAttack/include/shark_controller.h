@@ -14,6 +14,7 @@ typedef struct {
 
     Vector center_of_mass;
     Vector avg_velocity;
+    bool has_prey_visible;
 
     int width;
     int height;
