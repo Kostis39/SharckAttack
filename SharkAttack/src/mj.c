@@ -1,6 +1,8 @@
 #include "mj.h"
+#include "config.h"
 
 void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
+
     perception->self = *fish;
 
     perception->neighbor_separation = calloc(FISH_NB, sizeof(Fish));
@@ -16,9 +18,9 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
 
     if (world->shark != NULL) {
         Vector to_shark = Vector_sub(world->shark->pos, fish->position);
-        float distance = Vector_length(to_shark);
+        float distance = Vector_length2(to_shark);
 
-        if (distance < RADIUS_SHARK_VISIBILITY) {
+        if (distance < RADIUS_SHARK_VISIBILITY * RADIUS_SHARK_VISIBILITY) {
             perception->shark_visible = true;
             perception->shark = *world->shark;
         }
@@ -41,20 +43,20 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
         }
 
         Vector to_other = Vector_sub(other->position, fish->position);
-        float distance = Vector_length(to_other);
+        float distance_squared = Vector_length2(to_other);
 
         float angle = Vector_angle(fish->velocity, to_other);
         if (fabsf(angle) > fish->vision_angle / 2.0f) {
             continue;
         }
 
-        if (distance <= separation_limit) {
+        if (distance_squared <= separation_limit * separation_limit) {
             perception->neighbor_separation[perception->nb_sep] = *other;
             perception->nb_sep++;
-        } else if (distance <= alignment_limit) {
+        } else if (distance_squared <= alignment_limit * alignment_limit) {
             perception->neighbor_alignment[perception->nb_align] = *other;
             perception->nb_align++;
-        } else if (distance <= cohesion_limit) {
+        } else if (distance_squared <= cohesion_limit * cohesion_limit) {
             perception->neighbor_cohesion[perception->nb_cohes] = *other;
             perception->nb_cohes++;
         }
