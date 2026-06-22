@@ -13,6 +13,7 @@
 typedef struct {
     Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
+    Vector collider_separation; /**< Indique le prochain obstacle à proximité*/
     Vector separation;     /**< Vecteur de séparation des voisins proches */
     Vector center_of_mass; /**< Cohesion: Centre de masse des voisins pour la
                               cohésion */
