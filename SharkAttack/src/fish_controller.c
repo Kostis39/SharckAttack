@@ -3,43 +3,18 @@
 #include "vector.h"
 #include <math.h>
 
-Vector Rules_separation(Fish *self, Fish *near, int nb) {
-    if (nb == 0)
-        return Vector_init();
-
-    Vector close = Vector_init();
-
-    for (int i = 0; i < nb; ++i) {
-        close = Vector_add(close, Vector_sub(self->position, near[i].position));
-    }
-
-    return close;
+Vector Rules_separation(Fish *self, Vector separation) {
+    (void)self; // self n'est pas utilisé dans cette règle, mais on le garde en
+                // paramètre pour la cohérence avec les autres règles
+    return separation;
 }
 
-Vector Rules_alignment(Fish *self, Fish *med, int nb) {
-    if (nb == 0)
-        return Vector_init();
-
-    Vector avg_vel = Vector_init();
-    for (int i = 0; i < nb; ++i) {
-        avg_vel = Vector_add(avg_vel, med[i].velocity);
-    }
-    avg_vel = Vector_scale(avg_vel, 1.0f / nb);
-
-    return Vector_sub(avg_vel, self->velocity);
+Vector Rules_alignment(Fish *self, Vector avg_velocity) {
+    return Vector_sub(avg_velocity, self->velocity);
 }
 
-Vector Rules_cohesion(Fish *self, Fish *far, int nb) {
-    if (nb == 0)
-        return Vector_init();
-
-    Vector center = Vector_init();
-    for (int i = 0; i < nb; ++i) {
-        center = Vector_add(center, far[i].position);
-    }
-    center = Vector_scale(center, 1.0f / nb);
-
-    return Vector_sub(center, self->position);
+Vector Rules_cohesion(Fish *self, Vector center_of_mass) {
+    return Vector_sub(center_of_mass, self->position);
 }
 
 Vector Rules_border_repulsion(Fish *self) {
@@ -74,33 +49,27 @@ Vector Rules_border_repulsion(Fish *self) {
     return repulsion;
 }
 
-Vector Rules_avoid_shark(Fish *self, Vector shark_position,
-                         bool shark_visible) {
-    if (!shark_visible) {
+Vector Rules_avoid_shark(Fish *self, Vector dist_shark) {
+    if (Vector_length(dist_shark) > self->radius_cohesion) {
         return Vector_init();
     }
 
-    Vector away_from_shark = Vector_sub(self->position, shark_position);
-    float dist = Vector_length(away_from_shark);
+    float dist = Vector_length(dist_shark);
 
     // Plus le requin est proche, plus la force est grande
-    float intensity = 1.0f - dist / RADIUS_SHARK_VISIBILITY;
+    float intensity = 1.0f - dist / self->radius_cohesion;
 
-    return Vector_scale(away_from_shark, intensity);
+    return Vector_scale(dist_shark, intensity);
 }
 
 Vector fish_choose_action(FishPerception *p, RulesSetFish *rules_set) {
-    Vector separation =
-        Rules_separation(&p->self, p->neighbor_separation, p->nb_sep);
-    Vector alignement =
-        Rules_alignment(&p->self, p->neighbor_alignment, p->nb_align);
-    Vector cohesion =
-        Rules_cohesion(&p->self, p->neighbor_cohesion, p->nb_cohes);
+    Vector separation = Rules_separation(&p->self, p->separation);
+    Vector alignement = Rules_alignment(&p->self, p->avg_velocity);
+    Vector cohesion = Rules_cohesion(&p->self, p->center_of_mass);
 
     Vector repulsion = Rules_border_repulsion(&p->self);
 
-    Vector avoid_shark =
-        Rules_avoid_shark(&p->self, p->shark.pos, p->shark_visible);
+    Vector avoid_shark = Rules_avoid_shark(&p->self, p->dist_shark);
 
     // Combinaison 3 trois forces
     Vector weighted_velocity = Vector_init();
