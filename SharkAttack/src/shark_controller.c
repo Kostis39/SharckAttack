@@ -1,6 +1,19 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
 
+Vector Rules_center(Vector shark_pos, Vector center_of_mass, bool has_prey) {
+    if (!has_prey) {
+        return Vector_init();
+    }
+
+    Vector to_center = Vector_sub(center_of_mass, shark_pos);
+    float dist = Vector_length(to_center);
+
+    float intensity = dist / SHARK_VISION_RANGE;
+
+    return Vector_scale(local_normalize(to_center), intensity);
+}
+
 Vector shark_choose_action(SharkPerception *perception) {
     if (!perception)
         return Vector_init();
