@@ -14,6 +14,21 @@ Vector Rules_center(Vector shark_pos, Vector center_of_mass, bool has_prey) {
     return Vector_scale(local_normalize(to_center), intensity);
 }
 
+Vector Rules_alignment(Vector shark_vel, Vector avg_velocity, bool has_prey) {
+    if (!has_prey) {
+        return Vector_init();
+    }
+
+    // Différence entre la vitesse moyenne et la vitesse du requin
+    Vector diff = Vector_sub(avg_velocity, shark_vel);
+    float norm = Vector_length(diff);
+
+    // Plus l'écart est grand, plus la correction est forte
+    float intensity = norm / SHARK_SPEED_MAX;
+
+    return Vector_scale(local_normalize(diff), intensity);
+}
+
 Vector shark_choose_action(SharkPerception *perception) {
     if (!perception)
         return Vector_init();
