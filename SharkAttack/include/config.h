@@ -12,7 +12,7 @@
 #define RADIUS_SHARK_VISIBILITY 200
 #define VISION_ANGLE (PI * 0.25f)
 
-#define SHARK_VISION_RANGE 300
+#define SHARK_VISION_RANGE 500
 
 /* Poids des règles de fish */
 #define SEPARATION 0.3f

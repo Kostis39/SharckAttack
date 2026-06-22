@@ -56,8 +56,7 @@ void Game_run_SDL(bool use_bench) {
         if (use_bench) {
             it++;
             if (it + 1 > BENCHMARK_ITERATIONS)
-                ;
-            quit = true;
+                quit = true;
         }
         SDL_Event event;
         while (SDL_PollEvent(&event)) {

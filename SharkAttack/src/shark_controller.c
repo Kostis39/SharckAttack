@@ -1,16 +1,16 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
 
-Vector Rules_center(Vector shark_pos, Vector center_of_mass, bool has_prey) {
+Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey) {
     if (!has_prey) {
         return Vector_init();
     }
 
-    Vector to_center = Vector_sub(center_of_mass, shark_pos);
+    Vector to_center = Vector_sub(center_of_mass, shark.pos);
     float dist = Vector_length(to_center);
 
     // Plus le centre est loin, plus la correction est forte
-    float intensity = dist / SHARK_VISION_RANGE;
+    float intensity = dist / shark.radius_vision;
 
     return Vector_scale(local_normalize(to_center), intensity);
 }
@@ -71,9 +71,8 @@ Vector shark_choose_action(SharkPerception *perception,
         action = Vector_scale(direction, intensity);
 
     } else { // Mode bot
-        Vector center =
-            Rules_center(perception->self.pos, perception->center_of_mass,
-                         perception->has_prey);
+        Vector center = Rules_center(
+            perception->self, perception->center_of_mass, perception->has_prey);
 
         Vector alignment = Rules_alignment_shark(perception->self.velocity,
                                                  perception->avg_velocity,

@@ -7,6 +7,7 @@ Shark *Shark_createRandom(int width, int height) {
     shark->pos.y = rand() % height;
     shark->velocity.x = (rand() % SHARK_SPEED_MAX) - (SHARK_SPEED_MAX / 2);
     shark->velocity.y = (rand() % SHARK_SPEED_MAX) - (SHARK_SPEED_MAX / 2);
+    shark->radius_vision = SHARK_VISION_RANGE;
     shark->player = false;
     return shark;
 }
