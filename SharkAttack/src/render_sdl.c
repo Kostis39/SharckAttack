@@ -1,9 +1,12 @@
 #include "render_sdl.h"
 #include "vector.h"
 #include "collider.h"
+#include "world.h"
 
 #include <math.h>
 #include <stdio.h>
+
+#define RENDERED_COLLIDERS 5
 
 /**
  * @brief convertir float en int
@@ -156,54 +159,58 @@ void Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius) {
     int s = radius * 2;
     int p = radius / 3;
 
-    SDL_Rect shadow = {cx - radius + 4, cy - radius + 4, s, s};
+    SDL_Rect shadow = {cx - radius + 3, cy - radius + 3, s, s};
+    SDL_Rect body = {cx - radius, cy - radius, s, s};
+    SDL_Rect light = {cx - radius + 4, cy - radius + 4, p, p};
+    SDL_Rect center = {cx - p / 2, cy - p / 2, p, p};
+
     SDL_SetRenderDrawColor(r, 0, 0, 0, 90);
     SDL_RenderFillRect(r, &shadow);
 
-    SDL_Rect body = {cx - radius, cy - radius, s, s};
     SDL_SetRenderDrawColor(r, 45, 60, 65, 255);
     SDL_RenderFillRect(r, &body);
 
     SDL_SetRenderDrawColor(r, 10, 18, 22, 255);
     SDL_RenderDrawRect(r, &body);
 
-    SDL_Rect center = {cx - p / 2, cy - p / 2, p, p};
-    SDL_RenderFillRect(r, &center);
-
     SDL_SetRenderDrawColor(r, 95, 125, 130, 230);
-    SDL_Rect light = {cx - radius + 5, cy - radius + 5, p, p};
     SDL_RenderFillRect(r, &light);
-}
 
-void Draw_demo_mines(SDLDisplay *display) {
-    int width = 0;
-    int height = 0;
-    SDL_GetRendererOutputSize(display->renderer, &width, &height);
-    if (width <= 0 || height <= 0)
-        return;
-    Draw_mine_shape(display->renderer, width / 4, height / 2 + 60, 12);
-    Draw_mine_shape(display->renderer, width / 2, height / 2 + 60, 25);
-    Draw_mine_shape(display->renderer, width - width / 4, height / 2 + 50, 12);
+    SDL_SetRenderDrawColor(r, 3, 8, 10, 255);
+    SDL_RenderFillRect(r, &center);
 }
 
 void Draw_collider(SDLDisplay *display, Collider *collider) {
     if (display == NULL || display->renderer == NULL || collider == NULL)
         return;
+
     int x1 = to_int(collider->bounding_box[0].x);
     int y1 = to_int(collider->bounding_box[0].y);
     int x2 = to_int(collider->bounding_box[1].x);
     int y2 = to_int(collider->bounding_box[1].y);
+
     int cx = (x1 + x2) / 2;
     int cy = (y1 + y2) / 2;
-    int radius = (x2 - x1 < y2 - y1 ? x2 - x1 : y2 - y1) / 2;
+
+    int w = x2 - x1;
+    int h = y2 - y1;
+    int radius = (w < h ? w : h) / 2;
+
     if (radius < 10)
         radius = 10;
+    if (radius > 14)
+        radius = 14;
+
     Draw_mine_shape(display->renderer, cx, cy, radius);
 }
 
 void Draw_colliders(SDLDisplay *display, Collider *colliders, int nb_colliders) {
-    if (display == NULL || colliders == NULL || nb_colliders <= 0)
+    if (display == NULL || display->renderer == NULL || colliders == NULL)
         return;
+
+    if (nb_colliders > RENDERED_COLLIDERS)
+        nb_colliders = RENDERED_COLLIDERS;
+
     for (int i = 0; i < nb_colliders; i++) {
         Draw_collider(display, &colliders[i]);
     }
@@ -511,10 +518,21 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     for (int i = 0; i < nb_fish; i++) {
         Draw_fish(display, &fishes[i]);
     }
+    
+    int width = 0;
+    int height = 0;
+    int radius = 12;
+    int margin = 4;
+
+    SDL_GetRendererOutputSize(display->renderer, &width, &height);
+
+    if (width > 0 && height > 0) {
+    Draw_mine_shape(display->renderer, margin + radius, margin + radius, radius);
+    Draw_mine_shape(display->renderer, width - margin - radius, height - margin - radius, radius);
+    }
 
     Draw_shark(display, shark);
-    //Draw_colliders(display, world->colliders, world->nb_colliders).
-    Draw_demo_mines(display);
+    
     SDL_RenderPresent(display->renderer);
 }
 
