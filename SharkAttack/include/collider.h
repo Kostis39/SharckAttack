@@ -2,7 +2,6 @@
 #define COLLIDER_H
 
 #include "vector.h"
-#include "world.h"
 #include <stdbool.h>
 
 typedef struct {
@@ -20,5 +19,3 @@ Collider *Colliders_random_array(int seed, int x_max, int y_max, int w_max,
 Collider *Colliders_copy_array(Collider *collider, int count);
 
 int Colliders_destroy_array(Collider *array);
-
-void Shark_collision(World *world);
