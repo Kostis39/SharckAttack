@@ -142,6 +142,8 @@ void UpdateWorld(World *world, World *tmp_world) {
     free(shark_perception);
 
     Shark_apply_action(tmp_world->shark, shark_action);
+
+    // Shark_collision(world);
 }
 
 void Game_step(World *world) {

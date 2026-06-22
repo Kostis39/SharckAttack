@@ -82,3 +82,12 @@ Collider *Colliders_copy_array(Collider *collider, int count) {
     memcpy(copy, collider, count * sizeof(*collider));
     return copy;
 }
+/*
+void Shark_collision(World *world) {
+    for(int i = 0; i < world->nb_fish; i++) {
+        if(world->fishes[i].is_alive) {
+
+        }
+    }
+}
+*/
