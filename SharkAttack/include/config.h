@@ -43,7 +43,7 @@
     100 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 10.0f // Intensité du virage
 
-#define NB_OCCURRENCE 1000
+#define NB_OCCURRENCE 50000
 
 #define RANDOM_SEED 42
 

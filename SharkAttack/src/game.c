@@ -97,7 +97,9 @@ void Game_run_terminal() {
 
     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB);
 
-    for (i = 0; i < NB_OCCURRENCE && !terminal_interrupted; i++) {
+    for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
+                i < NB_OCCURRENCE && !terminal_interrupted;
+         i++) {
         Game_step(world);
         printf(
             "Iteration: %d\n"
