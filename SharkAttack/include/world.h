@@ -26,6 +26,7 @@ typedef struct {
     Shark *shark;        /**< Pointeur vers le requin présent dans le monde */
     Collider *colliders; /**< Tableau dynamiques d'objet de collision présent
                             dans le monde*/
+    int fish_eaten;      /**< Nombre de poissons mangés par le requin */
     RulesSetFish *rules_set_fish;   /**< Ensemble de règles pour les poissons */
     RulesSetShark *rules_set_shark; /**< Ensemble de règles pour le requin */
 } World;

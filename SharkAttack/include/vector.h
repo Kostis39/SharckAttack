@@ -19,6 +19,7 @@ Vector Vector_add(Vector a, Vector b);
 Vector Vector_sub(Vector a, Vector b);
 Vector Vector_scale(Vector v, float k);
 float Vector_length(Vector v);
+float Vector_length2(Vector v);
 float Vector_distance(Vector a, Vector b);
 
 /* Renvoie v de longueur 1 (vecteur nul renvoyé inchangé si v est nul) */
@@ -28,5 +29,6 @@ Vector local_normalize(Vector v);
 /* Tronque v à une longueur max, sans changer sa direction */
 Vector Vector_limit(Vector v, float max_length);
 float Vector_angle(Vector a, Vector b);
+float Vector_angle_fast(Vector a, Vector b);
 
 #endif

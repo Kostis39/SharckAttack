@@ -14,8 +14,6 @@ typedef struct {
 
     float time;
     bool paused; /**< Indique si le jeu est en pause : true ou non : false */
-
-    int fish_eaten; /**< Nombre de poissons mangés par le requin */
 } Game;
 
 bool Game_init(Game *game, int width, int height, int nb_fish,

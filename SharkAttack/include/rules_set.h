@@ -7,13 +7,13 @@ typedef struct {
     float separation;
     float alignment;
     float cohesion;
-    float shark_avoidance_factor;
+    float shark_avoidance;
 } RulesSetFish;
 
 typedef struct {
-    float separation;
-    float alignment;
-    float cohesion;
+    float center;    // attraction vers le centre du banc
+    float alignment; // alignement avec la direction moyenne du banc
+    float pursuit;   // poursuite du poisson le plus proche
 } RulesSetShark;
 
 RulesSetFish *RulesSetFish_init();

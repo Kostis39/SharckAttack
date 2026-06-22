@@ -14,11 +14,16 @@
 
 #define SHARK_VISION_RANGE 300
 
-/* Poids des règles réactives */
+/* Poids des règles de fish */
 #define SEPARATION 0.3f
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
-#define SHARK_AVOIDANCE_FACTOR 0.03f
+#define SHARK_AVOIDANCE 0.03f
+
+/* Poids des règles de shark*/
+#define CENTER 0.5f
+#define ALIGNEMENT 0.3f
+#define PURSUIT 2.0f
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 4.0f
@@ -31,16 +36,12 @@
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
-#define WIDTH 1000
-#define HEIGHT 800
+#define WIDTH 1200
+#define HEIGHT 500
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 2.0f // Intensité du virage
-
-#define BIASVAL 0.3f            // Force du biais
-#define SCOUT_GROUP1_RATIO 0.3f // % des poissons dans le groupe 1
-#define SCOUT_GROUP2_RATIO 0.3f // % des poissons dans le groupe 2
 
 #define NB_OCCURRENCE 1000
 
@@ -51,4 +52,5 @@
           monde*/
 #define COLLIDERS_NB 5
 
+#define SHARK_ATTACK_RANGE 30
 #endif /* CONFIG_H */

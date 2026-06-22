@@ -32,7 +32,6 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
 
     game->time = 0;
     game->paused = false;
-    game->fish_eaten = 0;
 
     return true;
 }
@@ -98,7 +97,7 @@ void Game_run_terminal() {
            "Avoidance: %f\n",
            i, world->nb_fish, world->rules_set_fish->separation,
            world->rules_set_fish->alignment, world->rules_set_fish->cohesion,
-           world->rules_set_fish->shark_avoidance_factor);
+           world->rules_set_fish->shark_avoidance);
 
     for (i = 0; i < NB_OCCURRENCE && !terminal_interrupted; i++) {
         Game_step(world);
@@ -108,7 +107,7 @@ void Game_run_terminal() {
                i, world->nb_fish, world->rules_set_fish->separation,
                world->rules_set_fish->alignment,
                world->rules_set_fish->cohesion,
-               world->rules_set_fish->shark_avoidance_factor);
+               world->rules_set_fish->shark_avoidance);
     }
 
     if (terminal_interrupted) {
@@ -120,7 +119,7 @@ void Game_run_terminal() {
            "Avoidance: %f\n",
            i, world->nb_fish, world->rules_set_fish->separation,
            world->rules_set_fish->alignment, world->rules_set_fish->cohesion,
-           world->rules_set_fish->shark_avoidance_factor);
+           world->rules_set_fish->shark_avoidance);
     World_destroy(world);
 }
 
