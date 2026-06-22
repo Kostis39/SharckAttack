@@ -15,7 +15,8 @@ Vector Rules_center(Vector shark_pos, Vector center_of_mass, bool has_prey) {
     return Vector_scale(local_normalize(to_center), intensity);
 }
 
-Vector Rules_alignment(Vector shark_vel, Vector avg_velocity, bool has_prey) {
+Vector Rules_alignment_shark(Vector shark_vel, Vector avg_velocity,
+                             bool has_prey) {
     if (!has_prey) {
         return Vector_init();
     }
@@ -30,7 +31,8 @@ Vector Rules_alignment(Vector shark_vel, Vector avg_velocity, bool has_prey) {
     return Vector_scale(local_normalize(diff), intensity);
 }
 
-Vector Rules_pursuit(Vector shark_pos, Vector fish_pos, bool has_prey) {
+Vector Rules_pursuit(Vector shark_pos, Vector fish_pos, bool has_prey,
+                     int width, int height) {
     if (!has_prey) {
         return Vector_init();
     }
@@ -39,12 +41,14 @@ Vector Rules_pursuit(Vector shark_pos, Vector fish_pos, bool has_prey) {
     float dist = Vector_length(to_fish);
 
     // Plus le poisson est proche, plus on va vers le poisson
-    float intensity = 1.0f / (1.0f + (dist / SHARK_VISION_RANGE));
+    Vector max = {width * width, height * height};
+    float intensity = 1.0f / (1.0f + (dist / Vector_length(max)));
 
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
-Vector shark_choose_action(SharkPerception *perception) {
+Vector shark_choose_action(SharkPerception *perception,
+                           RulesSetShark *rules_set) {
     if (!perception)
         return Vector_init();
 
@@ -67,7 +71,30 @@ Vector shark_choose_action(SharkPerception *perception) {
         action = Vector_scale(direction, intensity);
 
     } else { // Mode bot
-        // à faire
+        Vector center =
+            Rules_center(perception->self.pos, perception->center_of_mass,
+                         perception->has_prey);
+
+        Vector alignment = Rules_alignment_shark(perception->self.velocity,
+                                                 perception->avg_velocity,
+                                                 perception->has_prey);
+
+        Vector pursuit = Rules_pursuit(
+            perception->self.pos, perception->closest_fish.position,
+            perception->has_prey, perception->width, perception->height);
+
+        Vector_print(Vector_scale(center, rules_set->center));
+        Vector_print(Vector_scale(alignment, rules_set->alignment));
+        Vector_print(Vector_scale(pursuit, rules_set->pursuit));
+
+        // 4. Combinaison pondérée des vecteurs
+        action = Vector_add(action, Vector_scale(center, rules_set->center));
+        action =
+            Vector_add(action, Vector_scale(alignment, rules_set->alignment));
+        action = Vector_add(action, Vector_scale(pursuit, rules_set->pursuit));
+
+        Vector_print(action);
+        printf("------\n");
     }
 
     return action;

@@ -81,7 +81,7 @@ void Get_shark_perception(Shark *shark, World *world,
     Vector avg_vel = Vector_init();
     int count = 0;
 
-    float closest_dist;
+    float closest_dist = world->width + world->height;
 
     // Parcourir tous les poissons
     for (int i = 0; i < world->nb_fish; i++) {
@@ -165,7 +165,8 @@ void UpdateWorld(World *world, World *tmp_world) {
     SharkPerception *shark_perception = malloc(sizeof(SharkPerception));
     Get_shark_perception(world->shark, world, shark_perception);
 
-    Vector shark_action = shark_choose_action(shark_perception);
+    Vector shark_action =
+        shark_choose_action(shark_perception, world->rules_set_shark);
 
     free(shark_perception);
 
