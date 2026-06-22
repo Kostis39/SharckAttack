@@ -42,7 +42,7 @@ void Game_pause(Game *game) {
     game->paused = !game->paused;
 }
 
-void Game_run_SDL() {
+void Game_run_SDL(bool use_bench) {
     Game game;
     if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB)) {
         fprintf(stderr, "Echec de l'initialisation du jeu.\n");
@@ -50,10 +50,14 @@ void Game_run_SDL() {
     }
 
     bool quit = false;
-
+    int it = 0;
     while (!quit) {
         Render_world(&game.display, game.world);
-
+        if (use_bench) {
+            it++;
+            if (it + 1 > BENCHMARK_ITERATIONS)
+                quit = true;
+        }
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
             switch (event.type) {
