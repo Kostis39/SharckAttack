@@ -93,17 +93,17 @@ void Get_shark_perception(Shark *shark, World *world,
         Vector to_fish = Vector_sub(fish->position, shark->pos);
         float dist = Vector_length(to_fish);
 
-        // Vérifier si le poisson est dans le champ de vision du requin
+        // Mettre à jour le poisson le plus proche
+        if (dist < closest_dist) {
+            closest_dist = dist;
+            shark_perception->closest_fish = *fish;
+        }
+
+        // Calculs pour les poisson proche
         if (dist < SHARK_VISION_RANGE) {
             center = Vector_add(center, fish->position);
             avg_vel = Vector_add(avg_vel, fish->velocity);
             count++;
-
-            // Mettre à jour le poisson le plus proche
-            if (dist < closest_dist) {
-                closest_dist = dist;
-                shark_perception->closest_fish = *fish;
-            }
         }
     }
 
@@ -111,13 +111,13 @@ void Get_shark_perception(Shark *shark, World *world,
         shark_perception->center_of_mass = Vector_scale(center, 1.0f / count);
         shark_perception->avg_velocity = Vector_scale(avg_vel, 1.0f / count);
 
-        shark_perception->has_closest_fish = true;
+        shark_perception->has_prey = true;
 
     } else { // Aucun poisson visible
         shark_perception->center_of_mass = Vector_init();
         shark_perception->avg_velocity = Vector_init();
 
-        shark_perception->has_closest_fish = false;
+        shark_perception->has_prey = false;
     }
 }
 

@@ -9,7 +9,7 @@ typedef struct {
     Shark self;
 
     Fish closest_fish;
-    bool has_closest_fish;
+    bool has_prey;
 
     Vector center_of_mass;
     Vector avg_velocity;
