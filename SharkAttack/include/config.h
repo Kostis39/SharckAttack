@@ -14,11 +14,16 @@
 
 #define SHARK_VISION_RANGE 300
 
-/* Poids des règles réactives */
+/* Poids des règles de fish */
 #define SEPARATION 0.3f
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
 #define SHARK_AVOIDANCE 0.03f
+
+/* Poids des règles de shark*/
+#define CENTER 0.5f
+#define ALIGNEMENT 0.3f
+#define PURSUIT 2.0f
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 4.0f
