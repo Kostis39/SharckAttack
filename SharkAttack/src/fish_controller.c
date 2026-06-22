@@ -63,6 +63,14 @@ Vector Rules_avoid_shark(Fish *self, Vector dist_shark) {
 }
 
 Vector fish_choose_action(FishPerception *p, RulesSetFish *rules_set) {
+    /** @brief Choix de la direction du poisson comme une combinaison linéaire
+     * de vecteurs
+     * @param p un pointeur vers la perception du poisson
+     * @param rules_set ensemble de paramètres quantifiant le comportement du
+     * poisson
+     * @return weighted_velocity vecteur vitesse du poisson comprenant son
+     * comportement
+     * */
     Vector separation = Rules_separation(&p->self, p->separation);
     Vector alignement = Rules_alignment(&p->self, p->avg_velocity);
     Vector cohesion = Rules_cohesion(&p->self, p->center_of_mass);

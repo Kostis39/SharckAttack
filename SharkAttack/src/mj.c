@@ -1,10 +1,13 @@
 #include "mj.h"
 #include "config.h"
+#include "vector.h"
+#include "world.h"
 
 void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
 
     perception->self = *fish;
 
+    perception->collider_separation = Vector_init();
     perception->separation = Vector_init();
     perception->center_of_mass = Vector_init();
     int nb_cohes = 0;
@@ -67,6 +70,14 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
                 Vector_add(perception->center_of_mass, neighbor->position);
             nb_cohes++;
         }
+    }
+    for (int j = 0; j < world->nb_colliders; ++j) {
+        Collider *close = &world->colliders[j];
+        Vector to_closest = Vector_sub(close->bounding_box[0], fish->position);
+        // TODO: détection d'obtacles
+        // Lancer des rayons en permanence et vérifier si le point entre dans la
+        // bounding box la longueurs des rayons c'est le plus grand cercle de
+        // perception du poisson
     }
     perception->avg_velocity =
         (nb_align > 0) ? Vector_scale(perception->avg_velocity, 1.0f / nb_align)
