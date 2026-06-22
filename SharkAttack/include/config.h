@@ -21,6 +21,7 @@
 #define SHARK_AVOIDANCE 0.1f
 
 /* Poids des règles de shark*/
+#define BIAIS 0.1f
 #define CENTER 10.0f
 #define ALIGNEMENT 0.0f
 #define PURSUIT 10.0f

@@ -12,6 +12,7 @@ RulesSetFish *RulesSetFish_init() {
 SharkTeta *SharkTeta_init() {
     SharkTeta *rules_set = malloc(sizeof(SharkTeta));
 
+    rules_set->biais = BIAIS;
     rules_set->center = CENTER;
     rules_set->alignment = ALIGNEMENT;
     rules_set->pursuit = PURSUIT;

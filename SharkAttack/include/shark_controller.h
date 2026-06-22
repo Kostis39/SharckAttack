@@ -26,9 +26,9 @@ typedef struct {
  *
  */
 typedef struct {
-    Vector center;     /**< Vecteur résultat de la règle center */
-    Vector alignement; /**< Vecteur résultat de la règle alignement */
-    Vector pursuit;    /**< Vecteur résultat de la règle pursuit */
+    Vector center;    /**< Vecteur résultat de la règle center */
+    Vector alignment; /**< Vecteur résultat de la règle alignement */
+    Vector pursuit;   /**< Vecteur résultat de la règle pursuit */
 } SharkPhi;
 
 Vector shark_choose_action(SharkPerception *perception, SharkTeta *rules_set);

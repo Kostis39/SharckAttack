@@ -1,5 +1,41 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
+Vector shark_compute_mu(SharkTeta *theta, SharkPhi *phi) {
+    Vector mu = Vector_init();
+
+    if (theta == NULL || phi == NULL) {
+        return mu;
+    }
+
+    mu.x = (1.0f * theta->biais) + (phi->center.x * theta->center) +
+           (phi->alignment.x * theta->alignment) +
+           (phi->pursuit.x * theta->pursuit);
+
+    mu.y = (1.0f * theta->biais) + (phi->center.y * theta->center) +
+           (phi->alignment.y * theta->alignment) +
+           (phi->pursuit.y * theta->pursuit);
+
+    return mu;
+}
+
+void box_muller_standard(float *x, float *y) {
+    // 1. rand() / RAND_MAX donne un nombre uniforme entre 0 et 1 (noté rand(1)
+    // dans l'algo)
+    float u1 = (float)rand() / (float)RAND_MAX;
+    float u2 = (float)rand() / (float)RAND_MAX;
+
+    // Sécurité pour éviter log(0) qui tend vers l'infini -inf
+    if (u1 < 1e-7f)
+        u1 = 1e-7f;
+
+    // 2. Application directe de l'algorithme fourni
+    float t = 2.0f * (float)PI * u2; // Thêta : uniforme sur [0, 2π]
+    float s = -2.0f * logf(u1);      // S = R^2 : suit une loi exponentielle
+
+    // 3. Transformation en coordonnées cartésiennes pour obtenir X et Y
+    *x = sqrtf(s) * cosf(t);
+    *y = sqrtf(s) * sinf(t);
+}
 
 Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey_visible) {
     if (!has_prey_visible) {
@@ -47,11 +83,12 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
-Vector shark_choose_action(SharkPerception *perception, SharkTeta *rules_set) {
+Vector shark_choose_action(SharkPerception *perception, SharkTeta *teta) {
     if (!perception)
         return Vector_init();
 
     Vector action = Vector_init();
+    SharkPhi phi = {0};
 
     if (Is_player(&perception->self)) { // Mode joueur
         int mx, my;
@@ -70,29 +107,25 @@ Vector shark_choose_action(SharkPerception *perception, SharkTeta *rules_set) {
         action = Vector_scale(direction, intensity);
 
     } else { // Mode bot
-        Vector center =
-            Rules_center(perception->self, perception->center_of_mass,
-                         perception->has_prey_visible);
+        phi.center = Rules_center(perception->self, perception->center_of_mass,
+                                  perception->has_prey_visible);
 
-        Vector alignment =
+        phi.alignment =
             Rules_alignment_shark(perception->self, perception->avg_velocity,
                                   perception->has_prey_visible);
 
-        Vector pursuit = Rules_pursuit(
+        phi.pursuit = Rules_pursuit(
             perception->self, perception->closest_fish.position,
             perception->has_prey, perception->width, perception->height);
 
         // 4. Combinaison pondérée des vecteurs
-        action = Vector_add(action, Vector_scale(center, rules_set->center));
-        action =
-            Vector_add(action, Vector_scale(alignment, rules_set->alignment));
-        action = Vector_add(action, Vector_scale(pursuit, rules_set->pursuit));
+        Vector mu = shark_compute_mu(teta, &phi);
 
-        // Vector_print(Vector_scale(center, rules_set->center));
-        // Vector_print(Vector_scale(alignment, rules_set->alignment));
-        // Vector_print(Vector_scale(pursuit, rules_set->pursuit));
-        // Vector_print(action);
-        // printf("------\n");
+        float noise_x, noise_y;
+        box_muller_standard(&noise_x, &noise_y);
+
+        action.x = mu.x + noise_x * 5;
+        action.y = mu.y + noise_y * 5;
     }
 
     return action;
