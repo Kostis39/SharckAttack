@@ -13,20 +13,12 @@
 typedef struct {
     Fish self; /**< Le poisson lui-même, pour lequel on calcule la perception */
 
-    Fish *neighbor_separation; /**< Tableau dynamique de poissons voisins pour
-                                  la séparation */
-    int nb_sep;                /**< Nombre de poissons voisins pour la
-                                                  séparation */
-
-    Fish *neighbor_alignment; /**< Tableau dynamique de poissons voisins pour
-                                 l'alignement */
-    int nb_align;             /**< Nombre de poissons voisins pour l'alignement
-                               */
-
-    Fish *neighbor_cohesion; /**< Tableau dynamique de poissons voisins pour la
-                                cohésion */
-    int nb_cohes;            /**< Nombre de poissons voisins pour la cohésion
-                              */
+    Vector separation;     /**< Vecteur de séparation des voisins proches */
+    Vector center_of_mass; /**< Cohesion: Centre de masse des voisins pour la
+                              cohésion */
+    Vector avg_velocity;   /**< Alignement: Vélocité moyenne des voisins pour
+                              l'alignement */
+    Vector dist_shark;     /**< Vecteur de distance du requin, si visible */
 
     bool shark_visible; /**< Indique si le requin est visible par le poisson :
                            true ou non : false */
@@ -38,9 +30,9 @@ typedef struct {
 
 /* Règles réactives individuelles : chacune transforme une FishPerc  en une
  * force désirée, sans aucun état interne ni mémoire. */
-Vector Rules_separation(Fish *self, Fish *near, int nb);
-Vector Rules_alignment(Fish *self, Fish *med, int nb);
-Vector Rules_cohesion(Fish *self, Fish *far, int nb);
+Vector Rules_separation(Fish *self, Vector separation);
+Vector Rules_alignment(Fish *self, Vector avg_velocity);
+Vector Rules_cohesion(Fish *self, Vector center_of_mass);
 
 Vector fish_choose_action(FishPerception *perception, RulesSetFish *rules_set);
 

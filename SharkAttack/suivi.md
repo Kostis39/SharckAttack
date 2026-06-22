@@ -56,6 +56,11 @@ Mj:
 
 ### Matin
 
+sacha: 
+- Reformulation de la perception poisson, enlever la création de tableau annexe pour calculer les positions voulu à la volé. Devait faire mais pas fait
+- Ajout d'un rules set pour faciliter le Reinforce fait
+- Compréhension du système global en cours
+
 Compréhension de la partie court ainsi que de la mise en place de l'algorithme REINFORCE.
 
 - Reformulation de la perception poisson, enlever la création de tableau annexe pour calculer les positions voulue eà la volée.

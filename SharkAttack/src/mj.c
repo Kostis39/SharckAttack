@@ -5,12 +5,12 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
 
     perception->self = *fish;
 
-    perception->neighbor_separation = calloc(FISH_NB, sizeof(Fish));
-    perception->nb_sep = 0;
-    perception->neighbor_alignment = calloc(FISH_NB, sizeof(Fish));
-    perception->nb_align = 0;
-    perception->neighbor_cohesion = calloc(FISH_NB, sizeof(Fish));
-    perception->nb_cohes = 0;
+    perception->separation = Vector_init();
+    perception->center_of_mass = Vector_init();
+    int nb_cohes = 0;
+    perception->avg_velocity = Vector_init();
+    int nb_align = 0;
+    perception->dist_shark = Vector_init();
 
     perception->shark_visible = false;
     perception->width = world->width;
@@ -25,6 +25,10 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
             perception->shark = *world->shark;
         }
     }
+    if (perception->shark_visible) {
+        perception->dist_shark =
+            Vector_sub(perception->self.position, perception->shark.pos);
+    }
 
     /**Les trois zones de perception sont concentriques et s'enchaînent :
      * [0, separation_limit] -> séparation
@@ -36,38 +40,45 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
     float cohesion_limit = alignment_limit + fish->radius_cohesion;
 
     for (int i = 0; i < world->nb_fish; i++) {
-        Fish *other = &world->fishes[i];
+        Fish *neightbor = &world->fishes[i];
 
-        if (other == fish || !other->is_alive) {
+        if (neightbor == fish || !neightbor->is_alive) {
             continue;
         }
 
-        Vector to_other = Vector_sub(other->position, fish->position);
-        float distance_squared = Vector_length2(to_other);
+        Vector to_neightbor = Vector_sub(neightbor->position, fish->position);
+        float distance_squared = Vector_length2(to_neightbor);
 
-        float angle = Vector_angle(fish->velocity, to_other);
+        float angle = Vector_angle_fast(fish->velocity, to_neightbor);
         if (fabsf(angle) > fish->vision_angle / 2.0f) {
             continue;
         }
 
         if (distance_squared <= separation_limit * separation_limit) {
-            perception->neighbor_separation[perception->nb_sep] = *other;
-            perception->nb_sep++;
+            perception->separation = Vector_add(
+                perception->separation,
+                Vector_sub(perception->self.position, neightbor->position));
         } else if (distance_squared <= alignment_limit * alignment_limit) {
-            perception->neighbor_alignment[perception->nb_align] = *other;
-            perception->nb_align++;
+            perception->avg_velocity =
+                Vector_add(perception->avg_velocity, neightbor->velocity);
+            nb_align++;
         } else if (distance_squared <= cohesion_limit * cohesion_limit) {
-            perception->neighbor_cohesion[perception->nb_cohes] = *other;
-            perception->nb_cohes++;
+            perception->center_of_mass =
+                Vector_add(perception->center_of_mass, neightbor->position);
+            nb_cohes++;
         }
     }
+    perception->avg_velocity =
+        (nb_align > 0) ? Vector_scale(perception->avg_velocity, 1.0f / nb_align)
+                       : Vector_init();
+
+    perception->center_of_mass =
+        (nb_cohes > 0)
+            ? Vector_scale(perception->center_of_mass, 1.0f / nb_cohes)
+            : perception->self.position;
 }
 
-void FishPerception_destroy(FishPerception *perception) {
-    free(perception->neighbor_separation);
-    free(perception->neighbor_alignment);
-    free(perception->neighbor_cohesion);
-}
+void FishPerception_destroy(FishPerception *perception) { free(perception); }
 
 void Get_shark_perception(Shark *shark, World *world,
                           SharkPerception *shark_perception) {
@@ -81,7 +92,7 @@ void Get_shark_perception(Shark *shark, World *world,
     Vector avg_vel = Vector_init();
     int count = 0;
 
-    float closest_dist = world->width + world->height;
+    float closest_dist = INFINITY;
 
     // Parcourir tous les poissons
     for (int i = 0; i < world->nb_fish; i++) {
@@ -134,7 +145,6 @@ void handle_shark_collisions(World *world) {
         if (dist < SHARK_ATTACK_RANGE) {
             fish->is_alive = false;
             world->fish_eaten++;
-            printf("Nombre de poissons mangés : %d\n", world->fish_eaten);
         }
     }
 }
@@ -153,11 +163,9 @@ void UpdateWorld(World *world, World *tmp_world) {
 
         Vector action = fish_choose_action(perception, world->rules_set_fish);
 
-        FishPerception_destroy(perception);
-
         fish_apply_action(&tmp_world->fishes[i], action);
     }
-    free(perception);
+    FishPerception_destroy(perception);
 
     // Copie de l'état actuel
     *tmp_world->shark = *world->shark;

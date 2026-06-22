@@ -18,7 +18,7 @@
 #define SEPARATION 0.3f
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
-#define SHARK_AVOIDANCE 0.03f
+#define SHARK_AVOIDANCE 0.1f
 
 /* Poids des règles de shark*/
 #define CENTER 10.0f
