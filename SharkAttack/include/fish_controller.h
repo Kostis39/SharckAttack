@@ -3,6 +3,7 @@
 
 #include "config.h"
 #include "fish.h"
+#include "shark.h"
 #include "vector.h"
 
 /** @struct FishPerception
@@ -28,9 +29,7 @@ typedef struct {
 
     bool shark_visible; /**< Indique si le requin est visible par le poisson :
                            true ou non : false */
-    Vector shark_position; /**< Position du requin dans le monde, si visible */
-    Vector shark_velocity; /**< Vecteur direction/vitesse du requin dans le
-                              monde, si visible */
+    Shark shark;
 
     int width;  /**< Largeur en pixel de notre monde */
     int height; /**< Hauteur en pixel de notre monde */

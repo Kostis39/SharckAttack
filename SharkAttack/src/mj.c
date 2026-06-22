@@ -15,9 +15,13 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
     perception->height = world->height;
 
     if (world->shark != NULL) {
-        perception->shark_visible = true;
-        perception->shark_position = world->shark->pos;
-        perception->shark_velocity = world->shark->velocity;
+        Vector to_shark = Vector_sub(world->shark->pos, fish->position);
+        float distance = Vector_length(to_shark);
+
+        if (distance < RADIUS_SHARK_VISIBILITY) {
+            perception->shark_visible = true;
+            perception->shark = *world->shark;
+        }
     }
 
     /**Les trois zones de perception sont concentriques et s'enchaînent :
@@ -63,6 +67,58 @@ void FishPerception_destroy(FishPerception *perception) {
     free(perception->neighbor_cohesion);
 }
 
+void Get_shark_perception(Shark *shark, World *world,
+                          SharkPerception *shark_perception) {
+
+    shark_perception->self = *shark;
+
+    shark_perception->width = world->width;
+    shark_perception->height = world->height;
+
+    Vector center = Vector_init();
+    Vector avg_vel = Vector_init();
+    int count = 0;
+
+    float closest_dist;
+
+    // Parcourir tous les poissons
+    for (int i = 0; i < world->nb_fish; i++) {
+        Fish *fish = &world->fishes[i];
+        if (!fish->is_alive)
+            continue;
+
+        // Distance au requin
+        Vector to_fish = Vector_sub(fish->position, shark->pos);
+        float dist = Vector_length(to_fish);
+
+        // Vérifier si le poisson est dans le champ de vision du requin
+        if (dist < SHARK_VISION_RANGE) {
+            center = Vector_add(center, fish->position);
+            avg_vel = Vector_add(avg_vel, fish->velocity);
+            count++;
+
+            // Mettre à jour le poisson le plus proche
+            if (dist < closest_dist) {
+                closest_dist = dist;
+                shark_perception->closest_fish = *fish;
+            }
+        }
+    }
+
+    if (count > 0) {
+        shark_perception->center_of_mass = Vector_scale(center, 1.0f / count);
+        shark_perception->avg_velocity = Vector_scale(avg_vel, 1.0f / count);
+
+        shark_perception->has_closest_fish = true;
+
+    } else { // Aucun poisson visible
+        shark_perception->center_of_mass = Vector_init();
+        shark_perception->avg_velocity = Vector_init();
+
+        shark_perception->has_closest_fish = false;
+    }
+}
+
 void UpdateWorld(World *world, World *tmp_world) {
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
@@ -79,17 +135,17 @@ void UpdateWorld(World *world, World *tmp_world) {
         fish_apply_action(&tmp_world->fishes[i], action);
     }
 
-    // // Copie de l'état actuel
-    // tmp_world->shark = world->shark;
+    // Copie de l'état actuel
+    *tmp_world->shark = *world->shark;
 
-    // SharkPerception shark_perception = Get_shark_perception(world);
+    SharkPerception *shark_perception = malloc(sizeof(SharkPerception));
+    Get_shark_perception(world->shark, world, shark_perception);
 
-    // tmp_world->shark.velocity =
-    //     shark_choose_action(&world->shark, &shark_perception);
+    Vector shark_action = shark_choose_action(shark_perception);
 
-    // // Mise à jour de la position
-    // tmp_world->shark.position =
-    //     Vector_add(tmp_world->shark.position, tmp_world->shark.velocity);
+    free(shark_perception);
+
+    Shark_apply_action(tmp_world->shark, shark_action);
 }
 
 void Game_step(World *world) {
@@ -119,6 +175,6 @@ void Game_step(World *world) {
     world->nb_fish = tmp_world.nb_fish; // si le nombre a changé
 
     // Pour le requin, on copie la structure (pas d'échange de pointeur)
-    free(tmp_world.shark);  // on libère le pointeur temporaire
-    tmp_world.shark = NULL; // on évite les fuites de mémoire
+    free(world->shark); // 1. Libérer l'ancien requin
+    world->shark = tmp_world.shark;
 }
