@@ -352,8 +352,7 @@ void Clear_sdl_display(SDLDisplay *display) {
  */
 
 void Draw_fish(SDLDisplay *display, Fish *fish) {
-    if (display == NULL || display->renderer == NULL || fish == NULL ||
-        !fish->is_alive)
+    if (display == NULL || display->renderer == NULL || fish == NULL)
         return;
 
     if (fish->is_alive == false)
@@ -363,6 +362,7 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
 
     int x = to_int(fish->position.x);
     int y = to_int(fish->position.y);
+    int size = FISH_SIZE;
 
     Vector dir = direction_or_default(fish->velocity);
 
@@ -370,43 +370,55 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
     side.x = -dir.y;
     side.y = dir.x;
 
-    int size = FISH_SIZE;
-
     float time = SDL_GetTicks() / 1000.0f;
-    float wave = sinf(time * 8.0f + x * 0.05f) * size * 0.5f;
+    float move_tail = sinf(time * 8.0f + x * 0.05f) * size * 0.45f;
 
-    int base_x = to_int(x - dir.x * size * 0.6f);
-    int base_y = to_int(y - dir.y * size * 0.6f);
+    int head_x = to_int(x + dir.x * size * 0.45f);
+    int head_y = to_int(y + dir.y * size * 0.45f);
 
-    int q1x = to_int(base_x + side.x * size * 0.5f);
-    int q1y = to_int(base_y + side.y * size * 0.5f);
+    int tail_base_x = to_int(x - dir.x * size * 0.55f);
+    int tail_base_y = to_int(y - dir.y * size * 0.55f);
 
-    int q2x = to_int(base_x - side.x * size * 0.5f);
-    int q2y = to_int(base_y - side.y * size * 0.5f);
+    int tail_tip_x = to_int(x - dir.x * size * 1.45f + side.x * move_tail);
+    int tail_tip_y = to_int(y - dir.y * size * 1.45f + side.y * move_tail);
 
-    int q3x = to_int(x - dir.x * size * 1.6f + side.x * wave);
-    int q3y = to_int(y - dir.y * size * 1.6f + side.y * wave);
-
+    /* Queue */
     SDL_SetRenderDrawColor(r, 20, 75, 190, 255);
-    Draw_filled_triangle(r, q1x, q1y, q2x, q2y, q3x, q3y);
+    Draw_filled_triangle(r,
+                         to_int(tail_base_x + side.x * size * 0.45f),
+                         to_int(tail_base_y + side.y * size * 0.45f),
+                         to_int(tail_base_x - side.x * size * 0.45f),
+                         to_int(tail_base_y - side.y * size * 0.45f),
+                         tail_tip_x,
+                         tail_tip_y);
 
+    /* Corps */
     SDL_SetRenderDrawColor(r, 40, 120, 255, 255);
     Draw_filled_circle(r, x, y, size / 2);
 
-    int nx = to_int(x + dir.x * size * 0.6f);
-    int ny = to_int(y + dir.y * size * 0.6f);
+    /* Petite tête claire */
+    SDL_SetRenderDrawColor(r, 85, 175, 255, 255);
+    Draw_filled_circle(r, head_x, head_y, size / 4);
 
-    SDL_SetRenderDrawColor(r, 75, 165, 255, 255);
-    Draw_filled_circle(r, nx, ny, size / 4);
+    /* Petite nageoire */
+    SDL_SetRenderDrawColor(r, 15, 65, 170, 230);
+    Draw_filled_triangle(r,
+                         x,
+                         y,
+                         to_int(x - dir.x * size * 0.2f + side.x * size * 0.35f),
+                         to_int(y - dir.y * size * 0.2f + side.y * size * 0.35f),
+                         to_int(x + side.x * size * 0.75f),
+                         to_int(y + side.y * size * 0.75f));
 
-    int ex = to_int(x + dir.x * size / 3 - side.x * size / 5);
-    int ey = to_int(y + dir.y * size / 3 - side.y * size / 5);
+    /* Œil */
+    int eye_x = to_int(x + dir.x * size * 0.35f - side.x * size * 0.18f);
+    int eye_y = to_int(y + dir.y * size * 0.35f - side.y * size * 0.18f);
 
     SDL_SetRenderDrawColor(r, 255, 255, 255, 255);
-    Draw_filled_circle(r, ex, ey, 2);
+    Draw_filled_circle(r, eye_x, eye_y, 2);
 
     SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
-    Draw_filled_circle(r, ex, ey, 1);
+    Draw_filled_circle(r, eye_x, eye_y, 1);
 }
 
 /**
@@ -424,6 +436,7 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
 
     int x = to_int(shark->pos.x);
     int y = to_int(shark->pos.y);
+    int size = SHARK_SIZE;
 
     Vector dir = direction_or_default(shark->velocity);
 
@@ -431,60 +444,105 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     side.x = -dir.y;
     side.y = dir.x;
 
-    int size = SHARK_SIZE;
-
     float time = SDL_GetTicks() / 1000.0f;
-    float wave = sinf(time * 5.0f) * size * 0.5f;
+    float move_tail = sinf(time * 5.0f) * size * 0.35f;
 
-    SDL_SetRenderDrawColor(r, 0, 0, 0, 65);
-    Draw_filled_ellipse(r, x, y + size / 2, size, size / 3);
+    int nose_x = to_int(x + dir.x * size * 1.45f);
+    int nose_y = to_int(y + dir.y * size * 1.45f);
 
-    int bx = to_int(x - dir.x * size);
-    int by = to_int(y - dir.y * size);
+    int tail_x = to_int(x - dir.x * size * 1.05f);
+    int tail_y = to_int(y - dir.y * size * 1.05f);
 
-    int q1x = to_int(bx + side.x * size / 2);
-    int q1y = to_int(by + side.y * size / 2);
+    int top_x = to_int(x + side.x * size * 0.55f);
+    int top_y = to_int(y + side.y * size * 0.55f);
 
-    int q2x = to_int(bx - side.x * size / 2);
-    int q2y = to_int(by - side.y * size / 2);
+    int bottom_x = to_int(x - side.x * size * 0.55f);
+    int bottom_y = to_int(y - side.y * size * 0.55f);
 
-    int q3x = to_int(x - dir.x * size * 1.8f + side.x * wave);
-    int q3y = to_int(y - dir.y * size * 1.8f + side.y * wave);
+    /* Ombre */
+    SDL_SetRenderDrawColor(r, 0, 0, 0, 70);
+    Draw_filled_ellipse(r, x, y + size / 2, size + 5, size / 3);
 
-    SDL_SetRenderDrawColor(r, 80, 120, 150, 255);
-    Draw_filled_triangle(r, q1x, q1y, q2x, q2y, q3x, q3y);
+    /* Corps principal : deux triangles orientés */
+    SDL_SetRenderDrawColor(r, 95, 135, 155, 255);
+    Draw_filled_triangle(r, nose_x, nose_y, top_x, top_y, tail_x, tail_y);
+    Draw_filled_triangle(r, nose_x, nose_y, bottom_x, bottom_y, tail_x, tail_y);
 
-    SDL_SetRenderDrawColor(r, 120, 160, 180, 255);
-    Draw_filled_ellipse(r, x, y, size, size / 2);
+    /* Dos sombre */
+    SDL_SetRenderDrawColor(r, 45, 75, 95, 240);
+    Draw_filled_triangle(r,
+                         nose_x,
+                         nose_y,
+                         top_x,
+                         top_y,
+                         to_int(x - dir.x * size * 0.7f),
+                         to_int(y - dir.y * size * 0.7f));
 
-    int nx = to_int(x + dir.x * size * 1.4f);
-    int ny = to_int(y + dir.y * size * 1.4f);
+    /* Ventre clair */
+    SDL_SetRenderDrawColor(r, 225, 235, 215, 240);
+    Draw_filled_triangle(r,
+                         nose_x,
+                         nose_y,
+                         bottom_x,
+                         bottom_y,
+                         to_int(x - dir.x * size * 0.65f),
+                         to_int(y - dir.y * size * 0.65f));
 
-    int h1x = to_int(x + side.x * size / 2);
-    int h1y = to_int(y + side.y * size / 2);
+    /* Grande nageoire dorsale */
+    SDL_SetRenderDrawColor(r, 45, 75, 95, 255);
+    Draw_filled_triangle(r,
+                         to_int(x - dir.x * size * 0.25f + side.x * size * 0.45f),
+                         to_int(y - dir.y * size * 0.25f + side.y * size * 0.45f),
+                         to_int(x + dir.x * size * 0.25f + side.x * size * 0.40f),
+                         to_int(y + dir.y * size * 0.25f + side.y * size * 0.40f),
+                         to_int(x + side.x * size * 1.20f),
+                         to_int(y + side.y * size * 1.20f));
 
-    int h2x = to_int(x - side.x * size / 2);
-    int h2y = to_int(y - side.y * size / 2);
+    /* Queue double */
+    int tail_tip_x = to_int(x - dir.x * size * 1.85f + side.x * move_tail);
+    int tail_tip_y = to_int(y - dir.y * size * 1.85f + side.y * move_tail);
 
-    SDL_SetRenderDrawColor(r, 120, 160, 180, 255);
-    Draw_filled_triangle(r, nx, ny, h1x, h1y, h2x, h2y);
+    SDL_SetRenderDrawColor(r, 60, 100, 125, 255);
+    Draw_filled_triangle(r,
+                         tail_x,
+                         tail_y,
+                         to_int(tail_x + side.x * size * 0.70f),
+                         to_int(tail_y + side.y * size * 0.70f),
+                         tail_tip_x,
+                         tail_tip_y);
 
-    SDL_SetRenderDrawColor(r, 220, 230, 210, 230);
-    Draw_filled_ellipse(r, to_int(x + side.x * size / 5),
-                        to_int(y + side.y * size / 5), size / 2, size / 5);
+    Draw_filled_triangle(r,
+                         tail_x,
+                         tail_y,
+                         to_int(tail_x - side.x * size * 0.70f),
+                         to_int(tail_y - side.y * size * 0.70f),
+                         tail_tip_x,
+                         tail_tip_y);
 
-    int ex = to_int(x + dir.x * size / 2 - side.x * size / 4);
-    int ey = to_int(y + dir.y * size / 2 - side.y * size / 4);
+    /* Œil */
+    int eye_x = to_int(x + dir.x * size * 0.80f - side.x * size * 0.22f);
+    int eye_y = to_int(y + dir.y * size * 0.80f - side.y * size * 0.22f);
 
     SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
-    Draw_filled_circle(r, ex, ey, 3);
+    Draw_filled_circle(r, eye_x, eye_y, 3);
 
+    /* Bouche agressive */
+    SDL_RenderDrawLine(r,
+                       to_int(x + dir.x * size * 0.75f - side.x * size * 0.32f),
+                       to_int(y + dir.y * size * 0.75f - side.y * size * 0.32f),
+                       to_int(nose_x - dir.x * size * 0.25f - side.x * size * 0.12f),
+                       to_int(nose_y - dir.y * size * 0.25f - side.y * size * 0.12f));
+
+    /* Branchies */
     for (int i = 0; i < 3; i++) {
-        int gx = to_int(x + dir.x * (size / 5 - i * 4));
-        int gy = to_int(y + dir.y * (size / 5 - i * 4));
+        int gx = to_int(x + dir.x * (size * 0.25f - i * 4));
+        int gy = to_int(y + dir.y * (size * 0.25f - i * 4));
 
-        SDL_RenderDrawLine(r, gx, gy, to_int(gx + side.x * 10),
-                           to_int(gy + side.y * 10));
+        SDL_RenderDrawLine(r,
+                           gx,
+                           gy,
+                           to_int(gx - side.x * size * 0.35f),
+                           to_int(gy - side.y * size * 0.35f));
     }
 }
 
