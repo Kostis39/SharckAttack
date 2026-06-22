@@ -1,8 +1,7 @@
 #include "render_sdl.h"
 #include "vector.h"
 #include "collider.h"
-#include "world.h"
-
+#include "world.h" 
 #include <math.h>
 #include <stdio.h>
 
@@ -158,6 +157,9 @@ void Draw_bubbles(SDL_Renderer *r, int width, int height) {
 void Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius) {
     int s = radius * 2;
     int p = radius / 3;
+
+    SDL_SetRenderDrawColor(r, 80, 180, 190, 45);
+    Draw_filled_circle(r, cx, cy, radius + 10);
 
     SDL_Rect shadow = {cx - radius + 3, cy - radius + 3, s, s};
     SDL_Rect body = {cx - radius, cy - radius, s, s};
