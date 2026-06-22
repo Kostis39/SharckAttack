@@ -1,12 +1,6 @@
 #include "render_sdl.h"
 #include "collider.h"
-<<<<<<< HEAD
 #include "world.h" 
-=======
-#include "vector.h"
-#include "world.h"
-
->>>>>>> 305e4056922a8d0061577ae2cc57355f8235fb99
 #include <math.h>
 #include <stdio.h>
 

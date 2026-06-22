@@ -32,11 +32,7 @@
 #define SHARK_SIZE 22
 
 #define WIDTH 1200
-<<<<<<< HEAD
 #define HEIGHT 500
-=======
-#define HEIGHT 800
->>>>>>> 305e4056922a8d0061577ae2cc57355f8235fb99
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)
