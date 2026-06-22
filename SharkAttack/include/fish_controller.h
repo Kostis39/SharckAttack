@@ -3,6 +3,7 @@
 
 #include "config.h"
 #include "fish.h"
+#include "rules_set.h"
 #include "shark.h"
 #include "vector.h"
 
@@ -41,6 +42,6 @@ Vector Rules_separation(Fish *self, Fish *near, int nb);
 Vector Rules_alignment(Fish *self, Fish *med, int nb);
 Vector Rules_cohesion(Fish *self, Fish *far, int nb);
 
-Vector fish_choose_action(FishPerception *perception);
+Vector fish_choose_action(FishPerception *perception, RulesSetFish *rules_set);
 
 #endif
