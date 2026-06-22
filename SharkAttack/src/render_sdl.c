@@ -9,6 +9,7 @@
 int g_score = 0;
 int g_gain = 0;
 int g_flash = 0;
+int g_debug_view = 0;
 
 /**
  * @brief convertir float en int
@@ -530,26 +531,33 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
                          to_int(x + side.x * size * 1.20f),
                          to_int(y + side.y * size * 1.20f));
 
-    /* Queue double */
-    int tail_tip_x = to_int(x - dir.x * size * 1.85f + side.x * move_tail);
-    int tail_tip_y = to_int(y - dir.y * size * 1.85f + side.y * move_tail);
+    /* Queue, pointe attachée au corps */
+    int back_x = to_int(tail_x - dir.x * size * 0.75f + side.x * move_tail);
+    int back_y = to_int(tail_y - dir.y * size * 0.75f + side.y * move_tail);
+
+    int tail_top_x = to_int(back_x + side.x * size * 0.40f);
+    int tail_top_y = to_int(back_y + side.y * size * 0.40f);
+
+    int tail_bot_x = to_int(back_x - side.x * size * 0.40f);
+    int tail_bot_y = to_int(back_y - side.y * size * 0.40f);
 
     SDL_SetRenderDrawColor(r, 60, 100, 125, 255);
-    Draw_filled_triangle(r,
-                         tail_x,
-                         tail_y,
-                         to_int(tail_x + side.x * size * 0.70f),
-                         to_int(tail_y + side.y * size * 0.70f),
-                         tail_tip_x,
-                         tail_tip_y);
 
     Draw_filled_triangle(r,
-                         tail_x,
-                         tail_y,
-                         to_int(tail_x - side.x * size * 0.70f),
-                         to_int(tail_y - side.y * size * 0.70f),
-                         tail_tip_x,
-                         tail_tip_y);
+                        tail_x,
+                        tail_y,
+                        tail_top_x,
+                        tail_top_y,
+                        back_x,
+                        back_y);
+
+    Draw_filled_triangle(r,
+                        tail_x,
+                        tail_y,
+                        tail_bot_x,
+                        tail_bot_y,
+                        back_x,
+                        back_y);
 
     /* Œil */
     int eye_x = to_int(x + dir.x * size * 0.80f - side.x * size * 0.22f);
@@ -628,6 +636,92 @@ void Draw_score(SDLDisplay *display) {
     }
 }
 
+void Draw_circle_outline(SDL_Renderer *r, int cx, int cy, int radius) {
+    int old_x = cx + radius;
+    int old_y = cy;
+
+    for (int a = 10; a <= 360; a += 10) {
+        float angle = a * PI / 180.0f;
+        int x = cx + to_int(cosf(angle) * radius);
+        int y = cy + to_int(sinf(angle) * radius);
+
+        SDL_RenderDrawLine(r, old_x, old_y, x, y);
+
+        old_x = x;
+        old_y = y;
+    }
+}
+
+void Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length) {
+    Vector d = direction_or_default(dir);
+
+    Vector side;
+    side.x = -d.y;
+    side.y = d.x;
+
+    int x1 = to_int(pos.x);
+    int y1 = to_int(pos.y);
+    int x2 = to_int(pos.x + d.x * length);
+    int y2 = to_int(pos.y + d.y * length);
+
+    SDL_RenderDrawLine(r, x1, y1, x2, y2);
+
+    /* petite flèche */
+    SDL_RenderDrawLine(r, x2, y2,
+                       to_int(x2 - d.x * 7 + side.x * 4),
+                       to_int(y2 - d.y * 7 + side.y * 4));
+
+    SDL_RenderDrawLine(r, x2, y2,
+                       to_int(x2 - d.x * 7 - side.x * 4),
+                       to_int(y2 - d.y * 7 - side.y * 4));
+}
+
+void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
+    SDL_Renderer *r = display->renderer;
+
+    if (fishes == NULL || shark == NULL)
+        return;
+
+    /* Vecteurs des poissons */
+    SDL_SetRenderDrawColor(r, 120, 230, 255, 160);
+
+    for (int i = 0; i < nb_fish; i++) {
+        if (fishes[i].is_alive) {
+            Draw_vector(r, fishes[i].position, fishes[i].velocity, 22);
+        }
+    }
+
+    /* Quelques cercles de perception des poissons pour ne pas surcharger */
+    SDL_SetRenderDrawColor(r, 80, 180, 255, 55);
+
+    for (int i = 0; i < nb_fish; i += 25) {
+        if (fishes[i].is_alive) {
+            Draw_circle_outline(r,
+                                to_int(fishes[i].position.x),
+                                to_int(fishes[i].position.y),
+                                to_int(fishes[i].radius_cohesion));
+        }
+    }
+
+    /* Vecteur du requin */
+    SDL_SetRenderDrawColor(r, 255, 220, 80, 220);
+    Draw_vector(r, shark->pos, shark->velocity, 45);
+
+    /* Vision du requin */
+    SDL_SetRenderDrawColor(r, 255, 80, 80, 80);
+    Draw_circle_outline(r,
+                        to_int(shark->pos.x),
+                        to_int(shark->pos.y),
+                        SHARK_VISION_RANGE);
+
+    /* Zone d'attaque du requin */
+    SDL_SetRenderDrawColor(r, 255, 60, 40, 160);
+    Draw_circle_outline(r,
+                        to_int(shark->pos.x),
+                        to_int(shark->pos.y),
+                        SHARK_ATTACK_RANGE);
+} 
+
 /**
  * @brief dessine le monde
  *
@@ -662,6 +756,10 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     }
 
     Draw_shark(display, shark);
+
+    if (g_debug_view)
+        Draw_debug_view(display, fishes, nb_fish, shark); 
+
     Draw_score(display);
 
     SDL_RenderPresent(display->renderer);
@@ -684,12 +782,15 @@ void Render_world(SDLDisplay *display, World *world) {
 
     if (g_score > old_score) {
         g_gain = g_score - old_score;
-        g_flash = 10;   /* effet court quand le requin mange */
+        g_flash = 10;
     } else if (g_flash > 0) {
-        g_flash--;      /* l'effet disparaît progressivement */
+        g_flash--;
     }
 
     old_score = g_score;
+
+    SDL_PumpEvents();
+    g_debug_view = SDL_GetKeyboardState(NULL)[SDL_SCANCODE_V];
 
     Draw_world(display, world->fishes, world->nb_fish, world->shark);
 }
