@@ -9,6 +9,7 @@ Vector Rules_center(Vector shark_pos, Vector center_of_mass, bool has_prey) {
     Vector to_center = Vector_sub(center_of_mass, shark_pos);
     float dist = Vector_length(to_center);
 
+    // Plus le centre est loin, plus la correction est forte
     float intensity = dist / SHARK_VISION_RANGE;
 
     return Vector_scale(local_normalize(to_center), intensity);
@@ -27,6 +28,20 @@ Vector Rules_alignment(Vector shark_vel, Vector avg_velocity, bool has_prey) {
     float intensity = norm / SHARK_SPEED_MAX;
 
     return Vector_scale(local_normalize(diff), intensity);
+}
+
+Vector Rules_pursuit(Vector shark_pos, Vector fish_pos, bool has_prey) {
+    if (!has_prey) {
+        return Vector_init();
+    }
+
+    Vector to_fish = Vector_sub(fish_pos, shark_pos);
+    float dist = Vector_length(to_fish);
+
+    // Plus le poisson est proche, plus on va vers le poisson
+    float intensity = 1.0f / (1.0f + (dist / SHARK_VISION_RANGE));
+
+    return Vector_scale(local_normalize(to_fish), intensity);
 }
 
 Vector shark_choose_action(SharkPerception *perception) {
