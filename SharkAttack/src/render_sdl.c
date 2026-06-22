@@ -691,15 +691,23 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shar
         }
     }
 
-    /* Quelques cercles de perception des poissons pour ne pas surcharger */
-    SDL_SetRenderDrawColor(r, 80, 180, 255, 55);
-
-    for (int i = 0; i < nb_fish; i += 25) {
+    /* 3 cercles boids : cohésion, alignement, séparation */
+    for (int i = 0; i < nb_fish; i += 30) {
         if (fishes[i].is_alive) {
-            Draw_circle_outline(r,
-                                to_int(fishes[i].position.x),
-                                to_int(fishes[i].position.y),
-                                to_int(fishes[i].radius_cohesion));
+            int x = to_int(fishes[i].position.x);
+            int y = to_int(fishes[i].position.y);
+
+            /* Grand cercle : cohésion */
+            SDL_SetRenderDrawColor(r, 80, 180, 255, 70);
+            Draw_circle_outline(r, x, y, to_int(fishes[i].radius_cohesion));
+
+            /* Cercle moyen : alignement */
+            SDL_SetRenderDrawColor(r, 255, 200, 80, 90);
+            Draw_circle_outline(r, x, y, to_int(fishes[i].radius_alignement));
+
+            /* Petit cercle : séparation */
+            SDL_SetRenderDrawColor(r, 255, 80, 80, 130);
+            Draw_circle_outline(r, x, y, to_int(fishes[i].radius_separation));
         }
     }
 
