@@ -145,7 +145,6 @@ void handle_shark_collisions(World *world) {
         if (dist < SHARK_ATTACK_RANGE) {
             fish->is_alive = false;
             world->fish_eaten++;
-            printf("Nombre de poissons mangés : %d\n", world->fish_eaten);
         }
     }
 }
