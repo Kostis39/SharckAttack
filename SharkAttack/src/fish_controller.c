@@ -84,8 +84,7 @@ Vector Rules_avoid_shark(Fish *self, Vector shark_position,
     float dist = Vector_length(away_from_shark);
 
     // Plus le requin est proche, plus la force est grande
-    float intensity =
-        SHARK_AVOIDANCE_FACTOR * (1.0f - dist / RADIUS_SHARK_VISIBILITY);
+    float intensity = SHARK_AVOIDANCE * (1.0f - dist / RADIUS_SHARK_VISIBILITY);
 
     return Vector_scale(away_from_shark, intensity);
 }
