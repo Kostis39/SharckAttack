@@ -120,20 +120,20 @@ void Get_shark_perception(Shark *shark, World *world,
 }
 
 void UpdateWorld(World *world, World *tmp_world) {
+    FishPerception *perception = malloc(sizeof(FishPerception));
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
         tmp_world->fishes[i] = world->fishes[i];
 
-        FishPerception *perception = malloc(sizeof(FishPerception));
         get_fish_perception(&world->fishes[i], world, perception);
 
-        Vector action = fish_choose_action(perception);
+        Vector action = fish_choose_action(perception, world->rules_set_fish);
 
         FishPerception_destroy(perception);
-        free(perception);
 
         fish_apply_action(&tmp_world->fishes[i], action);
     }
+    free(perception);
 
     // Copie de l'état actuel
     *tmp_world->shark = *world->shark;

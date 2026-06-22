@@ -90,7 +90,7 @@ Vector Rules_avoid_shark(Fish *self, Vector shark_position,
     return Vector_scale(away_from_shark, intensity);
 }
 
-Vector fish_choose_action(FishPerception *p) {
+Vector fish_choose_action(FishPerception *p, RulesSetFish *rules_set) {
     Vector separation =
         Rules_separation(&p->self, p->neighbor_separation, p->nb_sep);
     Vector alignement =
@@ -105,12 +105,12 @@ Vector fish_choose_action(FishPerception *p) {
 
     // Combinaison 3 trois forces
     Vector weighted_velocity = Vector_init();
-    weighted_velocity =
-        Vector_add(weighted_velocity, Vector_scale(separation, SEPARATION));
-    weighted_velocity =
-        Vector_add(weighted_velocity, Vector_scale(alignement, ALIGNMENT));
-    weighted_velocity =
-        Vector_add(weighted_velocity, Vector_scale(cohesion, COHESION));
+    weighted_velocity = Vector_add(
+        weighted_velocity, Vector_scale(separation, rules_set->separation));
+    weighted_velocity = Vector_add(
+        weighted_velocity, Vector_scale(alignement, rules_set->alignment));
+    weighted_velocity = Vector_add(weighted_velocity,
+                                   Vector_scale(cohesion, rules_set->cohesion));
 
     weighted_velocity = Vector_add(weighted_velocity, repulsion);
     weighted_velocity = Vector_add(weighted_velocity, avoid_shark);
