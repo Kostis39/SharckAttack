@@ -40,16 +40,16 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
     float cohesion_limit = alignment_limit + fish->radius_cohesion;
 
     for (int i = 0; i < world->nb_fish; i++) {
-        Fish *neightbor = &world->fishes[i];
+        Fish *neighbor = &world->fishes[i];
 
-        if (neightbor == fish || !neightbor->is_alive) {
+        if (neighbor == fish || !neighbor->is_alive) {
             continue;
         }
 
-        Vector to_neightbor = Vector_sub(neightbor->position, fish->position);
-        float distance_squared = Vector_length2(to_neightbor);
+        Vector to_neighbor = Vector_sub(neighbor->position, fish->position);
+        float distance_squared = Vector_length2(to_neighbor);
 
-        float angle = Vector_angle_fast(fish->velocity, to_neightbor);
+        float angle = Vector_angle_fast(fish->velocity, to_neighbor);
         if (fabsf(angle) > fish->vision_angle / 2.0f) {
             continue;
         }
@@ -57,14 +57,14 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
         if (distance_squared <= separation_limit * separation_limit) {
             perception->separation = Vector_add(
                 perception->separation,
-                Vector_sub(perception->self.position, neightbor->position));
+                Vector_sub(perception->self.position, neighbor->position));
         } else if (distance_squared <= alignment_limit * alignment_limit) {
             perception->avg_velocity =
-                Vector_add(perception->avg_velocity, neightbor->velocity);
+                Vector_add(perception->avg_velocity, neighbor->velocity);
             nb_align++;
         } else if (distance_squared <= cohesion_limit * cohesion_limit) {
             perception->center_of_mass =
-                Vector_add(perception->center_of_mass, neightbor->position);
+                Vector_add(perception->center_of_mass, neighbor->position);
             nb_cohes++;
         }
     }
