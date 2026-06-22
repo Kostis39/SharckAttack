@@ -31,14 +31,14 @@
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
-#define WIDTH 800
+#define WIDTH 1200
 #define HEIGHT 800
 
 #define REPULSION_ZONE                                                         \
     100 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 2.0f // Intensité du virage
 
-#define NB_OCCURRENCE 10000
+#define NB_OCCURRENCE 1000
 
 #define RANDOM_SEED 42
 

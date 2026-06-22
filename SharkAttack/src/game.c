@@ -88,27 +88,38 @@ void Game_run_SDL() {
 
 void Game_run_terminal() {
     terminal_interrupted = 0;
+    int i = 0;
     signal(SIGINT, Handle_terminal_interrupt);
 
     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB);
-    printf("Initial state: (with, height): (%d, %d) Number Fish: %d Shark "
-           "position: (%f, %f)\n",
-           world->width, world->height, world->nb_fish, world->shark->pos.x,
-           world->shark->pos.y);
-    for (int i = 0; i < NB_OCCURRENCE && !terminal_interrupted; i++) {
+    printf("Iteration: %d\nFish : Number: %d Separation: %f Alignement: %f "
+           "Cohesion: %f Shark "
+           "Avoidance: %f\n",
+           i, world->nb_fish, world->rules_set_fish->separation,
+           world->rules_set_fish->alignment, world->rules_set_fish->cohesion,
+           world->rules_set_fish->shark_avoidance_factor);
+
+    for (i = 0; i < NB_OCCURRENCE && !terminal_interrupted; i++) {
         Game_step(world);
-        printf("Iteration %d: Number Fish: %d Shark position: (%f, %f)\n", i,
-               world->nb_fish, world->shark->pos.x, world->shark->pos.y);
+        printf("Iteration: %d\nFish : Number: %d Separation: %f Alignement: %f "
+               "Cohesion: %f Shark "
+               "Avoidance: %f\n",
+               i, world->nb_fish, world->rules_set_fish->separation,
+               world->rules_set_fish->alignment,
+               world->rules_set_fish->cohesion,
+               world->rules_set_fish->shark_avoidance_factor);
     }
 
     if (terminal_interrupted) {
         printf("Boucle interrompue par l'utilisateur.\n");
     }
 
-    printf("Final state: (with, height): (%d, %d) Number Fish: %d Shark "
-           "position: (%f, %f)\n",
-           world->width, world->height, world->nb_fish, world->shark->pos.x,
-           world->shark->pos.y);
+    printf("Iteration: %d\nFish : Number: %d Separation: %f Alignement: %f "
+           "Cohesion: %f Shark "
+           "Avoidance: %f\n",
+           i, world->nb_fish, world->rules_set_fish->separation,
+           world->rules_set_fish->alignment, world->rules_set_fish->cohesion,
+           world->rules_set_fish->shark_avoidance_factor);
     World_destroy(world);
 }
 
