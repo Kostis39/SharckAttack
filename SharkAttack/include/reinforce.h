@@ -3,6 +3,7 @@
 
 #include "config.h"
 #include "vector.h"
+#include <assert.h>
 #include <stdlib.h>
 
 typedef struct {
