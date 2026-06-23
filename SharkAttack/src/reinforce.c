@@ -53,3 +53,12 @@ void Trajectory_destroy(Trajectory *trajectory) {
     free(trajectory->steps);
     free(trajectory);
 }
+
+void Trajectory_print(Trajectory *trajectory) {
+    for (int i = 0; i < trajectory->length; ++i) {
+        printf("Step %d: State: (%f, %f) Action:(%f, %f) Reward: (%f, %f)\n", i,
+               trajectory->steps[i].state.x, trajectory->steps[i].state.y,
+               trajectory->steps[i].action.x, trajectory->steps[i].action.y,
+               trajectory->steps[i].reward);
+    }
+}
