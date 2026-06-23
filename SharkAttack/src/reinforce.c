@@ -1,6 +1,6 @@
 #include "reinforce.h"
 
-Trajectory *Init_trajectory() {
+Trajectory *Trajectory_init() {
     Trajectory *new_trajectory = calloc(1, sizeof(Trajectory));
     if (new_trajectory == NULL)
         return NULL;
@@ -49,7 +49,7 @@ void Add_step(Trajectory *trajectory, Vector state, Vector action,
     ++trajectory->length;
 }
 
-void Destroy_Trajectory(Trajectory *trajectory) {
+void Trajectory_destroy(Trajectory *trajectory) {
     free(trajectory->steps);
     free(trajectory);
 }
