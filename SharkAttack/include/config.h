@@ -19,11 +19,12 @@
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
 #define SHARK_AVOIDANCE 0.1f
+#define COLLIDER_AVOIDANCE 0.5f
 
 /* Poids des règles de shark*/
 #define BIAIS 0.1f
 #define CENTER 10.0f
-#define ALIGNEMENT 0.0f
+#define SHARK_ALIGNEMENT 0.0f
 #define PURSUIT 10.0f
 
 /* Contraintes de mouvement */
@@ -49,7 +50,7 @@
 
 #define COLLIDER_RATIO                                                         \
     10 /* mesure au plus un dixième de la largeur du                          \
-          monde*/
+monde*/
 #define COLLIDERS_NB 5
 
 #define SHARK_ATTACK_RANGE 30

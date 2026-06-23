@@ -73,6 +73,32 @@ int Colliders_destroy_array(Collider *array) {
     return -1;
 }
 
+Vector Collider_closest_point(Collider *c, Vector p) {
+    /**
+     * @brief Retourne le point le plus proche du rectangle (AABB) au point p
+     * @param c le collider (bounding box)
+     * @param p le point de référence
+     * @return le point sur (ou dans) le rectangle le plus proche de p
+     */
+    Vector closest;
+    closest.x = fmaxf(c->bounding_box[0].x,
+                      fminf(p.x, c->bounding_box[1].x));
+    closest.y = fmaxf(c->bounding_box[0].y,
+                      fminf(p.y, c->bounding_box[1].y));
+    return closest;
+}
+
+float Collider_distance_to_point(Collider *c, Vector p) {
+    /**
+     * @brief Distance euclidienne entre un point et un rectangle (AABB)
+     * @param c le collider
+     * @param p le point
+     * @return la distance (0 si le point est à l'intérieur)
+     */
+    Vector closest = Collider_closest_point(c, p);
+    return Vector_distance(p, closest);
+}
+
 Collider *Colliders_copy_array(Collider *collider, int count) {
     Collider *copy = malloc(count * sizeof(*collider));
     if (!(collider && copy)) {

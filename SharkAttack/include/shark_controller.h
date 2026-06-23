@@ -31,6 +31,6 @@ typedef struct {
     Vector pursuit;   /**< Vecteur résultat de la règle pursuit */
 } SharkPhi;
 
-Vector shark_choose_action(SharkPerception *perception, SharkTeta *rules_set);
+Vector shark_choose_action(SharkPerception *perception, SharkTheta *rules_set);
 
 #endif

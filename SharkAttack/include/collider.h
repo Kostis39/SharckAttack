@@ -19,3 +19,6 @@ Collider *Colliders_random_array(int x_max, int y_max, int w_max,
 Collider *Colliders_copy_array(Collider *collider, int count);
 
 int Colliders_destroy_array(Collider *array);
+
+Vector Collider_closest_point(Collider *c, Vector p);
+float Collider_distance_to_point(Collider *c, Vector p);
