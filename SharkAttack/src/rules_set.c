@@ -22,7 +22,7 @@ SharkTheta *SharkTheta_init() {
 }
 
 void RulesSetFish_destroy(RulesSetFish *rules_set) { free(rules_set); }
-void SharkTeta_destroy(SharkTheta *rules_set) {
+void SharkTheta_destroy(SharkTheta *rules_set) {
     if (rules_set != NULL)
         free(rules_set);
 }

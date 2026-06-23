@@ -1,6 +1,4 @@
 #include "world.h"
-#include "config.h"
-#include <stdlib.h>
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders) {
     World *new_world = calloc(1, sizeof(World));
@@ -26,7 +24,7 @@ void World_destroy(World *world) {
     Shark_destroy(world->shark);
     Colliders_destroy_array(world->colliders);
     RulesSetFish_destroy(world->rules_set_fish);
-    SharkTeta_destroy(world->rules_set_shark);
+    SharkTheta_destroy(world->rules_set_shark);
     Trajectory_destroy(world->trajectory);
     free(world);
     world = NULL;
