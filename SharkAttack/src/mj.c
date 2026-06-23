@@ -118,10 +118,15 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
         Vector closest = Collider_closest_point(c, fish->position);
         float dist = Vector_distance(fish->position, closest);
 
-        if (dist < max_perception && dist > 0.0f) {
-            float intensity = 1.0f - (dist / max_perception);
-            Vector repulsion =
-                Vector_scale(Vector_sub(fish->position, closest), intensity);
+        if (dist < max_perception) {
+            if (dist < 1.0f) {
+                dist = 1.0f;
+            }
+            float ratio = 1.0f - (dist / max_perception);
+            float intensity = ratio * ratio;
+            Vector repulsion = Vector_sub(fish->position, closest);
+            repulsion = Vector_normalize(repulsion);
+            repulsion = Vector_scale(repulsion, intensity);
             perception->collider_separation =
                 Vector_add(perception->collider_separation, repulsion);
         }
