@@ -12,6 +12,12 @@ typedef struct {
     float y; /**< Composante y du vecteur */
 } Vector;
 
+typedef struct {
+    float center;
+    float alignment;
+    float pursuit;
+} VectorRule;
+
 void Vector_print(Vector v);
 
 Vector Vector_init(); // Initialise à 0 x et y

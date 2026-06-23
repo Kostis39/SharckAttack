@@ -26,7 +26,6 @@
 #define COLLIDER_AVOIDANCE 0.5f
 
 /* Poids des règles de shark*/
-#define BIAIS 0.1f
 #define CENTER 10.0f
 #define SHARK_ALIGNEMENT 0.0f
 #define PURSUIT 10.0f
@@ -53,7 +52,7 @@
 #define RANDOM_SEED 42
 
 #define COLLIDER_RATIO                                                         \
-    5 /* mesure au plus un dixième de la largeur du                          \
+    5 /* mesure au plus un dixième de la largeur du                           \
 monde*/
 #define COLLIDERS_NB 5
 

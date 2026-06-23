@@ -1,4 +1,6 @@
 #include "reinforce.h"
+#include "mj.h"
+#include "world.h"
 
 Trajectory *Trajectory_init() {
     Trajectory *new_trajectory = calloc(1, sizeof(Trajectory));
@@ -40,10 +42,9 @@ int Need_trajectory_growing(Trajectory *trajectory) {
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */
-void Add_step(Trajectory *trajectory, Vector mu, SharkPhi phi, Vector action,
+void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action,
               float reward) {
     int i = trajectory->length;
-    trajectory->steps[i].mu = mu;
     trajectory->steps[i].phi = phi;
     trajectory->steps[i].action = action;
     trajectory->steps[i].reward = reward;
@@ -64,16 +65,15 @@ void Trajectory_destroy(Trajectory *trajectory) {
 void Trajectory_print(Trajectory *trajectory) {
     for (int i = 0; i < trajectory->length; ++i) {
         if (trajectory->steps[i].reward > 0) {
-            printf("Step: %d mu: (%f, %f) phi: (%f, %f, %f, %f, %f, %f) "
+            printf("Step: %d phi: (%f, %f, %f, %f, %f, %f) "
                    "Action:(%f, %f) "
                    "Reward: %f\n",
-                   i, trajectory->steps[i].mu.x, trajectory->steps[i].mu.y,
-                   trajectory->steps[i].phi.center.x,
-                   trajectory->steps[i].phi.center.y,
-                   trajectory->steps[i].phi.alignment.x,
-                   trajectory->steps[i].phi.alignment.y,
-                   trajectory->steps[i].phi.pursuit.x,
-                   trajectory->steps[i].phi.pursuit.y,
+                   i, trajectory->steps[i].phi.phi_x.center,
+                   trajectory->steps[i].phi.phi_y.center,
+                   trajectory->steps[i].phi.phi_x.alignment,
+                   trajectory->steps[i].phi.phi_y.alignment,
+                   trajectory->steps[i].phi.phi_x.pursuit,
+                   trajectory->steps[i].phi.phi_y.pursuit,
                    trajectory->steps[i].action.x, trajectory->steps[i].action.y,
                    trajectory->steps[i].reward);
         }
@@ -81,31 +81,83 @@ void Trajectory_print(Trajectory *trajectory) {
 }
 
 void StepTrajectory_print(StepTrajectory step) {
-    printf("Step: mu: (%f, %f) phi: (%f, %f, %f, %f, %f, %f) "
+    printf("phi: (%f, %f, %f, %f, %f, %f) "
            "Action:(%f, %f) "
            "Reward: %f\n",
-           step.mu.x, step.mu.y, step.phi.center.x, step.phi.center.y,
-           step.phi.alignment.x, step.phi.alignment.y, step.phi.pursuit.x,
-           step.phi.pursuit.y, step.action.x, step.action.y, step.reward);
+           step.phi.phi_x.center, step.phi.phi_y.center,
+           step.phi.phi_x.alignment, step.phi.phi_y.alignment,
+           step.phi.phi_x.pursuit, step.phi.phi_y.pursuit, step.action.x,
+           step.action.y, step.reward);
 }
 
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */
-void New_step(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
-              float reward) {
-    step->mu = mu;
+void New_step(StepTrajectory *step, SharkPhi phi, Vector action, float reward) {
     step->phi = phi;
     step->action = action;
     step->reward = reward;
 }
 
-void Step_update(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
+void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
                  float reward) {
     if (!step)
         return;
-    step->mu = mu;
     step->phi = phi;
     step->action = action;
     step->reward = reward;
+}
+
+Gradient Gradient_zero() {
+    Gradient G;
+
+    G.grad_x.center = 0;
+    G.grad_y.center = 0;
+    G.grad_x.alignment = 0;
+    G.grad_y.alignment = 0;
+    G.grad_x.pursuit = 0;
+    G.grad_y.pursuit = 0;
+
+    return G;
+}
+
+Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
+    float G = 0;
+    float GG;
+    float mu_x, mu_y;
+    VectorRule score_x, score_y;
+    Gradient D = Gradient_zero();
+
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
+                              hyperparameters.sigma);
+
+    for (int i = 0;
+         (world->nb_fish - world->fish_eaten != 0) && i < NB_OCCURRENCE; i++) {
+        Game_step(world);
+    }
+    Trajectory trajectory = *world->trajectory;
+
+    for (int u = 0; u < trajectory.length; u++) {
+        int t = trajectory.length - 1 - u;
+        StepTrajectory step = trajectory.steps[t];
+        G = step.reward + hyperparameters.gamma * G;
+        GG = pow(hyperparameters.gamma, t) * G;
+
+        mu_x = Dot_product(theta.theta_x, step.phi.phi_x);
+        mu_y = Dot_product(theta.theta_y, step.phi.phi_y);
+
+        score_x = Vector_rule_scaled(step.phi.phi_x,
+                                     (1.0f / pow(hyperparameters.sigma, 2)) *
+                                         (step.action.x - mu_x));
+        score_y = Vector_rule_scaled(step.phi.phi_y,
+                                     (1.0f / pow(hyperparameters.sigma, 2)) *
+                                         (step.action.y - mu_y));
+
+        D.grad_x = Vector_rule_add(D.grad_x, Vector_rule_scaled(score_x, GG));
+        D.grad_y = Vector_rule_add(D.grad_y, Vector_rule_scaled(score_y, GG));
+    }
+
+    World_destroy(world);
+
+    return D;
 }
