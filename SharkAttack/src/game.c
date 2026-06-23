@@ -140,21 +140,20 @@ void Game_run_terminal() {
     World_destroy(world);
 }
 
-// Trajectory Generate_run() {
+// Trajectory Generate_trajectory(SharkTheta theta) {
 //     int i = 0;
 
-//     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB);
+//     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta);
 
 //     for (i = 0; (world->nb_fish - world->fish_eaten != 0) && i <
 //     NB_OCCURRENCE;
 //          i++) {
 //         Game_step(world);
-//         // à faire
 //     }
 
 //     World_destroy(world);
 
-//     return ;
+//     return;
 // }
 
 void Game_destroy(Game *game) {

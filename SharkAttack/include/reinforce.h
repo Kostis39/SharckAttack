@@ -29,13 +29,14 @@ typedef struct {
 
 Trajectory *Trajectory_init();
 void Trajectory_destroy(Trajectory *trajectory);
-void Add_step(Trajectory *trajectory, Vector state, Vector action,
+void Add_step(Trajectory *trajectory, Vector mu, Vector phi, Vector action,
               float reward);
 
 int Need_trajectory_growing(Trajectory *trajectory);
 
 void Trajectory_print(Trajectory *trajectory);
 
-void New_step(StepTrajectory *step, Vector state, Vector action, float reward);
+void New_step(StepTrajectory *step, Vector mu, Vector phi, Vector action,
+              float reward);
 
 #endif
