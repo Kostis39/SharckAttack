@@ -6,6 +6,7 @@
 #include <math.h>
 #include <stdlib.h>
 
+void init_seed(unsigned int set_seed);
 float random_float(float min, float max);
 int rand_trsf();
 
