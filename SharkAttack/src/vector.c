@@ -1,5 +1,4 @@
 #include "vector.h"
-#include "config.h"
 
 void Vector_print(Vector v) { printf("(%f, %f)\n", v.x, v.y); }
 

@@ -1,7 +1,4 @@
 #include "collider.h"
-#include "vector.h"
-#include <stdlib.h>
-#include <string.h>
 
 Collider Instantiate_collider(Vector pos, float w, float h) {
     /**
@@ -23,7 +20,7 @@ Collider Instantiate_collider(Vector pos, float w, float h) {
 }
 
 Collider *Colliders_random_array(int x_max, int y_max, int w_max, int h_max,
-                                 int count) {
+                                 int count, int gen_all_square) {
     /**
      * @brief initialise un tableau de colliders aléatoirement positionnés
      * @param seed graine de l'initialisation aléatoire
@@ -47,9 +44,13 @@ Collider *Colliders_random_array(int x_max, int y_max, int w_max, int h_max,
         // generer le centre
         current_pos.x = random_float(0, x_max);
         current_pos.y = random_float(0, y_max);
-
-        array[i] = Instantiate_collider(current_pos, cur_w,
-                                        cur_w); // collider d'indice i
+        if (!gen_all_square) {
+            array[i] = Instantiate_collider(current_pos, cur_w,
+                                            cur_h); // collider d'indice i
+        } else {
+            array[i] = Instantiate_collider(current_pos, cur_w,
+                                            cur_w); // collider d'indice i
+        }
     }
     return array;
 }
@@ -74,10 +75,8 @@ Vector Collider_closest_point(Collider *c, Vector p) {
      * @return le point sur (ou dans) le rectangle le plus proche de p
      */
     Vector closest;
-    closest.x = fmaxf(c->bounding_box[0].x,
-                      fminf(p.x, c->bounding_box[1].x));
-    closest.y = fmaxf(c->bounding_box[0].y,
-                      fminf(p.y, c->bounding_box[1].y));
+    closest.x = fmaxf(c->bounding_box[0].x, fminf(p.x, c->bounding_box[1].x));
+    closest.y = fmaxf(c->bounding_box[0].y, fminf(p.y, c->bounding_box[1].y));
     return closest;
 }
 
