@@ -4,6 +4,7 @@
 #include "collider.h"
 #include "config.h"
 #include "fish.h"
+#include "reinforce.h"
 #include "rules_set.h"
 #include "shark.h"
 #include "vector.h"
@@ -29,6 +30,7 @@ typedef struct {
     int fish_eaten; /**< Nombre de poissons mangés par le requin */
     RulesSetFish *rules_set_fish; /**< Ensemble de règles pour les poissons */
     SharkTheta *rules_set_shark;  /**< Ensemble de règles pour le requin */
+    Trajectory *trajectory;
 } World;
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders);

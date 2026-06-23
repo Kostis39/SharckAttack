@@ -240,6 +240,10 @@ void UpdateWorld(World *world, World *tmp_world) {
     Shark_apply_action(tmp_world->shark, shark_action);
 
     handle_shark_collisions(tmp_world);
+    /**
+    Need_trajectory_growing(world->trajectory);
+    Add_step(world->trajectory, world->shark->pos, shark_action, reward);
+    */
 }
 
 void Game_step(World *world) {
