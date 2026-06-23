@@ -80,6 +80,15 @@ void Trajectory_print(Trajectory *trajectory) {
     }
 }
 
+void StepTrajectory_print(StepTrajectory step) {
+    printf("Step: mu: (%f, %f) phi: (%f, %f, %f, %f, %f, %f) "
+           "Action:(%f, %f) "
+           "Reward: %f\n",
+           step.mu.x, step.mu.y, step.phi.center.x, step.phi.center.y,
+           step.phi.alignment.x, step.phi.alignment.y, step.phi.pursuit.x,
+           step.phi.pursuit.y, step.action.x, step.action.y, step.reward);
+}
+
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */

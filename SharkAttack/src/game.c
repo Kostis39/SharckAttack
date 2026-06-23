@@ -83,7 +83,6 @@ void Game_run_SDL(bool use_bench) {
                 break;
             }
         }
-
         if (!game.paused) {
             Game_step(game.world);
         }
