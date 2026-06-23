@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5fvoisins_0',['MAX_VOISINS',['../config_8h.html#aebfee489d5391a1f5e71138996dd11a0',1,'config.h']]]
+  ['height_0',['HEIGHT',['../config_8h.html#aed89bd71aee8be823e8a20ec4e093c1e',1,'config.h']]]
 ];

@@ -24,21 +24,35 @@
 */
 var NAVTREE =
 [
-  [ "SharkAttack", "index.html", [
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
+  [ "Sharkattack", "index.html", [
+    [ "Carnet de suivi SharkAttack", "md_suivi.html", [
+      [ "19 JUIN", "md_suivi.html#autotoc_md1", [
+        [ "Matin", "md_suivi.html#autotoc_md2", null ],
+        [ "Après-midi", "md_suivi.html#autotoc_md3", null ]
+      ] ],
+      [ "22 Juin", "md_suivi.html#autotoc_md4", [
+        [ "Matin", "md_suivi.html#autotoc_md5", null ],
+        [ "Après-midi", "md_suivi.html#autotoc_md6", null ]
+      ] ]
+    ] ],
+    [ "Structures de données", "annotated.html", [
+      [ "Structures de données", "annotated.html", "annotated_dup" ],
+      [ "Index des structures de données", "classes.html", null ],
+      [ "Champs de donnée", "functions.html", [
+        [ "Tout", "functions.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "Globals", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+    [ "Fichiers", "files.html", [
+      [ "Liste des fichiers", "files.html", "files_dup" ],
+      [ "Variables globale", "globals.html", [
+        [ "Tout", "globals.html", "globals_dup" ],
+        [ "Fonctions", "globals_func.html", "globals_func" ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Définitions de type", "globals_type.html", null ],
+        [ "Énumérations", "globals_enum.html", null ],
+        [ "Valeurs énumérées", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", "globals_defs" ]
       ] ]
     ] ]
   ] ]
@@ -46,9 +60,14 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"structCollider.html#ab722283ddfa6cf0a4ffc53b36080ad8a",
+"unity_8h.html#a0d9f940668eede2a315bfd0cfce8888b",
+"unity_8h.html#a953a682e42289d25566f0a12f73a397a",
+"unity__internals_8h.html#a252913f7a48b4e33b2afcdb02c3e2161",
+"unity__internals_8h.html#adc3360cce0bd6b65803cc21878d378d1"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
+var SYNCOFFMSG = 'cliquez pour activer la synchronisation du panel';
+var LISTOFALLMEMBERS = 'Liste de tous les membres';

@@ -1,8 +1,8 @@
 var fish__controller_8h =
 [
     [ "FishPerception", "structFishPerception.html", "structFishPerception" ],
-    [ "fish_choose_action", "fish__controller_8h.html#aa9aa929cf7bdb2c356074e3ef7416947", null ],
-    [ "Rules_alignment", "fish__controller_8h.html#a78223da69cf360f8913514e96fab860a", null ],
-    [ "Rules_cohesion", "fish__controller_8h.html#aaf9dceb9325ac916e391560daf5356a2", null ],
-    [ "Rules_separation", "fish__controller_8h.html#a1afeb90599c6f95cdddd0332798d1020", null ]
+    [ "fish_choose_action", "fish__controller_8h.html#a4f8d79b1283fca563c5a0aa748e6d9a9", null ],
+    [ "Rules_alignment", "fish__controller_8h.html#af42ccf9e03e3ef021ad9754f1eec220e", null ],
+    [ "Rules_cohesion", "fish__controller_8h.html#a9cbd98c6406bd67d2296c4878e625eaf", null ],
+    [ "Rules_separation", "fish__controller_8h.html#af97ce461e75310584c00c92a7e0cb1a3", null ]
 ];
