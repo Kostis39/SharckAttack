@@ -61,6 +61,16 @@ void fish_to_shark_perception(Fish *fish, World *world,
 void fish_neighbor_perception(Fish *fish, World *world,
                               FishPerception *perception, int *nb_align,
                               int *nb_cohes) {
+    /**
+     * @brief fish_neighbor_perception donne la percpetion des voisins de fish
+     * @param fish le poisson
+     * @param world le monde
+     * @param perception la perception actuelle du poisson
+     * @param nb_align pointeur vers le nombre de poissons dans la zone
+     * d'alignement
+     * @param nb_align pointeur vers le nombre de poissons dans la zone de
+     * cohésion
+     * */
 
     float separation_limit = fish->radius_separation;
     float alignment_limit = separation_limit + fish->radius_alignement;
@@ -198,7 +208,7 @@ void Get_shark_perception(Shark *shark, World *world,
 }
 
 /**
- * @brief Calcul combien de poissons sont mangé, et mange les.
+ * @brief Calcule combien de poissons sont mangés, et les mange.
  *
  * @param world Le monde où ce passe l'action.
  * @return int Le nombre de poisson mangé.
@@ -262,6 +272,10 @@ void UpdateWorld(World *world, World *tmp_world) {
 }
 
 void Game_step(World *world) {
+    /**
+     * @brief réalise une itération du jeu
+     * @param world le monde à itérer
+     * */
     World tmp_world;
     tmp_world.width = world->width;
     tmp_world.height = world->height;
