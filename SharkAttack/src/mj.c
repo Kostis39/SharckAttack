@@ -235,6 +235,9 @@ int handle_shark_eat(World *world) {
 
 void UpdateWorld(World *world, World *tmp_world) {
     FishPerception *perception = malloc(sizeof(FishPerception));
+    if (!perception)
+        return;
+
     for (int i = 0; i < world->nb_fish; i++) {
         // Copie de l'état actuel
         tmp_world->fishes[i] = world->fishes[i];
@@ -255,21 +258,26 @@ void UpdateWorld(World *world, World *tmp_world) {
     *tmp_world->shark = *world->shark;
 
     SharkPerception *shark_perception = malloc(sizeof(SharkPerception));
+    if (!shark_perception)
+        return;
+
     Get_shark_perception(world->shark, world, shark_perception);
 
     Need_trajectory_growing(world->trajectory);
-    StepTrajectory step_trajectory =
-        world->trajectory->steps[world->trajectory->length - 1];
+    StepTrajectory *step_trajectory =
+        &world->trajectory->steps[world->trajectory->length];
 
     Vector shark_action = shark_choose_action(
-        shark_perception, world->theta_shark, &step_trajectory, world->sigma);
+        shark_perception, world->theta_shark, step_trajectory, world->sigma);
 
     free(shark_perception);
 
     Shark_apply_action(tmp_world->shark, shark_action);
 
     int nb_fish_ate = handle_shark_eat(tmp_world);
-    step_trajectory.reward = Shark_reward(nb_fish_ate);
+    step_trajectory->reward = Shark_reward(nb_fish_ate);
+
+    world->trajectory->length++;
 }
 
 void Game_step(World *world) {
@@ -282,6 +290,7 @@ void Game_step(World *world) {
     tmp_world.height = world->height;
     tmp_world.nb_fish = world->nb_fish;
     tmp_world.fish_eaten = world->fish_eaten;
+    tmp_world.trajectory = world->trajectory;
 
     tmp_world.fishes = calloc(tmp_world.nb_fish, sizeof(Fish));
     if (!tmp_world.fishes) {
@@ -307,4 +316,5 @@ void Game_step(World *world) {
     free(world->shark); // 1. Libérer l'ancien requin
     world->shark = tmp_world.shark;
     world->fish_eaten = tmp_world.fish_eaten;
+    world->trajectory = tmp_world.trajectory;
 }

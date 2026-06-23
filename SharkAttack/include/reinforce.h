@@ -31,6 +31,7 @@ typedef struct {
 typedef struct {
     int nb_gen;
     int nb_game;
+    int nb_occurrence;
     float alpha;
     float gamma;
     float sigma;
@@ -54,4 +55,6 @@ void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
 Gradient Gradient_zero();
 
 Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters);
+
+void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters);
 #endif
