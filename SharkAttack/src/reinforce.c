@@ -36,3 +36,20 @@ int Need_growing(Trajectory *trajectory) {
         return 0;
     }
 }
+
+/**
+ * @brief Ajout un état supplémentaire à notre trajectoire.
+ */
+void Add_step(Trajectory *trajectory, Vector state, Vector action,
+              float reward) {
+    int i = trajectory->length;
+    trajectory->steps[i].state = state;
+    trajectory->steps[i].action = action;
+    trajectory->steps[i].reward = reward;
+    ++trajectory->length;
+}
+
+void Destroy_Trajectory(Trajectory *trajectory) {
+    free(trajectory->steps);
+    free(trajectory);
+}

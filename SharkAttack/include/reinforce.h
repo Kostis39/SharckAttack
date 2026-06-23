@@ -19,6 +19,11 @@ typedef struct {
     int capacity;     /**< Capicité maximale d'une trajectoire */
 } Trajectory;
 
-int Need_growing(Trajectory *trajectory);
+Trajectory *Init_trajectory();
+void Destroy_Trajectory(Trajectory *trajectory);
+void Add_step(Trajectory *trajectory, Vector state, Vector action,
+              float reward);
+
+int Need_trajectory_growing(Trajectory *trajectory);
 
 #endif
