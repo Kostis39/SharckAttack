@@ -1,0 +1,38 @@
+#include "reinforce.h"
+
+Trajectory *Init_trajectory() {
+    Trajectory *new_trajectory = calloc(1, sizeof(Trajectory));
+    if (new_trajectory == NULL)
+        return NULL;
+    new_trajectory->length = 0;
+    new_trajectory->lenght_alloc = TRAJECTORY_LENGHT_ALLOC;
+    new_trajectory->capacity = TRAJECTORY_CAPACITY;
+    new_trajectory->steps =
+        calloc(new_trajectory->lenght_alloc, sizeof(StepTrajectory));
+    return new_trajectory;
+}
+
+/**
+ * @brief Augmente la taille mémoire de la liste steps de trajectory si la
+ * mémoire précédement alloué est pleinne.
+ *
+ * @param trajectory La trajectoire que l'on doit modifier (ajouter de la place
+ * mémoire à steps)
+ * @return int 1: Si il y a eu modification de la mémoire (realloc) 0 : sinon
+ */
+int Need_growing(Trajectory *trajectory) {
+    if (trajectory->length == trajectory->lenght_alloc) {
+        int new_lenght_alloc =
+            trajectory->lenght_alloc + TRAJECTORY_LENGHT_ALLOC;
+        trajectory->lenght_alloc = (new_lenght_alloc < trajectory->capacity)
+                                       ? new_lenght_alloc
+                                       : trajectory->capacity;
+        trajectory->steps = (StepTrajectory *)realloc(
+            trajectory->steps,
+            (trajectory->lenght_alloc) * sizeof(StepTrajectory));
+        assert(trajectory->steps != NULL);
+        return 1;
+    } else {
+        return 0;
+    }
+}
