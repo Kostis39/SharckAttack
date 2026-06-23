@@ -61,6 +61,16 @@ void fish_to_shark_perception(Fish *fish, World *world,
 void fish_neighbor_perception(Fish *fish, World *world,
                               FishPerception *perception, int *nb_align,
                               int *nb_cohes) {
+    /**
+     * @brief fish_neighbor_perception donne la percpetion des voisins de fish
+     * @param fish le poisson
+     * @param world le monde
+     * @param perception la perception actuelle du poisson
+     * @param nb_align pointeur vers le nombre de poissons dans la zone
+     * d'alignement
+     * @param nb_align pointeur vers le nombre de poissons dans la zone de
+     * cohésion
+     * */
 
     float separation_limit = fish->radius_separation;
     float alignment_limit = separation_limit + fish->radius_alignement;
@@ -198,7 +208,7 @@ void Get_shark_perception(Shark *shark, World *world,
 }
 
 /**
- * @brief Calcul combien de poissons sont mangé, et mange les.
+ * @brief Calcule combien de poissons sont mangés, et les mange.
  *
  * @param world Le monde où ce passe l'action.
  * @return int Le nombre de poisson mangé.
@@ -235,7 +245,7 @@ void UpdateWorld(World *world, World *tmp_world) {
 
         get_fish_perception(&world->fishes[i], world, perception);
 
-        Vector action = fish_choose_action(perception, world->rules_set_fish);
+        Vector action = fish_choose_action(perception, world->theta_fish);
 
         fish_apply_action(&tmp_world->fishes[i], action);
     }
@@ -248,7 +258,7 @@ void UpdateWorld(World *world, World *tmp_world) {
     Get_shark_perception(world->shark, world, shark_perception);
 
     Vector shark_action =
-        shark_choose_action(shark_perception, world->rules_set_shark);
+        shark_choose_action(shark_perception, world->theta_shark);
 
     free(shark_perception);
 
@@ -256,12 +266,15 @@ void UpdateWorld(World *world, World *tmp_world) {
 
     int nb_fish_ate = handle_shark_eat(tmp_world);
     int reward = Shark_reward(nb_fish_ate);
-
     Need_trajectory_growing(world->trajectory);
     Add_step(world->trajectory, world->shark->pos, shark_action, reward);
 }
 
 void Game_step(World *world) {
+    /**
+     * @brief réalise une itération du jeu
+     * @param world le monde à itérer
+     * */
     World tmp_world;
     tmp_world.width = world->width;
     tmp_world.height = world->height;

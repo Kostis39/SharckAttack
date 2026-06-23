@@ -1,19 +1,19 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
-Vector shark_compute_mu(SharkTheta *theta, SharkPhi *phi) {
+Vector shark_compute_mu(SharkTheta theta, SharkPhi *phi) {
     Vector mu = Vector_init();
 
-    if (theta == NULL || phi == NULL) {
+    if (phi == NULL) {
         return mu;
     }
 
-    mu.x = (1.0f * theta->biais) + (phi->center.x * theta->center) +
-           (phi->alignment.x * theta->alignment) +
-           (phi->pursuit.x * theta->pursuit);
+    mu.x = (1.0f * theta.biais) + (phi->center.x * theta.center) +
+           (phi->alignment.x * theta.alignment) +
+           (phi->pursuit.x * theta.pursuit);
 
-    mu.y = (1.0f * theta->biais) + (phi->center.y * theta->center) +
-           (phi->alignment.y * theta->alignment) +
-           (phi->pursuit.y * theta->pursuit);
+    mu.y = (1.0f * theta.biais) + (phi->center.y * theta.center) +
+           (phi->alignment.y * theta.alignment) +
+           (phi->pursuit.y * theta.pursuit);
 
     return mu;
 }
@@ -64,7 +64,7 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
-Vector shark_choose_action(SharkPerception *perception, SharkTheta *theta) {
+Vector shark_choose_action(SharkPerception *perception, SharkTheta theta) {
     if (!perception)
         return Vector_init();
 

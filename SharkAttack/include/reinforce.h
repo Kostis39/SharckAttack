@@ -36,4 +36,6 @@ int Need_trajectory_growing(Trajectory *trajectory);
 
 void Trajectory_print(Trajectory *trajectory);
 
+void New_step(StepTrajectory *step, Vector state, Vector action, float reward);
+
 #endif

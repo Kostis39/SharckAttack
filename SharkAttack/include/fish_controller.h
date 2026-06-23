@@ -3,8 +3,8 @@
 
 #include "config.h"
 #include "fish.h"
-#include "rules_set.h"
 #include "shark.h"
+#include "theta_set.h"
 #include "vector.h"
 
 /** @struct FishPerception
