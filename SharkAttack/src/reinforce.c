@@ -63,6 +63,7 @@ void Trajectory_destroy(Trajectory *trajectory) {
  * @param trajectory La trajectoire à afficher
  */
 void Trajectory_print(Trajectory *trajectory) {
+    printf("taille : %d\n", trajectory->length);
     for (int i = 0; i < trajectory->length; ++i) {
         if (trajectory->steps[i].reward > 0) {
             printf("Step: %d phi: (%f, %f, %f, %f, %f, %f) "
@@ -128,13 +129,15 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
     Gradient D = Gradient_zero();
 
     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
-                              hyperparameters.sigma);
+                              hyperparameters.sigma, false);
 
-    for (int i = 0;
-         (world->nb_fish - world->fish_eaten != 0) && i < NB_OCCURRENCE; i++) {
+    for (int i = 0; (world->nb_fish - world->fish_eaten != 0) &&
+                    i < hyperparameters.nb_occurrence;
+         i++) {
         Game_step(world);
     }
     Trajectory trajectory = *world->trajectory;
+    // pour afficher la trajectoir : Trajectory_print(&trajectory);
 
     for (int u = 0; u < trajectory.length; u++) {
         int t = trajectory.length - 1 - u;
@@ -159,4 +162,39 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
     World_destroy(world);
 
     return D;
+}
+
+void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters) {
+
+    for (int k = 0; k < hyperparameters.nb_gen; k++) {
+
+        Gradient D_total = Gradient_zero();
+
+        // générer N trajectoires et accumuler leur gradient
+        for (int i = 0; i < hyperparameters.nb_game; i++) {
+            Gradient D_i = Generate_gradient(
+                *theta, hyperparameters); // joue 1 trajectoire et calcule sa
+                                          // contribution
+            D_total.x = Vector_rule_add(D_total.x, D_i.x);
+            D_total.y = Vector_rule_add(D_total.y, D_i.y);
+        }
+
+        // estimateur du gradient
+        Gradient grad;
+        grad.x = Vector_rule_scaled(D_total.x, 1.0f / hyperparameters.nb_game);
+        grad.y = Vector_rule_scaled(D_total.y, 1.0f / hyperparameters.nb_game);
+
+        // mise à jour de theta
+        theta->x = Vector_rule_add(
+            theta->x, Vector_rule_scaled(grad.x, hyperparameters.alpha));
+        theta->y = Vector_rule_add(
+            theta->y, Vector_rule_scaled(grad.y, hyperparameters.alpha));
+
+        printf("======================\n");
+        printf("itération %d / %d\n", k + 1, hyperparameters.nb_gen);
+        printf("theta_x = (%f, %f, %f)\n", theta->x.center, theta->x.alignment,
+               theta->x.pursuit);
+        printf("theta_y = (%f, %f, %f)\n", theta->y.center, theta->y.alignment,
+               theta->y.pursuit);
+    }
 }
