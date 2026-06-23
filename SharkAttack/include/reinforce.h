@@ -10,7 +10,6 @@
 #include <stdlib.h>
 
 typedef struct StepTrajectory {
-    Vector mu;
     SharkPhi phi;
     Vector action;
     float reward;
@@ -25,13 +24,21 @@ typedef struct {
 } Trajectory;
 
 typedef struct {
-    Vector gradX; /**< Gradient pour x */
-    Vector gradY; /**< Gradient pour y */
+    VectorRule grad_x; /**< Gradient pour x */
+    VectorRule grad_y; /**< Gradient pour y */
 } Gradient;
+
+typedef struct {
+    int nb_gen;
+    int nb_game;
+    float alpha;
+    float gamma;
+    float sigma;
+} Hyperparameters;
 
 Trajectory *Trajectory_init();
 void Trajectory_destroy(Trajectory *trajectory);
-void Add_step(Trajectory *trajectory, Vector mu, SharkPhi phi, Vector action,
+void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action,
               float reward);
 
 int Need_trajectory_growing(Trajectory *trajectory);
@@ -39,9 +46,12 @@ int Need_trajectory_growing(Trajectory *trajectory);
 void Trajectory_print(Trajectory *trajectory);
 void StepTrajectory_print(StepTrajectory step);
 
-void New_step(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
-              float reward);
+void New_step(StepTrajectory *step, SharkPhi phi, Vector action, float reward);
 
-void Step_update(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
+void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
                  float reward);
+
+Gradient Gradient_zero();
+
+Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters);
 #endif
