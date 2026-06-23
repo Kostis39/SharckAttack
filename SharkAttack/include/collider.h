@@ -1,6 +1,7 @@
 #ifndef COLLIDER_H
 #define COLLIDER_H
 
+#include "utils.h"
 #include "vector.h"
 #include <stdbool.h>
 
@@ -12,10 +13,9 @@ typedef struct {
 
 #endif
 
-float random_float(float min, float max);
 Collider Instantiate_collider(Vector pos, float w, float h);
-Collider *Colliders_random_array(int x_max, int y_max, int w_max,
-                                 int h_max, int count);
+Collider *Colliders_random_array(int x_max, int y_max, int w_max, int h_max,
+                                 int count);
 Collider *Colliders_copy_array(Collider *collider, int count);
 
 int Colliders_destroy_array(Collider *array);

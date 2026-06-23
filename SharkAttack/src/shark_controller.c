@@ -1,5 +1,6 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
+
 Vector shark_compute_mu(SharkTeta *theta, SharkPhi *phi) {
     Vector mu = Vector_init();
 
@@ -16,25 +17,6 @@ Vector shark_compute_mu(SharkTeta *theta, SharkPhi *phi) {
            (phi->pursuit.y * theta->pursuit);
 
     return mu;
-}
-
-void box_muller_standard(float *x, float *y) {
-    // 1. rand() / RAND_MAX donne un nombre uniforme entre 0 et 1 (noté rand(1)
-    // dans l'algo)
-    float u1 = (float)rand() / (float)RAND_MAX;
-    float u2 = (float)rand() / (float)RAND_MAX;
-
-    // Sécurité pour éviter log(0) qui tend vers l'infini -inf
-    if (u1 < 1e-7f)
-        u1 = 1e-7f;
-
-    // 2. Application directe de l'algorithme fourni
-    float t = 2.0f * (float)PI * u2; // Thêta : uniforme sur [0, 2π]
-    float s = -2.0f * logf(u1);      // S = R^2 : suit une loi exponentielle
-
-    // 3. Transformation en coordonnées cartésiennes pour obtenir X et Y
-    *x = sqrtf(s) * cosf(t);
-    *y = sqrtf(s) * sinf(t);
 }
 
 Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey_visible) {
@@ -121,11 +103,11 @@ Vector shark_choose_action(SharkPerception *perception, SharkTeta *teta) {
         // 4. Combinaison pondérée des vecteurs
         Vector mu = shark_compute_mu(teta, &phi);
 
-        float noise_x, noise_y;
-        box_muller_standard(&noise_x, &noise_y);
+        Vector noise;
+        box_muller_standard(&noise);
 
-        action.x = mu.x + noise_x * 5;
-        action.y = mu.y + noise_y * 5;
+        action.x = mu.x + noise.x * 5;
+        action.y = mu.y + noise.y * 5;
     }
 
     return action;

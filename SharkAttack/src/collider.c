@@ -3,13 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-float random_float(float min, float max) {
-    /**
-     * @brief petite fonction auxiliaire pour déterminer un float dans une
-     * range*/
-    return min + ((float)rand()) / ((float)RAND_MAX) * (max - min);
-}
-
 Collider Instantiate_collider(Vector pos, float w, float h) {
     /**
      * @brief Fonction d'instanciation d'objet de collision
@@ -29,8 +22,8 @@ Collider Instantiate_collider(Vector pos, float w, float h) {
     return new_collider;
 }
 
-Collider *Colliders_random_array(int x_max, int y_max, int w_max,
-                                 int h_max, int count) {
+Collider *Colliders_random_array(int x_max, int y_max, int w_max, int h_max,
+                                 int count) {
     /**
      * @brief initialise un tableau de colliders aléatoirement positionnés
      * @param seed graine de l'initialisation aléatoire

@@ -4,6 +4,7 @@
 #include "fish.h"
 #include "rules_set.h"
 #include "shark.h"
+#include "utils.h"
 #include "vector.h"
 
 typedef struct {
