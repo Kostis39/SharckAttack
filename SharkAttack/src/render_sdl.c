@@ -5,11 +5,14 @@
 #include <stdio.h>
 
 #define RENDERED_COLLIDERS 5
+#define SKELETON_FRAMES 45
 
 int g_score = 0;
 int g_gain = 0;
 int g_flash = 0;
 int g_debug_view = 0;
+int g_was_alive[FISH_NB] = {0};
+int g_skeleton_frame[FISH_NB] = {0};
 
 /**
  * @brief convertir float en int
@@ -160,7 +163,7 @@ void Draw_bubbles(SDL_Renderer *r, int width, int height) {
 
 /**
  * @brief dessine de grandes plantes
- * les plantes restent fixées au sol. Seules les extrémités bougent légèrement
+ * les plantes restent fixées au sol, seules les extrémités bougent légèrement
  * avec le temps pour donner un effet naturel sous l'eau
  * @param r renderer sdl utilisé pour dessiner
  * @param width largeur de la fenêtre
@@ -172,7 +175,7 @@ void Draw_sea_plants(SDL_Renderer *r, int width, int height, float time) {
 
     for (int i = 0; i < 5; i++) {
         int x = 80 + i * ((width - 160 )/ 4);
-        int h = 60 + (i % 2) * 18;
+        int h = 40 + (i % 2) * 18;
         int sway = to_int(sinf(time * 1.2f + i) * 6.0f);
 
         /* base sombre */
@@ -836,6 +839,54 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shar
 } 
 
 /**
+ * @brief dessine temporairement le squelette d'un poisson mort
+ * lorsqu'un poisson vient de mourir, la fct dessine un petit squelette à sa position, orienté
+ * selon sa dernière vitesse connue, le paramètre frame permet de faire descendre
+ * légèrement le squelette au fil du temps pour créer une courte animation 
+ * @param display struct contenant le render sdl
+ * @param fish poisson mort dont on veut afficher le squelette
+ * @param frame nbr d'images restantes pour l'animation
+ */
+void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
+    SDL_Renderer *r = display->renderer;
+    Vector dir = direction_or_default(fish->velocity);
+    Vector side = {-dir.y, dir.x};
+
+    int x = to_int(fish->position.x);
+    int y = to_int(fish->position.y + (SKELETON_FRAMES - frame) / 2);
+    int size = FISH_SIZE;
+
+    SDL_SetRenderDrawColor(r, 220, 240, 230, 170);
+
+    int head_x = to_int(x + dir.x * size * 0.6f);
+    int head_y = to_int(y + dir.y * size * 0.6f);
+    int tail_x = to_int(x - dir.x * size * 1.4f);
+    int tail_y = to_int(y - dir.y * size * 1.4f);
+
+    Draw_filled_triangle(r,
+                         head_x, head_y,
+                         to_int(x + side.x * size * 0.4f),
+                         to_int(y + side.y * size * 0.4f),
+                         to_int(x - side.x * size * 0.4f),
+                         to_int(y - side.y * size * 0.4f));
+
+    SDL_RenderDrawLine(r, x, y, tail_x, tail_y);
+
+    for (int k = 1; k <= 4; k++) {
+        int bx = x + (tail_x - x) * k / 5;
+        int by = y + (tail_y - y) * k / 5;
+
+        SDL_RenderDrawLine(r, bx, by,
+                           to_int(bx + side.x * 6),
+                           to_int(by + side.y * 6));
+
+        SDL_RenderDrawLine(r, bx, by,
+                           to_int(bx - side.x * 6),
+                           to_int(by - side.y * 6));
+    }
+}
+
+/**
  * @brief dessine le monde
  *
  * @param display struct contenant le renderer
@@ -843,7 +894,6 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shar
  * @param nb_fish nbr de poissons dans le tableau
  * @param shark requin du monde
  */
-
 void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     if (display == NULL || display->renderer == NULL)
         return;
@@ -853,6 +903,12 @@ void Draw_world(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     for (int i = 0; i < nb_fish; i++) {
         Draw_fish(display, &fishes[i]);
     }
+    for (int i = 0; i < nb_fish && i < FISH_NB; i++) {
+    if (g_skeleton_frame[i] > 0) {
+        Draw_fish_skeleton(display, &fishes[i], g_skeleton_frame[i]);
+        g_skeleton_frame[i]--;
+    }
+}
 
     int width = 0;
     int height = 0;
@@ -904,6 +960,13 @@ void Render_world(SDLDisplay *display, World *world) {
 
     SDL_PumpEvents();
     g_debug_view = SDL_GetKeyboardState(NULL)[SDL_SCANCODE_V];
+
+    for (int i = 0; i < world->nb_fish && i < FISH_NB; i++) {
+        if (g_was_alive[i] && !world->fishes[i].is_alive)
+            g_skeleton_frame[i] = SKELETON_FRAMES;
+
+        g_was_alive[i] = world->fishes[i].is_alive;
+    }
 
     Draw_world(display, world->fishes, world->nb_fish, world->shark);
 }
