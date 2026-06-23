@@ -31,10 +31,11 @@ typedef struct {
     RulesSetFish *theta_fish; /**< Ensemble de règles pour les poissons */
     SharkTheta theta_shark;   /**< Ensemble de règles pour le requin */
     Trajectory *trajectory;
+    float sigma;
 } World;
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
-                  SharkTheta theta_shark);
+                  SharkTheta theta_shark, float sigma);
 void World_destroy(World *world);
 void World_update(World *world, World *world_tmp);
 

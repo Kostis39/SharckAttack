@@ -262,7 +262,7 @@ void UpdateWorld(World *world, World *tmp_world) {
         world->trajectory->steps[world->trajectory->length - 1];
 
     Vector shark_action = shark_choose_action(
-        shark_perception, world->theta_shark, &step_trajectory);
+        shark_perception, world->theta_shark, &step_trajectory, world->sigma);
 
     free(shark_perception);
 
@@ -270,7 +270,6 @@ void UpdateWorld(World *world, World *tmp_world) {
 
     int nb_fish_ate = handle_shark_eat(tmp_world);
     step_trajectory.reward = Shark_reward(nb_fish_ate);
-    StepTrajectory_print(step_trajectory);
 }
 
 void Game_step(World *world) {

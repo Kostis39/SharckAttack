@@ -24,6 +24,6 @@ typedef struct {
 } SharkPerception;
 
 Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
-                           StepTrajectory *step_trajectory);
+                           StepTrajectory *step_trajectory, float sigma);
 
 #endif

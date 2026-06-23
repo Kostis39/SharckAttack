@@ -26,7 +26,8 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
 
     SharkTheta *shark_theta = SharkTheta_init();
 
-    game->world = World_init(width, height, nb_fish, nb_collider, *shark_theta);
+    game->world =
+        World_init(width, height, nb_fish, nb_collider, *shark_theta, 0);
     if (!game->world) {
         Destroy_sdl_display(&game->display);
         return false;
@@ -101,7 +102,7 @@ void Game_run_terminal() {
 
     SharkTheta *shark_theta = SharkTheta_init();
     World *world =
-        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, *shark_theta);
+        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, *shark_theta, 0);
 
     for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                 i < NB_OCCURRENCE && !terminal_interrupted;
@@ -114,37 +115,22 @@ void Game_run_terminal() {
         printf("Boucle interrompue par l'utilisateur.\n");
     }
     Trajectory_print(world->trajectory);
-    printf("Iteration: %d\n"
-           "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
-           "Cohesion: %f Shark "
-           "Avoidance: %f\n"
-           "Shark : Position: (%f, %f) Center: (%f, %f) Alignement: (%f, %f) "
-           "Pursuit: (%f, %f)\n",
-           i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
-           world->theta_fish->alignment, world->theta_fish->cohesion,
-           world->theta_fish->shark_avoidance, world->shark->pos.x,
-           world->shark->pos.y, world->theta_shark.center.x,
-           world->theta_shark.center.y, world->theta_shark.alignment.x,
-           world->theta_shark.alignment.y, world->theta_shark.pursuit.x,
-           world->theta_shark.pursuit.y);
+    printf(
+        "Iteration: %d\n"
+        "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
+        "Cohesion: %f Shark "
+        "Avoidance: %f\n"
+        "Shark : Position: (%f, %f) Center: (%f, %f) Alignement: (%f, %f) "
+        "Pursuit: (%f, %f)\n",
+        i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
+        world->theta_fish->alignment, world->theta_fish->cohesion,
+        world->theta_fish->shark_avoidance, world->shark->pos.x,
+        world->shark->pos.y, world->theta_shark.theta_x.center,
+        world->theta_shark.theta_y.center, world->theta_shark.theta_x.alignment,
+        world->theta_shark.theta_y.alignment,
+        world->theta_shark.theta_x.pursuit, world->theta_shark.theta_y.pursuit);
     World_destroy(world);
 }
-
-// Trajectory Generate_trajectory(SharkTheta theta) {
-//     int i = 0;
-
-//     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta);
-
-//     for (i = 0; (world->nb_fish - world->fish_eaten != 0) && i <
-//     NB_OCCURRENCE;
-//          i++) {
-//         Game_step(world);
-//     }
-
-//     World_destroy(world);
-
-//     return;
-// }
 
 void Game_destroy(Game *game) {
     if (!game)
