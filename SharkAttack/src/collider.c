@@ -49,7 +49,7 @@ Collider *Colliders_random_array(int x_max, int y_max, int w_max, int h_max,
         current_pos.y = random_float(0, y_max);
 
         array[i] = Instantiate_collider(current_pos, cur_w,
-                                        cur_h); // collider d'indice i
+                                        cur_w); // collider d'indice i
     }
     return array;
 }

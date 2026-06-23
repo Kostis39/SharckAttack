@@ -53,7 +53,7 @@
 #define RANDOM_SEED 42
 
 #define COLLIDER_RATIO                                                         \
-    10 /* mesure au plus un dixième de la largeur du                          \
+    5 /* mesure au plus un dixième de la largeur du                          \
 monde*/
 #define COLLIDERS_NB 5
 
