@@ -515,51 +515,34 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
     Draw_circle_outline(r, to_int(shark->pos.x), to_int(shark->pos.y),
                         SHARK_ATTACK_RANGE); 
     
-    /* Rectangles des colliders : même taille que la mine dessinée */
+     /* Rectangles des vrais colliders du monde */
     if (colliders != NULL && nb_colliders > 0) {
-        int limit = nb_colliders;
-
-        if (limit > RENDERED_COLLIDERS)
-            limit = RENDERED_COLLIDERS;
-
         SDL_SetRenderDrawColor(r, 255, 80, 200, 160);
 
-        for (int i = 0; i < limit; i++) {
+        for (int i = 0; i < nb_colliders; i++) {
             int x1 = to_int(colliders[i].bounding_box[0].x);
             int y1 = to_int(colliders[i].bounding_box[0].y);
             int x2 = to_int(colliders[i].bounding_box[1].x);
             int y2 = to_int(colliders[i].bounding_box[1].y);
 
-            int cx = (x1 + x2) / 2;
-            int cy = (y1 + y2) / 2;
+            if (x2 < x1) {
+                int tmp = x1;
+                x1 = x2;
+                x2 = tmp;
+            }
 
-            int w = x2 - x1;
-            int h = y2 - y1;
+            if (y2 < y1) {
+                int tmp = y1;
+                y1 = y2;
+                y2 = tmp;
+            }
 
-            if (w < 0)
-                w = -w;
-            if (h < 0)
-                h = -h;
-                
-            int radius = (w < h ? w : h) / 2;
-
-            if (radius < 10)
-                radius = 10;
-
-            if (radius > 14)
-                radius = 14;
-
-            SDL_Rect rect = {
-                cx - radius,
-                cy - radius,
-                radius * 2,
-                radius * 2
-            };
+            SDL_Rect rect = {x1, y1, x2 - x1, y2 - y1};
 
             SDL_RenderDrawRect(r, &rect);
 
-            Draw_filled_circle(r, cx - radius, cy - radius, 2);
-            Draw_filled_circle(r, cx + radius, cy + radius, 2);
+            Draw_filled_circle(r, x1, y1, 2);
+            Draw_filled_circle(r, x2, y2, 2);
         }
     }
 }
