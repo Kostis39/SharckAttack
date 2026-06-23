@@ -28,7 +28,7 @@ typedef struct {
     int nb_colliders;
     int fish_eaten; /**< Nombre de poissons mangés par le requin */
     RulesSetFish *rules_set_fish; /**< Ensemble de règles pour les poissons */
-    SharkTeta *rules_set_shark;   /**< Ensemble de règles pour le requin */
+    SharkTheta *rules_set_shark;  /**< Ensemble de règles pour le requin */
 } World;
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders);
