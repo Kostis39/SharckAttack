@@ -105,8 +105,8 @@ Vector shark_choose_action(SharkPerception *perception, SharkTeta *teta) {
 
         Vector noise = box_muller_standard();
 
-        action.x = mu.x + noise.x * 5;
-        action.y = mu.y + noise.y * 5;
+        action.x = mu.x + noise.x * SIGMA;
+        action.y = mu.y + noise.y * SIGMA;
     }
 
     return action;

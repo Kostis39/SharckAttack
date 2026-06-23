@@ -3,6 +3,8 @@
 
 #define PI 3.14159265358979323846
 
+#define SIGMA 5
+
 /* Population */
 #define FISH_NB 200
 
