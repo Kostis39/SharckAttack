@@ -37,6 +37,7 @@ void Add_step(Trajectory *trajectory, Vector mu, SharkPhi phi, Vector action,
 int Need_trajectory_growing(Trajectory *trajectory);
 
 void Trajectory_print(Trajectory *trajectory);
+void StepTrajectory_print(StepTrajectory step);
 
 void New_step(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
               float reward);
