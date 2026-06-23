@@ -1,0 +1,11 @@
+# Hyperparameters
+gamma 0.99
+sigma 0.5
+alpha 0.1
+nb_gen 100
+nb_game 10
+nb_occurrence 1000
+
+# Theta
+theta_x 1.0 1.0 1.0
+theta_y 1.0 1.0 1.0
