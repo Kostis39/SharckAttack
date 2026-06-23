@@ -2,8 +2,8 @@
 #define AGENT_SHARK_H
 
 #include "fish.h"
-#include "rules_set.h"
 #include "shark.h"
+#include "theta_set.h"
 #include "utils.h"
 #include "vector.h"
 
@@ -32,6 +32,6 @@ typedef struct {
     Vector pursuit;   /**< Vecteur résultat de la règle pursuit */
 } SharkPhi;
 
-Vector shark_choose_action(SharkPerception *perception, SharkTheta *rules_set);
+Vector shark_choose_action(SharkPerception *perception, SharkTheta *theta);
 
 #endif

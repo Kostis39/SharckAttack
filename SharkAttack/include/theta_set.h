@@ -1,5 +1,5 @@
-#ifndef RULES_SET_H
-#define RULES_SET_H
+#ifndef THETA_SET_H
+#define THETA_SET_H
 #include "config.h"
 #include <stdlib.h>
 
@@ -21,7 +21,7 @@ typedef struct {
 RulesSetFish *RulesSetFish_init();
 SharkTheta *SharkTheta_init();
 
-void RulesSetFish_destroy(RulesSetFish *rules_set);
-void SharkTheta_destroy(SharkTheta *rules_set);
+void RulesSetFish_destroy(RulesSetFish *theta);
+void SharkTheta_destroy(SharkTheta *theta);
 
 #endif

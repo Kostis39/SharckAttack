@@ -62,11 +62,11 @@ Vector Rules_avoid_shark(Fish *self, Vector dist_shark) {
     return Vector_scale(dist_shark, intensity);
 }
 
-Vector fish_choose_action(FishPerception *p, RulesSetFish *rules_set) {
+Vector fish_choose_action(FishPerception *p, RulesSetFish *theta) {
     /** @brief Choix de la direction du poisson comme une combinaison linéaire
      * de vecteurs
      * @param p un pointeur vers la perception du poisson
-     * @param rules_set ensemble de paramètres quantifiant le comportement du
+     * @param theta ensemble de paramètres quantifiant le comportement du
      * poisson
      * @return weighted_velocity vecteur vitesse du poisson comprenant son
      * comportement
@@ -84,21 +84,20 @@ Vector fish_choose_action(FishPerception *p, RulesSetFish *rules_set) {
 
     // Combinaison des forces
     Vector weighted_velocity = Vector_init();
-    weighted_velocity = Vector_add(
-        weighted_velocity, Vector_scale(separation, rules_set->separation));
-    weighted_velocity = Vector_add(
-        weighted_velocity, Vector_scale(alignement, rules_set->alignment));
     weighted_velocity = Vector_add(weighted_velocity,
-                                   Vector_scale(cohesion, rules_set->cohesion));
+                                   Vector_scale(separation, theta->separation));
+    weighted_velocity = Vector_add(weighted_velocity,
+                                   Vector_scale(alignement, theta->alignment));
+    weighted_velocity =
+        Vector_add(weighted_velocity, Vector_scale(cohesion, theta->cohesion));
 
     weighted_velocity = Vector_add(weighted_velocity,
                                    Vector_scale(repulsion, REPULSION_FACTOR));
+    weighted_velocity = Vector_add(
+        weighted_velocity, Vector_scale(avoid_shark, theta->shark_avoidance));
     weighted_velocity =
         Vector_add(weighted_velocity,
-                   Vector_scale(avoid_shark, rules_set->shark_avoidance));
-    weighted_velocity =
-        Vector_add(weighted_velocity,
-                   Vector_scale(collider_avoidance, rules_set->collider_avoidance));
+                   Vector_scale(collider_avoidance, theta->collider_avoidance));
 
     return weighted_velocity;
 }

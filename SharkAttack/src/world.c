@@ -12,8 +12,8 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders) {
         Colliders_random_array(width, height, width / COLLIDER_RATIO,
                                height / COLLIDER_RATIO, nb_colliders);
     new_world->fish_eaten = 0;
-    new_world->rules_set_fish = RulesSetFish_init();
-    new_world->rules_set_shark = SharkTheta_init();
+    new_world->theta_fish = RulesSetFish_init();
+    new_world->theta_shark = SharkTheta_init();
 
     return new_world;
 }
@@ -22,8 +22,8 @@ void World_destroy(World *world) {
     Fish_destroy_array(world->fishes);
     Shark_destroy(world->shark);
     Colliders_destroy_array(world->colliders);
-    RulesSetFish_destroy(world->rules_set_fish);
-    SharkTheta_destroy(world->rules_set_shark);
+    RulesSetFish_destroy(world->theta_fish);
+    SharkTheta_destroy(world->theta_shark);
     free(world);
     world = NULL;
 }
