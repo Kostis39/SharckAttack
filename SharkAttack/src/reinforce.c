@@ -64,12 +64,16 @@ void Trajectory_destroy(Trajectory *trajectory) {
 void Trajectory_print(Trajectory *trajectory) {
     for (int i = 0; i < trajectory->length; ++i) {
         if (trajectory->steps[i].reward > 0) {
-            printf("Step: %d mu: (%f, %f) phi: (%f, %f) Action:(%f, %f) "
+            printf("Step: %d mu: (%f, %f) phi: (%f, %f, %f, %f, %f, %f) "
+                   "Action:(%f, %f) "
                    "Reward: %f\n",
                    i, trajectory->steps[i].mu.x, trajectory->steps[i].mu.y,
-                   trajectory->steps[i].phi.center,
-                   trajectory->steps[i].phi.alignment,
-                   trajectory->steps[i].phi.pursuit,
+                   trajectory->steps[i].phi.center.x,
+                   trajectory->steps[i].phi.center.y,
+                   trajectory->steps[i].phi.alignment.x,
+                   trajectory->steps[i].phi.alignment.y,
+                   trajectory->steps[i].phi.pursuit.x,
+                   trajectory->steps[i].phi.pursuit.y,
                    trajectory->steps[i].action.x, trajectory->steps[i].action.y,
                    trajectory->steps[i].reward);
         }

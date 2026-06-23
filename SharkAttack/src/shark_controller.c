@@ -7,13 +7,13 @@ Vector shark_compute_mu(SharkTheta theta, SharkPhi *phi) {
         return mu;
     }
 
-    mu.x = (1.0f * theta.biais) + (phi->center.x * theta.center) +
-           (phi->alignment.x * theta.alignment) +
-           (phi->pursuit.x * theta.pursuit);
+    mu.x = (1.0f * theta.biais.x) + (phi->center.x * theta.center.x) +
+           (phi->alignment.x * theta.alignment.x) +
+           (phi->pursuit.x * theta.pursuit.x);
 
-    mu.y = (1.0f * theta.biais) + (phi->center.y * theta.center) +
-           (phi->alignment.y * theta.alignment) +
-           (phi->pursuit.y * theta.pursuit);
+    mu.y = (1.0f * theta.biais.y) + (phi->center.y * theta.center.y) +
+           (phi->alignment.y * theta.alignment.y) +
+           (phi->pursuit.y * theta.pursuit.y);
 
     return mu;
 }

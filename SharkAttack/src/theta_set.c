@@ -1,5 +1,5 @@
-#include "config.h"
 #include "theta_set.h"
+#include "config.h"
 
 RulesSetFish *RulesSetFish_init() {
     RulesSetFish *theta = malloc(sizeof(RulesSetFish));
@@ -14,10 +14,14 @@ RulesSetFish *RulesSetFish_init() {
 SharkTheta *SharkTheta_init() {
     SharkTheta *theta = malloc(sizeof(SharkTheta));
 
-    theta->biais = BIAIS;
-    theta->center = CENTER;
-    theta->alignment = SHARK_ALIGNEMENT;
-    theta->pursuit = PURSUIT;
+    theta->biais.x = BIAIS;
+    theta->biais.y = BIAIS;
+    theta->center.x = CENTER;
+    theta->center.y = CENTER;
+    theta->alignment.x = SHARK_ALIGNEMENT;
+    theta->alignment.y = SHARK_ALIGNEMENT;
+    theta->pursuit.x = PURSUIT;
+    theta->pursuit.y = PURSUIT;
     return theta;
 }
 
