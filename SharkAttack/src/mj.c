@@ -256,9 +256,6 @@ void UpdateWorld(World *world, World *tmp_world) {
 
     int nb_fish_ate = handle_shark_eat(tmp_world);
     int reward = Shark_reward(nb_fish_ate);
-
-    Need_trajectory_growing(world->trajectory);
-    Add_step(world->trajectory, world->shark->pos, shark_action, reward);
 }
 
 void Game_step(World *world) {
