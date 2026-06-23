@@ -5,11 +5,14 @@
 #include <stdio.h>
 
 #define RENDERED_COLLIDERS 5
+#define SKELETON_FRAMES 45
 
 int g_score = 0;
 int g_gain = 0;
 int g_flash = 0;
 int g_debug_view = 0;
+int g_was_alive[FISH_NB] = {0};
+int g_skeleton_frame[FISH_NB] = {0};
 
 /**
  * @brief convertir float en int
@@ -160,7 +163,7 @@ void Draw_bubbles(SDL_Renderer *r, int width, int height) {
 
 /**
  * @brief dessine de grandes plantes
- * les plantes restent fixées au sol. Seules les extrémités bougent légèrement
+ * les plantes restent fixées au sol, seules les extrémités bougent légèrement
  * avec le temps pour donner un effet naturel sous l'eau
  * @param r renderer sdl utilisé pour dessiner
  * @param width largeur de la fenêtre
