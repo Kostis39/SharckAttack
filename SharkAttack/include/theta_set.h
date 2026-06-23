@@ -12,13 +12,13 @@ typedef struct {
     float collider_avoidance;
 } RulesSetFish;
 typedef struct {
-    VectorRule theta_x;
-    VectorRule theta_y;
+    VectorRule x;
+    VectorRule y;
 } SharkTheta;
 
 typedef struct {
-    VectorRule phi_x;
-    VectorRule phi_y;
+    VectorRule x;
+    VectorRule y;
 } SharkPhi;
 
 RulesSetFish *RulesSetFish_init();

@@ -68,12 +68,12 @@ void Trajectory_print(Trajectory *trajectory) {
             printf("Step: %d phi: (%f, %f, %f, %f, %f, %f) "
                    "Action:(%f, %f) "
                    "Reward: %f\n",
-                   i, trajectory->steps[i].phi.phi_x.center,
-                   trajectory->steps[i].phi.phi_y.center,
-                   trajectory->steps[i].phi.phi_x.alignment,
-                   trajectory->steps[i].phi.phi_y.alignment,
-                   trajectory->steps[i].phi.phi_x.pursuit,
-                   trajectory->steps[i].phi.phi_y.pursuit,
+                   i, trajectory->steps[i].phi.x.center,
+                   trajectory->steps[i].phi.y.center,
+                   trajectory->steps[i].phi.x.alignment,
+                   trajectory->steps[i].phi.y.alignment,
+                   trajectory->steps[i].phi.x.pursuit,
+                   trajectory->steps[i].phi.y.pursuit,
                    trajectory->steps[i].action.x, trajectory->steps[i].action.y,
                    trajectory->steps[i].reward);
         }
@@ -84,10 +84,9 @@ void StepTrajectory_print(StepTrajectory step) {
     printf("phi: (%f, %f, %f, %f, %f, %f) "
            "Action:(%f, %f) "
            "Reward: %f\n",
-           step.phi.phi_x.center, step.phi.phi_y.center,
-           step.phi.phi_x.alignment, step.phi.phi_y.alignment,
-           step.phi.phi_x.pursuit, step.phi.phi_y.pursuit, step.action.x,
-           step.action.y, step.reward);
+           step.phi.x.center, step.phi.y.center, step.phi.x.alignment,
+           step.phi.y.alignment, step.phi.x.pursuit, step.phi.y.pursuit,
+           step.action.x, step.action.y, step.reward);
 }
 
 /**
@@ -111,12 +110,12 @@ void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
 Gradient Gradient_zero() {
     Gradient G;
 
-    G.grad_x.center = 0;
-    G.grad_y.center = 0;
-    G.grad_x.alignment = 0;
-    G.grad_y.alignment = 0;
-    G.grad_x.pursuit = 0;
-    G.grad_y.pursuit = 0;
+    G.x.center = 0;
+    G.y.center = 0;
+    G.x.alignment = 0;
+    G.y.alignment = 0;
+    G.x.pursuit = 0;
+    G.y.pursuit = 0;
 
     return G;
 }
@@ -143,18 +142,18 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
         G = step.reward + hyperparameters.gamma * G;
         GG = pow(hyperparameters.gamma, t) * G;
 
-        mu_x = Dot_product(theta.theta_x, step.phi.phi_x);
-        mu_y = Dot_product(theta.theta_y, step.phi.phi_y);
+        mu_x = Dot_product(theta.x, step.phi.x);
+        mu_y = Dot_product(theta.y, step.phi.y);
 
-        score_x = Vector_rule_scaled(step.phi.phi_x,
+        score_x = Vector_rule_scaled(step.phi.x,
                                      (1.0f / pow(hyperparameters.sigma, 2)) *
                                          (step.action.x - mu_x));
-        score_y = Vector_rule_scaled(step.phi.phi_y,
+        score_y = Vector_rule_scaled(step.phi.y,
                                      (1.0f / pow(hyperparameters.sigma, 2)) *
                                          (step.action.y - mu_y));
 
-        D.grad_x = Vector_rule_add(D.grad_x, Vector_rule_scaled(score_x, GG));
-        D.grad_y = Vector_rule_add(D.grad_y, Vector_rule_scaled(score_y, GG));
+        D.x = Vector_rule_add(D.x, Vector_rule_scaled(score_x, GG));
+        D.y = Vector_rule_add(D.y, Vector_rule_scaled(score_y, GG));
     }
 
     World_destroy(world);

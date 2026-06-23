@@ -14,12 +14,12 @@ RulesSetFish *RulesSetFish_init() {
 SharkTheta *SharkTheta_init() {
     SharkTheta *theta = malloc(sizeof(SharkTheta));
 
-    theta->theta_x.center = CENTER;
-    theta->theta_y.center = CENTER;
-    theta->theta_x.alignment = SHARK_ALIGNEMENT;
-    theta->theta_y.alignment = SHARK_ALIGNEMENT;
-    theta->theta_x.pursuit = PURSUIT;
-    theta->theta_y.pursuit = PURSUIT;
+    theta->x.center = CENTER;
+    theta->y.center = CENTER;
+    theta->x.alignment = SHARK_ALIGNEMENT;
+    theta->y.alignment = SHARK_ALIGNEMENT;
+    theta->x.pursuit = PURSUIT;
+    theta->y.pursuit = PURSUIT;
     return theta;
 }
 

@@ -24,8 +24,8 @@ typedef struct {
 } Trajectory;
 
 typedef struct {
-    VectorRule grad_x; /**< Gradient pour x */
-    VectorRule grad_y; /**< Gradient pour y */
+    VectorRule x; /**< Gradient pour x */
+    VectorRule y; /**< Gradient pour y */
 } Gradient;
 
 typedef struct {

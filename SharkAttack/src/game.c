@@ -115,20 +115,19 @@ void Game_run_terminal() {
         printf("Boucle interrompue par l'utilisateur.\n");
     }
     Trajectory_print(world->trajectory);
-    printf(
-        "Iteration: %d\n"
-        "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
-        "Cohesion: %f Shark "
-        "Avoidance: %f\n"
-        "Shark : Position: (%f, %f) Center: (%f, %f) Alignement: (%f, %f) "
-        "Pursuit: (%f, %f)\n",
-        i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
-        world->theta_fish->alignment, world->theta_fish->cohesion,
-        world->theta_fish->shark_avoidance, world->shark->pos.x,
-        world->shark->pos.y, world->theta_shark.theta_x.center,
-        world->theta_shark.theta_y.center, world->theta_shark.theta_x.alignment,
-        world->theta_shark.theta_y.alignment,
-        world->theta_shark.theta_x.pursuit, world->theta_shark.theta_y.pursuit);
+    printf("Iteration: %d\n"
+           "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
+           "Cohesion: %f Shark "
+           "Avoidance: %f\n"
+           "Shark : Position: (%f, %f) Center: (%f, %f) Alignement: (%f, %f) "
+           "Pursuit: (%f, %f)\n",
+           i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
+           world->theta_fish->alignment, world->theta_fish->cohesion,
+           world->theta_fish->shark_avoidance, world->shark->pos.x,
+           world->shark->pos.y, world->theta_shark.x.center,
+           world->theta_shark.y.center, world->theta_shark.x.alignment,
+           world->theta_shark.y.alignment, world->theta_shark.x.pursuit,
+           world->theta_shark.y.pursuit);
     World_destroy(world);
 }
 
