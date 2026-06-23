@@ -1,10 +1,37 @@
 #include "utils.h"
 
+__thread unsigned int seed = RANDOM_SEED;
+
+void init_seed(unsigned int set_seed) { seed = set_seed; }
+
+int rand_trsf() {
+    unsigned int next = seed;
+    int result;
+
+    next *= 1103515245;
+    next += 12345;
+    result = (unsigned int)(next / 65536) % 2048;
+
+    next *= 1103515245;
+    next += 12345;
+    result <<= 10;
+    result ^= (unsigned int)(next / 65536) % 1024;
+
+    next *= 1103515245;
+    next += 12345;
+    result <<= 10;
+    result ^= (unsigned int)(next / 65536) % 1024;
+
+    seed = next;
+
+    return result;
+}
+
 float random_float(float min, float max) {
     /**
      * @brief petite fonction auxiliaire pour déterminer un float dans une
      * range*/
-    return min + ((float)rand()) / ((float)RAND_MAX) * (max - min);
+    return min + ((float)rand_trsf()) / ((float)RAND_MAX) * (max - min);
 }
 
 /**

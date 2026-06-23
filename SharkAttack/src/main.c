@@ -8,8 +8,6 @@
 #include <time.h>
 
 int main(int argc, char *argv[]) {
-    srand(RANDOM_SEED);
-
     bool use_term = false;
     bool benchmark_mode = false;
 
