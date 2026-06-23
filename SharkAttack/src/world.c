@@ -10,7 +10,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders) {
     new_world->shark = Shark_create(width, height);
     new_world->colliders =
         Colliders_random_array(width, height, width / COLLIDER_RATIO,
-                               height / COLLIDER_RATIO, nb_colliders);
+                               width / COLLIDER_RATIO, nb_colliders);
     new_world->fish_eaten = 0;
     new_world->rules_set_fish = RulesSetFish_init();
     new_world->rules_set_shark = SharkTheta_init();

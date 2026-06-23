@@ -771,9 +771,11 @@ void Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length) {
  * @param fishes tableau contenant les poissons
  * @param nb_fish nbr de poissons
  * @param shark requin a afficher en mode debug
+ * @param colliders 
+ * @param nb_colliders 
  */
 void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
-                     Shark *shark) {
+                     Shark *shark, Collider *colliders, int nb_colliders) {
     SDL_Renderer *r = display->renderer;
 
     if (fishes == NULL || shark == NULL)
@@ -811,7 +813,7 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
     /* Vecteur du requin */
     SDL_SetRenderDrawColor(r, 255, 220, 80, 220);
     Draw_vector(r, shark->pos, shark->velocity, 45);
-
+ 
     /* Vision du requin */
     SDL_SetRenderDrawColor(r, 255, 80, 80, 80);
     Draw_circle_outline(r, to_int(shark->pos.x), to_int(shark->pos.y),
@@ -820,7 +822,55 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
     /* Zone d'attaque du requin */
     SDL_SetRenderDrawColor(r, 255, 60, 40, 160);
     Draw_circle_outline(r, to_int(shark->pos.x), to_int(shark->pos.y),
-                        SHARK_ATTACK_RANGE);
+                        SHARK_ATTACK_RANGE); 
+    
+    /* Rectangles des colliders : même taille que la mine dessinée */
+    if (colliders != NULL && nb_colliders > 0) {
+        int limit = nb_colliders;
+
+        if (limit > RENDERED_COLLIDERS)
+            limit = RENDERED_COLLIDERS;
+
+        SDL_SetRenderDrawColor(r, 255, 80, 200, 160);
+
+        for (int i = 0; i < limit; i++) {
+            int x1 = to_int(colliders[i].bounding_box[0].x);
+            int y1 = to_int(colliders[i].bounding_box[0].y);
+            int x2 = to_int(colliders[i].bounding_box[1].x);
+            int y2 = to_int(colliders[i].bounding_box[1].y);
+
+            int cx = (x1 + x2) / 2;
+            int cy = (y1 + y2) / 2;
+
+            int w = x2 - x1;
+            int h = y2 - y1;
+
+            if (w < 0)
+                w = -w;
+            if (h < 0)
+                h = -h;
+                
+            int radius = (w < h ? w : h) / 2;
+
+            if (radius < 10)
+                radius = 10;
+
+            if (radius > 14)
+                radius = 14;
+
+            SDL_Rect rect = {
+                cx - radius,
+                cy - radius,
+                radius * 2,
+                radius * 2
+            };
+
+            SDL_RenderDrawRect(r, &rect);
+
+            Draw_filled_circle(r, cx - radius, cy - radius, 2);
+            Draw_filled_circle(r, cx + radius, cy + radius, 2);
+        }
+    }
 }
 
 void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
@@ -907,7 +957,8 @@ void Draw_world(SDLDisplay *display, World *world) {
     Draw_shark(display, world->shark);
 
     if (g_debug_view)
-        Draw_debug_view(display, world->fishes, world->nb_fish, world->shark);
+        Draw_debug_view(display, world->fishes, world->nb_fish, world->shark,
+                world->colliders, world->nb_colliders);
 
     Draw_score(display);
 
