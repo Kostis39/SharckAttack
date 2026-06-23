@@ -1,6 +1,7 @@
 #ifndef THETA_SET_H
 #define THETA_SET_H
 #include "config.h"
+#include "vector.h"
 #include <stdlib.h>
 
 typedef struct {
@@ -12,11 +13,11 @@ typedef struct {
 } RulesSetFish;
 
 typedef struct {
-    float biais;
-    float center;    // attraction vers le centre du banc
-    float alignment; // alignement avec la direction moyenne du banc
-    float pursuit;   // poursuite du poisson le plus proche
-} SharkTheta;        // Anciennement RulesSetShark
+    Vector biais;
+    Vector center;    // attraction vers le centre du banc
+    Vector alignment; // alignement avec la direction moyenne du banc
+    Vector pursuit;   // poursuite du poisson le plus proche
+} SharkTheta;         // Anciennement RulesSetShark
 
 RulesSetFish *RulesSetFish_init();
 SharkTheta *SharkTheta_init();
