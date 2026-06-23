@@ -1,24 +1,40 @@
 #include "mj.h"
 #include "config.h"
+#include "fish_controller.h"
 #include "vector.h"
 #include "world.h"
 
-void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
+void fish_perception_init(Fish *fish, World *world,
+                          FishPerception *perception) {
 
+    /**
+     * @brief Initialise la perception d'un poisson
+     * @param fish le poisson à initialiser
+     * @param world le monde contenant les dimensions
+     * @param perception la structure de perception à remplir
+     */
     perception->self = *fish;
 
     perception->collider_separation = Vector_init();
     perception->separation = Vector_init();
     perception->center_of_mass = Vector_init();
-    int nb_cohes = 0;
     perception->avg_velocity = Vector_init();
-    int nb_align = 0;
     perception->dist_shark = Vector_init();
 
     perception->shark_visible = false;
     perception->width = world->width;
     perception->height = world->height;
+}
 
+void fish_to_shark_perception(Fish *fish, World *world,
+                              FishPerception *perception) {
+
+    /**
+     * @brief Met à jour la perception du requin pour un poisson
+     * @param fish le poisson dont on met à jour la perception
+     * @param world le monde contenant le requin
+     * @param perception la structure de perception à mettre à jour
+     */
     if (world->shark != NULL) {
         Vector to_shark = Vector_sub(world->shark->pos, fish->position);
         float distance = Vector_length2(to_shark);
@@ -32,6 +48,21 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
         perception->dist_shark =
             Vector_sub(perception->self.position, perception->shark.pos);
     }
+}
+
+void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
+    /**
+     * @brief renvoie la perception d'un poisson dans le monde
+     * @param fish le poisson en question
+     * @param world le monde dans lequel évolue le poisson
+     * @param perception la struct dans laquelle on écrit la perception associée
+     * au poisson fish
+     * */
+
+    fish_perception_init(fish, world, perception);
+    fish_to_shark_perception(fish, world, perception);
+    int nb_cohes = 0;
+    int nb_align = 0;
 
     /**Les trois zones de perception sont concentriques et s'enchaînent :
      * [0, separation_limit] -> séparation

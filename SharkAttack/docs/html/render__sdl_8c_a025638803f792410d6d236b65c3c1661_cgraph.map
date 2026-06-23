@@ -1,0 +1,11 @@
+<map id="Draw_debug_view" name="Draw_debug_view">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,146,84"/>
+<area shape="rect" id="Node000002" href="$render__sdl_8c.html#a591cad68b00e9cb5e4110285e47da7ae" title=" " alt="" coords="194,5,343,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,53,201,36,196,39,132,58"/>
+<area shape="rect" id="Node000003" href="$render__sdl_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="391,56,449,84"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="146,67,376,67,375,72,146,72"/>
+<area shape="rect" id="Node000004" href="$render__sdl_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f" title=" " alt="" coords="217,107,320,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,82,204,102,199,104,131,87"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,31,379,55,373,55,312,36"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="311,104,373,85,379,84,313,109"/>
+</map>

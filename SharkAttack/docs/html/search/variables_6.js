@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['radius_5falignement_0',['radius_alignement',['../structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6',1,'Fish']]],
-  ['radius_5fcohesion_1',['radius_cohesion',['../structFish.html#a60e0013f816d835c00613f45665baccf',1,'Fish']]],
-  ['radius_5fseparation_2',['radius_separation',['../structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3',1,'Fish']]],
-  ['renderer_3',['renderer',['../structSDLDisplay.html#a966da7a60c4ea3ba301e26ccc5efe452',1,'SDLDisplay']]]
+  ['has_5fprey_0',['has_prey',['../structSharkPerception.html#a482d6d423e4df4b45e2b3642f3cd8c78',1,'SharkPerception']]],
+  ['has_5fprey_5fvisible_1',['has_prey_visible',['../structSharkPerception.html#a3abecbd5498ece03afbb9c4a9e41876e',1,'SharkPerception']]],
+  ['height_2',['height',['../structFishPerception.html#ad12fc34ce789bce6c8a05d8a17138534',1,'FishPerception::height'],['../structSharkPerception.html#ad12fc34ce789bce6c8a05d8a17138534',1,'SharkPerception::height'],['../structWorld.html#ad12fc34ce789bce6c8a05d8a17138534',1,'World::height']]]
 ];
