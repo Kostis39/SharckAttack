@@ -1,22 +1,5 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
-Vector shark_compute_mu(SharkTheta theta, SharkPhi *phi) {
-    Vector mu = Vector_init();
-
-    if (phi == NULL) {
-        return mu;
-    }
-
-    mu.x = (1.0f * theta.biais.x) + (phi->center.x * theta.center.x) +
-           (phi->alignment.x * theta.alignment.x) +
-           (phi->pursuit.x * theta.pursuit.x);
-
-    mu.y = (1.0f * theta.biais.y) + (phi->center.y * theta.center.y) +
-           (phi->alignment.y * theta.alignment.y) +
-           (phi->pursuit.y * theta.pursuit.y);
-
-    return mu;
-}
 
 Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey_visible) {
     if (!has_prey_visible) {
@@ -65,7 +48,7 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
 }
 
 Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
-                           StepTrajectory *step_trajectory) {
+                           StepTrajectory *step_trajectory, float sigma) {
     if (!perception)
         return Vector_init();
 
@@ -89,26 +72,34 @@ Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
         action = Vector_scale(direction, intensity);
 
     } else { // Mode bot
-        phi.center = Rules_center(perception->self, perception->center_of_mass,
-                                  perception->has_prey_visible);
+        Vector center =
+            Rules_center(perception->self, perception->center_of_mass,
+                         perception->has_prey_visible);
+        phi.phi_x.center = center.x;
+        phi.phi_y.center = center.y;
 
-        phi.alignment =
+        Vector alignment =
             Rules_alignment_shark(perception->self, perception->avg_velocity,
                                   perception->has_prey_visible);
+        phi.phi_x.alignment = alignment.x;
+        phi.phi_y.alignment = alignment.y;
 
-        phi.pursuit = Rules_pursuit(
+        Vector pursuit = Rules_pursuit(
             perception->self, perception->closest_fish.position,
             perception->has_prey, perception->width, perception->height);
+        phi.phi_x.pursuit = pursuit.x;
+        phi.phi_y.pursuit = pursuit.y;
 
-        // 4. Combinaison pondérée des vecteurs
-        Vector mu = shark_compute_mu(theta, &phi);
+        // Combinaison pondérée des vecteurs
+        Vector mu;
+        mu.x = Dot_product(theta.theta_x, phi.phi_x);
+        mu.y = Dot_product(theta.theta_y, phi.phi_y);
 
         Vector noise = box_muller_standard();
 
-        action.x = mu.x + noise.x * SIGMA;
-        action.y = mu.y + noise.y * SIGMA;
+        action.x = mu.x + noise.x * sigma;
+        action.y = mu.y + noise.y * sigma;
 
-        step_trajectory->mu = mu;
         step_trajectory->phi = phi;
         step_trajectory->action = action;
     }
