@@ -7,7 +7,14 @@ float random_float(float min, float max) {
     return min + ((float)rand()) / ((float)RAND_MAX) * (max - min);
 }
 
-void box_muller_standard(Vector *vect) {
+/**
+ * @brief Fonction permettant de tirer une variable aléatoire selon une loi
+ * gaussienne.
+ *
+ * @return Vector Vecteur résultat du tirage aléatoire.
+ */
+Vector box_muller_standard() {
+    Vector vect;
     float u1 = random_float(0, 1);
     float u2 = random_float(0, 1);
 
@@ -18,6 +25,7 @@ void box_muller_standard(Vector *vect) {
     float t = 2.0f * PI * u1;
     float s = -2.0f * logf(u2);
 
-    vect->x = sqrtf(s) * cosf(t);
-    vect->y = sqrtf(s) * sinf(t);
+    vect.x = sqrtf(s) * cosf(t);
+    vect.y = sqrtf(s) * sinf(t);
+    return vect;
 }

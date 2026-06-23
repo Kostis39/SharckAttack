@@ -7,6 +7,6 @@
 #include <stdlib.h>
 
 float random_float(float min, float max);
-void box_muller_standard(Vector *vect);
+Vector box_muller_standard();
 
 #endif

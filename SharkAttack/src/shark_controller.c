@@ -103,8 +103,7 @@ Vector shark_choose_action(SharkPerception *perception, SharkTeta *teta) {
         // 4. Combinaison pondérée des vecteurs
         Vector mu = shark_compute_mu(teta, &phi);
 
-        Vector noise;
-        box_muller_standard(&noise);
+        Vector noise = box_muller_standard();
 
         action.x = mu.x + noise.x * 5;
         action.y = mu.y + noise.y * 5;
