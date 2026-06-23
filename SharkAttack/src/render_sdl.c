@@ -797,6 +797,45 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
                         SHARK_ATTACK_RANGE);
 }
 
+void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
+    SDL_Renderer *r = display->renderer;
+    Vector dir = direction_or_default(fish->velocity);
+    Vector side = {-dir.y, dir.x};
+
+    int x = to_int(fish->position.x);
+    int y = to_int(fish->position.y + (SKELETON_FRAMES - frame) / 2);
+    int size = FISH_SIZE;
+
+    SDL_SetRenderDrawColor(r, 220, 240, 230, 170);
+
+    int head_x = to_int(x + dir.x * size * 0.6f);
+    int head_y = to_int(y + dir.y * size * 0.6f);
+    int tail_x = to_int(x - dir.x * size * 1.4f);
+    int tail_y = to_int(y - dir.y * size * 1.4f);
+
+    Draw_filled_triangle(r,
+                         head_x, head_y,
+                         to_int(x + side.x * size * 0.4f),
+                         to_int(y + side.y * size * 0.4f),
+                         to_int(x - side.x * size * 0.4f),
+                         to_int(y - side.y * size * 0.4f));
+
+    SDL_RenderDrawLine(r, x, y, tail_x, tail_y);
+
+    for (int k = 1; k <= 4; k++) {
+        int bx = x + (tail_x - x) * k / 5;
+        int by = y + (tail_y - y) * k / 5;
+
+        SDL_RenderDrawLine(r, bx, by,
+                           to_int(bx + side.x * 6),
+                           to_int(by + side.y * 6));
+
+        SDL_RenderDrawLine(r, bx, by,
+                           to_int(bx - side.x * 6),
+                           to_int(by - side.y * 6));
+    }
+}
+
 /**
  * @brief dessine le monde
  *
@@ -815,15 +854,21 @@ void Draw_world(SDLDisplay *display, World *world) {
     for (int i = 0; i < world->nb_fish; i++) {
         Draw_fish(display, &world->fishes[i]);
     }
+    for (int i = 0; i < world->nb_fish && i < FISH_NB; i++) {
+        if (g_skeleton_frame[i] > 0) {
+            Draw_fish_skeleton(display, &world->fishes[i], g_skeleton_frame[i]);
+            g_skeleton_frame[i]--;
+        }
+    }
 
     Draw_colliders(display, world->colliders, world->nb_colliders);
 
-    int width = 0;
-    int height = 0;
+    // int width = 0;
+    // int height = 0;
     /* int radius = 12; */
     /* int margin = 4; */
 
-    SDL_GetRendererOutputSize(display->renderer, &width, &height);
+    // SDL_GetRendererOutputSize(display->renderer, &width, &height);
 
     /* if (width > 0 && height > 0) { */
     /*     Draw_mine_shape(display->renderer, margin + radius, margin + radius,
@@ -869,6 +914,13 @@ void Render_world(SDLDisplay *display, World *world) {
 
     SDL_PumpEvents();
     g_debug_view = SDL_GetKeyboardState(NULL)[SDL_SCANCODE_V];
+
+    for (int i = 0; i < world->nb_fish && i < FISH_NB; i++) {
+        if (g_was_alive[i] && !world->fishes[i].is_alive)
+            g_skeleton_frame[i] = SKELETON_FRAMES;
+
+        g_was_alive[i] = world->fishes[i].is_alive;
+    }
 
     Draw_world(display, world);
 }
