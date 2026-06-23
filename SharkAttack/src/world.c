@@ -1,14 +1,14 @@
 #include "world.h"
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
-                  SharkTheta theta_shark, float sigma) {
+                  SharkTheta theta_shark, float sigma, bool is_player) {
     World *new_world = calloc(1, sizeof(World));
     new_world->width = width;
     new_world->height = height;
     new_world->nb_fish = nb_fish;
     new_world->nb_colliders = nb_colliders;
     new_world->fishes = Fish_create_random_array(nb_fish, width, height);
-    new_world->shark = Shark_create(width, height);
+    new_world->shark = Shark_create(width, height, is_player);
     new_world->colliders =
         Colliders_random_array(width, height, width / COLLIDER_RATIO,
                                height / COLLIDER_RATIO, nb_colliders, 1);

@@ -18,7 +18,7 @@ typedef struct {
     bool player;         // true le requin est un joueur, false un bot
 } Shark;
 
-Shark *Shark_create(int width, int height);
+Shark *Shark_create(int width, int height, bool is_player);
 int Shark_copy(Shark *shark_dest, Shark *shark_src);
 void Shark_destroy(Shark *shark);
 

@@ -1,14 +1,14 @@
 #include "shark.h"
 #include "render_sdl.h"
 
-Shark *Shark_create(int width, int height) {
+Shark *Shark_create(int width, int height, bool is_player) {
     Shark *shark = calloc(1, sizeof(Shark));
     shark->pos.x = width / 2.0f;
     shark->pos.y = height;
     shark->velocity.x = (SHARK_SPEED_MAX / 2.0f);
     shark->velocity.y = (SHARK_SPEED_MAX / 2.0f);
     shark->radius_vision = SHARK_VISION_RANGE;
-    shark->player = false;
+    shark->player = is_player;
     return shark;
 }
 

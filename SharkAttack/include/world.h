@@ -35,7 +35,7 @@ typedef struct {
 } World;
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
-                  SharkTheta theta_shark, float sigma);
+                  SharkTheta theta_shark, float sigma, bool is_player);
 void World_destroy(World *world);
 void World_update(World *world, World *world_tmp);
 

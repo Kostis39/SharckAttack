@@ -27,7 +27,7 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
     SharkTheta *shark_theta = SharkTheta_init();
 
     game->world =
-        World_init(width, height, nb_fish, nb_collider, *shark_theta, 0);
+        World_init(width, height, nb_fish, nb_collider, *shark_theta, 0, false);
     if (!game->world) {
         Destroy_sdl_display(&game->display);
         return false;
@@ -101,8 +101,8 @@ void Game_run_terminal() {
     signal(SIGINT, Handle_terminal_interrupt);
 
     SharkTheta *shark_theta = SharkTheta_init();
-    World *world =
-        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, *shark_theta, 0);
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB,
+                              *shark_theta, 0, false);
 
     for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                 i < NB_OCCURRENCE && !terminal_interrupted;
