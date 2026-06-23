@@ -124,6 +124,7 @@ void Game_run_terminal() {
         printf("Boucle interrompue par l'utilisateur.\n");
     }
 
+    Trajectory_print(world->trajectory);
     printf("Iteration: %d\n"
            "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
            "Cohesion: %f Shark "

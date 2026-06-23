@@ -27,4 +27,6 @@ void Add_step(Trajectory *trajectory, Vector state, Vector action,
 
 int Need_trajectory_growing(Trajectory *trajectory);
 
+void Trajectory_print(Trajectory *trajectory);
+
 #endif

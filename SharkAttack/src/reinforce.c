@@ -54,11 +54,19 @@ void Trajectory_destroy(Trajectory *trajectory) {
     free(trajectory);
 }
 
+/**
+ * @brief Permet d'afficher toutes les trajectoire où le reward est suppérieur à
+ * 0
+ *
+ * @param trajectory La trajectoire à afficher
+ */
 void Trajectory_print(Trajectory *trajectory) {
     for (int i = 0; i < trajectory->length; ++i) {
-        printf("Step %d: State: (%f, %f) Action:(%f, %f) Reward: (%f, %f)\n", i,
-               trajectory->steps[i].state.x, trajectory->steps[i].state.y,
-               trajectory->steps[i].action.x, trajectory->steps[i].action.y,
-               trajectory->steps[i].reward);
+        if (trajectory->steps[i].reward > 0) {
+            printf("Step %d: State: (%f, %f) Action:(%f, %f) Reward: %f\n", i,
+                   trajectory->steps[i].state.x, trajectory->steps[i].state.y,
+                   trajectory->steps[i].action.x, trajectory->steps[i].action.y,
+                   trajectory->steps[i].reward);
+        }
     }
 }
