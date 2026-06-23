@@ -30,17 +30,25 @@ void Draw_collider(SDLDisplay *display, Collider *collider) {
     int x2 = to_int(collider->bounding_box[1].x);
     int y2 = to_int(collider->bounding_box[1].y);
 
+    if (x2 < x1) {
+        int tmp = x1;
+        x1 = x2;
+        x2 = tmp;
+    }
+
+    if (y2 < y1) {
+        int tmp = y1;
+        y1 = y2;
+        y2 = tmp;
+    }
+
     int cx = (x1 + x2) / 2;
     int cy = (y1 + y2) / 2;
 
     int w = x2 - x1;
     int h = y2 - y1;
-    int radius = (w < h ? w : h) / 2;
 
-    if (radius < 10)
-        radius = 10;
-    if (radius > 14)
-        radius = 14;
+    int radius = (w < h ? w : h) / 2;
 
     Draw_mine_shape(display->renderer, cx, cy, radius);
 }
@@ -515,36 +523,41 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
     Draw_circle_outline(r, to_int(shark->pos.x), to_int(shark->pos.y),
                         SHARK_ATTACK_RANGE); 
     
-     /* Rectangles des vrais colliders du monde */
+    /* Rectangle réel des colliders */
     if (colliders != NULL && nb_colliders > 0) {
-        SDL_SetRenderDrawColor(r, 255, 80, 200, 160);
+    int limit = nb_colliders;
 
-        for (int i = 0; i < nb_colliders; i++) {
-            int x1 = to_int(colliders[i].bounding_box[0].x);
-            int y1 = to_int(colliders[i].bounding_box[0].y);
-            int x2 = to_int(colliders[i].bounding_box[1].x);
-            int y2 = to_int(colliders[i].bounding_box[1].y);
+    if (limit > RENDERED_COLLIDERS)
+    limit = RENDERED_COLLIDERS;
 
-            if (x2 < x1) {
-                int tmp = x1;
-                x1 = x2;
-                x2 = tmp;
-            }
+    SDL_SetRenderDrawColor(r, 255, 80, 200, 170);
 
-            if (y2 < y1) {
-                int tmp = y1;
-                y1 = y2;
-                y2 = tmp;
-            }
+    for (int i = 0; i < limit; i++) {
+    int x1 = to_int(colliders[i].bounding_box[0].x);
+    int y1 = to_int(colliders[i].bounding_box[0].y);
+    int x2 = to_int(colliders[i].bounding_box[1].x);
+    int y2 = to_int(colliders[i].bounding_box[1].y);
 
-            SDL_Rect rect = {x1, y1, x2 - x1, y2 - y1};
-
-            SDL_RenderDrawRect(r, &rect);
-
-            Draw_filled_circle(r, x1, y1, 2);
-            Draw_filled_circle(r, x2, y2, 2);
+        if (x2 < x1) {
+            int tmp = x1;
+            x1 = x2;
+            x2 = tmp;
         }
-    }
+
+        if (y2 < y1) {
+            int tmp = y1;
+            y1 = y2;
+            y2 = tmp;
+        }
+
+        SDL_Rect rect = {x1, y1, x2 - x1, y2 - y1};
+
+        SDL_RenderDrawRect(r, &rect);
+
+        Draw_filled_circle(r, x1, y1, 2);
+        Draw_filled_circle(r, x2, y2, 2);
+        }
+    } 
 }
 
 void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
