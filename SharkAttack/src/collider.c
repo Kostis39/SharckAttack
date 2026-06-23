@@ -1,7 +1,4 @@
 #include "collider.h"
-#include "vector.h"
-#include <stdlib.h>
-#include <string.h>
 
 Collider Instantiate_collider(Vector pos, float w, float h) {
     /**

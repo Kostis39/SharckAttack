@@ -7,7 +7,8 @@
 #include <stdlib.h>
 
 float random_float(float min, float max);
-float rand_trsf(float min, float max);
+int rand_trsf();
+
 Vector box_muller_standard();
 
 #endif
