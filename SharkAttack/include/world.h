@@ -30,6 +30,7 @@ typedef struct {
     int fish_eaten;           /**< Nombre de poissons mangés par le requin */
     RulesSetFish *theta_fish; /**< Ensemble de règles pour les poissons */
     SharkTheta theta_shark;   /**< Ensemble de règles pour le requin */
+    Trajectory *trajectory;
 } World;
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,

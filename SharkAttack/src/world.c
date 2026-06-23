@@ -15,6 +15,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
     new_world->fish_eaten = 0;
     new_world->theta_fish = RulesSetFish_init();
     new_world->theta_shark = theta_shark;
+    new_world->trajectory = Trajectory_init();
 
     return new_world;
 }
@@ -24,6 +25,7 @@ void World_destroy(World *world) {
     Shark_destroy(world->shark);
     Colliders_destroy_array(world->colliders);
     RulesSetFish_destroy(world->theta_fish);
+    Trajectory_destroy(world->trajectory);
     free(world);
     world = NULL;
 }
