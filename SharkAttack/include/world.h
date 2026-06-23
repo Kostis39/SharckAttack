@@ -29,10 +29,11 @@ typedef struct {
     int nb_colliders;
     int fish_eaten;           /**< Nombre de poissons mangés par le requin */
     RulesSetFish *theta_fish; /**< Ensemble de règles pour les poissons */
-    SharkTheta *theta_shark;  /**< Ensemble de règles pour le requin */
+    SharkTheta theta_shark;   /**< Ensemble de règles pour le requin */
 } World;
 
-World *World_init(int width, int height, int nb_fish, int nb_colliders);
+World *World_init(int width, int height, int nb_fish, int nb_colliders,
+                  SharkTheta theta_shark);
 void World_destroy(World *world);
 void World_update(World *world, World *world_tmp);
 

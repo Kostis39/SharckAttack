@@ -24,7 +24,9 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
         return false;
     }
 
-    game->world = World_init(width, height, nb_fish, nb_collider);
+    SharkTheta *shark_theta = SharkTheta_init();
+
+    game->world = World_init(width, height, nb_fish, nb_collider, *shark_theta);
     if (!game->world) {
         Destroy_sdl_display(&game->display);
         return false;
@@ -98,7 +100,9 @@ void Game_run_terminal() {
     int i = 0;
     signal(SIGINT, Handle_terminal_interrupt);
 
-    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB);
+    SharkTheta *shark_theta = SharkTheta_init();
+    World *world =
+        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, *shark_theta);
 
     for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                 i < NB_OCCURRENCE && !terminal_interrupted;
@@ -114,8 +118,8 @@ void Game_run_terminal() {
                i, world->fish_eaten, world->theta_fish->separation,
                world->theta_fish->alignment, world->theta_fish->cohesion,
                world->theta_fish->shark_avoidance, world->shark->pos.x,
-               world->shark->pos.y, world->theta_shark->center,
-               world->theta_shark->alignment, world->theta_shark->pursuit);
+               world->shark->pos.y, world->theta_shark.center,
+               world->theta_shark.alignment, world->theta_shark.pursuit);
         printf("------\n");
     }
 
@@ -131,8 +135,8 @@ void Game_run_terminal() {
            i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
            world->theta_fish->alignment, world->theta_fish->cohesion,
            world->theta_fish->shark_avoidance, world->shark->pos.x,
-           world->shark->pos.y, world->theta_shark->center,
-           world->theta_shark->alignment, world->theta_shark->pursuit);
+           world->shark->pos.y, world->theta_shark.center,
+           world->theta_shark.alignment, world->theta_shark.pursuit);
     World_destroy(world);
 }
 

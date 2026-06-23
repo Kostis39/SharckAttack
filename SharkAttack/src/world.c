@@ -1,6 +1,7 @@
 #include "world.h"
 
-World *World_init(int width, int height, int nb_fish, int nb_colliders) {
+World *World_init(int width, int height, int nb_fish, int nb_colliders,
+                  SharkTheta theta_shark) {
     World *new_world = calloc(1, sizeof(World));
     new_world->width = width;
     new_world->height = height;
@@ -13,7 +14,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders) {
                                height / COLLIDER_RATIO, nb_colliders);
     new_world->fish_eaten = 0;
     new_world->theta_fish = RulesSetFish_init();
-    new_world->theta_shark = SharkTheta_init();
+    new_world->theta_shark = theta_shark;
 
     return new_world;
 }
@@ -23,7 +24,6 @@ void World_destroy(World *world) {
     Shark_destroy(world->shark);
     Colliders_destroy_array(world->colliders);
     RulesSetFish_destroy(world->theta_fish);
-    SharkTheta_destroy(world->theta_shark);
     free(world);
     world = NULL;
 }
