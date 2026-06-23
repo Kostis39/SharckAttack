@@ -11,18 +11,24 @@ typedef struct {
     float shark_avoidance;
     float collider_avoidance;
 } RulesSetFish;
+typedef struct {
+    VectorRule theta_x;
+    VectorRule theta_y;
+} SharkTheta;
 
 typedef struct {
-    Vector biais;
-    Vector center;    // attraction vers le centre du banc
-    Vector alignment; // alignement avec la direction moyenne du banc
-    Vector pursuit;   // poursuite du poisson le plus proche
-} SharkTheta;         // Anciennement RulesSetShark
+    VectorRule phi_x;
+    VectorRule phi_y;
+} SharkPhi;
 
 RulesSetFish *RulesSetFish_init();
 SharkTheta *SharkTheta_init();
 
 void RulesSetFish_destroy(RulesSetFish *theta);
 void SharkTheta_destroy(SharkTheta *theta);
+
+float Dot_product(VectorRule a, VectorRule b);
+VectorRule Vector_rule_scaled(VectorRule v, float scalar);
+VectorRule Vector_rule_add(VectorRule a, VectorRule b);
 
 #endif

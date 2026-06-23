@@ -18,16 +18,6 @@ typedef struct {
     bool player;         // true le requin est un joueur, false un bot
 } Shark;
 
-/**
- * @brief Structure représentant le résultat des règles, nommée phi dans le
- * cours.
- */
-typedef struct {
-    Vector center;    /**< Vecteur résultat de la règle center */
-    Vector alignment; /**< Vecteur résultat de la règle alignement */
-    Vector pursuit;   /**< Vecteur résultat de la règle pursuit */
-} SharkPhi;
-
 Shark *Shark_create(int width, int height);
 int Shark_copy(Shark *shark_dest, Shark *shark_src);
 void Shark_destroy(Shark *shark);
