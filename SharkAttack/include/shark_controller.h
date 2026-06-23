@@ -1,12 +1,14 @@
-#ifndef AGENT_SHARK_H
-#define AGENT_SHARK_H
+#ifndef SHARK_CONTROLLER_H
+#define SHARK_CONTROLLER_H
 
 #include "fish.h"
+#include "reinforce.h"
 #include "shark.h"
 #include "theta_set.h"
 #include "utils.h"
 #include "vector.h"
 
+typedef struct StepTrajectory StepTrajectory;
 typedef struct {
     Shark self;
 
@@ -21,17 +23,7 @@ typedef struct {
     int height;
 } SharkPerception;
 
-/**
- * @brief Structure représentant le résultat des règles, nommée phi dans le
- * cours.
- *
- */
-typedef struct {
-    Vector center;    /**< Vecteur résultat de la règle center */
-    Vector alignment; /**< Vecteur résultat de la règle alignement */
-    Vector pursuit;   /**< Vecteur résultat de la règle pursuit */
-} SharkPhi;
-
-Vector shark_choose_action(SharkPerception *perception, SharkTheta theta);
+Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
+                           StepTrajectory *step_trajectory);
 
 #endif

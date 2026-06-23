@@ -40,7 +40,7 @@ int Need_trajectory_growing(Trajectory *trajectory) {
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */
-void Add_step(Trajectory *trajectory, Vector mu, Vector phi, Vector action,
+void Add_step(Trajectory *trajectory, Vector mu, SharkPhi phi, Vector action,
               float reward) {
     int i = trajectory->length;
     trajectory->steps[i].mu = mu;
@@ -64,21 +64,46 @@ void Trajectory_destroy(Trajectory *trajectory) {
 void Trajectory_print(Trajectory *trajectory) {
     for (int i = 0; i < trajectory->length; ++i) {
         if (trajectory->steps[i].reward > 0) {
-            printf("Step: %d mu: (%f, %f) phi: (%f, %f) Action:(%f, %f) "
+            printf("Step: %d mu: (%f, %f) phi: (%f, %f, %f, %f, %f, %f) "
+                   "Action:(%f, %f) "
                    "Reward: %f\n",
                    i, trajectory->steps[i].mu.x, trajectory->steps[i].mu.y,
-                   trajectory->steps[i].phi.x, trajectory->steps[i].phi.y,
+                   trajectory->steps[i].phi.center.x,
+                   trajectory->steps[i].phi.center.y,
+                   trajectory->steps[i].phi.alignment.x,
+                   trajectory->steps[i].phi.alignment.y,
+                   trajectory->steps[i].phi.pursuit.x,
+                   trajectory->steps[i].phi.pursuit.y,
                    trajectory->steps[i].action.x, trajectory->steps[i].action.y,
                    trajectory->steps[i].reward);
         }
     }
 }
 
+void StepTrajectory_print(StepTrajectory step) {
+    printf("Step: mu: (%f, %f) phi: (%f, %f, %f, %f, %f, %f) "
+           "Action:(%f, %f) "
+           "Reward: %f\n",
+           step.mu.x, step.mu.y, step.phi.center.x, step.phi.center.y,
+           step.phi.alignment.x, step.phi.alignment.y, step.phi.pursuit.x,
+           step.phi.pursuit.y, step.action.x, step.action.y, step.reward);
+}
+
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */
-void New_step(StepTrajectory *step, Vector mu, Vector phi, Vector action,
+void New_step(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
               float reward) {
+    step->mu = mu;
+    step->phi = phi;
+    step->action = action;
+    step->reward = reward;
+}
+
+void Step_update(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
+                 float reward) {
+    if (!step)
+        return;
     step->mu = mu;
     step->phi = phi;
     step->action = action;
