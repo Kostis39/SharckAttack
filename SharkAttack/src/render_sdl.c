@@ -20,7 +20,14 @@ int g_debug_view = 0;
 
 int to_int(float x) { return (int)(x + 0.5f); }
 
-static Vector direction_or_default(Vector v) {
+/**
+ * @brief renvoie une direction normalisée
+ * transformer un vecteur vitesse en vecteur direction
+ * si le vecteur est nul, elle renvoit une direction par défaut vers la droite
+ * @param v vecteur a normaliser
+ * @return Vector direction normalisée
+ */
+Vector direction_or_default(Vector v) {
     Vector d = Vector_normalize(v);
 
     if (d.x == 0 && d.y == 0) {
@@ -151,6 +158,51 @@ void Draw_bubbles(SDL_Renderer *r, int width, int height) {
     }
 }
 
+/**
+ * @brief dessine de grandes plantes
+ * les plantes restent fixées au sol. Seules les extrémités bougent légèrement
+ * avec le temps pour donner un effet naturel sous l'eau
+ * @param r renderer sdl utilisé pour dessiner
+ * @param width largeur de la fenêtre
+ * @param height hauteur de la fenêtre
+ * @param time temps courant pour animer les plantes
+ */
+void Draw_sea_plants(SDL_Renderer *r, int width, int height, float time) {
+    int ground = height - 6;
+
+    for (int i = 0; i < 5; i++) {
+        int x = 80 + i * ((width - 160 )/ 4);
+        int h = 60 + (i % 2) * 18;
+        int sway = to_int(sinf(time * 1.2f + i) * 6.0f);
+
+        /* base sombre */
+        SDL_SetRenderDrawColor(r, 20, 85, 95, 130);
+        Draw_filled_ellipse(r, x, ground + 2, 34, 8);
+
+        /* branches principales : vert d'eau */
+        SDL_SetRenderDrawColor(r, 55, 155, 150, 195);
+
+        SDL_RenderDrawLine(r, x, ground, x + sway, ground - h);
+        SDL_RenderDrawLine(r, x, ground, x - 28 + sway, ground - h + 22);
+        SDL_RenderDrawLine(r, x, ground, x + 28 + sway, ground - h + 22);
+        SDL_RenderDrawLine(r, x, ground, x - 16 + sway, ground - h + 7);
+        SDL_RenderDrawLine(r, x, ground, x + 16 + sway, ground - h + 7);
+
+        /* deuxième trait très proche pour donner un peu d'épaisseur */
+        SDL_RenderDrawLine(r, x + 1, ground, x + sway + 1, ground - h);
+        SDL_RenderDrawLine(r, x + 1, ground, x - 27 + sway, ground - h + 22);
+        SDL_RenderDrawLine(r, x + 1, ground, x + 29 + sway, ground - h + 22);
+    }
+}
+
+/**
+ * @brief dessine une mine carre
+ * cette fct represente graphiquement un obstacle/collider
+ * @param r renderer sdl utilisé pour dessiner
+ * @param cx coord x du centre de la mine
+ * @param cy coord x du centre de la mine
+ * @param radius demi-taille de la mine
+ */
 void Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius) {
     int s = radius * 2;
     int p = radius / 3;
@@ -179,6 +231,12 @@ void Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius) {
     SDL_RenderFillRect(r, &center);
 }
 
+/**
+ * @brief dessine un collider sous forme de mine
+ * 
+ * @param display struct contenant le renderer sdl
+ * @param collider collider a afficher
+ */
 void Draw_collider(SDLDisplay *display, Collider *collider) {
     if (display == NULL || display->renderer == NULL || collider == NULL)
         return;
@@ -203,6 +261,13 @@ void Draw_collider(SDLDisplay *display, Collider *collider) {
     Draw_mine_shape(display->renderer, cx, cy, radius);
 }
 
+/**
+ * @brief dessine un tableau de colliders
+ * 
+ * @param display struct contenant le renderer sdl
+ * @param colliders tableau de colliders a afficher
+ * @param nb_colliders nbr de colliders dans le tableau
+ */
 void Draw_colliders(SDLDisplay *display, Collider *colliders,
                     int nb_colliders) {
     if (display == NULL || colliders == NULL || nb_colliders <= 0)
@@ -344,7 +409,7 @@ void Clear_sdl_display(SDLDisplay *display) {
     Draw_filled_triangle(r, width, height, width, height - 125, width - 230,
                          height);
 
-    /*Draw_sea_plants(r, width, height, time);*/
+    Draw_sea_plants(r, width, height, time);
     Draw_bubbles(r, width, height);
 }
 
@@ -586,6 +651,15 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     }
 }
 
+/**
+ * @brief dessine un chiffre avec des segments rectangulaires
+ * le chiffre esr dessiné comme un afficheur a 7 segments
+ * @param r 
+ * @param x coord x du coin sup gauche
+ * @param y coord y du coin sup gauche
+ * @param n chiffre a afficher entre 0 et 9
+ * @param s echelle du chiffre
+ */
 void Draw_digit(SDL_Renderer *r, int x, int y, int n, int s) {
     int mask[10] = {63, 6, 91, 79, 102, 109, 125, 7, 127, 111};
 
@@ -602,6 +676,12 @@ void Draw_digit(SDL_Renderer *r, int x, int y, int n, int s) {
     }
 }
 
+
+/**
+ * @brief dessine le score en haut a droite de l ecran
+ * le score correspond au nbr de poissons mangés par le requin
+ * @param display struct contenant le renderer
+ */
 void Draw_score(SDLDisplay *display) {
     SDL_Renderer *r = display->renderer;
     int w = 0, h = 0;
@@ -636,6 +716,14 @@ void Draw_score(SDLDisplay *display) {
     }
 }
 
+/**
+ * @brief dessine le contour d'un cercle
+ * 
+ * @param r renderer sdl utilisé pour dessiner
+ * @param cx coord x du centre du cercle
+ * @param cy coord y du centre du cercle
+ * @param radius rayon du cercle
+ */
 void Draw_circle_outline(SDL_Renderer *r, int cx, int cy, int radius) {
     int old_x = cx + radius;
     int old_y = cy;
@@ -652,6 +740,14 @@ void Draw_circle_outline(SDL_Renderer *r, int cx, int cy, int radius) {
     }
 }
 
+/**
+ * @brief dessine un vecteur orienté avec une fleche
+ * 
+ * @param r renderer sdl utilisé pour dessiner
+ * @param pos position de depart du vecteur
+ * @param dir direction du vecteur
+ * @param length longueur graphique du vecteur
+ */
 void Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length) {
     Vector d = direction_or_default(dir);
 
@@ -676,6 +772,15 @@ void Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length) {
                        to_int(y2 - d.y * 7 - side.y * 4));
 }
 
+/**
+ * @brief dessine le mode de visualisation debug 
+ * ce mode affiche les vecteurs de vitesse, les rayons de perception.
+ * il permet de comprendre visuellement le comportement multi-agents
+ * @param display struct contenant le renderer
+ * @param fishes tableau contenant les poissons
+ * @param nb_fish nbr de poissons
+ * @param shark requin a afficher en mode debug
+ */
 void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish, Shark *shark) {
     SDL_Renderer *r = display->renderer;
 
