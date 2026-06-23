@@ -40,7 +40,7 @@ int Need_trajectory_growing(Trajectory *trajectory) {
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */
-void Add_step(Trajectory *trajectory, Vector mu, Vector phi, Vector action,
+void Add_step(Trajectory *trajectory, Vector mu, SharkPhi phi, Vector action,
               float reward) {
     int i = trajectory->length;
     trajectory->steps[i].mu = mu;
@@ -67,7 +67,9 @@ void Trajectory_print(Trajectory *trajectory) {
             printf("Step: %d mu: (%f, %f) phi: (%f, %f) Action:(%f, %f) "
                    "Reward: %f\n",
                    i, trajectory->steps[i].mu.x, trajectory->steps[i].mu.y,
-                   trajectory->steps[i].phi.x, trajectory->steps[i].phi.y,
+                   trajectory->steps[i].phi.center,
+                   trajectory->steps[i].phi.alignment,
+                   trajectory->steps[i].phi.pursuit,
                    trajectory->steps[i].action.x, trajectory->steps[i].action.y,
                    trajectory->steps[i].reward);
         }
@@ -77,8 +79,18 @@ void Trajectory_print(Trajectory *trajectory) {
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */
-void New_step(StepTrajectory *step, Vector mu, Vector phi, Vector action,
+void New_step(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
               float reward) {
+    step->mu = mu;
+    step->phi = phi;
+    step->action = action;
+    step->reward = reward;
+}
+
+void Step_update(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
+                 float reward) {
+    if (!step)
+        return;
     step->mu = mu;
     step->phi = phi;
     step->action = action;

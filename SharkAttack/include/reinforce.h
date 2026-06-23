@@ -2,14 +2,16 @@
 #define REINFORCE_H
 
 #include "config.h"
+#include "shark.h"
 #include "shark_controller.h"
+#include "theta_set.h"
 #include "vector.h"
 #include <assert.h>
 #include <stdlib.h>
 
-typedef struct {
+typedef struct StepTrajectory {
     Vector mu;
-    Vector phi;
+    SharkPhi phi;
     Vector action;
     float reward;
 } StepTrajectory;
@@ -29,14 +31,16 @@ typedef struct {
 
 Trajectory *Trajectory_init();
 void Trajectory_destroy(Trajectory *trajectory);
-void Add_step(Trajectory *trajectory, Vector mu, Vector phi, Vector action,
+void Add_step(Trajectory *trajectory, Vector mu, SharkPhi phi, Vector action,
               float reward);
 
 int Need_trajectory_growing(Trajectory *trajectory);
 
 void Trajectory_print(Trajectory *trajectory);
 
-void New_step(StepTrajectory *step, Vector mu, Vector phi, Vector action,
+void New_step(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
               float reward);
 
+void Step_update(StepTrajectory *step, Vector mu, SharkPhi phi, Vector action,
+                 float reward);
 #endif

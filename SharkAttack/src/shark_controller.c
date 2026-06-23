@@ -64,7 +64,8 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
-Vector shark_choose_action(SharkPerception *perception, SharkTheta theta) {
+Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
+                           StepTrajectory *step_trajectory) {
     if (!perception)
         return Vector_init();
 
@@ -106,6 +107,10 @@ Vector shark_choose_action(SharkPerception *perception, SharkTheta theta) {
 
         action.x = mu.x + noise.x * SIGMA;
         action.y = mu.y + noise.y * SIGMA;
+
+        step_trajectory->mu = mu;
+        step_trajectory->phi = phi;
+        step_trajectory->action = action;
     }
 
     return action;
