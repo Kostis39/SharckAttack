@@ -3,6 +3,7 @@
 #include "config.h"
 #include "fish.h"
 #include "fish_controller.h"
+#include "reinforce.h"
 #include "shark.h"
 #include "shark_controller.h"
 #include "vector.h"

@@ -4,6 +4,13 @@
 #include "vector.h"
 #include "world.h"
 
+float Shark_reward(int nb_fish_ate) {
+    if (nb_fish_ate == 0) {
+        return 0;
+    }
+    return nb_fish_ate;
+}
+
 void fish_perception_init(Fish *fish, World *world,
                           FishPerception *perception) {
 
@@ -175,8 +182,15 @@ void Get_shark_perception(Shark *shark, World *world,
     shark_perception->has_prey = closest_dist != INFINITY;
 }
 
-void handle_shark_collisions(World *world) {
+/**
+ * @brief Calcul combien de poissons sont mangé, et mange les.
+ *
+ * @param world Le monde où ce passe l'action.
+ * @return int Le nombre de poisson mangé.
+ */
+int handle_shark_eat(World *world) {
     Vector shark_pos = world->shark->pos;
+    int has_eaten = 0;
 
     for (int i = 0; i < world->nb_fish; i++) {
         if (!world->fishes[i].is_alive)
@@ -188,8 +202,10 @@ void handle_shark_collisions(World *world) {
         if (dist < SHARK_ATTACK_RANGE) {
             fish->is_alive = false;
             world->fish_eaten++;
+            has_eaten += 1;
         }
     }
+    return has_eaten;
 }
 
 void UpdateWorld(World *world, World *tmp_world) {
@@ -223,11 +239,11 @@ void UpdateWorld(World *world, World *tmp_world) {
 
     Shark_apply_action(tmp_world->shark, shark_action);
 
-    handle_shark_collisions(tmp_world);
-    /**
+    int nb_fish_ate = handle_shark_eat(tmp_world);
+    int reward = Shark_reward(nb_fish_ate);
+
     Need_trajectory_growing(world->trajectory);
     Add_step(world->trajectory, world->shark->pos, shark_action, reward);
-    */
 }
 
 void Game_step(World *world) {

@@ -20,7 +20,7 @@ Trajectory *Trajectory_init() {
  * mémoire à steps)
  * @return int 1: Si il y a eu modification de la mémoire (realloc) 0 : sinon
  */
-int Need_growing(Trajectory *trajectory) {
+int Need_trajectory_growing(Trajectory *trajectory) {
     if (trajectory->length == trajectory->lenght_alloc) {
         int new_lenght_alloc =
             trajectory->lenght_alloc + TRAJECTORY_LENGHT_ALLOC;
