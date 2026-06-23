@@ -644,6 +644,16 @@ void Draw_digit(SDL_Renderer *r, int x, int y, int n, int s) {
     }
 }
 
+int Count_digits(int n) {
+    int digits = 1;
+
+    while(n >= 10) {
+        n = n / 10;
+        digits++;
+    }
+    return digits;
+}
+
 /**
  * @brief dessine le score en haut a droite de l ecran
  * le score correspond au nbr de poissons mangés par le requin
@@ -652,12 +662,20 @@ void Draw_digit(SDL_Renderer *r, int x, int y, int n, int s) {
 void Draw_score(SDLDisplay *display) {
     SDL_Renderer *r = display->renderer;
     int w = 0, h = 0;
+
     SDL_GetRendererOutputSize(r, &w, &h);
 
     if (w <= 0 || h <= 0)
         return;
 
-    SDL_Rect box = {w - 95, 12, 78, 34};
+    int digits = Count_digits(g_score);
+
+    int digit_width = 17;
+    int box_w = 50 + digits * digit_width;
+    int box_x = w - box_w - 17;
+    int start_x = box_x + 38;
+
+    SDL_Rect box = {box_x, 12, box_w, 34};
 
     SDL_SetRenderDrawColor(r, 0, 15, 30, 180);
     SDL_RenderFillRect(r, &box);
@@ -665,21 +683,29 @@ void Draw_score(SDLDisplay *display) {
     SDL_SetRenderDrawColor(r, 80, 190, 230, 160);
     SDL_RenderDrawRect(r, &box);
 
-    /* petite icône requin */
+    /* icône requin : elle recule automatiquement avec la boîte */
     SDL_SetRenderDrawColor(r, 120, 170, 190, 255);
-    Draw_filled_triangle(r, w - 85, 29, w - 68, 20, w - 68, 38);
+    Draw_filled_triangle(r,
+                         box_x + 10, 29,
+                         box_x + 27, 20,
+                         box_x + 27, 38);
 
     SDL_SetRenderDrawColor(r, 180, 240, 255, 255);
-    Draw_digit(r, w - 55, 19, (g_score / 10) % 10, 2);
-    Draw_digit(r, w - 38, 19, g_score % 10, 2);
+
+    int value = g_score;
+
+    for (int i = digits - 1; i >= 0; i--) {
+        Draw_digit(r, start_x + i * digit_width, 19, value % 10, 2);
+        value = value / 10;
+    }
 
     if (g_flash > 0) {
         SDL_SetRenderDrawColor(r, 255, 220, 80, 255);
 
-        SDL_RenderDrawLine(r, w - 62, 53, w - 52, 53);
-        SDL_RenderDrawLine(r, w - 57, 48, w - 57, 58);
+        SDL_RenderDrawLine(r, box_x + 35, 53, box_x + 45, 53);
+        SDL_RenderDrawLine(r, box_x + 40, 48, box_x + 40, 58);
 
-        Draw_digit(r, w - 45, 45, g_gain % 10, 1);
+        Draw_digit(r, box_x + 52, 45, g_gain % 10, 1);
     }
 }
 
