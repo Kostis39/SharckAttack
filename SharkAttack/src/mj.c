@@ -110,23 +110,17 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
      * ]alignment_limit, cohesion_limit] -> cohésion
      */
 
-    float max_perception = fish->radius_separation + fish->radius_alignement +
-                           fish->radius_cohesion;
+    float max_perception = fish->radius_separation;
 
     for (int j = 0; j < world->nb_colliders; ++j) {
         Collider *c = &world->colliders[j];
         Vector closest = Collider_closest_point(c, fish->position);
         float dist = Vector_distance(fish->position, closest);
 
-        if (dist < max_perception) {
-            if (dist < 1.0f) {
-                dist = 1.0f;
-            }
-            float ratio = 1.0f - (dist / max_perception);
-            float intensity = ratio * ratio;
-            Vector repulsion = Vector_sub(fish->position, closest);
-            repulsion = Vector_normalize(repulsion);
-            repulsion = Vector_scale(repulsion, intensity);
+        if (dist < max_perception && dist > 0.0f) {
+            float intensity = 1.0f - (dist / max_perception);
+            Vector repulsion =
+                Vector_scale(Vector_sub(fish->position, closest), intensity);
             perception->collider_separation =
                 Vector_add(perception->collider_separation, repulsion);
         }
@@ -245,10 +239,6 @@ void UpdateWorld(World *world, World *tmp_world) {
     Shark_apply_action(tmp_world->shark, shark_action);
 
     handle_shark_collisions(tmp_world);
-    /**
-    Need_trajectory_growing(world->trajectory);
-    Add_step(world->trajectory, world->shark->pos, shark_action, reward);
-    */
 }
 
 void Game_step(World *world) {
