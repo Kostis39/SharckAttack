@@ -8,6 +8,7 @@ typedef struct {
     float alignment;
     float cohesion;
     float shark_avoidance;
+    float collider_avoidance;
 } RulesSetFish;
 
 typedef struct {
@@ -15,12 +16,12 @@ typedef struct {
     float center;    // attraction vers le centre du banc
     float alignment; // alignement avec la direction moyenne du banc
     float pursuit;   // poursuite du poisson le plus proche
-} SharkTeta;         // Anciennement RulesSetShark
+} SharkTheta;        // Anciennement RulesSetShark
 
 RulesSetFish *RulesSetFish_init();
-SharkTeta *SharkTeta_init();
+SharkTheta *SharkTheta_init();
 
 void RulesSetFish_destroy(RulesSetFish *rules_set);
-void SharkTeta_destroy(SharkTeta *rules_set);
+void SharkTheta_destroy(SharkTheta *rules_set);
 
 #endif

@@ -1,4 +1,5 @@
 #include "mj.h"
+#include "collider.h"
 #include "config.h"
 #include "fish_controller.h"
 #include "vector.h"
@@ -57,29 +58,13 @@ void fish_to_shark_perception(Fish *fish, World *world,
     }
 }
 
-void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
-    /**
-     * @brief renvoie la perception d'un poisson dans le monde
-     * @param fish le poisson en question
-     * @param world le monde dans lequel évolue le poisson
-     * @param perception la struct dans laquelle on écrit la perception associée
-     * au poisson fish
-     * */
+void fish_neighbor_perception(Fish *fish, World *world,
+                              FishPerception *perception, int *nb_align,
+                              int *nb_cohes) {
 
-    fish_perception_init(fish, world, perception);
-    fish_to_shark_perception(fish, world, perception);
-    int nb_cohes = 0;
-    int nb_align = 0;
-
-    /**Les trois zones de perception sont concentriques et s'enchaînent :
-     * [0, separation_limit] -> séparation
-     * ]separation_limit, alignment_limit] -> alignement
-     * ]alignment_limit, cohesion_limit] -> cohésion
-     */
     float separation_limit = fish->radius_separation;
     float alignment_limit = separation_limit + fish->radius_alignement;
     float cohesion_limit = alignment_limit + fish->radius_cohesion;
-
     for (int i = 0; i < world->nb_fish; i++) {
         Fish *neighbor = &world->fishes[i];
 
@@ -102,20 +87,50 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
         } else if (distance_squared <= alignment_limit * alignment_limit) {
             perception->avg_velocity =
                 Vector_add(perception->avg_velocity, neighbor->velocity);
-            nb_align++;
+            (*nb_align)++;
         } else if (distance_squared <= cohesion_limit * cohesion_limit) {
             perception->center_of_mass =
                 Vector_add(perception->center_of_mass, neighbor->position);
-            nb_cohes++;
+            (*nb_cohes)++;
         }
     }
+}
+
+void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
+    /**
+     * @brief renvoie la perception d'un poisson dans le monde
+     * @param fish le poisson en question
+     * @param world le monde dans lequel évolue le poisson
+     * @param perception la struct dans laquelle on écrit la perception associée
+     * au poisson fish
+     * */
+
+    fish_perception_init(fish, world, perception);
+    fish_to_shark_perception(fish, world, perception);
+    int nb_cohes = 0;
+    int nb_align = 0;
+    fish_neighbor_perception(fish, world, perception, &nb_align, &nb_cohes);
+
+    /**Les trois zones de perception sont concentriques et s'enchaînent :
+     * [0, separation_limit] -> séparation
+     * ]separation_limit, alignment_limit] -> alignement
+     * ]alignment_limit, cohesion_limit] -> cohésion
+     */
+
+    float max_perception = fish->radius_separation;
+
     for (int j = 0; j < world->nb_colliders; ++j) {
-        Collider *close = &world->colliders[j];
-        Vector to_closest = Vector_sub(close->bounding_box[0], fish->position);
-        // TODO: détection d'obtacles
-        // Lancer des rayons en permanence et vérifier si le point entre dans la
-        // bounding box la longueurs des rayons c'est le plus grand cercle de
-        // perception du poisson
+        Collider *c = &world->colliders[j];
+        Vector closest = Collider_closest_point(c, fish->position);
+        float dist = Vector_distance(fish->position, closest);
+
+        if (dist < max_perception && dist > 0.0f) {
+            float intensity = 1.0f - (dist / max_perception);
+            Vector repulsion =
+                Vector_scale(Vector_sub(fish->position, closest), intensity);
+            perception->collider_separation =
+                Vector_add(perception->collider_separation, repulsion);
+        }
     }
     perception->avg_velocity =
         (nb_align > 0) ? Vector_scale(perception->avg_velocity, 1.0f / nb_align)

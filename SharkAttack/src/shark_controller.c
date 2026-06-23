@@ -1,7 +1,6 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
-
-Vector shark_compute_mu(SharkTeta *theta, SharkPhi *phi) {
+Vector shark_compute_mu(SharkTheta *theta, SharkPhi *phi) {
     Vector mu = Vector_init();
 
     if (theta == NULL || phi == NULL) {
@@ -65,7 +64,7 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
-Vector shark_choose_action(SharkPerception *perception, SharkTeta *teta) {
+Vector shark_choose_action(SharkPerception *perception, SharkTheta *theta) {
     if (!perception)
         return Vector_init();
 
@@ -101,7 +100,7 @@ Vector shark_choose_action(SharkPerception *perception, SharkTeta *teta) {
             perception->has_prey, perception->width, perception->height);
 
         // 4. Combinaison pondérée des vecteurs
-        Vector mu = shark_compute_mu(teta, &phi);
+        Vector mu = shark_compute_mu(theta, &phi);
 
         Vector noise = box_muller_standard();
 
