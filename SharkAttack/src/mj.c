@@ -245,7 +245,7 @@ void UpdateWorld(World *world, World *tmp_world) {
 
         get_fish_perception(&world->fishes[i], world, perception);
 
-        Vector action = fish_choose_action(perception, world->rules_set_fish);
+        Vector action = fish_choose_action(perception, world->theta_fish);
 
         fish_apply_action(&tmp_world->fishes[i], action);
     }
@@ -258,17 +258,16 @@ void UpdateWorld(World *world, World *tmp_world) {
     Get_shark_perception(world->shark, world, shark_perception);
 
     Vector shark_action =
-        shark_choose_action(shark_perception, world->rules_set_shark);
+        shark_choose_action(shark_perception, world->theta_shark);
 
     free(shark_perception);
 
     Shark_apply_action(tmp_world->shark, shark_action);
 
-    int nb_fish_ate = handle_shark_eat(tmp_world);
-    int reward = Shark_reward(nb_fish_ate);
-
-    Need_trajectory_growing(world->trajectory);
-    Add_step(world->trajectory, world->shark->pos, shark_action, reward);
+    // int nb_fish_ate = handle_shark_eat(tmp_world);
+    //   int reward = Shark_reward(nb_fish_ate);
+    // Need_trajectory_growing(world->trajectory);
+    //  Add_step(world->trajectory, world->shark->pos, shark_action, reward);
 }
 
 void Game_step(World *world) {

@@ -40,10 +40,11 @@ int Need_trajectory_growing(Trajectory *trajectory) {
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
  */
-void Add_step(Trajectory *trajectory, Vector state, Vector action,
+void Add_step(Trajectory *trajectory, Vector mu, Vector phi, Vector action,
               float reward) {
     int i = trajectory->length;
-    trajectory->steps[i].state = state;
+    trajectory->steps[i].mu = mu;
+    trajectory->steps[i].phi = phi;
     trajectory->steps[i].action = action;
     trajectory->steps[i].reward = reward;
     ++trajectory->length;
@@ -63,10 +64,23 @@ void Trajectory_destroy(Trajectory *trajectory) {
 void Trajectory_print(Trajectory *trajectory) {
     for (int i = 0; i < trajectory->length; ++i) {
         if (trajectory->steps[i].reward > 0) {
-            printf("Step %d: State: (%f, %f) Action:(%f, %f) Reward: %f\n", i,
-                   trajectory->steps[i].state.x, trajectory->steps[i].state.y,
+            printf("Step: %d mu: (%f, %f) phi: (%f, %f) Action:(%f, %f) "
+                   "Reward: %f\n",
+                   i, trajectory->steps[i].mu.x, trajectory->steps[i].mu.y,
+                   trajectory->steps[i].phi.x, trajectory->steps[i].phi.y,
                    trajectory->steps[i].action.x, trajectory->steps[i].action.y,
                    trajectory->steps[i].reward);
         }
     }
+}
+
+/**
+ * @brief Ajout un état supplémentaire à notre trajectoire.
+ */
+void New_step(StepTrajectory *step, Vector mu, Vector phi, Vector action,
+              float reward) {
+    step->mu = mu;
+    step->phi = phi;
+    step->action = action;
+    step->reward = reward;
 }
