@@ -2,12 +2,14 @@
 #define REINFORCE_H
 
 #include "config.h"
+#include "shark_controller.h"
 #include "vector.h"
 #include <assert.h>
 #include <stdlib.h>
 
 typedef struct {
-    Vector state;
+    Vector mu;
+    Vector phi;
     Vector action;
     float reward;
 } StepTrajectory;
@@ -19,6 +21,11 @@ typedef struct {
                          steps*/
     int capacity;     /**< Capicité maximale d'une trajectoire */
 } Trajectory;
+
+typedef struct {
+    Vector gradX; /**< Gradient pour x */
+    Vector gradY; /**< Gradient pour y */
+} Gradient;
 
 Trajectory *Trajectory_init();
 void Trajectory_destroy(Trajectory *trajectory);
