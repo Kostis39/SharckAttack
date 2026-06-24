@@ -7,7 +7,7 @@
 #define TXT_FINAL_PARAMS "new_params.txt"
 #define TXT_LOG "logs.txt"
 
-#define NB_OCCURRENCE 11000
+#define NB_OCCURRENCE 10000
 
 #define SIGMA 5
 #define TRAJECTORY_LENGHT_ALLOC 200
