@@ -2,6 +2,19 @@
 #include "config.h"
 #include "input_output.h"
 
+void SharkPhi_print(SharkPhi phi) {
+    printf("Phi.x :");
+    VectorRule_print(phi.x);
+    printf(" Phi.y :");
+    VectorRule_print(phi.x);
+}
+
+void SharkPhi_add_vector(SharkPhi *shark_phi, Vector vect,
+                         enum Rules rule_to_apply) {
+    shark_phi->x.vect[rule_to_apply] = vect.x;
+    shark_phi->y.vect[rule_to_apply] = vect.y;
+}
+
 RulesSetFish *RulesSetFish_init() {
     RulesSetFish *theta = malloc(sizeof(RulesSetFish));
     theta->alignment = ALIGNMENT;
@@ -21,8 +34,7 @@ VectorRule *SharkTheta_init() {
     }
 
     printf("\n=== Theta ===\n");
-    printf("theta = (%f, %f, %f)\n", theta->center, theta->alignment,
-           theta->pursuit);
+    VectorRule_print(*theta);
     printf("\n");
 
     return theta;
@@ -36,28 +48,26 @@ void SharkTheta_destroy(VectorRule *theta) {
 
 float Dot_product(VectorRule a, VectorRule b) {
     float result = 0.0f;
-
-    result += a.center * b.center;
-    result += a.alignment * b.alignment;
-    result += a.pursuit * b.pursuit;
+    for (int i = 0; i < Rules_Lenght; ++i) {
+        result += a.vect[i] * b.vect[i];
+    }
 
     return result;
 }
 
-VectorRule Vector_rule_scaled(VectorRule v, float scalar) {
-    v.center = v.center * scalar;
-    v.alignment = v.alignment * scalar;
-    v.pursuit = v.pursuit * scalar;
+VectorRule VectorRule_scaled(VectorRule v, float scalar) {
+    for (int i = 0; i < Rules_Lenght; ++i) {
+        v.vect[i] *= scalar;
+    }
 
     return v;
 }
 
-VectorRule Vector_rule_add(VectorRule a, VectorRule b) {
+VectorRule VectorRule_add(VectorRule a, VectorRule b) {
     VectorRule result;
-
-    result.center = a.center + b.center;
-    result.alignment = a.alignment + b.alignment;
-    result.pursuit = a.pursuit + b.pursuit;
+    for (int i = 0; i < Rules_Lenght; ++i) {
+        result.vect[i] = a.vect[i] + b.vect[i];
+    }
 
     return result;
 }
