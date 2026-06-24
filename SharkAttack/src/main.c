@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 
     if (argc > 1 && strcmp(argv[1], "term") == 0) {
         use_term = true;
-    } else if (argc > 1 && strcmp(argv[1], "-b") == 0) {
+    } else if (argc > 1 && strcmp(argv[1], "bench") == 0) {
         benchmark_mode = true;
     } else if (argc > 1 && strcmp(argv[1], "learn") == 0) {
         learn = true;
