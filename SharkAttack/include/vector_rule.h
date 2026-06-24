@@ -2,6 +2,7 @@
 #define VECTOR_RULE_H
 
 #include "config.h"
+#include <stdio.h>
 
 /**
  * @brief Structure représentant un vecteur de poids pour les règles de
