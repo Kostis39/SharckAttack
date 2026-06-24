@@ -26,6 +26,7 @@ void Draw_fish(SDLDisplay *display, Fish *fish);
 void Draw_shark(SDLDisplay *display, Shark *shark);
 
 void Draw_world(SDLDisplay *display, World *world);
+void Render_two_worlds(SDLDisplay *display, World *left_world, World *right_world);
 void Render_world(SDLDisplay *display, World *world);
 
 void Draw_collider(SDLDisplay *display, Collider *collider);
