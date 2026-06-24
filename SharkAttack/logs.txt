@@ -1,0 +1,70 @@
+# Génération num: 1 
+Theta
+center: 0.943737
+alignment: 0.899778
+pursuit: 1.204185
+Avg gain: 0.000000
+
+# Génération num: 11 
+Theta
+center: 0.945211
+alignment: 0.899390
+pursuit: 1.211388
+Avg gain: 0.000000
+
+# Génération num: 21 
+Theta
+center: 0.943559
+alignment: 0.899716
+pursuit: 1.209838
+Avg gain: 0.000000
+
+# Génération num: 31 
+Theta
+center: 0.941955
+alignment: 0.899878
+pursuit: 1.203566
+Avg gain: 0.000000
+
+# Génération num: 41 
+Theta
+center: 0.942494
+alignment: 0.899641
+pursuit: 1.208431
+Avg gain: 0.000000
+
+# Génération num: 51 
+Theta
+center: 0.941138
+alignment: 0.900376
+pursuit: 1.204221
+Avg gain: 0.000000
+
+# Génération num: 61 
+Theta
+center: 0.940659
+alignment: 0.900541
+pursuit: 1.203964
+Avg gain: 0.000000
+
+# Génération num: 71 
+Theta
+center: 0.941368
+alignment: 0.900123
+pursuit: 1.209116
+Avg gain: 0.000000
+
+# Génération num: 81 
+Theta
+center: 0.940784
+alignment: 0.900464
+pursuit: 1.208116
+Avg gain: 0.000000
+
+# Génération num: 91 
+Theta
+center: 0.939214
+alignment: 0.900915
+pursuit: 1.205274
+Avg gain: 0.000000
+

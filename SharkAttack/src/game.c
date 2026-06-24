@@ -108,7 +108,7 @@ void Game_run_terminal() {
                 i < NB_OCCURRENCE && !terminal_interrupted;
          i++) {
         Game_step(world);
-        printf("------\n");
+        printf("%d %d\n", i, world->fish_eaten);
     }
 
     if (terminal_interrupted) {
@@ -127,6 +127,7 @@ void Game_run_terminal() {
            world->shark->pos.y, world->theta_shark.center,
            world->theta_shark.alignment, world->theta_shark.pursuit);
     World_destroy(world);
+    free(shark_theta);
 }
 
 void Game_destroy(Game *game) {

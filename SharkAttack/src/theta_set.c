@@ -12,17 +12,8 @@ RulesSetFish *RulesSetFish_init() {
     return theta;
 }
 
-// VectorRule *SharkTheta_init() {
-//     VectorRule *theta = malloc(sizeof(VectorRule));
-
-//     theta->center = CENTER;
-//     theta->alignment = SHARK_ALIGNEMENT;
-//     theta->pursuit = PURSUIT;
-//     return theta;
-// }
-
 VectorRule *SharkTheta_init() {
-    VectorRule *theta = malloc(sizeof(VectorRule));
+    VectorRule *theta = calloc(1, sizeof(VectorRule));
 
     if (!load_theta(theta, THETA_FILE)) {
         fprintf(stderr, "Erreur: échec du chargement des paramètres\n");
