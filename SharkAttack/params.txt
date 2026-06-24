@@ -7,6 +7,6 @@ nb_game 10
 nb_occurrence 1000
 
 # Theta
-center: 1
-alignment: 1
-pursuit: 1
+center: 0.944314
+alignment: 0.899719
+pursuit: 1.205406

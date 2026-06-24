@@ -2,7 +2,7 @@
 #define INPUT_OUTPUT_H
 
 #include "config.h"
-#include "reinforce.h"
+#include "utils_reinforce.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>

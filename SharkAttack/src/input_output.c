@@ -139,7 +139,7 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_gain,
     fprintf(file, "center: %f\n", theta->center);
     fprintf(file, "alignment: %f\n", theta->alignment);
     fprintf(file, "pursuit: %f\n", theta->pursuit);
-    fprintf(file, "Avg gain: %f", avg_gain);
+    fprintf(file, "Avg gain: %f\n\n", avg_gain);
 
     fclose(file);
     return true;

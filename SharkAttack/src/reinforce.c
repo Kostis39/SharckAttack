@@ -191,7 +191,7 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters) {
             *theta, Vector_rule_scaled(grad.y, hyperparameters.alpha));
 
         if (k % 10 == 0) {
-            logs_generation(theta, k, 0, TXT_LOG);
+            logs_generation(theta, k + 1, 0, TXT_LOG);
         }
 
         printf("======================\n");
