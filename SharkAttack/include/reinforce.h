@@ -2,11 +2,14 @@
 #define REINFORCE_H
 
 #include "config.h"
+#include "mj.h"
 #include "shark.h"
 #include "shark_controller.h"
 #include "theta_set.h"
 #include "vector.h"
+#include "world.h"
 #include <assert.h>
+#include <pthread.h>
 #include <stdlib.h>
 
 typedef struct StepTrajectory {
@@ -37,6 +40,12 @@ typedef struct {
     float sigma;
 } Hyperparameters;
 
+typedef struct {
+    SharkTheta theta;
+    Hyperparameters hyperparameters;
+
+} WorkerArgs;
+
 Trajectory *Trajectory_init();
 void Trajectory_destroy(Trajectory *trajectory);
 void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action,
@@ -56,5 +65,8 @@ Gradient Gradient_zero();
 
 Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters);
 
-void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters);
+void *Gradient_worker(void *args);
+
+void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters,
+                        int thread_count);
 #endif
