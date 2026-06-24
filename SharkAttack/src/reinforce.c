@@ -121,7 +121,7 @@ Gradient Gradient_zero() {
     return G;
 }
 
-Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
+Gradient Generate_gradient(VectorRule theta, Hyperparameters hyperparameters) {
     float G = 0;
     float GG;
     float mu_x, mu_y;
@@ -145,8 +145,8 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
         G = step.reward + hyperparameters.gamma * G;
         GG = pow(hyperparameters.gamma, t) * G;
 
-        mu_x = Dot_product(theta.x, step.phi.x);
-        mu_y = Dot_product(theta.y, step.phi.y);
+        mu_x = Dot_product(theta, step.phi.x);
+        mu_y = Dot_product(theta, step.phi.y);
 
         score_x = Vector_rule_scaled(step.phi.x,
                                      (1.0f / pow(hyperparameters.sigma, 2)) *
@@ -164,7 +164,7 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
     return D;
 }
 
-void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters) {
+void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters) {
 
     for (int k = 0; k < hyperparameters.nb_gen; k++) {
 
@@ -185,16 +185,14 @@ void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters) {
         grad.y = Vector_rule_scaled(D_total.y, 1.0f / hyperparameters.nb_game);
 
         // mise à jour de theta
-        theta->x = Vector_rule_add(
-            theta->x, Vector_rule_scaled(grad.x, hyperparameters.alpha));
-        theta->y = Vector_rule_add(
-            theta->y, Vector_rule_scaled(grad.y, hyperparameters.alpha));
+        *theta = Vector_rule_add(
+            *theta, Vector_rule_scaled(grad.x, hyperparameters.alpha));
+        *theta = Vector_rule_add(
+            *theta, Vector_rule_scaled(grad.y, hyperparameters.alpha));
 
         printf("======================\n");
         printf("itération %d / %d\n", k + 1, hyperparameters.nb_gen);
-        printf("theta_x = (%f, %f, %f)\n", theta->x.center, theta->x.alignment,
-               theta->x.pursuit);
-        printf("theta_y = (%f, %f, %f)\n", theta->y.center, theta->y.alignment,
-               theta->y.pursuit);
+        printf("theta_x = (%f, %f, %f)\n", theta->center, theta->alignment,
+               theta->pursuit);
     }
 }
