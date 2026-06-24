@@ -191,7 +191,7 @@ void Draw_sea_plants(SDL_Renderer *r, int width, int height, float time) {
  * cette fct represente graphiquement un obstacle/collider
  * @param r renderer sdl utilisé pour dessiner
  * @param cx coord x du centre de la mine
- * @param cy coord x du centre de la mine
+ * @param cy coord y du centre de la mine
  * @param radius demi-taille de la mine
  */
 void Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius) {
@@ -225,7 +225,7 @@ void Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius) {
 /**
  * @brief dessine un chiffre avec des segments rectangulaires
  * le chiffre esr dessiné comme un afficheur a 7 segments
- * @param r
+ * @param r renderer sdl utilisé pour dessiner
  * @param x coord x du coin sup gauche
  * @param y coord y du coin sup gauche
  * @param n chiffre a afficher entre 0 et 9

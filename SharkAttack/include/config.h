@@ -30,7 +30,7 @@
 #define ALIGNMENT 0.3f
 #define COHESION 0.003f
 #define SHARK_AVOIDANCE 0.1f
-#define COLLIDER_AVOIDANCE 0.5f
+#define COLLIDER_AVOIDANCE 0.9f
 
 /* Poids des règles de shark*/
 #define THETA_FILE "new_params.txt"

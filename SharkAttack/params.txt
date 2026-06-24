@@ -1,12 +1,12 @@
 # Hyperparameters
-gamma 0.99
-sigma 3.0
-alpha 0.01
+gamma 0.9998
+sigma 1.0
+alpha 0.001
 nb_gen 10000
 nb_game 10
 nb_occurrence 5000
 
 # Theta
-center: 1.5
-alignment: 0.5
-pursuit: 1.5
+center: 14.2
+alignment: -27.7
+pursuit: 24.9

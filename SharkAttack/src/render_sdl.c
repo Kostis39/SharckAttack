@@ -95,7 +95,7 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
 
     display->window =
         SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                         width, height, SDL_WINDOW_SHOWN);
+                         width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
     if (display->window == NULL) {
         fprintf(stderr, "Erreur SDL_CreateWindow : %s\n", SDL_GetError());
