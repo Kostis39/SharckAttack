@@ -75,20 +75,17 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
         Vector center =
             Rules_center(perception->self, perception->center_of_mass,
                          perception->has_prey_visible);
-        phi.x.center = center.x;
-        phi.y.center = center.y;
+        SharkPhi_add_vector(&phi, center, Rules_Center);
 
         Vector alignment =
             Rules_alignment_shark(perception->self, perception->avg_velocity,
                                   perception->has_prey_visible);
-        phi.x.alignment = alignment.x;
-        phi.y.alignment = alignment.y;
+        SharkPhi_add_vector(&phi, alignment, Rules_Alignment);
 
         Vector pursuit = Rules_pursuit(
             perception->self, perception->closest_fish.position,
             perception->has_prey, perception->width, perception->height);
-        phi.x.pursuit = pursuit.x;
-        phi.y.pursuit = pursuit.y;
+        SharkPhi_add_vector(&phi, pursuit, Rules_Pursuit);
 
         // Combinaison pondérée des vecteurs
         Vector mu;
