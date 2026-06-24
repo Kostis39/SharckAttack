@@ -2,6 +2,8 @@
 #include "mj.h"
 #include "world.h"
 
+extern volatile sig_atomic_t stop_requested;
+
 Trajectory *Trajectory_init() {
     Trajectory *new_trajectory = calloc(1, sizeof(Trajectory));
     if (new_trajectory == NULL)
@@ -129,9 +131,9 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
     VectorRule score_x, score_y;
     Gradient D = Gradient_zero();
 
-    World *world =
-        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
-                   hyperparameters.sigma, hyperparameters.nb_occurrence, false);
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
+                              hyperparameters.sigma,
+                              hyperparameters.nb_occurrence, false, true);
 
     for (int i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                     i < hyperparameters.nb_occurrence;
@@ -185,7 +187,12 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
         calloc(thread_count, sizeof(*result_trajectories));
 
     for (int k = 0; k < hyperparameters.nb_gen; k++) {
-
+        if (stop_requested) {
+            printf(
+                "=== Arrêt prématuré de l'entraînement (Génération %d) ===\n",
+                k);
+            break;
+        }
         Gradient D_total = Gradient_zero();
         float average_reward = 0.0f;
         float average_gain = 0.0f;
@@ -236,7 +243,7 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
 
         if ((k + 1) % STEP_LOG == 0) {
             logs_generation(theta, k + 1, average_reward, average_gain,
-                            average_iteration, TXT_LOG);
+                            average_iteration, FILE_LOG);
         }
 
         printf("=== Génération %d / %d ===\n", k + 1, hyperparameters.nb_gen);

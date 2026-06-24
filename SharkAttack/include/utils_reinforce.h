@@ -8,7 +8,6 @@ typedef struct StepTrajectory {
     SharkPhi phi;
     Vector action;
     float reward;
-    float nb_iteration;
 } StepTrajectory;
 
 typedef struct {

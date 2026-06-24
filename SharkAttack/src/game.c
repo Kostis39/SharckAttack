@@ -106,7 +106,7 @@ void Game_run_terminal() {
 
     VectorRule *shark_theta = SharkTheta_init();
     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB,
-                              *shark_theta, 0, NB_OCCURRENCE, false);
+                              *shark_theta, 0, NB_OCCURRENCE, false, false);
 
     for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                 i < world->nb_occurrence && !terminal_interrupted;

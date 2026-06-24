@@ -3,11 +3,22 @@
 #include "input_output.h"
 #include "render_sdl.h"
 #include "utils.h"
+#include <signal.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+
+// Variable globale volatile pour communiquer entre le signal et ton programme
+volatile sig_atomic_t stop_requested = 0;
+
+void handle_sigint(int sig) {
+    (void)sig; // Évite le warning variable inutilisée
+    stop_requested = 1;
+    printf(
+        "\n[Signal] Interruption détectée ! Fin propre au prochain cycle...\n");
+}
 
 int main(int argc, char *argv[]) {
     bool use_term = false;
@@ -29,10 +40,11 @@ int main(int argc, char *argv[]) {
         VectorRule theta;
         Hyperparameters hyperparameters;
 
-        if (!load_params(&theta, &hyperparameters, TXT_LOAD_PARAMS)) {
+        if (!load_params(&theta, &hyperparameters, THETA_FILE)) {
             fprintf(stderr, "Erreur: échec du chargement des paramètres\n");
             return 1;
         }
+        init_logs(THETA_FILE, FILE_LOG);
 
         printf("=== Paramètres chargés ===\n");
         printf("gamma: %.3f\n", hyperparameters.gamma);
@@ -43,16 +55,16 @@ int main(int argc, char *argv[]) {
         printf("nb_occurrence: %d\n", hyperparameters.nb_occurrence);
 
         printf("\n=== Theta ===\n");
-        printf("theta = (%f, %f, %f)\n", theta.center, theta.alignment,
-               theta.pursuit);
+        printf("Center: %f Alignement: %f Pursuit: %f\n", theta.center,
+               theta.alignment, theta.pursuit);
         printf("\n");
+
+        signal(SIGINT, handle_sigint);
 
         Reinforce_learning(&theta, hyperparameters, NB_THREADS);
 
         // sauvegarder theta quand l'entraînement est terminé
-        if (!save_params(&theta, &hyperparameters, TXT_FINAL_PARAMS)) {
-            fprintf(stderr, "Erreur: échec de la sauvegarde\n");
-        }
+        end_logs(THETA_FILE, FILE_LOG);
     } else {
         Game_run_SDL(benchmark_mode);
     }
