@@ -24,6 +24,12 @@ typedef struct {
 } Gradient;
 
 typedef struct {
+    Gradient grad;
+    float total_reward;
+    float total_gain;
+} TrajectoryCalculation;
+
+typedef struct {
     int nb_gen;
     int nb_game;
     int nb_occurrence;
