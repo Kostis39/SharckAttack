@@ -1,6 +1,6 @@
 #include "vector_rule.h"
 
-VectorRule VectorRule_init(void) {
+VectorRule VectorRule_init() {
     VectorRule rules;
     for (int i = 0; i < Rules_Lenght; ++i) {
         rules.vect[i] = 0.0f;
