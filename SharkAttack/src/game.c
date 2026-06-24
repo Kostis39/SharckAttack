@@ -31,9 +31,12 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
     game->world2 = World_init(width / 2, height, nb_fish, nb_collider,
                               *shark_theta, 0, NB_OCCURRENCE, false, false);
     if (!game->world1 || !game->world2) {
+        free(shark_theta);
         Destroy_sdl_display(&game->display);
         return false;
     }
+
+    free(shark_theta);
 
     game->time = 0;
     game->paused = false;

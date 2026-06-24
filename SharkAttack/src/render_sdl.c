@@ -132,6 +132,16 @@ void Destroy_sdl_display(SDLDisplay *display) {
     if (display == NULL)
         return;
 
+    if (display->left_scene != NULL) {
+        SDL_DestroyTexture(display->left_scene);
+        display->left_scene = NULL;
+    }
+
+    if (display->right_scene != NULL) {
+        SDL_DestroyTexture(display->right_scene);
+        display->right_scene = NULL;
+    }
+
     if (display->renderer != NULL) {
         SDL_DestroyRenderer(display->renderer);
         display->renderer = NULL;
@@ -674,11 +684,9 @@ void Draw_world(SDLDisplay *display, World *world) {
  */
 void Render_two_worlds(SDLDisplay *display, World *left_world,
                        World *right_world) {
-    static SDL_Texture *left_scene = NULL;
-    static SDL_Texture *right_scene = NULL;
-    static int texture_w = 0;
-    static int texture_h = 0;
-    static int window_was_doubled = 0;
+    int texture_w = 0;
+    int texture_h = 0;
+    int window_was_doubled = 0;
 
     static int old_score[2] = {0, 0};
     static int gain[2] = {0, 0};
@@ -712,18 +720,18 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     /*
      * Création des textures où on dessine chaque vue.
      */
-    if (left_scene == NULL || texture_w != world_w || texture_h != world_h) {
-        if (left_scene != NULL)
-            SDL_DestroyTexture(left_scene);
+    if (display->left_scene == NULL || texture_w != world_w || texture_h != world_h) {
+        if (display->left_scene != NULL)
+            SDL_DestroyTexture(display->left_scene);
 
-        if (right_scene != NULL)
-            SDL_DestroyTexture(right_scene);
+        if (display->right_scene != NULL)
+            SDL_DestroyTexture(display->right_scene);
 
-        left_scene =
+        display->left_scene =
             SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
                               SDL_TEXTUREACCESS_TARGET, world_w, world_h);
 
-        right_scene =
+        display->right_scene =
             SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
                               SDL_TEXTUREACCESS_TARGET, world_w, world_h);
 
@@ -731,14 +739,14 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         texture_h = world_h;
     }
 
-    if (left_scene == NULL || right_scene == NULL)
+    if (display->left_scene == NULL || display->right_scene == NULL)
         return;
 
     SDL_PumpEvents();
     g_debug_view = SDL_GetKeyboardState(NULL)[SDL_SCANCODE_V];
 
     World *worlds[2] = {left_world, right_world};
-    SDL_Texture *scenes[2] = {left_scene, right_scene};
+    SDL_Texture *scenes[2] = {display->left_scene, display->right_scene};
 
     int nb_views = 2;
 
@@ -811,7 +819,7 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     /*
      * Partie gauche.
      */
-    SDL_RenderCopy(r, left_scene, NULL, &left_screen);
+    SDL_RenderCopy(r, display->left_scene, NULL, &left_screen);
 
     /*
      * Partie droite.
@@ -819,9 +827,9 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
      * Sinon, on affiche right_scene.
      */
     if (left_world == right_world)
-        SDL_RenderCopy(r, left_scene, NULL, &right_screen);
+        SDL_RenderCopy(r, display->left_scene, NULL, &right_screen);
     else
-        SDL_RenderCopy(r, right_scene, NULL, &right_screen);
+        SDL_RenderCopy(r, display->right_scene, NULL, &right_screen);
 
     /*
      * Séparation au milieu.
