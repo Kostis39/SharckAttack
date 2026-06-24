@@ -97,3 +97,40 @@ bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
 
     return true;
 }
+
+bool load_theta(SharkTheta *theta, char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        fprintf(stderr, "Erreur: impossible d'ouvrir le fichier %s\n",
+                filename);
+        return false;
+    }
+
+    char line[256];
+
+    while (fgets(line, sizeof(line), file)) {
+        // Ignorer les commentaires et les lignes vides
+        if (line[0] == '#' || line[0] == '\n')
+            continue;
+
+        // theta_x
+        if (strncmp(line, "theta_x", 7) == 0) {
+            char *ptr = line + 7;
+
+            sscanf(ptr, " %f %f %f", &theta->x.center, &theta->x.alignment,
+                   &theta->x.pursuit);
+        }
+
+        // theta_y
+        else if (strncmp(line, "theta_y", 7) == 0) {
+            char *ptr = line + 7;
+
+            sscanf(ptr, " %f %f %f", &theta->y.center, &theta->y.alignment,
+                   &theta->y.pursuit);
+        }
+    }
+
+    fclose(file);
+
+    return true;
+}
