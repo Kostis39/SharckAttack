@@ -2,7 +2,7 @@
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
                   VectorRule theta_shark, float sigma, int nb_occurrence,
-                  bool is_player) {
+                  bool is_player, bool learn) {
     World *new_world = calloc(1, sizeof(World));
     new_world->width = width;
     new_world->height = height;
@@ -19,6 +19,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
     new_world->trajectory = Trajectory_init();
     new_world->sigma = sigma;
     new_world->nb_occurrence = nb_occurrence;
+    new_world->learn = learn;
 
     return new_world;
 }

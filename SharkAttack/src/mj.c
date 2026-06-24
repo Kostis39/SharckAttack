@@ -230,6 +230,9 @@ int handle_shark_eat(World *world) {
 
 void UpdateWorld(World *world, World *tmp_world) {
     FishPerception *perception = malloc(sizeof(FishPerception));
+    Vector shark_action;
+    StepTrajectory *step_trajectory;
+
     if (!perception)
         return;
 
@@ -258,21 +261,26 @@ void UpdateWorld(World *world, World *tmp_world) {
 
     Get_shark_perception(world->shark, world, shark_perception);
 
-    Need_trajectory_growing(world->trajectory);
-    StepTrajectory *step_trajectory =
-        &world->trajectory->steps[world->trajectory->length];
+    if (world->learn) {
+        Need_trajectory_growing(world->trajectory);
+        step_trajectory = &world->trajectory->steps[world->trajectory->length];
 
-    Vector shark_action = shark_choose_action(
-        shark_perception, world->theta_shark, step_trajectory, world->sigma);
+        shark_action = shark_choose_action(shark_perception, world->theta_shark,
+                                           step_trajectory, world->sigma);
+    } else {
+        shark_action = shark_choose_action(shark_perception, world->theta_shark,
+                                           NULL, world->sigma);
+    }
 
     free(shark_perception);
 
     Shark_apply_action(tmp_world->shark, shark_action);
 
     int nb_fish_ate = handle_shark_eat(tmp_world);
-    step_trajectory->reward = Shark_reward(nb_fish_ate);
-
-    world->trajectory->length++;
+    if (world->learn) {
+        step_trajectory->reward = Shark_reward(nb_fish_ate);
+        world->trajectory->length++;
+    }
 }
 
 void Game_step(World *world) {

@@ -33,11 +33,13 @@ typedef struct {
     Trajectory *trajectory;
     float sigma;
     int nb_occurrence;
+
+    bool learn;
 } World;
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
                   VectorRule theta_shark, float sigma, int nb_occurrence,
-                  bool is_player);
+                  bool is_player, bool learn);
 void World_destroy(World *world);
 void World_update(World *world, World *world_tmp);
 

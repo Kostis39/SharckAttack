@@ -129,9 +129,9 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
     VectorRule score_x, score_y;
     Gradient D = Gradient_zero();
 
-    World *world =
-        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
-                   hyperparameters.sigma, hyperparameters.nb_occurrence, false);
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
+                              hyperparameters.sigma,
+                              hyperparameters.nb_occurrence, false, true);
 
     for (int i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                     i < hyperparameters.nb_occurrence;
