@@ -19,9 +19,10 @@ typedef struct {
 } VectorRule;
 
 void Vector_print(Vector v);
-VectorRule VectorRule_init(VectorRule v);
 
 Vector Vector_init(); // Initialise à 0 x et y
+VectorRule VectorRule_init();
+
 Vector Vector_add(Vector a, Vector b);
 Vector Vector_sub(Vector a, Vector b);
 Vector Vector_scale(Vector v, float k);

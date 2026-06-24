@@ -1,6 +1,6 @@
 #include "input_output.h"
 
-bool save_params(SharkTheta *theta, Hyperparameters *hyperparams,
+bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
                  char *filename) {
     if (!theta || !hyperparams || !filename) {
         fprintf(stderr, "Erreur: pointeur NULL dans save_params\n");
@@ -24,26 +24,22 @@ bool save_params(SharkTheta *theta, Hyperparameters *hyperparams,
     fprintf(file, "nb_occurrence %d\n", hyperparams->nb_occurrence);
 
     // Sauvegarde de theta
-    fprintf(file, "\n# theta\n");
+    fprintf(file, "\n# Theta\n");
 
-    fprintf(file, "theta_x");
-    fprintf(file, " %f", theta->x.center);
-    fprintf(file, " %f", theta->x.alignment);
-    fprintf(file, " %f", theta->x.pursuit);
-    fprintf(file, "\n");
-
-    fprintf(file, "theta_y");
-    fprintf(file, " %f", theta->y.center);
-    fprintf(file, " %f", theta->y.alignment);
-    fprintf(file, " %f", theta->y.pursuit);
-    fprintf(file, "\n");
+    fprintf(file, "center: %f\n", theta->center);
+    fprintf(file, "alignment: %f\n", theta->alignment);
+    fprintf(file, "pursuit: %f\n", theta->pursuit);
 
     fclose(file);
     return true;
 }
 
-bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
+bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
                  char *filename) {
+    if (!theta || !hyperparams || !filename) {
+        fprintf(stderr, "Erreur: pointeur NULL dans load_params\n");
+        return false;
+    }
     FILE *file = fopen(filename, "r");
     if (!file) {
         fprintf(stderr, "Erreur: impossible d'ouvrir le fichier %s\n",
@@ -52,14 +48,13 @@ bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
     }
 
     char line[256];
+    float value_f;
+    int value_i;
 
     while (fgets(line, sizeof(line), file)) {
         // Ignorer les commentaires et les lignes vides
         if (line[0] == '#' || line[0] == '\n')
             continue;
-
-        float value_f;
-        int value_i;
 
         // Hyperparamètres
         if (sscanf(line, "gamma %f", &value_f) == 1) {
@@ -76,20 +71,13 @@ bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
             hyperparams->nb_occurrence = value_i;
         }
 
-        // theta_x
-        else if (strncmp(line, "theta_x", 7) == 0) {
-            char *ptr = line + 7;
-
-            sscanf(ptr, " %f %f %f", &theta->x.center, &theta->x.alignment,
-                   &theta->x.pursuit);
-        }
-
-        // theta_y
-        else if (strncmp(line, "theta_y", 7) == 0) {
-            char *ptr = line + 7;
-
-            sscanf(ptr, " %f %f %f", &theta->y.center, &theta->y.alignment,
-                   &theta->y.pursuit);
+        // Theta
+        else if (sscanf(line, "center: %f", &value_f) == 1) {
+            theta->center = value_f;
+        } else if (sscanf(line, "alignment: %f", &value_f) == 1) {
+            theta->alignment = value_f;
+        } else if (sscanf(line, "pursuit: %f", &value_f) == 1) {
+            theta->pursuit = value_f;
         }
     }
 
@@ -98,7 +86,11 @@ bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
     return true;
 }
 
-bool load_theta(SharkTheta *theta, char *filename) {
+bool load_theta(VectorRule *theta, char *filename) {
+    if (!theta || !filename) {
+        fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
+        return false;
+    }
     FILE *file = fopen(filename, "r");
     if (!file) {
         fprintf(stderr, "Erreur: impossible d'ouvrir le fichier %s\n",
@@ -107,30 +99,45 @@ bool load_theta(SharkTheta *theta, char *filename) {
     }
 
     char line[256];
+    float value_t;
 
     while (fgets(line, sizeof(line), file)) {
         // Ignorer les commentaires et les lignes vides
         if (line[0] == '#' || line[0] == '\n')
             continue;
-
-        // theta_x
-        if (strncmp(line, "theta_x", 7) == 0) {
-            char *ptr = line + 7;
-
-            sscanf(ptr, " %f %f %f", &theta->x.center, &theta->x.alignment,
-                   &theta->x.pursuit);
-        }
-
-        // theta_y
-        else if (strncmp(line, "theta_y", 7) == 0) {
-            char *ptr = line + 7;
-
-            sscanf(ptr, " %f %f %f", &theta->y.center, &theta->y.alignment,
-                   &theta->y.pursuit);
+        if (sscanf(line, "center: %f", &value_t) == 1) {
+            theta->center = value_t;
+        } else if (sscanf(line, "alignment: %f", &value_t) == 1) {
+            theta->alignment = value_t;
+        } else if (sscanf(line, "pursuit: %f", &value_t) == 1) {
+            theta->pursuit = value_t;
         }
     }
 
     fclose(file);
 
+    return true;
+}
+
+bool logs_theta(VectorRule *theta, int gen_number, char *filename) {
+    if (!theta || !filename) {
+        fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
+        return false;
+    }
+    FILE *file = fopen(filename, "a");
+    if (!file) {
+        fprintf(stderr, "Erreur: impossible d'ouvrir le fichier %s\n",
+                filename);
+        return false;
+    }
+
+    // Sauvegarde de theta
+    fprintf(file, "# Génération num: %d \nTheta\n", gen_number);
+
+    fprintf(file, "center: %f\n", theta->center);
+    fprintf(file, "alignment: %f\n", theta->alignment);
+    fprintf(file, "pursuit: %f\n\n", theta->pursuit);
+
+    fclose(file);
     return true;
 }
