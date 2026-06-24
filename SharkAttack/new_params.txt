@@ -6,6 +6,7 @@ nb_gen 100
 nb_game 10
 nb_occurrence 1000
 
-# theta
-theta_x 1.030948 0.239537 4.413767
-theta_y 0.111837 2.235697 -0.665700
+# Theta
+center: 1
+alignment: 1
+pursuit: 1

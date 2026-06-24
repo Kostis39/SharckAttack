@@ -12,20 +12,17 @@ RulesSetFish *RulesSetFish_init() {
     return theta;
 }
 
-// SharkTheta *SharkTheta_init() {
-//     SharkTheta *theta = malloc(sizeof(SharkTheta));
+// VectorRule *SharkTheta_init() {
+//     VectorRule *theta = malloc(sizeof(VectorRule));
 
-//     theta->x.center = CENTER;
-//     theta->y.center = CENTER;
-//     theta->x.alignment = SHARK_ALIGNEMENT;
-//     theta->y.alignment = SHARK_ALIGNEMENT;
-//     theta->x.pursuit = PURSUIT;
-//     theta->y.pursuit = PURSUIT;
+//     theta->center = CENTER;
+//     theta->alignment = SHARK_ALIGNEMENT;
+//     theta->pursuit = PURSUIT;
 //     return theta;
 // }
 
-SharkTheta *SharkTheta_init() {
-    SharkTheta *theta = malloc(sizeof(SharkTheta));
+VectorRule *SharkTheta_init() {
+    VectorRule *theta = malloc(sizeof(VectorRule));
 
     if (!load_theta(theta, THETA_FILE)) {
         fprintf(stderr, "Erreur: échec du chargement des paramètres\n");
@@ -33,17 +30,15 @@ SharkTheta *SharkTheta_init() {
     }
 
     printf("\n=== Theta ===\n");
-    printf("theta_x = (%f, %f, %f)\n", theta->x.center, theta->x.alignment,
-           theta->x.pursuit);
-    printf("theta_y = (%f, %f, %f)\n", theta->y.center, theta->y.alignment,
-           theta->y.pursuit);
+    printf("theta = (%f, %f, %f)\n", theta->center, theta->alignment,
+           theta->pursuit);
     printf("\n");
 
     return theta;
 }
 
 void RulesSetFish_destroy(RulesSetFish *theta) { free(theta); }
-void SharkTheta_destroy(SharkTheta *theta) {
+void SharkTheta_destroy(VectorRule *theta) {
     if (theta != NULL)
         free(theta);
 }

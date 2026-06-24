@@ -50,7 +50,6 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
     char line[256];
     float value_f;
     int value_i;
-    float value_t;
 
     while (fgets(line, sizeof(line), file)) {
         // Ignorer les commentaires et les lignes vides
@@ -73,12 +72,12 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
         }
 
         // Theta
-        else if (sscanf(line, "center: %f", &value_t) == 1) {
-            theta->center = value_t;
-        } else if (sscanf(line, "alignment: %f", &value_t) == 1) {
-            theta->alignment = value_t;
-        } else if (sscanf(line, "pursuit: %f", &value_t) == 1) {
-            theta->pursuit = value_t;
+        else if (sscanf(line, "center: %f", &value_f) == 1) {
+            theta->center = value_f;
+        } else if (sscanf(line, "alignment: %f", &value_f) == 1) {
+            theta->alignment = value_f;
+        } else if (sscanf(line, "pursuit: %f", &value_f) == 1) {
+            theta->pursuit = value_f;
         }
     }
 
