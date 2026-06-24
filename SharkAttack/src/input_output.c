@@ -50,7 +50,6 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
     char line[256];
     float value_f;
     int value_i;
-    float value_t;
 
     while (fgets(line, sizeof(line), file)) {
         // Ignorer les commentaires et les lignes vides
@@ -73,12 +72,12 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
         }
 
         // Theta
-        else if (sscanf(line, "center: %f", &value_t) == 1) {
-            theta->center = value_t;
-        } else if (sscanf(line, "alignment: %f", &value_t) == 1) {
-            theta->alignment = value_t;
-        } else if (sscanf(line, "pursuit: %f", &value_t) == 1) {
-            theta->pursuit = value_t;
+        else if (sscanf(line, "center: %f", &value_f) == 1) {
+            theta->center = value_f;
+        } else if (sscanf(line, "alignment: %f", &value_f) == 1) {
+            theta->alignment = value_f;
+        } else if (sscanf(line, "pursuit: %f", &value_f) == 1) {
+            theta->pursuit = value_f;
         }
     }
 
@@ -120,7 +119,8 @@ bool load_theta(VectorRule *theta, char *filename) {
     return true;
 }
 
-bool logs_theta(VectorRule *theta, int gen_number, char *filename) {
+bool logs_generation(VectorRule *theta, int gen_number, float avg_gain,
+                     char *filename) {
     if (!theta || !filename) {
         fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
         return false;
@@ -133,11 +133,13 @@ bool logs_theta(VectorRule *theta, int gen_number, char *filename) {
     }
 
     // Sauvegarde de theta
-    fprintf(file, "# Génération num: %d \nTheta\n", gen_number);
+    fprintf(file, "# Génération num: %d \n", gen_number);
 
+    fprintf(file, "Theta\n");
     fprintf(file, "center: %f\n", theta->center);
     fprintf(file, "alignment: %f\n", theta->alignment);
-    fprintf(file, "pursuit: %f\n\n", theta->pursuit);
+    fprintf(file, "pursuit: %f\n", theta->pursuit);
+    fprintf(file, "Avg gain: %f", avg_gain);
 
     fclose(file);
     return true;

@@ -47,7 +47,7 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
-Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
+Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
                            StepTrajectory *step_trajectory, float sigma) {
     if (!perception)
         return Vector_init();
@@ -92,8 +92,8 @@ Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
 
         // Combinaison pondérée des vecteurs
         Vector mu;
-        mu.x = Dot_product(theta.x, phi.x);
-        mu.y = Dot_product(theta.y, phi.y);
+        mu.x = Dot_product(theta, phi.x);
+        mu.y = Dot_product(theta, phi.y);
 
         Vector noise = box_muller_standard();
 

@@ -54,7 +54,7 @@ void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
 
 Gradient Gradient_zero();
 
-Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters);
+Gradient Generate_gradient(VectorRule theta, Hyperparameters hyperparameters);
 
-void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters);
+void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters);
 #endif
