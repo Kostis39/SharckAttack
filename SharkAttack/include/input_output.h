@@ -16,4 +16,6 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
 
 bool load_theta(VectorRule *theta, char *filename);
 
+bool logs_theta(VectorRule *theta, int gen_number, char *filename);
+
 #endif

@@ -119,3 +119,26 @@ bool load_theta(VectorRule *theta, char *filename) {
 
     return true;
 }
+
+bool logs_theta(VectorRule *theta, int gen_number, char *filename) {
+    if (!theta || !filename) {
+        fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
+        return false;
+    }
+    FILE *file = fopen(filename, "a");
+    if (!file) {
+        fprintf(stderr, "Erreur: impossible d'ouvrir le fichier %s\n",
+                filename);
+        return false;
+    }
+
+    // Sauvegarde de theta
+    fprintf(file, "# Génération num: %d \nTheta\n", gen_number);
+
+    fprintf(file, "center: %f\n", theta->center);
+    fprintf(file, "alignment: %f\n", theta->alignment);
+    fprintf(file, "pursuit: %f\n\n", theta->pursuit);
+
+    fclose(file);
+    return true;
+}
