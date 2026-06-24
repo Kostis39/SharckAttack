@@ -3,10 +3,11 @@
 
 #define PI 3.14159265358979323846
 
-#define TXT_LOAD_PARAMS "params.txt"
-#define TXT_FINAL_PARAMS "new_params.txt"
-#define TXT_LOG "logs.txt"
-#define STEP_LOG 50
+#define FILE_LOG "logs.txt"
+/* Poids des règles de shark*/
+#define THETA_FILE "params.txt"
+
+#define STEP_LOG 1
 
 #define NB_OCCURRENCE 10000
 
@@ -31,9 +32,6 @@
 #define COHESION 0.003f
 #define SHARK_AVOIDANCE 0.1f
 #define COLLIDER_AVOIDANCE 0.9f
-
-/* Poids des règles de shark*/
-#define THETA_FILE "new_params.txt"
 
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 4.0f

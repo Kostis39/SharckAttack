@@ -232,7 +232,7 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
 
         if ((k + 1) % STEP_LOG == 0) {
             logs_generation(theta, k + 1, average_reward, average_gain,
-                            TXT_LOG);
+                            FILE_LOG);
         }
 
         printf("=== Génération %d / %d ===\n", k + 1, hyperparameters.nb_gen);

@@ -27,10 +27,11 @@ int main(int argc, char *argv[]) {
         VectorRule theta;
         Hyperparameters hyperparameters;
 
-        if (!load_params(&theta, &hyperparameters, TXT_LOAD_PARAMS)) {
+        if (!load_params(&theta, &hyperparameters, THETA_FILE)) {
             fprintf(stderr, "Erreur: échec du chargement des paramètres\n");
             return 1;
         }
+        init_logs(THETA_FILE, FILE_LOG);
 
         printf("=== Paramètres chargés ===\n");
         printf("gamma: %.3f\n", hyperparameters.gamma);
@@ -41,16 +42,14 @@ int main(int argc, char *argv[]) {
         printf("nb_occurrence: %d\n", hyperparameters.nb_occurrence);
 
         printf("\n=== Theta ===\n");
-        printf("theta = (%f, %f, %f)\n", theta.center, theta.alignment,
-               theta.pursuit);
+        printf("Center: %f Alignement: %f Pursuit: %f\n", theta.center,
+               theta.alignment, theta.pursuit);
         printf("\n");
 
         Reinforce_learning(&theta, hyperparameters, NB_THREADS);
 
         // sauvegarder theta quand l'entraînement est terminé
-        if (!save_params(&theta, &hyperparameters, TXT_FINAL_PARAMS)) {
-            fprintf(stderr, "Erreur: échec de la sauvegarde\n");
-        }
+        end_logs(THETA_FILE, FILE_LOG);
     } else {
         Game_run_SDL(benchmark_mode);
     }
