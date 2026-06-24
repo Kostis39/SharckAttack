@@ -349,7 +349,7 @@ bool end_logs(char *filename_params, char *filename_logs) {
     printf("  Alignment :     %f\n", theta_logs.alignment);
     printf("  Pursuit :       %f\n", theta_logs.pursuit);
     if (gain_params < best_gain_logs) {
-        printf("===Theta Modifié===");
+        printf("===Theta Modifié===\n");
     } else {
         printf("===Theta Non modifié===\n");
     }
