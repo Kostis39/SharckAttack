@@ -248,6 +248,12 @@ void Draw_digit(SDL_Renderer *r, int x, int y, int n, int s) {
     }
 }
 
+/**
+ * @brief compte le nbr de chiffre d un entier (ex: 196 -> 3)
+ * 
+ * @param n entier dont on veut compter les chiffres
+ * @return int nbr de chiffre de l entier
+ */
 int Count_digits(int n) {
     int digits = 1;
 
