@@ -268,7 +268,8 @@ void UpdateWorld(World *world, World *tmp_world) {
 
     free(shark_perception);
 
-    Shark_apply_action(tmp_world->shark, shark_action);
+    Shark_apply_action(tmp_world->shark, shark_action, world->width,
+                       world->height);
 
     int nb_fish_ate = handle_shark_eat(tmp_world);
     step_trajectory->reward = Shark_reward(nb_fish_ate);

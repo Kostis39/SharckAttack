@@ -42,10 +42,10 @@ void Shark_apply_action(Shark *shark, Vector action, int width, int height) {
 
     if (shark->pos.x < 0.0f)
         shark->pos.x = 0.0f;
-    if (shark->pos.x > WIDTH)
-        shark->pos.x = WIDTH;
+    if (shark->pos.x > width)
+        shark->pos.x = width;
     if (shark->pos.y < 0.0f)
         shark->pos.y = 0.0f;
-    if (shark->pos.y > HEIGHT)
-        shark->pos.y = HEIGHT;
+    if (shark->pos.y > height)
+        shark->pos.y = height;
 }
