@@ -8,12 +8,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-bool save_params(SharkTheta *theta, Hyperparameters *hyperparams,
+bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
                  char *filename);
 
-bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
+bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
                  char *filename);
 
-bool load_theta(SharkTheta *theta, char *filename);
+bool load_theta(VectorRule *theta, char *filename);
 
 #endif
