@@ -1,0 +1,180 @@
+# Génération num: 50 
+Theta
+center: 2.151117
+alignment: 0.126613
+pursuit: 1.885244
+
+Avg reward: 139.399994
+Avg gain: 2.943871
+
+# Génération num: 100 
+Theta
+center: 2.554703
+alignment: 0.044331
+pursuit: 2.070316
+
+Avg reward: 135.500000
+Avg gain: 3.452058
+
+# Génération num: 150 
+Theta
+center: 2.589581
+alignment: 0.078151
+pursuit: 2.199425
+
+Avg reward: 143.699997
+Avg gain: 3.719005
+
+# Génération num: 200 
+Theta
+center: 2.737140
+alignment: 0.169347
+pursuit: 2.194882
+
+Avg reward: 149.199997
+Avg gain: 3.905736
+
+# Génération num: 250 
+Theta
+center: 2.798271
+alignment: -0.112624
+pursuit: 2.727201
+
+Avg reward: 155.199997
+Avg gain: 3.613767
+
+# Génération num: 300 
+Theta
+center: 3.276246
+alignment: -1.325338
+pursuit: 4.418763
+
+Avg reward: 178.100006
+Avg gain: 5.334584
+
+# Génération num: 350 
+Theta
+center: 3.702646
+alignment: -3.326816
+pursuit: 6.523045
+
+Avg reward: 191.100006
+Avg gain: 7.085270
+
+# Génération num: 400 
+Theta
+center: 4.129802
+alignment: -5.550207
+pursuit: 8.813722
+
+Avg reward: 193.899994
+Avg gain: 7.170872
+
+# Génération num: 450 
+Theta
+center: 4.877221
+alignment: -7.705794
+pursuit: 10.945565
+
+Avg reward: 192.699997
+Avg gain: 6.680708
+
+# Génération num: 500 
+Theta
+center: 5.254852
+alignment: -10.145964
+pursuit: 13.281327
+
+Avg reward: 197.800003
+Avg gain: 7.336351
+
+# Génération num: 550 
+Theta
+center: 6.087933
+alignment: -11.300556
+pursuit: 14.994284
+
+Avg reward: 198.699997
+Avg gain: 7.309258
+
+# Génération num: 600 
+Theta
+center: 7.279268
+alignment: -13.897960
+pursuit: 17.471640
+
+Avg reward: 197.199997
+Avg gain: 7.907037
+
+# Génération num: 650 
+Theta
+center: 8.239757
+alignment: -15.929017
+pursuit: 19.544725
+
+Avg reward: 198.399994
+Avg gain: 7.303615
+
+# Génération num: 700 
+Theta
+center: 9.089464
+alignment: -18.991594
+pursuit: 22.237707
+
+Avg reward: 197.500000
+Avg gain: 6.336333
+
+# Génération num: 750 
+Theta
+center: 11.051227
+alignment: -22.148211
+pursuit: 23.578049
+
+Avg reward: 197.199997
+Avg gain: 7.324713
+
+# Génération num: 800 
+Theta
+center: 12.799402
+alignment: -25.891651
+pursuit: 24.844278
+
+Avg reward: 197.399994
+Avg gain: 6.586340
+
+# Génération num: 850 
+Theta
+center: 14.206877
+alignment: -27.771128
+pursuit: 24.900242
+
+Avg reward: 199.500000
+Avg gain: 5.514386
+
+# Génération num: 900 
+Theta
+center: 14.844070
+alignment: -28.617914
+pursuit: 24.493773
+
+Avg reward: 193.500000
+Avg gain: 5.779221
+
+# Génération num: 950 
+Theta
+center: 15.632156
+alignment: -29.568556
+pursuit: 24.644566
+
+Avg reward: 195.300003
+Avg gain: 5.519927
+
+# Génération num: 1000 
+Theta
+center: 16.211863
+alignment: -29.611372
+pursuit: 24.284321
+
+Avg reward: 197.800003
+Avg gain: 5.575061
+
