@@ -55,8 +55,7 @@ int main(int argc, char *argv[]) {
         printf("nb_occurrence: %d\n", hyperparameters.nb_occurrence);
 
         printf("\n=== Theta ===\n");
-        printf("Center: %f Alignement: %f Pursuit: %f\n", theta.center,
-               theta.alignment, theta.pursuit);
+        VectorRule_print(theta);
         printf("\n");
 
         signal(SIGINT, handle_sigint);
