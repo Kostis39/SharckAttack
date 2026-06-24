@@ -90,8 +90,8 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
 
         // Combinaison pondérée des vecteurs
         Vector mu;
-        mu.x = Dot_product(theta, phi.x);
-        mu.y = Dot_product(theta, phi.y);
+        mu.x = VectorRule_dot_product(theta, phi.x);
+        mu.y = VectorRule_dot_product(theta, phi.y);
 
         Vector noise = box_muller_standard();
 

@@ -134,8 +134,8 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
         G = step.reward + hyperparameters.gamma * G;
         GG = pow(hyperparameters.gamma, t) * G;
 
-        mu_x = Dot_product(theta, step.phi.x);
-        mu_y = Dot_product(theta, step.phi.y);
+        mu_x = VectorRule_dot_product(theta, step.phi.x);
+        mu_y = VectorRule_dot_product(theta, step.phi.y);
 
         score_x = VectorRule_scaled(step.phi.x,
                                     (1.0f / pow(hyperparameters.sigma, 2)) *

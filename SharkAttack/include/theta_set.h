@@ -2,6 +2,7 @@
 #define THETA_SET_H
 #include "config.h"
 #include "vector.h"
+#include "vector_rule.h"
 #include <stdlib.h>
 
 typedef struct {
@@ -27,9 +28,5 @@ VectorRule *SharkTheta_init();
 
 void RulesSetFish_destroy(RulesSetFish *theta);
 void SharkTheta_destroy(VectorRule *theta);
-
-float Dot_product(VectorRule a, VectorRule b);
-VectorRule VectorRule_scaled(VectorRule v, float scalar);
-VectorRule VectorRule_add(VectorRule a, VectorRule b);
 
 #endif

@@ -1,26 +1,8 @@
 #include "vector.h"
 
 void Vector_print(Vector v) { printf("(%f, %f)\n", v.x, v.y); }
-void VectorRule_print(VectorRule v) {
-    printf("(");
-    for (int i = 0; i < Rules_Lenght; ++i) {
-        printf("%f", v.vect[i]);
-
-        if (i < Rules_Lenght - 1) {
-            printf(", ");
-        }
-    }
-    printf(")");
-}
 
 Vector Vector_init(void) { return (Vector){0.0f, 0.0f}; }
-VectorRule VectorRule_init(void) {
-    VectorRule rules;
-    for (int i = 0; i < Rules_Lenght; ++i) {
-        rules.vect[i] = 0.0f;
-    }
-    return rules;
-}
 
 Vector Vector_add(Vector a, Vector b) { return (Vector){a.x + b.x, a.y + b.y}; }
 

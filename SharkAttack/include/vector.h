@@ -13,15 +13,9 @@ typedef struct {
     float y; /**< Composante y du vecteur */
 } Vector;
 
-typedef struct {
-    float vect[Rules_Lenght];
-} VectorRule;
-
 void Vector_print(Vector v);
-void VectorRule_print(VectorRule v);
 
 Vector Vector_init(); // Initialise à 0 x et y
-VectorRule VectorRule_init();
 
 Vector Vector_add(Vector a, Vector b);
 Vector Vector_sub(Vector a, Vector b);
