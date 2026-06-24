@@ -2,6 +2,7 @@
 #include "game.h"
 #include "input_output.h"
 #include "render_sdl.h"
+#include "utils.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,6 +13,7 @@ int main(int argc, char *argv[]) {
     bool use_term = false;
     bool learn = false;
     bool benchmark_mode = false;
+    init_seed(time(NULL));
 
     if (argc > 1 && strcmp(argv[1], "term") == 0) {
         use_term = true;
