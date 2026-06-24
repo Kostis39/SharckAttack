@@ -1,6 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+#include "config.h"
 #include <math.h>
 #include <stdio.h>
 /**
@@ -13,12 +14,11 @@ typedef struct {
 } Vector;
 
 typedef struct {
-    float center;
-    float alignment;
-    float pursuit;
+    float vect[Rules_Lenght];
 } VectorRule;
 
 void Vector_print(Vector v);
+void VectorRule_print(VectorRule v);
 
 Vector Vector_init(); // Initialise à 0 x et y
 VectorRule VectorRule_init();

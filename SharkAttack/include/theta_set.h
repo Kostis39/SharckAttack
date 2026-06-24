@@ -17,6 +17,11 @@ typedef struct {
     VectorRule y;
 } SharkPhi;
 
+void SharkPhi_print(SharkPhi shark_phi);
+
+void SharkPhi_add_vector(SharkPhi *shark_phi, Vector vect,
+                         enum Rules rule_to_apply);
+
 RulesSetFish *RulesSetFish_init();
 VectorRule *SharkTheta_init();
 
@@ -24,7 +29,7 @@ void RulesSetFish_destroy(RulesSetFish *theta);
 void SharkTheta_destroy(VectorRule *theta);
 
 float Dot_product(VectorRule a, VectorRule b);
-VectorRule Vector_rule_scaled(VectorRule v, float scalar);
-VectorRule Vector_rule_add(VectorRule a, VectorRule b);
+VectorRule VectorRule_scaled(VectorRule v, float scalar);
+VectorRule VectorRule_add(VectorRule a, VectorRule b);
 
 #endif

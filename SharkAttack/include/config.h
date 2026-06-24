@@ -3,6 +3,8 @@
 
 #define PI 3.14159265358979323846
 
+enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
+
 #define FILE_LOG "logs.txt"
 /* Poids des règles de shark*/
 #define THETA_FILE "params.txt"
