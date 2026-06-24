@@ -325,7 +325,6 @@ bool end_logs(char *filename_params, char *filename_logs) {
 
     if (gain_params < best_gain_logs) {
         save_params(&theta_logs, &hyperparams, best_gain_logs, filename_params);
-        printf("\nTetha à changer par rapport à l'initial !\n");
     }
 
     printf("====Fin de run====\n");
@@ -349,5 +348,10 @@ bool end_logs(char *filename_params, char *filename_logs) {
     printf("  Center :        %f\n", theta_logs.center);
     printf("  Alignment :     %f\n", theta_logs.alignment);
     printf("  Pursuit :       %f\n", theta_logs.pursuit);
+    if (gain_params < best_gain_logs) {
+        printf("===Theta Modifié===");
+    } else {
+        printf("===Theta Non modifié===\n");
+    }
     return true;
 }

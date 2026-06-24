@@ -3,11 +3,22 @@
 #include "input_output.h"
 #include "render_sdl.h"
 #include "utils.h"
+#include <signal.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+
+// Variable globale volatile pour communiquer entre le signal et ton programme
+volatile sig_atomic_t stop_requested = 0;
+
+void handle_sigint(int sig) {
+    (void)sig; // Évite le warning variable inutilisée
+    stop_requested = 1;
+    printf(
+        "\n[Signal] Interruption détectée ! Fin propre au prochain cycle...\n");
+}
 
 int main(int argc, char *argv[]) {
     bool use_term = false;
@@ -47,6 +58,8 @@ int main(int argc, char *argv[]) {
         printf("Center: %f Alignement: %f Pursuit: %f\n", theta.center,
                theta.alignment, theta.pursuit);
         printf("\n");
+
+        signal(SIGINT, handle_sigint);
 
         Reinforce_learning(&theta, hyperparameters, NB_THREADS);
 

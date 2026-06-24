@@ -1,15 +1,15 @@
 # Hyperparameters
-gamma 0.9998
-sigma 1.0
-alpha 0.001
+gamma 0.999800
+sigma 1.000000
+alpha 0.001000
 nb_gen 10000
 nb_game 10
 nb_occurrence 1000
 
 # Theta
-center: 16.06
-alignment: -29.29
-pursuit: 32.70
+center: 15.407196
+alignment: -29.346697
+pursuit: 33.399925
 
 # Best gain with this parameters
-gain: 6.002708
+gain: 52.188438

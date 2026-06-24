@@ -2,6 +2,8 @@
 #include "mj.h"
 #include "world.h"
 
+extern volatile sig_atomic_t stop_requested;
+
 Trajectory *Trajectory_init() {
     Trajectory *new_trajectory = calloc(1, sizeof(Trajectory));
     if (new_trajectory == NULL)
@@ -185,7 +187,12 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
         calloc(thread_count, sizeof(*result_trajectories));
 
     for (int k = 0; k < hyperparameters.nb_gen; k++) {
-
+        if (stop_requested) {
+            printf(
+                "=== Arrêt prématuré de l'entraînement (Génération %d) ===\n",
+                k);
+            break;
+        }
         Gradient D_total = Gradient_zero();
         float average_reward = 0.0f;
         float average_gain = 0.0f;

@@ -3,20 +3,20 @@
 # ==========================================
 
 # Hyperparameters utilisés :
-gamma 0.990000
-sigma 3.000000
-alpha 0.010000
-nb_gen 10
-nb_game 7
+gamma 0.999800
+sigma 1.000000
+alpha 0.001000
+nb_gen 10000
+nb_game 10
 nb_occurrence 1000
 
 # Theta de départ :
-center: 1.178157
-alignment: -0.964465
-pursuit: 3.224293
+center: 15.407196
+alignment: -29.346697
+pursuit: 33.399925
 
 # Meilleur gain de départ (historique) :
-gain_initial: 5.386767
+gain_initial: 52.188438
 
 # ==========================================
 # DÉBUT DES LOGS DE GÉNÉRATION
@@ -24,91 +24,21 @@ gain_initial: 5.386767
 
 # Génération num: 1 
 Theta
-center: 1.210618
-alignment: -0.989244
-pursuit: 3.288548
+center: 15.275310
+alignment: -29.310186
+pursuit: 33.513363
 
-Avg reward: 50.700001
-Avg gain: 5.798471
+Avg reward: 55.400002
+Avg gain: 50.830803
+Avg iteration: 1000.000000
 
 # Génération num: 2 
 Theta
-center: 1.237715
-alignment: -1.041052
-pursuit: 3.374884
+center: 15.226107
+alignment: -29.361145
+pursuit: 33.666073
 
-Avg reward: 49.900002
-Avg gain: 5.614814
-
-# Génération num: 3 
-Theta
-center: 1.262665
-alignment: -1.090748
-pursuit: 3.428998
-
-Avg reward: 58.400002
-Avg gain: 5.691833
-
-# Génération num: 4 
-Theta
-center: 1.295219
-alignment: -1.122671
-pursuit: 3.480781
-
-Avg reward: 49.700001
-Avg gain: 5.377432
-
-# Génération num: 5 
-Theta
-center: 1.336175
-alignment: -1.174188
-pursuit: 3.551931
-
-Avg reward: 55.500000
-Avg gain: 5.915465
-
-# Génération num: 6 
-Theta
-center: 1.364149
-alignment: -1.200179
-pursuit: 3.594838
-
-Avg reward: 52.000000
-Avg gain: 5.949605
-
-# Génération num: 7 
-Theta
-center: 1.396982
-alignment: -1.242106
-pursuit: 3.632019
-
-Avg reward: 56.000000
-Avg gain: 6.002708
-
-# Génération num: 8 
-Theta
-center: 1.423075
-alignment: -1.269123
-pursuit: 3.635252
-
-Avg reward: 49.799999
-Avg gain: 5.448102
-
-# Génération num: 9 
-Theta
-center: 1.455668
-alignment: -1.277233
-pursuit: 3.638459
-
-Avg reward: 51.900002
-Avg gain: 5.832566
-
-# Génération num: 10 
-Theta
-center: 1.487492
-alignment: -1.313824
-pursuit: 3.695554
-
-Avg reward: 51.500000
-Avg gain: 5.982096
+Avg reward: 49.299999
+Avg gain: 45.170860
+Avg iteration: 1000.000000
 

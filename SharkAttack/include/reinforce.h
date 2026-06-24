@@ -9,6 +9,7 @@
 #include "utils_reinforce.h"
 #include <assert.h>
 #include <pthread.h>
+#include <signal.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
