@@ -68,15 +68,9 @@ void Trajectory_print(Trajectory *trajectory) {
     printf("taille : %d\n", trajectory->length);
     for (int i = 0; i < trajectory->length; ++i) {
         if (trajectory->steps[i].reward > 0) {
-            printf("Step: %d phi: (%f, %f, %f, %f, %f, %f) "
-                   "Action:(%f, %f) "
-                   "Reward: %f\n",
-                   i, trajectory->steps[i].phi.x.center,
-                   trajectory->steps[i].phi.y.center,
-                   trajectory->steps[i].phi.x.alignment,
-                   trajectory->steps[i].phi.y.alignment,
-                   trajectory->steps[i].phi.x.pursuit,
-                   trajectory->steps[i].phi.y.pursuit,
+            printf("Step: %d ", i);
+            SharkPhi_print(trajectory->steps[i].phi);
+            printf(" Action:(%f, %f) Reward: %f\n",
                    trajectory->steps[i].action.x, trajectory->steps[i].action.y,
                    trajectory->steps[i].reward);
         }
@@ -84,12 +78,9 @@ void Trajectory_print(Trajectory *trajectory) {
 }
 
 void StepTrajectory_print(StepTrajectory step) {
-    printf("phi: (%f, %f, %f, %f, %f, %f) "
-           "Action:(%f, %f) "
-           "Reward: %f\n",
-           step.phi.x.center, step.phi.y.center, step.phi.x.alignment,
-           step.phi.y.alignment, step.phi.x.pursuit, step.phi.y.pursuit,
-           step.action.x, step.action.y, step.reward);
+    SharkPhi_print(step.phi);
+    printf(" Action:(%f, %f) Reward: %f\n", step.action.x, step.action.y,
+           step.reward);
 }
 
 /**
@@ -112,14 +103,8 @@ void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
 
 Gradient Gradient_zero() {
     Gradient G;
-
-    G.x.center = 0;
-    G.y.center = 0;
-    G.x.alignment = 0;
-    G.y.alignment = 0;
-    G.x.pursuit = 0;
-    G.y.pursuit = 0;
-
+    G.x = VectorRule_init();
+    G.y = VectorRule_init();
     return G;
 }
 
@@ -152,15 +137,15 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
         mu_x = Dot_product(theta, step.phi.x);
         mu_y = Dot_product(theta, step.phi.y);
 
-        score_x = Vector_rule_scaled(step.phi.x,
-                                     (1.0f / pow(hyperparameters.sigma, 2)) *
-                                         (step.action.x - mu_x));
-        score_y = Vector_rule_scaled(step.phi.y,
-                                     (1.0f / pow(hyperparameters.sigma, 2)) *
-                                         (step.action.y - mu_y));
+        score_x = VectorRule_scaled(step.phi.x,
+                                    (1.0f / pow(hyperparameters.sigma, 2)) *
+                                        (step.action.x - mu_x));
+        score_y = VectorRule_scaled(step.phi.y,
+                                    (1.0f / pow(hyperparameters.sigma, 2)) *
+                                        (step.action.y - mu_y));
 
-        D.x = Vector_rule_add(D.x, Vector_rule_scaled(score_x, GG));
-        D.y = Vector_rule_add(D.y, Vector_rule_scaled(score_y, GG));
+        D.x = VectorRule_add(D.x, VectorRule_scaled(score_x, GG));
+        D.y = VectorRule_add(D.y, VectorRule_scaled(score_y, GG));
     }
 
     World_destroy(world);
@@ -217,9 +202,9 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
         for (int j = 0; j < thread_count; ++j) {
 
             D_total.x =
-                Vector_rule_add(D_total.x, result_trajectories[j].grad.x);
+                VectorRule_add(D_total.x, result_trajectories[j].grad.x);
             D_total.y =
-                Vector_rule_add(D_total.y, result_trajectories[j].grad.y);
+                VectorRule_add(D_total.y, result_trajectories[j].grad.y);
 
             average_reward += result_trajectories[j].total_reward;
             average_gain += result_trajectories[j].total_gain;
@@ -232,14 +217,14 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
 
         // estimateur du gradient
         Gradient grad;
-        grad.x = Vector_rule_scaled(D_total.x, 1.0f / thread_count);
-        grad.y = Vector_rule_scaled(D_total.y, 1.0f / thread_count);
+        grad.x = VectorRule_scaled(D_total.x, 1.0f / thread_count);
+        grad.y = VectorRule_scaled(D_total.y, 1.0f / thread_count);
 
         // mise à jour de theta
-        *theta = Vector_rule_add(
-            *theta, Vector_rule_scaled(grad.x, hyperparameters.alpha));
-        *theta = Vector_rule_add(
-            *theta, Vector_rule_scaled(grad.y, hyperparameters.alpha));
+        *theta = VectorRule_add(
+            *theta, VectorRule_scaled(grad.x, hyperparameters.alpha));
+        *theta = VectorRule_add(
+            *theta, VectorRule_scaled(grad.y, hyperparameters.alpha));
 
         if ((k + 1) % STEP_LOG == 0) {
             logs_generation(theta, k + 1, average_reward, average_gain,
@@ -249,8 +234,9 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
         printf("=== Génération %d / %d ===\n", k + 1, hyperparameters.nb_gen);
         printf("avg reward = %f, avg gain = %f, avg iteration = %f\n",
                average_reward, average_gain, average_iteration);
-        printf("theta_x = (%f, %f, %f)\n\n", theta->center, theta->alignment,
-               theta->pursuit);
+        printf("Theta = ");
+        VectorRule_print(*theta);
+        printf("\n\n");
     }
 
     free(result_trajectories);
