@@ -61,4 +61,7 @@ monde*/
 #define SHARK_ATTACK_RANGE 30
 
 #define BENCHMARK_ITERATIONS 2000
+
+#define NB_THREADS 10
+
 #endif /* CONFIG_H */
