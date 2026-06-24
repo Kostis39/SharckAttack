@@ -129,9 +129,9 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
     VectorRule score_x, score_y;
     Gradient D = Gradient_zero();
 
-    World *world =
-        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
-                   hyperparameters.sigma, hyperparameters.nb_occurrence, false);
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
+                              hyperparameters.sigma,
+                              hyperparameters.nb_occurrence, false, true);
 
     for (int i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                     i < hyperparameters.nb_occurrence;
@@ -163,7 +163,8 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
 
     World_destroy(world);
 
-    TrajectoryCalculation result_iteration = {D, world->fish_eaten, G};
+    TrajectoryCalculation result_iteration = {D, world->fish_eaten, G,
+                                              trajectory.length};
     return result_iteration;
 }
 
@@ -188,6 +189,7 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
         Gradient D_total = Gradient_zero();
         float average_reward = 0.0f;
         float average_gain = 0.0f;
+        float average_iteration = 0.0f;
 
         /*******THREAD CREATOR*******/
         for (i = 0; i < thread_count; ++i) {
@@ -214,10 +216,12 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
 
             average_reward += result_trajectories[j].total_reward;
             average_gain += result_trajectories[j].total_gain;
+            average_iteration += result_trajectories[j].total_iteration;
         }
 
         average_reward /= thread_count;
         average_gain /= thread_count;
+        average_iteration /= thread_count;
 
         // estimateur du gradient
         Gradient grad;
@@ -232,10 +236,12 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
 
         if ((k + 1) % STEP_LOG == 0) {
             logs_generation(theta, k + 1, average_reward, average_gain,
-                            FILE_LOG);
+                            average_iteration, FILE_LOG);
         }
 
         printf("=== Génération %d / %d ===\n", k + 1, hyperparameters.nb_gen);
+        printf("avg reward = %f, avg gain = %f, avg iteration = %f\n",
+               average_reward, average_gain, average_iteration);
         printf("theta_x = (%f, %f, %f)\n\n", theta->center, theta->alignment,
                theta->pursuit);
     }

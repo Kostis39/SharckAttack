@@ -95,7 +95,7 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
 
     display->window =
         SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                         width, height, SDL_WINDOW_SHOWN);
+                         width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
     if (display->window == NULL) {
         fprintf(stderr, "Erreur SDL_CreateWindow : %s\n", SDL_GetError());
@@ -103,9 +103,12 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
         return false;
     }
 
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
+
     display->renderer = SDL_CreateRenderer(display->window, -1,
                                            SDL_RENDERER_ACCELERATED |
-                                               SDL_RENDERER_PRESENTVSYNC);
+                                               SDL_RENDERER_PRESENTVSYNC |
+                                               SDL_RENDERER_TARGETTEXTURE);
 
     if (display->renderer == NULL) {
         fprintf(stderr, "Erreur SDL_CreateRenderer : %s\n", SDL_GetError());
@@ -659,42 +662,199 @@ void Draw_world(SDLDisplay *display, World *world) {
 
     Draw_score(display);
 
-    SDL_RenderPresent(display->renderer);
 }
 
 /**
- * @brief fct principale du rendu du monde
+ * @brief affiche deux vues dans une seule fenêtre.
  *
- * @param display struct contenant le renderer
- * @param world monde a afficher
+ * Le premier monde est affiché à gauche.
+ * Le deuxième monde est affiché à droite.
+ *
+ * pour l'instant, Render_world appelle cette fonction avec le même monde
+ * deux fois? plus tard, appeler directement :
+ * Render_two_worlds(display, world_bot, world_user);
+ * 
+ * @param display structure SDL contenant la fenêtre et le renderer
+ * @param left_world monde affiché à gauche
+ * @param right_world monde affiché à droite
  */
+void Render_two_worlds(SDLDisplay *display, World *left_world,
+                       World *right_world) {
+    static SDL_Texture *left_scene = NULL;
+    static SDL_Texture *right_scene = NULL;
+    static int texture_w = 0;
+    static int texture_h = 0;
+    static int window_was_doubled = 0;
 
-void Render_world(SDLDisplay *display, World *world) {
-    static int old_score = 0;
+    static int old_score[2] = {0, 0};
+    static int gain[2] = {0, 0};
+    static int flash[2] = {0, 0};
+    static int was_alive[2][FISH_NB] = {{0}};
+    static int skeleton_frame[2][FISH_NB] = {{0}};
 
-    if (display == NULL || world == NULL)
+    if (display == NULL || display->renderer == NULL || left_world == NULL)
         return;
 
-    g_score = world->fish_eaten;
+    if (right_world == NULL)
+        right_world = left_world;
 
-    if (g_score > old_score) {
-        g_gain = g_score - old_score;
-        g_flash = 10;
-    } else if (g_flash > 0) {
-        g_flash--;
+    SDL_Renderer *r = display->renderer;
+
+    int world_w = left_world->width;
+    int world_h = left_world->height;
+
+    if (world_w <= 0 || world_h <= 0)
+        return;
+
+    /*
+     * On agrandit la fenêtre une seule fois.
+     * Comme ça, chaque moitié garde une taille propre.
+     */
+    if (!window_was_doubled) {
+        SDL_SetWindowSize(display->window, world_w * 2 * 0.85f, world_h);
+        window_was_doubled = 1;
     }
 
-    old_score = g_score;
+    /*
+     * Création des textures où on dessine chaque vue.
+     */
+    if (left_scene == NULL || texture_w != world_w || texture_h != world_h) {
+        if (left_scene != NULL)
+            SDL_DestroyTexture(left_scene);
+
+        if (right_scene != NULL)
+            SDL_DestroyTexture(right_scene);
+
+        left_scene = SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
+                                       SDL_TEXTUREACCESS_TARGET,
+                                       world_w, world_h);
+
+        right_scene = SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
+                                        SDL_TEXTUREACCESS_TARGET,
+                                        world_w, world_h);
+
+        texture_w = world_w;
+        texture_h = world_h;
+    }
+
+    if (left_scene == NULL || right_scene == NULL)
+        return;
 
     SDL_PumpEvents();
     g_debug_view = SDL_GetKeyboardState(NULL)[SDL_SCANCODE_V];
 
-    for (int i = 0; i < world->nb_fish && i < FISH_NB; i++) {
-        if (g_was_alive[i] && !world->fishes[i].is_alive)
-            g_skeleton_frame[i] = SKELETON_FRAMES;
+    World *worlds[2] = {left_world, right_world};
+    SDL_Texture *scenes[2] = {left_scene, right_scene};
 
-        g_was_alive[i] = world->fishes[i].is_alive;
+    int nb_views = 2;
+
+    /*
+     * Si les deux côtés utilisent le même world, on dessine une seule fois,
+     * puis on copie la même image deux fois.
+     */
+    if (left_world == right_world)
+        nb_views = 1;
+
+    for (int p = 0; p < nb_views; p++) {
+        World *world = worlds[p];
+
+        g_score = world->fish_eaten;
+
+        if (g_score > old_score[p]) {
+            gain[p] = g_score - old_score[p];
+            flash[p] = 10;
+        } else if (flash[p] > 0) {
+            flash[p]--;
+        }
+
+        old_score[p] = g_score;
+
+        g_gain = gain[p];
+        g_flash = flash[p];
+
+        for (int i = 0; i < world->nb_fish && i < FISH_NB; i++) {
+            if (was_alive[p][i] && !world->fishes[i].is_alive)
+                skeleton_frame[p][i] = SKELETON_FRAMES;
+
+            was_alive[p][i] = world->fishes[i].is_alive;
+            g_skeleton_frame[i] = skeleton_frame[p][i];
+        }
+
+        /*
+         * On dessine la vue dans une texture, pas directement dans la fenêtre.
+         */
+        SDL_SetRenderTarget(r, scenes[p]);
+
+        SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
+        SDL_RenderClear(r);
+
+        Draw_world(display, world);
+
+        for (int i = 0; i < world->nb_fish && i < FISH_NB; i++) {
+            skeleton_frame[p][i] = g_skeleton_frame[i];
+        }
     }
 
-    Draw_world(display, world);
+    /*
+     * On revient à la vraie fenêtre.
+     */
+    SDL_SetRenderTarget(r, NULL);
+
+    int window_w = 0;
+    int window_h = 0;
+    SDL_GetRendererOutputSize(r, &window_w, &window_h);
+
+    if (window_w <= 0 || window_h <= 0)
+        return;
+
+    SDL_SetRenderDrawColor(r, 2, 8, 20, 255);
+    SDL_RenderClear(r);
+
+    SDL_Rect left_screen = {0, 0, window_w / 2, window_h};
+    SDL_Rect right_screen = {window_w / 2, 0, window_w - window_w / 2,
+                             window_h};
+
+    /*
+     * Partie gauche.
+     */
+    SDL_RenderCopy(r, left_scene, NULL, &left_screen);
+
+    /*
+     * Partie droite.
+     * Si c'est le même world, on recopie left_scene.
+     * Sinon, on affiche right_scene.
+     */
+    if (left_world == right_world)
+        SDL_RenderCopy(r, left_scene, NULL, &right_screen);
+    else
+        SDL_RenderCopy(r, right_scene, NULL, &right_screen);
+
+    /*
+     * Séparation au milieu.
+     */
+    SDL_SetRenderDrawColor(r, 10, 25, 50, 255);
+    SDL_RenderDrawLine(r, window_w / 2 - 2, 0, window_w / 2 - 2, window_h);
+    SDL_RenderDrawLine(r, window_w / 2 + 2, 0, window_w / 2 + 2, window_h);
+
+    SDL_SetRenderDrawColor(r, 120, 220, 255, 220);
+    SDL_RenderDrawLine(r, window_w / 2, 0, window_w / 2, window_h);
+
+    /*
+     * Cadres autour des deux écrans.
+     */
+    SDL_SetRenderDrawColor(r, 90, 180, 220, 180);
+    SDL_RenderDrawRect(r, &left_screen);
+    SDL_RenderDrawRect(r, &right_screen);
+
+    SDL_RenderPresent(r);
+}
+
+/**
+ * @brief rendu principal actuel.
+ *
+ * @param display struct sdl
+ * @param world monde à afficher
+ */
+void Render_world(SDLDisplay *display, World *world) {
+    Render_two_worlds(display, world, world);
 }

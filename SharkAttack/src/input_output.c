@@ -124,7 +124,7 @@ bool load_theta(VectorRule *theta, char *filename) {
 }
 
 bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
-                     float avg_gain, char *filename) {
+                     float avg_gain, float avg_iteration, char *filename) {
     if (!theta || !filename) {
         fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
         return false;
@@ -144,7 +144,8 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
     fprintf(file, "alignment: %f\n", theta->alignment);
     fprintf(file, "pursuit: %f\n\n", theta->pursuit);
     fprintf(file, "Avg reward: %f\n", avg_reward);
-    fprintf(file, "Avg gain: %f\n\n", avg_gain);
+    fprintf(file, "Avg gain: %f\n", avg_gain);
+    fprintf(file, "Avg iteration: %f\n\n", avg_iteration);
 
     fclose(file);
     return true;

@@ -100,8 +100,10 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
         action.x = mu.x + noise.x * sigma;
         action.y = mu.y + noise.y * sigma;
 
-        step_trajectory->phi = phi;
-        step_trajectory->action = action;
+        if (step_trajectory) {
+            step_trajectory->phi = phi;
+            step_trajectory->action = action;
+        }
     }
 
     return action;

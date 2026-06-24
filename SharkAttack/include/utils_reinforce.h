@@ -27,6 +27,7 @@ typedef struct {
     Gradient grad;
     float total_reward;
     float total_gain;
+    float total_iteration;
 } TrajectoryCalculation;
 
 typedef struct {
