@@ -1,7 +1,9 @@
 var fish__controller_8c =
 [
-    [ "fish_choose_action", "fish__controller_8c.html#af54be39e4b632c8b5d236e5c216b1393", null ],
-    [ "Rules_alignment", "fish__controller_8c.html#af33f9c4e0f82636fef09963f75a28de6", null ],
-    [ "Rules_cohesion", "fish__controller_8c.html#a6dbf21c4b783ff91de86c88952a93c00", null ],
-    [ "Rules_separation", "fish__controller_8c.html#a503f9f913fedd706afe2c243ac8e92d6", null ]
+    [ "fish_choose_action", "fish__controller_8c.html#af2b526079b3651998156ac45f52dffc4", null ],
+    [ "Rules_alignment", "fish__controller_8c.html#af42ccf9e03e3ef021ad9754f1eec220e", null ],
+    [ "Rules_avoid_shark", "fish__controller_8c.html#a16eb4465b6c8670bcf6d93bcbb651fb6", null ],
+    [ "Rules_border_repulsion", "fish__controller_8c.html#addc4f677cf681d6b97cc28ad16dfa263", null ],
+    [ "Rules_cohesion", "fish__controller_8c.html#a9cbd98c6406bd67d2296c4878e625eaf", null ],
+    [ "Rules_separation", "fish__controller_8c.html#af97ce461e75310584c00c92a7e0cb1a3", null ]
 ];

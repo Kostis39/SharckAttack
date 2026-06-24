@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['paused_0',['paused',['../structGame.html#a1656129c4a4fd8809254194f08f0ac70',1,'Game']]],
-  ['player_1',['player',['../structShark.html#a4246b1960baa1c48516f9e21ccb31bba',1,'Shark']]],
-  ['pos_2',['pos',['../structShark.html#ae19a907bc741ffa358691997cd93774b',1,'Shark']]],
-  ['position_3',['position',['../structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363',1,'Fish']]]
+  ['g_5fdebug_5fview_0',['g_debug_view',['../render__sdl_8c.html#a7b9f794676c6ed7cf058a0fe8fab5876',1,'render_sdl.c']]],
+  ['g_5fflash_1',['g_flash',['../render__sdl_8c.html#ad783183e6501a39a96c8cacda55b0495',1,'render_sdl.c']]],
+  ['g_5fgain_2',['g_gain',['../render__sdl_8c.html#ab94b3c9c237ace9944af90bf6555a1e2',1,'render_sdl.c']]],
+  ['g_5fscore_3',['g_score',['../render__sdl_8c.html#a61ab2e6d134002deb363436b45030078',1,'render_sdl.c']]]
 ];

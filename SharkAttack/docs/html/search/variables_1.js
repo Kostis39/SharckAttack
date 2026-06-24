@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fish_5featen_0',['fish_eaten',['../structGame.html#acf2cbd4bdfcc24d7835abb9fcabfd4df',1,'Game']]],
-  ['fishes_1',['fishes',['../structWorld.html#a72644f11dad484184d55e066ba7abc3e',1,'World']]]
+  ['biais_0',['biais',['../structSharkTeta.html#a76b809ea32730092ae7d28eaa1893aab',1,'SharkTeta']]],
+  ['bounding_5fbox_1',['bounding_box',['../structCollider.html#ab722283ddfa6cf0a4ffc53b36080ad8a',1,'Collider']]]
 ];

@@ -1,15 +1,13 @@
 var structFishPerception =
 [
+    [ "avg_velocity", "structFishPerception.html#a3d5a1321e34c50155563133d267cf3d8", null ],
+    [ "center_of_mass", "structFishPerception.html#a53e39e025a61542f0e1c3d532b9961c1", null ],
+    [ "collider_separation", "structFishPerception.html#a8c49bb6ed43f4dee5a01fbf76c118dfd", null ],
+    [ "dist_shark", "structFishPerception.html#aaf7aa912a36b4b352e4ca2d925c609be", null ],
     [ "height", "structFishPerception.html#ad12fc34ce789bce6c8a05d8a17138534", null ],
-    [ "nb_align", "structFishPerception.html#a4c906853019536169e03ff400400fc19", null ],
-    [ "nb_cohes", "structFishPerception.html#a302b54fb27471b6f8be2b6414731ded9", null ],
-    [ "nb_sep", "structFishPerception.html#ac007280e6f22464067aa18433be20e0d", null ],
-    [ "neighbor_alignment", "structFishPerception.html#a201a36be63cd078531b438470a7de235", null ],
-    [ "neighbor_cohesion", "structFishPerception.html#a2f8872dff4aeffb4b7466931de113ae5", null ],
-    [ "neighbor_separation", "structFishPerception.html#a9c92072fac3024fafd3bd7c97bc408f2", null ],
     [ "self", "structFishPerception.html#acf840926c74599afc77d5bf110306754", null ],
-    [ "shark_position", "structFishPerception.html#a815e0d4121edcf2881167f2a83973594", null ],
-    [ "shark_velocity", "structFishPerception.html#a1282463c846808d53a35645d9f87d56e", null ],
+    [ "separation", "structFishPerception.html#ac3912958f7beaa8954f66ff9be93e979", null ],
+    [ "shark", "structFishPerception.html#a9e5f1428b095a26983edc26107b8d079", null ],
     [ "shark_visible", "structFishPerception.html#aa0b75ad16f06c342056fae85352a1783", null ],
     [ "width", "structFishPerception.html#a2474a5474cbff19523a51eb1de01cda4", null ]
 ];

@@ -1,10 +1,29 @@
 var render__sdl_8c =
 [
+    [ "RENDERED_COLLIDERS", "render__sdl_8c.html#a6af12210354185104bb17220bf94e400", null ],
     [ "Clear_sdl_display", "render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4", null ],
     [ "Destroy_sdl_display", "render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d", null ],
+    [ "Draw_bubbles", "render__sdl_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e", null ],
+    [ "Draw_circle_outline", "render__sdl_8c.html#a591cad68b00e9cb5e4110285e47da7ae", null ],
+    [ "Draw_collider", "render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0", null ],
+    [ "Draw_colliders", "render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6", null ],
+    [ "Draw_debug_view", "render__sdl_8c.html#a025638803f792410d6d236b65c3c1661", null ],
+    [ "Draw_digit", "render__sdl_8c.html#a3f6fc10842b3cdb831294005b2a353e8", null ],
+    [ "Draw_filled_circle", "render__sdl_8c.html#a8d65762de41463cfae00a7f2647a90b0", null ],
+    [ "Draw_filled_ellipse", "render__sdl_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94", null ],
+    [ "Draw_filled_triangle", "render__sdl_8c.html#ac7b973c42bb857506812a5266f12e733", null ],
     [ "Draw_fish", "render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4", null ],
+    [ "Draw_mine_shape", "render__sdl_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0", null ],
+    [ "Draw_score", "render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed", null ],
     [ "Draw_shark", "render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1", null ],
+    [ "Draw_vector", "render__sdl_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f", null ],
+    [ "Draw_wave", "render__sdl_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c", null ],
     [ "Draw_world", "render__sdl_8c.html#afe25ed611e19ac179a5a304d66e5fe92", null ],
     [ "Init_sdl_display", "render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f", null ],
-    [ "Render_world", "render__sdl_8c.html#afe51031c74420e7a8dc080c4c5704f57", null ]
+    [ "Render_world", "render__sdl_8c.html#afe51031c74420e7a8dc080c4c5704f57", null ],
+    [ "to_int", "render__sdl_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52", null ],
+    [ "g_debug_view", "render__sdl_8c.html#a7b9f794676c6ed7cf058a0fe8fab5876", null ],
+    [ "g_flash", "render__sdl_8c.html#ad783183e6501a39a96c8cacda55b0495", null ],
+    [ "g_gain", "render__sdl_8c.html#ab94b3c9c237ace9944af90bf6555a1e2", null ],
+    [ "g_score", "render__sdl_8c.html#a61ab2e6d134002deb363436b45030078", null ]
 ];

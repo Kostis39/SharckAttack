@@ -2,8 +2,11 @@
 #define WORLD_H
 
 #include "collider.h"
+#include "config.h"
 #include "fish.h"
+#include "reinforce.h"
 #include "shark.h"
+#include "theta_set.h"
 #include "vector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,9 +26,20 @@ typedef struct {
     Shark *shark;        /**< Pointeur vers le requin présent dans le monde */
     Collider *colliders; /**< Tableau dynamiques d'objet de collision présent
                             dans le monde*/
+    int nb_colliders;
+    int fish_eaten;           /**< Nombre de poissons mangés par le requin */
+    RulesSetFish *theta_fish; /**< Ensemble de règles pour les poissons */
+    VectorRule theta_shark;   /**< Ensemble de règles pour le requin */
+    Trajectory *trajectory;
+    float sigma;
+    int nb_occurrence;
+
+    bool learn;
 } World;
 
-World *World_init(int width, int height, int nb_fish);
+World *World_init(int width, int height, int nb_fish, int nb_colliders,
+                  VectorRule theta_shark, float sigma, int nb_occurrence,
+                  bool is_player, bool learn);
 void World_destroy(World *world);
 void World_update(World *world, World *world_tmp);
 

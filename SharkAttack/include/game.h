@@ -14,15 +14,14 @@ typedef struct {
 
     float time;
     bool paused; /**< Indique si le jeu est en pause : true ou non : false */
-
-    int fish_eaten; /**< Nombre de poissons mangés par le requin */
 } Game;
 
-bool Game_init(Game *game, int width, int height, int nb_fish);
+bool Game_init(Game *game, int width, int height, int nb_fish,
+               int nb_colliders);
 
 void Game_pause(Game *game);
 
-void Game_run_SDL();
+void Game_run_SDL(bool benchmark_mode);
 void Game_run_terminal();
 
 void Game_destroy(Game *game);

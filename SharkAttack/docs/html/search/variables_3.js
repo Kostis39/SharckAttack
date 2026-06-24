@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['is_5falive_0',['is_alive',['../structFish.html#aed817fc6d112672f2233bde49f822e16',1,'Fish']]]
+  ['display_0',['display',['../structGame.html#aa0f0264846ef14870ec9db6f47bee43e',1,'Game']]],
+  ['dist_5fshark_1',['dist_shark',['../structFishPerception.html#aaf7aa912a36b4b352e4ca2d925c609be',1,'FishPerception']]]
 ];

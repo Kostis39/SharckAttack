@@ -15,7 +15,8 @@ static void Handle_terminal_interrupt(int signum) {
     terminal_interrupted = 1;
 }
 
-bool Game_init(Game *game, int width, int height, int nb_fish) {
+bool Game_init(Game *game, int width, int height, int nb_fish,
+               int nb_collider) {
     if (!game)
         return false;
 
@@ -23,7 +24,10 @@ bool Game_init(Game *game, int width, int height, int nb_fish) {
         return false;
     }
 
-    game->world = World_init(width, height, nb_fish);
+    VectorRule *shark_theta = SharkTheta_init();
+
+    game->world = World_init(width, height, nb_fish, nb_collider, *shark_theta,
+                             0, NB_OCCURRENCE, false, false);
     if (!game->world) {
         Destroy_sdl_display(&game->display);
         return false;
@@ -31,7 +35,6 @@ bool Game_init(Game *game, int width, int height, int nb_fish) {
 
     game->time = 0;
     game->paused = false;
-    game->fish_eaten = 0;
 
     return true;
 }
@@ -42,19 +45,24 @@ void Game_pause(Game *game) {
     game->paused = !game->paused;
 }
 
-void Game_run_SDL() {
+void Game_run_SDL(bool use_bench) {
     Game game;
-    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB)) {
+    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB)) {
         fprintf(stderr, "Echec de l'initialisation du jeu.\n");
         return;
     }
 
     bool quit = false;
-
+    int it = 0;
+    SDL_Event event;
     while (!quit) {
         Render_world(&game.display, game.world);
-
-        SDL_Event event;
+        if (use_bench) {
+            it++;
+            if (it > BENCHMARK_ITERATIONS) {
+                quit = true;
+            }
+        }
         while (SDL_PollEvent(&event)) {
             switch (event.type) {
             case SDL_QUIT:
@@ -76,40 +84,50 @@ void Game_run_SDL() {
                 break;
             }
         }
-
         if (!game.paused) {
             Game_step(game.world);
         }
+        if (!use_bench) {
 
-        SDL_Delay(10);
+            SDL_Delay(10);
+        }
     }
     Game_destroy(&game);
 }
 
 void Game_run_terminal() {
     terminal_interrupted = 0;
+    int i = 0;
     signal(SIGINT, Handle_terminal_interrupt);
 
-    World *world = World_init(WIDTH, HEIGHT, FISH_NB);
-    printf("Initial state: (with, height): (%d, %d) Number Fish: %d Shark "
-           "position: (%f, %f)\n",
-           world->width, world->height, world->nb_fish, world->shark->pos.x,
-           world->shark->pos.y);
-    for (int i = 0; i < NB_OCCURRENCE && !terminal_interrupted; i++) {
+    VectorRule *shark_theta = SharkTheta_init();
+    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB,
+                              *shark_theta, 0, NB_OCCURRENCE, false, false);
+
+    for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
+                i < world->nb_occurrence && !terminal_interrupted;
+         i++) {
         Game_step(world);
-        printf("Iteration %d: Number Fish: %d Shark position: (%f, %f)\n", i,
-               world->nb_fish, world->shark->pos.x, world->shark->pos.y);
+        printf("%d %d\n", i, world->fish_eaten);
     }
 
     if (terminal_interrupted) {
         printf("Boucle interrompue par l'utilisateur.\n");
     }
-
-    printf("Final state: (with, height): (%d, %d) Number Fish: %d Shark "
-           "position: (%f, %f)\n",
-           world->width, world->height, world->nb_fish, world->shark->pos.x,
-           world->shark->pos.y);
+    Trajectory_print(world->trajectory);
+    printf("Iteration: %d\n"
+           "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
+           "Cohesion: %f Shark "
+           "Avoidance: %f\n"
+           "Shark : Position: (%f, %f)\n"
+           "Theta : (Center:  %f, Alignement: %f, Pursuit: %f)\n",
+           i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
+           world->theta_fish->alignment, world->theta_fish->cohesion,
+           world->theta_fish->shark_avoidance, world->shark->pos.x,
+           world->shark->pos.y, world->theta_shark.center,
+           world->theta_shark.alignment, world->theta_shark.pursuit);
     World_destroy(world);
+    free(shark_theta);
 }
 
 void Game_destroy(Game *game) {

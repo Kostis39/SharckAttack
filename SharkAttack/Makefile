@@ -19,7 +19,7 @@ INCLUDES=-I$(SOURCES_FOLDER)
 
 TARGET ?= all
 
-# --- Compilation principal ---
+# --- Compilation principale ---
 ifeq ($(TARGET),all)
 SOURCES=$(wildcard $(SOURCES_FOLDER)/*.c)
 else
@@ -76,7 +76,7 @@ run_test_%:
 create_objects_directory:
 	if [ ! -d $(OBJECTS_FOLDER) ]; then mkdir $(OBJECTS_FOLDER); fi
 
-.PHONY: clean test run_test
+.PHONY: clean test run_test all link
 
 clean:
 	rm -rf $(OUTPUT_FOLDER)/ $(OBJECTS_FOLDER)/

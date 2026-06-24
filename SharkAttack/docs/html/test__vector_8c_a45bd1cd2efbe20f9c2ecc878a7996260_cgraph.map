@@ -1,0 +1,9 @@
+<map id="test_Vector_normalize_zero_vector_returns_zero" name="test_Vector_normalize_zero_vector_returns_zero">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,24,198,68"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="246,32,380,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,43,233,46,227,46,198,48"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="428,5,538,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="380,33,410,31,415,30,381,38"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="432,57,535,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="381,53,419,61,413,61,380,59"/>
+</map>

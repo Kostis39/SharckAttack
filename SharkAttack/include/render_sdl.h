@@ -7,6 +7,7 @@
 #include "fish.h"
 #include "shark.h"
 #include "world.h"
+#include "collider.h"
 
 /**
  * @struct SDLDisplay
@@ -24,7 +25,11 @@ void Clear_sdl_display(SDLDisplay *display);
 void Draw_fish(SDLDisplay *display, Fish *fish);
 void Draw_shark(SDLDisplay *display, Shark *shark);
 
-void Draw_world(SDLDisplay *display, Fish *fiches, int nb_fish, Shark *shark);
-void Render_world(SDLDisplay *display, World *world); 
+void Draw_world(SDLDisplay *display, World *world);
+void Render_two_worlds(SDLDisplay *display, World *left_world, World *right_world);
+void Render_world(SDLDisplay *display, World *world);
+
+void Draw_collider(SDLDisplay *display, Collider *collider);
+void Draw_colliders(SDLDisplay *display, Collider *colliders, int nb_colliders);
 
 #endif
