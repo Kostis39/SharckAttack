@@ -6,6 +6,7 @@
 #define TXT_LOAD_PARAMS "params.txt"
 #define TXT_FINAL_PARAMS "new_params.txt"
 #define TXT_LOG "logs.txt"
+#define STEP_LOG 50
 
 #define NB_OCCURRENCE 10000
 

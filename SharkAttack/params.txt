@@ -2,9 +2,9 @@
 gamma 0.99
 sigma 3.0
 alpha 0.01
-nb_gen 100
+nb_gen 10000
 nb_game 10
-nb_occurrence 1000
+nb_occurrence 5000
 
 # Theta
 center: 1.5
