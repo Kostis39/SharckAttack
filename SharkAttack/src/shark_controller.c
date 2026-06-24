@@ -65,11 +65,12 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
         float dist = Vector_length(to_target);
 
         Vector direction = local_normalize(to_target);
+
         // Intensité proportionnelle à la distance
-        float intensity = dist / SHARK_SPEED_MAX;
+        float intensity = dist / 20.0f;
         if (intensity > 1.0f)
             intensity = 1.0f;
-        action = Vector_scale(direction, intensity);
+        action = Vector_scale(direction, intensity * SHARK_SPEED_MAX);
 
     } else { // Mode bot
         Vector center =
