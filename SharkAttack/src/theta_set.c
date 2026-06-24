@@ -1,5 +1,6 @@
 #include "theta_set.h"
 #include "config.h"
+#include "input_output.h"
 
 RulesSetFish *RulesSetFish_init() {
     RulesSetFish *theta = malloc(sizeof(RulesSetFish));
@@ -11,15 +12,33 @@ RulesSetFish *RulesSetFish_init() {
     return theta;
 }
 
+// SharkTheta *SharkTheta_init() {
+//     SharkTheta *theta = malloc(sizeof(SharkTheta));
+
+//     theta->x.center = CENTER;
+//     theta->y.center = CENTER;
+//     theta->x.alignment = SHARK_ALIGNEMENT;
+//     theta->y.alignment = SHARK_ALIGNEMENT;
+//     theta->x.pursuit = PURSUIT;
+//     theta->y.pursuit = PURSUIT;
+//     return theta;
+// }
+
 SharkTheta *SharkTheta_init() {
     SharkTheta *theta = malloc(sizeof(SharkTheta));
 
-    theta->x.center = CENTER;
-    theta->y.center = CENTER;
-    theta->x.alignment = SHARK_ALIGNEMENT;
-    theta->y.alignment = SHARK_ALIGNEMENT;
-    theta->x.pursuit = PURSUIT;
-    theta->y.pursuit = PURSUIT;
+    if (!load_theta(theta, THETA_FILE)) {
+        fprintf(stderr, "Erreur: échec du chargement des paramètres\n");
+        return NULL;
+    }
+
+    printf("\n=== Theta ===\n");
+    printf("theta_x = (%f, %f, %f)\n", theta->x.center, theta->x.alignment,
+           theta->x.pursuit);
+    printf("theta_y = (%f, %f, %f)\n", theta->y.center, theta->y.alignment,
+           theta->y.pursuit);
+    printf("\n");
+
     return theta;
 }
 

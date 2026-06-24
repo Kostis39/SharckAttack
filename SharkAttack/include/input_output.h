@@ -14,4 +14,6 @@ bool save_params(SharkTheta *theta, Hyperparameters *hyperparams,
 bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
                  char *filename);
 
+bool load_theta(SharkTheta *theta, char *filename);
+
 #endif

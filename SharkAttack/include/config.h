@@ -26,6 +26,8 @@
 #define COLLIDER_AVOIDANCE 0.5f
 
 /* Poids des règles de shark*/
+#define THETA_FILE "new_params.txt"
+
 #define CENTER 10.0f
 #define SHARK_ALIGNEMENT 0.0f
 #define PURSUIT 10.0f
