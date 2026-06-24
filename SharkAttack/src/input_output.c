@@ -26,9 +26,9 @@ bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
     // Sauvegarde de theta
     fprintf(file, "\n# Theta\n");
 
-    fprintf(file, "center: %f\n", theta->center);
-    fprintf(file, "alignment: %f\n", theta->alignment);
-    fprintf(file, "pursuit: %f\n\n", theta->pursuit);
+    fprintf(file, "center: %f\n", theta->vect[Rules_Center]);
+    fprintf(file, "alignment: %f\n", theta->vect[Rules_Alignment]);
+    fprintf(file, "pursuit: %f\n\n", theta->vect[Rules_Pursuit]);
 
     // Sauvegarde du gain max
     fprintf(file, "# Best gain with this parameters\n");
@@ -77,11 +77,11 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
 
         // Theta
         else if (sscanf(line, "center: %f", &value_f) == 1) {
-            theta->center = value_f;
+            theta->vect[Rules_Center] = value_f;
         } else if (sscanf(line, "alignment: %f", &value_f) == 1) {
-            theta->alignment = value_f;
+            theta->vect[Rules_Alignment] = value_f;
         } else if (sscanf(line, "pursuit: %f", &value_f) == 1) {
-            theta->pursuit = value_f;
+            theta->vect[Rules_Pursuit] = value_f;
         }
     }
 
@@ -110,11 +110,11 @@ bool load_theta(VectorRule *theta, char *filename) {
         if (line[0] == '#' || line[0] == '\n')
             continue;
         if (sscanf(line, "center: %f", &value_t) == 1) {
-            theta->center = value_t;
+            theta->vect[Rules_Center] = value_t;
         } else if (sscanf(line, "alignment: %f", &value_t) == 1) {
-            theta->alignment = value_t;
+            theta->vect[Rules_Alignment] = value_t;
         } else if (sscanf(line, "pursuit: %f", &value_t) == 1) {
-            theta->pursuit = value_t;
+            theta->vect[Rules_Pursuit] = value_t;
         }
     }
 
@@ -140,9 +140,9 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
     fprintf(file, "# Génération num: %d \n", gen_number);
 
     fprintf(file, "Theta\n");
-    fprintf(file, "center: %f\n", theta->center);
-    fprintf(file, "alignment: %f\n", theta->alignment);
-    fprintf(file, "pursuit: %f\n\n", theta->pursuit);
+    fprintf(file, "center: %f\n", theta->vect[Rules_Center]);
+    fprintf(file, "alignment: %f\n", theta->vect[Rules_Alignment]);
+    fprintf(file, "pursuit: %f\n\n", theta->vect[Rules_Pursuit]);
     fprintf(file, "Avg reward: %f\n", avg_reward);
     fprintf(file, "Avg gain: %f\n", avg_gain);
     fprintf(file, "Avg iteration: %f\n\n", avg_iteration);
@@ -235,9 +235,9 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
                 *best_gain = current_gain;
 
                 // On sauvegarde le meilleur Theta
-                best_theta->center = current_center;
-                best_theta->alignment = current_alignment;
-                best_theta->pursuit = current_pursuit;
+                best_theta->vect[Rules_Center] = current_center;
+                best_theta->vect[Rules_Alignment] = current_alignment;
+                best_theta->vect[Rules_Pursuit] = current_pursuit;
 
                 found_any = true;
             }
@@ -294,9 +294,9 @@ bool init_logs(char *filename_params, char *filename_logs) {
     fprintf(file, "nb_occurrence %d\n\n", hyperparams.nb_occurrence);
 
     fprintf(file, "# Theta de départ :\n");
-    fprintf(file, "center: %f\n", theta_initial.center);
-    fprintf(file, "alignment: %f\n", theta_initial.alignment);
-    fprintf(file, "pursuit: %f\n\n", theta_initial.pursuit);
+    fprintf(file, "center: %f\n", theta_initial.vect[Rules_Center]);
+    fprintf(file, "alignment: %f\n", theta_initial.vect[Rules_Alignment]);
+    fprintf(file, "pursuit: %f\n\n", theta_initial.vect[Rules_Pursuit]);
 
     fprintf(file, "# Meilleur gain de départ (historique) :\n");
     fprintf(file, "gain_initial: %f\n\n", best_gain_initial);
@@ -338,16 +338,16 @@ bool end_logs(char *filename_params, char *filename_logs) {
 
     printf("\nAnciens Paramètres (Fichier params)\n");
     printf("  Gain max :      %f\n", gain_params);
-    printf("  Center :        %f\n", theta_params.center);
-    printf("  Alignment :     %f\n", theta_params.alignment);
-    printf("  Pursuit :       %f\n", theta_params.pursuit);
+    printf("  Center :        %f\n", theta_params.vect[Rules_Center]);
+    printf("  Alignment :     %f\n", theta_params.vect[Rules_Alignment]);
+    printf("  Pursuit :       %f\n", theta_params.vect[Rules_Pursuit]);
 
     printf("\nMeilleurs Paramètres Trouvés (Fichier logs)\n");
     printf("  Génération :    %d\n", best_gen_logs);
     printf("  Best Gain :     %f\n", best_gain_logs);
-    printf("  Center :        %f\n", theta_logs.center);
-    printf("  Alignment :     %f\n", theta_logs.alignment);
-    printf("  Pursuit :       %f\n", theta_logs.pursuit);
+    printf("  Center :        %f\n", theta_logs.vect[Rules_Center]);
+    printf("  Alignment :     %f\n", theta_logs.vect[Rules_Alignment]);
+    printf("  Pursuit :       %f\n", theta_logs.vect[Rules_Pursuit]);
     if (gain_params < best_gain_logs) {
         printf("===Theta Modifié===\n");
     } else {
