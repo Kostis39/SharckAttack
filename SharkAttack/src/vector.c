@@ -1,9 +1,26 @@
 #include "vector.h"
 
 void Vector_print(Vector v) { printf("(%f, %f)\n", v.x, v.y); }
+void VectorRule_print(VectorRule v) {
+    printf("(");
+    for (int i = 0; i < Rules_Lenght; ++i) {
+        printf("%f", v.vect[i]);
+
+        if (i < Rules_Lenght - 1) {
+            printf(", ");
+        }
+    }
+    printf(")");
+}
 
 Vector Vector_init(void) { return (Vector){0.0f, 0.0f}; }
-VectorRule VectorRule_init(void) { return (VectorRule){0.0f, 0.0f, 0.0f}; }
+VectorRule VectorRule_init(void) {
+    VectorRule rules;
+    for (int i = 0; i < Rules_Lenght; ++i) {
+        rules.vect[i] = 0.0f;
+    }
+    return rules;
+}
 
 Vector Vector_add(Vector a, Vector b) { return (Vector){a.x + b.x, a.y + b.y}; }
 
@@ -39,8 +56,8 @@ Vector local_normalize(Vector v) {
 /**
  * @brief Fonction qui limite la longueur d'un vecteur à une valeur maximale
  * donnée. Si la longueur du vecteur dépasse cette valeur, le vecteur est
- * normalisé et mis à l'échelle pour correspondre à la longueur maximale. Si la
- * longueur du vecteur est inférieure ou égale à la longueur maximale, le
+ * normalisé et mis à l'échelle pour correspondre à la longueur maximale. Si
+ * la longueur du vecteur est inférieure ou égale à la longueur maximale, le
  * vecteur est retourné inchangé.
  *
  * @param v Le vecteur à limiter
@@ -92,7 +109,8 @@ float Vector_angle_fast(Vector a, Vector b) {
     /**
      * @brief Calcule l'angle entre deux vecteurs avec une approximation
      * d'Arctangente
-     * @note Moins précis, plus rapide, à utiliser sur les poissons par exemple
+     * @note Moins précis, plus rapide, à utiliser sur les poissons par
+     * exemple
      * @param a premier vecteur
      * @param b second vecteur
      * @return L'angle absolu a,b
