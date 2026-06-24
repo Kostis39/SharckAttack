@@ -3,6 +3,10 @@
 
 #define PI 3.14159265358979323846
 
+#define TXT_LOAD_PARAMS "params.txt"
+#define TXT_FINAL_PARAMS "new_params.txt"
+#define TXT_LOG "logs.txt"
+
 #define SIGMA 5
 #define TRAJECTORY_LENGHT_ALLOC 200
 #define TRAJECTORY_CAPACITY 10000

@@ -165,8 +165,8 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
 }
 
 void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters) {
-
-    for (int k = 0; k < hyperparameters.nb_gen; k++) {
+    int k;
+    for (k = 0; k < hyperparameters.nb_gen; k++) {
 
         Gradient D_total = Gradient_zero();
 
@@ -189,6 +189,10 @@ void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters) {
             theta->x, Vector_rule_scaled(grad.x, hyperparameters.alpha));
         theta->y = Vector_rule_add(
             theta->y, Vector_rule_scaled(grad.y, hyperparameters.alpha));
+
+        if (k % 10 == 0) {
+            logs_generation(theta, k, 0, TXT_LOG);
+        }
 
         printf("======================\n");
         printf("itération %d / %d\n", k + 1, hyperparameters.nb_gen);

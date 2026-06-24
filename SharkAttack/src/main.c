@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         SharkTheta theta;
         Hyperparameters hyperparameters;
 
-        if (!load_params(&theta, &hyperparameters, "params.txt")) {
+        if (!load_params(&theta, &hyperparameters, TXT_LOAD_PARAMS)) {
             fprintf(stderr, "Erreur: échec du chargement des paramètres\n");
             return 1;
         }
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
         Reinforce_learning(&theta, hyperparameters);
 
         // sauvegarder theta quand l'entraînement est terminé
-        if (!save_params(&theta, &hyperparameters, "new_params.txt")) {
+        if (!save_params(&theta, &hyperparameters, TXT_FINAL_PARAMS)) {
             fprintf(stderr, "Erreur: échec de la sauvegarde\n");
         }
     } else {
