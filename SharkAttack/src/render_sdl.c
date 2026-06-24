@@ -383,19 +383,22 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     Draw_filled_triangle(r, tail_x, tail_y, tail_bot_x, tail_bot_y, back_x,
                          back_y);
 
-    /* Œil */
-    int eye_x = to_int(x + dir.x * size * 0.80f - side.x * size * 0.22f);
-    int eye_y = to_int(y + dir.y * size * 0.80f - side.y * size * 0.22f);
+    /* oeil */
+    int eye_x = to_int(x + dir.x * size * 0.65f + side.x * size * 0.22f);
+    int eye_y = to_int(y + dir.y * size * 0.65f + side.y * size * 0.22f);
 
     SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
-    Draw_filled_circle(r, eye_x, eye_y, 3);
+    Draw_filled_circle(r, eye_x, eye_y, 2);
 
-    /* Bouche agressive */
-    SDL_RenderDrawLine(
-        r, to_int(x + dir.x * size * 0.75f - side.x * size * 0.32f),
-        to_int(y + dir.y * size * 0.75f - side.y * size * 0.32f),
-        to_int(nose_x - dir.x * size * 0.25f - side.x * size * 0.12f),
-        to_int(nose_y - dir.y * size * 0.25f - side.y * size * 0.12f));
+    /* Bouche */
+    int mouth_x1 = to_int(x + dir.x * size * 0.75f - side.x * size * 0.32f);
+    int mouth_y1 = to_int(y + dir.y * size * 0.75f - side.y * size * 0.32f);
+    int mouth_x2 = to_int(nose_x - dir.x * size * 0.25f - side.x * size * 0.12f);
+    int mouth_y2 = to_int(nose_y - dir.y * size * 0.25f - side.y * size * 0.12f);
+
+    for(int i = 0; i < 3; i++) {
+        SDL_RenderDrawLine(r, mouth_x1, mouth_y1 + i, mouth_x2, mouth_y2 + i);
+    }
 
     /* Branchies */
     for (int i = 0; i < 3; i++) {
