@@ -1,6 +1,6 @@
 #include "render_sdl.h"
-#include "sdl_draw_tools.h"
 #include "collider.h"
+#include "sdl_draw_tools.h"
 #include "world.h"
 #include <math.h>
 #include <stdio.h>
@@ -93,9 +93,9 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
         return false;
     }
 
-    display->window =
-        SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                         width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    display->window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
+                                       SDL_WINDOWPOS_CENTERED, width, height,
+                                       SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
     if (display->window == NULL) {
         fprintf(stderr, "Erreur SDL_CreateWindow : %s\n", SDL_GetError());
@@ -396,10 +396,12 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     /* Bouche */
     int mouth_x1 = to_int(x + dir.x * size * 0.75f - side.x * size * 0.32f);
     int mouth_y1 = to_int(y + dir.y * size * 0.75f - side.y * size * 0.32f);
-    int mouth_x2 = to_int(nose_x - dir.x * size * 0.25f - side.x * size * 0.12f);
-    int mouth_y2 = to_int(nose_y - dir.y * size * 0.25f - side.y * size * 0.12f);
+    int mouth_x2 =
+        to_int(nose_x - dir.x * size * 0.25f - side.x * size * 0.12f);
+    int mouth_y2 =
+        to_int(nose_y - dir.y * size * 0.25f - side.y * size * 0.12f);
 
-    for(int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
         SDL_RenderDrawLine(r, mouth_x1, mouth_y1 + i, mouth_x2, mouth_y2 + i);
     }
 
@@ -444,10 +446,7 @@ void Draw_score(SDLDisplay *display) {
 
     /* icône requin : elle recule automatiquement avec la boîte */
     SDL_SetRenderDrawColor(r, 120, 170, 190, 255);
-    Draw_filled_triangle(r,
-                         box_x + 10, 29,
-                         box_x + 27, 20,
-                         box_x + 27, 38);
+    Draw_filled_triangle(r, box_x + 10, 29, box_x + 27, 20, box_x + 27, 38);
 
     SDL_SetRenderDrawColor(r, 180, 240, 255, 255);
 
@@ -518,7 +517,7 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
     /* Vecteur du requin */
     SDL_SetRenderDrawColor(r, 255, 220, 80, 220);
     Draw_vector(r, shark->pos, shark->velocity, 45);
- 
+
     /* Vision du requin */
     SDL_SetRenderDrawColor(r, 255, 80, 80, 80);
     Draw_circle_outline(r, to_int(shark->pos.x), to_int(shark->pos.y),
@@ -527,43 +526,43 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
     /* Zone d'attaque du requin */
     SDL_SetRenderDrawColor(r, 255, 60, 40, 160);
     Draw_circle_outline(r, to_int(shark->pos.x), to_int(shark->pos.y),
-                        SHARK_ATTACK_RANGE); 
-    
+                        SHARK_ATTACK_RANGE);
+
     /* Rectangle réel des colliders */
     if (colliders != NULL && nb_colliders > 0) {
-    int limit = nb_colliders;
+        int limit = nb_colliders;
 
-    if (limit > RENDERED_COLLIDERS)
-    limit = RENDERED_COLLIDERS;
+        if (limit > RENDERED_COLLIDERS)
+            limit = RENDERED_COLLIDERS;
 
-    SDL_SetRenderDrawColor(r, 255, 80, 200, 170);
+        SDL_SetRenderDrawColor(r, 255, 80, 200, 170);
 
-    for (int i = 0; i < limit; i++) {
-    int x1 = to_int(colliders[i].bounding_box[0].x);
-    int y1 = to_int(colliders[i].bounding_box[0].y);
-    int x2 = to_int(colliders[i].bounding_box[1].x);
-    int y2 = to_int(colliders[i].bounding_box[1].y);
+        for (int i = 0; i < limit; i++) {
+            int x1 = to_int(colliders[i].bounding_box[0].x);
+            int y1 = to_int(colliders[i].bounding_box[0].y);
+            int x2 = to_int(colliders[i].bounding_box[1].x);
+            int y2 = to_int(colliders[i].bounding_box[1].y);
 
-        if (x2 < x1) {
-            int tmp = x1;
-            x1 = x2;
-            x2 = tmp;
+            if (x2 < x1) {
+                int tmp = x1;
+                x1 = x2;
+                x2 = tmp;
+            }
+
+            if (y2 < y1) {
+                int tmp = y1;
+                y1 = y2;
+                y2 = tmp;
+            }
+
+            SDL_Rect rect = {x1, y1, x2 - x1, y2 - y1};
+
+            SDL_RenderDrawRect(r, &rect);
+
+            Draw_filled_circle(r, x1, y1, 2);
+            Draw_filled_circle(r, x2, y2, 2);
         }
-
-        if (y2 < y1) {
-            int tmp = y1;
-            y1 = y2;
-            y2 = tmp;
-        }
-
-        SDL_Rect rect = {x1, y1, x2 - x1, y2 - y1};
-
-        SDL_RenderDrawRect(r, &rect);
-
-        Draw_filled_circle(r, x1, y1, 2);
-        Draw_filled_circle(r, x2, y2, 2);
-        }
-    } 
+    }
 }
 
 /**
@@ -589,9 +588,7 @@ void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
     int tail_x = to_int(x - dir.x * size * 1.4f);
     int tail_y = to_int(y - dir.y * size * 1.4f);
 
-    Draw_filled_triangle(r,
-                         head_x, head_y,
-                         to_int(x + side.x * size * 0.4f),
+    Draw_filled_triangle(r, head_x, head_y, to_int(x + side.x * size * 0.4f),
                          to_int(y + side.y * size * 0.4f),
                          to_int(x - side.x * size * 0.4f),
                          to_int(y - side.y * size * 0.4f));
@@ -602,12 +599,10 @@ void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
         int bx = x + (tail_x - x) * k / 5;
         int by = y + (tail_y - y) * k / 5;
 
-        SDL_RenderDrawLine(r, bx, by,
-                           to_int(bx + side.x * 6),
+        SDL_RenderDrawLine(r, bx, by, to_int(bx + side.x * 6),
                            to_int(by + side.y * 6));
 
-        SDL_RenderDrawLine(r, bx, by,
-                           to_int(bx - side.x * 6),
+        SDL_RenderDrawLine(r, bx, by, to_int(bx - side.x * 6),
                            to_int(by - side.y * 6));
     }
 }
@@ -658,10 +653,9 @@ void Draw_world(SDLDisplay *display, World *world) {
 
     if (g_debug_view)
         Draw_debug_view(display, world->fishes, world->nb_fish, world->shark,
-                world->colliders, world->nb_colliders);
+                        world->colliders, world->nb_colliders);
 
     Draw_score(display);
-
 }
 
 /**
@@ -673,7 +667,7 @@ void Draw_world(SDLDisplay *display, World *world) {
  * pour l'instant, Render_world appelle cette fonction avec le même monde
  * deux fois? plus tard, appeler directement :
  * Render_two_worlds(display, world_bot, world_user);
- * 
+ *
  * @param display structure SDL contenant la fenêtre et le renderer
  * @param left_world monde affiché à gauche
  * @param right_world monde affiché à droite
@@ -725,13 +719,13 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         if (right_scene != NULL)
             SDL_DestroyTexture(right_scene);
 
-        left_scene = SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
-                                       SDL_TEXTUREACCESS_TARGET,
-                                       world_w, world_h);
+        left_scene =
+            SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
+                              SDL_TEXTUREACCESS_TARGET, world_w, world_h);
 
-        right_scene = SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
-                                        SDL_TEXTUREACCESS_TARGET,
-                                        world_w, world_h);
+        right_scene =
+            SDL_CreateTexture(r, SDL_PIXELFORMAT_RGBA8888,
+                              SDL_TEXTUREACCESS_TARGET, world_w, world_h);
 
         texture_w = world_w;
         texture_h = world_h;
@@ -851,7 +845,7 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
 
 /**
  * @brief rendu principal actuel.
- *
+ * NOTE: ne pas utiliser fonction de démo.
  * @param display struct sdl
  * @param world monde à afficher
  */

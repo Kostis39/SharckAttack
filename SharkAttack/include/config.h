@@ -15,7 +15,7 @@
 #define TRAJECTORY_CAPACITY NB_OCCURRENCE
 
 /* Population */
-#define FISH_NB 200
+#define FISH_NB 100
 
 #define RADIUS_SEPARATION 32
 #define RADIUS_ALIGNEMENT 160
@@ -46,7 +46,7 @@
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
-#define WIDTH 960
+#define WIDTH 1920
 #define HEIGHT 1080
 
 #define REPULSION_ZONE 10 // Taille des la zone de répulsion (marges de l'écran)

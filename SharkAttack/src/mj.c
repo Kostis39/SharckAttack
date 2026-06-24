@@ -243,7 +243,8 @@ void UpdateWorld(World *world, World *tmp_world) {
 
         get_fish_perception(&world->fishes[i], world, perception);
 
-        Vector action = fish_choose_action(perception, world->theta_fish);
+        Vector action = fish_choose_action(perception, world->theta_fish,
+                                           world->width, world->height);
 
         fish_apply_action(&tmp_world->fishes[i], action);
     }

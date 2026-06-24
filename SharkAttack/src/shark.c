@@ -28,7 +28,7 @@ void Shark_destroy(Shark *shark) {
 
 bool Is_player(Shark *shark) { return shark->player; }
 
-void Shark_apply_action(Shark *shark, Vector action) {
+void Shark_apply_action(Shark *shark, Vector action, int width, int height) {
     shark->velocity =
         Vector_add(shark->velocity, Vector_scale(action, TURN_SPEED));
 

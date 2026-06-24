@@ -9,7 +9,8 @@
  * @brief Structure représentant l'état du jeu.
  */
 typedef struct {
-    World *world; /**< Le monde du jeu, contenant les poissons et le requin */
+    World *world1; /**< Le monde du jeu, contenant les poissons et le requin */
+    World *world2;
     SDLDisplay display; /**< L'affichage SDL du jeu */
 
     float time;

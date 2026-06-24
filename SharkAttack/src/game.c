@@ -26,9 +26,11 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
 
     VectorRule *shark_theta = SharkTheta_init();
 
-    game->world = World_init(width, height, nb_fish, nb_collider, *shark_theta,
-                             0, NB_OCCURRENCE, false);
-    if (!game->world) {
+    game->world1 = World_init(width / 2, height, nb_fish, nb_collider,
+                              *shark_theta, 0, NB_OCCURRENCE, true);
+    game->world2 = World_init(width / 2, height, nb_fish, nb_collider,
+                              *shark_theta, 0, NB_OCCURRENCE, false);
+    if (!game->world1 || !game->world2) {
         Destroy_sdl_display(&game->display);
         return false;
     }
@@ -56,7 +58,8 @@ void Game_run_SDL(bool use_bench) {
     int it = 0;
     SDL_Event event;
     while (!quit) {
-        Render_world(&game.display, game.world);
+        Render_two_worlds(&game.display, game.world1, game.world2);
+        /* Render_world(&game.display, game.world); */
         if (use_bench) {
             it++;
             if (it > BENCHMARK_ITERATIONS) {
@@ -85,7 +88,8 @@ void Game_run_SDL(bool use_bench) {
             }
         }
         if (!game.paused) {
-            Game_step(game.world);
+            Game_step(game.world1);
+            Game_step(game.world2);
         }
         if (!use_bench) {
 
@@ -134,6 +138,7 @@ void Game_destroy(Game *game) {
     if (!game)
         return;
 
-    World_destroy(game->world);
+    World_destroy(game->world1);
+    World_destroy(game->world2);
     Destroy_sdl_display(&game->display);
 }

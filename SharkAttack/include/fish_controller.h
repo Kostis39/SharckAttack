@@ -34,7 +34,9 @@ typedef struct {
 Vector Rules_separation(Fish *self, Vector separation);
 Vector Rules_alignment(Fish *self, Vector avg_velocity);
 Vector Rules_cohesion(Fish *self, Vector center_of_mass);
+Vector Rules_border_repulsion(Fish *self, int width, int height);
 
-Vector fish_choose_action(FishPerception *perception, RulesSetFish *rules_set);
+Vector fish_choose_action(FishPerception *perception, RulesSetFish *rules_set,
+                          int width, int height);
 
 #endif
