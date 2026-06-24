@@ -1,6 +1,7 @@
 #include "fish_controller.h"
 #include "config.h"
 #include "vector.h"
+#include "world.h"
 #include <math.h>
 
 Vector Rules_separation(Fish *self, Vector separation) {
@@ -17,7 +18,7 @@ Vector Rules_cohesion(Fish *self, Vector center_of_mass) {
     return Vector_sub(center_of_mass, self->position);
 }
 
-Vector Rules_border_repulsion(Fish *self) {
+Vector Rules_border_repulsion(Fish *self, int width, int height) {
     Vector repulsion = Vector_init();
     float ratio;
     float distance_border;
@@ -29,8 +30,8 @@ Vector Rules_border_repulsion(Fish *self) {
         repulsion.x += REPULSION_FACTOR * ratio *
                        ratio; // ratio au carré pour augmenter la répulsion
                               // rapidepment proche du bord
-    } else if (self->position.x > WIDTH - REPULSION_ZONE) {
-        distance_border = WIDTH - self->position.x;
+    } else if (self->position.x > width - REPULSION_ZONE) {
+        distance_border = width - self->position.x;
         ratio = 1.0f - (distance_border / REPULSION_ZONE);
         repulsion.x -= REPULSION_FACTOR * ratio * ratio;
     }
@@ -40,8 +41,8 @@ Vector Rules_border_repulsion(Fish *self) {
         distance_border = self->position.y;
         ratio = 1.0f - (distance_border / REPULSION_ZONE);
         repulsion.y += REPULSION_FACTOR * ratio * ratio;
-    } else if (self->position.y > HEIGHT - REPULSION_ZONE) {
-        distance_border = HEIGHT - self->position.y;
+    } else if (self->position.y > height - REPULSION_ZONE) {
+        distance_border = height - self->position.y;
         ratio = 1.0f - (distance_border / REPULSION_ZONE);
         repulsion.y -= REPULSION_FACTOR * ratio * ratio;
     }
@@ -62,7 +63,8 @@ Vector Rules_avoid_shark(Fish *self, Vector dist_shark) {
     return Vector_scale(dist_shark, intensity);
 }
 
-Vector fish_choose_action(FishPerception *p, RulesSetFish *theta) {
+Vector fish_choose_action(FishPerception *p, RulesSetFish *theta, int width,
+                          int height) {
     /** @brief Choix de la direction du poisson comme une combinaison linéaire
      * de vecteurs
      * @param p un pointeur vers la perception du poisson
@@ -75,7 +77,7 @@ Vector fish_choose_action(FishPerception *p, RulesSetFish *theta) {
     Vector alignement = Rules_alignment(&p->self, p->avg_velocity);
     Vector cohesion = Rules_cohesion(&p->self, p->center_of_mass);
 
-    Vector repulsion = Rules_border_repulsion(&p->self);
+    Vector repulsion = Rules_border_repulsion(&p->self, width, height);
 
     Vector avoid_shark = Rules_avoid_shark(&p->self, p->dist_shark);
 

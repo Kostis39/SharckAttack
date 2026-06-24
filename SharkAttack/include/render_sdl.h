@@ -16,6 +16,8 @@
 typedef struct {
     SDL_Window *window;     /**< Pointeur vers la fenêtre SDL */
     SDL_Renderer *renderer; /**< Pointeur vers le rendu SDL */
+    SDL_Texture *left_scene;  /**< Texture du monde gauche (Render_two_worlds) */
+    SDL_Texture *right_scene; /**< Texture du monde droit (Render_two_worlds) */
 } SDLDisplay;
 
 bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height);

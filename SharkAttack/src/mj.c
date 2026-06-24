@@ -246,7 +246,8 @@ void UpdateWorld(World *world, World *tmp_world) {
 
         get_fish_perception(&world->fishes[i], world, perception);
 
-        Vector action = fish_choose_action(perception, world->theta_fish);
+        Vector action = fish_choose_action(perception, world->theta_fish,
+                                           world->width, world->height);
 
         fish_apply_action(&tmp_world->fishes[i], action);
     }
@@ -274,7 +275,8 @@ void UpdateWorld(World *world, World *tmp_world) {
 
     free(shark_perception);
 
-    Shark_apply_action(tmp_world->shark, shark_action);
+    Shark_apply_action(tmp_world->shark, shark_action, world->width,
+                       world->height);
 
     int nb_fish_ate = handle_shark_eat(tmp_world);
     if (world->learn) {

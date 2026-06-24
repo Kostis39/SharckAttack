@@ -24,6 +24,6 @@ void Shark_destroy(Shark *shark);
 
 bool Is_player(Shark *shark);
 
-void Shark_apply_action(Shark *shark, Vector action);
+void Shark_apply_action(Shark *shark, Vector action, int width, int height);
 
 #endif
