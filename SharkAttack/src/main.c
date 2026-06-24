@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
                theta.y.pursuit);
         printf("\n");
 
-        Reinforce_learning(&theta, hyperparameters);
+        Reinforce_learning(&theta, hyperparameters, NB_THREADS);
 
         // sauvegarder theta quand l'entraînement est terminé
         if (!save_params(&theta, &hyperparameters, "new_params.txt")) {

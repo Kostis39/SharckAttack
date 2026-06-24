@@ -164,19 +164,55 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
     return D;
 }
 
-void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters) {
+void *Gradient_worker(void *args) {
+    init_seed((unsigned int)pthread_self());
+    WorkerArgs *wargs = (WorkerArgs *)args;
+    *(wargs->grad_target) =
+        Generate_gradient(wargs->theta, wargs->hyperparameters);
+    return NULL;
+}
+
+void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters,
+                        int thread_count) {
+    int i;
+
+    pthread_t *t = calloc(thread_count, sizeof(*t));
+    WorkerArgs *args = calloc(thread_count, sizeof(*args));
 
     for (int k = 0; k < hyperparameters.nb_gen; k++) {
 
         Gradient D_total = Gradient_zero();
-
+        Gradient *D_list = calloc(hyperparameters.nb_game, sizeof(*D_list));
+        // NOTE: old version no multithread
         // générer N trajectoires et accumuler leur gradient
-        for (int i = 0; i < hyperparameters.nb_game; i++) {
-            Gradient D_i = Generate_gradient(
-                *theta, hyperparameters); // joue 1 trajectoire et calcule sa
-                                          // contribution
-            D_total.x = Vector_rule_add(D_total.x, D_i.x);
-            D_total.y = Vector_rule_add(D_total.y, D_i.y);
+        /* for (i = 0; i < hyperparameters.nb_game; i++) { */
+        /*     Gradient D_i = Generate_gradient( */
+        /*         *theta, hyperparameters); // joue 1 trajectoire et calcule sa
+         */
+        /*                                   // contribution */
+        /* D_total.x = Vector_rule_add(D_total.x, D_list[j].x); */
+        /* D_total.y = Vector_rule_add(D_total.y, D_list[j].y); */
+        /* } */
+        /*******THREAD CREATOR*******/
+        for (i = 0; i < thread_count; ++i) {
+            args[i] = (WorkerArgs){
+                .theta = *theta,
+                .hyperparameters = hyperparameters,
+                .grad_target = &D_list[i],
+            };
+            pthread_create(&t[i], NULL, Gradient_worker, &args[i]);
+        }
+        /****************************/
+
+        /*******THREAD JOINATOR*******/
+        for (i = 0; i < thread_count; ++i) {
+            pthread_join(t[i], NULL);
+        }
+        /****************************/
+        for (int j = 0; j < hyperparameters.nb_game; ++j) {
+
+            D_total.x = Vector_rule_add(D_total.x, D_list[j].x);
+            D_total.y = Vector_rule_add(D_total.y, D_list[j].y);
         }
 
         // estimateur du gradient
@@ -197,4 +233,7 @@ void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters) {
         printf("theta_y = (%f, %f, %f)\n", theta->y.center, theta->y.alignment,
                theta->y.pursuit);
     }
+
+    free(t);
+    free(args);
 }
