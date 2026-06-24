@@ -120,12 +120,14 @@ void Game_run_terminal() {
            "Cohesion: %f Shark "
            "Avoidance: %f\n"
            "Shark : Position: (%f, %f)\n"
-           "Theta : (Center:  %f, Alignement: %f, Pursuit: %f)\n",
+           "Theta : ",
            i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
            world->theta_fish->alignment, world->theta_fish->cohesion,
            world->theta_fish->shark_avoidance, world->shark->pos.x,
-           world->shark->pos.y, world->theta_shark.center,
-           world->theta_shark.alignment, world->theta_shark.pursuit);
+           world->shark->pos.y);
+    VectorRule_print(world->theta_shark);
+    printf("\n");
+
     World_destroy(world);
     free(shark_theta);
 }
