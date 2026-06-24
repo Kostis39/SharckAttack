@@ -1,70 +1,72 @@
-# Génération num: 1 
+# Génération num: 10 
 Theta
-center: 0.943737
-alignment: 0.899778
-pursuit: 1.204185
-Avg gain: 0.000000
+center: 0.917245
+alignment: 0.829764
+pursuit: 1.387279
 
-# Génération num: 11 
-Theta
-center: 0.945211
-alignment: 0.899390
-pursuit: 1.211388
-Avg gain: 0.000000
+Avg reward: 24.799999
+Avg gain: 2.354756
 
-# Génération num: 21 
+# Génération num: 20 
 Theta
-center: 0.943559
-alignment: 0.899716
-pursuit: 1.209838
-Avg gain: 0.000000
+center: 0.932641
+alignment: 0.799541
+pursuit: 1.494823
 
-# Génération num: 31 
-Theta
-center: 0.941955
-alignment: 0.899878
-pursuit: 1.203566
-Avg gain: 0.000000
+Avg reward: 25.000000
+Avg gain: 2.243726
 
-# Génération num: 41 
+# Génération num: 30 
 Theta
-center: 0.942494
-alignment: 0.899641
-pursuit: 1.208431
-Avg gain: 0.000000
+center: 0.970830
+alignment: 0.823648
+pursuit: 1.552953
 
-# Génération num: 51 
-Theta
-center: 0.941138
-alignment: 0.900376
-pursuit: 1.204221
-Avg gain: 0.000000
+Avg reward: 31.799999
+Avg gain: 2.518113
 
-# Génération num: 61 
+# Génération num: 40 
 Theta
-center: 0.940659
-alignment: 0.900541
-pursuit: 1.203964
-Avg gain: 0.000000
+center: 0.972630
+alignment: 0.760107
+pursuit: 1.726619
 
-# Génération num: 71 
-Theta
-center: 0.941368
-alignment: 0.900123
-pursuit: 1.209116
-Avg gain: 0.000000
+Avg reward: 34.200001
+Avg gain: 2.313779
 
-# Génération num: 81 
+# Génération num: 50 
 Theta
-center: 0.940784
-alignment: 0.900464
-pursuit: 1.208116
-Avg gain: 0.000000
+center: 1.009283
+alignment: 0.704062
+pursuit: 1.961523
 
-# Génération num: 91 
+Avg reward: 30.799999
+Avg gain: 2.273554
+
+# Génération num: 60 
 Theta
-center: 0.939214
-alignment: 0.900915
-pursuit: 1.205274
-Avg gain: 0.000000
+center: 1.009289
+alignment: 0.670939
+pursuit: 2.231862
+
+Avg reward: 37.700001
+Avg gain: 2.576562
+
+# Génération num: 70 
+Theta
+center: 1.026504
+alignment: 0.567773
+pursuit: 2.411468
+
+Avg reward: 39.099998
+Avg gain: 3.476733
+
+# Génération num: 80 
+Theta
+center: 1.070032
+alignment: 0.438913
+pursuit: 2.481905
+
+Avg reward: 39.700001
+Avg gain: 3.629979
 

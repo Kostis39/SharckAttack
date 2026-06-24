@@ -121,7 +121,8 @@ Gradient Gradient_zero() {
     return G;
 }
 
-Gradient Generate_gradient(VectorRule theta, Hyperparameters hyperparameters) {
+TrajectoryCalculation Compute_trajectory(VectorRule theta,
+                                         Hyperparameters hyperparameters) {
     float G = 0;
     float GG;
     float mu_x, mu_y;
@@ -161,7 +162,8 @@ Gradient Generate_gradient(VectorRule theta, Hyperparameters hyperparameters) {
 
     World_destroy(world);
 
-    return D;
+    TrajectoryCalculation result = {D, world->fish_eaten, G};
+    return result;
 }
 
 void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters) {
@@ -169,15 +171,25 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters) {
     for (int k = 0; k < hyperparameters.nb_gen; k++) {
 
         Gradient D_total = Gradient_zero();
+        float average_reward = 0.0f;
+        float average_gain = 0.0f;
 
         // générer N trajectoires et accumuler leur gradient
         for (int i = 0; i < hyperparameters.nb_game; i++) {
-            Gradient D_i = Generate_gradient(
+            TrajectoryCalculation result = Compute_trajectory(
                 *theta, hyperparameters); // joue 1 trajectoire et calcule sa
                                           // contribution
+            Gradient D_i = result.grad;
+
             D_total.x = Vector_rule_add(D_total.x, D_i.x);
             D_total.y = Vector_rule_add(D_total.y, D_i.y);
+
+            average_reward += result.total_reward;
+            average_gain += result.total_gain;
         }
+
+        average_reward /= hyperparameters.nb_game;
+        average_gain /= hyperparameters.nb_game;
 
         // estimateur du gradient
         Gradient grad;
@@ -190,13 +202,13 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters) {
         *theta = Vector_rule_add(
             *theta, Vector_rule_scaled(grad.y, hyperparameters.alpha));
 
-        if (k % 10 == 0) {
-            logs_generation(theta, k + 1, 0, TXT_LOG);
+        if ((k + 1) % 10 == 0) {
+            logs_generation(theta, k + 1, average_reward, average_gain,
+                            TXT_LOG);
         }
 
-        printf("======================\n");
-        printf("itération %d / %d\n", k + 1, hyperparameters.nb_gen);
-        printf("theta_x = (%f, %f, %f)\n", theta->center, theta->alignment,
+        printf("=== Génération %d / %d ===\n", k + 1, hyperparameters.nb_gen);
+        printf("theta_x = (%f, %f, %f)\n\n", theta->center, theta->alignment,
                theta->pursuit);
     }
 }
