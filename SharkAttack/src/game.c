@@ -27,9 +27,9 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
     VectorRule *shark_theta = SharkTheta_init();
 
     game->world1 = World_init(width / 2, height, nb_fish, nb_collider,
-                              *shark_theta, 0, NB_OCCURRENCE, true);
+                              *shark_theta, 0, NB_OCCURRENCE, true, false);
     game->world2 = World_init(width / 2, height, nb_fish, nb_collider,
-                              *shark_theta, 0, NB_OCCURRENCE, false);
+                              *shark_theta, 0, NB_OCCURRENCE, false, false);
     if (!game->world1 || !game->world2) {
         Destroy_sdl_display(&game->display);
         return false;
