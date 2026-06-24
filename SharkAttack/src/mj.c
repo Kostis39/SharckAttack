@@ -1,9 +1,4 @@
 #include "mj.h"
-#include "collider.h"
-#include "config.h"
-#include "fish_controller.h"
-#include "vector.h"
-#include "world.h"
 
 float Shark_reward(int nb_fish_ate) {
     if (nb_fish_ate == 0) {
