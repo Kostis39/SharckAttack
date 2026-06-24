@@ -23,7 +23,7 @@ typedef struct {
     int height;
 } SharkPerception;
 
-Vector shark_choose_action(SharkPerception *perception, SharkTheta theta,
+Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
                            StepTrajectory *step_trajectory, float sigma);
 
 #endif

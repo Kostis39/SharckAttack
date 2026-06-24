@@ -267,7 +267,7 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
         to_int(y - dir.y * size * 0.2f + side.y * size * 0.35f),
         to_int(x + side.x * size * 0.75f), to_int(y + side.y * size * 0.75f));
 
-    /* Œil */
+    /* Oeil */
     int eye_x = to_int(x + dir.x * size * 0.35f - side.x * size * 0.18f);
     int eye_y = to_int(y + dir.y * size * 0.35f - side.y * size * 0.18f);
 
@@ -383,19 +383,22 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
     Draw_filled_triangle(r, tail_x, tail_y, tail_bot_x, tail_bot_y, back_x,
                          back_y);
 
-    /* Œil */
-    int eye_x = to_int(x + dir.x * size * 0.80f - side.x * size * 0.22f);
-    int eye_y = to_int(y + dir.y * size * 0.80f - side.y * size * 0.22f);
+    /* Oeil */
+    int eye_x = to_int(x + dir.x * size * 0.65f + side.x * size * 0.22f);
+    int eye_y = to_int(y + dir.y * size * 0.65f + side.y * size * 0.22f);
 
     SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
-    Draw_filled_circle(r, eye_x, eye_y, 3);
+    Draw_filled_circle(r, eye_x, eye_y, 2);
 
-    /* Bouche agressive */
-    SDL_RenderDrawLine(
-        r, to_int(x + dir.x * size * 0.75f - side.x * size * 0.32f),
-        to_int(y + dir.y * size * 0.75f - side.y * size * 0.32f),
-        to_int(nose_x - dir.x * size * 0.25f - side.x * size * 0.12f),
-        to_int(nose_y - dir.y * size * 0.25f - side.y * size * 0.12f));
+    /* Bouche */
+    int mouth_x1 = to_int(x + dir.x * size * 0.75f - side.x * size * 0.32f);
+    int mouth_y1 = to_int(y + dir.y * size * 0.75f - side.y * size * 0.32f);
+    int mouth_x2 = to_int(nose_x - dir.x * size * 0.25f - side.x * size * 0.12f);
+    int mouth_y2 = to_int(nose_y - dir.y * size * 0.25f - side.y * size * 0.12f);
+
+    for(int i = 0; i < 3; i++) {
+        SDL_RenderDrawLine(r, mouth_x1, mouth_y1 + i, mouth_x2, mouth_y2 + i);
+    }
 
     /* Branchies */
     for (int i = 0; i < 3; i++) {
@@ -464,14 +467,14 @@ void Draw_score(SDLDisplay *display) {
 
 /**
  * @brief dessine le mode de visualisation debug
- * ce mode affiche les vecteurs de vitesse, les rayons de perception.
+ * ce mode affiche les vecteurs de vitesse, les rayons de perception
  * il permet de comprendre visuellement le comportement multi-agents
  * @param display struct contenant le renderer
  * @param fishes tableau contenant les poissons
  * @param nb_fish nbr de poissons
  * @param shark requin a afficher en mode debug
- * @param colliders 
- * @param nb_colliders 
+ * @param colliders tableau contenant les colliders du monde
+ * @param nb_colliders nbr de colliders dans le tableau
  */
 void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
                      Shark *shark, Collider *colliders, int nb_colliders) {
@@ -560,6 +563,13 @@ void Draw_debug_view(SDLDisplay *display, Fish *fishes, int nb_fish,
     } 
 }
 
+/**
+ * @brief dessine le squelette d'un poisson mangé
+ * le squelette est affiché pendant qlq frames après la mort d un poisson
+ * @param display struct contenant le renderer sdl
+ * @param fish poisson dont on veut afficher le squelette
+ * @param frame num de frame restant pour l animation du squelette
+ */
 void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
     SDL_Renderer *r = display->renderer;
     Vector dir = direction_or_default(fish->velocity);

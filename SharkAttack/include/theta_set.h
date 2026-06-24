@@ -11,10 +11,6 @@ typedef struct {
     float shark_avoidance;
     float collider_avoidance;
 } RulesSetFish;
-typedef struct {
-    VectorRule x;
-    VectorRule y;
-} SharkTheta;
 
 typedef struct {
     VectorRule x;
@@ -22,10 +18,10 @@ typedef struct {
 } SharkPhi;
 
 RulesSetFish *RulesSetFish_init();
-SharkTheta *SharkTheta_init();
+VectorRule *SharkTheta_init();
 
 void RulesSetFish_destroy(RulesSetFish *theta);
-void SharkTheta_destroy(SharkTheta *theta);
+void SharkTheta_destroy(VectorRule *theta);
 
 float Dot_product(VectorRule a, VectorRule b);
 VectorRule Vector_rule_scaled(VectorRule v, float scalar);

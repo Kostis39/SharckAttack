@@ -1,7 +1,8 @@
 #include "world.h"
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
-                  SharkTheta theta_shark, float sigma, bool is_player) {
+                  VectorRule theta_shark, float sigma, int nb_occurrence,
+                  bool is_player) {
     World *new_world = calloc(1, sizeof(World));
     new_world->width = width;
     new_world->height = height;
@@ -17,6 +18,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
     new_world->theta_shark = theta_shark;
     new_world->trajectory = Trajectory_init();
     new_world->sigma = sigma;
+    new_world->nb_occurrence = nb_occurrence;
 
     return new_world;
 }

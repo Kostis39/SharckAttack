@@ -24,10 +24,10 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
         return false;
     }
 
-    SharkTheta *shark_theta = SharkTheta_init();
+    VectorRule *shark_theta = SharkTheta_init();
 
-    game->world =
-        World_init(width, height, nb_fish, nb_collider, *shark_theta, 0, false);
+    game->world = World_init(width, height, nb_fish, nb_collider, *shark_theta,
+                             0, NB_OCCURRENCE, false);
     if (!game->world) {
         Destroy_sdl_display(&game->display);
         return false;
@@ -100,15 +100,15 @@ void Game_run_terminal() {
     int i = 0;
     signal(SIGINT, Handle_terminal_interrupt);
 
-    SharkTheta *shark_theta = SharkTheta_init();
+    VectorRule *shark_theta = SharkTheta_init();
     World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB,
-                              *shark_theta, 0, false);
+                              *shark_theta, 0, NB_OCCURRENCE, false);
 
     for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
-                i < NB_OCCURRENCE && !terminal_interrupted;
+                i < world->nb_occurrence && !terminal_interrupted;
          i++) {
         Game_step(world);
-        printf("------\n");
+        printf("%d %d\n", i, world->fish_eaten);
     }
 
     if (terminal_interrupted) {
@@ -119,16 +119,15 @@ void Game_run_terminal() {
            "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
            "Cohesion: %f Shark "
            "Avoidance: %f\n"
-           "Shark : Position: (%f, %f) Center: (%f, %f) Alignement: (%f, %f) "
-           "Pursuit: (%f, %f)\n",
+           "Shark : Position: (%f, %f)\n"
+           "Theta : (Center:  %f, Alignement: %f, Pursuit: %f)\n",
            i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
            world->theta_fish->alignment, world->theta_fish->cohesion,
            world->theta_fish->shark_avoidance, world->shark->pos.x,
-           world->shark->pos.y, world->theta_shark.x.center,
-           world->theta_shark.y.center, world->theta_shark.x.alignment,
-           world->theta_shark.y.alignment, world->theta_shark.x.pursuit,
-           world->theta_shark.y.pursuit);
+           world->shark->pos.y, world->theta_shark.center,
+           world->theta_shark.alignment, world->theta_shark.pursuit);
     World_destroy(world);
+    free(shark_theta);
 }
 
 void Game_destroy(Game *game) {

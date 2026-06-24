@@ -24,10 +24,10 @@ int main(int argc, char *argv[]) {
     if (use_term) {
         Game_run_terminal();
     } else if (learn) {
-        SharkTheta theta;
+        VectorRule theta;
         Hyperparameters hyperparameters;
 
-        if (!load_params(&theta, &hyperparameters, "params.txt")) {
+        if (!load_params(&theta, &hyperparameters, TXT_LOAD_PARAMS)) {
             fprintf(stderr, "Erreur: échec du chargement des paramètres\n");
             return 1;
         }
@@ -41,16 +41,14 @@ int main(int argc, char *argv[]) {
         printf("nb_occurrence: %d\n", hyperparameters.nb_occurrence);
 
         printf("\n=== Theta ===\n");
-        printf("theta_x = (%f, %f, %f)\n", theta.x.center, theta.x.alignment,
-               theta.x.pursuit);
-        printf("theta_y = (%f, %f, %f)\n", theta.y.center, theta.y.alignment,
-               theta.y.pursuit);
+        printf("theta = (%f, %f, %f)\n", theta.center, theta.alignment,
+               theta.pursuit);
         printf("\n");
 
         Reinforce_learning(&theta, hyperparameters, NB_THREADS);
 
         // sauvegarder theta quand l'entraînement est terminé
-        if (!save_params(&theta, &hyperparameters, "new_params.txt")) {
+        if (!save_params(&theta, &hyperparameters, TXT_FINAL_PARAMS)) {
             fprintf(stderr, "Erreur: échec de la sauvegarde\n");
         }
     } else {

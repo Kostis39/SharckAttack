@@ -3,9 +3,15 @@
 
 #define PI 3.14159265358979323846
 
+#define TXT_LOAD_PARAMS "params.txt"
+#define TXT_FINAL_PARAMS "new_params.txt"
+#define TXT_LOG "logs.txt"
+
+#define NB_OCCURRENCE 10000
+
 #define SIGMA 5
 #define TRAJECTORY_LENGHT_ALLOC 200
-#define TRAJECTORY_CAPACITY 10000
+#define TRAJECTORY_CAPACITY NB_OCCURRENCE
 
 /* Population */
 #define FISH_NB 200
@@ -28,10 +34,6 @@
 /* Poids des règles de shark*/
 #define THETA_FILE "new_params.txt"
 
-#define CENTER 10.0f
-#define SHARK_ALIGNEMENT 0.0f
-#define PURSUIT 10.0f
-
 /* Contraintes de mouvement */
 #define FISH_SPEED_MAX 4.0f
 #define FISH_SPEED_MIN 2.0f
@@ -48,8 +50,6 @@
 
 #define REPULSION_ZONE 10 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 10.0f // Intensité du virage
-
-#define NB_OCCURRENCE 50000
 
 #define RANDOM_SEED 42
 

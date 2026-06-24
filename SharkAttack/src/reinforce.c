@@ -121,15 +121,17 @@ Gradient Gradient_zero() {
     return G;
 }
 
-Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
+TrajectoryCalculation Compute_trajectory(VectorRule theta,
+                                         Hyperparameters hyperparameters) {
     float G = 0;
     float GG;
     float mu_x, mu_y;
     VectorRule score_x, score_y;
     Gradient D = Gradient_zero();
 
-    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
-                              hyperparameters.sigma, false);
+    World *world =
+        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, theta,
+                   hyperparameters.sigma, hyperparameters.nb_occurrence, false);
 
     for (int i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                     i < hyperparameters.nb_occurrence;
@@ -145,8 +147,8 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
         G = step.reward + hyperparameters.gamma * G;
         GG = pow(hyperparameters.gamma, t) * G;
 
-        mu_x = Dot_product(theta.x, step.phi.x);
-        mu_y = Dot_product(theta.y, step.phi.y);
+        mu_x = Dot_product(theta, step.phi.x);
+        mu_y = Dot_product(theta, step.phi.y);
 
         score_x = Vector_rule_scaled(step.phi.x,
                                      (1.0f / pow(hyperparameters.sigma, 2)) *
@@ -161,46 +163,40 @@ Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters) {
 
     World_destroy(world);
 
-    return D;
+    TrajectoryCalculation result_iteration = {D, world->fish_eaten, G};
+    return result_iteration;
 }
 
-void *Gradient_worker(void *args) {
+void *Trajectory_worker(void *args) {
     init_seed((unsigned int)pthread_self());
     WorkerArgs *wargs = (WorkerArgs *)args;
-    *(wargs->grad_target) =
-        Generate_gradient(wargs->theta, wargs->hyperparameters);
+    *(wargs->result) = Compute_trajectory(wargs->theta, wargs->hyperparameters);
     return NULL;
 }
 
-void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters,
+void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
                         int thread_count) {
     int i;
 
     pthread_t *t = calloc(thread_count, sizeof(*t));
     WorkerArgs *args = calloc(thread_count, sizeof(*args));
+    TrajectoryCalculation *result_trajectories =
+        calloc(thread_count, sizeof(*result_trajectories));
 
     for (int k = 0; k < hyperparameters.nb_gen; k++) {
 
         Gradient D_total = Gradient_zero();
-        Gradient *D_list = calloc(hyperparameters.nb_game, sizeof(*D_list));
-        // NOTE: old version no multithread
-        // générer N trajectoires et accumuler leur gradient
-        /* for (i = 0; i < hyperparameters.nb_game; i++) { */
-        /*     Gradient D_i = Generate_gradient( */
-        /*         *theta, hyperparameters); // joue 1 trajectoire et calcule sa
-         */
-        /*                                   // contribution */
-        /* D_total.x = Vector_rule_add(D_total.x, D_list[j].x); */
-        /* D_total.y = Vector_rule_add(D_total.y, D_list[j].y); */
-        /* } */
+        float average_reward = 0.0f;
+        float average_gain = 0.0f;
+
         /*******THREAD CREATOR*******/
         for (i = 0; i < thread_count; ++i) {
             args[i] = (WorkerArgs){
                 .theta = *theta,
                 .hyperparameters = hyperparameters,
-                .grad_target = &D_list[i],
+                .result = &result_trajectories[i],
             };
-            pthread_create(&t[i], NULL, Gradient_worker, &args[i]);
+            pthread_create(&t[i], NULL, Trajectory_worker, &args[i]);
         }
         /****************************/
 
@@ -209,31 +205,42 @@ void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters,
             pthread_join(t[i], NULL);
         }
         /****************************/
-        for (int j = 0; j < hyperparameters.nb_game; ++j) {
+        for (int j = 0; j < thread_count; ++j) {
 
-            D_total.x = Vector_rule_add(D_total.x, D_list[j].x);
-            D_total.y = Vector_rule_add(D_total.y, D_list[j].y);
+            D_total.x =
+                Vector_rule_add(D_total.x, result_trajectories[j].grad.x);
+            D_total.y =
+                Vector_rule_add(D_total.y, result_trajectories[j].grad.y);
+
+            average_reward += result_trajectories[j].total_reward;
+            average_gain += result_trajectories[j].total_gain;
         }
+
+        average_reward /= thread_count;
+        average_gain /= thread_count;
 
         // estimateur du gradient
         Gradient grad;
-        grad.x = Vector_rule_scaled(D_total.x, 1.0f / hyperparameters.nb_game);
-        grad.y = Vector_rule_scaled(D_total.y, 1.0f / hyperparameters.nb_game);
+        grad.x = Vector_rule_scaled(D_total.x, 1.0f / thread_count);
+        grad.y = Vector_rule_scaled(D_total.y, 1.0f / thread_count);
 
         // mise à jour de theta
-        theta->x = Vector_rule_add(
-            theta->x, Vector_rule_scaled(grad.x, hyperparameters.alpha));
-        theta->y = Vector_rule_add(
-            theta->y, Vector_rule_scaled(grad.y, hyperparameters.alpha));
+        *theta = Vector_rule_add(
+            *theta, Vector_rule_scaled(grad.x, hyperparameters.alpha));
+        *theta = Vector_rule_add(
+            *theta, Vector_rule_scaled(grad.y, hyperparameters.alpha));
 
-        printf("======================\n");
-        printf("itération %d / %d\n", k + 1, hyperparameters.nb_gen);
-        printf("theta_x = (%f, %f, %f)\n", theta->x.center, theta->x.alignment,
-               theta->x.pursuit);
-        printf("theta_y = (%f, %f, %f)\n", theta->y.center, theta->y.alignment,
-               theta->y.pursuit);
+        if ((k + 1) % STEP_LOG == 0) {
+            logs_generation(theta, k + 1, average_reward, average_gain,
+                            TXT_LOG);
+        }
+
+        printf("=== Génération %d / %d ===\n", k + 1, hyperparameters.nb_gen);
+        printf("theta_x = (%f, %f, %f)\n\n", theta->center, theta->alignment,
+               theta->pursuit);
     }
 
+    free(result_trajectories);
     free(t);
     free(args);
 }

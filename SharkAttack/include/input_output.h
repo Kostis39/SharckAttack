@@ -2,18 +2,20 @@
 #define INPUT_OUTPUT_H
 
 #include "config.h"
-#include "reinforce.h"
+#include "utils_reinforce.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-bool save_params(SharkTheta *theta, Hyperparameters *hyperparams,
+bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
                  char *filename);
 
-bool load_params(SharkTheta *theta, Hyperparameters *hyperparams,
+bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
                  char *filename);
 
-bool load_theta(SharkTheta *theta, char *filename);
+bool load_theta(VectorRule *theta, char *filename);
 
+bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
+                     float avg_gain, char *filename);
 #endif

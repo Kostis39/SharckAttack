@@ -2,6 +2,9 @@
 #define REINFORCE_H
 
 #include "config.h"
+#include "input_output.h"
+#include "shark.h"
+#include "shark_controller.h"
 #include "utils.h"
 #include "utils_reinforce.h"
 #include <assert.h>
@@ -26,10 +29,10 @@ void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
 
 Gradient Gradient_zero();
 
-Gradient Generate_gradient(SharkTheta theta, Hyperparameters hyperparameters);
+Gradient Generate_gradient(VectorRule theta, Hyperparameters hyperparameters);
 
-void *Gradient_worker(void *args);
+void *Trajectory_worker(void *args);
 
-void Reinforce_learning(SharkTheta *theta, Hyperparameters hyperparameters,
+void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
                         int thread_count);
 #endif
