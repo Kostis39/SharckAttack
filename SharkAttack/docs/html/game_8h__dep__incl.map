@@ -1,9 +1,0 @@
-<map id="include/game.h" name="include/game.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="106,5,227,33"/>
-<area shape="rect" id="Node000002" href="$game_8c.html" title=" " alt="" coords="5,81,98,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,42,73,83,70,78,130,41"/>
-<area shape="rect" id="Node000003" href="$main_8c.html" title=" " alt="" coords="122,81,210,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,47,168,82,164,79,164,51"/>
-<area shape="rect" id="Node000004" href="$test__game_8c.html" title=" " alt="" coords="235,81,372,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,38,282,80,277,81,203,43"/>
-</map>

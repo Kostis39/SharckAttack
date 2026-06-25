@@ -1,4 +1,5 @@
 #include "sdl_draw_tools.h"
+#include <SDL2/SDL_ttf.h>
 #include "config.h"
 #include <math.h>
 
@@ -204,4 +205,161 @@ void Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length) {
 
     SDL_RenderDrawLine(r, x2, y2, to_int(x2 - d.x * 7 - side.x * 4),
                        to_int(y2 - d.y * 7 - side.y * 4));
+}
+
+/**
+ * @brief dessine un texte centre pour les effets graphiques.
+ *
+ * Cette fonction est locale a sdl_draw_tools.c.
+ *
+ * @param r renderer SDL
+ * @param text texte a afficher
+ * @param zone zone ou centrer le texte
+ * @param size taille du texte
+ * @param color couleur du texte
+ */
+static void Draw_tool_text_center(SDL_Renderer *r, const char *text,
+                                  SDL_Rect zone, int size,
+                                  SDL_Color color) {
+    if (r == NULL || text == NULL)
+        return;
+
+    TTF_Font *font = TTF_OpenFont(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-BoldItalic.ttf",
+        size);
+
+    if (font == NULL) {
+        font = TTF_OpenFont(
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            size);
+    }
+
+    if (font == NULL)
+        return;
+
+    SDL_Surface *surface = TTF_RenderText_Blended(font, text, color);
+
+    if (surface == NULL) {
+        TTF_CloseFont(font);
+        return;
+    }
+
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(r, surface);
+
+    SDL_Rect dst = {
+        zone.x + (zone.w - surface->w) / 2,
+        zone.y + (zone.h - surface->h) / 2,
+        surface->w,
+        surface->h
+    };
+
+    SDL_FreeSurface(surface);
+
+    if (texture != NULL) {
+        SDL_RenderCopy(r, texture, NULL, &dst);
+        SDL_DestroyTexture(texture);
+    }
+
+    TTF_CloseFont(font);
+}
+
+/**
+ * @brief dessine un panneau de compte a rebours.
+ *
+ * @param r renderer SDL
+ * @param zone zone a remplir
+ * @param label texte JOUEUR ou BOT
+ * @param number nombre du compte a rebours
+ */
+static void Draw_countdown_panel(SDL_Renderer *r, SDL_Rect zone,
+                                 const char *label, int number) {
+    char text[2];
+
+    int cx = zone.x + zone.w / 2;
+    int cy = zone.y + zone.h / 2;
+    int radius = zone.h / 5;
+
+    if (radius > zone.w / 4)
+        radius = zone.w / 4;
+
+    /*
+     * Filtre sombre transparent.
+     */
+    SDL_SetRenderDrawColor(r, 0, 20, 35, 120);
+    SDL_RenderFillRect(r, &zone);
+
+    /*
+     * Cadre bleu clair.
+     */
+    SDL_SetRenderDrawColor(r, 90, 220, 255, 210);
+    SDL_RenderDrawRect(r, &zone);
+
+    /*
+     * Lignes style ancien compte a rebours.
+     */
+    SDL_SetRenderDrawColor(r, 210, 240, 255, 80);
+    SDL_RenderDrawLine(r, zone.x, cy, zone.x + zone.w, cy);
+    SDL_RenderDrawLine(r, cx, zone.y, cx, zone.y + zone.h);
+
+    /*
+     * Cercles au centre.
+     */
+    SDL_SetRenderDrawColor(r, 210, 240, 255, 100);
+    Draw_circle_outline(r, cx, cy, radius);
+    Draw_circle_outline(r, cx, cy, radius + 18);
+    Draw_circle_outline(r, cx, cy, radius + 34);
+
+    /*
+     * Label JOUEUR / BOT en haut.
+     */
+    SDL_Rect label_zone = {
+        zone.x,
+        zone.y + 55,
+        zone.w,
+        60
+    };
+
+    Draw_tool_text_center(r, label, label_zone, 38,
+                          (SDL_Color){220, 245, 255, 255});
+
+    /*
+     * Nombre au centre.
+     */
+    text[0] = (char)('0' + number);
+    text[1] = '\0';
+
+    SDL_Rect number_zone = {
+        zone.x,
+        zone.y + zone.h / 2 - 80,
+        zone.w,
+        160
+    };
+
+    Draw_tool_text_center(r, text, number_zone, 100,
+                          (SDL_Color){245, 250, 255, 255});
+}
+
+void Draw_intro_countdown(SDL_Renderer *r, SDL_Rect left_zone,
+                          SDL_Rect right_zone, int number,
+                          Shark *left_shark, Shark *right_shark) {
+    if (r == NULL)
+        return;
+
+    if (number < 1)
+        number = 1;
+
+    if (number > 3)
+        number = 3;
+
+    const char *left_label = "BOT";
+    const char *right_label = "BOT";
+
+    if (Is_player(left_shark))
+        left_label = "JOUEUR";
+
+    if (Is_player(right_shark))
+        right_label = "JOUEUR";
+
+    Draw_countdown_panel(r, left_zone, left_label, number);
+    Draw_countdown_panel(r, right_zone, right_label, number);
 }

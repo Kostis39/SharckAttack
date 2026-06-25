@@ -1,5 +1,0 @@
-<map id="Draw_mine_shape" name="Draw_mine_shape">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,147,33"/>
-<area shape="rect" id="Node000002" href="$render__sdl_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="195,5,331,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,17,182,19,177,19,147,22"/>
-</map>

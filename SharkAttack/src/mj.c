@@ -277,6 +277,7 @@ int handle_shark_eat(World *world) {
         float dist = Vector_length(Vector_sub(fish->position, shark_pos));
 
         if (dist < SHARK_ATTACK_RANGE) {
+
             fish->is_alive = false;
             world->fish_eaten++;
             has_eaten += 1;

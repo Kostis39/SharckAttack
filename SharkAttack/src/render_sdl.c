@@ -1,8 +1,10 @@
 #include "render_sdl.h"
 #include "collider.h"
 #include "sdl_draw_tools.h"
-#include <SDL2/SDL_ttf.h>
 #include "world.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include <math.h>
 #include <stdio.h>
 
@@ -422,6 +424,90 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
  * le score correspond au nbr de poissons mangés par le requin
  * @param display struct contenant le renderer
  */
+static SDL_Texture *load_icon_white(SDL_Renderer *r, const char *path) {
+    SDL_Surface *surf = IMG_Load(path);
+    if (!surf) {
+        fprintf(stderr, "load_icon_white: IMG_Load failed: %s\n",
+                SDL_GetError());
+        return NULL;
+    }
+
+    /* Inverser les pixels : noir → blanc, garder l'alpha */
+    SDL_LockSurface(surf);
+    int bpp = surf->format->BytesPerPixel;
+    for (int y = 0; y < surf->h; y++) {
+        for (int x = 0; x < surf->w; x++) {
+            Uint8 *p = (Uint8 *)surf->pixels + y * surf->pitch + x * bpp;
+            if (bpp == 4) {
+                /* RGBA : inverser RGB, garder A */
+                p[0] = 255 - p[0];
+                p[1] = 255 - p[1];
+                p[2] = 255 - p[2];
+            } else if (bpp == 3) {
+                p[0] = 255 - p[0];
+                p[1] = 255 - p[1];
+                p[2] = 255 - p[2];
+            }
+        }
+    }
+    SDL_UnlockSurface(surf);
+
+    SDL_Texture *tex = SDL_CreateTextureFromSurface(r, surf);
+    SDL_FreeSurface(surf);
+    return tex;
+}
+
+bool Load_mute_icons(SDLDisplay *display, const char *path) {
+    if (!display || !display->renderer)
+        return false;
+
+    char buf[256];
+    snprintf(buf, sizeof(buf), "%s%s", path, "mute.png");
+    display->icon_mute = load_icon_white(display->renderer, buf);
+
+    snprintf(buf, sizeof(buf), "%s%s", path, "volume-high.png");
+    display->icon_unmute = load_icon_white(display->renderer, buf);
+
+    if (!display->icon_mute || !display->icon_unmute) {
+        fprintf(stderr, "Load_mute_icons: %s\n", SDL_GetError());
+        return false;
+    }
+    return true;
+}
+
+void Destroy_mute_icons(SDLDisplay *display) {
+    if (!display)
+        return;
+    if (display->icon_mute)
+        SDL_DestroyTexture(display->icon_mute);
+    if (display->icon_unmute)
+        SDL_DestroyTexture(display->icon_unmute);
+    display->icon_mute = NULL;
+    display->icon_unmute = NULL;
+}
+
+void Draw_mute_button(SDLDisplay *display, AudioManager *audio) {
+    if (!display || !display->renderer || !audio)
+        return;
+
+    SDL_Renderer *r = display->renderer;
+
+    int window_w = 0, window_h = 0;
+    SDL_GetRendererOutputSize(r, &window_w, &window_h);
+
+    int btn_x = window_w - BTN_SIZE - BTN_MARGIN;
+    int btn_y = BTN_MARGIN;
+
+    SDL_Rect btn = {btn_x, btn_y, BTN_SIZE, BTN_SIZE};
+
+    /* Icône (blanche, fond transparent) */
+    SDL_Texture *icon =
+        audio->muted ? display->icon_mute : display->icon_unmute;
+    if (icon) {
+        SDL_RenderCopy(r, icon, NULL, &btn);
+    }
+}
+
 void Draw_score(SDLDisplay *display) {
     SDL_Renderer *r = display->renderer;
     int w = 0, h = 0;
@@ -682,8 +768,7 @@ void Draw_text_center(SDL_Renderer *r, const char *text, SDL_Rect zone,
 
     if (font == NULL) {
         font = TTF_OpenFont(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-            size);
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", size);
     }
 
     if (font == NULL)
@@ -698,12 +783,8 @@ void Draw_text_center(SDL_Renderer *r, const char *text, SDL_Rect zone,
 
     SDL_Texture *texture = SDL_CreateTextureFromSurface(r, surface);
 
-    SDL_Rect dst = {
-        zone.x + (zone.w - surface->w) / 2,
-        zone.y + (zone.h - surface->h) / 2,
-        surface->w,
-        surface->h
-    };
+    SDL_Rect dst = {zone.x + (zone.w - surface->w) / 2,
+                    zone.y + (zone.h - surface->h) / 2, surface->w, surface->h};
 
     SDL_FreeSurface(surface);
 
@@ -713,7 +794,7 @@ void Draw_text_center(SDL_Renderer *r, const char *text, SDL_Rect zone,
     }
 
     TTF_CloseFont(font);
-} 
+}
 
 /**
  * @brief affiche WINNER ou LOSER avec un filtre transparent.
@@ -749,12 +830,7 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
 
     SDL_RenderDrawRect(r, &zone);
 
-    SDL_Rect title_zone = {
-        zone.x,
-        zone.y + zone.h / 2 - 80,
-        zone.w,
-        100
-    };
+    SDL_Rect title_zone = {zone.x, zone.y + zone.h / 2 - 80, zone.w, 100};
 
     if (is_winner) {
         Draw_text_center(r, "WINNER", title_zone, 56,
@@ -765,12 +841,7 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
 
         snprintf(buffer, sizeof(buffer), "reste %d", remaining);
 
-        SDL_Rect remaining_zone = {
-            zone.x,
-            zone.y + zone.h / 2 + 5,
-            zone.w,
-            40
-        };
+        SDL_Rect remaining_zone = {zone.x, zone.y + zone.h / 2 + 5, zone.w, 40};
 
         Draw_text_center(r, buffer, remaining_zone, 22,
                          (SDL_Color){235, 240, 245, 210});
@@ -778,7 +849,7 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
 }
 
 void Render_two_worlds(SDLDisplay *display, World *left_world,
-                       World *right_world) {
+                       World *right_world, AudioManager *audio) {
     static int texture_w = 0;
     static int texture_h = 0;
     static int window_was_doubled = 0;
@@ -791,6 +862,7 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
 
     static int remaining_at_end[2] = {0, 0};
     static int winner = -1; /**< personne n'a encore gagné */
+    static int intro_start = 0;
 
     if (display == NULL || display->renderer == NULL || left_world == NULL)
         return;
@@ -862,6 +934,9 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         g_score = world->fish_eaten;
 
         if (g_score > old_score[p]) {
+            if (audio != NULL)
+                audio_play(audio->fish_eaten, audio);
+
             gain[p] = g_score - old_score[p];
             flash[p] = 10;
         } else if (flash[p] > 0) {
@@ -948,10 +1023,31 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     SDL_RenderDrawRect(r, &right_screen);
 
     /*
-    * Fin de partie :
-    * Des qu'un cote mange tous les poissons,
-    * il devient WINNER et l'autre devient directement LOSER.
-    */
+     * Intro de debut :
+     * pendant 3 secondes, on affiche JOUEUR / BOT avec un compte a rebours.
+     */
+    int intro_now = (int)SDL_GetTicks();
+
+    if (intro_start == 0)
+        intro_start = intro_now;
+
+    int intro_elapsed = intro_now - intro_start;
+
+    if (intro_elapsed < 3000 && winner == -1) {
+        int number = 3 - intro_elapsed / 1000;
+
+        if (number < 1)
+            number = 1;
+
+        Draw_intro_countdown(r, left_screen, right_screen, number,
+                             left_world->shark, right_world->shark);
+    }
+
+    /*
+     * Fin de partie :
+     * Des qu'un cote mange tous les poissons,
+     * il devient WINNER et l'autre devient directement LOSER.
+     */
     if (left_world->fish_eaten == 0 && right_world->fish_eaten == 0 &&
         winner != -1) {
         remaining_at_end[0] = 0;
@@ -960,14 +1056,15 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     }
 
     /*
-    * Detection du gagnant.
-    */
+     * Detection du gagnant.
+     */
     if (winner == -1) {
         if (left_world->fish_eaten >= left_world->nb_fish) {
             winner = 0;
 
             remaining_at_end[0] = 0;
-            remaining_at_end[1] = right_world->nb_fish - right_world->fish_eaten;
+            remaining_at_end[1] =
+                right_world->nb_fish - right_world->fish_eaten;
 
             if (remaining_at_end[1] < 0)
                 remaining_at_end[1] = 0;
@@ -983,8 +1080,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     }
 
     /*
-    * Affichage du resultat.
-    */
+     * Affichage du resultat.
+     */
     if (winner != -1) {
         if (left_world == right_world) {
             Draw_result_overlay(r, left_screen, 1, 0);
@@ -998,6 +1095,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         }
     }
 
+    Draw_mute_button(display, audio);
+
     SDL_RenderPresent(r);
 }
 
@@ -1007,6 +1106,6 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
  * @param display struct sdl
  * @param world monde à afficher
  */
-void Render_world(SDLDisplay *display, World *world) {
-    Render_two_worlds(display, world, world);
-}
+/* void Render_world(SDLDisplay *display, World *world) { */
+/*     Render_two_worlds(display, world, world); */
+/* } */

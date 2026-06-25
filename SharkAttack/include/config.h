@@ -73,4 +73,7 @@ enum Rules {
 
 #define NB_THREADS 10
 
+#define AUDIO_PATH "assets/"
+#define MUSIC_FILE "underwater-ambience"
+
 #endif /* CONFIG_H */

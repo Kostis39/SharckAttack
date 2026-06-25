@@ -1,9 +1,0 @@
-<map id="World_replace" name="World_replace">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,57,119,85"/>
-<area shape="rect" id="Node000002" href="$fish_8c.html#a3f90ce99ab81c8bdeeddc5093c4d7851" title=" " alt="" coords="176,5,302,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,54,177,36,172,39,113,59"/>
-<area shape="rect" id="Node000003" href="$fish_8c.html#ad32bad07f006130e31d4e163397718e1" title=" " alt="" coords="167,57,311,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,69,154,70,149,72,119,74"/>
-<area shape="rect" id="Node000004" href="$shark_8c.html#a91dd948519e592c84ab141cfac0e0def" title=" " alt="" coords="191,109,287,137"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="112,83,179,104,174,106,112,88"/>
-</map>
