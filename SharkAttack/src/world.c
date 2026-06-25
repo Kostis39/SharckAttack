@@ -52,14 +52,58 @@ void World_destroy(World *world) {
 }
 
 /**
- * @brief remplace le contenu d'un monde par un autre
- * @param world monde de destination qui sera modifié
- * @param world_tmp monde source copié
+ * @brief crée un monde temporaire à partir d'un monde existant
+ * @param world pointeur vers le monde source
+ * @param tmp_world pointeur vers le monde temporaire à remplir
+ * @return true si la création a réussi, false sinon
  */
-void World_replace(World *world, World *world_tmp) {
-    Fish_destroy_array(world->fishes);
-    world->nb_fish = world_tmp->nb_fish;
-    world->fishes = Fish_copy_array(world_tmp->fishes, world_tmp->nb_fish);
-    world_tmp->colliders = world_tmp->colliders;
-    Shark_copy(world->shark, world_tmp->shark);
+bool World_create_tmp(const World *world, World *tmp_world) {
+    if (!world || !tmp_world) {
+        return false;
+    }
+
+    tmp_world->width = world->width;
+    tmp_world->height = world->height;
+    tmp_world->nb_fish = world->nb_fish;
+    tmp_world->fish_eaten = world->fish_eaten;
+    tmp_world->trajectory = world->trajectory;
+
+    tmp_world->fishes = calloc(tmp_world->nb_fish, sizeof(Fish));
+    if (!tmp_world->fishes) {
+        fprintf(stderr, "World_create_temp: échec d'allocation des poissons\n");
+        return false;
+    }
+
+    tmp_world->shark = calloc(1, sizeof(Shark));
+    if (!tmp_world->shark) {
+        free(tmp_world->fishes);
+        fprintf(stderr, "World_create_temp: échec d'allocation du requin\n");
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * @brief échange les données entre le monde réel et le monde temporaire
+ * @param world pointeur vers le monde réel à modifier
+ * @param tmp_world pointeur vers le monde temporaire qui sera détruit après
+ * l'échange
+ */
+void World_swap_data(World *world, World *tmp_world) {
+    if (!world || !tmp_world) {
+        fprintf(stderr, "World_swap_data: pointeur NULL\n");
+        return;
+    }
+
+    // Poissons
+    free(world->fishes);
+    world->fishes = tmp_world->fishes;
+    world->nb_fish = tmp_world->nb_fish;
+
+    // Requin : copie de la structure puis libération du temporaire
+    *world->shark = *tmp_world->shark;
+    free(tmp_world->shark);
+
+    world->fish_eaten = tmp_world->fish_eaten;
 }

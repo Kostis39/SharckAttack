@@ -43,4 +43,7 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
 void World_destroy(World *world);
 void World_update(World *world, World *world_tmp);
 
+bool World_create_tmp(const World *world, World *tmp_world);
+void World_swap_data(World *world, World *tmp_world);
+
 #endif

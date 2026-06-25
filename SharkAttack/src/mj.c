@@ -300,43 +300,24 @@ void UpdateWorld(World *world, World *tmp_world) {
 
 /**
  * @brief réalise une itération complète du jeu
- * @param world pointeur vers le monde à mettre à jour
+ * @param world le monde à mettre à jour
  */
 void Game_step(World *world) {
-    /**
-     * @brief réalise une itération du jeu
-     * @param world le monde à itérer
-     * */
+    if (!world || world->nb_fish < 0) {
+        fprintf(stderr, "Game_step: monde invalide\n");
+        return;
+    }
+
     World tmp_world;
-    tmp_world.width = world->width;
-    tmp_world.height = world->height;
-    tmp_world.nb_fish = world->nb_fish;
-    tmp_world.fish_eaten = world->fish_eaten;
-    tmp_world.trajectory = world->trajectory;
 
-    tmp_world.fishes = calloc(tmp_world.nb_fish, sizeof(Fish));
-    if (!tmp_world.fishes) {
-        fprintf(stderr, "Erreur malloc dans Game_step (fishes)\n");
+    // 1. Création du monde temporaire
+    if (!World_create_tmp(world, &tmp_world)) {
         return;
     }
 
-    tmp_world.shark = calloc(1, sizeof(Shark));
-    if (!tmp_world.shark) {
-        free(tmp_world.fishes);
-        fprintf(stderr, "Erreur malloc dans Game_step (shark)\n");
-        return;
-    }
-
+    // 2. Mise à jour des perceptions et actions
     UpdateWorld(world, &tmp_world);
 
-    free(world->fishes);
-    // Remplacement par le nouveau
-    world->fishes = tmp_world.fishes;
-    world->nb_fish = tmp_world.nb_fish; // si le nombre a changé
-
-    // Pour le requin, on copie la structure (pas d'échange de pointeur)
-    free(world->shark); // 1. Libérer l'ancien requin
-    world->shark = tmp_world.shark;
-    world->fish_eaten = tmp_world.fish_eaten;
-    world->trajectory = tmp_world.trajectory;
+    // 3. Échange des données
+    World_swap_data(world, &tmp_world);
 }
