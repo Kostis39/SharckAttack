@@ -9,11 +9,10 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 /* Poids des règles de shark*/
 #define THETA_FILE "params.txt"
 
-#define STEP_LOG 100
+#define STEP_LOG 1
 
 #define NB_OCCURRENCE 10000
 
-#define SIGMA 5
 #define TRAJECTORY_LENGHT_ALLOC 200
 #define TRAJECTORY_CAPACITY NB_OCCURRENCE
 
@@ -46,17 +45,16 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
-#define WIDTH 1400
-#define HEIGHT 500
+#define WIDTH 1920
+#define HEIGHT 1080
 
 #define REPULSION_ZONE 10 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 10.0f // Intensité du virage
 
 #define RANDOM_SEED 42
 
-#define COLLIDER_RATIO                                                         \
-    25 /* mesure au plus un dixième de la largeur du                          \
-monde*/
+#define COLLIDER_RATIO 25 /* mesure au plus un dixième de la largeur du       \
+                             monde*/
 #define COLLIDERS_NB 5
 
 #define SHARK_ATTACK_RANGE 30

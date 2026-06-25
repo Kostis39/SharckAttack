@@ -20,7 +20,7 @@ Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey_visible) {
     // Plus le centre est loin, plus la correction est forte
     float intensity = dist / shark.radius_vision;
 
-    return Vector_scale(local_normalize(to_center), intensity);
+    return Vector_scale(Local_normalize(to_center), intensity);
 }
 
 /**
@@ -44,7 +44,7 @@ Vector Rules_alignment_shark(Shark shark, Vector avg_velocity,
     // Plus l'écart est grand, plus la correction est forte
     float intensity = norm / SHARK_SPEED_MAX;
 
-    return Vector_scale(local_normalize(diff), intensity);
+    return Vector_scale(Local_normalize(diff), intensity);
 }
 
 /**
@@ -69,21 +69,9 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     Vector max = {width * width, height * height};
     float intensity = 1.0f / (1.0f + (dist / Vector_length(max)));
 
-    return Vector_scale(local_normalize(to_fish), intensity);
+    return Vector_scale(Local_normalize(to_fish), intensity);
 }
 
-/**
- * @brief choisit l'action du requin (joueur ou bot)
- * en mode joueur : suit la souris
- * en mode bot : combine centre, alignement et poursuite selon une politique
- * gaussienne
- * @param perception perception du requin
- * @param theta poids des règles
- * @param step_trajectory pointeur vers le pas de trajectoire à remplir (si
- * apprentissage)
- * @param sigma écart-type pour l'exploration
- * @return vecteur action
- */
 Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
                            StepTrajectory *step_trajectory, float sigma) {
     if (!perception)
@@ -101,7 +89,7 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
 
         float dist = Vector_length(to_target);
 
-        Vector direction = local_normalize(to_target);
+        Vector direction = Local_normalize(to_target);
 
         // Intensité proportionnelle à la distance
         float intensity = dist / 20.0f;

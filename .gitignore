@@ -12,3 +12,5 @@ compile_commands.json
 
 .nfs*
 sprites3
+*.txt
+*.jpg

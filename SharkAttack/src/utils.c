@@ -2,7 +2,10 @@
 
 __thread unsigned int seed = RANDOM_SEED;
 
-void init_seed(unsigned int set_seed) { seed = set_seed; }
+int init_seed(unsigned int set_seed) {
+    seed = set_seed;
+    return seed;
+}
 
 int rand_trsf() {
     unsigned int next = seed;
@@ -28,18 +31,9 @@ int rand_trsf() {
 }
 
 float random_float(float min, float max) {
-    /**
-     * @brief petite fonction auxiliaire pour déterminer un float dans une
-     * range*/
     return min + ((float)rand_trsf()) / ((float)RAND_MAX) * (max - min);
 }
 
-/**
- * @brief Fonction permettant de tirer une variable aléatoire selon une loi
- * gaussienne.
- *
- * @return Vector Vecteur résultat du tirage aléatoire.
- */
 Vector box_muller_standard() {
     Vector vect;
     float u1 = random_float(0, 1);

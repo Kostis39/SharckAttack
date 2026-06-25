@@ -1,14 +1,5 @@
 #include "input_output.h"
 
-/**
- * @brief sauvegarde les paramètres theta, les hyperparamètres et le meilleur
- * gain dans un fichier
- * @param theta pointeur vers le vecteur theta à sauvegarder
- * @param hyperparams pointeur vers la structure des hyperparamètres
- * @param best_gain meilleur gain obtenu avec cette politique
- * @param filename nom du fichier de sauvegarde
- * @return true si la sauvegarde a réussi, false sinon
- */
 bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
                  float best_gain, char *filename) {
     if (!theta || !hyperparams || !filename) {
@@ -47,13 +38,6 @@ bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
     return true;
 }
 
-/**
- * @brief charge les paramètres theta et les hyperparamètres depuis un fichier
- * @param theta pointeur vers le vecteur theta à remplir
- * @param hyperparams pointeur vers la structure des hyperparamètres à remplir
- * @param filename nom du fichier source
- * @return true si le chargement a réussi, false sinon
- */
 bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
                  char *filename) {
     if (!theta || !hyperparams || !filename) {
@@ -106,12 +90,6 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
     return true;
 }
 
-/**
- * @brief charge uniquement le vecteur theta depuis un fichier
- * @param theta pointeur vers le vecteur theta à remplir
- * @param filename nom du fichier source
- * @return true si le chargement a réussi, false sinon
- */
 bool load_theta(VectorRule *theta, char *filename) {
     if (!theta || !filename) {
         fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
@@ -145,20 +123,8 @@ bool load_theta(VectorRule *theta, char *filename) {
     return true;
 }
 
-/**
- * @brief écrit un log pour une génération d'apprentissage
- * @param theta politique actuelle
- * @param gen_number numéro de la génération
- * @param avg_reward récompense moyenne sur la génération
- * @param avg_gain gain moyen sur la génération
- * @param avg_iteration itération moyenne sur la génération
- * @param filename nom du fichier de logs
- * @return true si l'écriture a réussi, false sinon
- */
 bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
-                     float avg_gain, float avg_iteration,
-                     VectorRule theta_diff_STEP_LOG,
-                     VectorRule theta_diff_1_step, char *filename) {
+                     float avg_gain, float avg_iteration, char *filename) {
     if (!theta || !filename) {
         fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
         return false;
@@ -177,14 +143,9 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
     fprintf(file, "center: %f\n", theta->vect[Rules_Center]);
     fprintf(file, "alignment: %f\n", theta->vect[Rules_Alignment]);
     fprintf(file, "pursuit: %f\n\n", theta->vect[Rules_Pursuit]);
-    fprintf(file, "Moyenne reward: %f\n", avg_reward);
-    fprintf(file, "Moyenne gain: %f\n", avg_gain);
-    fprintf(file, "Moyenne iteration: %f\n", avg_iteration);
-    fprintf(file, "Δθ après %d générations: ", STEP_LOG);
-    VectorRule_fprint(file, theta_diff_STEP_LOG);
-    fprintf(file, "\nMoyenne de Δθ de chaque génération: ");
-    VectorRule_fprint(file, theta_diff_1_step);
-    fprintf(file, "\n\n");
+    fprintf(file, "Avg reward: %f\n", avg_reward);
+    fprintf(file, "Avg gain: %f\n", avg_gain);
+    fprintf(file, "Avg iteration: %f\n\n", avg_iteration);
 
     fclose(file);
     return true;
@@ -293,13 +254,6 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
     return found_any;
 }
 
-/**
- * @brief Réinitialise le fichier de logs et y écrit la configuration initiale
- * provenant du fichier de paramètres.
- * @param filename_logs   Nom du fichier de logs à créer/réinitialiser.
- * @param filename_params Nom du fichier contenant les paramètres initiaux.
- * @return true si l'initialisation a réussi, false sinon.
- */
 bool init_logs(char *filename_params, char *filename_logs) {
     if (!filename_logs || !filename_params) {
         fprintf(stderr, "Erreur: pointeur NULL dans init_logs\n");
@@ -318,7 +272,7 @@ bool init_logs(char *filename_params, char *filename_logs) {
     }
     load_gain_params(&best_gain_initial, filename_params);
 
-    FILE *file = fopen(filename_logs, "a");
+    FILE *file = fopen(filename_logs, "w");
     if (!file) {
         fprintf(stderr,
                 "Erreur: impossible d'initialiser le fichier de log %s\n",
@@ -354,14 +308,6 @@ bool init_logs(char *filename_params, char *filename_logs) {
     return true;
 }
 
-/**
- * @brief termine l'apprentissage en comparant le meilleur gain trouvé avec
- * celui du fichier de paramètres, met à jour le fichier de paramètres si un
- * meilleur gain est trouvé
- * @param filename_params nom du fichier de paramètres
- * @param filename_logs nom du fichier de logs
- * @return true si l'opération a réussi, false sinon
- */
 bool end_logs(char *filename_params, char *filename_logs) {
     Hyperparameters hyperparams;
     VectorRule theta_params;

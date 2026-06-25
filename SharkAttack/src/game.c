@@ -4,6 +4,7 @@
 #include "mj.h"
 #include "render_sdl.h"
 #include "shark.h"
+#include "utils.h"
 #include "world.h"
 #include <signal.h>
 #include <stdlib.h>
@@ -15,17 +16,8 @@ static void Handle_terminal_interrupt(int signum) {
     terminal_interrupted = 1;
 }
 
-/**
- * @brief initialise le jeu (fenêtre, mondes, paramètres)
- * @param game pointeur vers la structure Game
- * @param width largeur de la fenêtre
- * @param height hauteur de la fenêtre
- * @param nb_fish nombre initial de poissons
- * @param nb_collider nombre d'obstacles
- * @return true si l'initialisation a réussi, false sinon
- */
-bool Game_init(Game *game, int width, int height, int nb_fish,
-               int nb_collider) {
+bool Game_init(Game *game, int width, int height, int nb_fish, int nb_collider,
+               int seed_for_worlds) {
     if (!game)
         return false;
 
@@ -34,9 +26,10 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
     }
 
     VectorRule *shark_theta = SharkTheta_init();
-
+    init_seed(seed_for_worlds);
     game->world1 = World_init(width / 2, height, nb_fish, nb_collider,
                               *shark_theta, 0, NB_OCCURRENCE, true, false);
+    init_seed(seed_for_worlds);
     game->world2 = World_init(width / 2, height, nb_fish, nb_collider,
                               *shark_theta, 0, NB_OCCURRENCE, false, false);
     if (!game->world1 || !game->world2) {
@@ -53,23 +46,16 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
     return true;
 }
 
-/**
- * @brief inverse l'état de pause du jeu
- * @param game pointeur vers la structure Game
- */
 void Game_pause(Game *game) {
     if (!game)
         return;
     game->paused = !game->paused;
 }
 
-/**
- * @brief lance la boucle de jeu en mode graphique (SDL)
- * @param use_bench true pour exécuter un benchmark
- */
-void Game_run_SDL(bool use_bench) {
+void Game_run_SDL(bool use_bench, int seed_for_worlds) {
     Game game;
-    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB)) {
+    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB,
+                   seed_for_worlds)) {
         fprintf(stderr, "Echec de l'initialisation du jeu.\n");
         return;
     }
@@ -119,10 +105,6 @@ void Game_run_SDL(bool use_bench) {
     Game_destroy(&game);
 }
 
-/**
- * @brief lance la boucle de jeu en mode terminal (sans SDL)
- * affiche les résultats et la trajectoire dans la console
- */
 void Game_run_terminal() {
     terminal_interrupted = 0;
     int i = 0;
@@ -160,10 +142,6 @@ void Game_run_terminal() {
     free(shark_theta);
 }
 
-/**
- * @brief libère les ressources allouées par le jeu
- * @param game pointeur vers la structure Game
- */
 void Game_destroy(Game *game) {
     if (!game)
         return;
