@@ -1,0 +1,2007 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sharkattack: Référence du fichier unity/unity.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="sharky.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Sharkattack the game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('unity_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier unity.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="unity_8h_source.html">unity.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de unity.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c__incl.png" border="0" usemap="#aunity_2unity_8c" loading="lazy" alt=""/></div>
+<map name="aunity_2unity_8c" id="aunity_2unity_8c">
+<area shape="rect" title=" " alt="" coords="234,5,335,33"/>
+<area shape="rect" href="unity_8h.html" title=" " alt="" coords="252,81,317,109"/>
+<area shape="poly" title=" " alt="" coords="286,31,287,66,282,64,283,36"/>
+<area shape="rect" href="unity__internals_8h.html" title=" " alt="" coords="219,157,350,184"/>
+<area shape="poly" title=" " alt="" coords="286,107,287,142,282,140,283,111"/>
+<area shape="rect" title=" " alt="" coords="5,232,84,260"/>
+<area shape="poly" title=" " alt="" coords="242,187,100,231,98,226,241,182"/>
+<area shape="rect" title=" " alt="" coords="108,232,176,260"/>
+<area shape="poly" title=" " alt="" coords="262,184,182,227,179,223,256,185"/>
+<area shape="rect" title=" " alt="" coords="200,232,273,260"/>
+<area shape="poly" title=" " alt="" coords="278,184,255,221,252,217,274,186"/>
+<area shape="rect" title=" " alt="" coords="297,232,368,260"/>
+<area shape="poly" title=" " alt="" coords="294,183,318,220,313,219,292,187"/>
+<area shape="rect" title=" " alt="" coords="392,232,462,260"/>
+<area shape="poly" title=" " alt="" coords="311,182,391,225,386,225,309,187"/>
+<area shape="rect" title=" " alt="" coords="486,232,552,260"/>
+<area shape="poly" title=" " alt="" coords="327,182,474,230,469,230,326,188"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af297050091d384f1b8cdebb753d593f5" id="r_af297050091d384f1b8cdebb753d593f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a></td></tr>
+<tr class="memitem:aed0078c0e6e904f5d0071cacef3d519d" id="r_aed0078c0e6e904f5d0071cacef3d519d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed0078c0e6e904f5d0071cacef3d519d">UNITY_FAIL_AND_BAIL</a>&#160;&#160;&#160;do { Unity.CurrentTestFailed  = 1; <a class="el" href="unity__internals_8h.html#a458886b9a590fda474d4467fa40a2367">UNITY_OUTPUT_FLUSH</a>(); <a class="el" href="unity__internals_8h.html#a35ff53d9ad3c4ec9d611fdf04319a23b">TEST_ABORT</a>(); } while (0)</td></tr>
+<tr class="memitem:a8e7615065c9272a62eede0f1e725a774" id="r_a8e7615065c9272a62eede0f1e725a774"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e7615065c9272a62eede0f1e725a774">UNITY_IGNORE_AND_BAIL</a>&#160;&#160;&#160;do { Unity.CurrentTestIgnored = 1; <a class="el" href="unity__internals_8h.html#a458886b9a590fda474d4467fa40a2367">UNITY_OUTPUT_FLUSH</a>(); <a class="el" href="unity__internals_8h.html#a35ff53d9ad3c4ec9d611fdf04319a23b">TEST_ABORT</a>(); } while (0)</td></tr>
+<tr class="memitem:abf9f99b384602e58874744dda3492aaa" id="r_abf9f99b384602e58874744dda3492aaa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf9f99b384602e58874744dda3492aaa">RETURN_IF_FAIL_OR_IGNORE</a>&#160;&#160;&#160;do { if (Unity.CurrentTestFailed || Unity.CurrentTestIgnored) { <a class="el" href="unity__internals_8h.html#a35ff53d9ad3c4ec9d611fdf04319a23b">TEST_ABORT</a>(); } } while (0)</td></tr>
+<tr class="memitem:a3ace6280351b3aa4aa6cfca244ac5193" id="r_a3ace6280351b3aa4aa6cfca244ac5193"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ace6280351b3aa4aa6cfca244ac5193">UnityPrintPointlessAndBail</a>()</td></tr>
+<tr class="memitem:a02810feed4a9aca0b2f997854b94a01c" id="r_a02810feed4a9aca0b2f997854b94a01c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02810feed4a9aca0b2f997854b94a01c">UNITY_FLOAT_OR_DOUBLE_WITHIN</a>(delta,  expected,  actual,  diff)</td></tr>
+<tr class="memitem:a8943c89baca5ddc88a0f88a389ef13c7" id="r_a8943c89baca5ddc88a0f88a389ef13c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8943c89baca5ddc88a0f88a389ef13c7">UNITY_NAN_CHECK</a>&#160;&#160;&#160;<a class="el" href="unity__internals_8h.html#a4c26d919846f75af016753276d309c5a">UNITY_IS_NAN</a>(expected) &amp;&amp; <a class="el" href="unity__internals_8h.html#a4c26d919846f75af016753276d309c5a">UNITY_IS_NAN</a>(actual)</td></tr>
+<tr class="memitem:a8432f7429c7fcc0952eeae3658707be9" id="r_a8432f7429c7fcc0952eeae3658707be9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8432f7429c7fcc0952eeae3658707be9">UNITY_PRINT_EXPECTED_AND_ACTUAL_FLOAT</a>(expected,  actual)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:accff2eb4cfd0273e8ad62c37639d3e3c" id="r_accff2eb4cfd0273e8ad62c37639d3e3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accff2eb4cfd0273e8ad62c37639d3e3c">UnityPrint</a> (const char *string)</td></tr>
+<tr class="memitem:a780817a15f2437360bd593c8fa7a1481" id="r_a780817a15f2437360bd593c8fa7a1481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a780817a15f2437360bd593c8fa7a1481">UnityPrintLen</a> (const char *string, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> length)</td></tr>
+<tr class="memitem:ab531d17d52d935c2722230e87f346542" id="r_ab531d17d52d935c2722230e87f346542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab531d17d52d935c2722230e87f346542">UnityPrintIntNumberByStyle</a> (const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> number, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:a281125e55622a58d1287acb767f18f42" id="r_a281125e55622a58d1287acb767f18f42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a281125e55622a58d1287acb767f18f42">UnityPrintUintNumberByStyle</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> number, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:a644211a214ab000dcabd5582c52e0313" id="r_a644211a214ab000dcabd5582c52e0313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a644211a214ab000dcabd5582c52e0313">UnityPrintNumber</a> (const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> number_to_print)</td></tr>
+<tr class="memitem:a3ef388786e9a8e769d13af2601b592dc" id="r_a3ef388786e9a8e769d13af2601b592dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ef388786e9a8e769d13af2601b592dc">UnityPrintNumberUnsigned</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> number)</td></tr>
+<tr class="memitem:ab5636c2c3e2d5ff0d89461e2323aa469" id="r_ab5636c2c3e2d5ff0d89461e2323aa469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5636c2c3e2d5ff0d89461e2323aa469">UnityPrintNumberHex</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> number, const char nibbles_to_print)</td></tr>
+<tr class="memitem:a207d5b3e2bfe8042b0505066ccd07c9b" id="r_a207d5b3e2bfe8042b0505066ccd07c9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a207d5b3e2bfe8042b0505066ccd07c9b">UnityPrintMask</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> mask, const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> number)</td></tr>
+<tr class="memitem:ac3d39bc0740a28949a2ba689588491c2" id="r_ac3d39bc0740a28949a2ba689588491c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3d39bc0740a28949a2ba689588491c2">UnityPrintFloat</a> (const <a class="el" href="unity__internals_8h.html#ac3bdb18f38e23a4343af34a7f4e0d4a0">UNITY_DOUBLE</a> input_number)</td></tr>
+<tr class="memitem:a44f03f0124e59f6996da61946cc2a58e" id="r_a44f03f0124e59f6996da61946cc2a58e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44f03f0124e59f6996da61946cc2a58e">UnityConcludeTest</a> (void)</td></tr>
+<tr class="memitem:a8d96fe471e0c327cbf5fd4682ee24d9f" id="r_a8d96fe471e0c327cbf5fd4682ee24d9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d96fe471e0c327cbf5fd4682ee24d9f">UnityAssertBits</a> (const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> mask, const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> expected, const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber)</td></tr>
+<tr class="memitem:a8ebc83fcbbc2f3c055988c3b384868c8" id="r_a8ebc83fcbbc2f3c055988c3b384868c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ebc83fcbbc2f3c055988c3b384868c8">UnityAssertEqualIntNumber</a> (const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> expected, const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:adbbc6fb7d29ec6d4a2996962d7fd848a" id="r_adbbc6fb7d29ec6d4a2996962d7fd848a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbbc6fb7d29ec6d4a2996962d7fd848a">UnityAssertEqualUintNumber</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> expected, const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:a9140e102a6a8328cd87a2f9c1506849a" id="r_a9140e102a6a8328cd87a2f9c1506849a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9140e102a6a8328cd87a2f9c1506849a">UnityAssertIntGreaterOrLessOrEqualNumber</a> (const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> threshold, const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> actual, const <a class="el" href="unity__internals_8h.html#af032691a9e32795aa06770185ac14a48">UNITY_COMPARISON_T</a> compare, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:abcb6bf81a7cb06c1001f064ca7ac065f" id="r_abcb6bf81a7cb06c1001f064ca7ac065f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcb6bf81a7cb06c1001f064ca7ac065f">UnityAssertUintGreaterOrLessOrEqualNumber</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> threshold, const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> actual, const <a class="el" href="unity__internals_8h.html#af032691a9e32795aa06770185ac14a48">UNITY_COMPARISON_T</a> compare, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:a5d36ae0ba6becafccda94364caf61adf" id="r_a5d36ae0ba6becafccda94364caf61adf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d36ae0ba6becafccda94364caf61adf">UnityAssertEqualIntArray</a> (<a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> expected, <a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> actual, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> num_elements, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style, const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a> flags)</td></tr>
+<tr class="memitem:aab0a2af1eacf97dee327b0567625c1e2" id="r_aab0a2af1eacf97dee327b0567625c1e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab0a2af1eacf97dee327b0567625c1e2">UnityAssertWithinFloatArray</a> (const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> delta, <a class="el" href="unity__internals_8h.html#a825b752e1c62ede9bee4bf22fb258a7d">UNITY_PTR_ATTRIBUTE</a> const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> *expected, <a class="el" href="unity__internals_8h.html#a825b752e1c62ede9bee4bf22fb258a7d">UNITY_PTR_ATTRIBUTE</a> const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> *actual, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> num_elements, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a> flags)</td></tr>
+<tr class="memitem:adc1934cb22540eed0b2b86e1f6aeb697" id="r_adc1934cb22540eed0b2b86e1f6aeb697"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc1934cb22540eed0b2b86e1f6aeb697">UnityAssertFloatsWithin</a> (const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> delta, const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> expected, const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber)</td></tr>
+<tr class="memitem:aae953f848f48242784faaf0e7063e956" id="r_aae953f848f48242784faaf0e7063e956"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae953f848f48242784faaf0e7063e956">UnityAssertFloatsNotWithin</a> (const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> delta, const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> expected, const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber)</td></tr>
+<tr class="memitem:ad350648282b9a9df70f87ecc448e449c" id="r_ad350648282b9a9df70f87ecc448e449c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad350648282b9a9df70f87ecc448e449c">UnityAssertGreaterOrLessFloat</a> (const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> threshold, const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> actual, const <a class="el" href="unity__internals_8h.html#af032691a9e32795aa06770185ac14a48">UNITY_COMPARISON_T</a> compare, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber)</td></tr>
+<tr class="memitem:aa7909741e6f90c6af19e07b91c88ad4c" id="r_aa7909741e6f90c6af19e07b91c88ad4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7909741e6f90c6af19e07b91c88ad4c">UnityAssertFloatSpecial</a> (const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a1b89a0178ea753186faf9f3dc271e2ba">UNITY_FLOAT_TRAIT_T</a> style)</td></tr>
+<tr class="memitem:ad3de56bd59faad4907fe36c537bc35c6" id="r_ad3de56bd59faad4907fe36c537bc35c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3de56bd59faad4907fe36c537bc35c6">UnityAssertIntNumbersWithin</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> delta, const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> expected, const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:a9c02d10734c77f743c5db1ca37fb065b" id="r_a9c02d10734c77f743c5db1ca37fb065b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c02d10734c77f743c5db1ca37fb065b">UnityAssertUintNumbersWithin</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> delta, const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> expected, const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style)</td></tr>
+<tr class="memitem:a7125230f609e287bbe574be8ea46d1e3" id="r_a7125230f609e287bbe574be8ea46d1e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7125230f609e287bbe574be8ea46d1e3">UnityAssertNumbersArrayWithin</a> (const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a> delta, <a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> expected, <a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> actual, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> num_elements, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a> style, const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a> flags)</td></tr>
+<tr class="memitem:aea8fd35ccdacbbac33ca4395c6b9562b" id="r_aea8fd35ccdacbbac33ca4395c6b9562b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea8fd35ccdacbbac33ca4395c6b9562b">UnityAssertEqualString</a> (const char *expected, const char *actual, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber)</td></tr>
+<tr class="memitem:aafaf01a6294c0dc2fbe6fd0baab58f0b" id="r_aafaf01a6294c0dc2fbe6fd0baab58f0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafaf01a6294c0dc2fbe6fd0baab58f0b">UnityAssertEqualStringLen</a> (const char *expected, const char *actual, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> length, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber)</td></tr>
+<tr class="memitem:a38bca7a2b1d2b1d89f9e93e34e99df1f" id="r_a38bca7a2b1d2b1d89f9e93e34e99df1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38bca7a2b1d2b1d89f9e93e34e99df1f">UnityAssertEqualStringArray</a> (<a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> expected, const char **actual, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> num_elements, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a> flags)</td></tr>
+<tr class="memitem:a18b674bf204871eb5ab27f86405983f3" id="r_a18b674bf204871eb5ab27f86405983f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18b674bf204871eb5ab27f86405983f3">UnityAssertEqualMemory</a> (<a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> expected, <a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> actual, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> length, const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a> num_elements, const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> lineNumber, const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a> flags)</td></tr>
+<tr class="memitem:aed32d6a240e25d9493f6492882f7d3d5" id="r_aed32d6a240e25d9493f6492882f7d3d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed32d6a240e25d9493f6492882f7d3d5">UnityNumToPtr</a> (const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a> num, const <a class="el" href="unity__internals_8h.html#ae9c38948acf740d92635783d49f7437c">UNITY_UINT8</a> size)</td></tr>
+<tr class="memitem:a01b1539781210d836d875fa9c6957982" id="r_a01b1539781210d836d875fa9c6957982"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01b1539781210d836d875fa9c6957982">UnityFloatToPtr</a> (const float num)</td></tr>
+<tr class="memitem:a0daba95a4950d8a5a06b6b2c843742b8" id="r_a0daba95a4950d8a5a06b6b2c843742b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0daba95a4950d8a5a06b6b2c843742b8">UnityFail</a> (const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> line)</td></tr>
+<tr class="memitem:a017e8c6a617d00312fd6688b73483284" id="r_a017e8c6a617d00312fd6688b73483284"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a017e8c6a617d00312fd6688b73483284">UnityIgnore</a> (const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> line)</td></tr>
+<tr class="memitem:abc9ecca68af9f93f07fb907de67d5db3" id="r_abc9ecca68af9f93f07fb907de67d5db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc9ecca68af9f93f07fb907de67d5db3">UnityMessage</a> (const char *msg, const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a> line)</td></tr>
+<tr class="memitem:ae3c8272eef0f0b6228ca47b9dd1aa2af" id="r_ae3c8272eef0f0b6228ca47b9dd1aa2af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3c8272eef0f0b6228ca47b9dd1aa2af">UnityDefaultTestRun</a> (<a class="el" href="unity__internals_8h.html#a750c0436a18789b916e55d70aae12985">UnityTestFunction</a> Func, const char *FuncName, const int FuncLineNum)</td></tr>
+<tr class="memitem:afefd1b90b9854b428fef009e12489282" id="r_afefd1b90b9854b428fef009e12489282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afefd1b90b9854b428fef009e12489282">UnitySetTestFile</a> (const char *filename)</td></tr>
+<tr class="memitem:aed50601fbdaea8fc0fef0c61cf877809" id="r_aed50601fbdaea8fc0fef0c61cf877809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed50601fbdaea8fc0fef0c61cf877809">UnityBegin</a> (const char *filename)</td></tr>
+<tr class="memitem:a4820ba04ff5e9a474fe38ab6633d30a0" id="r_a4820ba04ff5e9a474fe38ab6633d30a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4820ba04ff5e9a474fe38ab6633d30a0">UnityEnd</a> (void)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aad738f665f16eb2336b8bc33f432d0da" id="r_aad738f665f16eb2336b8bc33f432d0da"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structUNITY__STORAGE__T.html">UNITY_STORAGE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad738f665f16eb2336b8bc33f432d0da">Unity</a></td></tr>
+<tr class="memitem:a14f8a3d589baec0ad27e338bd2001600" id="r_a14f8a3d589baec0ad27e338bd2001600"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14f8a3d589baec0ad27e338bd2001600">UnityStrOk</a> [] = &quot;OK&quot;</td></tr>
+<tr class="memitem:a96ccb9c12b5e14bbf2dcfc16b889efe2" id="r_a96ccb9c12b5e14bbf2dcfc16b889efe2"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96ccb9c12b5e14bbf2dcfc16b889efe2">UnityStrPass</a> [] = &quot;PASS&quot;</td></tr>
+<tr class="memitem:ac316f86bcebda9760575680522744d96" id="r_ac316f86bcebda9760575680522744d96"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac316f86bcebda9760575680522744d96">UnityStrFail</a> [] = &quot;FAIL&quot;</td></tr>
+<tr class="memitem:ad6ebb22be1abfa01578ec3567c51f9e9" id="r_ad6ebb22be1abfa01578ec3567c51f9e9"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6ebb22be1abfa01578ec3567c51f9e9">UnityStrIgnore</a> [] = &quot;IGNORE&quot;</td></tr>
+<tr class="memitem:ac99e9c46e8d8b76d042559a4bb2a7137" id="r_ac99e9c46e8d8b76d042559a4bb2a7137"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac99e9c46e8d8b76d042559a4bb2a7137">UnityStrErrShorthand</a> [] = &quot;Unity Shorthand Support Disabled&quot;</td></tr>
+<tr class="memitem:ab72fe58f6f99c198dd56962527249f97" id="r_ab72fe58f6f99c198dd56962527249f97"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab72fe58f6f99c198dd56962527249f97">UnityStrErrFloat</a> [] = &quot;Unity Floating Point Disabled&quot;</td></tr>
+<tr class="memitem:a5ff53dbf9dd9ebac1832d2166baaad1d" id="r_a5ff53dbf9dd9ebac1832d2166baaad1d"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff53dbf9dd9ebac1832d2166baaad1d">UnityStrErrDouble</a> [] = &quot;Unity Double Precision Disabled&quot;</td></tr>
+<tr class="memitem:a2cb379d054a17260a027ebe2cd0d1caf" id="r_a2cb379d054a17260a027ebe2cd0d1caf"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cb379d054a17260a027ebe2cd0d1caf">UnityStrErr64</a> [] = &quot;Unity 64-bit Support Disabled&quot;</td></tr>
+<tr class="memitem:a8d7a43fee86d7e6db988e062a7be4ebf" id="r_a8d7a43fee86d7e6db988e062a7be4ebf"><td class="memItemLeft" align="right" valign="top">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d7a43fee86d7e6db988e062a7be4ebf">UnityStrErrDetailStack</a> [] = &quot;Unity Detail Stack Support Disabled&quot;</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="abf9f99b384602e58874744dda3492aaa" name="abf9f99b384602e58874744dda3492aaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9f99b384602e58874744dda3492aaa">&#9670;&#160;</a></span>RETURN_IF_FAIL_OR_IGNORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RETURN_IF_FAIL_OR_IGNORE&#160;&#160;&#160;do { if (Unity.CurrentTestFailed || Unity.CurrentTestIgnored) { <a class="el" href="unity__internals_8h.html#a35ff53d9ad3c4ec9d611fdf04319a23b">TEST_ABORT</a>(); } } while (0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed0078c0e6e904f5d0071cacef3d519d" name="aed0078c0e6e904f5d0071cacef3d519d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0078c0e6e904f5d0071cacef3d519d">&#9670;&#160;</a></span>UNITY_FAIL_AND_BAIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNITY_FAIL_AND_BAIL&#160;&#160;&#160;do { Unity.CurrentTestFailed  = 1; <a class="el" href="unity__internals_8h.html#a458886b9a590fda474d4467fa40a2367">UNITY_OUTPUT_FLUSH</a>(); <a class="el" href="unity__internals_8h.html#a35ff53d9ad3c4ec9d611fdf04319a23b">TEST_ABORT</a>(); } while (0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02810feed4a9aca0b2f997854b94a01c" name="a02810feed4a9aca0b2f997854b94a01c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02810feed4a9aca0b2f997854b94a01c">&#9670;&#160;</a></span>UNITY_FLOAT_OR_DOUBLE_WITHIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNITY_FLOAT_OR_DOUBLE_WITHIN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>diff</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (<a class="code hl_define" href="unity__internals_8h.html#a6519020d852e2008b9af2114b38eae3e">UNITY_IS_INF</a>(expected) &amp;&amp; <a class="code hl_define" href="unity__internals_8h.html#a6519020d852e2008b9af2114b38eae3e">UNITY_IS_INF</a>(actual) &amp;&amp; (((expected) &lt; 0) == ((actual) &lt; 0))) <span class="keywordflow">return</span> 1;   \</div>
+<div class="line">    if (<a class="code hl_define" href="#a8943c89baca5ddc88a0f88a389ef13c7">UNITY_NAN_CHECK</a>) <span class="keywordflow">return</span> 1;                                                            \</div>
+<div class="line">    (diff) = (actual) - (expected);                                                           \</div>
+<div class="line">    if ((diff) &lt; 0) (diff) = -(diff);                                                         \</div>
+<div class="line">    if ((delta) &lt; 0) (delta) = -(delta);                                                      \</div>
+<div class="line">    <span class="keywordflow">return</span> !(<a class="code hl_define" href="unity__internals_8h.html#a4c26d919846f75af016753276d309c5a">UNITY_IS_NAN</a>(diff) || <a class="code hl_define" href="unity__internals_8h.html#a6519020d852e2008b9af2114b38eae3e">UNITY_IS_INF</a>(diff) || ((diff) &gt; (delta)))</div>
+<div class="ttc" id="aunity_8c_html_a8943c89baca5ddc88a0f88a389ef13c7"><div class="ttname"><a href="#a8943c89baca5ddc88a0f88a389ef13c7">UNITY_NAN_CHECK</a></div><div class="ttdeci">#define UNITY_NAN_CHECK</div><div class="ttdef"><b>Definition</b> unity.c:1000</div></div>
+<div class="ttc" id="aunity__internals_8h_html_a4c26d919846f75af016753276d309c5a"><div class="ttname"><a href="unity__internals_8h.html#a4c26d919846f75af016753276d309c5a">UNITY_IS_NAN</a></div><div class="ttdeci">#define UNITY_IS_NAN(n)</div><div class="ttdef"><b>Definition</b> unity_internals.h:270</div></div>
+<div class="ttc" id="aunity__internals_8h_html_a6519020d852e2008b9af2114b38eae3e"><div class="ttname"><a href="unity__internals_8h.html#a6519020d852e2008b9af2114b38eae3e">UNITY_IS_INF</a></div><div class="ttdeci">#define UNITY_IS_INF(n)</div><div class="ttdef"><b>Definition</b> unity_internals.h:280</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8e7615065c9272a62eede0f1e725a774" name="a8e7615065c9272a62eede0f1e725a774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e7615065c9272a62eede0f1e725a774">&#9670;&#160;</a></span>UNITY_IGNORE_AND_BAIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNITY_IGNORE_AND_BAIL&#160;&#160;&#160;do { Unity.CurrentTestIgnored = 1; <a class="el" href="unity__internals_8h.html#a458886b9a590fda474d4467fa40a2367">UNITY_OUTPUT_FLUSH</a>(); <a class="el" href="unity__internals_8h.html#a35ff53d9ad3c4ec9d611fdf04319a23b">TEST_ABORT</a>(); } while (0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8943c89baca5ddc88a0f88a389ef13c7" name="a8943c89baca5ddc88a0f88a389ef13c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8943c89baca5ddc88a0f88a389ef13c7">&#9670;&#160;</a></span>UNITY_NAN_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNITY_NAN_CHECK&#160;&#160;&#160;<a class="el" href="unity__internals_8h.html#a4c26d919846f75af016753276d309c5a">UNITY_IS_NAN</a>(expected) &amp;&amp; <a class="el" href="unity__internals_8h.html#a4c26d919846f75af016753276d309c5a">UNITY_IS_NAN</a>(actual)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8432f7429c7fcc0952eeae3658707be9" name="a8432f7429c7fcc0952eeae3658707be9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8432f7429c7fcc0952eeae3658707be9">&#9670;&#160;</a></span>UNITY_PRINT_EXPECTED_AND_ACTUAL_FLOAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNITY_PRINT_EXPECTED_AND_ACTUAL_FLOAT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                            \</div>
+<div class="line">    UnityPrint(UnityStrExpected);                                 \</div>
+<div class="line">    UnityPrintFloat(expected);                                    \</div>
+<div class="line">    UnityPrint(UnityStrWas);                                      \</div>
+<div class="line">    UnityPrintFloat(actual);                                      \</div>
+<div class="line">  } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af297050091d384f1b8cdebb753d593f5" name="af297050091d384f1b8cdebb753d593f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af297050091d384f1b8cdebb753d593f5">&#9670;&#160;</a></span>UNITY_PROGMEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNITY_PROGMEM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ace6280351b3aa4aa6cfca244ac5193" name="a3ace6280351b3aa4aa6cfca244ac5193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ace6280351b3aa4aa6cfca244ac5193">&#9670;&#160;</a></span>UnityPrintPointlessAndBail</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UnityPrintPointlessAndBail</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                       \</div>
+<div class="line">    UnityTestResultsFailBegin(lineNumber); \</div>
+<div class="line">    UnityPrint(UnityStrPointless);         \</div>
+<div class="line">    UnityAddMsgIfSpecified(msg);           \</div>
+<div class="line">    <a class="code hl_define" href="#aed0078c0e6e904f5d0071cacef3d519d">UNITY_FAIL_AND_BAIL</a>;                   \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aunity_8c_html_aed0078c0e6e904f5d0071cacef3d519d"><div class="ttname"><a href="#aed0078c0e6e904f5d0071cacef3d519d">UNITY_FAIL_AND_BAIL</a></div><div class="ttdeci">#define UNITY_FAIL_AND_BAIL</div><div class="ttdef"><b>Definition</b> unity.c:20</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a8d96fe471e0c327cbf5fd4682ee24d9f" name="a8d96fe471e0c327cbf5fd4682ee24d9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d96fe471e0c327cbf5fd4682ee24d9f">&#9670;&#160;</a></span>UnityAssertBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertBits </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a8d96fe471e0c327cbf5fd4682ee24d9f_cgraph.png" border="0" usemap="#aunity_8c_a8d96fe471e0c327cbf5fd4682ee24d9f_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a8d96fe471e0c327cbf5fd4682ee24d9f_cgraph" id="aunity_8c_a8d96fe471e0c327cbf5fd4682ee24d9f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,128,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="193,5,280,33"/>
+<area shape="poly" title=" " alt="" coords="128,34,180,27,175,29,129,39"/>
+<area shape="rect" href="unity_8c.html#a207d5b3e2bfe8042b0505066ccd07c9b" title=" " alt="" coords="176,57,297,85"/>
+<area shape="poly" title=" " alt="" coords="128,52,163,60,158,60,128,58"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d36ae0ba6becafccda94364caf61adf" name="a5d36ae0ba6becafccda94364caf61adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d36ae0ba6becafccda94364caf61adf">&#9670;&#160;</a></span>UnityAssertEqualIntArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertEqualIntArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>num_elements</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a5d36ae0ba6becafccda94364caf61adf_cgraph.png" border="0" usemap="#aunity_8c_a5d36ae0ba6becafccda94364caf61adf_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a5d36ae0ba6becafccda94364caf61adf_cgraph" id="aunity_8c_a5d36ae0ba6becafccda94364caf61adf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,191,109"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="298,29,384,57"/>
+<area shape="poly" title=" " alt="" coords="166,78,285,54,280,57,167,83"/>
+<area shape="rect" href="unity_8c.html#ab531d17d52d935c2722230e87f346542" title=" " alt="" coords="239,81,444,109"/>
+<area shape="poly" title=" " alt="" coords="191,93,226,95,220,96,191,98"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="704,56,904,84"/>
+<area shape="poly" title=" " alt="" coords="147,107,241,131,369,152,439,159,512,160,585,156,656,143,717,120,767,93,772,92,719,125,657,148,586,161,512,166,439,164,368,158,240,136,146,112"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="505,5,643,33"/>
+<area shape="poly" title=" " alt="" coords="401,78,443,66,520,40,525,38,445,71,403,83"/>
+<area shape="poly" title=" " alt="" coords="444,87,691,76,686,77,444,92"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="492,107,656,134"/>
+<area shape="poly" title=" " alt="" coords="445,104,479,110,474,110,445,109"/>
+<area shape="poly" title=" " alt="" coords="640,31,726,52,721,52,640,36"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ebc83fcbbc2f3c055988c3b384868c8" name="a8ebc83fcbbc2f3c055988c3b384868c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ebc83fcbbc2f3c055988c3b384868c8">&#9670;&#160;</a></span>UnityAssertEqualIntNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertEqualIntNumber </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a8ebc83fcbbc2f3c055988c3b384868c8_cgraph.png" border="0" usemap="#aunity_8c_a8ebc83fcbbc2f3c055988c3b384868c8_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a8ebc83fcbbc2f3c055988c3b384868c8_cgraph" id="aunity_8c_a8ebc83fcbbc2f3c055988c3b384868c8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,208,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="315,5,402,33"/>
+<area shape="poly" title=" " alt="" coords="208,32,302,24,297,26,209,38"/>
+<area shape="rect" href="unity_8c.html#ab531d17d52d935c2722230e87f346542" title=" " alt="" coords="256,57,461,85"/>
+<area shape="poly" title=" " alt="" coords="208,53,243,59,238,60,208,59"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="522,7,660,34"/>
+<area shape="poly" title=" " alt="" coords="424,54,507,39,512,38,426,59"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="721,32,921,60"/>
+<area shape="poly" title=" " alt="" coords="461,63,708,52,703,53,461,68"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="509,108,673,136"/>
+<area shape="poly" title=" " alt="" coords="425,83,512,104,507,104,425,88"/>
+<area shape="poly" title=" " alt="" coords="661,25,709,33,703,33,661,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a18b674bf204871eb5ab27f86405983f3" name="a18b674bf204871eb5ab27f86405983f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b674bf204871eb5ab27f86405983f3">&#9670;&#160;</a></span>UnityAssertEqualMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertEqualMemory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>num_elements</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a18b674bf204871eb5ab27f86405983f3_cgraph.png" border="0" usemap="#aunity_8c_a18b674bf204871eb5ab27f86405983f3_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a18b674bf204871eb5ab27f86405983f3_cgraph" id="aunity_8c_a18b674bf204871eb5ab27f86405983f3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,193,109"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="300,29,386,57"/>
+<area shape="poly" title=" " alt="" coords="167,78,287,54,283,57,168,83"/>
+<area shape="rect" href="unity_8c.html#ab531d17d52d935c2722230e87f346542" title=" " alt="" coords="241,81,446,109"/>
+<area shape="poly" title=" " alt="" coords="193,93,228,95,223,96,193,98"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="706,56,906,84"/>
+<area shape="poly" title=" " alt="" coords="148,107,243,131,370,152,441,159,514,160,587,156,658,143,719,120,769,93,774,92,721,125,659,148,588,161,514,166,441,164,369,158,242,136,147,112"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="507,5,645,33"/>
+<area shape="poly" title=" " alt="" coords="403,78,445,66,522,40,527,38,447,71,405,83"/>
+<area shape="poly" title=" " alt="" coords="446,87,693,76,688,77,446,92"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="494,107,658,134"/>
+<area shape="poly" title=" " alt="" coords="447,104,481,110,476,110,447,109"/>
+<area shape="poly" title=" " alt="" coords="642,31,728,52,723,52,642,36"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aea8fd35ccdacbbac33ca4395c6b9562b" name="aea8fd35ccdacbbac33ca4395c6b9562b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea8fd35ccdacbbac33ca4395c6b9562b">&#9670;&#160;</a></span>UnityAssertEqualString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertEqualString </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38bca7a2b1d2b1d89f9e93e34e99df1f" name="a38bca7a2b1d2b1d89f9e93e34e99df1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38bca7a2b1d2b1d89f9e93e34e99df1f">&#9670;&#160;</a></span>UnityAssertEqualStringArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertEqualStringArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **</td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>num_elements</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a38bca7a2b1d2b1d89f9e93e34e99df1f_cgraph.png" border="0" usemap="#aunity_8c_a38bca7a2b1d2b1d89f9e93e34e99df1f_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a38bca7a2b1d2b1d89f9e93e34e99df1f_cgraph" id="aunity_8c_a38bca7a2b1d2b1d89f9e93e34e99df1f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,212,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="316,5,402,33"/>
+<area shape="poly" title=" " alt="" coords="212,32,303,25,298,26,213,37"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="260,57,459,85"/>
+<area shape="poly" title=" " alt="" coords="212,54,247,59,241,60,212,59"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aafaf01a6294c0dc2fbe6fd0baab58f0b" name="aafaf01a6294c0dc2fbe6fd0baab58f0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafaf01a6294c0dc2fbe6fd0baab58f0b">&#9670;&#160;</a></span>UnityAssertEqualStringLen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertEqualStringLen </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adbbc6fb7d29ec6d4a2996962d7fd848a" name="adbbc6fb7d29ec6d4a2996962d7fd848a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbc6fb7d29ec6d4a2996962d7fd848a">&#9670;&#160;</a></span>UnityAssertEqualUintNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertEqualUintNumber </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_adbbc6fb7d29ec6d4a2996962d7fd848a_cgraph.png" border="0" usemap="#aunity_8c_adbbc6fb7d29ec6d4a2996962d7fd848a_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_adbbc6fb7d29ec6d4a2996962d7fd848a_cgraph" id="aunity_8c_adbbc6fb7d29ec6d4a2996962d7fd848a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,218,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="330,5,416,33"/>
+<area shape="poly" title=" " alt="" coords="218,32,318,24,313,26,219,38"/>
+<area shape="rect" href="unity_8c.html#a281125e55622a58d1287acb767f18f42" title=" " alt="" coords="266,57,481,85"/>
+<area shape="poly" title=" " alt="" coords="218,53,253,59,248,60,218,59"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="546,31,711,58"/>
+<area shape="poly" title=" " alt="" coords="481,57,533,54,528,55,482,63"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="529,83,728,110"/>
+<area shape="poly" title=" " alt="" coords="482,79,516,85,511,85,481,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aae953f848f48242784faaf0e7063e956" name="aae953f848f48242784faaf0e7063e956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae953f848f48242784faaf0e7063e956">&#9670;&#160;</a></span>UnityAssertFloatsNotWithin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertFloatsNotWithin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_aae953f848f48242784faaf0e7063e956_cgraph.png" border="0" usemap="#aunity_8c_aae953f848f48242784faaf0e7063e956_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_aae953f848f48242784faaf0e7063e956_cgraph" id="aunity_8c_aae953f848f48242784faaf0e7063e956_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,208,33"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="423,5,509,33"/>
+<area shape="poly" title=" " alt="" coords="208,17,409,17,406,21,208,22"/>
+<area shape="rect" href="unity_8c.html#ac3d39bc0740a28949a2ba689588491c2" title=" " alt="" coords="256,31,375,58"/>
+<area shape="poly" title=" " alt="" coords="208,29,243,35,238,36,208,34"/>
+<area shape="poly" title=" " alt="" coords="375,32,405,29,410,29,376,37"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7909741e6f90c6af19e07b91c88ad4c" name="aa7909741e6f90c6af19e07b91c88ad4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7909741e6f90c6af19e07b91c88ad4c">&#9670;&#160;</a></span>UnityAssertFloatSpecial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertFloatSpecial </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a1b89a0178ea753186faf9f3dc271e2ba">UNITY_FLOAT_TRAIT_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_aa7909741e6f90c6af19e07b91c88ad4c_cgraph.png" border="0" usemap="#aunity_8c_aa7909741e6f90c6af19e07b91c88ad4c_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_aa7909741e6f90c6af19e07b91c88ad4c_cgraph" id="aunity_8c_aa7909741e6f90c6af19e07b91c88ad4c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,183,33"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="398,5,484,33"/>
+<area shape="poly" title=" " alt="" coords="183,17,384,17,381,21,183,22"/>
+<area shape="rect" href="unity_8c.html#ac3d39bc0740a28949a2ba689588491c2" title=" " alt="" coords="231,31,350,58"/>
+<area shape="poly" title=" " alt="" coords="183,28,218,35,213,35,183,33"/>
+<area shape="poly" title=" " alt="" coords="350,32,380,29,385,29,351,37"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adc1934cb22540eed0b2b86e1f6aeb697" name="adc1934cb22540eed0b2b86e1f6aeb697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1934cb22540eed0b2b86e1f6aeb697">&#9670;&#160;</a></span>UnityAssertFloatsWithin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertFloatsWithin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad350648282b9a9df70f87ecc448e449c" name="ad350648282b9a9df70f87ecc448e449c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad350648282b9a9df70f87ecc448e449c">&#9670;&#160;</a></span>UnityAssertGreaterOrLessFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertGreaterOrLessFloat </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>threshold</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#af032691a9e32795aa06770185ac14a48">UNITY_COMPARISON_T</a></td>          <td class="paramname"><span class="paramname"><em>compare</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_ad350648282b9a9df70f87ecc448e449c_cgraph.png" border="0" usemap="#aunity_8c_ad350648282b9a9df70f87ecc448e449c_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_ad350648282b9a9df70f87ecc448e449c_cgraph" id="aunity_8c_ad350648282b9a9df70f87ecc448e449c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,50"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="411,14,497,42"/>
+<area shape="poly" title=" " alt="" coords="196,25,397,26,394,30,196,30"/>
+<area shape="rect" href="unity_8c.html#ac3d39bc0740a28949a2ba689588491c2" title=" " alt="" coords="244,39,363,67"/>
+<area shape="poly" title=" " alt="" coords="196,37,231,44,225,44,196,42"/>
+<area shape="poly" title=" " alt="" coords="363,40,393,38,398,37,364,46"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9140e102a6a8328cd87a2f9c1506849a" name="a9140e102a6a8328cd87a2f9c1506849a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9140e102a6a8328cd87a2f9c1506849a">&#9670;&#160;</a></span>UnityAssertIntGreaterOrLessOrEqualNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertIntGreaterOrLessOrEqualNumber </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>threshold</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#af032691a9e32795aa06770185ac14a48">UNITY_COMPARISON_T</a></td>          <td class="paramname"><span class="paramname"><em>compare</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a9140e102a6a8328cd87a2f9c1506849a_cgraph.png" border="0" usemap="#aunity_8c_a9140e102a6a8328cd87a2f9c1506849a_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a9140e102a6a8328cd87a2f9c1506849a_cgraph" id="aunity_8c_a9140e102a6a8328cd87a2f9c1506849a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,213,68"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="320,5,406,33"/>
+<area shape="poly" title=" " alt="" coords="213,32,307,24,302,26,214,38"/>
+<area shape="rect" href="unity_8c.html#ab531d17d52d935c2722230e87f346542" title=" " alt="" coords="261,57,466,85"/>
+<area shape="poly" title=" " alt="" coords="213,54,248,59,242,60,213,59"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="527,7,665,34"/>
+<area shape="poly" title=" " alt="" coords="429,54,512,39,517,38,431,59"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="726,32,926,60"/>
+<area shape="poly" title=" " alt="" coords="466,63,713,52,708,53,466,68"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="514,108,678,136"/>
+<area shape="poly" title=" " alt="" coords="430,83,517,104,512,104,430,88"/>
+<area shape="poly" title=" " alt="" coords="666,25,714,33,708,33,666,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad3de56bd59faad4907fe36c537bc35c6" name="ad3de56bd59faad4907fe36c537bc35c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3de56bd59faad4907fe36c537bc35c6">&#9670;&#160;</a></span>UnityAssertIntNumbersWithin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertIntNumbersWithin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_ad3de56bd59faad4907fe36c537bc35c6_cgraph.png" border="0" usemap="#aunity_8c_ad3de56bd59faad4907fe36c537bc35c6_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_ad3de56bd59faad4907fe36c537bc35c6_cgraph" id="aunity_8c_ad3de56bd59faad4907fe36c537bc35c6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,221,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="328,5,414,33"/>
+<area shape="poly" title=" " alt="" coords="221,32,315,24,310,26,222,37"/>
+<area shape="rect" href="unity_8c.html#ab531d17d52d935c2722230e87f346542" title=" " alt="" coords="269,57,474,85"/>
+<area shape="poly" title=" " alt="" coords="221,54,256,59,251,60,221,59"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="535,7,673,34"/>
+<area shape="poly" title=" " alt="" coords="437,54,520,39,525,38,439,59"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="734,32,934,60"/>
+<area shape="poly" title=" " alt="" coords="474,63,721,52,716,53,474,68"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="522,108,686,136"/>
+<area shape="poly" title=" " alt="" coords="438,83,525,104,520,104,438,88"/>
+<area shape="poly" title=" " alt="" coords="674,25,722,33,716,33,674,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7125230f609e287bbe574be8ea46d1e3" name="a7125230f609e287bbe574be8ea46d1e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7125230f609e287bbe574be8ea46d1e3">&#9670;&#160;</a></span>UnityAssertNumbersArrayWithin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertNumbersArrayWithin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>num_elements</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a7125230f609e287bbe574be8ea46d1e3_cgraph.png" border="0" usemap="#aunity_8c_a7125230f609e287bbe574be8ea46d1e3_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a7125230f609e287bbe574be8ea46d1e3_cgraph" id="aunity_8c_a7125230f609e287bbe574be8ea46d1e3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,239,109"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="346,29,432,57"/>
+<area shape="poly" title=" " alt="" coords="196,78,333,53,328,56,198,83"/>
+<area shape="rect" href="unity_8c.html#ab531d17d52d935c2722230e87f346542" title=" " alt="" coords="287,81,492,109"/>
+<area shape="poly" title=" " alt="" coords="239,93,274,95,269,96,239,98"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="752,56,952,84"/>
+<area shape="poly" title=" " alt="" coords="171,107,270,131,403,153,477,160,553,161,630,156,704,143,765,120,815,93,820,92,767,125,705,148,630,162,554,167,477,165,402,159,269,136,171,112"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="553,5,691,33"/>
+<area shape="poly" title=" " alt="" coords="449,78,491,66,568,40,573,38,493,71,451,83"/>
+<area shape="poly" title=" " alt="" coords="492,87,739,76,734,77,492,92"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="540,107,704,134"/>
+<area shape="poly" title=" " alt="" coords="493,104,527,110,522,110,493,109"/>
+<area shape="poly" title=" " alt="" coords="688,31,774,52,769,52,688,36"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abcb6bf81a7cb06c1001f064ca7ac065f" name="abcb6bf81a7cb06c1001f064ca7ac065f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb6bf81a7cb06c1001f064ca7ac065f">&#9670;&#160;</a></span>UnityAssertUintGreaterOrLessOrEqualNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertUintGreaterOrLessOrEqualNumber </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>threshold</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#af032691a9e32795aa06770185ac14a48">UNITY_COMPARISON_T</a></td>          <td class="paramname"><span class="paramname"><em>compare</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_abcb6bf81a7cb06c1001f064ca7ac065f_cgraph.png" border="0" usemap="#aunity_8c_abcb6bf81a7cb06c1001f064ca7ac065f_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_abcb6bf81a7cb06c1001f064ca7ac065f_cgraph" id="aunity_8c_abcb6bf81a7cb06c1001f064ca7ac065f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,194,68"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="306,5,392,33"/>
+<area shape="poly" title=" " alt="" coords="194,33,293,24,288,26,195,38"/>
+<area shape="rect" href="unity_8c.html#a281125e55622a58d1287acb767f18f42" title=" " alt="" coords="242,57,457,85"/>
+<area shape="poly" title=" " alt="" coords="194,53,229,58,223,59,194,58"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="522,31,687,58"/>
+<area shape="poly" title=" " alt="" coords="457,57,509,54,504,55,458,63"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="505,83,704,110"/>
+<area shape="poly" title=" " alt="" coords="458,79,492,85,487,85,457,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c02d10734c77f743c5db1ca37fb065b" name="a9c02d10734c77f743c5db1ca37fb065b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c02d10734c77f743c5db1ca37fb065b">&#9670;&#160;</a></span>UnityAssertUintNumbersWithin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertUintNumbersWithin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a9c02d10734c77f743c5db1ca37fb065b_cgraph.png" border="0" usemap="#aunity_8c_a9c02d10734c77f743c5db1ca37fb065b_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a9c02d10734c77f743c5db1ca37fb065b_cgraph" id="aunity_8c_a9c02d10734c77f743c5db1ca37fb065b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,231,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="343,5,430,33"/>
+<area shape="poly" title=" " alt="" coords="231,32,330,24,325,26,232,37"/>
+<area shape="rect" href="unity_8c.html#a281125e55622a58d1287acb767f18f42" title=" " alt="" coords="279,57,494,85"/>
+<area shape="poly" title=" " alt="" coords="231,54,266,59,261,60,231,59"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="560,31,724,58"/>
+<area shape="poly" title=" " alt="" coords="494,57,541,55,546,54,495,63"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="542,83,741,110"/>
+<area shape="poly" title=" " alt="" coords="495,79,529,85,524,85,494,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab0a2af1eacf97dee327b0567625c1e2" name="aab0a2af1eacf97dee327b0567625c1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0a2af1eacf97dee327b0567625c1e2">&#9670;&#160;</a></span>UnityAssertWithinFloatArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityAssertWithinFloatArray </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a></td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a825b752e1c62ede9bee4bf22fb258a7d">UNITY_PTR_ATTRIBUTE</a> const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> *</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a825b752e1c62ede9bee4bf22fb258a7d">UNITY_PTR_ATTRIBUTE</a> const <a class="el" href="unity__internals_8h.html#ac4a36d11e8a7b250f2413ebb22e3092c">UNITY_FLOAT</a> *</td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>num_elements</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a229eb7ffd452e7c158f1fe19005a817c">UNITY_FLAGS_T</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_aab0a2af1eacf97dee327b0567625c1e2_cgraph.png" border="0" usemap="#aunity_8c_aab0a2af1eacf97dee327b0567625c1e2_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_aab0a2af1eacf97dee327b0567625c1e2_cgraph" id="aunity_8c_aab0a2af1eacf97dee327b0567625c1e2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,213,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="317,5,404,33"/>
+<area shape="poly" title=" " alt="" coords="213,32,304,25,299,26,214,37"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="261,57,460,85"/>
+<area shape="poly" title=" " alt="" coords="213,54,248,59,243,60,213,59"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aed50601fbdaea8fc0fef0c61cf877809" name="aed50601fbdaea8fc0fef0c61cf877809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed50601fbdaea8fc0fef0c61cf877809">&#9670;&#160;</a></span>UnityBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityBegin </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44f03f0124e59f6996da61946cc2a58e" name="a44f03f0124e59f6996da61946cc2a58e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f03f0124e59f6996da61946cc2a58e">&#9670;&#160;</a></span>UnityConcludeTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityConcludeTest </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a44f03f0124e59f6996da61946cc2a58e_cgraph.png" border="0" usemap="#aunity_8c_a44f03f0124e59f6996da61946cc2a58e_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a44f03f0124e59f6996da61946cc2a58e_cgraph" id="aunity_8c_a44f03f0124e59f6996da61946cc2a58e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,148,33"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="196,5,282,33"/>
+<area shape="poly" title=" " alt="" coords="148,17,183,19,178,19,148,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae3c8272eef0f0b6228ca47b9dd1aa2af" name="ae3c8272eef0f0b6228ca47b9dd1aa2af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c8272eef0f0b6228ca47b9dd1aa2af">&#9670;&#160;</a></span>UnityDefaultTestRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityDefaultTestRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unity__internals_8h.html#a750c0436a18789b916e55d70aae12985">UnityTestFunction</a></td>          <td class="paramname"><span class="paramname"><em>Func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>FuncName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>FuncLineNum</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_ae3c8272eef0f0b6228ca47b9dd1aa2af_cgraph.png" border="0" usemap="#aunity_8c_ae3c8272eef0f0b6228ca47b9dd1aa2af_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_ae3c8272eef0f0b6228ca47b9dd1aa2af_cgraph" id="aunity_8c_ae3c8272eef0f0b6228ca47b9dd1aa2af_cgraph">
+<area shape="rect" title=" " alt="" coords="5,57,161,85"/>
+<area shape="rect" href="test__collider_8c.html#a95c834d6178047ce9e1bce7cbfea2836" title=" " alt="" coords="250,5,310,33"/>
+<area shape="poly" title=" " alt="" coords="138,54,238,29,233,32,139,59"/>
+<area shape="rect" href="test__collider_8c.html#a9909011e5fea0c018842eec4d93d0662" title=" " alt="" coords="238,57,322,85"/>
+<area shape="poly" title=" " alt="" coords="161,69,225,70,220,72,161,74"/>
+<area shape="rect" href="unity_8c.html#a44f03f0124e59f6996da61946cc2a58e" title=" " alt="" coords="209,109,351,137"/>
+<area shape="poly" title=" " alt="" coords="139,83,213,104,208,106,138,88"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="399,109,485,137"/>
+<area shape="poly" title=" " alt="" coords="352,121,386,123,381,123,352,126"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4820ba04ff5e9a474fe38ab6633d30a0" name="a4820ba04ff5e9a474fe38ab6633d30a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4820ba04ff5e9a474fe38ab6633d30a0">&#9670;&#160;</a></span>UnityEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UnityEnd </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a4820ba04ff5e9a474fe38ab6633d30a0_cgraph.png" border="0" usemap="#aunity_8c_a4820ba04ff5e9a474fe38ab6633d30a0_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a4820ba04ff5e9a474fe38ab6633d30a0_cgraph" id="aunity_8c_a4820ba04ff5e9a474fe38ab6633d30a0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,86,60"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="160,5,246,33"/>
+<area shape="poly" title=" " alt="" coords="86,36,147,28,142,30,87,42"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="134,57,272,85"/>
+<area shape="poly" title=" " alt="" coords="86,50,121,57,116,58,86,55"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="320,57,519,85"/>
+<area shape="poly" title=" " alt="" coords="272,69,307,71,301,71,273,74"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0daba95a4950d8a5a06b6b2c843742b8" name="a0daba95a4950d8a5a06b6b2c843742b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0daba95a4950d8a5a06b6b2c843742b8">&#9670;&#160;</a></span>UnityFail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityFail </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>line</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a0daba95a4950d8a5a06b6b2c843742b8_cgraph.png" border="0" usemap="#aunity_8c_a0daba95a4950d8a5a06b6b2c843742b8_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a0daba95a4950d8a5a06b6b2c843742b8_cgraph" id="aunity_8c_a0daba95a4950d8a5a06b6b2c843742b8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,84,33"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="132,5,218,33"/>
+<area shape="poly" title=" " alt="" coords="84,17,119,19,114,20,84,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a01b1539781210d836d875fa9c6957982" name="a01b1539781210d836d875fa9c6957982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b1539781210d836d875fa9c6957982">&#9670;&#160;</a></span>UnityFloatToPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> UnityFloatToPtr </td>
+          <td>(</td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>num</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a017e8c6a617d00312fd6688b73483284" name="a017e8c6a617d00312fd6688b73483284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017e8c6a617d00312fd6688b73483284">&#9670;&#160;</a></span>UnityIgnore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityIgnore </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>line</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a017e8c6a617d00312fd6688b73483284_cgraph.png" border="0" usemap="#aunity_8c_a017e8c6a617d00312fd6688b73483284_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a017e8c6a617d00312fd6688b73483284_cgraph" id="aunity_8c_a017e8c6a617d00312fd6688b73483284_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,103,33"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="151,5,237,33"/>
+<area shape="poly" title=" " alt="" coords="103,17,138,19,132,19,103,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abc9ecca68af9f93f07fb907de67d5db3" name="abc9ecca68af9f93f07fb907de67d5db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9ecca68af9f93f07fb907de67d5db3">&#9670;&#160;</a></span>UnityMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityMessage </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a5c76dbcaafb6db2a52336cf5d4835290">UNITY_LINE_TYPE</a></td>          <td class="paramname"><span class="paramname"><em>line</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_abc9ecca68af9f93f07fb907de67d5db3_cgraph.png" border="0" usemap="#aunity_8c_abc9ecca68af9f93f07fb907de67d5db3_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_abc9ecca68af9f93f07fb907de67d5db3_cgraph" id="aunity_8c_abc9ecca68af9f93f07fb907de67d5db3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,120,33"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="168,5,254,33"/>
+<area shape="poly" title=" " alt="" coords="120,17,155,19,150,19,120,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aed32d6a240e25d9493f6492882f7d3d5" name="aed32d6a240e25d9493f6492882f7d3d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed32d6a240e25d9493f6492882f7d3d5">&#9670;&#160;</a></span>UnityNumToPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unity__internals_8h.html#a5db8f91b73d20fd7b6f1d9bfd28a2dc0">UNITY_INTERNAL_PTR</a> UnityNumToPtr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ae9c38948acf740d92635783d49f7437c">UNITY_UINT8</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accff2eb4cfd0273e8ad62c37639d3e3c" name="accff2eb4cfd0273e8ad62c37639d3e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accff2eb4cfd0273e8ad62c37639d3e3c">&#9670;&#160;</a></span>UnityPrint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrint </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>string</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3d39bc0740a28949a2ba689588491c2" name="ac3d39bc0740a28949a2ba689588491c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d39bc0740a28949a2ba689588491c2">&#9670;&#160;</a></span>UnityPrintFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintFloat </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ac3bdb18f38e23a4343af34a7f4e0d4a0">UNITY_DOUBLE</a></td>          <td class="paramname"><span class="paramname"><em>input_number</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_ac3d39bc0740a28949a2ba689588491c2_cgraph.png" border="0" usemap="#aunity_8c_ac3d39bc0740a28949a2ba689588491c2_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_ac3d39bc0740a28949a2ba689588491c2_cgraph" id="aunity_8c_ac3d39bc0740a28949a2ba689588491c2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,125,33"/>
+<area shape="rect" href="unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="173,5,259,33"/>
+<area shape="poly" title=" " alt="" coords="125,17,160,19,154,19,125,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab531d17d52d935c2722230e87f346542" name="ab531d17d52d935c2722230e87f346542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab531d17d52d935c2722230e87f346542">&#9670;&#160;</a></span>UnityPrintIntNumberByStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintIntNumberByStyle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_ab531d17d52d935c2722230e87f346542_cgraph.png" border="0" usemap="#aunity_8c_ab531d17d52d935c2722230e87f346542_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_ab531d17d52d935c2722230e87f346542_cgraph" id="aunity_8c_ab531d17d52d935c2722230e87f346542_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,211,84"/>
+<area shape="rect" href="unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="272,5,410,33"/>
+<area shape="poly" title=" " alt="" coords="174,53,261,36,257,38,175,58"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="471,31,670,58"/>
+<area shape="poly" title=" " alt="" coords="211,62,456,48,454,53,211,67"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="259,107,423,134"/>
+<area shape="poly" title=" " alt="" coords="175,82,262,102,256,103,174,87"/>
+<area shape="poly" title=" " alt="" coords="410,24,458,32,453,32,410,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a780817a15f2437360bd593c8fa7a1481" name="a780817a15f2437360bd593c8fa7a1481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780817a15f2437360bd593c8fa7a1481">&#9670;&#160;</a></span>UnityPrintLen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintLen </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a711b62bcec9cafcd46479a4832adfa55">UNITY_UINT32</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a780817a15f2437360bd593c8fa7a1481_cgraph.png" border="0" usemap="#aunity_8c_a780817a15f2437360bd593c8fa7a1481_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a780817a15f2437360bd593c8fa7a1481_cgraph" id="aunity_8c_a780817a15f2437360bd593c8fa7a1481_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,115,33"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="163,5,327,33"/>
+<area shape="poly" title=" " alt="" coords="115,17,150,19,144,19,115,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a207d5b3e2bfe8042b0505066ccd07c9b" name="a207d5b3e2bfe8042b0505066ccd07c9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a207d5b3e2bfe8042b0505066ccd07c9b">&#9670;&#160;</a></span>UnityPrintMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintMask </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>number</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a644211a214ab000dcabd5582c52e0313" name="a644211a214ab000dcabd5582c52e0313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a644211a214ab000dcabd5582c52e0313">&#9670;&#160;</a></span>UnityPrintNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintNumber </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#ab304e341ff16e7076e9d06cc9c64c2a7">UNITY_INT</a></td>          <td class="paramname"><span class="paramname"><em>number_to_print</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a644211a214ab000dcabd5582c52e0313_cgraph.png" border="0" usemap="#aunity_8c_a644211a214ab000dcabd5582c52e0313_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a644211a214ab000dcabd5582c52e0313_cgraph" id="aunity_8c_a644211a214ab000dcabd5582c52e0313_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,33"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="192,5,391,33"/>
+<area shape="poly" title=" " alt="" coords="144,17,178,19,173,19,144,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab5636c2c3e2d5ff0d89461e2323aa469" name="ab5636c2c3e2d5ff0d89461e2323aa469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5636c2c3e2d5ff0d89461e2323aa469">&#9670;&#160;</a></span>UnityPrintNumberHex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintNumberHex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char</td>          <td class="paramname"><span class="paramname"><em>nibbles_to_print</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ef388786e9a8e769d13af2601b592dc" name="a3ef388786e9a8e769d13af2601b592dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef388786e9a8e769d13af2601b592dc">&#9670;&#160;</a></span>UnityPrintNumberUnsigned()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintNumberUnsigned </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a281125e55622a58d1287acb767f18f42" name="a281125e55622a58d1287acb767f18f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a281125e55622a58d1287acb767f18f42">&#9670;&#160;</a></span>UnityPrintUintNumberByStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnityPrintUintNumberByStyle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#abb5d2d06855829696244db2ff89290bd">UNITY_UINT</a></td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="unity__internals_8h.html#a828517387e75bc0b3ee6a99d2e0722a4">UNITY_DISPLAY_STYLE_T</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="unity_8c_a281125e55622a58d1287acb767f18f42_cgraph.png" border="0" usemap="#aunity_8c_a281125e55622a58d1287acb767f18f42_cgraph" loading="lazy" alt=""/></div>
+<map name="aunity_8c_a281125e55622a58d1287acb767f18f42_cgraph" id="aunity_8c_a281125e55622a58d1287acb767f18f42_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,221,60"/>
+<area shape="rect" href="unity_8c.html#ab5636c2c3e2d5ff0d89461e2323aa469" title=" " alt="" coords="286,5,450,33"/>
+<area shape="poly" title=" " alt="" coords="221,32,273,29,268,30,222,37"/>
+<area shape="rect" href="unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="269,57,468,85"/>
+<area shape="poly" title=" " alt="" coords="221,54,256,60,251,60,221,59"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afefd1b90b9854b428fef009e12489282" name="afefd1b90b9854b428fef009e12489282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefd1b90b9854b428fef009e12489282">&#9670;&#160;</a></span>UnitySetTestFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitySetTestFile </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentation des variables</h2>
+<a id="af900396d7b72ff2a7002e8befe8cf8f1" name="af900396d7b72ff2a7002e8befe8cf8f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af900396d7b72ff2a7002e8befe8cf8f1">&#9670;&#160;</a></span>f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ff3d9c5010aa22165fa26f8e301131e" name="a3ff3d9c5010aa22165fa26f8e301131e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff3d9c5010aa22165fa26f8e301131e">&#9670;&#160;</a></span>i16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unity__internals_8h.html#af18ca161e8d679a2d3b75928112c1707">UNITY_INT16</a> i16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9d133be8ac33cfb99b5b9646d7a5a87" name="ae9d133be8ac33cfb99b5b9646d7a5a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d133be8ac33cfb99b5b9646d7a5a87">&#9670;&#160;</a></span>i32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unity__internals_8h.html#a05b69a453107cea541ee62916ff349f9">UNITY_INT32</a> i32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad20eed15082bd5f03fa33cf3014e9a99" name="ad20eed15082bd5f03fa33cf3014e9a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20eed15082bd5f03fa33cf3014e9a99">&#9670;&#160;</a></span>i8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unity__internals_8h.html#ad0279e5d512a86af7ff1cfda67b9f64e">UNITY_INT8</a> i8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad738f665f16eb2336b8bc33f432d0da" name="aad738f665f16eb2336b8bc33f432d0da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad738f665f16eb2336b8bc33f432d0da">&#9670;&#160;</a></span>Unity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structUNITY__STORAGE__T.html">UNITY_STORAGE_T</a> Unity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2cb379d054a17260a027ebe2cd0d1caf" name="a2cb379d054a17260a027ebe2cd0d1caf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb379d054a17260a027ebe2cd0d1caf">&#9670;&#160;</a></span>UnityStrErr64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrErr64[] = &quot;Unity 64-bit Support Disabled&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d7a43fee86d7e6db988e062a7be4ebf" name="a8d7a43fee86d7e6db988e062a7be4ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7a43fee86d7e6db988e062a7be4ebf">&#9670;&#160;</a></span>UnityStrErrDetailStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrErrDetailStack[] = &quot;Unity Detail Stack Support Disabled&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ff53dbf9dd9ebac1832d2166baaad1d" name="a5ff53dbf9dd9ebac1832d2166baaad1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ff53dbf9dd9ebac1832d2166baaad1d">&#9670;&#160;</a></span>UnityStrErrDouble</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrErrDouble[] = &quot;Unity Double Precision Disabled&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab72fe58f6f99c198dd56962527249f97" name="ab72fe58f6f99c198dd56962527249f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab72fe58f6f99c198dd56962527249f97">&#9670;&#160;</a></span>UnityStrErrFloat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrErrFloat[] = &quot;Unity Floating Point Disabled&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac99e9c46e8d8b76d042559a4bb2a7137" name="ac99e9c46e8d8b76d042559a4bb2a7137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99e9c46e8d8b76d042559a4bb2a7137">&#9670;&#160;</a></span>UnityStrErrShorthand</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrErrShorthand[] = &quot;Unity Shorthand Support Disabled&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac316f86bcebda9760575680522744d96" name="ac316f86bcebda9760575680522744d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac316f86bcebda9760575680522744d96">&#9670;&#160;</a></span>UnityStrFail</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrFail[] = &quot;FAIL&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6ebb22be1abfa01578ec3567c51f9e9" name="ad6ebb22be1abfa01578ec3567c51f9e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ebb22be1abfa01578ec3567c51f9e9">&#9670;&#160;</a></span>UnityStrIgnore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrIgnore[] = &quot;IGNORE&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14f8a3d589baec0ad27e338bd2001600" name="a14f8a3d589baec0ad27e338bd2001600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14f8a3d589baec0ad27e338bd2001600">&#9670;&#160;</a></span>UnityStrOk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrOk[] = &quot;OK&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96ccb9c12b5e14bbf2dcfc16b889efe2" name="a96ccb9c12b5e14bbf2dcfc16b889efe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ccb9c12b5e14bbf2dcfc16b889efe2">&#9670;&#160;</a></span>UnityStrPass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char <a class="el" href="#af297050091d384f1b8cdebb753d593f5">UNITY_PROGMEM</a> UnityStrPass[] = &quot;PASS&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_6b23d51ea9a89549ea3e756c08c8ad26.html">unity</a></li><li class="navelem"><a href="unity_8c.html">unity.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

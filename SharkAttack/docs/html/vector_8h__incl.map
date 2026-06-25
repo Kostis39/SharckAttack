@@ -1,5 +1,7 @@
 <map id="include/vector.h" name="include/vector.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,130,33"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="34,81,101,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,31,70,66,65,65,66,36"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="22,5,146,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,73,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,32,57,69,53,66,74,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,81,162,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="94,31,116,68,111,68,91,36"/>
 </map>

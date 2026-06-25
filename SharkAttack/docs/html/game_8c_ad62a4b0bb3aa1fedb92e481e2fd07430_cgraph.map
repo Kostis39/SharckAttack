@@ -1,0 +1,27 @@
+<map id="Game_init" name="Game_init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,94,185"/>
+<area shape="rect" id="Node000002" href="$render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="142,105,294,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,155,158,136,154,140,95,160"/>
+<area shape="rect" id="Node000003" href="$render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="157,157,279,185"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,169,143,170,139,173,95,174"/>
+<area shape="rect" id="Node000004" href="$world_8c.html#aac9262efc50b7cf2a2b964520f7a810e" title=" " alt="" coords="175,209,261,237"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="94,182,162,204,158,207,94,187"/>
+<area shape="rect" id="Node000005" href="$collider_8c.html#af3a8698f7a9da326b05e4304a5409dbc" title=" " alt="" coords="342,68,518,96"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="260,211,292,194,308,178,316,162,325,145,340,127,378,104,382,102,344,130,329,148,321,165,312,181,296,199,263,216"/>
+<area shape="rect" id="Node000009" href="$fish_8c.html#aba09af4958a615ad5f14f0f86de2143d" title=" " alt="" coords="354,141,506,186"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="261,209,341,188,336,190,262,214"/>
+<area shape="rect" id="Node000011" href="$rules__set_8c.html#a1ac05ca81e6a49962501975fd882cb84" title=" " alt="" coords="364,209,496,237"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="261,221,351,222,346,224,262,226"/>
+<area shape="rect" id="Node000012" href="$shark_8c.html#a1d8d8071fd5a2ed19ce26ab4cbf5278e" title=" " alt="" coords="377,261,483,289"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="262,231,364,258,359,259,261,236"/>
+<area shape="rect" id="Node000013" href="$rules__set_8c.html#a9c8b5f3f796dab0f1df22249b053b51e" title=" " alt="" coords="374,313,487,341"/>
+<area shape="poly" id="edge12_Node000004_Node000013" title=" " alt="" coords="239,235,286,266,343,298,362,308,357,307,341,303,283,271,238,240"/>
+<area shape="rect" id="Node000006" href="$collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title=" " alt="" coords="584,5,731,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="482,65,592,37,587,39,484,70"/>
+<area shape="rect" id="Node000007" href="$collider_8c.html#a9d944ed48c83eedfe629746ecccd1506" title=" " alt="" coords="604,57,711,85"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="518,75,591,74,586,75,519,80"/>
+<area shape="rect" id="Node000008" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title=" " alt="" coords="612,109,703,137"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="510,94,600,112,594,113,510,99"/>
+<area shape="rect" id="Node000010" href="$fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title=" " alt="" coords="566,161,749,189"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="507,165,553,169,548,170,507,170"/>
+</map>

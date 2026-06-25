@@ -1,11 +1,13 @@
 #include "fish.h"
+#include "config.h"
+#include "utils.h"
 
 Fish Fish_create_random_pos(int width, int height) {
     Fish fish;
-    fish.position.x = rand() % width;
-    fish.position.y = rand() % height;
-    fish.velocity.x = (fmodf(rand(), FISH_SPEED_MAX)) - (FISH_SPEED_MAX / 2);
-    fish.velocity.y = (fmodf(rand(), FISH_SPEED_MAX)) - (FISH_SPEED_MAX / 2);
+    fish.position.x = random_float(0, width);
+    fish.position.y = random_float(0, height);
+    fish.velocity.x = random_float(FISH_SPEED_MIN, FISH_SPEED_MAX);
+    fish.velocity.y = random_float(FISH_SPEED_MIN, FISH_SPEED_MAX);
     fish.is_alive = true;
     fish.radius_separation = RADIUS_SEPARATION;
     fish.radius_alignement = RADIUS_ALIGNEMENT;
@@ -23,6 +25,11 @@ Fish *Fish_create_random_array(int nb_fish, int width, int height) {
     return fish_array;
 }
 
+/**
+ * @brief crée un tableau de poissons sans les initialiser
+ * @param nb_fish nombre de poissons
+ * @return pointeur vers le tableau alloué dynamiquement
+ */
 Fish *Fish_create_null_array(int nb_fish) {
     Fish *fish_array = calloc(nb_fish, sizeof(Fish));
     return fish_array;
