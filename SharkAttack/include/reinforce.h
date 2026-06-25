@@ -23,8 +23,6 @@ int Need_trajectory_growing(Trajectory *trajectory);
 void Trajectory_print(Trajectory *trajectory);
 void StepTrajectory_print(StepTrajectory step);
 
-void New_step(StepTrajectory *step, SharkPhi phi, Vector action, float reward);
-
 void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
                  float reward);
 
