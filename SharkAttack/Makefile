@@ -10,7 +10,7 @@ UNITY_FOLDER=unity
 
 CFLAGS=-Wall -Wextra -g -Iinclude -Iunity
 SDL_FLAGS=`sdl2-config --cflags`
-SDL_LIB=`sdl2-config --libs` -lSDL2_image -lm
+SDL_LIB=`sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lm
 
 TEST_CFLAGS=$(CFLAGS)
 TEST_INCLUDES=-I$(SOURCES_FOLDER) -I$(UNITY_FOLDER)
