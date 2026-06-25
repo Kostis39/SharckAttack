@@ -476,5 +476,8 @@ var searchData=
   ['test_5fpass_5fmessage_473',['TEST_PASS_MESSAGE',['../unity_8h.html#aee5ac51bd8c646c4daadcbb79d673c7b',1,'unity.h']]],
   ['test_5fprotect_474',['TEST_PROTECT',['../unity__internals_8h.html#a61d21043921ebc1c2ee49543fc100f9a',1,'unity_internals.h']]],
   ['test_5fsource_5ffile_475',['TEST_SOURCE_FILE',['../unity_8h.html#a63d1c420702f922234759bbbb08b4750',1,'unity.h']]],
-  ['turn_5fspeed_476',['TURN_SPEED',['../config_8h.html#afa9188776d909e94ead6cf6ffbbdd1e8',1,'config.h']]]
+  ['theta_5ffile_476',['THETA_FILE',['../config_8h.html#ae06773cbea10b16b13d7c1ce80225d31',1,'config.h']]],
+  ['trajectory_5fcapacity_477',['TRAJECTORY_CAPACITY',['../config_8h.html#ad93407dc809aa13788d436389dbf3818',1,'config.h']]],
+  ['trajectory_5flenght_5falloc_478',['TRAJECTORY_LENGHT_ALLOC',['../config_8h.html#ab2ab4d47bb2f38dfb537e3f52152c0ec',1,'config.h']]],
+  ['turn_5fspeed_479',['TURN_SPEED',['../config_8h.html#afa9188776d909e94ead6cf6ffbbdd1e8',1,'config.h']]]
 ];

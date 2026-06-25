@@ -94,42 +94,120 @@ $(function(){initNavTree('collider_8c.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="collider_8h_source.html">collider.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de collider.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="collider_8c__incl.png" border="0" usemap="#asrc_2collider_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2collider_8c" id="asrc_2collider_8c">
-<area shape="rect" title=" " alt="" coords="160,5,262,33"/>
-<area shape="rect" href="collider_8h.html" title=" " alt="" coords="122,81,202,109"/>
-<area shape="poly" title=" " alt="" coords="204,31,181,70,177,66,201,36"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="48,157,121,184"/>
-<area shape="poly" title=" " alt="" coords="174,35,142,55,112,83,97,112,89,142,84,140,92,110,108,79,139,51,178,32"/>
-<area shape="rect" title=" " alt="" coords="226,81,295,109"/>
-<area shape="poly" title=" " alt="" coords="220,31,246,68,240,68,219,36"/>
-<area shape="rect" title=" " alt="" coords="318,81,389,109"/>
-<area shape="poly" title=" " alt="" coords="237,31,318,73,312,74,236,36"/>
-<area shape="poly" title=" " alt="" coords="146,111,111,148,107,144,150,107"/>
-<area shape="rect" title=" " alt="" coords="145,157,226,184"/>
-<area shape="poly" title=" " alt="" coords="167,107,179,142,174,141,165,112"/>
-<area shape="rect" title=" " alt="" coords="5,232,73,260"/>
-<area shape="poly" title=" " alt="" coords="78,183,57,221,53,217,74,186"/>
-<area shape="rect" title=" " alt="" coords="97,232,162,260"/>
-<area shape="poly" title=" " alt="" coords="94,183,116,219,111,219,91,187"/>
+<area shape="rect" title=" " alt="" coords="95,5,197,33"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="106,81,186,109"/>
+<area shape="poly" title=" " alt="" coords="147,31,148,66,143,65,145,36"/>
+<area shape="rect" title=" " alt="" coords="5,157,76,184"/>
+<area shape="poly" title=" " alt="" coords="126,112,73,150,70,146,128,107"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="150,157,211,184"/>
+<area shape="poly" title=" " alt="" coords="153,107,171,143,165,142,152,112"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="69,232,142,260"/>
+<area shape="poly" title=" " alt="" coords="144,107,116,218,111,216,140,111"/>
+<area shape="rect" title=" " alt="" coords="236,157,317,184"/>
+<area shape="poly" title=" " alt="" coords="169,107,243,148,238,150,169,112"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="102,308,174,336"/>
+<area shape="poly" title=" " alt="" coords="179,184,148,294,143,292,174,185"/>
+<area shape="poly" title=" " alt="" coords="169,183,132,223,128,219,165,187"/>
+<area shape="rect" title=" " alt="" coords="198,308,265,336"/>
+<area shape="poly" title=" " alt="" coords="187,183,224,293,219,293,183,186"/>
+<area shape="rect" title=" " alt="" coords="268,232,338,260"/>
+<area shape="poly" title=" " alt="" coords="203,182,271,224,266,225,202,188"/>
+<area shape="poly" title=" " alt="" coords="113,258,129,294,124,293,110,263"/>
+<area shape="poly" title=" " alt="" coords="129,258,199,299,194,301,128,263"/>
+<area shape="rect" title=" " alt="" coords="12,308,77,336"/>
+<area shape="poly" title=" " alt="" coords="97,259,67,298,63,294,93,262"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a9d944ed48c83eedfe629746ecccd1506" id="r_a9d944ed48c83eedfe629746ecccd1506"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d944ed48c83eedfe629746ecccd1506">random_float</a> (float min, float max)</td></tr>
 <tr class="memitem:ab5553354f21001b9145c84332c0cd5cf" id="r_ab5553354f21001b9145c84332c0cd5cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5553354f21001b9145c84332c0cd5cf">Instantiate_collider</a> (<a class="el" href="structVector.html">Vector</a> pos, float w, float h)</td></tr>
-<tr class="memitem:af3a8698f7a9da326b05e4304a5409dbc" id="r_af3a8698f7a9da326b05e4304a5409dbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3a8698f7a9da326b05e4304a5409dbc">Colliders_random_array</a> (int x_max, int y_max, int w_max, int h_max, int count)</td></tr>
+<tr class="memitem:a6212dde57007cc15994f34cdd0c27d43" id="r_a6212dde57007cc15994f34cdd0c27d43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6212dde57007cc15994f34cdd0c27d43">Colliders_random_array</a> (int x_max, int y_max, int w_max, int h_max, int count, int gen_all_square)</td></tr>
 <tr class="memitem:a0800e8e8957986ce4c2593ac68368b87" id="r_a0800e8e8957986ce4c2593ac68368b87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0800e8e8957986ce4c2593ac68368b87">Colliders_destroy_array</a> (<a class="el" href="structCollider.html">Collider</a> *array)</td></tr>
+<tr class="memitem:ab99ce5a9df335c5f8cdcfc59e33be8d0" id="r_ab99ce5a9df335c5f8cdcfc59e33be8d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab99ce5a9df335c5f8cdcfc59e33be8d0">Collider_closest_point</a> (<a class="el" href="structCollider.html">Collider</a> *c, <a class="el" href="structVector.html">Vector</a> p)</td></tr>
+<tr class="memitem:a42412c8dba2d244f557fd589d50e9cc0" id="r_a42412c8dba2d244f557fd589d50e9cc0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42412c8dba2d244f557fd589d50e9cc0">Collider_distance_to_point</a> (<a class="el" href="structCollider.html">Collider</a> *c, <a class="el" href="structVector.html">Vector</a> p)</td></tr>
 <tr class="memitem:a9fa1fb2bc30efa527ed519e942d9e0fc" id="r_a9fa1fb2bc30efa527ed519e942d9e0fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fa1fb2bc30efa527ed519e942d9e0fc">Colliders_copy_array</a> (<a class="el" href="structCollider.html">Collider</a> *collider, int count)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="ab99ce5a9df335c5f8cdcfc59e33be8d0" name="ab99ce5a9df335c5f8cdcfc59e33be8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99ce5a9df335c5f8cdcfc59e33be8d0">&#9670;&#160;</a></span>Collider_closest_point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVector.html">Vector</a> Collider_closest_point </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retourne le point le plus proche du rectangle (AABB) au point p </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>le collider (bounding box) </td></tr>
+    <tr><td class="paramname">p</td><td>le point de référence </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le point sur (ou dans) le rectangle le plus proche de p</dd></dl>
+
+</div>
+</div>
+<a id="a42412c8dba2d244f557fd589d50e9cc0" name="a42412c8dba2d244f557fd589d50e9cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42412c8dba2d244f557fd589d50e9cc0">&#9670;&#160;</a></span>Collider_distance_to_point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Collider_distance_to_point </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Distance euclidienne entre un point et un rectangle (AABB) </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>le collider </td></tr>
+    <tr><td class="paramname">p</td><td>le point </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la distance (0 si le point est à l'intérieur)</dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="collider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph.png" border="0" usemap="#acollider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph" loading="lazy" alt=""/></div>
+<map name="acollider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph" id="acollider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,159,68"/>
+<area shape="rect" href="collider_8c.html#ab99ce5a9df335c5f8cdcfc59e33be8d0" title=" " alt="" coords="207,5,371,33"/>
+<area shape="poly" title=" " alt="" coords="158,33,194,31,188,33,159,39"/>
+<area shape="rect" href="vector_8c.html#a4d18706bde5519ef90b2bb4a1311fc55" title=" " alt="" coords="227,57,351,85"/>
+<area shape="poly" title=" " alt="" coords="159,53,214,61,209,62,159,58"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="419,31,529,58"/>
+<area shape="poly" title=" " alt="" coords="351,60,401,55,407,54,352,65"/>
+<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="428,83,520,110"/>
+<area shape="poly" title=" " alt="" coords="352,77,415,88,410,88,351,82"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a9fa1fb2bc30efa527ed519e942d9e0fc" name="a9fa1fb2bc30efa527ed519e942d9e0fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9fa1fb2bc30efa527ed519e942d9e0fc">&#9670;&#160;</a></span>Colliders_copy_array()</h2>
 
@@ -169,8 +247,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="af3a8698f7a9da326b05e4304a5409dbc" name="af3a8698f7a9da326b05e4304a5409dbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3a8698f7a9da326b05e4304a5409dbc">&#9670;&#160;</a></span>Colliders_random_array()</h2>
+<a id="a6212dde57007cc15994f34cdd0c27d43" name="a6212dde57007cc15994f34cdd0c27d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6212dde57007cc15994f34cdd0c27d43">&#9670;&#160;</a></span>Colliders_random_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,7 +276,12 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>gen_all_square</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -216,15 +299,17 @@ Fonctions</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="collider_8c_af3a8698f7a9da326b05e4304a5409dbc_cgraph.png" border="0" usemap="#acollider_8c_af3a8698f7a9da326b05e4304a5409dbc_cgraph" loading="lazy" alt=""/></div>
-<map name="acollider_8c_af3a8698f7a9da326b05e4304a5409dbc_cgraph" id="acollider_8c_af3a8698f7a9da326b05e4304a5409dbc_cgraph">
+<div class="center"><img src="collider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph.png" border="0" usemap="#acollider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph" loading="lazy" alt=""/></div>
+<map name="acollider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph" id="acollider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph">
 <area shape="rect" title=" " alt="" coords="5,57,182,85"/>
 <area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title=" " alt="" coords="230,5,376,33"/>
 <area shape="poly" title=" " alt="" coords="152,54,231,36,227,39,153,59"/>
-<area shape="rect" href="collider_8c.html#a9d944ed48c83eedfe629746ecccd1506" title=" " alt="" coords="249,57,356,85"/>
+<area shape="rect" href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title=" " alt="" coords="249,57,356,85"/>
 <area shape="poly" title=" " alt="" coords="182,69,236,71,231,72,182,74"/>
 <area shape="rect" href="vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title=" " alt="" coords="258,109,348,137"/>
 <area shape="poly" title=" " alt="" coords="153,83,245,107,240,109,152,88"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title=" " alt="" coords="424,57,503,85"/>
+<area shape="poly" title=" " alt="" coords="357,69,411,71,405,71,357,74"/>
 </map>
 </div>
 
@@ -262,28 +347,6 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>new_collider instancié</dd></dl>
-
-</div>
-</div>
-<a id="a9d944ed48c83eedfe629746ecccd1506" name="a9d944ed48c83eedfe629746ecccd1506"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d944ed48c83eedfe629746ecccd1506">&#9670;&#160;</a></span>random_float()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float random_float </td>
-          <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>petite fonction auxiliaire pour déterminer un float dans une range</p>
 
 </div>
 </div>

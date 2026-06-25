@@ -1,16 +1,20 @@
 <map id="Clear_sdl_display" name="Clear_sdl_display">
-<area shape="rect" id="Node000001" title="efface l ecran et dessine le fond marin" alt="" coords="5,84,141,112"/>
-<area shape="rect" id="Node000002" href="$render__sdl_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="208,5,321,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,81,188,43,209,37,204,40,190,48,105,86"/>
-<area shape="rect" id="Node000004" href="$render__sdl_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="192,57,336,85"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,86,179,82,174,85,142,91"/>
-<area shape="rect" id="Node000005" href="$render__sdl_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="189,109,340,137"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="141,104,175,110,170,112,141,109"/>
-<area shape="rect" id="Node000007" href="$render__sdl_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="216,161,313,189"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="106,110,190,146,210,156,204,155,188,151,105,115"/>
-<area shape="rect" id="Node000003" href="$render__sdl_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="388,5,524,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="321,17,375,18,370,20,322,22"/>
-<area shape="rect" id="Node000006" href="$render__sdl_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="427,135,485,162"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="341,131,414,143,409,143,340,136"/>
-<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="313,166,409,155,414,154,314,171"/>
+<area shape="rect" id="Node000001" title="efface l ecran et dessine le fond marin" alt="" coords="5,107,141,134"/>
+<area shape="rect" id="Node000002" href="$sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="208,5,321,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,104,187,49,215,38,211,41,190,54,98,108"/>
+<area shape="rect" id="Node000004" href="$sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="388,83,532,110"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="127,104,188,93,283,87,375,90,370,92,284,92,189,98,129,109"/>
+<area shape="rect" id="Node000005" href="$sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="189,159,340,186"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="127,132,199,153,194,155,127,138"/>
+<area shape="rect" id="Node000007" href="$sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="198,107,330,134"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="140,118,185,119,180,122,142,123"/>
+<area shape="rect" id="Node000008" href="$sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="216,211,313,238"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="93,132,137,164,190,195,206,205,200,204,187,200,134,168,92,137"/>
+<area shape="rect" id="Node000003" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="392,5,528,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="321,17,379,18,374,20,322,22"/>
+<area shape="rect" id="Node000006" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="431,159,489,186"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="340,170,418,172,413,173,341,175"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="330,110,375,107,370,108,332,115"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="320,132,418,160,413,161,319,138"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="313,209,414,184,419,184,314,214"/>
 </map>

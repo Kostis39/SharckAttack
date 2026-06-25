@@ -1,8 +1,8 @@
 <map id="Rules_alignment_shark" name="Rules_alignment_shark">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,179,121"/>
-<area shape="rect" id="Node000002" href="$vector_8c.html#aae4f47f60e365d136220ae860be5516e" title=" " alt="" coords="227,43,351,70"/>
+<area shape="rect" id="Node000001" title="règle d&#39;alignement du requin sur la direction moyenne des poissons" alt="" coords="5,93,179,121"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#aae4f47f60e365d136220ae860be5516e" title="normalise un vecteur avec une valeur par défaut" alt="" coords="227,43,351,70"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,90,220,73,215,76,149,95"/>
-<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="399,5,509,33"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="399,5,509,33"/>
 <area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="110,91,161,58,192,41,226,29,266,19,307,14,386,14,381,16,308,20,267,25,227,34,195,46,163,62,114,95"/>
 <area shape="rect" id="Node000004" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="402,69,506,97"/>
 <area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="179,99,389,85,386,90,179,104"/>

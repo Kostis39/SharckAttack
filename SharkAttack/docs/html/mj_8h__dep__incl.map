@@ -1,9 +1,11 @@
 <map id="include/mj.h" name="include/mj.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="108,5,209,33"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="166,5,268,33"/>
 <area shape="rect" id="Node000002" href="$game_8c.html" title=" " alt="" coords="5,81,98,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,42,72,83,69,78,124,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,42,82,83,80,78,172,37"/>
 <area shape="rect" id="Node000003" href="$mj_8c.html" title=" " alt="" coords="122,81,194,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,47,160,82,156,79,156,51"/>
-<area shape="rect" id="Node000004" href="$test__mj_8c.html" title=" " alt="" coords="218,81,336,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,39,258,80,253,81,191,44"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,44,170,83,167,78,194,46"/>
+<area shape="rect" id="Node000004" href="$reinforce_8c.html" title=" " alt="" coords="219,81,332,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,43,268,81,263,80,236,48"/>
+<area shape="rect" id="Node000005" href="$test__mj_8c.html" title=" " alt="" coords="357,81,474,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="267,36,383,80,377,81,266,41"/>
 </map>

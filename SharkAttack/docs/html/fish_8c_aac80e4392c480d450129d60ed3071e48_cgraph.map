@@ -1,10 +1,10 @@
 <map id="fish_apply_action" name="fish_apply_action">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,140,109"/>
+<area shape="rect" id="Node000001" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="5,81,140,109"/>
 <area shape="rect" id="Node000002" href="$vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="208,5,302,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,78,207,37,204,42,109,83"/>
-<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="370,69,480,97"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="370,69,480,97"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,90,355,83,353,88,140,96"/>
-<area shape="rect" id="Node000004" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="188,107,322,134"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="188,107,322,134"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,102,175,109,170,110,140,107"/>
 <area shape="rect" id="Node000005" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="374,133,477,161"/>
 <area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="99,107,140,127,188,143,232,150,276,153,355,154,361,154,276,158,231,155,187,148,138,132,98,112"/>

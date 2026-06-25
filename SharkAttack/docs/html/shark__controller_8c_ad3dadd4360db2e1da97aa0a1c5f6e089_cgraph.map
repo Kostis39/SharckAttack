@@ -1,8 +1,8 @@
 <map id="Rules_pursuit" name="Rules_pursuit">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,115,121"/>
-<area shape="rect" id="Node000002" href="$vector_8c.html#aae4f47f60e365d136220ae860be5516e" title=" " alt="" coords="163,43,287,70"/>
+<area shape="rect" id="Node000001" title="règle de poursuite vers le poisson la plus proche" alt="" coords="5,93,115,121"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#aae4f47f60e365d136220ae860be5516e" title="normalise un vecteur avec une valeur par défaut" alt="" coords="163,43,287,70"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,90,165,74,161,77,109,95"/>
-<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="335,5,445,33"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="335,5,445,33"/>
 <area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="73,91,110,58,135,41,162,29,201,18,243,12,322,11,317,14,243,17,203,23,164,34,138,46,114,62,77,95"/>
 <area shape="rect" id="Node000004" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="338,69,442,97"/>
 <area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="115,101,324,86,322,90,116,106"/>

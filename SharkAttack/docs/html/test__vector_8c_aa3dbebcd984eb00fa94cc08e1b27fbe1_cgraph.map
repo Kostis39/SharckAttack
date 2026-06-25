@@ -1,11 +1,11 @@
 <map id="test_Vector_limit_above_max" name="test_Vector_limit_above_max">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,220,33"/>
-<area shape="rect" id="Node000002" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="597,5,708,33"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="597,5,708,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,13,376,10,549,11,584,15,579,15,549,16,376,15,220,18"/>
 <area shape="rect" id="Node000003" href="$vector_8c.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="268,31,367,58"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,30,255,36,249,37,220,35"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="367,38,584,24,579,25,368,43"/>
-<area shape="rect" id="Node000004" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="415,56,549,84"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="415,56,549,84"/>
 <area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="367,49,402,57,397,57,367,55"/>
 <area shape="rect" id="Node000005" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="601,81,704,109"/>
 <area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="340,56,375,77,416,93,459,100,504,103,583,104,588,103,503,109,458,106,414,98,372,81,338,61"/>

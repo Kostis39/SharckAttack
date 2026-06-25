@@ -1,5 +1,5 @@
 <map id="Rules_alignment" name="Rules_alignment">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,136,33"/>
+<area shape="rect" id="Node000001" title="règle d&#39;alignement, retourne la direction moyenne des voisins" alt="" coords="5,5,136,33"/>
 <area shape="rect" id="Node000002" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="184,5,276,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,17,171,19,166,19,136,22"/>
 </map>

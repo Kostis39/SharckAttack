@@ -56,7 +56,7 @@
 <area shape="poly" id="edge12_Node000009_Node000007" title=" " alt="" coords="296,279,420,255,416,258,299,283"/>
 <area shape="rect" id="Node000011" href="$vector_8c.html#a4d18706bde5519ef90b2bb4a1311fc55" title=" " alt="" coords="424,809,548,837"/>
 <area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="302,814,410,819,406,822,304,819"/>
-<area shape="rect" id="Node000012" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="837,541,947,569"/>
+<area shape="rect" id="Node000012" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="837,541,947,569"/>
 <area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="547,809,603,795,666,773,729,744,787,705,816,676,841,643,876,585,880,581,845,646,820,680,790,709,732,749,668,778,604,800,550,814"/>
 <area shape="rect" id="Node000013" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="663,1081,756,1109"/>
 <area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="530,835,560,851,584,873,600,899,607,925,607,972,608,1018,616,1041,632,1064,652,1081,646,1080,628,1068,611,1043,603,1019,602,972,602,925,595,902,580,877,557,855,530,840"/>
@@ -70,7 +70,7 @@
 <area shape="rect" id="Node000021" href="$vector_8c.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="436,636,535,664"/>
 <area shape="poly" id="edge29_Node000020_Node000021" title=" " alt="" coords="312,560,342,573,358,585,367,598,376,611,390,622,424,637,419,639,388,627,372,614,363,601,354,589,340,577,314,565"/>
 <area shape="poly" id="edge30_Node000021_Node000012" title=" " alt="" coords="535,637,788,579,824,572,819,575,789,584,537,642"/>
-<area shape="rect" id="Node000022" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="642,668,777,696"/>
+<area shape="rect" id="Node000022" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="642,668,777,696"/>
 <area shape="poly" id="edge31_Node000021_Node000022" title=" " alt="" coords="535,654,629,669,624,671,536,659"/>
 <area shape="rect" id="Node000023" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="840,848,944,876"/>
 <area shape="poly" id="edge34_Node000021_Node000023" title=" " alt="" coords="535,657,583,673,608,688,632,705,856,839,851,840,629,709,605,692,581,678,536,662"/>

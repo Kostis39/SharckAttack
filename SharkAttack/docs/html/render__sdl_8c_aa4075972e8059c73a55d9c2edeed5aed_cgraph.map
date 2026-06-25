@@ -1,9 +1,11 @@
 <map id="Draw_score" name="Draw_score">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,32,103,60"/>
-<area shape="rect" id="Node000002" href="$render__sdl_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title=" " alt="" coords="181,5,272,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,36,168,27,163,30,104,41"/>
-<area shape="rect" id="Node000003" href="$render__sdl_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="151,57,302,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,50,138,57,133,58,103,56"/>
-<area shape="rect" id="Node000004" href="$render__sdl_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="350,57,408,85"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="302,69,337,71,331,71,302,74"/>
+<area shape="rect" id="Node000001" title="dessine le score en haut a droite de l ecran le score correspond au nbr de poissons mangés par le req..." alt="" coords="5,57,103,85"/>
+<area shape="rect" id="Node000002" href="$sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="175,5,278,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,54,166,36,162,40,104,59"/>
+<area shape="rect" id="Node000003" href="$sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="181,57,272,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,69,168,70,163,73,103,74"/>
+<area shape="rect" id="Node000004" href="$sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="151,109,302,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="103,83,166,103,161,105,102,88"/>
+<area shape="rect" id="Node000005" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="350,109,408,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="302,121,337,123,331,123,302,126"/>
 </map>

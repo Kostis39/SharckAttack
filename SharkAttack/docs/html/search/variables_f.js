@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['width_0',['width',['../structFishPerception.html#a2474a5474cbff19523a51eb1de01cda4',1,'FishPerception::width'],['../structSharkPerception.html#a2474a5474cbff19523a51eb1de01cda4',1,'SharkPerception::width'],['../structWorld.html#a2474a5474cbff19523a51eb1de01cda4',1,'World::width']]],
-  ['window_1',['window',['../structSDLDisplay.html#aaa8e409e04dcf575ef63fd5fb3db06f9',1,'SDLDisplay']]],
-  ['world_2',['world',['../structGame.html#a38026b801fec560c0322d4e5b6cab8be',1,'Game']]]
+  ['vect_0',['vect',['../structVectorRule.html#af17fa07d3ddfd24a41bbbd68680cd6ce',1,'VectorRule']]],
+  ['velocity_1',['velocity',['../structFish.html#a92ce6155d43ad196be88b94ad73b7fe4',1,'Fish::velocity'],['../structShark.html#a92ce6155d43ad196be88b94ad73b7fe4',1,'Shark::velocity']]],
+  ['vision_5fangle_2',['vision_angle',['../structFish.html#a7e8350e51f4d4b89b69c54a313d169d7',1,'Fish']]]
 ];

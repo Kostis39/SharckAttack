@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['world_0',['World',['../structWorld.html',1,'']]]
+  ['trajectory_0',['Trajectory',['../structTrajectory.html',1,'']]],
+  ['trajectorycalculation_1',['TrajectoryCalculation',['../structTrajectoryCalculation.html',1,'']]]
 ];

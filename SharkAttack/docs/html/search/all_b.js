@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['local_5fnormalize_0',['local_normalize',['../vector_8h.html#aae4f47f60e365d136220ae860be5516e',1,'local_normalize(Vector v):&#160;vector.c'],['../vector_8c.html#aae4f47f60e365d136220ae860be5516e',1,'local_normalize(Vector v):&#160;vector.c']]]
+  ['juin_0',['19 JUIN',['../md_suivi.html#autotoc_md1',1,'']]],
+  ['juin_1',['22 Juin',['../md_suivi.html#autotoc_md4',1,'']]]
 ];

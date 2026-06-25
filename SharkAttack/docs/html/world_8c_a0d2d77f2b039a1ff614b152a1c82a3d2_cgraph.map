@@ -1,13 +1,13 @@
 <map id="World_destroy" name="World_destroy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,109,120,137"/>
+<area shape="rect" id="Node000001" title="libère un monde et tout ses éléments" alt="" coords="5,109,120,137"/>
 <area shape="rect" id="Node000002" href="$collider_8c.html#a0800e8e8957986ce4c2593ac68368b87" title=" " alt="" coords="168,5,343,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,107,117,75,166,43,185,37,181,40,169,48,120,79,81,111"/>
-<area shape="rect" id="Node000003" href="$fish_8c.html#ad32bad07f006130e31d4e163397718e1" title=" " alt="" coords="183,57,328,85"/>
+<area shape="rect" id="Node000003" href="$fish_8c.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="183,57,328,85"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,106,189,88,185,91,118,111"/>
-<area shape="rect" id="Node000004" href="$rules__set_8c.html#a558ba06613eec7614aa2ae5979c517c2" title=" " alt="" coords="175,109,336,137"/>
+<area shape="rect" id="Node000004" href="$theta__set_8c.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="175,109,336,137"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="119,121,162,122,157,124,121,126"/>
-<area shape="rect" id="Node000005" href="$shark_8c.html#a4055f670b1b1fcd10cecd89b23d223aa" title=" " alt="" coords="198,161,312,189"/>
+<area shape="rect" id="Node000005" href="$shark_8c.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="198,161,312,189"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="117,135,189,155,184,158,117,140"/>
-<area shape="rect" id="Node000006" href="$rules__set_8c.html#a000abfaf56b4ca6af8ba4bb201fee361" title=" " alt="" coords="185,213,326,241"/>
+<area shape="rect" id="Node000006" href="$reinforce_8c.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="185,213,326,241"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="80,135,120,167,169,198,186,208,181,207,166,203,117,171,79,140"/>
 </map>
