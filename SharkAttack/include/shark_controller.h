@@ -9,6 +9,9 @@
 #include "vector.h"
 
 typedef struct StepTrajectory StepTrajectory;
+
+typedef enum { Front = 0, Back, Left, Right, Count } ZoneDirection;
+
 typedef struct {
     Shark self; /**< La perception de lui même. */
 
@@ -24,6 +27,13 @@ typedef struct {
 
     int width;  /** Largeur de l'écran. */
     int height; /** Hauteur de l'écran. */
+
+    // perception par zone en fonction de la direction du requin (avant,
+    // arrière, gauche, droite)
+    int zone_count[Count];
+    Vector zone_center_of_mass[Count];
+    Vector zone_avg_velocity[Count];
+    bool zone_has_prey_visible[Count];
 } SharkPerception;
 
 /**

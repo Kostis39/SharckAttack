@@ -7,6 +7,7 @@
 #include "collider.h"
 #include "fish.h"
 #include "shark.h"
+#include "sound.h"
 #include "world.h"
 
 /**
@@ -54,6 +55,6 @@ void Destroy_sdl_display(SDLDisplay *display);
  * @param right_world monde affiché à droite
  */
 void Render_two_worlds(SDLDisplay *display, World *left_world,
-                       World *right_world);
+                       World *right_world, AudioManager *audio);
 
 #endif

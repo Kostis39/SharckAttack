@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "render_sdl.h"
+#include "sound.h"
 #include "world.h"
 
 /**
@@ -11,8 +12,8 @@
 typedef struct {
     World *world1; /**< Le monde du jeu, contenant les poissons et le requin */
     World *world2;
-    SDLDisplay display; /**< L'affichage SDL du jeu */
-
+    SDLDisplay display;  /**< L'affichage SDL du jeu */
+    AudioManager *audio; /**< le son du jeu*/
     float time;
     bool paused; /**< Indique si le jeu est en pause : true ou non : false */
 } Game;

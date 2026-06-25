@@ -1,16 +1,21 @@
 # make | compile et link
 # make TARGET=cible | compile cible.c
 # make clean | supprime les dossier de build
+# make run | lance le programme en mode SDL
+# make run-term | lance le programme en mode terminal
+# make run-learn | lance le programme en mode apprentissage
+# make doc | génère la documentation avec Doxygen
 
 OUTPUT_FOLDER=bin
 OBJECTS_FOLDER=build
 SOURCES_FOLDER=src
 TESTS_FOLDER=tests
 UNITY_FOLDER=unity
+DOC_FOLDER=docs
 
 CFLAGS=-Wall -Wextra -g -Iinclude -Iunity
 SDL_FLAGS=`sdl2-config --cflags`
-SDL_LIB=`sdl2-config --libs` -lSDL2_image -lSDL2_ttf -lm
+SDL_LIB=`sdl2-config --libs` -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lm
 
 TEST_CFLAGS=$(CFLAGS)
 TEST_INCLUDES=-I$(SOURCES_FOLDER) -I$(UNITY_FOLDER)
@@ -29,7 +34,7 @@ endif
 OBJECTS=$(patsubst $(SOURCES_FOLDER)/%.c,$(OBJECTS_FOLDER)/%.o,$(SOURCES))
 OUTPUT_NAME=Sharkattack
 
-all: link
+all: run
 
 link: $(OBJECTS)
 	if [ ! -d $(OUTPUT_FOLDER) ]; then mkdir $(OUTPUT_FOLDER); fi
@@ -76,10 +81,25 @@ run_test_%:
 create_objects_directory:
 	if [ ! -d $(OBJECTS_FOLDER) ]; then mkdir $(OBJECTS_FOLDER); fi
 
-.PHONY: clean test run_test all link
+# --- Lancement du programme ---
+run: link
+	./$(OUTPUT_FOLDER)/$(OUTPUT_NAME)
+ 
+run-term: link
+	./$(OUTPUT_FOLDER)/$(OUTPUT_NAME) term
+ 
+run-learn: link
+	./$(OUTPUT_FOLDER)/$(OUTPUT_NAME) learn
+
+# --- Documentation Doxygen ---
+doc:
+	doxygen Doxyfile
+	@echo "Documentation generee dans ./$(DOC_FOLDER)"
+
+doc-clean:
+	rm -rf $(DOC_FOLDER)/
+
+.PHONY: clean test run_test all link run run-term run-learn doc doc-clean
 
 clean:
 	rm -rf $(OUTPUT_FOLDER)/ $(OBJECTS_FOLDER)/
-
-run: link
-	./$(OUTPUT_FOLDER)/$(OUTPUT_NAME)

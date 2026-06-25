@@ -3,13 +3,19 @@
 
 #define PI 3.14159265358979323846
 
-enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
+enum Rules {
+    Rules_Center = 0,
+    Rules_Alignment,
+    Rules_Pursuit,
+    Rules_zone_density,
+    Rules_Lenght
+};
 
 #define FILE_LOG "logs.txt"
 /* Poids des règles de shark*/
 #define THETA_FILE "params.txt"
 
-#define STEP_LOG 1
+#define STEP_LOG 100
 
 #define NB_OCCURRENCE 10000
 
@@ -53,8 +59,9 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 
 #define RANDOM_SEED 42
 
-#define COLLIDER_RATIO 25 /* mesure au plus un dixième de la largeur du       \
-                             monde*/
+#define COLLIDER_RATIO                                                         \
+    25 /* mesure au plus un dixième de la largeur du                          \
+          monde*/
 #define COLLIDERS_NB 5
 
 #define SHARK_ATTACK_RANGE 30
@@ -62,5 +69,7 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 #define BENCHMARK_ITERATIONS 2000
 
 #define NB_THREADS 10
+
+#define AUDIO_PATH "assets/"
 
 #endif /* CONFIG_H */

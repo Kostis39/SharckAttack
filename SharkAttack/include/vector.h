@@ -28,6 +28,14 @@ Vector Vector_sub(Vector a, Vector b);
 Vector Vector_scale(Vector v, float k);
 
 /**
+ * @brief calcule le produit scalaire de deux vecteurs
+ * @param a premier vecteur
+ * @param b second vecteur
+ * @return produit scalaire de a et b
+ */
+float Vector_dot(Vector a, Vector b);
+
+/**
  * @brief calcule la norme d'un vecteur
  * @param v vecteur
  * @return norme du vecteur

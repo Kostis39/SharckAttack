@@ -1,7 +1,7 @@
 #include "render_sdl.h"
+#include "SDL.h"
 #include "collider.h"
 #include "sdl_draw_tools.h"
-#include <SDL2/SDL_ttf.h>
 #include "world.h"
 #include <math.h>
 #include <stdio.h>
@@ -80,12 +80,6 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         fprintf(stderr, "Erreur SDL_Init : %s\n", SDL_GetError());
-        return false;
-    }
-
-    if (TTF_Init() != 0) {
-        fprintf(stderr, "Erreur TTF_Init : %s\n", TTF_GetError());
-        SDL_Quit();
         return false;
     }
 
@@ -777,7 +771,12 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
     }
 }
 
+<<<<<<< HEAD
 void Render_two_worlds(SDLDisplay *display, World *left_world, World *right_world) {
+=======
+void Render_two_worlds(SDLDisplay *display, World *left_world,
+                       World *right_world, AudioManager *audio) {
+>>>>>>> ea252e23cb6ab19a5bdfa58dbe9453937560cb49
     static int texture_w = 0;
     static int texture_h = 0;
     static int window_was_doubled = 0;
@@ -862,6 +861,7 @@ void Render_two_worlds(SDLDisplay *display, World *left_world, World *right_worl
         g_score = world->fish_eaten;
 
         if (g_score > old_score[p]) {
+            audio_play(audio->fish_eaten);
             gain[p] = g_score - old_score[p];
             flash[p] = 10;
         } else if (flash[p] > 0) {
