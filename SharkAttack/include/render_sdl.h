@@ -17,8 +17,10 @@
 typedef struct {
     SDL_Window *window;      /**< Pointeur vers la fenêtre SDL */
     SDL_Renderer *renderer;  /**< Pointeur vers le rendu SDL */
-    SDL_Texture *left_scene; /**< Texture du monde gauche (Render_two_worlds) */
+    SDL_Texture *left_scene;  /**< Texture du monde gauche (Render_two_worlds) */
     SDL_Texture *right_scene; /**< Texture du monde droit (Render_two_worlds) */
+    SDL_Texture *icon_mute;   /**< Texture icône mute */
+    SDL_Texture *icon_unmute; /**< Texture icône volume */
 } SDLDisplay;
 
 /**
@@ -54,7 +56,14 @@ void Destroy_sdl_display(SDLDisplay *display);
  * @param left_world monde affiché à gauche
  * @param right_world monde affiché à droite
  */
+#define BTN_SIZE 48
+#define BTN_MARGIN 8
+
 void Render_two_worlds(SDLDisplay *display, World *left_world,
                        World *right_world, AudioManager *audio);
+
+bool Load_mute_icons(SDLDisplay *display, const char *path);
+void Destroy_mute_icons(SDLDisplay *display);
+void Draw_mute_button(SDLDisplay *display, AudioManager *audio);
 
 #endif

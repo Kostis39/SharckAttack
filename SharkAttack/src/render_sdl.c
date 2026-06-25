@@ -1,9 +1,10 @@
 #include "render_sdl.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
 #include "collider.h"
 #include "sdl_draw_tools.h"
 #include "world.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include <math.h>
 #include <stdio.h>
 
@@ -85,10 +86,10 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
     }
 
     if (TTF_Init() != 0) {
-    fprintf(stderr, "Erreur TTF_Init : %s\n", TTF_GetError());
-    SDL_Quit();
-    return false;
-    } 
+        fprintf(stderr, "Erreur TTF_Init : %s\n", TTF_GetError());
+        SDL_Quit();
+        return false;
+    }
 
     display->window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
                                        SDL_WINDOWPOS_CENTERED, width, height,
@@ -423,6 +424,90 @@ void Draw_shark(SDLDisplay *display, Shark *shark) {
  * le score correspond au nbr de poissons mangés par le requin
  * @param display struct contenant le renderer
  */
+static SDL_Texture *load_icon_white(SDL_Renderer *r, const char *path) {
+    SDL_Surface *surf = IMG_Load(path);
+    if (!surf) {
+        fprintf(stderr, "load_icon_white: IMG_Load failed: %s\n",
+                SDL_GetError());
+        return NULL;
+    }
+
+    /* Inverser les pixels : noir → blanc, garder l'alpha */
+    SDL_LockSurface(surf);
+    int bpp = surf->format->BytesPerPixel;
+    for (int y = 0; y < surf->h; y++) {
+        for (int x = 0; x < surf->w; x++) {
+            Uint8 *p = (Uint8 *)surf->pixels + y * surf->pitch + x * bpp;
+            if (bpp == 4) {
+                /* RGBA : inverser RGB, garder A */
+                p[0] = 255 - p[0];
+                p[1] = 255 - p[1];
+                p[2] = 255 - p[2];
+            } else if (bpp == 3) {
+                p[0] = 255 - p[0];
+                p[1] = 255 - p[1];
+                p[2] = 255 - p[2];
+            }
+        }
+    }
+    SDL_UnlockSurface(surf);
+
+    SDL_Texture *tex = SDL_CreateTextureFromSurface(r, surf);
+    SDL_FreeSurface(surf);
+    return tex;
+}
+
+bool Load_mute_icons(SDLDisplay *display, const char *path) {
+    if (!display || !display->renderer)
+        return false;
+
+    char buf[256];
+    snprintf(buf, sizeof(buf), "%s%s", path, "mute.png");
+    display->icon_mute = load_icon_white(display->renderer, buf);
+
+    snprintf(buf, sizeof(buf), "%s%s", path, "volume-high.png");
+    display->icon_unmute = load_icon_white(display->renderer, buf);
+
+    if (!display->icon_mute || !display->icon_unmute) {
+        fprintf(stderr, "Load_mute_icons: %s\n", SDL_GetError());
+        return false;
+    }
+    return true;
+}
+
+void Destroy_mute_icons(SDLDisplay *display) {
+    if (!display)
+        return;
+    if (display->icon_mute)
+        SDL_DestroyTexture(display->icon_mute);
+    if (display->icon_unmute)
+        SDL_DestroyTexture(display->icon_unmute);
+    display->icon_mute = NULL;
+    display->icon_unmute = NULL;
+}
+
+void Draw_mute_button(SDLDisplay *display, AudioManager *audio) {
+    if (!display || !display->renderer || !audio)
+        return;
+
+    SDL_Renderer *r = display->renderer;
+
+    int window_w = 0, window_h = 0;
+    SDL_GetRendererOutputSize(r, &window_w, &window_h);
+
+    int btn_x = window_w - BTN_SIZE - BTN_MARGIN;
+    int btn_y = BTN_MARGIN;
+
+    SDL_Rect btn = {btn_x, btn_y, BTN_SIZE, BTN_SIZE};
+
+    /* Icône (blanche, fond transparent) */
+    SDL_Texture *icon =
+        audio->muted ? display->icon_mute : display->icon_unmute;
+    if (icon) {
+        SDL_RenderCopy(r, icon, NULL, &btn);
+    }
+}
+
 void Draw_score(SDLDisplay *display) {
     SDL_Renderer *r = display->renderer;
     int w = 0, h = 0;
@@ -850,8 +935,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
 
         if (g_score > old_score[p]) {
             if (audio != NULL)
-                audio_play(audio->fish_eaten);
-            
+                audio_play(audio->fish_eaten, audio);
+
             gain[p] = g_score - old_score[p];
             flash[p] = 10;
         } else if (flash[p] > 0) {
@@ -1009,6 +1094,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
             Draw_result_overlay(r, left_screen, 0, remaining_at_end[0]);
         }
     }
+
+    Draw_mute_button(display, audio);
 
     SDL_RenderPresent(r);
 }

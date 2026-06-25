@@ -51,6 +51,9 @@ bool Game_init(Game *game, int width, int height, int nb_fish, int nb_collider,
     audio_load(AUDIO_PATH, game->audio);
     audio_load_music(AUDIO_PATH, game->audio);
     audio_play_music(game->audio);
+    if (!Load_mute_icons(&game->display, AUDIO_PATH)) {
+        fprintf(stderr, "[WARN] Mute icons not loaded\n");
+    }
 
     free(shark_theta);
 
@@ -112,6 +115,18 @@ void Game_run_SDL(bool use_bench, int seed_for_worlds) {
                     break;
                 }
                 break;
+            case SDL_MOUSEBUTTONDOWN: {
+                int mx = event.button.x;
+                int my = event.button.y;
+                int ww = 0, wh = 0;
+                SDL_GetRendererOutputSize(game.display.renderer, &ww, &wh);
+                int btn_x = ww - BTN_SIZE - BTN_MARGIN;
+                if (mx >= btn_x && mx < btn_x + BTN_SIZE &&
+                    my >= BTN_MARGIN && my < BTN_MARGIN + BTN_SIZE) {
+                    audio_toggle_mute(game.audio);
+                }
+                break;
+            }
             default:
                 break;
             }
@@ -181,5 +196,6 @@ void Game_destroy(Game *game) {
     audio_quit(game->audio);
     World_destroy(game->world1);
     World_destroy(game->world2);
+    Destroy_mute_icons(&game->display);
     Destroy_sdl_display(&game->display);
 }

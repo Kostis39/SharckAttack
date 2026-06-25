@@ -49,9 +49,12 @@ void audio_load(const char *path, AudioManager *audio) {
     }
 }
 
-void audio_play(Mix_Chunk *sound) {
+void audio_play(Mix_Chunk *sound, AudioManager *audio) {
     if (!sound) {
         fprintf(stderr, "audio_play: sound is NULL!\n");
+        return;
+    }
+    if (audio && audio->muted) {
         return;
     }
     Mix_PlayChannel(1, sound, 0);
@@ -67,6 +70,7 @@ int audio_load_music(const char *path, AudioManager *audio) {
         return -1;
     }
     printf("[AUDIO] Music loaded: %s\n", path_buf);
+    Mix_VolumeMusic(MIX_MAX_VOLUME);
     return 0;
 }
 
@@ -75,7 +79,23 @@ void audio_play_music(AudioManager *audio) {
         fprintf(stderr, "audio_play_music: no music loaded\n");
         return;
     }
+    if (audio->muted) {
+        return;
+    }
     Mix_PlayMusic(audio->bg_music, -1);
+}
+
+void audio_toggle_mute(AudioManager *audio) {
+    if (!audio)
+        return;
+    audio->muted = !audio->muted;
+    if (audio->muted) {
+        Mix_HaltMusic();
+    } else {
+        if (audio->bg_music) {
+            Mix_PlayMusic(audio->bg_music, -1);
+        }
+    }
 }
 
 void audio_stop_music(void) {
