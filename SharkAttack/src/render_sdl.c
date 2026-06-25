@@ -777,8 +777,7 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
     }
 }
 
-void Render_two_worlds(SDLDisplay *display, World *left_world,
-                       World *right_world) {
+void Render_two_worlds(SDLDisplay *display, World *left_world, World *right_world) {
     static int texture_w = 0;
     static int texture_h = 0;
     static int window_was_doubled = 0;
@@ -791,6 +790,7 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
 
     static int remaining_at_end[2] = {0, 0};
     static int winner = -1; /**< personne n'a encore gagné */
+    static int intro_start = 0;
 
     if (display == NULL || display->renderer == NULL || left_world == NULL)
         return;
@@ -946,6 +946,27 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     SDL_SetRenderDrawColor(r, 90, 180, 220, 180);
     SDL_RenderDrawRect(r, &left_screen);
     SDL_RenderDrawRect(r, &right_screen);
+
+    /*
+    * Intro de debut :
+    * pendant 3 secondes, on affiche JOUEUR / BOT avec un compte a rebours.
+    */
+    int intro_now = (int)SDL_GetTicks();
+
+    if (intro_start == 0)
+        intro_start = intro_now;
+
+    int intro_elapsed = intro_now - intro_start;
+
+    if (intro_elapsed < 3000 && winner == -1) {
+        int number = 3 - intro_elapsed / 1000;
+
+        if (number < 1)
+            number = 1; 
+
+        Draw_intro_countdown(r, left_screen, right_screen, number,
+                          left_world->shark, right_world->shark);
+    }
 
     /*
     * Fin de partie :

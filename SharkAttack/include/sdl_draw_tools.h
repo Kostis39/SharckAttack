@@ -2,6 +2,7 @@
 #define SDL_DRAW_TOOLS_H
 
 #include "vector.h"
+#include "shark.h"
 #include <SDL2/SDL.h>
 
 /**
@@ -137,5 +138,22 @@ void Draw_circle_outline(SDL_Renderer *r, int cx, int cy, int radius);
  * @param length longueur graphique du vecteur
  */
 void Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length);
+
+/**
+ * @brief dessine l'introduction avec compte a rebours.
+ *
+ * La partie gauche represente le joueur.
+ * La partie droite represente le bot.
+ *
+ * @param r renderer SDL utilise pour dessiner
+ * @param left_zone zone gauche de l'ecran
+ * @param right_zone zone droite de l'ecran
+ * @param number nombre affiche pendant le compte a rebours
+ * @param left_shark requin gauche
+ * @param right_shark requin droit
+ */
+void Draw_intro_countdown(SDL_Renderer *r, SDL_Rect left_zone,
+                          SDL_Rect right_zone, int number,
+                          Shark *left_shark, Shark *right_shark);
 
 #endif

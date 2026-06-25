@@ -62,6 +62,7 @@ void Game_run_SDL(bool use_bench, int seed_for_worlds) {
 
     bool quit = false;
     int it = 0;
+    int intro_start = (int)SDL_GetTicks();
     SDL_Event event;
     while (!quit) {
         Render_two_worlds(&game.display, game.world1, game.world2);
@@ -93,7 +94,9 @@ void Game_run_SDL(bool use_bench, int seed_for_worlds) {
                 break;
             }
         }
-        if (!game.paused) {
+        int intro_running = ((int)SDL_GetTicks() - intro_start < 3000);
+
+        if (!game.paused && !intro_running) {
             Game_step(game.world1);
             Game_step(game.world2);
         }
