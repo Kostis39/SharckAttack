@@ -73,17 +73,6 @@ void Draw_colliders(SDLDisplay *display, Collider *colliders,
     }
 }
 
-/**
- * @brief initialisation de sdl
- *
- * @param display struct contenant la fenetre et le renderer
- * @param title titre de la fenetre
- * @param width largeur
- * @param height hauteur
- * @return true si init est reussi
- * @return false
- */
-
 bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
     if (display == NULL)
         return false;
@@ -124,12 +113,6 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
 
     return true;
 }
-
-/**
- * @brief cette fct libere le renderer, detruit la fenetre puis ferme sdl
- *
- * @param display struct sdl a detruire
- */
 
 void Destroy_sdl_display(SDLDisplay *display) {
     if (display == NULL)
@@ -228,7 +211,6 @@ void Clear_sdl_display(SDLDisplay *display) {
  * @param display struct contenant le renderer
  * @param fish poisson à dessiner
  */
-
 void Draw_fish(SDLDisplay *display, Fish *fish) {
     if (display == NULL || display->renderer == NULL || fish == NULL)
         return;
@@ -300,7 +282,6 @@ void Draw_fish(SDLDisplay *display, Fish *fish) {
  * @param display struct contenant le renderer
  * @param shark requin à dessiner
  */
-
 void Draw_shark(SDLDisplay *display, Shark *shark) {
     if (display == NULL || display->renderer == NULL || shark == NULL)
         return;
@@ -628,7 +609,6 @@ void Draw_fish_skeleton(SDLDisplay *display, Fish *fish, int frame) {
  * @param nb_fish nbr de poissons dans le tableau
  * @param shark requin du monde
  */
-
 void Draw_world(SDLDisplay *display, World *world) {
     if (display == NULL || display->renderer == NULL || world == NULL)
         return;
@@ -783,20 +763,6 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
     }
 }
 
-/**
- * @brief affiche deux vues dans une seule fenêtre.
- *
- * Le premier monde est affiché à gauche.
- * Le deuxième monde est affiché à droite.
- *
- * pour l'instant, Render_world appelle cette fonction avec le même monde
- * deux fois? plus tard, appeler directement :
- * Render_two_worlds(display, world_bot, world_user);
- *
- * @param display structure SDL contenant la fenêtre et le renderer
- * @param left_world monde affiché à gauche
- * @param right_world monde affiché à droite
- */
 void Render_two_worlds(SDLDisplay *display, World *left_world,
                        World *right_world) {
     static int texture_w = 0;
