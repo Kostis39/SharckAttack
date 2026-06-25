@@ -29,13 +29,15 @@ typedef struct {
     int height; /**< Hauteur en pixel de notre monde */
 } FishPerception;
 
-/* Règles réactives individuelles : chacune transforme une FishPerc  en une
- * force désirée, sans aucun état interne ni mémoire. */
-Vector Rules_separation(Fish *self, Vector separation);
-Vector Rules_alignment(Fish *self, Vector avg_velocity);
-Vector Rules_cohesion(Fish *self, Vector center_of_mass);
-Vector Rules_border_repulsion(Fish *self, int width, int height);
-
+/**
+ * @brief calcule l'action du poisson combine linéairement toutes les règles
+ * avec leurs poids
+ * @param p perception du poisson
+ * @param theta poids des règles
+ * @param width largeur du monde
+ * @param height hauteur du monde
+ * @return vecteur vitesse
+ */
 Vector fish_choose_action(FishPerception *perception, RulesSetFish *rules_set,
                           int width, int height);
 
