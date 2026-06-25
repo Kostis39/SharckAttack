@@ -66,10 +66,70 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     float dist = Vector_length(to_fish);
 
     // Plus le poisson est proche, plus on va vers le poisson
-    Vector max = {width * width, height * height};
+    Vector max = {width, height};
     float intensity = 1.0f / (1.0f + (dist / Vector_length(max)));
 
     return Vector_scale(local_normalize(to_fish), intensity);
+}
+
+/**
+ * @brief règle d'orientation vers le centre de masse de la zone
+ *        directionnelle la plus dense (avant / arrière / gauche / droite)
+ * @param shark structure du requin
+ * @param perception perception du requin
+ * @return vecteur de densité de zone
+ * @note Principe : on calcule un score par zone (nombre de poissons pondéré par
+ * la proximité du centre de masse de la zone), on identifie la meilleure zone,
+ * puis on retourne un vecteur vers le centre de masse de cette zone
+ */
+Vector Rules_zone_density_shark(Shark shark, SharkPerception perception) {
+
+    float scores[Count];
+    float total_score = 0.0f;
+    bool found_zone = false;
+    float best_score = -1.0f;
+    ZoneDirection best_zone;
+
+    Vector diag = {perception.width, perception.height};
+    float dist_max = Vector_length(diag);
+
+    for (int z = 0; z < Count; z++) {
+        if (!perception.zone_has_prey_visible[z]) {
+            scores[z] = 0.0f;
+            continue;
+        }
+
+        // Distance du centre de masse de la zone
+        Vector to_zone_center =
+            Vector_sub(perception.zone_center_of_mass[z], shark.pos);
+        float dist = Vector_length(to_zone_center);
+
+        // Score : plus de poissons + plus proches => meilleur score
+        scores[z] = (float)perception.zone_count[z] / (1.0f + dist / dist_max);
+
+        total_score += scores[z];
+
+        if (scores[z] > best_score) {
+            best_score = scores[z];
+            best_zone = (ZoneDirection)z;
+            found_zone = true;
+        }
+    }
+
+    if (!found_zone || total_score < 1e-6f) {
+        // Aucune zone avec des poissons visibles
+        return Vector_init();
+    }
+
+    // Direction réelle vers le centre de masse de la meilleure zone
+    Vector to_best_center =
+        Vector_sub(perception.zone_center_of_mass[best_zone], shark.pos);
+    float dist = Vector_length(to_best_center);
+
+    // Intensité proportionnelle à la distance
+    float intensity = dist / dist_max;
+
+    return Vector_scale(Vector_normalize(to_best_center), intensity);
 }
 
 /**
@@ -124,6 +184,10 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
             perception->self, perception->closest_fish.position,
             perception->has_prey, perception->width, perception->height);
         SharkPhi_add_vector(&phi, pursuit, Rules_Pursuit);
+
+        Vector zone_density =
+            Rules_zone_density_shark(perception->self, *perception);
+        SharkPhi_add_vector(&phi, zone_density, Rules_zone_density);
 
         // Combinaison pondérée des vecteurs
         Vector mu;
