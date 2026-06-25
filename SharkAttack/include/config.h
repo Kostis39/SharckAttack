@@ -7,7 +7,10 @@ enum Rules {
     Rules_Center = 0,
     Rules_Alignment,
     Rules_Pursuit,
-    Rules_zone_density,
+    Rules_zone_Front,
+    Rules_zone_Back,
+    Rules_zone_Left,
+    Rules_zone_Right,
     Rules_Lenght
 };
 
@@ -15,7 +18,7 @@ enum Rules {
 /* Poids des règles de shark*/
 #define THETA_FILE "params.txt"
 
-#define STEP_LOG 100
+#define STEP_LOG 10
 
 #define NB_OCCURRENCE 10000
 

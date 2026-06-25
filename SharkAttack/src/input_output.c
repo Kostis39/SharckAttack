@@ -29,7 +29,10 @@ bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
     fprintf(file, "center: %f\n", theta->vect[Rules_Center]);
     fprintf(file, "alignment: %f\n", theta->vect[Rules_Alignment]);
     fprintf(file, "pursuit: %f\n", theta->vect[Rules_Pursuit]);
-    fprintf(file, "zone density: %f\n\n", theta->vect[Rules_zone_density]);
+    fprintf(file, "front: %f\n", theta->vect[Rules_zone_Front]);
+    fprintf(file, "back: %f\n", theta->vect[Rules_zone_Back]);
+    fprintf(file, "left: %f\n", theta->vect[Rules_zone_Left]);
+    fprintf(file, "right: %f\n\n", theta->vect[Rules_zone_Right]);
 
     // Sauvegarde du gain max
     fprintf(file, "# Best gain with this parameters\n");
@@ -83,8 +86,14 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
             theta->vect[Rules_Alignment] = value_f;
         } else if (sscanf(line, "pursuit: %f", &value_f) == 1) {
             theta->vect[Rules_Pursuit] = value_f;
-        } else if (sscanf(line, "zone density: %f", &value_f) == 1) {
-            theta->vect[Rules_zone_density] = value_f;
+        } else if (sscanf(line, "front: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Front] = value_f;
+        } else if (sscanf(line, "back: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Back] = value_f;
+        } else if (sscanf(line, "left: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Left] = value_f;
+        } else if (sscanf(line, "right: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Right] = value_f;
         }
     }
 
@@ -106,20 +115,27 @@ bool load_theta(VectorRule *theta, char *filename) {
     }
 
     char line[256];
-    float value_t;
+    float value_f;
 
     while (fgets(line, sizeof(line), file)) {
         // Ignorer les commentaires et les lignes vides
         if (line[0] == '#' || line[0] == '\n')
             continue;
-        if (sscanf(line, "center: %f", &value_t) == 1) {
-            theta->vect[Rules_Center] = value_t;
-        } else if (sscanf(line, "alignment: %f", &value_t) == 1) {
-            theta->vect[Rules_Alignment] = value_t;
-        } else if (sscanf(line, "pursuit: %f", &value_t) == 1) {
-            theta->vect[Rules_Pursuit] = value_t;
-        } else if (sscanf(line, "zone density: %f", &value_t) == 1) {
-            theta->vect[Rules_zone_density] = value_t;
+
+        if (sscanf(line, "center: %f", &value_f) == 1) {
+            theta->vect[Rules_Center] = value_f;
+        } else if (sscanf(line, "alignment: %f", &value_f) == 1) {
+            theta->vect[Rules_Alignment] = value_f;
+        } else if (sscanf(line, "pursuit: %f", &value_f) == 1) {
+            theta->vect[Rules_Pursuit] = value_f;
+        } else if (sscanf(line, "front: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Front] = value_f;
+        } else if (sscanf(line, "back: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Back] = value_f;
+        } else if (sscanf(line, "left: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Left] = value_f;
+        } else if (sscanf(line, "right: %f", &value_f) == 1) {
+            theta->vect[Rules_zone_Right] = value_f;
         }
     }
 
@@ -133,7 +149,7 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
                      VectorRule theta_diff_STEP_LOG,
                      VectorRule theta_diff_1_step, char *filename) {
     if (!theta || !filename) {
-        fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
+        fprintf(stderr, "Erreur: pointeur NULL dans logs_generation\n");
         return false;
     }
     FILE *file = fopen(filename, "a");
@@ -150,11 +166,15 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
     fprintf(file, "center: %f\n", theta->vect[Rules_Center]);
     fprintf(file, "alignment: %f\n", theta->vect[Rules_Alignment]);
     fprintf(file, "pursuit: %f\n", theta->vect[Rules_Pursuit]);
-    fprintf(file, "zone density: %f\n\n", theta->vect[Rules_zone_density]);
+    fprintf(file, "front: %f\n", theta->vect[Rules_zone_Front]);
+    fprintf(file, "back: %f\n", theta->vect[Rules_zone_Back]);
+    fprintf(file, "left: %f\n", theta->vect[Rules_zone_Left]);
+    fprintf(file, "right: %f\n\n", theta->vect[Rules_zone_Right]);
+
     fprintf(file, "Moyenne reward: %f\n", avg_reward);
     fprintf(file, "Moyenne gain: %f\n", avg_gain);
     fprintf(file, "Moyenne iteration: %f\n", avg_iteration);
-    fprintf(file, "Δθ après %d générations: ", STEP_LOG);
+    fprintf(file, "Δθ après %d générations:           ", STEP_LOG);
     VectorRule_fprint(file, theta_diff_STEP_LOG);
     fprintf(file, "\nMoyenne de Δθ de chaque génération: ");
     VectorRule_fprint(file, theta_diff_1_step);
@@ -222,8 +242,9 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
 
     // Variables temporaires pour stocker le bloc en cours de lecture
     int current_gen = -1;
-    float current_center = 0.0f, current_alignment = 0.0f,
-          current_pursuit = 0.0f, current_zone_density = 0.0f;
+    float current_center = 0, current_alignment = 0, current_pursuit = 0;
+    float current_front = 0, current_back = 0, current_left = 0,
+          current_right = 0;
     float current_gain = -1.0f;
 
     // Variables pour suivre si on a trouvé au moins un enregistrement valide
@@ -244,7 +265,13 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
             continue;
         if (sscanf(line, "pursuit: %f", &current_pursuit) == 1)
             continue;
-        if (sscanf(line, "zone density: %f", &current_zone_density) == 1)
+        if (sscanf(line, "front: %f", &current_front) == 1)
+            continue;
+        if (sscanf(line, "back: %f", &current_back) == 1)
+            continue;
+        if (sscanf(line, "left: %f", &current_left) == 1)
+            continue;
+        if (sscanf(line, "right: %f", &current_right) == 1)
             continue;
 
         // Avg_gain
@@ -259,7 +286,10 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
                 best_theta->vect[Rules_Center] = current_center;
                 best_theta->vect[Rules_Alignment] = current_alignment;
                 best_theta->vect[Rules_Pursuit] = current_pursuit;
-                best_theta->vect[Rules_zone_density] = current_zone_density;
+                best_theta->vect[Rules_zone_Front] = current_front;
+                best_theta->vect[Rules_zone_Back] = current_back;
+                best_theta->vect[Rules_zone_Left] = current_left;
+                best_theta->vect[Rules_zone_Right] = current_right;
 
                 found_any = true;
             }
@@ -288,7 +318,7 @@ bool init_logs(char *filename_params, char *filename_logs) {
     }
     load_gain_params(&best_gain_initial, filename_params);
 
-    FILE *file = fopen(filename_logs, "w");
+    FILE *file = fopen(filename_logs, "a");
     if (!file) {
         fprintf(stderr,
                 "Erreur: impossible d'initialiser le fichier de log %s\n",
@@ -312,8 +342,10 @@ bool init_logs(char *filename_params, char *filename_logs) {
     fprintf(file, "center: %f\n", theta_initial.vect[Rules_Center]);
     fprintf(file, "alignment: %f\n", theta_initial.vect[Rules_Alignment]);
     fprintf(file, "pursuit: %f\n", theta_initial.vect[Rules_Pursuit]);
-    fprintf(file, "zone_density: %f\n\n",
-            theta_initial.vect[Rules_zone_density]);
+    fprintf(file, "front: %f\n", theta_initial.vect[Rules_zone_Front]);
+    fprintf(file, "back: %f\n", theta_initial.vect[Rules_zone_Back]);
+    fprintf(file, "left: %f\n", theta_initial.vect[Rules_zone_Left]);
+    fprintf(file, "right: %f\n\n", theta_initial.vect[Rules_zone_Right]);
 
     fprintf(file, "# Meilleur gain de départ (historique) :\n");
     fprintf(file, "gain_initial: %f\n\n", best_gain_initial);
@@ -358,7 +390,10 @@ bool end_logs(char *filename_params, char *filename_logs) {
     printf("  Center :        %f\n", theta_params.vect[Rules_Center]);
     printf("  Alignment :     %f\n", theta_params.vect[Rules_Alignment]);
     printf("  Pursuit :       %f\n", theta_params.vect[Rules_Pursuit]);
-    printf("  Zone Density :  %f\n", theta_params.vect[Rules_zone_density]);
+    printf("  Front :         %f\n", theta_params.vect[Rules_zone_Front]);
+    printf("  Back :          %f\n", theta_params.vect[Rules_zone_Back]);
+    printf("  Left :          %f\n", theta_params.vect[Rules_zone_Left]);
+    printf("  Right :         %f\n", theta_params.vect[Rules_zone_Right]);
 
     printf("\nMeilleurs Paramètres Trouvés (Fichier logs)\n");
     printf("  Génération :    %d\n", best_gen_logs);
@@ -366,7 +401,10 @@ bool end_logs(char *filename_params, char *filename_logs) {
     printf("  Center :        %f\n", theta_logs.vect[Rules_Center]);
     printf("  Alignment :     %f\n", theta_logs.vect[Rules_Alignment]);
     printf("  Pursuit :       %f\n", theta_logs.vect[Rules_Pursuit]);
-    printf("  Zone Density :  %f\n", theta_logs.vect[Rules_zone_density]);
+    printf("  Front :         %f\n", theta_logs.vect[Rules_zone_Front]);
+    printf("  Back :          %f\n", theta_logs.vect[Rules_zone_Back]);
+    printf("  Left :          %f\n", theta_logs.vect[Rules_zone_Left]);
+    printf("  Right :         %f\n", theta_logs.vect[Rules_zone_Right]);
 
     if (gain_params < best_gain_logs) {
         printf("===Theta Modifié===\n");

@@ -19,8 +19,9 @@ Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey_visible) {
 
     // Plus le centre est loin, plus la correction est forte
     float intensity = dist / shark.radius_vision;
-
-    return Vector_scale(Local_normalize(to_center), intensity);
+    if (intensity > 1.0f)
+        intensity = 1.0f;
+    return Vector_scale(Vector_normalize(to_center), intensity);
 }
 
 /**
@@ -39,12 +40,14 @@ Vector Rules_alignment_shark(Shark shark, Vector avg_velocity,
 
     // Différence entre la vitesse moyenne et la vitesse du requin
     Vector diff = Vector_sub(avg_velocity, shark.velocity);
+
     float norm = Vector_length(diff);
+    float max_norm = 2.0f * SHARK_SPEED_MAX;
+    float intensity = norm / max_norm;
+    if (intensity > 1.0f)
+        intensity = 1.0f;
 
-    // Plus l'écart est grand, plus la correction est forte
-    float intensity = norm / SHARK_SPEED_MAX;
-
-    return Vector_scale(Local_normalize(diff), intensity);
+    return Vector_normalize(diff);
 }
 
 /**
@@ -68,68 +71,76 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     // Plus le poisson est proche, plus on va vers le poisson
     Vector max = {width, height};
     float intensity = 1.0f / (1.0f + (dist / Vector_length(max)));
+    if (intensity > 1.0f)
+        intensity = 1.0f;
 
-    return Vector_scale(Local_normalize(to_fish), intensity);
+    return Vector_scale(Vector_normalize(to_fish), intensity);
 }
 
 /**
- * @brief règle d'orientation vers le centre de masse de la zone
- *        directionnelle la plus dense (avant / arrière / gauche / droite)
+ * @brief vecteur directionnel pondéré pour la zone devant le requin
  * @param shark structure du requin
  * @param perception perception du requin
- * @return vecteur de densité de zone
- * @note Principe : on calcule un score par zone (nombre de poissons pondéré par
- * la proximité du centre de masse de la zone), on identifie la meilleure zone,
- * puis on retourne un vecteur vers le centre de masse de cette zone
+ * @return vecteur dans la direction devant le requin, pondéré par le ratio de
+ * poissons dans la zone
  */
-Vector Rules_zone_density_shark(Shark shark, SharkPerception perception) {
-
-    float scores[Count];
-    float total_score = 0.0f;
-    bool found_zone = false;
-    float best_score = -1.0f;
-    ZoneDirection best_zone;
-
-    Vector diag = {perception.width, perception.height};
-    float dist_max = Vector_length(diag);
-
-    for (int z = 0; z < Count; z++) {
-        if (!perception.zone_has_prey_visible[z]) {
-            scores[z] = 0.0f;
-            continue;
-        }
-
-        // Distance du centre de masse de la zone
-        Vector to_zone_center =
-            Vector_sub(perception.zone_center_of_mass[z], shark.pos);
-        float dist = Vector_length(to_zone_center);
-
-        // Score : plus de poissons + plus proches => meilleur score
-        scores[z] = (float)perception.zone_count[z] / (1.0f + dist / dist_max);
-
-        total_score += scores[z];
-
-        if (scores[z] > best_score) {
-            best_score = scores[z];
-            best_zone = (ZoneDirection)z;
-            found_zone = true;
-        }
-    }
-
-    if (!found_zone || total_score < 1e-6f) {
-        // Aucune zone avec des poissons visibles
+Vector Rules_front(Shark shark, SharkPerception perception) {
+    if (!perception.zone_has_prey_visible[Front] ||
+        perception.nb_fish_remaining == 0) {
         return Vector_init();
     }
+    float ratio = (float)perception.zone_count[Front] /
+                  (float)perception.nb_fish_remaining;
+    Vector forward = Vector_normalize(shark.velocity);
 
-    // Direction réelle vers le centre de masse de la meilleure zone
-    Vector to_best_center =
-        Vector_sub(perception.zone_center_of_mass[best_zone], shark.pos);
-    float dist = Vector_length(to_best_center);
+    return Vector_scale(forward, ratio);
+}
 
-    // Intensité proportionnelle à la distance
-    float intensity = dist / dist_max;
+/**
+ * @brief vecteur directionnel pondéré pour la zone arrière
+ */
+Vector Rules_back(Shark shark, SharkPerception perception) {
+    if (!perception.zone_has_prey_visible[Back] ||
+        perception.nb_fish_remaining == 0) {
+        return Vector_init();
+    }
+    float ratio = (float)perception.zone_count[Back] /
+                  (float)perception.nb_fish_remaining;
+    Vector forward = Vector_normalize(shark.velocity);
 
-    return Vector_scale(Vector_normalize(to_best_center), intensity);
+    return Vector_scale(Vector_scale(forward, -1.0f), ratio);
+}
+
+/**
+ * @brief vecteur directionnel pondéré pour la zone gauche
+ */
+Vector Rules_left(Shark shark, SharkPerception perception) {
+    if (!perception.zone_has_prey_visible[Left] ||
+        perception.nb_fish_remaining == 0) {
+        return Vector_init();
+    }
+    float ratio = (float)perception.zone_count[Left] /
+                  (float)perception.nb_fish_remaining;
+    Vector forward = Vector_normalize(shark.velocity);
+    Vector left = {forward.y, -forward.x};
+
+    return Vector_scale(left, ratio);
+}
+
+/**
+ * @brief vecteur directionnel pondéré pour la zone droite
+ */
+Vector Rules_right(Shark shark, SharkPerception perception) {
+    if (!perception.zone_has_prey_visible[Right] ||
+        perception.nb_fish_remaining == 0) {
+        return Vector_init();
+    }
+    float ratio = (float)perception.zone_count[Right] /
+                  (float)perception.nb_fish_remaining;
+    Vector forward = Vector_normalize(shark.velocity);
+    Vector right = {-forward.y, forward.x};
+
+    return Vector_scale(right, ratio);
 }
 
 Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
@@ -173,9 +184,15 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
             perception->has_prey, perception->width, perception->height);
         SharkPhi_add_vector(&phi, pursuit, Rules_Pursuit);
 
-        Vector zone_density =
-            Rules_zone_density_shark(perception->self, *perception);
-        SharkPhi_add_vector(&phi, zone_density, Rules_zone_density);
+        Vector front = Rules_front(perception->self, *perception);
+        Vector back = Rules_back(perception->self, *perception);
+        Vector left = Rules_left(perception->self, *perception);
+        Vector right = Rules_right(perception->self, *perception);
+
+        SharkPhi_add_vector(&phi, front, Rules_zone_Front);
+        SharkPhi_add_vector(&phi, back, Rules_zone_Back);
+        SharkPhi_add_vector(&phi, left, Rules_zone_Left);
+        SharkPhi_add_vector(&phi, right, Rules_zone_Right);
 
         // Combinaison pondérée des vecteurs
         Vector mu;

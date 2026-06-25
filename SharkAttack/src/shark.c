@@ -33,6 +33,7 @@ void Shark_apply_action(Shark *shark, Vector action, int width, int height) {
         Vector_add(shark->velocity, Vector_scale(action, TURN_SPEED));
 
     float speed = Vector_length(shark->velocity);
+
     if (speed > SHARK_SPEED_MAX) {
         shark->velocity =
             Vector_scale(Vector_normalize(shark->velocity), SHARK_SPEED_MAX);

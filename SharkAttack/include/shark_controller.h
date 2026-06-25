@@ -34,6 +34,8 @@ typedef struct {
     Vector zone_center_of_mass[Count];
     Vector zone_avg_velocity[Count];
     bool zone_has_prey_visible[Count];
+
+    int nb_fish_remaining;
 } SharkPerception;
 
 /**

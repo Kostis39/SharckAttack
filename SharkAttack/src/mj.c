@@ -195,6 +195,8 @@ void Get_shark_perception(Shark *shark, World *world,
         zone_count[z] = 0;
     }
 
+    shark_perception->nb_fish_remaining = 0;
+
     // Parcourir tous les poissons
     for (int i = 0; i < world->nb_fish; i++) {
         Fish *fish = &world->fishes[i];
@@ -241,6 +243,7 @@ void Get_shark_perception(Shark *shark, World *world,
     // moyenne des 4 zones
     for (int z = 0; z < Count; z++) {
         shark_perception->zone_count[z] = zone_count[z];
+        shark_perception->nb_fish_remaining += shark_perception->zone_count[z];
 
         if (zone_count[z] > 0) {
             shark_perception->zone_center_of_mass[z] =

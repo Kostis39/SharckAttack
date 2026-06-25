@@ -1,16 +1,19 @@
 # Hyperparameters
-gamma 0.999600
+gamma 0.999800
 sigma 3.000000
-alpha 0.000200
+alpha 0.000500
 nb_gen 10000
 nb_game 10
 nb_occurrence 5000
 
 # Theta
-center: 5.918876
-alignment: -20.968750
-pursuit: 23.692522
-zone density: 11.860829
+center: -0.339337
+alignment: 3.313448
+pursuit: 7.869285
+front: 0.382495
+back: 0.547828
+left: 0.361982
+right: 0.623678
 
 # Best gain with this parameters
-gain: 70.142220
+gain: 78.887100
