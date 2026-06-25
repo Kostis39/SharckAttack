@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['i16_0',['i16',['../unity_8c.html#a3ff3d9c5010aa22165fa26f8e301131e',1,'unity.c']]],
-  ['i32_1',['i32',['../unity_8c.html#ae9d133be8ac33cfb99b5b9646d7a5a87',1,'unity.c']]],
-  ['i8_2',['i8',['../unity_8c.html#ad20eed15082bd5f03fa33cf3014e9a99',1,'unity.c']]],
-  ['init_5fsdl_5fdisplay_3',['Init_sdl_display',['../render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f',1,'Init_sdl_display(SDLDisplay *display, char *title, int width, int height):&#160;render_sdl.c'],['../render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f',1,'Init_sdl_display(SDLDisplay *display, char *title, int width, int height):&#160;render_sdl.c']]],
-  ['instantiate_5fcollider_4',['Instantiate_collider',['../collider_8h.html#ab5553354f21001b9145c84332c0cd5cf',1,'Instantiate_collider(Vector pos, float w, float h):&#160;collider.c'],['../collider_8c.html#ab5553354f21001b9145c84332c0cd5cf',1,'Instantiate_collider(Vector pos, float w, float h):&#160;collider.c']]],
-  ['is_5falive_5',['is_alive',['../structFish.html#aed817fc6d112672f2233bde49f822e16',1,'Fish']]],
-  ['is_5fplayer_6',['Is_player',['../shark_8h.html#a2cbb915fa07293da619455bc73c90e95',1,'Is_player(Shark *shark):&#160;shark.c'],['../shark_8c.html#a2cbb915fa07293da619455bc73c90e95',1,'Is_player(Shark *shark):&#160;shark.c']]]
+  ['learn_133',['learn',['../structWorld.html#a1950b6870474e81a1906aa4c82ed5e70',1,'World']]],
+  ['left_5fscene_134',['left_scene',['../structSDLDisplay.html#a101d3c7f6e564fe0114897f2cbfd987c',1,'SDLDisplay']]],
+  ['lenght_5falloc_135',['lenght_alloc',['../structTrajectory.html#a5653ca88dd31644291e1f2a5613c47cb',1,'Trajectory']]],
+  ['length_136',['length',['../structTrajectory.html#a9f59b34b1f25fe00023291b678246bcc',1,'Trajectory']]],
+  ['load_5fgain_5fparams_137',['load_gain_params',['../input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3',1,'input_output.c']]],
+  ['load_5fparams_138',['load_params',['../input__output_8h.html#aaaa874a59e88f0ba078ebeef13f55e4a',1,'load_params(VectorRule *theta, Hyperparameters *hyperparams, char *filename):&#160;input_output.c'],['../input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a',1,'load_params(VectorRule *theta, Hyperparameters *hyperparams, char *filename):&#160;input_output.c']]],
+  ['load_5ftheta_139',['load_theta',['../input__output_8h.html#a7d7001b254e2ea098325767fd484cf26',1,'load_theta(VectorRule *theta, char *filename):&#160;input_output.c'],['../input__output_8c.html#a7d7001b254e2ea098325767fd484cf26',1,'load_theta(VectorRule *theta, char *filename):&#160;input_output.c']]],
+  ['local_5fnormalize_140',['Local_normalize',['../vector_8h.html#a2e464905dfe98674f7122719e724b339',1,'Local_normalize(Vector v):&#160;vector.c'],['../vector_8c.html#a2e464905dfe98674f7122719e724b339',1,'Local_normalize(Vector v):&#160;vector.c']]],
+  ['logs_5fgeneration_141',['logs_generation',['../input__output_8h.html#a4e07e86a800071e66c28f911097aff75',1,'logs_generation(VectorRule *theta, int gen_number, float avg_reward, float avg_gain, float avg_iteration, char *filename):&#160;input_output.c'],['../input__output_8c.html#a4e07e86a800071e66c28f911097aff75',1,'logs_generation(VectorRule *theta, int gen_number, float avg_reward, float avg_gain, float avg_iteration, char *filename):&#160;input_output.c']]]
 ];

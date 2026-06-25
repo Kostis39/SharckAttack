@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sharkattack:  Fichier source de include/reinforce.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Sharkattack the game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('reinforce_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">reinforce.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="reinforce_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef REINFORCE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define REINFORCE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="input__output_8h.html">input_output.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shark_8h.html">shark.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shark__controller_8h.html">shark_controller.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils__reinforce_8h.html">utils_reinforce.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;signal.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="structTrajectory.html">Trajectory</a> *<a class="code" href="reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50">Trajectory_init</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">int</span> <a class="code" href="reinforce_8h.html#a80a9a5711cd8ef895ee1d00c07be04e1">Need_trajectory_growing</a>(<a class="code" href="structTrajectory.html">Trajectory</a> *trajectory);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="reinforce_8h.html#a2974bf1a3c1d9b4c8da4b30488713c28">Add_step</a>(<a class="code" href="structTrajectory.html">Trajectory</a> *trajectory, <a class="code" href="structSharkPhi.html">SharkPhi</a> phi, <a class="code" href="structVector.html">Vector</a> action,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;              <span class="keywordtype">float</span> reward);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1">Trajectory_destroy</a>(<a class="code" href="structTrajectory.html">Trajectory</a> *trajectory);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="reinforce_8h.html#a6e6d0061194a9eb0cbf39fb6d2900eba">Trajectory_print</a>(<a class="code" href="structTrajectory.html">Trajectory</a> *trajectory);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="reinforce_8h.html#a3f90fbeabd71aaeb39384f5cbc96b56f">StepTrajectory_print</a>(<a class="code" href="structStepTrajectory.html">StepTrajectory</a> step);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> <a class="code" href="reinforce_8h.html#a265c50331fb40f5c9a244b724f1fec6b">Step_update</a>(<a class="code" href="structStepTrajectory.html">StepTrajectory</a> *step, <a class="code" href="structSharkPhi.html">SharkPhi</a> phi, <a class="code" href="structVector.html">Vector</a> action,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                 <span class="keywordtype">float</span> reward);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<a class="code" href="structGradient.html">Gradient</a> <a class="code" href="reinforce_8h.html#ae2c19c8939a760c957405dc11da81bd8">Gradient_zero</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="reinforce_8h.html#a7e00a068b856fbc2d16c8367be616b3b">Trajectory_worker</a>(<span class="keywordtype">void</span> *args);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> <a class="code" href="reinforce_8h.html#a4e6a52c27c2dc4f2957d84166b6a72c8">Reinforce_learning</a>(<a class="code" href="structVectorRule.html">VectorRule</a> *theta, <a class="code" href="structHyperparameters.html">Hyperparameters</a> hyperparameters,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        <span class="keywordtype">int</span> thread_count);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
+<div class="ttc" id="ainput__output_8h_html"><div class="ttname"><a href="input__output_8h.html">input_output.h</a></div></div>
+<div class="ttc" id="areinforce_8h_html_a265c50331fb40f5c9a244b724f1fec6b"><div class="ttname"><a href="reinforce_8h.html#a265c50331fb40f5c9a244b724f1fec6b">Step_update</a></div><div class="ttdeci">void Step_update(StepTrajectory *step, SharkPhi phi, Vector action, float reward)</div><div class="ttdoc">met à jour un pas de trajectoire</div><div class="ttdef"><b>Definition:</b> reinforce.c:69</div></div>
+<div class="ttc" id="areinforce_8h_html_a2974bf1a3c1d9b4c8da4b30488713c28"><div class="ttname"><a href="reinforce_8h.html#a2974bf1a3c1d9b4c8da4b30488713c28">Add_step</a></div><div class="ttdeci">void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action, float reward)</div><div class="ttdoc">Ajout un état supplémentaire à notre trajectoire.</div><div class="ttdef"><b>Definition:</b> reinforce.c:36</div></div>
+<div class="ttc" id="areinforce_8h_html_a3f90fbeabd71aaeb39384f5cbc96b56f"><div class="ttname"><a href="reinforce_8h.html#a3f90fbeabd71aaeb39384f5cbc96b56f">StepTrajectory_print</a></div><div class="ttdeci">void StepTrajectory_print(StepTrajectory step)</div><div class="ttdoc">affiche un pas de trajectoire</div><div class="ttdef"><b>Definition:</b> reinforce.c:63</div></div>
+<div class="ttc" id="areinforce_8h_html_a4e6a52c27c2dc4f2957d84166b6a72c8"><div class="ttname"><a href="reinforce_8h.html#a4e6a52c27c2dc4f2957d84166b6a72c8">Reinforce_learning</a></div><div class="ttdeci">void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters, int thread_count)</div><div class="ttdoc">exécute l'algorithme REINFORCE avec parallélisation</div><div class="ttdef"><b>Definition:</b> reinforce.c:146</div></div>
+<div class="ttc" id="areinforce_8h_html_a6e6d0061194a9eb0cbf39fb6d2900eba"><div class="ttname"><a href="reinforce_8h.html#a6e6d0061194a9eb0cbf39fb6d2900eba">Trajectory_print</a></div><div class="ttdeci">void Trajectory_print(Trajectory *trajectory)</div><div class="ttdoc">affiche les pas d'une trajectoire dont la récompense est supérieur à 0</div><div class="ttdef"><b>Definition:</b> reinforce.c:50</div></div>
+<div class="ttc" id="areinforce_8h_html_a7e00a068b856fbc2d16c8367be616b3b"><div class="ttname"><a href="reinforce_8h.html#a7e00a068b856fbc2d16c8367be616b3b">Trajectory_worker</a></div><div class="ttdeci">void * Trajectory_worker(void *args)</div><div class="ttdoc">fonction de travail pour les threads, exécute Compute_trajectory</div><div class="ttdef"><b>Definition:</b> reinforce.c:139</div></div>
+<div class="ttc" id="areinforce_8h_html_a80a9a5711cd8ef895ee1d00c07be04e1"><div class="ttname"><a href="reinforce_8h.html#a80a9a5711cd8ef895ee1d00c07be04e1">Need_trajectory_growing</a></div><div class="ttdeci">int Need_trajectory_growing(Trajectory *trajectory)</div><div class="ttdoc">Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein...</div><div class="ttdef"><b>Definition:</b> reinforce.c:19</div></div>
+<div class="ttc" id="areinforce_8h_html_ae2c19c8939a760c957405dc11da81bd8"><div class="ttname"><a href="reinforce_8h.html#ae2c19c8939a760c957405dc11da81bd8">Gradient_zero</a></div><div class="ttdeci">Gradient Gradient_zero()</div><div class="ttdoc">retourne un gradient initialisé à zéro</div><div class="ttdef"><b>Definition:</b> reinforce.c:78</div></div>
+<div class="ttc" id="areinforce_8h_html_ae3357d08d1e5d9fb6464fb1fe14221b1"><div class="ttname"><a href="reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1">Trajectory_destroy</a></div><div class="ttdeci">void Trajectory_destroy(Trajectory *trajectory)</div><div class="ttdoc">libère la mémoire d'une trajectoire</div><div class="ttdef"><b>Definition:</b> reinforce.c:45</div></div>
+<div class="ttc" id="areinforce_8h_html_afd5dd863ec6cb86171a0b5e30add8c50"><div class="ttname"><a href="reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50">Trajectory_init</a></div><div class="ttdeci">Trajectory * Trajectory_init()</div><div class="ttdoc">initialise une trajectoire vide</div><div class="ttdef"><b>Definition:</b> reinforce.c:7</div></div>
+<div class="ttc" id="ashark_8h_html"><div class="ttname"><a href="shark_8h.html">shark.h</a></div></div>
+<div class="ttc" id="ashark__controller_8h_html"><div class="ttname"><a href="shark__controller_8h.html">shark_controller.h</a></div></div>
+<div class="ttc" id="astructGradient_html"><div class="ttname"><a href="structGradient.html">Gradient</a></div><div class="ttdef"><b>Definition:</b> utils_reinforce.h:21</div></div>
+<div class="ttc" id="astructHyperparameters_html"><div class="ttname"><a href="structHyperparameters.html">Hyperparameters</a></div><div class="ttdef"><b>Definition:</b> utils_reinforce.h:33</div></div>
+<div class="ttc" id="astructSharkPhi_html"><div class="ttname"><a href="structSharkPhi.html">SharkPhi</a></div><div class="ttdef"><b>Definition:</b> theta_set.h:16</div></div>
+<div class="ttc" id="astructStepTrajectory_html"><div class="ttname"><a href="structStepTrajectory.html">StepTrajectory</a></div><div class="ttdef"><b>Definition:</b> utils_reinforce.h:7</div></div>
+<div class="ttc" id="astructTrajectory_html"><div class="ttname"><a href="structTrajectory.html">Trajectory</a></div><div class="ttdef"><b>Definition:</b> utils_reinforce.h:13</div></div>
+<div class="ttc" id="astructVectorRule_html"><div class="ttname"><a href="structVectorRule.html">VectorRule</a></div><div class="ttdoc">Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...</div><div class="ttdef"><b>Definition:</b> vector_rule.h:13</div></div>
+<div class="ttc" id="astructVector_html"><div class="ttname"><a href="structVector.html">Vector</a></div><div class="ttdoc">Structure représentant un vecteur 2D.</div><div class="ttdef"><b>Definition:</b> vector.h:12</div></div>
+<div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
+<div class="ttc" id="autils__reinforce_8h_html"><div class="ttname"><a href="utils__reinforce_8h.html">utils_reinforce.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="reinforce_8h.html">reinforce.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

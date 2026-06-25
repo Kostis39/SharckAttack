@@ -1,5 +1,4 @@
 <map id="test_Instantiate_collider_returns_copy" name="test_Instantiate_collider_returns_copy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,184,50"/>
-<area shape="rect" id="Node000002" href="$collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title=" " alt="" coords="232,14,378,42"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,25,219,27,214,28,184,30"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" id="node2" href="$collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
 </map>

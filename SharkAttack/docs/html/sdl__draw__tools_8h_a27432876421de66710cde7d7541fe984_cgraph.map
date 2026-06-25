@@ -1,0 +1,5 @@
+<map id="Draw_sea_plants" name="Draw_sea_plants">
+<area shape="rect" id="node1" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="5,31,139,57"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="187,5,332,32"/>
+<area shape="rect" id="node3" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="230,56,289,83"/>
+</map>

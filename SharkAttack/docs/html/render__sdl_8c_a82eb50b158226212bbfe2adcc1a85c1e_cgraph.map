@@ -1,0 +1,10 @@
+<map id="Draw_fish_skeleton" name="Draw_fish_skeleton">
+<area shape="rect" id="node1" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="5,81,153,108"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="201,31,353,57"/>
+<area shape="rect" id="node6" href="$sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="201,81,353,108"/>
+<area shape="rect" id="node8" href="$sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="248,132,307,159"/>
+<area shape="rect" id="node3" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="401,31,536,57"/>
+<area shape="rect" id="node4" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="584,5,695,32"/>
+<area shape="rect" id="node5" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="587,56,691,83"/>
+<area shape="rect" id="node7" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="439,81,498,108"/>
+</map>

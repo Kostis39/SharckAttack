@@ -1,6 +1,13 @@
 var searchData=
 [
-  ['init_5fsdl_5fdisplay_0',['Init_sdl_display',['../render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f',1,'Init_sdl_display(SDLDisplay *display, char *title, int width, int height):&#160;render_sdl.c'],['../render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f',1,'Init_sdl_display(SDLDisplay *display, char *title, int width, int height):&#160;render_sdl.c']]],
-  ['instantiate_5fcollider_1',['Instantiate_collider',['../collider_8h.html#ab5553354f21001b9145c84332c0cd5cf',1,'Instantiate_collider(Vector pos, float w, float h):&#160;collider.c'],['../collider_8c.html#ab5553354f21001b9145c84332c0cd5cf',1,'Instantiate_collider(Vector pos, float w, float h):&#160;collider.c']]],
-  ['is_5fplayer_2',['Is_player',['../shark_8h.html#a2cbb915fa07293da619455bc73c90e95',1,'Is_player(Shark *shark):&#160;shark.c'],['../shark_8c.html#a2cbb915fa07293da619455bc73c90e95',1,'Is_player(Shark *shark):&#160;shark.c']]]
+  ['game_5fdestroy_1342',['Game_destroy',['../game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f',1,'Game_destroy(Game *game):&#160;game.c'],['../game_8h.html#a074f62ca71d406dfeeb16d2d02b89e8f',1,'Game_destroy(Game *game):&#160;game.c']]],
+  ['game_5finit_1343',['Game_init',['../game_8h.html#a05b67f472600d98168bd13c70d257ed9',1,'Game_init(Game *game, int width, int height, int nb_fish, int nb_colliders, int seed_for_worlds):&#160;game.c'],['../game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d',1,'Game_init(Game *game, int width, int height, int nb_fish, int nb_collider, int seed_for_worlds):&#160;game.c']]],
+  ['game_5fpause_1344',['Game_pause',['../game_8h.html#a28358f6ca80424c6b25fe847ab88b168',1,'Game_pause(Game *game):&#160;game.c'],['../game_8c.html#a28358f6ca80424c6b25fe847ab88b168',1,'Game_pause(Game *game):&#160;game.c']]],
+  ['game_5frun_5fsdl_1345',['Game_run_SDL',['../game_8h.html#ae5a7b2368adc13dbcf61f3f3b1f16c9c',1,'Game_run_SDL(bool benchmark_mode, int seed_for_worlds):&#160;game.c'],['../game_8c.html#a83c0471dd27fbbcaec9370c0dbad9e6d',1,'Game_run_SDL(bool use_bench, int seed_for_worlds):&#160;game.c']]],
+  ['game_5frun_5fterminal_1346',['Game_run_terminal',['../game_8h.html#a557884cc21f4886a0523bd645481b95e',1,'Game_run_terminal():&#160;game.c'],['../game_8c.html#a557884cc21f4886a0523bd645481b95e',1,'Game_run_terminal():&#160;game.c']]],
+  ['game_5fstep_1347',['Game_step',['../mj_8h.html#a9e75fb0f434e437463e146042d313f79',1,'Game_step(World *world):&#160;mj.c'],['../mj_8c.html#a9e75fb0f434e437463e146042d313f79',1,'Game_step(World *world):&#160;mj.c']]],
+  ['get_5fbest_5ftheta_1348',['get_best_theta',['../input__output_8c.html#acae31f3286209e935a01648dec589d9d',1,'input_output.c']]],
+  ['get_5ffish_5fperception_1349',['get_fish_perception',['../mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb',1,'mj.c']]],
+  ['get_5fshark_5fperception_1350',['Get_shark_perception',['../mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c',1,'mj.c']]],
+  ['gradient_5fzero_1351',['Gradient_zero',['../reinforce_8h.html#ae2c19c8939a760c957405dc11da81bd8',1,'Gradient_zero():&#160;reinforce.c'],['../reinforce_8c.html#ae2c19c8939a760c957405dc11da81bd8',1,'Gradient_zero():&#160;reinforce.c']]]
 ];

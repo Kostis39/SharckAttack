@@ -1,0 +1,5 @@
+<map id="TrajectoryCalculation" name="TrajectoryCalculation">
+<area shape="rect" id="node1" title=" " alt="" coords="5,199,164,225"/>
+<area shape="rect" id="node2" href="$structGradient.html" title=" " alt="" coords="45,109,124,136"/>
+<area shape="rect" id="node3" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="39,5,131,32"/>
+</map>

@@ -1,0 +1,52 @@
+<map id="Game_run_SDL" name="Game_run_SDL">
+<area shape="rect" id="node1" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="5,672,127,699"/>
+<area shape="rect" id="node2" href="$game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="191,520,308,547"/>
+<area shape="rect" id="node10" href="$game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="205,343,294,369"/>
+<area shape="rect" id="node26" href="$mj_8h.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="201,849,297,876"/>
+<area shape="rect" id="node40" href="$render__sdl_8h.html#aac26d1c75f6eaec0797a2c9dab71c4db" title="affiche deux vues dans une seule fenêtre." alt="" coords="175,1331,324,1357"/>
+<area shape="rect" id="node3" href="$render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="373,444,527,471"/>
+<area shape="rect" id="node4" href="$world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="393,520,507,547"/>
+<area shape="rect" id="node5" href="$collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="581,419,757,445"/>
+<area shape="rect" id="node6" href="$fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="596,469,741,496"/>
+<area shape="rect" id="node7" href="$theta__set_8h.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="588,520,749,547"/>
+<area shape="rect" id="node8" href="$shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="611,571,726,597"/>
+<area shape="rect" id="node9" href="$reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="597,621,740,648"/>
+<area shape="rect" id="node11" href="$render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="389,267,511,293"/>
+<area shape="rect" id="node12" href="$utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="409,317,491,344"/>
+<area shape="rect" id="node13" href="$theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="388,368,512,395"/>
+<area shape="rect" id="node16" href="$world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="407,191,493,217"/>
+<area shape="rect" id="node14" href="$input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="623,368,714,395"/>
+<area shape="rect" id="node15" href="$vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="604,317,733,344"/>
+<area shape="rect" id="node17" href="$collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="580,48,757,75"/>
+<area shape="rect" id="node21" href="$fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="592,99,745,141"/>
+<area shape="rect" id="node23" href="$theta__set_8h.html#aa254194c894b56f06eaff11768901deb" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="602,165,735,192"/>
+<area shape="rect" id="node24" href="$shark_8h.html#abe943d2553c14ccf4c9b04d93303d667" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="615,216,722,243"/>
+<area shape="rect" id="node25" href="$reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50" title="initialise une trajectoire vide" alt="" coords="611,267,726,293"/>
+<area shape="rect" id="node18" href="$collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="827,5,974,32"/>
+<area shape="rect" id="node19" href="$utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="1040,81,1148,108"/>
+<area shape="rect" id="node20" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="855,824,946,851"/>
+<area shape="rect" id="node22" href="$fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="809,107,992,133"/>
+<area shape="rect" id="node27" href="$mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="397,875,503,901"/>
+<area shape="rect" id="node38" href="$world_8h.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="380,925,520,952"/>
+<area shape="rect" id="node39" href="$world_8h.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire." alt="" coords="382,824,518,851"/>
+<area shape="rect" id="node28" href="$fish_8h.html#a264a6701ce107ab411de095019998799" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="601,976,736,1003"/>
+<area shape="rect" id="node29" href="$fish__controller_8h.html#a9c3a75f267eda127e0417e8c34de6233" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="596,875,741,901"/>
+<area shape="rect" id="node30" href="$mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="582,1027,755,1053"/>
+<area shape="rect" id="node31" href="$mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="594,925,743,952"/>
+<area shape="rect" id="node32" href="$mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="587,773,751,800"/>
+<area shape="rect" id="node33" href="$mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="600,1077,737,1104"/>
+<area shape="rect" id="node34" href="$reinforce_8h.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="576,1128,761,1155"/>
+<area shape="rect" id="node35" href="$shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="594,672,743,699"/>
+<area shape="rect" id="node36" href="$shark__controller_8h.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="589,824,748,851"/>
+<area shape="rect" id="node37" href="$mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="613,723,724,749"/>
+<area shape="rect" id="node41" href="$render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="372,1457,528,1484"/>
+<area shape="rect" id="node43" href="$render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="401,1331,499,1357"/>
+<area shape="rect" id="node42" href="$render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="600,1533,737,1560"/>
+<area shape="rect" id="node44" href="$render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="601,1432,737,1459"/>
+<area shape="rect" id="node45" href="$render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="609,1483,728,1509"/>
+<area shape="rect" id="node46" href="$render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="598,1179,739,1205"/>
+<area shape="rect" id="node47" href="$render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="625,1229,712,1256"/>
+<area shape="rect" id="node48" href="$render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="595,1280,743,1307"/>
+<area shape="rect" id="node49" href="$render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title="dessine le score en haut a droite de l ecran le score correspond au nbr de poissons mangés par le req..." alt="" coords="619,1331,718,1357"/>
+<area shape="rect" id="node50" href="$render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="619,1381,718,1408"/>
+</map>

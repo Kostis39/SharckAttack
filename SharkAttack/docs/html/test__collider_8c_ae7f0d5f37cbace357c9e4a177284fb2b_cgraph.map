@@ -1,13 +1,8 @@
 <map id="test_Colliders_random_array_reproducible" name="test_Colliders_random_array_reproducible">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,24,173,68"/>
-<area shape="rect" id="Node000002" href="$collider_8c.html#a0800e8e8957986ce4c2593ac68368b87" title=" " alt="" coords="221,5,396,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,33,208,31,203,33,174,38"/>
-<area shape="rect" id="Node000003" href="$collider_8c.html#af3a8698f7a9da326b05e4304a5409dbc" title=" " alt="" coords="221,57,397,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,53,208,59,203,60,173,58"/>
-<area shape="rect" id="Node000004" href="$collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title=" " alt="" coords="445,5,591,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="367,54,442,38,447,37,368,59"/>
-<area shape="rect" id="Node000005" href="$collider_8c.html#a9d944ed48c83eedfe629746ecccd1506" title=" " alt="" coords="464,57,572,85"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="397,69,451,71,446,71,397,74"/>
-<area shape="rect" id="Node000006" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title=" " alt="" coords="473,109,563,137"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="368,83,461,108,455,108,367,88"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,49,173,90"/>
+<area shape="rect" id="node2" href="$collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="221,56,399,83"/>
+<area shape="rect" id="node3" href="$collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="447,5,593,32"/>
+<area shape="rect" id="node4" href="$utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="466,56,574,83"/>
+<area shape="rect" id="node6" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="475,107,565,133"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="641,56,721,83"/>
 </map>

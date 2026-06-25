@@ -1,19 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.15.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack:  Fichier source de include/collider.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,10 +23,10 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="sharky.jpg"/></td>
-  <td id="projectalign">
-   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -36,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.15.0 -->
+<!-- Généré par Doxygen 1.9.1 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-</script>
-<script type="text/javascript">
-$(function() { codefold.init(); });
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche',true);
-  $(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
 });
-</script>
+/* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -64,9 +63,10 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('collider_8h_source.html','',''); });
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('collider_8h_source.html',''); initResizable(); });
+/* @license-end */
 </script>
-<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,61 +77,60 @@ $(function(){initNavTree('collider_8h_source.html','',''); });
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Chargement...</div>
-<div class="SRStatus" id="Searching">Recherche...</div>
-<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
-</div>
-</div>
-</div>
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">collider.h</div></div>
+  <div class="headertitle">
+<div class="title">collider.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="collider_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef COLLIDER_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define COLLIDER_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="structCollider.html">    7</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structCollider.html#ab722283ddfa6cf0a4ffc53b36080ad8a">    8</a></span>    <a class="code hl_struct" href="structVector.html">Vector</a> <a class="code hl_variable" href="structCollider.html#ab722283ddfa6cf0a4ffc53b36080ad8a">bounding_box</a>[2]; </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/* bool is_enabled; */</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>} <a class="code hl_struct" href="structCollider.html">Collider</a>;</div>
-</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">float</span> <a class="code hl_function" href="collider_8h.html#a9d944ed48c83eedfe629746ecccd1506">random_float</a>(<span class="keywordtype">float</span> min, <span class="keywordtype">float</span> max);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_struct" href="structCollider.html">Collider</a> <a class="code hl_function" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf">Instantiate_collider</a>(<a class="code hl_struct" href="structVector.html">Vector</a> pos, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_struct" href="structCollider.html">Collider</a> *<a class="code hl_function" href="collider_8h.html#af3a8698f7a9da326b05e4304a5409dbc">Colliders_random_array</a>(<span class="keywordtype">int</span> x_max, <span class="keywordtype">int</span> y_max, <span class="keywordtype">int</span> w_max,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                                 <span class="keywordtype">int</span> h_max, <span class="keywordtype">int</span> count);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_struct" href="structCollider.html">Collider</a> *<a class="code hl_function" href="collider_8h.html#a9fa1fb2bc30efa527ed519e942d9e0fc">Colliders_copy_array</a>(<a class="code hl_struct" href="structCollider.html">Collider</a> *collider, <span class="keywordtype">int</span> count);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">int</span> <a class="code hl_function" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87">Colliders_destroy_array</a>(<a class="code hl_struct" href="structCollider.html">Collider</a> *array);</div>
-<div class="ttc" id="acollider_8h_html_a0800e8e8957986ce4c2593ac68368b87"><div class="ttname"><a href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87">Colliders_destroy_array</a></div><div class="ttdeci">int Colliders_destroy_array(Collider *array)</div><div class="ttdef"><b>Definition</b> collider.c:64</div></div>
-<div class="ttc" id="acollider_8h_html_a9d944ed48c83eedfe629746ecccd1506"><div class="ttname"><a href="collider_8h.html#a9d944ed48c83eedfe629746ecccd1506">random_float</a></div><div class="ttdeci">float random_float(float min, float max)</div><div class="ttdef"><b>Definition</b> collider.c:6</div></div>
-<div class="ttc" id="acollider_8h_html_a9fa1fb2bc30efa527ed519e942d9e0fc"><div class="ttname"><a href="collider_8h.html#a9fa1fb2bc30efa527ed519e942d9e0fc">Colliders_copy_array</a></div><div class="ttdeci">Collider * Colliders_copy_array(Collider *collider, int count)</div><div class="ttdef"><b>Definition</b> collider.c:76</div></div>
-<div class="ttc" id="acollider_8h_html_ab5553354f21001b9145c84332c0cd5cf"><div class="ttname"><a href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf">Instantiate_collider</a></div><div class="ttdeci">Collider Instantiate_collider(Vector pos, float w, float h)</div><div class="ttdef"><b>Definition</b> collider.c:13</div></div>
-<div class="ttc" id="acollider_8h_html_af3a8698f7a9da326b05e4304a5409dbc"><div class="ttname"><a href="collider_8h.html#af3a8698f7a9da326b05e4304a5409dbc">Colliders_random_array</a></div><div class="ttdeci">Collider * Colliders_random_array(int x_max, int y_max, int w_max, int h_max, int count)</div><div class="ttdef"><b>Definition</b> collider.c:32</div></div>
-<div class="ttc" id="astructCollider_html"><div class="ttname"><a href="structCollider.html">Collider</a></div><div class="ttdef"><b>Definition</b> collider.h:7</div></div>
-<div class="ttc" id="astructCollider_html_ab722283ddfa6cf0a4ffc53b36080ad8a"><div class="ttname"><a href="structCollider.html#ab722283ddfa6cf0a4ffc53b36080ad8a">Collider::bounding_box</a></div><div class="ttdeci">Vector bounding_box[2]</div><div class="ttdef"><b>Definition</b> collider.h:8</div></div>
-<div class="ttc" id="astructVector_html"><div class="ttname"><a href="structVector.html">Vector</a></div><div class="ttdoc">Structure représentant un vecteur 2D.</div><div class="ttdef"><b>Definition</b> vector.h:10</div></div>
+<a href="collider_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef COLLIDER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define COLLIDER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;string.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structCollider.html">    9</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structCollider.html#ab722283ddfa6cf0a4ffc53b36080ad8a">   10</a></span>&#160;    <a class="code" href="structVector.html">Vector</a> bounding_box[2]; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">/* bool is_enabled; */</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;} <a class="code" href="structCollider.html">Collider</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="structCollider.html">Collider</a> <a class="code" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf">Instantiate_collider</a>(<a class="code" href="structVector.html">Vector</a> pos, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="structCollider.html">Collider</a> *<a class="code" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a">Colliders_random_array</a>(<span class="keywordtype">int</span> x_max, <span class="keywordtype">int</span> y_max, <span class="keywordtype">int</span> w_max, <span class="keywordtype">int</span> h_max,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 <span class="keywordtype">int</span> count, <span class="keywordtype">int</span> gen_all_squared);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="structVector.html">Vector</a> <a class="code" href="collider_8h.html#ab99ce5a9df335c5f8cdcfc59e33be8d0">Collider_closest_point</a>(<a class="code" href="structCollider.html">Collider</a> *c, <a class="code" href="structVector.html">Vector</a> p);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">int</span> <a class="code" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87">Colliders_destroy_array</a>(<a class="code" href="structCollider.html">Collider</a> *array);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">float</span> <a class="code" href="collider_8h.html#a42412c8dba2d244f557fd589d50e9cc0">Collider_distance_to_point</a>(<a class="code" href="structCollider.html">Collider</a> *c, <a class="code" href="structVector.html">Vector</a> p);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="structCollider.html">Collider</a> *<a class="code" href="collider_8h.html#ad784096975958a0b40b5df8e2160c9dc">Colliders_copy_array</a>(<a class="code" href="structCollider.html">Collider</a> *collider, <span class="keywordtype">int</span> count);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acollider_8h_html_a0800e8e8957986ce4c2593ac68368b87"><div class="ttname"><a href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87">Colliders_destroy_array</a></div><div class="ttdeci">int Colliders_destroy_array(Collider *array)</div><div class="ttdoc">libère la mémoire utilisée par les colliders</div><div class="ttdef"><b>Definition:</b> collider.c:39</div></div>
+<div class="ttc" id="acollider_8h_html_a42412c8dba2d244f557fd589d50e9cc0"><div class="ttname"><a href="collider_8h.html#a42412c8dba2d244f557fd589d50e9cc0">Collider_distance_to_point</a></div><div class="ttdeci">float Collider_distance_to_point(Collider *c, Vector p)</div><div class="ttdoc">Distance euclidienne entre un point et un rectangle (AABB)</div><div class="ttdef"><b>Definition:</b> collider.c:54</div></div>
+<div class="ttc" id="acollider_8h_html_a8a301f681ecbd2d97db912263d6af91a"><div class="ttname"><a href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a">Colliders_random_array</a></div><div class="ttdeci">Collider * Colliders_random_array(int x_max, int y_max, int w_max, int h_max, int count, int gen_all_squared)</div><div class="ttdoc">initialise un tableau de colliders aléatoirement positionnés</div><div class="ttdef"><b>Definition:</b> collider.c:13</div></div>
+<div class="ttc" id="acollider_8h_html_ab5553354f21001b9145c84332c0cd5cf"><div class="ttname"><a href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf">Instantiate_collider</a></div><div class="ttdeci">Collider Instantiate_collider(Vector pos, float w, float h)</div><div class="ttdoc">Fonction d'instanciation d'objet de collision Crée un rectangle de collision de largeur w,...</div><div class="ttdef"><b>Definition:</b> collider.c:3</div></div>
+<div class="ttc" id="acollider_8h_html_ab99ce5a9df335c5f8cdcfc59e33be8d0"><div class="ttname"><a href="collider_8h.html#ab99ce5a9df335c5f8cdcfc59e33be8d0">Collider_closest_point</a></div><div class="ttdeci">Vector Collider_closest_point(Collider *c, Vector p)</div><div class="ttdoc">Retourne le point le plus proche du rectangle (AABB) au point p.</div><div class="ttdef"><b>Definition:</b> collider.c:47</div></div>
+<div class="ttc" id="acollider_8h_html_ad784096975958a0b40b5df8e2160c9dc"><div class="ttname"><a href="collider_8h.html#ad784096975958a0b40b5df8e2160c9dc">Colliders_copy_array</a></div><div class="ttdeci">Collider * Colliders_copy_array(Collider *collider, int count)</div><div class="ttdef"><b>Definition:</b> collider.c:59</div></div>
+<div class="ttc" id="astructCollider_html"><div class="ttname"><a href="structCollider.html">Collider</a></div><div class="ttdef"><b>Definition:</b> collider.h:9</div></div>
+<div class="ttc" id="astructVector_html"><div class="ttname"><a href="structVector.html">Vector</a></div><div class="ttdoc">Structure représentant un vecteur 2D.</div><div class="ttdef"><b>Definition:</b> vector.h:12</div></div>
+<div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
 <div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="collider_8h.html">collider.h</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="collider_8h.html">collider.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

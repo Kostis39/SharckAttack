@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['game_5fdestroy_0',['Game_destroy',['../game_8h.html#a074f62ca71d406dfeeb16d2d02b89e8f',1,'Game_destroy(Game *game):&#160;game.c'],['../game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f',1,'Game_destroy(Game *game):&#160;game.c']]],
-  ['game_5finit_1',['Game_init',['../game_8h.html#aee1680a516eb6867998b57c444fcfdc2',1,'Game_init(Game *game, int width, int height, int nb_fish, int nb_colliders):&#160;game.c'],['../game_8c.html#ad62a4b0bb3aa1fedb92e481e2fd07430',1,'Game_init(Game *game, int width, int height, int nb_fish, int nb_collider):&#160;game.c']]],
-  ['game_5fpause_2',['Game_pause',['../game_8h.html#a28358f6ca80424c6b25fe847ab88b168',1,'Game_pause(Game *game):&#160;game.c'],['../game_8c.html#a28358f6ca80424c6b25fe847ab88b168',1,'Game_pause(Game *game):&#160;game.c']]],
-  ['game_5frun_5fsdl_3',['Game_run_SDL',['../game_8h.html#aca0d387bc2e2d5326bf90184b0c7f00b',1,'Game_run_SDL(bool benchmark_mode):&#160;game.c'],['../game_8c.html#a2ef55c9b533de162c33ec57f79946850',1,'Game_run_SDL(bool use_bench):&#160;game.c']]],
-  ['game_5frun_5fterminal_4',['Game_run_terminal',['../game_8h.html#a557884cc21f4886a0523bd645481b95e',1,'Game_run_terminal():&#160;game.c'],['../game_8c.html#a557884cc21f4886a0523bd645481b95e',1,'Game_run_terminal():&#160;game.c']]],
-  ['game_5fstep_5',['Game_step',['../mj_8h.html#a9e75fb0f434e437463e146042d313f79',1,'Game_step(World *world):&#160;mj.c'],['../mj_8c.html#a9e75fb0f434e437463e146042d313f79',1,'Game_step(World *world):&#160;mj.c']]],
-  ['get_5ffish_5fperception_6',['get_fish_perception',['../mj_8h.html#a75b9177629175263d5c929f5a3aa8fbb',1,'get_fish_perception(Fish *fish, World *world, FishPerception *perception):&#160;mj.c'],['../mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb',1,'get_fish_perception(Fish *fish, World *world, FishPerception *perception):&#160;mj.c']]],
-  ['get_5fshark_5fperception_7',['Get_shark_perception',['../mj_8h.html#adfe9415b1d1ffae2ede8056f5117386c',1,'Get_shark_perception(Shark *shark, World *world, SharkPerception *shark_perception):&#160;mj.c'],['../mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c',1,'Get_shark_perception(Shark *shark, World *world, SharkPerception *shark_perception):&#160;mj.c']]]
+  ['end_5flogs_1329',['end_logs',['../input__output_8h.html#a9260306018f557679576d7aa1bfd1e28',1,'end_logs(char *filename_params, char *filename_logs):&#160;input_output.c'],['../input__output_8c.html#a9260306018f557679576d7aa1bfd1e28',1,'end_logs(char *filename_params, char *filename_logs):&#160;input_output.c']]]
 ];

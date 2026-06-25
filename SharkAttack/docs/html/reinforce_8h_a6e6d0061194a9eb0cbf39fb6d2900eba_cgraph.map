@@ -1,0 +1,5 @@
+<map id="Trajectory_print" name="Trajectory_print">
+<area shape="rect" id="node1" title="affiche les pas d&#39;une trajectoire dont la récompense est supérieur à 0" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$theta__set_8h.html#aa9e592a66536602045e9b4fcef5693d0" title="affiche les valeurs des règles phi du requin (composantes x et y)" alt="" coords="176,5,292,32"/>
+<area shape="rect" id="node3" href="$vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="340,5,469,32"/>
+</map>

@@ -1,7 +1,7 @@
 var vector_8h =
 [
     [ "Vector", "structVector.html", "structVector" ],
-    [ "local_normalize", "vector_8h.html#aae4f47f60e365d136220ae860be5516e", null ],
+    [ "Local_normalize", "vector_8h.html#a2e464905dfe98674f7122719e724b339", null ],
     [ "Vector_add", "vector_8h.html#aa8a756d1731156d765e3a09776b920c8", null ],
     [ "Vector_angle", "vector_8h.html#a490279b95a55b0d116341c659033eb31", null ],
     [ "Vector_angle_fast", "vector_8h.html#a4244a9dd6fefcceefa323196e3f7c5bc", null ],

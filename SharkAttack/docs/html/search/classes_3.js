@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rulessetfish_0',['RulesSetFish',['../structRulesSetFish.html',1,'']]]
+  ['hyperparameters_1233',['Hyperparameters',['../structHyperparameters.html',1,'']]]
 ];

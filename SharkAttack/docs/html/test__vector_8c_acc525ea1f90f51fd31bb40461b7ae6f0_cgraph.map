@@ -1,5 +1,4 @@
 <map id="test_Vector_add_simple" name="test_Vector_add_simple">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,182,33"/>
-<area shape="rect" id="Node000002" href="$vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="230,5,323,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,17,217,19,212,19,182,22"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,183,32"/>
+<area shape="rect" id="node2" href="$vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="231,5,325,32"/>
 </map>

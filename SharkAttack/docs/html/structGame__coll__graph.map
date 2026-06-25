@@ -1,21 +1,14 @@
 <map id="Game" name="Game">
-<area shape="rect" id="Node000001" title="Structure représentant l&#39;état du jeu." alt="" coords="223,330,283,357"/>
-<area shape="rect" id="Node000002" href="$structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="173,229,232,257"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,269,233,304,247,330,242,328,228,307,212,273"/>
-<area shape="rect" id="Node000003" href="$structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="5,128,53,156"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="45,166,64,186,84,203,130,223,175,236,170,238,128,229,82,207,61,190,46,171"/>
-<area shape="rect" id="Node000004" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="82,5,144,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="67,41,50,59,41,76,35,94,31,128,26,128,30,93,36,74,46,55,69,36"/>
-<area shape="rect" id="Node000005" href="$structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="84,128,142,156"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="114,46,116,128,110,127,112,51"/>
-<area shape="rect" id="Node000006" href="$structCollider.html" title=" " alt="" coords="167,128,238,156"/>
-<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="157,39,176,55,188,73,196,93,204,129,198,128,191,95,183,76,172,59,157,44"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="128,167,155,203,184,228,179,229,151,207,127,172"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="204,169,205,229,200,227,201,174"/>
-<area shape="rect" id="Node000007" href="$structRulesSetFish.html" title=" " alt="" coords="262,128,366,156"/>
-<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="302,168,272,207,233,232,231,227,269,203,298,171"/>
-<area shape="rect" id="Node000008" href="$structSharkTeta.html" title=" " alt="" coords="394,128,480,156"/>
-<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="427,168,414,191,396,207,357,224,322,228,287,227,244,232,233,234,231,230,243,226,287,221,322,222,355,219,393,203,410,187,423,172"/>
-<area shape="rect" id="Node000009" href="$structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="256,229,351,257"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="294,269,277,307,263,331,259,327,272,304,289,272"/>
+<area shape="rect" id="node1" title="Structure représentant l&#39;état du jeu." alt="" coords="250,508,311,535"/>
+<area shape="rect" id="node2" href="$structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="191,404,287,431"/>
+<area shape="rect" id="node3" href="$structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="311,404,370,431"/>
+<area shape="rect" id="node4" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,32"/>
+<area shape="rect" id="node10" href="$structSharkPhi.html" title=" " alt="" coords="76,109,155,136"/>
+<area shape="rect" id="node5" href="$structCollider.html" title=" " alt="" coords="251,264,323,291"/>
+<area shape="rect" id="node6" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="319,109,381,136"/>
+<area shape="rect" id="node7" href="$structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="375,264,434,291"/>
+<area shape="rect" id="node9" href="$structStepTrajectory.html" title=" " alt="" coords="135,213,250,240"/>
+<area shape="rect" id="node11" href="$structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="467,213,515,240"/>
+<area shape="rect" id="node8" href="$structTrajectory.html" title=" " alt="" coords="151,315,237,341"/>
+<area shape="rect" id="node12" href="$structRulesSetFish.html" title=" " alt="" coords="552,315,657,341"/>
 </map>

@@ -1,11 +1,7 @@
 <map id="Draw_colliders" name="Draw_colliders">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,32,123,60"/>
-<area shape="rect" id="Node000002" href="$render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title=" " alt="" coords="171,32,281,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,43,157,45,152,46,124,48"/>
-<area shape="rect" id="Node000003" href="$render__sdl_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title=" " alt="" coords="329,5,470,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="281,35,316,32,311,33,282,40"/>
-<area shape="rect" id="Node000005" href="$render__sdl_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="370,57,429,85"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="281,51,358,65,353,65,281,57"/>
-<area shape="rect" id="Node000004" href="$render__sdl_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="518,5,655,33"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="470,17,506,19,500,19,471,22"/>
+<area shape="rect" id="node1" title="dessine un tableau de colliders" alt="" coords="5,31,124,57"/>
+<area shape="rect" id="node2" href="$render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="172,31,283,57"/>
+<area shape="rect" id="node3" href="$sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="331,5,473,32"/>
+<area shape="rect" id="node5" href="$sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="373,56,431,83"/>
+<area shape="rect" id="node4" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="521,5,659,32"/>
 </map>

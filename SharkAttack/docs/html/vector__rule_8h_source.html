@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sharkattack:  Fichier source de include/vector_rule.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Sharkattack the game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('vector__rule_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">vector_rule.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="vector__rule_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VECTOR_RULE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VECTOR_RULE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structVectorRule.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">float</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structVectorRule.html#af17fa07d3ddfd24a41bbbd68680cd6ce">   15</a></span>&#160;        vect[<a class="code" href="config_8h.html#ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4">Rules_Lenght</a>]; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;} <a class="code" href="structVectorRule.html">VectorRule</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="structVectorRule.html">VectorRule</a> <a class="code" href="vector__rule_8h.html#a080684ca70bd28327ac7992ce6e675ee">VectorRule_init</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e">VectorRule_print</a>(<a class="code" href="structVectorRule.html">VectorRule</a> v);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="vector__rule_8h.html#a992f7d7160220b488586f878c0a2c4a1">VectorRule_fprint</a>(FILE *file, <a class="code" href="structVectorRule.html">VectorRule</a> v);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">float</span> <a class="code" href="vector__rule_8h.html#a7ba6a93f13cc0e244b559b961d9d99d5">VectorRule_dot_product</a>(<a class="code" href="structVectorRule.html">VectorRule</a> a, <a class="code" href="structVectorRule.html">VectorRule</a> b);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<a class="code" href="structVectorRule.html">VectorRule</a> <a class="code" href="vector__rule_8h.html#a7762dcff21c715334dc5facbc5c85976">VectorRule_scaled</a>(<a class="code" href="structVectorRule.html">VectorRule</a> v, <span class="keywordtype">float</span> scalar);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="structVectorRule.html">VectorRule</a> <a class="code" href="vector__rule_8h.html#ac40f4a4667a3f7827ca951218ed1a573">VectorRule_add</a>(<a class="code" href="structVectorRule.html">VectorRule</a> a, <a class="code" href="structVectorRule.html">VectorRule</a> b);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<a class="code" href="structVectorRule.html">VectorRule</a> <a class="code" href="vector__rule_8h.html#a1fed062807bdf06ab9c46fd8117e3abd">VectorRule_sub</a>(<a class="code" href="structVectorRule.html">VectorRule</a> a, <a class="code" href="structVectorRule.html">VectorRule</a> b);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
+<div class="ttc" id="aconfig_8h_html_ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4"><div class="ttname"><a href="config_8h.html#ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4">Rules_Lenght</a></div><div class="ttdeci">@ Rules_Lenght</div><div class="ttdef"><b>Definition:</b> config.h:6</div></div>
+<div class="ttc" id="astructVectorRule_html"><div class="ttname"><a href="structVectorRule.html">VectorRule</a></div><div class="ttdoc">Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...</div><div class="ttdef"><b>Definition:</b> vector_rule.h:13</div></div>
+<div class="ttc" id="avector__rule_8h_html_a080684ca70bd28327ac7992ce6e675ee"><div class="ttname"><a href="vector__rule_8h.html#a080684ca70bd28327ac7992ce6e675ee">VectorRule_init</a></div><div class="ttdeci">VectorRule VectorRule_init()</div><div class="ttdoc">Initialise un VectorRule avec toutes ses composantes à 0.</div><div class="ttdef"><b>Definition:</b> vector_rule.c:3</div></div>
+<div class="ttc" id="avector__rule_8h_html_a1fed062807bdf06ab9c46fd8117e3abd"><div class="ttname"><a href="vector__rule_8h.html#a1fed062807bdf06ab9c46fd8117e3abd">VectorRule_sub</a></div><div class="ttdeci">VectorRule VectorRule_sub(VectorRule a, VectorRule b)</div><div class="ttdoc">soustrait deux VectorRule composante par composante.</div><div class="ttdef"><b>Definition:</b> vector_rule.c:60</div></div>
+<div class="ttc" id="avector__rule_8h_html_a4d63975dce327451f209286ee3dee20e"><div class="ttname"><a href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e">VectorRule_print</a></div><div class="ttdeci">void VectorRule_print(VectorRule v)</div><div class="ttdoc">Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...).</div><div class="ttdef"><b>Definition:</b> vector_rule.c:11</div></div>
+<div class="ttc" id="avector__rule_8h_html_a7762dcff21c715334dc5facbc5c85976"><div class="ttname"><a href="vector__rule_8h.html#a7762dcff21c715334dc5facbc5c85976">VectorRule_scaled</a></div><div class="ttdeci">VectorRule VectorRule_scaled(VectorRule v, float scalar)</div><div class="ttdoc">Multiplie toutes les composantes d'un VectorRule par un scalaire.</div><div class="ttdef"><b>Definition:</b> vector_rule.c:44</div></div>
+<div class="ttc" id="avector__rule_8h_html_a7ba6a93f13cc0e244b559b961d9d99d5"><div class="ttname"><a href="vector__rule_8h.html#a7ba6a93f13cc0e244b559b961d9d99d5">VectorRule_dot_product</a></div><div class="ttdeci">float VectorRule_dot_product(VectorRule a, VectorRule b)</div><div class="ttdoc">Calcule le produit scalaire entre deux VectorRule.</div><div class="ttdef"><b>Definition:</b> vector_rule.c:35</div></div>
+<div class="ttc" id="avector__rule_8h_html_a992f7d7160220b488586f878c0a2c4a1"><div class="ttname"><a href="vector__rule_8h.html#a992f7d7160220b488586f878c0a2c4a1">VectorRule_fprint</a></div><div class="ttdeci">void VectorRule_fprint(FILE *file, VectorRule v)</div><div class="ttdoc">écrit dans un fichier les composantes du vecteur sous la forme (v1, v2, ...).</div><div class="ttdef"><b>Definition:</b> vector_rule.c:23</div></div>
+<div class="ttc" id="avector__rule_8h_html_ac40f4a4667a3f7827ca951218ed1a573"><div class="ttname"><a href="vector__rule_8h.html#ac40f4a4667a3f7827ca951218ed1a573">VectorRule_add</a></div><div class="ttdeci">VectorRule VectorRule_add(VectorRule a, VectorRule b)</div><div class="ttdoc">Additionne deux VectorRule composante par composante.</div><div class="ttdef"><b>Definition:</b> vector_rule.c:52</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="vector__rule_8h.html">vector_rule.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

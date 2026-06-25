@@ -1,0 +1,4 @@
+<map id="Draw_circle_outline" name="Draw_circle_outline">
+<area shape="rect" id="node1" title="dessine le contour d&#39;un cercle" alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="204,5,263,32"/>
+</map>

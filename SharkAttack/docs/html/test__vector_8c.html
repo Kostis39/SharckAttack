@@ -1,19 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.15.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier tests/test_vector.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,10 +23,10 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="sharky.jpg"/></td>
-  <td id="projectalign">
-   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -36,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.15.0 -->
+<!-- Généré par Doxygen 1.9.1 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-</script>
-<script type="text/javascript">
-$(function() { codefold.init(); });
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche',true);
-  $(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
 });
-</script>
+/* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -64,9 +63,10 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('test__vector_8c.html','',''); });
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('test__vector_8c.html',''); initResizable(); });
+/* @license-end */
 </script>
-<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,20 +77,17 @@ $(function(){initNavTree('test__vector_8c.html','',''); });
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Chargement...</div>
-<div class="SRStatus" id="Searching">Recherche...</div>
-<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
-</div>
-</div>
-</div>
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Référence du fichier test_vector.c</div></div>
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier test_vector.c</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="unity_8h_source.html">unity.h</a>&quot;</code><br />
@@ -99,69 +96,85 @@ $(function(){initNavTree('test__vector_8c.html','',''); });
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de test_vector.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c__incl.png" border="0" usemap="#atests_2test__vector_8c" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c__incl.png" border="0" usemap="#atests_2test__vector_8c" alt=""/></div>
 <map name="atests_2test__vector_8c" id="atests_2test__vector_8c">
-<area shape="rect" title=" " alt="" coords="44,5,184,33"/>
-<area shape="rect" href="unity_8h.html" title=" " alt="" coords="179,81,243,109"/>
-<area shape="poly" title=" " alt="" coords="131,31,184,71,179,73,131,36"/>
-<area shape="rect" title=" " alt="" coords="5,232,73,260"/>
-<area shape="poly" title=" " alt="" coords="111,33,68,158,49,219,44,217,63,156,106,34"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="77,157,150,184"/>
-<area shape="poly" title=" " alt="" coords="115,31,116,141,111,140,112,35"/>
-<area shape="rect" href="unity__internals_8h.html" title=" " alt="" coords="174,157,304,184"/>
-<area shape="poly" title=" " alt="" coords="217,107,231,143,226,142,215,112"/>
-<area shape="rect" title=" " alt="" coords="376,232,454,260"/>
-<area shape="poly" title=" " alt="" coords="271,182,372,226,367,226,270,187"/>
-<area shape="poly" title=" " alt="" coords="204,187,88,230,86,225,202,182"/>
-<area shape="rect" title=" " alt="" coords="478,232,552,260"/>
-<area shape="poly" title=" " alt="" coords="289,182,466,230,461,232,288,188"/>
-<area shape="rect" title=" " alt="" coords="186,232,257,260"/>
-<area shape="poly" title=" " alt="" coords="238,183,230,219,226,215,234,187"/>
-<area shape="rect" title=" " alt="" coords="281,232,352,260"/>
-<area shape="poly" title=" " alt="" coords="254,182,294,222,289,221,252,187"/>
-<area shape="rect" title=" " alt="" coords="97,232,162,260"/>
-<area shape="poly" title=" " alt="" coords="222,184,163,226,160,221,217,186"/>
-<area shape="poly" title=" " alt="" coords="103,184,65,223,61,219,98,186"/>
-<area shape="poly" title=" " alt="" coords="118,183,126,218,121,216,115,187"/>
+<area shape="rect" title=" " alt="" coords="133,5,274,32"/>
+<area shape="rect" href="unity_8h.html" title=" " alt="" coords="269,80,335,107"/>
+<area shape="rect" title=" " alt="" coords="103,229,171,256"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="166,155,241,181"/>
+<area shape="rect" href="unity__internals_8h.html" title=" " alt="" coords="265,155,395,181"/>
+<area shape="rect" title=" " alt="" coords="575,229,653,256"/>
+<area shape="rect" title=" " alt="" coords="286,229,361,256"/>
+<area shape="rect" title=" " alt="" coords="385,229,456,256"/>
+<area shape="rect" title=" " alt="" coords="480,229,551,256"/>
+<area shape="rect" title=" " alt="" coords="195,229,262,256"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="5,229,79,256"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a9a821f617dd961bac1f511761da716ca" id="r_a9a821f617dd961bac1f511761da716ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a821f617dd961bac1f511761da716ca">ASSERT_FLOAT</a>(expected,  actual,  tol)</td></tr>
+<tr class="memitem:a9a821f617dd961bac1f511761da716ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a9a821f617dd961bac1f511761da716ca">ASSERT_FLOAT</a>(expected,  actual,  tol)&#160;&#160;&#160;    <a class="el" href="unity_8h.html#a778eea8bde4adf059d65f7cc820aae17">TEST_ASSERT_FLOAT_WITHIN</a>((tol), (expected), (actual))</td></tr>
+<tr class="separator:a9a821f617dd961bac1f511761da716ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a95c834d6178047ce9e1bce7cbfea2836" id="r_a95c834d6178047ce9e1bce7cbfea2836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95c834d6178047ce9e1bce7cbfea2836">setUp</a> (void)</td></tr>
-<tr class="memitem:a9909011e5fea0c018842eec4d93d0662" id="r_a9909011e5fea0c018842eec4d93d0662"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9909011e5fea0c018842eec4d93d0662">tearDown</a> (void)</td></tr>
-<tr class="memitem:adcd237a80772da9b7de03d3ed6339832" id="r_adcd237a80772da9b7de03d3ed6339832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcd237a80772da9b7de03d3ed6339832">test_Vector_init_returns_zero_vector</a> (void)</td></tr>
-<tr class="memitem:acc525ea1f90f51fd31bb40461b7ae6f0" id="r_acc525ea1f90f51fd31bb40461b7ae6f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc525ea1f90f51fd31bb40461b7ae6f0">test_Vector_add_simple</a> (void)</td></tr>
-<tr class="memitem:a8c58f3a813c5d73b9ca6b28389ca77ed" id="r_a8c58f3a813c5d73b9ca6b28389ca77ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c58f3a813c5d73b9ca6b28389ca77ed">test_Vector_add_with_negative</a> (void)</td></tr>
-<tr class="memitem:a6cbbd2cc6c199fa272aa5655d8353ce9" id="r_a6cbbd2cc6c199fa272aa5655d8353ce9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cbbd2cc6c199fa272aa5655d8353ce9">test_Vector_add_with_zero</a> (void)</td></tr>
-<tr class="memitem:a89bd3faeb70111a5b705edd635d4bb98" id="r_a89bd3faeb70111a5b705edd635d4bb98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89bd3faeb70111a5b705edd635d4bb98">test_Vector_sub_simple</a> (void)</td></tr>
-<tr class="memitem:a24671c000604663ea34e8907d42f4e7d" id="r_a24671c000604663ea34e8907d42f4e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24671c000604663ea34e8907d42f4e7d">test_Vector_sub_same_vector_returns_zero</a> (void)</td></tr>
-<tr class="memitem:ab253b2069ceb2f0710718d73769a1160" id="r_ab253b2069ceb2f0710718d73769a1160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab253b2069ceb2f0710718d73769a1160">test_Vector_scale_by_positive</a> (void)</td></tr>
-<tr class="memitem:a07927ec05bcf6877bc5b58da08f8003e" id="r_a07927ec05bcf6877bc5b58da08f8003e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07927ec05bcf6877bc5b58da08f8003e">test_Vector_scale_by_zero</a> (void)</td></tr>
-<tr class="memitem:af52a2e259560390f28d7c336f76d9f8d" id="r_af52a2e259560390f28d7c336f76d9f8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af52a2e259560390f28d7c336f76d9f8d">test_Vector_scale_by_negative</a> (void)</td></tr>
-<tr class="memitem:ad80423fe68a03606997a27e224c6d26f" id="r_ad80423fe68a03606997a27e224c6d26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad80423fe68a03606997a27e224c6d26f">test_Vector_scale_by_fraction</a> (void)</td></tr>
-<tr class="memitem:ac386e76d57bf5451231cc3a91afe528c" id="r_ac386e76d57bf5451231cc3a91afe528c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac386e76d57bf5451231cc3a91afe528c">test_Vector_length_unit_vector</a> (void)</td></tr>
-<tr class="memitem:a96b177ca49c130a741e1f57790fa8aac" id="r_a96b177ca49c130a741e1f57790fa8aac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96b177ca49c130a741e1f57790fa8aac">test_Vector_length_pythagorean</a> (void)</td></tr>
-<tr class="memitem:a6cb4a72c2951d7f93836d51792e5c25c" id="r_a6cb4a72c2951d7f93836d51792e5c25c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cb4a72c2951d7f93836d51792e5c25c">test_Vector_length_zero_vector</a> (void)</td></tr>
-<tr class="memitem:adf026a45e33154353c4b1f09ee16de4f" id="r_adf026a45e33154353c4b1f09ee16de4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf026a45e33154353c4b1f09ee16de4f">test_Vector_distance_same_point</a> (void)</td></tr>
-<tr class="memitem:a98e04edffd6911cf63917da8f2b066a3" id="r_a98e04edffd6911cf63917da8f2b066a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98e04edffd6911cf63917da8f2b066a3">test_Vector_distance_known</a> (void)</td></tr>
-<tr class="memitem:a75020727d3d26d7b43c60c3e2ff87fc1" id="r_a75020727d3d26d7b43c60c3e2ff87fc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75020727d3d26d7b43c60c3e2ff87fc1">test_Vector_normalize_unit_length</a> (void)</td></tr>
-<tr class="memitem:a45bd1cd2efbe20f9c2ecc878a7996260" id="r_a45bd1cd2efbe20f9c2ecc878a7996260"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45bd1cd2efbe20f9c2ecc878a7996260">test_Vector_normalize_zero_vector_returns_zero</a> (void)</td></tr>
-<tr class="memitem:a5694d910e56950f9e2e74f8ce8a95b22" id="r_a5694d910e56950f9e2e74f8ce8a95b22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5694d910e56950f9e2e74f8ce8a95b22">test_Vector_limit_below_max</a> (void)</td></tr>
-<tr class="memitem:aa3dbebcd984eb00fa94cc08e1b27fbe1" id="r_aa3dbebcd984eb00fa94cc08e1b27fbe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3dbebcd984eb00fa94cc08e1b27fbe1">test_Vector_limit_above_max</a> (void)</td></tr>
-<tr class="memitem:a8730e41d23f1231aedd7fa4242eefe64" id="r_a8730e41d23f1231aedd7fa4242eefe64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8730e41d23f1231aedd7fa4242eefe64">test_Vector_limit_exact_max</a> (void)</td></tr>
-<tr class="memitem:aba4d53c52d3205fdb9771b805f0d7c92" id="r_aba4d53c52d3205fdb9771b805f0d7c92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba4d53c52d3205fdb9771b805f0d7c92">test_Vector_angle_aligned</a> (void)</td></tr>
-<tr class="memitem:a3cfe98325e006a2838f6721f403a40c5" id="r_a3cfe98325e006a2838f6721f403a40c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cfe98325e006a2838f6721f403a40c5">test_Vector_angle_perpendicular</a> (void)</td></tr>
-<tr class="memitem:a7134c8dcc8ada9bb5ae836e37046c967" id="r_a7134c8dcc8ada9bb5ae836e37046c967"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7134c8dcc8ada9bb5ae836e37046c967">test_Vector_angle_opposite</a> (void)</td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memitem:a95c834d6178047ce9e1bce7cbfea2836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a95c834d6178047ce9e1bce7cbfea2836">setUp</a> (void)</td></tr>
+<tr class="separator:a95c834d6178047ce9e1bce7cbfea2836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9909011e5fea0c018842eec4d93d0662"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a9909011e5fea0c018842eec4d93d0662">tearDown</a> (void)</td></tr>
+<tr class="separator:a9909011e5fea0c018842eec4d93d0662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd237a80772da9b7de03d3ed6339832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#adcd237a80772da9b7de03d3ed6339832">test_Vector_init_returns_zero_vector</a> (void)</td></tr>
+<tr class="separator:adcd237a80772da9b7de03d3ed6339832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc525ea1f90f51fd31bb40461b7ae6f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#acc525ea1f90f51fd31bb40461b7ae6f0">test_Vector_add_simple</a> (void)</td></tr>
+<tr class="separator:acc525ea1f90f51fd31bb40461b7ae6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c58f3a813c5d73b9ca6b28389ca77ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a8c58f3a813c5d73b9ca6b28389ca77ed">test_Vector_add_with_negative</a> (void)</td></tr>
+<tr class="separator:a8c58f3a813c5d73b9ca6b28389ca77ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cbbd2cc6c199fa272aa5655d8353ce9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a6cbbd2cc6c199fa272aa5655d8353ce9">test_Vector_add_with_zero</a> (void)</td></tr>
+<tr class="separator:a6cbbd2cc6c199fa272aa5655d8353ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89bd3faeb70111a5b705edd635d4bb98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a89bd3faeb70111a5b705edd635d4bb98">test_Vector_sub_simple</a> (void)</td></tr>
+<tr class="separator:a89bd3faeb70111a5b705edd635d4bb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24671c000604663ea34e8907d42f4e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a24671c000604663ea34e8907d42f4e7d">test_Vector_sub_same_vector_returns_zero</a> (void)</td></tr>
+<tr class="separator:a24671c000604663ea34e8907d42f4e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab253b2069ceb2f0710718d73769a1160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#ab253b2069ceb2f0710718d73769a1160">test_Vector_scale_by_positive</a> (void)</td></tr>
+<tr class="separator:ab253b2069ceb2f0710718d73769a1160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07927ec05bcf6877bc5b58da08f8003e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a07927ec05bcf6877bc5b58da08f8003e">test_Vector_scale_by_zero</a> (void)</td></tr>
+<tr class="separator:a07927ec05bcf6877bc5b58da08f8003e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52a2e259560390f28d7c336f76d9f8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#af52a2e259560390f28d7c336f76d9f8d">test_Vector_scale_by_negative</a> (void)</td></tr>
+<tr class="separator:af52a2e259560390f28d7c336f76d9f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80423fe68a03606997a27e224c6d26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#ad80423fe68a03606997a27e224c6d26f">test_Vector_scale_by_fraction</a> (void)</td></tr>
+<tr class="separator:ad80423fe68a03606997a27e224c6d26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac386e76d57bf5451231cc3a91afe528c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#ac386e76d57bf5451231cc3a91afe528c">test_Vector_length_unit_vector</a> (void)</td></tr>
+<tr class="separator:ac386e76d57bf5451231cc3a91afe528c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96b177ca49c130a741e1f57790fa8aac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a96b177ca49c130a741e1f57790fa8aac">test_Vector_length_pythagorean</a> (void)</td></tr>
+<tr class="separator:a96b177ca49c130a741e1f57790fa8aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb4a72c2951d7f93836d51792e5c25c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a6cb4a72c2951d7f93836d51792e5c25c">test_Vector_length_zero_vector</a> (void)</td></tr>
+<tr class="separator:a6cb4a72c2951d7f93836d51792e5c25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf026a45e33154353c4b1f09ee16de4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#adf026a45e33154353c4b1f09ee16de4f">test_Vector_distance_same_point</a> (void)</td></tr>
+<tr class="separator:adf026a45e33154353c4b1f09ee16de4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e04edffd6911cf63917da8f2b066a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a98e04edffd6911cf63917da8f2b066a3">test_Vector_distance_known</a> (void)</td></tr>
+<tr class="separator:a98e04edffd6911cf63917da8f2b066a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75020727d3d26d7b43c60c3e2ff87fc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a75020727d3d26d7b43c60c3e2ff87fc1">test_Vector_normalize_unit_length</a> (void)</td></tr>
+<tr class="separator:a75020727d3d26d7b43c60c3e2ff87fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45bd1cd2efbe20f9c2ecc878a7996260"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a45bd1cd2efbe20f9c2ecc878a7996260">test_Vector_normalize_zero_vector_returns_zero</a> (void)</td></tr>
+<tr class="separator:a45bd1cd2efbe20f9c2ecc878a7996260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5694d910e56950f9e2e74f8ce8a95b22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a5694d910e56950f9e2e74f8ce8a95b22">test_Vector_limit_below_max</a> (void)</td></tr>
+<tr class="separator:a5694d910e56950f9e2e74f8ce8a95b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3dbebcd984eb00fa94cc08e1b27fbe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#aa3dbebcd984eb00fa94cc08e1b27fbe1">test_Vector_limit_above_max</a> (void)</td></tr>
+<tr class="separator:aa3dbebcd984eb00fa94cc08e1b27fbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8730e41d23f1231aedd7fa4242eefe64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a8730e41d23f1231aedd7fa4242eefe64">test_Vector_limit_exact_max</a> (void)</td></tr>
+<tr class="separator:a8730e41d23f1231aedd7fa4242eefe64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba4d53c52d3205fdb9771b805f0d7c92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#aba4d53c52d3205fdb9771b805f0d7c92">test_Vector_angle_aligned</a> (void)</td></tr>
+<tr class="separator:aba4d53c52d3205fdb9771b805f0d7c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cfe98325e006a2838f6721f403a40c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a3cfe98325e006a2838f6721f403a40c5">test_Vector_angle_perpendicular</a> (void)</td></tr>
+<tr class="separator:a3cfe98325e006a2838f6721f403a40c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7134c8dcc8ada9bb5ae836e37046c967"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a7134c8dcc8ada9bb5ae836e37046c967">test_Vector_angle_opposite</a> (void)</td></tr>
+<tr class="separator:a7134c8dcc8ada9bb5ae836e37046c967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__vector_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
-<a id="a9a821f617dd961bac1f511761da716ca" name="a9a821f617dd961bac1f511761da716ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a821f617dd961bac1f511761da716ca">&#9670;&#160;</a></span>ASSERT_FLOAT</h2>
+<h2 class="groupheader">Documentation des macros</h2>
+<a id="a9a821f617dd961bac1f511761da716ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a821f617dd961bac1f511761da716ca">&#9670;&nbsp;</a></span>ASSERT_FLOAT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,28 +182,34 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">#define ASSERT_FLOAT</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expected, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>actual</em></span>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">actual, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tol</em></span>&#160;)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tol&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    <a class="el" href="unity_8h.html#a778eea8bde4adf059d65f7cc820aae17">TEST_ASSERT_FLOAT_WITHIN</a>((tol), (expected), (actual))</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Valeur :</b><div class="fragment"><div class="line">    <a class="code hl_define" href="unity_8h.html#a778eea8bde4adf059d65f7cc820aae17">TEST_ASSERT_FLOAT_WITHIN</a>((tol), (expected), (actual))</div>
-<div class="ttc" id="aunity_8h_html_a778eea8bde4adf059d65f7cc820aae17"><div class="ttname"><a href="unity_8h.html#a778eea8bde4adf059d65f7cc820aae17">TEST_ASSERT_FLOAT_WITHIN</a></div><div class="ttdeci">#define TEST_ASSERT_FLOAT_WITHIN(delta, expected, actual)</div><div class="ttdef"><b>Definition</b> unity.h:350</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
-<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,7 +217,8 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -206,103 +226,52 @@ Fonctions</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#atest__vector_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#atest__vector_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="atest__vector_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
-<area shape="rect" title=" " alt="" coords="5,587,60,614"/>
-<area shape="rect" href="test__vector_8c.html#acc525ea1f90f51fd31bb40461b7ae6f0" title=" " alt="" coords="136,5,312,33"/>
-<area shape="poly" title=" " alt="" coords="31,586,31,480,39,317,48,231,61,152,80,87,92,62,106,43,124,30,121,35,110,46,97,65,85,89,67,154,53,232,45,317,37,480,36,587"/>
-<area shape="rect" href="test__vector_8c.html#a8c58f3a813c5d73b9ca6b28389ca77ed" title=" " alt="" coords="144,57,304,102"/>
-<area shape="poly" title=" " alt="" coords="31,586,34,492,45,350,54,276,67,208,84,151,106,112,131,94,129,99,110,116,89,153,72,209,59,277,50,351,40,493,37,587"/>
-<area shape="rect" href="test__vector_8c.html#a6cbbd2cc6c199fa272aa5655d8353ce9" title=" " alt="" coords="127,125,322,153"/>
-<area shape="poly" title=" " alt="" coords="32,586,36,500,47,374,56,308,69,248,85,198,106,164,115,158,112,163,110,168,90,200,74,249,62,309,52,374,41,501,37,586"/>
-<area shape="rect" href="test__vector_8c.html#aba4d53c52d3205fdb9771b805f0d7c92" title=" " alt="" coords="128,177,320,205"/>
-<area shape="poly" title=" " alt="" coords="32,586,37,510,50,398,72,289,87,246,106,216,117,209,114,213,110,220,92,248,77,290,55,399,43,510,37,586"/>
-<area shape="rect" href="test__vector_8c.html#a7134c8dcc8ada9bb5ae836e37046c967" title=" " alt="" coords="124,229,324,257"/>
-<area shape="poly" title=" " alt="" coords="32,586,39,519,53,423,75,330,89,293,106,268,113,264,110,269,110,272,94,296,80,331,59,424,45,519,38,586"/>
-<area shape="rect" href="test__vector_8c.html#a3cfe98325e006a2838f6721f403a40c5" title=" " alt="" coords="108,281,341,309"/>
-<area shape="poly" title=" " alt="" coords="30,586,31,537,40,467,49,429,62,392,81,356,106,325,121,315,119,319,110,329,85,359,67,394,54,431,45,468,36,537,36,586"/>
-<area shape="rect" href="test__vector_8c.html#a98e04edffd6911cf63917da8f2b066a3" title=" " alt="" coords="146,792,302,836"/>
-<area shape="poly" title=" " alt="" coords="36,612,45,646,59,688,79,732,110,771,135,789,130,791,106,774,75,735,54,690,40,647,36,617"/>
-<area shape="rect" href="test__vector_8c.html#adf026a45e33154353c4b1f09ee16de4f" title=" " alt="" coords="146,861,302,906"/>
-<area shape="poly" title=" " alt="" coords="34,612,39,659,48,722,57,755,70,788,87,819,109,847,135,865,130,867,106,850,83,822,65,791,52,757,43,723,33,660,34,617"/>
-<area shape="rect" href="test__vector_8c.html#adcd237a80772da9b7de03d3ed6339832" title=" " alt="" coords="137,1189,312,1234"/>
-<area shape="poly" title=" " alt="" coords="34,612,38,722,46,888,55,976,68,1056,86,1123,97,1149,110,1168,126,1184,121,1184,106,1172,93,1151,81,1125,63,1057,50,976,41,889,32,722,34,617"/>
-<area shape="rect" href="test__vector_8c.html#a96b177ca49c130a741e1f57790fa8aac" title=" " alt="" coords="638,309,781,354"/>
-<area shape="poly" title=" " alt="" coords="32,586,36,548,47,497,69,444,85,420,106,400,145,379,200,362,266,350,340,341,492,331,625,329,621,332,492,336,340,346,267,355,201,367,147,384,109,404,90,423,74,446,52,498,41,549,37,586"/>
-<area shape="rect" href="test__vector_8c.html#ac386e76d57bf5451231cc3a91afe528c" title=" " alt="" coords="638,378,781,423"/>
-<area shape="poly" title=" " alt="" coords="33,586,40,555,53,515,74,474,89,456,106,441,146,422,201,408,268,399,341,394,493,390,625,395,621,398,493,396,341,399,268,404,202,414,148,427,109,445,93,460,79,477,58,517,45,556,38,587"/>
-<area shape="rect" href="test__vector_8c.html#a6cb4a72c2951d7f93836d51792e5c25c" title=" " alt="" coords="638,448,781,492"/>
-<area shape="poly" title=" " alt="" coords="36,585,60,536,81,511,106,490,171,461,240,442,310,431,381,426,450,427,514,432,626,449,621,452,514,437,449,432,381,432,311,436,241,447,173,466,109,495,84,514,65,539,41,587"/>
-<area shape="rect" href="test__vector_8c.html#aa3dbebcd984eb00fa94cc08e1b27fbe1" title=" " alt="" coords="117,535,332,562"/>
-<area shape="poly" title=" " alt="" coords="58,589,107,573,142,565,138,569,108,578,62,592"/>
-<area shape="rect" href="test__vector_8c.html#a5694d910e56950f9e2e74f8ce8a95b22" title=" " alt="" coords="118,639,331,666"/>
-<area shape="poly" title=" " alt="" coords="59,608,108,623,142,633,138,636,107,628,62,613"/>
-<area shape="rect" href="test__vector_8c.html#a8730e41d23f1231aedd7fa4242eefe64" title=" " alt="" coords="119,587,330,614"/>
-<area shape="poly" title=" " alt="" coords="58,598,106,599,102,602,62,603"/>
-<area shape="rect" href="test__vector_8c.html#a75020727d3d26d7b43c60c3e2ff87fc1" title=" " alt="" coords="402,568,569,612"/>
-<area shape="poly" title=" " alt="" coords="40,585,66,551,85,534,107,521,170,500,222,497,276,505,342,521,391,536,436,559,431,561,389,541,340,526,275,511,222,502,171,505,109,526,88,538,70,554,45,587"/>
-<area shape="rect" href="test__vector_8c.html#a45bd1cd2efbe20f9c2ecc878a7996260" title=" " alt="" coords="390,688,582,732"/>
-<area shape="poly" title=" " alt="" coords="42,612,71,646,89,663,109,675,174,699,243,713,311,718,376,719,371,722,311,723,242,718,173,704,106,680,85,667,67,650,43,618"/>
-<area shape="rect" href="test__vector_8c.html#ad80423fe68a03606997a27e224c6d26f" title=" " alt="" coords="630,1009,789,1054"/>
-<area shape="poly" title=" " alt="" coords="34,612,40,696,51,815,61,876,73,932,89,977,109,1005,145,1025,197,1039,261,1047,333,1050,483,1048,618,1040,613,1042,483,1053,333,1056,261,1052,196,1044,143,1030,106,1009,85,979,68,933,55,877,46,816,35,696,34,617"/>
-<area shape="rect" href="test__vector_8c.html#af52a2e259560390f28d7c336f76d9f8d" title=" " alt="" coords="406,888,565,932"/>
-<area shape="poly" title=" " alt="" coords="35,612,44,680,57,773,79,861,93,895,109,916,143,937,180,950,219,957,259,959,338,952,411,936,406,939,339,957,259,965,218,963,178,955,140,941,106,920,88,897,74,863,52,774,39,681,35,618"/>
-<area shape="rect" href="test__vector_8c.html#ab253b2069ceb2f0710718d73769a1160" title=" " alt="" coords="630,930,789,975"/>
-<area shape="poly" title=" " alt="" coords="34,612,42,690,54,797,63,851,76,901,91,940,109,965,146,983,198,994,262,998,334,997,483,985,618,968,613,970,484,990,334,1003,262,1004,197,999,144,988,106,969,86,943,70,902,58,853,48,798,36,690,34,618"/>
-<area shape="rect" href="test__vector_8c.html#a07927ec05bcf6877bc5b58da08f8003e" title=" " alt="" coords="389,756,582,784"/>
-<area shape="poly" title=" " alt="" coords="37,612,63,669,83,699,109,724,155,741,221,753,376,766,372,769,221,758,153,746,106,728,79,703,58,672,38,617"/>
-<area shape="rect" href="test__vector_8c.html#a24671c000604663ea34e8907d42f4e7d" title=" " alt="" coords="402,1133,569,1178"/>
-<area shape="poly" title=" " alt="" coords="34,612,36,718,44,873,53,954,66,1028,85,1088,96,1110,109,1127,128,1138,155,1147,225,1158,308,1161,390,1161,384,1162,307,1166,225,1163,153,1152,126,1143,106,1130,92,1113,80,1090,61,1029,47,955,38,874,31,718,33,618"/>
-<area shape="rect" href="test__vector_8c.html#a89bd3faeb70111a5b705edd635d4bb98" title=" " alt="" coords="398,1081,573,1109"/>
-<area shape="poly" title=" " alt="" coords="34,612,39,705,48,842,57,912,70,976,88,1028,98,1047,110,1061,142,1085,179,1103,218,1114,259,1120,341,1119,415,1112,410,1113,341,1125,259,1125,217,1119,177,1108,139,1090,106,1065,93,1050,83,1030,65,977,52,913,43,842,33,706,34,617"/>
-<area shape="rect" href="vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="439,65,532,93"/>
-<area shape="poly" title=" " alt="" coords="291,31,342,42,426,63,421,66,340,47,294,36"/>
-<area shape="poly" title=" " alt="" coords="304,77,426,77,422,81,306,81"/>
-<area shape="poly" title=" " alt="" coords="291,123,340,111,426,92,422,96,342,116,295,127"/>
-<area shape="rect" href="vector_8c.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="433,229,538,257"/>
-<area shape="poly" title=" " alt="" coords="297,203,420,228,416,231,299,208"/>
-<area shape="poly" title=" " alt="" coords="324,241,419,242,415,245,326,245"/>
-<area shape="poly" title=" " alt="" coords="296,279,420,255,416,258,299,283"/>
-<area shape="rect" href="vector_8c.html#a4d18706bde5519ef90b2bb4a1311fc55" title=" " alt="" coords="424,809,548,837"/>
-<area shape="poly" title=" " alt="" coords="302,814,410,819,406,822,304,819"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="837,541,947,569"/>
-<area shape="poly" title=" " alt="" coords="547,809,603,795,666,773,729,744,787,705,816,676,841,643,876,585,880,581,845,646,820,680,790,709,732,749,668,778,604,800,550,814"/>
-<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="663,1081,756,1109"/>
-<area shape="poly" title=" " alt="" coords="530,835,560,851,584,873,600,899,607,925,607,972,608,1018,616,1041,632,1064,652,1081,646,1080,628,1068,611,1043,603,1019,602,972,602,925,595,902,580,877,557,855,530,840"/>
-<area shape="poly" title=" " alt="" coords="302,863,410,839,406,842,304,868"/>
-<area shape="rect" href="vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title=" " alt="" coords="440,1201,531,1229"/>
-<area shape="poly" title=" " alt="" coords="312,1210,428,1214,422,1214,313,1215"/>
-<area shape="poly" title=" " alt="" coords="773,351,790,364,824,403,851,447,871,490,884,527,879,526,866,492,846,449,820,406,787,368,773,357"/>
-<area shape="poly" title=" " alt="" coords="770,421,790,433,839,480,876,528,870,528,835,483,787,437,770,426"/>
-<area shape="poly" title=" " alt="" coords="759,490,849,534,844,535,759,495"/>
-<area shape="poly" title=" " alt="" coords="331,546,789,550,824,552,819,554,789,555,333,551"/>
-<area shape="rect" href="vector_8c.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="436,636,535,664"/>
-<area shape="poly" title=" " alt="" coords="312,560,342,573,358,585,367,598,376,611,390,622,424,637,419,639,388,627,372,614,363,601,354,589,340,577,314,565"/>
-<area shape="poly" title=" " alt="" coords="535,637,788,579,824,572,819,575,789,584,537,642"/>
-<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="642,668,777,696"/>
-<area shape="poly" title=" " alt="" coords="535,654,629,669,624,671,536,659"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="840,848,944,876"/>
-<area shape="poly" title=" " alt="" coords="535,657,583,673,608,688,632,705,856,839,851,840,629,709,605,692,581,678,536,662"/>
-<area shape="poly" title=" " alt="" coords="752,665,787,648,831,614,866,582,870,579,834,618,790,652,755,670"/>
-<area shape="poly" title=" " alt="" coords="758,694,790,712,820,740,845,773,880,835,875,834,840,776,816,744,787,716,758,699"/>
-<area shape="poly" title=" " alt="" coords="330,649,423,649,418,652,333,654"/>
-<area shape="poly" title=" " alt="" coords="301,612,423,636,418,639,302,618"/>
-<area shape="poly" title=" " alt="" coords="568,580,823,560,819,563,570,585"/>
-<area shape="poly" title=" " alt="" coords="551,610,583,622,667,660,662,662,581,627,552,615"/>
-<area shape="poly" title=" " alt="" coords="581,695,629,691,625,693,583,700"/>
-<area shape="poly" title=" " alt="" coords="757,1006,787,985,835,936,871,890,875,887,839,939,790,989,759,1011"/>
-<area shape="poly" title=" " alt="" coords="565,898,827,868,823,871,566,903"/>
-<area shape="poly" title=" " alt="" coords="755,927,846,884,851,882,757,932"/>
-<area shape="poly" title=" " alt="" coords="550,782,827,846,822,848,551,787"/>
-<area shape="poly" title=" " alt="" coords="569,1130,646,1112,651,1111,571,1135"/>
-<area shape="poly" title=" " alt="" coords="574,1093,650,1095,645,1096,574,1098"/>
+<area shape="rect" title=" " alt="" coords="5,625,60,652"/>
+<area shape="rect" href="test__vector_8c.html#acc525ea1f90f51fd31bb40461b7ae6f0" title=" " alt="" coords="137,5,314,32"/>
+<area shape="rect" href="test__vector_8c.html#a8c58f3a813c5d73b9ca6b28389ca77ed" title=" " alt="" coords="145,57,306,98"/>
+<area shape="rect" href="test__vector_8c.html#a6cbbd2cc6c199fa272aa5655d8353ce9" title=" " alt="" coords="127,123,323,149"/>
+<area shape="rect" href="test__vector_8c.html#aba4d53c52d3205fdb9771b805f0d7c92" title=" " alt="" coords="129,173,322,200"/>
+<area shape="rect" href="test__vector_8c.html#a7134c8dcc8ada9bb5ae836e37046c967" title=" " alt="" coords="125,224,326,251"/>
+<area shape="rect" href="test__vector_8c.html#a3cfe98325e006a2838f6721f403a40c5" title=" " alt="" coords="108,275,343,301"/>
+<area shape="rect" href="test__vector_8c.html#a98e04edffd6911cf63917da8f2b066a3" title=" " alt="" coords="147,391,304,433"/>
+<area shape="rect" href="test__vector_8c.html#adf026a45e33154353c4b1f09ee16de4f" title=" " alt="" coords="147,326,304,367"/>
+<area shape="rect" href="test__vector_8c.html#adcd237a80772da9b7de03d3ed6339832" title=" " alt="" coords="137,938,313,979"/>
+<area shape="rect" href="test__vector_8c.html#a96b177ca49c130a741e1f57790fa8aac" title=" " alt="" coords="154,742,297,783"/>
+<area shape="rect" href="test__vector_8c.html#ac386e76d57bf5451231cc3a91afe528c" title=" " alt="" coords="154,807,297,849"/>
+<area shape="rect" href="test__vector_8c.html#a6cb4a72c2951d7f93836d51792e5c25c" title=" " alt="" coords="154,873,297,914"/>
+<area shape="rect" href="test__vector_8c.html#aa3dbebcd984eb00fa94cc08e1b27fbe1" title=" " alt="" coords="118,625,333,652"/>
+<area shape="rect" href="test__vector_8c.html#a5694d910e56950f9e2e74f8ce8a95b22" title=" " alt="" coords="118,508,333,535"/>
+<area shape="rect" href="test__vector_8c.html#a8730e41d23f1231aedd7fa4242eefe64" title=" " alt="" coords="120,457,331,484"/>
+<area shape="rect" href="test__vector_8c.html#a75020727d3d26d7b43c60c3e2ff87fc1" title=" " alt="" coords="142,677,309,718"/>
+<area shape="rect" href="test__vector_8c.html#a45bd1cd2efbe20f9c2ecc878a7996260" title=" " alt="" coords="129,559,322,601"/>
+<area shape="rect" href="test__vector_8c.html#ad80423fe68a03606997a27e224c6d26f" title=" " alt="" coords="146,1055,305,1097"/>
+<area shape="rect" href="test__vector_8c.html#af52a2e259560390f28d7c336f76d9f8d" title=" " alt="" coords="146,1121,305,1162"/>
+<area shape="rect" href="test__vector_8c.html#ab253b2069ceb2f0710718d73769a1160" title=" " alt="" coords="146,1186,305,1227"/>
+<area shape="rect" href="test__vector_8c.html#a07927ec05bcf6877bc5b58da08f8003e" title=" " alt="" coords="128,1004,323,1031"/>
+<area shape="rect" href="test__vector_8c.html#a24671c000604663ea34e8907d42f4e7d" title=" " alt="" coords="141,1303,309,1345"/>
+<area shape="rect" href="test__vector_8c.html#a89bd3faeb70111a5b705edd635d4bb98" title=" " alt="" coords="137,1252,313,1279"/>
+<area shape="rect" href="vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="406,64,501,91"/>
+<area shape="rect" href="vector_8h.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="400,224,507,251"/>
+<area shape="rect" href="vector_8h.html#a4d18706bde5519ef90b2bb4a1311fc55" title="Calcul la distance entre 2 vecteurs." alt="" coords="391,377,516,404"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="747,483,857,509"/>
+<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="585,407,678,433"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="408,945,499,972"/>
+<area shape="rect" href="vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="398,749,509,776"/>
+<area shape="rect" href="vector_8h.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="403,508,503,535"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="564,508,699,535"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="750,559,854,585"/>
+<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="564,609,699,636"/>
+<area shape="rect" href="vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="401,1096,505,1123"/>
+<area shape="rect" href="vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="407,1281,500,1308"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a95c834d6178047ce9e1bce7cbfea2836" name="a95c834d6178047ce9e1bce7cbfea2836"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95c834d6178047ce9e1bce7cbfea2836">&#9670;&#160;</a></span>setUp()</h2>
+<a id="a95c834d6178047ce9e1bce7cbfea2836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c834d6178047ce9e1bce7cbfea2836">&#9670;&nbsp;</a></span>setUp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +279,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void setUp </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -318,8 +288,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a9909011e5fea0c018842eec4d93d0662" name="a9909011e5fea0c018842eec4d93d0662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9909011e5fea0c018842eec4d93d0662">&#9670;&#160;</a></span>tearDown()</h2>
+<a id="a9909011e5fea0c018842eec4d93d0662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9909011e5fea0c018842eec4d93d0662">&#9670;&nbsp;</a></span>tearDown()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +297,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void tearDown </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -335,8 +306,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="acc525ea1f90f51fd31bb40461b7ae6f0" name="acc525ea1f90f51fd31bb40461b7ae6f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc525ea1f90f51fd31bb40461b7ae6f0">&#9670;&#160;</a></span>test_Vector_add_simple()</h2>
+<a id="acc525ea1f90f51fd31bb40461b7ae6f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc525ea1f90f51fd31bb40461b7ae6f0">&#9670;&nbsp;</a></span>test_Vector_add_simple()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,7 +315,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_add_simple </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -352,18 +324,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_acc525ea1f90f51fd31bb40461b7ae6f0_cgraph.png" border="0" usemap="#atest__vector_8c_acc525ea1f90f51fd31bb40461b7ae6f0_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_acc525ea1f90f51fd31bb40461b7ae6f0_cgraph.png" border="0" usemap="#atest__vector_8c_acc525ea1f90f51fd31bb40461b7ae6f0_cgraph" alt=""/></div>
 <map name="atest__vector_8c_acc525ea1f90f51fd31bb40461b7ae6f0_cgraph" id="atest__vector_8c_acc525ea1f90f51fd31bb40461b7ae6f0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,182,33"/>
-<area shape="rect" href="vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="230,5,323,33"/>
-<area shape="poly" title=" " alt="" coords="182,17,217,19,212,19,182,22"/>
+<area shape="rect" title=" " alt="" coords="5,5,183,32"/>
+<area shape="rect" href="vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="231,5,325,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a8c58f3a813c5d73b9ca6b28389ca77ed" name="a8c58f3a813c5d73b9ca6b28389ca77ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c58f3a813c5d73b9ca6b28389ca77ed">&#9670;&#160;</a></span>test_Vector_add_with_negative()</h2>
+<a id="a8c58f3a813c5d73b9ca6b28389ca77ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c58f3a813c5d73b9ca6b28389ca77ed">&#9670;&nbsp;</a></span>test_Vector_add_with_negative()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +342,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_add_with_negative </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -379,18 +351,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a8c58f3a813c5d73b9ca6b28389ca77ed_cgraph.png" border="0" usemap="#atest__vector_8c_a8c58f3a813c5d73b9ca6b28389ca77ed_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a8c58f3a813c5d73b9ca6b28389ca77ed_cgraph.png" border="0" usemap="#atest__vector_8c_a8c58f3a813c5d73b9ca6b28389ca77ed_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a8c58f3a813c5d73b9ca6b28389ca77ed_cgraph" id="atest__vector_8c_a8c58f3a813c5d73b9ca6b28389ca77ed_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,166,50"/>
-<area shape="rect" href="vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="214,14,307,42"/>
-<area shape="poly" title=" " alt="" coords="166,25,201,27,195,28,166,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,167,47"/>
+<area shape="rect" href="vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="215,13,309,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6cbbd2cc6c199fa272aa5655d8353ce9" name="a6cbbd2cc6c199fa272aa5655d8353ce9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cbbd2cc6c199fa272aa5655d8353ce9">&#9670;&#160;</a></span>test_Vector_add_with_zero()</h2>
+<a id="a6cbbd2cc6c199fa272aa5655d8353ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cbbd2cc6c199fa272aa5655d8353ce9">&#9670;&nbsp;</a></span>test_Vector_add_with_zero()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -398,7 +369,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_add_with_zero </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -406,18 +378,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a6cbbd2cc6c199fa272aa5655d8353ce9_cgraph.png" border="0" usemap="#atest__vector_8c_a6cbbd2cc6c199fa272aa5655d8353ce9_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a6cbbd2cc6c199fa272aa5655d8353ce9_cgraph.png" border="0" usemap="#atest__vector_8c_a6cbbd2cc6c199fa272aa5655d8353ce9_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a6cbbd2cc6c199fa272aa5655d8353ce9_cgraph" id="atest__vector_8c_a6cbbd2cc6c199fa272aa5655d8353ce9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,201,33"/>
-<area shape="rect" href="vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="249,5,342,33"/>
-<area shape="poly" title=" " alt="" coords="201,17,236,19,230,19,201,22"/>
+<area shape="rect" title=" " alt="" coords="5,5,201,32"/>
+<area shape="rect" href="vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="249,5,344,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aba4d53c52d3205fdb9771b805f0d7c92" name="aba4d53c52d3205fdb9771b805f0d7c92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba4d53c52d3205fdb9771b805f0d7c92">&#9670;&#160;</a></span>test_Vector_angle_aligned()</h2>
+<a id="aba4d53c52d3205fdb9771b805f0d7c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba4d53c52d3205fdb9771b805f0d7c92">&#9670;&nbsp;</a></span>test_Vector_angle_aligned()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -425,7 +396,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_angle_aligned </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -433,18 +405,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_aba4d53c52d3205fdb9771b805f0d7c92_cgraph.png" border="0" usemap="#atest__vector_8c_aba4d53c52d3205fdb9771b805f0d7c92_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_aba4d53c52d3205fdb9771b805f0d7c92_cgraph.png" border="0" usemap="#atest__vector_8c_aba4d53c52d3205fdb9771b805f0d7c92_cgraph" alt=""/></div>
 <map name="atest__vector_8c_aba4d53c52d3205fdb9771b805f0d7c92_cgraph" id="atest__vector_8c_aba4d53c52d3205fdb9771b805f0d7c92_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,198,33"/>
-<area shape="rect" href="vector_8c.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="246,5,351,33"/>
-<area shape="poly" title=" " alt="" coords="198,17,233,19,228,19,198,22"/>
+<area shape="rect" title=" " alt="" coords="5,5,199,32"/>
+<area shape="rect" href="vector_8h.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="247,5,353,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a7134c8dcc8ada9bb5ae836e37046c967" name="a7134c8dcc8ada9bb5ae836e37046c967"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7134c8dcc8ada9bb5ae836e37046c967">&#9670;&#160;</a></span>test_Vector_angle_opposite()</h2>
+<a id="a7134c8dcc8ada9bb5ae836e37046c967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7134c8dcc8ada9bb5ae836e37046c967">&#9670;&nbsp;</a></span>test_Vector_angle_opposite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -452,7 +423,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_angle_opposite </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -460,18 +432,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a7134c8dcc8ada9bb5ae836e37046c967_cgraph.png" border="0" usemap="#atest__vector_8c_a7134c8dcc8ada9bb5ae836e37046c967_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a7134c8dcc8ada9bb5ae836e37046c967_cgraph.png" border="0" usemap="#atest__vector_8c_a7134c8dcc8ada9bb5ae836e37046c967_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a7134c8dcc8ada9bb5ae836e37046c967_cgraph" id="atest__vector_8c_a7134c8dcc8ada9bb5ae836e37046c967_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,206,33"/>
-<area shape="rect" href="vector_8c.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="254,5,359,33"/>
-<area shape="poly" title=" " alt="" coords="206,17,241,19,235,19,206,22"/>
+<area shape="rect" title=" " alt="" coords="5,5,207,32"/>
+<area shape="rect" href="vector_8h.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="255,5,361,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a3cfe98325e006a2838f6721f403a40c5" name="a3cfe98325e006a2838f6721f403a40c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cfe98325e006a2838f6721f403a40c5">&#9670;&#160;</a></span>test_Vector_angle_perpendicular()</h2>
+<a id="a3cfe98325e006a2838f6721f403a40c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cfe98325e006a2838f6721f403a40c5">&#9670;&nbsp;</a></span>test_Vector_angle_perpendicular()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -479,7 +450,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_angle_perpendicular </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -487,18 +459,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a3cfe98325e006a2838f6721f403a40c5_cgraph.png" border="0" usemap="#atest__vector_8c_a3cfe98325e006a2838f6721f403a40c5_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a3cfe98325e006a2838f6721f403a40c5_cgraph.png" border="0" usemap="#atest__vector_8c_a3cfe98325e006a2838f6721f403a40c5_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a3cfe98325e006a2838f6721f403a40c5_cgraph" id="atest__vector_8c_a3cfe98325e006a2838f6721f403a40c5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,239,33"/>
-<area shape="rect" href="vector_8c.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="287,5,392,33"/>
-<area shape="poly" title=" " alt="" coords="239,17,274,19,269,19,239,22"/>
+<area shape="rect" title=" " alt="" coords="5,5,240,32"/>
+<area shape="rect" href="vector_8h.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="288,5,395,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a98e04edffd6911cf63917da8f2b066a3" name="a98e04edffd6911cf63917da8f2b066a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98e04edffd6911cf63917da8f2b066a3">&#9670;&#160;</a></span>test_Vector_distance_known()</h2>
+<a id="a98e04edffd6911cf63917da8f2b066a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e04edffd6911cf63917da8f2b066a3">&#9670;&nbsp;</a></span>test_Vector_distance_known()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,7 +477,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_distance_known </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -514,22 +486,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a98e04edffd6911cf63917da8f2b066a3_cgraph.png" border="0" usemap="#atest__vector_8c_a98e04edffd6911cf63917da8f2b066a3_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a98e04edffd6911cf63917da8f2b066a3_cgraph.png" border="0" usemap="#atest__vector_8c_a98e04edffd6911cf63917da8f2b066a3_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a98e04edffd6911cf63917da8f2b066a3_cgraph" id="atest__vector_8c_a98e04edffd6911cf63917da8f2b066a3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,24,162,68"/>
-<area shape="rect" href="vector_8c.html#a4d18706bde5519ef90b2bb4a1311fc55" title=" " alt="" coords="210,32,334,60"/>
-<area shape="poly" title=" " alt="" coords="162,43,197,45,191,46,162,48"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="382,5,492,33"/>
-<area shape="poly" title=" " alt="" coords="334,33,364,31,370,30,335,38"/>
-<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="391,57,483,85"/>
-<area shape="poly" title=" " alt="" coords="335,53,378,62,373,62,335,58"/>
+<area shape="rect" title=" " alt="" coords="5,23,163,65"/>
+<area shape="rect" href="vector_8h.html#a4d18706bde5519ef90b2bb4a1311fc55" title="Calcul la distance entre 2 vecteurs." alt="" coords="211,31,336,57"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="384,5,495,32"/>
+<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="393,56,486,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="adf026a45e33154353c4b1f09ee16de4f" name="adf026a45e33154353c4b1f09ee16de4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf026a45e33154353c4b1f09ee16de4f">&#9670;&#160;</a></span>test_Vector_distance_same_point()</h2>
+<a id="adf026a45e33154353c4b1f09ee16de4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf026a45e33154353c4b1f09ee16de4f">&#9670;&nbsp;</a></span>test_Vector_distance_same_point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -537,7 +506,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_distance_same_point </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -545,22 +515,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_adf026a45e33154353c4b1f09ee16de4f_cgraph.png" border="0" usemap="#atest__vector_8c_adf026a45e33154353c4b1f09ee16de4f_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_adf026a45e33154353c4b1f09ee16de4f_cgraph.png" border="0" usemap="#atest__vector_8c_adf026a45e33154353c4b1f09ee16de4f_cgraph" alt=""/></div>
 <map name="atest__vector_8c_adf026a45e33154353c4b1f09ee16de4f_cgraph" id="atest__vector_8c_adf026a45e33154353c4b1f09ee16de4f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,24,162,68"/>
-<area shape="rect" href="vector_8c.html#a4d18706bde5519ef90b2bb4a1311fc55" title=" " alt="" coords="210,32,334,60"/>
-<area shape="poly" title=" " alt="" coords="162,43,197,45,191,46,162,48"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="382,5,492,33"/>
-<area shape="poly" title=" " alt="" coords="334,33,364,31,370,30,335,38"/>
-<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="391,57,483,85"/>
-<area shape="poly" title=" " alt="" coords="335,53,378,62,373,62,335,58"/>
+<area shape="rect" title=" " alt="" coords="5,23,163,65"/>
+<area shape="rect" href="vector_8h.html#a4d18706bde5519ef90b2bb4a1311fc55" title="Calcul la distance entre 2 vecteurs." alt="" coords="211,31,336,57"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="384,5,495,32"/>
+<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="393,56,486,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="adcd237a80772da9b7de03d3ed6339832" name="adcd237a80772da9b7de03d3ed6339832"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcd237a80772da9b7de03d3ed6339832">&#9670;&#160;</a></span>test_Vector_init_returns_zero_vector()</h2>
+<a id="adcd237a80772da9b7de03d3ed6339832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd237a80772da9b7de03d3ed6339832">&#9670;&nbsp;</a></span>test_Vector_init_returns_zero_vector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -568,7 +535,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_init_returns_zero_vector </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -576,18 +544,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_adcd237a80772da9b7de03d3ed6339832_cgraph.png" border="0" usemap="#atest__vector_8c_adcd237a80772da9b7de03d3ed6339832_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_adcd237a80772da9b7de03d3ed6339832_cgraph.png" border="0" usemap="#atest__vector_8c_adcd237a80772da9b7de03d3ed6339832_cgraph" alt=""/></div>
 <map name="atest__vector_8c_adcd237a80772da9b7de03d3ed6339832_cgraph" id="atest__vector_8c_adcd237a80772da9b7de03d3ed6339832_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,181,50"/>
-<area shape="rect" href="vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title=" " alt="" coords="229,14,319,42"/>
-<area shape="poly" title=" " alt="" coords="181,25,216,27,211,28,181,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,181,47"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="229,13,320,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a96b177ca49c130a741e1f57790fa8aac" name="a96b177ca49c130a741e1f57790fa8aac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96b177ca49c130a741e1f57790fa8aac">&#9670;&#160;</a></span>test_Vector_length_pythagorean()</h2>
+<a id="a96b177ca49c130a741e1f57790fa8aac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96b177ca49c130a741e1f57790fa8aac">&#9670;&nbsp;</a></span>test_Vector_length_pythagorean()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -595,7 +562,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_length_pythagorean </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -603,18 +571,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a96b177ca49c130a741e1f57790fa8aac_cgraph.png" border="0" usemap="#atest__vector_8c_a96b177ca49c130a741e1f57790fa8aac_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a96b177ca49c130a741e1f57790fa8aac_cgraph.png" border="0" usemap="#atest__vector_8c_a96b177ca49c130a741e1f57790fa8aac_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a96b177ca49c130a741e1f57790fa8aac_cgraph" id="atest__vector_8c_a96b177ca49c130a741e1f57790fa8aac_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,148,50"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="196,14,306,42"/>
-<area shape="poly" title=" " alt="" coords="148,25,183,27,178,28,148,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,148,47"/>
+<area shape="rect" href="vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="196,13,307,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ac386e76d57bf5451231cc3a91afe528c" name="ac386e76d57bf5451231cc3a91afe528c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac386e76d57bf5451231cc3a91afe528c">&#9670;&#160;</a></span>test_Vector_length_unit_vector()</h2>
+<a id="ac386e76d57bf5451231cc3a91afe528c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac386e76d57bf5451231cc3a91afe528c">&#9670;&nbsp;</a></span>test_Vector_length_unit_vector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -622,7 +589,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_length_unit_vector </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -630,18 +598,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_ac386e76d57bf5451231cc3a91afe528c_cgraph.png" border="0" usemap="#atest__vector_8c_ac386e76d57bf5451231cc3a91afe528c_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_ac386e76d57bf5451231cc3a91afe528c_cgraph.png" border="0" usemap="#atest__vector_8c_ac386e76d57bf5451231cc3a91afe528c_cgraph" alt=""/></div>
 <map name="atest__vector_8c_ac386e76d57bf5451231cc3a91afe528c_cgraph" id="atest__vector_8c_ac386e76d57bf5451231cc3a91afe528c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,148,50"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="196,14,306,42"/>
-<area shape="poly" title=" " alt="" coords="148,25,183,27,178,28,148,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,148,47"/>
+<area shape="rect" href="vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="196,13,307,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6cb4a72c2951d7f93836d51792e5c25c" name="a6cb4a72c2951d7f93836d51792e5c25c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb4a72c2951d7f93836d51792e5c25c">&#9670;&#160;</a></span>test_Vector_length_zero_vector()</h2>
+<a id="a6cb4a72c2951d7f93836d51792e5c25c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb4a72c2951d7f93836d51792e5c25c">&#9670;&nbsp;</a></span>test_Vector_length_zero_vector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -649,7 +616,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_length_zero_vector </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -657,18 +625,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a6cb4a72c2951d7f93836d51792e5c25c_cgraph.png" border="0" usemap="#atest__vector_8c_a6cb4a72c2951d7f93836d51792e5c25c_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a6cb4a72c2951d7f93836d51792e5c25c_cgraph.png" border="0" usemap="#atest__vector_8c_a6cb4a72c2951d7f93836d51792e5c25c_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a6cb4a72c2951d7f93836d51792e5c25c_cgraph" id="atest__vector_8c_a6cb4a72c2951d7f93836d51792e5c25c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,148,50"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="196,14,306,42"/>
-<area shape="poly" title=" " alt="" coords="148,25,183,27,178,28,148,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,148,47"/>
+<area shape="rect" href="vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="196,13,307,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa3dbebcd984eb00fa94cc08e1b27fbe1" name="aa3dbebcd984eb00fa94cc08e1b27fbe1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3dbebcd984eb00fa94cc08e1b27fbe1">&#9670;&#160;</a></span>test_Vector_limit_above_max()</h2>
+<a id="aa3dbebcd984eb00fa94cc08e1b27fbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3dbebcd984eb00fa94cc08e1b27fbe1">&#9670;&nbsp;</a></span>test_Vector_limit_above_max()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,7 +643,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_limit_above_max </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -684,27 +652,21 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_aa3dbebcd984eb00fa94cc08e1b27fbe1_cgraph.png" border="0" usemap="#atest__vector_8c_aa3dbebcd984eb00fa94cc08e1b27fbe1_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_aa3dbebcd984eb00fa94cc08e1b27fbe1_cgraph.png" border="0" usemap="#atest__vector_8c_aa3dbebcd984eb00fa94cc08e1b27fbe1_cgraph" alt=""/></div>
 <map name="atest__vector_8c_aa3dbebcd984eb00fa94cc08e1b27fbe1_cgraph" id="atest__vector_8c_aa3dbebcd984eb00fa94cc08e1b27fbe1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,220,33"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="597,5,708,33"/>
-<area shape="poly" title=" " alt="" coords="220,13,376,10,549,11,584,15,579,15,549,16,376,15,220,18"/>
-<area shape="rect" href="vector_8c.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="268,31,367,58"/>
-<area shape="poly" title=" " alt="" coords="220,30,255,36,249,37,220,35"/>
-<area shape="poly" title=" " alt="" coords="367,38,584,24,579,25,368,43"/>
-<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="415,56,549,84"/>
-<area shape="poly" title=" " alt="" coords="367,49,402,57,397,57,367,55"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="601,81,704,109"/>
-<area shape="poly" title=" " alt="" coords="340,56,375,77,416,93,459,100,504,103,583,104,588,103,503,109,458,106,414,98,372,81,338,61"/>
-<area shape="poly" title=" " alt="" coords="531,53,587,38,592,37,532,58"/>
-<area shape="poly" title=" " alt="" coords="550,77,588,85,583,85,550,83"/>
+<area shape="rect" title=" " alt="" coords="5,31,220,57"/>
+<area shape="rect" href="vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="268,5,379,32"/>
+<area shape="rect" href="vector_8h.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="273,56,373,83"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="609,31,720,57"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="427,56,561,83"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="613,93,717,120"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5694d910e56950f9e2e74f8ce8a95b22" name="a5694d910e56950f9e2e74f8ce8a95b22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5694d910e56950f9e2e74f8ce8a95b22">&#9670;&#160;</a></span>test_Vector_limit_below_max()</h2>
+<a id="a5694d910e56950f9e2e74f8ce8a95b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5694d910e56950f9e2e74f8ce8a95b22">&#9670;&nbsp;</a></span>test_Vector_limit_below_max()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -712,7 +674,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_limit_below_max </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -720,26 +683,20 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a5694d910e56950f9e2e74f8ce8a95b22_cgraph.png" border="0" usemap="#atest__vector_8c_a5694d910e56950f9e2e74f8ce8a95b22_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a5694d910e56950f9e2e74f8ce8a95b22_cgraph.png" border="0" usemap="#atest__vector_8c_a5694d910e56950f9e2e74f8ce8a95b22_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a5694d910e56950f9e2e74f8ce8a95b22_cgraph" id="atest__vector_8c_a5694d910e56950f9e2e74f8ce8a95b22_cgraph">
-<area shape="rect" title=" " alt="" coords="5,43,219,70"/>
-<area shape="rect" href="vector_8c.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="267,43,366,70"/>
-<area shape="poly" title=" " alt="" coords="219,54,254,56,249,57,219,59"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="596,5,707,33"/>
-<area shape="poly" title=" " alt="" coords="364,39,414,29,501,19,584,19,579,19,501,25,414,34,365,45"/>
-<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="414,43,548,70"/>
-<area shape="poly" title=" " alt="" coords="366,54,401,56,396,57,366,59"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="600,69,703,97"/>
-<area shape="poly" title=" " alt="" coords="363,68,414,79,503,85,587,87,582,87,503,91,414,84,363,74"/>
-<area shape="poly" title=" " alt="" coords="547,39,578,35,584,34,548,45"/>
-<area shape="poly" title=" " alt="" coords="549,64,587,73,582,73,549,70"/>
+<area shape="rect" title=" " alt="" coords="5,31,220,57"/>
+<area shape="rect" href="vector_8h.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="268,31,368,57"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="599,5,709,32"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="416,31,551,57"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="602,68,706,95"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a8730e41d23f1231aedd7fa4242eefe64" name="a8730e41d23f1231aedd7fa4242eefe64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8730e41d23f1231aedd7fa4242eefe64">&#9670;&#160;</a></span>test_Vector_limit_exact_max()</h2>
+<a id="a8730e41d23f1231aedd7fa4242eefe64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8730e41d23f1231aedd7fa4242eefe64">&#9670;&nbsp;</a></span>test_Vector_limit_exact_max()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -747,7 +704,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_limit_exact_max </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -755,26 +713,20 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a8730e41d23f1231aedd7fa4242eefe64_cgraph.png" border="0" usemap="#atest__vector_8c_a8730e41d23f1231aedd7fa4242eefe64_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a8730e41d23f1231aedd7fa4242eefe64_cgraph.png" border="0" usemap="#atest__vector_8c_a8730e41d23f1231aedd7fa4242eefe64_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a8730e41d23f1231aedd7fa4242eefe64_cgraph" id="atest__vector_8c_a8730e41d23f1231aedd7fa4242eefe64_cgraph">
-<area shape="rect" title=" " alt="" coords="5,43,216,70"/>
-<area shape="rect" href="vector_8c.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="264,43,363,70"/>
-<area shape="poly" title=" " alt="" coords="216,54,251,56,246,57,216,59"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="593,5,704,33"/>
-<area shape="poly" title=" " alt="" coords="361,39,411,29,498,19,581,19,576,19,498,25,411,34,362,45"/>
-<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="411,43,545,70"/>
-<area shape="poly" title=" " alt="" coords="363,54,398,56,393,57,363,59"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="597,69,700,97"/>
-<area shape="poly" title=" " alt="" coords="360,68,411,79,500,85,584,87,579,87,500,91,411,84,360,74"/>
-<area shape="poly" title=" " alt="" coords="544,39,575,35,581,34,545,45"/>
-<area shape="poly" title=" " alt="" coords="546,64,584,73,579,73,546,70"/>
+<area shape="rect" title=" " alt="" coords="5,31,216,57"/>
+<area shape="rect" href="vector_8h.html#a8ae46222693daa948f72cc082e74fe9e" title="Fonction qui limite la longueur d&#39;un vecteur à une valeur maximale donnée. Si la longueur du vecteur ..." alt="" coords="264,31,364,57"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="595,5,705,32"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="412,31,547,57"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="598,68,702,95"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a75020727d3d26d7b43c60c3e2ff87fc1" name="a75020727d3d26d7b43c60c3e2ff87fc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75020727d3d26d7b43c60c3e2ff87fc1">&#9670;&#160;</a></span>test_Vector_normalize_unit_length()</h2>
+<a id="a75020727d3d26d7b43c60c3e2ff87fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75020727d3d26d7b43c60c3e2ff87fc1">&#9670;&nbsp;</a></span>test_Vector_normalize_unit_length()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,7 +734,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_normalize_unit_length </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -790,23 +743,20 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a75020727d3d26d7b43c60c3e2ff87fc1_cgraph.png" border="0" usemap="#atest__vector_8c_a75020727d3d26d7b43c60c3e2ff87fc1_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a75020727d3d26d7b43c60c3e2ff87fc1_cgraph.png" border="0" usemap="#atest__vector_8c_a75020727d3d26d7b43c60c3e2ff87fc1_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a75020727d3d26d7b43c60c3e2ff87fc1_cgraph" id="atest__vector_8c_a75020727d3d26d7b43c60c3e2ff87fc1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,22,172,67"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="402,5,512,33"/>
-<area shape="poly" title=" " alt="" coords="172,36,387,21,386,27,172,41"/>
-<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="220,56,354,84"/>
-<area shape="poly" title=" " alt="" coords="172,53,207,59,201,59,172,58"/>
-<area shape="poly" title=" " alt="" coords="335,53,391,38,396,37,336,58"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="406,57,509,85"/>
-<area shape="poly" title=" " alt="" coords="354,68,393,71,387,71,354,73"/>
+<area shape="rect" title=" " alt="" coords="5,23,172,65"/>
+<area shape="rect" href="vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="232,5,343,32"/>
+<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="220,56,355,83"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="403,31,513,57"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="406,81,510,108"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a45bd1cd2efbe20f9c2ecc878a7996260" name="a45bd1cd2efbe20f9c2ecc878a7996260"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45bd1cd2efbe20f9c2ecc878a7996260">&#9670;&#160;</a></span>test_Vector_normalize_zero_vector_returns_zero()</h2>
+<a id="a45bd1cd2efbe20f9c2ecc878a7996260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bd1cd2efbe20f9c2ecc878a7996260">&#9670;&nbsp;</a></span>test_Vector_normalize_zero_vector_returns_zero()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -814,7 +764,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_normalize_zero_vector_returns_zero </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -822,22 +773,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a45bd1cd2efbe20f9c2ecc878a7996260_cgraph.png" border="0" usemap="#atest__vector_8c_a45bd1cd2efbe20f9c2ecc878a7996260_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a45bd1cd2efbe20f9c2ecc878a7996260_cgraph.png" border="0" usemap="#atest__vector_8c_a45bd1cd2efbe20f9c2ecc878a7996260_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a45bd1cd2efbe20f9c2ecc878a7996260_cgraph" id="atest__vector_8c_a45bd1cd2efbe20f9c2ecc878a7996260_cgraph">
-<area shape="rect" title=" " alt="" coords="5,24,198,68"/>
-<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title=" " alt="" coords="246,32,380,60"/>
-<area shape="poly" title=" " alt="" coords="198,43,233,46,227,46,198,48"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title=" " alt="" coords="428,5,538,33"/>
-<area shape="poly" title=" " alt="" coords="380,33,410,31,415,30,381,38"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="432,57,535,85"/>
-<area shape="poly" title=" " alt="" coords="381,53,419,61,413,61,380,59"/>
+<area shape="rect" title=" " alt="" coords="5,23,199,65"/>
+<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="247,31,381,57"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="429,5,540,32"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="433,56,537,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad80423fe68a03606997a27e224c6d26f" name="ad80423fe68a03606997a27e224c6d26f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad80423fe68a03606997a27e224c6d26f">&#9670;&#160;</a></span>test_Vector_scale_by_fraction()</h2>
+<a id="ad80423fe68a03606997a27e224c6d26f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad80423fe68a03606997a27e224c6d26f">&#9670;&nbsp;</a></span>test_Vector_scale_by_fraction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -845,7 +793,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_scale_by_fraction </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -853,18 +802,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_ad80423fe68a03606997a27e224c6d26f_cgraph.png" border="0" usemap="#atest__vector_8c_ad80423fe68a03606997a27e224c6d26f_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_ad80423fe68a03606997a27e224c6d26f_cgraph.png" border="0" usemap="#atest__vector_8c_ad80423fe68a03606997a27e224c6d26f_cgraph" alt=""/></div>
 <map name="atest__vector_8c_ad80423fe68a03606997a27e224c6d26f_cgraph" id="atest__vector_8c_ad80423fe68a03606997a27e224c6d26f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,164,50"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="212,14,315,42"/>
-<area shape="poly" title=" " alt="" coords="164,25,199,27,193,28,164,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,164,47"/>
+<area shape="rect" href="vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="212,13,316,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="af52a2e259560390f28d7c336f76d9f8d" name="af52a2e259560390f28d7c336f76d9f8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af52a2e259560390f28d7c336f76d9f8d">&#9670;&#160;</a></span>test_Vector_scale_by_negative()</h2>
+<a id="af52a2e259560390f28d7c336f76d9f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52a2e259560390f28d7c336f76d9f8d">&#9670;&nbsp;</a></span>test_Vector_scale_by_negative()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -872,7 +820,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_scale_by_negative </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -880,18 +829,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_af52a2e259560390f28d7c336f76d9f8d_cgraph.png" border="0" usemap="#atest__vector_8c_af52a2e259560390f28d7c336f76d9f8d_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_af52a2e259560390f28d7c336f76d9f8d_cgraph.png" border="0" usemap="#atest__vector_8c_af52a2e259560390f28d7c336f76d9f8d_cgraph" alt=""/></div>
 <map name="atest__vector_8c_af52a2e259560390f28d7c336f76d9f8d_cgraph" id="atest__vector_8c_af52a2e259560390f28d7c336f76d9f8d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,164,50"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="212,14,315,42"/>
-<area shape="poly" title=" " alt="" coords="164,25,199,27,193,28,164,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,164,47"/>
+<area shape="rect" href="vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="212,13,316,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab253b2069ceb2f0710718d73769a1160" name="ab253b2069ceb2f0710718d73769a1160"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab253b2069ceb2f0710718d73769a1160">&#9670;&#160;</a></span>test_Vector_scale_by_positive()</h2>
+<a id="ab253b2069ceb2f0710718d73769a1160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab253b2069ceb2f0710718d73769a1160">&#9670;&nbsp;</a></span>test_Vector_scale_by_positive()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -899,7 +847,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_scale_by_positive </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -907,18 +856,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_ab253b2069ceb2f0710718d73769a1160_cgraph.png" border="0" usemap="#atest__vector_8c_ab253b2069ceb2f0710718d73769a1160_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_ab253b2069ceb2f0710718d73769a1160_cgraph.png" border="0" usemap="#atest__vector_8c_ab253b2069ceb2f0710718d73769a1160_cgraph" alt=""/></div>
 <map name="atest__vector_8c_ab253b2069ceb2f0710718d73769a1160_cgraph" id="atest__vector_8c_ab253b2069ceb2f0710718d73769a1160_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,164,50"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="212,14,315,42"/>
-<area shape="poly" title=" " alt="" coords="164,25,199,27,193,28,164,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,164,47"/>
+<area shape="rect" href="vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="212,13,316,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a07927ec05bcf6877bc5b58da08f8003e" name="a07927ec05bcf6877bc5b58da08f8003e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07927ec05bcf6877bc5b58da08f8003e">&#9670;&#160;</a></span>test_Vector_scale_by_zero()</h2>
+<a id="a07927ec05bcf6877bc5b58da08f8003e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07927ec05bcf6877bc5b58da08f8003e">&#9670;&nbsp;</a></span>test_Vector_scale_by_zero()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -926,7 +874,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_scale_by_zero </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -934,18 +883,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a07927ec05bcf6877bc5b58da08f8003e_cgraph.png" border="0" usemap="#atest__vector_8c_a07927ec05bcf6877bc5b58da08f8003e_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a07927ec05bcf6877bc5b58da08f8003e_cgraph.png" border="0" usemap="#atest__vector_8c_a07927ec05bcf6877bc5b58da08f8003e_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a07927ec05bcf6877bc5b58da08f8003e_cgraph" id="atest__vector_8c_a07927ec05bcf6877bc5b58da08f8003e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,199,33"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="247,5,350,33"/>
-<area shape="poly" title=" " alt="" coords="199,17,234,19,229,19,199,22"/>
+<area shape="rect" title=" " alt="" coords="5,5,200,32"/>
+<area shape="rect" href="vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="248,5,352,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a24671c000604663ea34e8907d42f4e7d" name="a24671c000604663ea34e8907d42f4e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24671c000604663ea34e8907d42f4e7d">&#9670;&#160;</a></span>test_Vector_sub_same_vector_returns_zero()</h2>
+<a id="a24671c000604663ea34e8907d42f4e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24671c000604663ea34e8907d42f4e7d">&#9670;&nbsp;</a></span>test_Vector_sub_same_vector_returns_zero()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -953,7 +901,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_sub_same_vector_returns_zero </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -961,18 +910,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a24671c000604663ea34e8907d42f4e7d_cgraph.png" border="0" usemap="#atest__vector_8c_a24671c000604663ea34e8907d42f4e7d_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a24671c000604663ea34e8907d42f4e7d_cgraph.png" border="0" usemap="#atest__vector_8c_a24671c000604663ea34e8907d42f4e7d_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a24671c000604663ea34e8907d42f4e7d_cgraph" id="atest__vector_8c_a24671c000604663ea34e8907d42f4e7d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,173,50"/>
-<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="221,14,313,42"/>
-<area shape="poly" title=" " alt="" coords="173,25,208,27,202,28,173,30"/>
+<area shape="rect" title=" " alt="" coords="5,5,173,47"/>
+<area shape="rect" href="vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="221,13,315,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a89bd3faeb70111a5b705edd635d4bb98" name="a89bd3faeb70111a5b705edd635d4bb98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89bd3faeb70111a5b705edd635d4bb98">&#9670;&#160;</a></span>test_Vector_sub_simple()</h2>
+<a id="a89bd3faeb70111a5b705edd635d4bb98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bd3faeb70111a5b705edd635d4bb98">&#9670;&nbsp;</a></span>test_Vector_sub_simple()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -980,7 +928,8 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void test_Vector_sub_simple </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -988,11 +937,10 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="test__vector_8c_a89bd3faeb70111a5b705edd635d4bb98_cgraph.png" border="0" usemap="#atest__vector_8c_a89bd3faeb70111a5b705edd635d4bb98_cgraph" loading="lazy" alt=""/></div>
+<div class="center"><img src="test__vector_8c_a89bd3faeb70111a5b705edd635d4bb98_cgraph.png" border="0" usemap="#atest__vector_8c_a89bd3faeb70111a5b705edd635d4bb98_cgraph" alt=""/></div>
 <map name="atest__vector_8c_a89bd3faeb70111a5b705edd635d4bb98_cgraph" id="atest__vector_8c_a89bd3faeb70111a5b705edd635d4bb98_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,181,33"/>
-<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="229,5,321,33"/>
-<area shape="poly" title=" " alt="" coords="181,17,216,19,210,19,181,22"/>
+<area shape="rect" title=" " alt="" coords="5,5,181,32"/>
+<area shape="rect" href="vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="229,5,323,32"/>
 </map>
 </div>
 
@@ -1000,19 +948,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
-</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="test__vector_8c.html">test_vector.c</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+    <li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="test__vector_8c.html">test_vector.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

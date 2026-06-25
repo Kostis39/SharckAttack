@@ -1,16 +1,9 @@
 <map id="include/fish.h" name="include/fish.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,243,33"/>
-<area shape="rect" id="Node000002" href="$config_8h.html" title=" " alt="" coords="5,81,78,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,36,83,76,80,72,164,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="81,157,148,184"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,32,161,56,144,82,131,113,123,143,118,140,126,111,139,80,157,53,175,35"/>
-<area shape="rect" id="Node000004" href="$vector_8h.html" title=" " alt="" coords="153,81,226,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,31,192,66,187,64,188,36"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="250,81,332,109"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="208,31,263,71,258,72,207,36"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="356,81,426,109"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="226,31,344,75,339,77,225,36"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="179,108,141,148,137,143,174,110"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="173,157,238,184"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="194,107,202,142,197,140,191,111"/>
+<area shape="rect" id="node1" title=" " alt="" coords="157,5,265,32"/>
+<area shape="rect" id="node2" href="$config_8h.html" title=" " alt="" coords="5,155,79,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="195,155,263,181"/>
+<area shape="rect" id="node4" href="$vector_8h.html" title=" " alt="" coords="99,80,174,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="249,80,331,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="356,80,427,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="103,155,170,181"/>
 </map>

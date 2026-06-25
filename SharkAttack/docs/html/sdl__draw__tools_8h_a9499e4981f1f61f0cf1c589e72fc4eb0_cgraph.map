@@ -1,0 +1,4 @@
+<map id="Draw_mine_shape" name="Draw_mine_shape">
+<area shape="rect" id="node1" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="196,5,333,32"/>
+</map>

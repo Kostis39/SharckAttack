@@ -1,5 +1,4 @@
 <map id="test_Colliders_copy_array_null_input" name="test_Colliders_copy_array_null_input">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,154,50"/>
-<area shape="rect" id="Node000002" href="$collider_8c.html#a9fa1fb2bc30efa527ed519e942d9e0fc" title=" " alt="" coords="202,14,359,42"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,25,189,27,183,28,154,30"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,155,47"/>
+<area shape="rect" id="node2" href="$collider_8h.html#ad784096975958a0b40b5df8e2160c9dc" title=" " alt="" coords="203,13,361,39"/>
 </map>

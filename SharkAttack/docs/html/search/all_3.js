@@ -1,8 +1,27 @@
 var searchData=
 [
-  ['benchmark_5fiterations_0',['BENCHMARK_ITERATIONS',['../config_8h.html#ae09100a38fd2f3c0840b55298791ee3c',1,'config.h']]],
-  ['biais_1',['BIAIS',['../config_8h.html#a456ec33873b6aabcf5e7c130b54b74cf',1,'config.h']]],
-  ['biais_2',['biais',['../structSharkTeta.html#a76b809ea32730092ae7d28eaa1893aab',1,'SharkTeta']]],
-  ['bounding_5fbox_3',['bounding_box',['../structCollider.html#ab722283ddfa6cf0a4ffc53b36080ad8a',1,'Collider']]],
-  ['box_5fmuller_5fstandard_4',['box_muller_standard',['../shark__controller_8c.html#afd81ec419ed31083f302832ad335a69e',1,'shark_controller.c']]]
+  ['destroy_5fsdl_5fdisplay_41',['Destroy_sdl_display',['../render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d',1,'Destroy_sdl_display(SDLDisplay *display):&#160;render_sdl.c'],['../render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d',1,'Destroy_sdl_display(SDLDisplay *display):&#160;render_sdl.c']]],
+  ['direction_5for_5fdefault_42',['direction_or_default',['../sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121',1,'direction_or_default(Vector v):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121',1,'direction_or_default(Vector v):&#160;sdl_draw_tools.c']]],
+  ['display_43',['display',['../structGame.html#aa0f0264846ef14870ec9db6f47bee43e',1,'Game']]],
+  ['dist_5fshark_44',['dist_shark',['../structFishPerception.html#aaf7aa912a36b4b352e4ca2d925c609be',1,'FishPerception']]],
+  ['draw_5fbubbles_45',['Draw_bubbles',['../sdl__draw__tools_8h.html#a381d5ac98fe0ef7faf8c5b208b4a051e',1,'Draw_bubbles(SDL_Renderer *r, int width, int height):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e',1,'Draw_bubbles(SDL_Renderer *r, int width, int height):&#160;sdl_draw_tools.c']]],
+  ['draw_5fcircle_5foutline_46',['Draw_circle_outline',['../sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae',1,'Draw_circle_outline(SDL_Renderer *r, int cx, int cy, int radius):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae',1,'Draw_circle_outline(SDL_Renderer *r, int cx, int cy, int radius):&#160;sdl_draw_tools.c']]],
+  ['draw_5fcollider_47',['Draw_collider',['../render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0',1,'render_sdl.c']]],
+  ['draw_5fcolliders_48',['Draw_colliders',['../render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6',1,'render_sdl.c']]],
+  ['draw_5fdebug_5fview_49',['Draw_debug_view',['../render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1',1,'render_sdl.c']]],
+  ['draw_5fdigit_50',['Draw_digit',['../sdl__draw__tools_8h.html#a3f6fc10842b3cdb831294005b2a353e8',1,'Draw_digit(SDL_Renderer *r, int x, int y, int n, int s):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8',1,'Draw_digit(SDL_Renderer *r, int x, int y, int n, int s):&#160;sdl_draw_tools.c']]],
+  ['draw_5ffilled_5fcircle_51',['Draw_filled_circle',['../sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0',1,'Draw_filled_circle(SDL_Renderer *r, int cx, int cy, int radius):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0',1,'Draw_filled_circle(SDL_Renderer *r, int cx, int cy, int radius):&#160;sdl_draw_tools.c']]],
+  ['draw_5ffilled_5fellipse_52',['Draw_filled_ellipse',['../sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94',1,'Draw_filled_ellipse(SDL_Renderer *r, int cx, int cy, int rx, int ry):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94',1,'Draw_filled_ellipse(SDL_Renderer *r, int cx, int cy, int rx, int ry):&#160;sdl_draw_tools.c']]],
+  ['draw_5ffilled_5ftriangle_53',['Draw_filled_triangle',['../sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733',1,'Draw_filled_triangle(SDL_Renderer *r, int x1, int y1, int x2, int y2, int x3, int y3):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733',1,'Draw_filled_triangle(SDL_Renderer *r, int x1, int y1, int x2, int y2, int x3, int y3):&#160;sdl_draw_tools.c']]],
+  ['draw_5ffish_54',['Draw_fish',['../render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4',1,'render_sdl.c']]],
+  ['draw_5ffish_5fskeleton_55',['Draw_fish_skeleton',['../render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e',1,'render_sdl.c']]],
+  ['draw_5fmine_5fshape_56',['Draw_mine_shape',['../sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0',1,'Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0',1,'Draw_mine_shape(SDL_Renderer *r, int cx, int cy, int radius):&#160;sdl_draw_tools.c']]],
+  ['draw_5fresult_5foverlay_57',['Draw_result_overlay',['../render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e',1,'render_sdl.c']]],
+  ['draw_5fscore_58',['Draw_score',['../render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed',1,'render_sdl.c']]],
+  ['draw_5fsea_5fplants_59',['Draw_sea_plants',['../sdl__draw__tools_8h.html#a27432876421de66710cde7d7541fe984',1,'Draw_sea_plants(SDL_Renderer *r, int width, int height, float time):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984',1,'Draw_sea_plants(SDL_Renderer *r, int width, int height, float time):&#160;sdl_draw_tools.c']]],
+  ['draw_5fshark_60',['Draw_shark',['../render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1',1,'render_sdl.c']]],
+  ['draw_5ftext_5fcenter_61',['Draw_text_center',['../render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28',1,'render_sdl.c']]],
+  ['draw_5fvector_62',['Draw_vector',['../sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f',1,'Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f',1,'Draw_vector(SDL_Renderer *r, Vector pos, Vector dir, int length):&#160;sdl_draw_tools.c']]],
+  ['draw_5fwave_63',['Draw_wave',['../sdl__draw__tools_8h.html#a4d598f57c5d3dd2eff3608d4992ec29c',1,'Draw_wave(SDL_Renderer *r, int width, int base_y, int move, int amplitude, float time):&#160;sdl_draw_tools.c'],['../sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c',1,'Draw_wave(SDL_Renderer *r, int width, int base_y, int move, int amplitude, float time):&#160;sdl_draw_tools.c']]],
+  ['draw_5fworld_64',['Draw_world',['../render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca',1,'render_sdl.c']]]
 ];

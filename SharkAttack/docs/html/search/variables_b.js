@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['self_0',['self',['../structFishPerception.html#acf840926c74599afc77d5bf110306754',1,'FishPerception::self'],['../structSharkPerception.html#af019b330e33bab686912254c4192eab4',1,'SharkPerception::self']]],
-  ['separation_1',['separation',['../structFishPerception.html#ac3912958f7beaa8954f66ff9be93e979',1,'FishPerception::separation'],['../structRulesSetFish.html#a3d47f7e2bf80c3044a1c4fb985d08565',1,'RulesSetFish::separation']]],
-  ['shark_2',['shark',['../structFishPerception.html#a9e5f1428b095a26983edc26107b8d079',1,'FishPerception::shark'],['../structWorld.html#a8885e126c29dac96d23c6f8d956fdcfa',1,'World::shark']]],
-  ['shark_5favoidance_3',['shark_avoidance',['../structRulesSetFish.html#aff252113fac60d7de705f4aa848aa98e',1,'RulesSetFish']]],
-  ['shark_5fvisible_4',['shark_visible',['../structFishPerception.html#aa0b75ad16f06c342056fae85352a1783',1,'FishPerception']]]
+  ['radius_5falignement_1583',['radius_alignement',['../structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6',1,'Fish']]],
+  ['radius_5fcohesion_1584',['radius_cohesion',['../structFish.html#a60e0013f816d835c00613f45665baccf',1,'Fish']]],
+  ['radius_5fseparation_1585',['radius_separation',['../structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3',1,'Fish']]],
+  ['radius_5fvision_1586',['radius_vision',['../structShark.html#a89f6625bce8198f992781d439a2f4402',1,'Shark']]],
+  ['renderer_1587',['renderer',['../structSDLDisplay.html#a966da7a60c4ea3ba301e26ccc5efe452',1,'SDLDisplay']]],
+  ['result_1588',['result',['../structWorkerArgs.html#a857ce20b6ede60652c66fbe87a70cc81',1,'WorkerArgs']]],
+  ['reward_1589',['reward',['../structStepTrajectory.html#ab18e03604d8452d6d86f55873e19732a',1,'StepTrajectory']]],
+  ['right_5fscene_1590',['right_scene',['../structSDLDisplay.html#a5371f7534d5ae15d666ff71be3c009f7',1,'SDLDisplay']]]
 ];

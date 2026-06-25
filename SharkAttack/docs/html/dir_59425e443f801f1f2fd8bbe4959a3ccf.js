@@ -7,6 +7,7 @@ var dir_59425e443f801f1f2fd8bbe4959a3ccf =
     [ "test_mj.c", "test__mj_8c.html", "test__mj_8c" ],
     [ "test_render_sdl.c", "test__render__sdl_8c.html", "test__render__sdl_8c" ],
     [ "test_shark.c", "test__shark_8c.html", "test__shark_8c" ],
+    [ "test_util.c", "test__util_8c.html", "test__util_8c" ],
     [ "test_vector.c", "test__vector_8c.html", "test__vector_8c" ],
     [ "test_world.c", "test__world_8c.html", "test__world_8c" ]
 ];

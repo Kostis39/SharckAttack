@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['render_5fsdl_2ec_0',['render_sdl.c',['../render__sdl_8c.html',1,'']]],
-  ['render_5fsdl_2eh_1',['render_sdl.h',['../render__sdl_8h.html',1,'']]],
-  ['rules_5fset_2ec_2',['rules_set.c',['../rules__set_8c.html',1,'']]],
-  ['rules_5fset_2eh_3',['rules_set.h',['../rules__set_8h.html',1,'']]]
+  ['main_2ec_1258',['main.c',['../main_8c.html',1,'']]],
+  ['mj_2ec_1259',['mj.c',['../mj_8c.html',1,'']]],
+  ['mj_2eh_1260',['mj.h',['../mj_8h.html',1,'']]]
 ];

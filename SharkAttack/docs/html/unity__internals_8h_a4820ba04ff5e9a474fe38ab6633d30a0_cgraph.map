@@ -1,9 +1,4 @@
 <map id="UnityEnd" name="UnityEnd">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,32,86,60"/>
-<area shape="rect" id="Node000002" href="$unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="160,5,246,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,36,147,28,142,30,87,42"/>
-<area shape="rect" id="Node000003" href="$unity_8c.html#a644211a214ab000dcabd5582c52e0313" title=" " alt="" coords="134,57,272,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="86,50,121,57,116,58,86,55"/>
-<area shape="rect" id="Node000004" href="$unity_8c.html#a3ef388786e9a8e769d13af2601b592dc" title=" " alt="" coords="320,57,519,85"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="272,69,307,71,301,71,273,74"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node2" href="$unity_8c.html#accff2eb4cfd0273e8ad62c37639d3e3c" title=" " alt="" coords="135,5,221,32"/>
 </map>

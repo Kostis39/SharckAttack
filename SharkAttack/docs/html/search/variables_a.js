@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['radius_5falignement_0',['radius_alignement',['../structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6',1,'Fish']]],
-  ['radius_5fcohesion_1',['radius_cohesion',['../structFish.html#a60e0013f816d835c00613f45665baccf',1,'Fish']]],
-  ['radius_5fseparation_2',['radius_separation',['../structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3',1,'Fish']]],
-  ['radius_5fvision_3',['radius_vision',['../structShark.html#a89f6625bce8198f992781d439a2f4402',1,'Shark']]],
-  ['renderer_4',['renderer',['../structSDLDisplay.html#a966da7a60c4ea3ba301e26ccc5efe452',1,'SDLDisplay']]],
-  ['rules_5fset_5ffish_5',['rules_set_fish',['../structWorld.html#a892de6b61d281aa778147a559764bb85',1,'World']]],
-  ['rules_5fset_5fshark_6',['rules_set_shark',['../structWorld.html#ab1e51bd99486f38ef3da65349da33ace',1,'World']]]
+  ['paused_1578',['paused',['../structGame.html#a1656129c4a4fd8809254194f08f0ac70',1,'Game']]],
+  ['phi_1579',['phi',['../structStepTrajectory.html#abd52692d8d7fc98883b4d782a3a8eead',1,'StepTrajectory']]],
+  ['player_1580',['player',['../structShark.html#a4246b1960baa1c48516f9e21ccb31bba',1,'Shark']]],
+  ['pos_1581',['pos',['../structShark.html#ae19a907bc741ffa358691997cd93774b',1,'Shark']]],
+  ['position_1582',['position',['../structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363',1,'Fish']]]
 ];

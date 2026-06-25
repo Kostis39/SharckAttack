@@ -1,19 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.15.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence de la structure SharkPerception</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,10 +23,10 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="sharky.jpg"/></td>
-  <td id="projectalign">
-   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -36,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.15.0 -->
+<!-- Généré par Doxygen 1.9.1 -->
 <script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-</script>
-<script type="text/javascript">
-$(function() { codefold.init(); });
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche',true);
-  $(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
 });
-</script>
+/* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -64,9 +63,10 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('structSharkPerception.html','',''); });
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structSharkPerception.html',''); initResizable(); });
+/* @license-end */
 </script>
-<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,20 +77,16 @@ $(function(){initNavTree('structSharkPerception.html','',''); });
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Chargement...</div>
-<div class="SRStatus" id="Searching">Recherche...</div>
-<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
-</div>
-</div>
-</div>
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Référence de la structure SharkPerception</div></div>
+  <div class="summary">
+<a href="#pub-attribs">Champs de données</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la structure SharkPerception</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -98,34 +94,37 @@ $(function(){initNavTree('structSharkPerception.html','',''); });
 <div class="dynheader">
 Graphe de collaboration de SharkPerception:</div>
 <div class="dyncontent">
-<div class="center"><img src="structSharkPerception__coll__graph.png" border="0" usemap="#aSharkPerception_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<div class="center"><img src="structSharkPerception__coll__graph.png" border="0" usemap="#aSharkPerception_coll__map" alt="Collaboration graph"/></div>
 <map name="aSharkPerception_coll__map" id="aSharkPerception_coll__map">
-<area shape="rect" title=" " alt="" coords="102,249,229,276"/>
-<area shape="rect" href="structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="137,138,195,166"/>
-<area shape="poly" title=" " alt="" coords="168,179,168,249,163,247,164,183"/>
-<area shape="rect" href="structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="121,5,184,33"/>
-<area shape="poly" title=" " alt="" coords="109,43,71,67,33,100,19,117,10,136,9,155,16,174,36,199,61,219,90,234,119,248,114,249,87,239,58,224,32,203,11,177,4,156,5,135,14,115,29,96,68,63,112,38"/>
-<area shape="poly" title=" " alt="" coords="152,46,156,104,164,138,159,137,151,105,150,51"/>
-<area shape="rect" href="structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="219,138,267,166"/>
-<area shape="poly" title=" " alt="" coords="196,39,216,55,228,76,237,99,244,139,239,137,232,100,223,78,212,59,196,44"/>
-<area shape="poly" title=" " alt="" coords="233,178,205,226,182,250,179,246,201,223,228,181"/>
+<area shape="rect" title=" " alt="" coords="93,201,221,228"/>
+<area shape="rect" href="structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="119,5,182,32"/>
+<area shape="rect" href="structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="128,111,187,137"/>
+<area shape="rect" href="structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="211,111,259,137"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Champs de données</h2></td></tr>
-<tr class="memitem:af019b330e33bab686912254c4192eab4" id="r_af019b330e33bab686912254c4192eab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structShark.html">Shark</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af019b330e33bab686912254c4192eab4">self</a></td></tr>
-<tr class="memitem:acad45494cc98985eeee349c95945187b" id="r_acad45494cc98985eeee349c95945187b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFish.html">Fish</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acad45494cc98985eeee349c95945187b">closest_fish</a></td></tr>
-<tr class="memitem:a482d6d423e4df4b45e2b3642f3cd8c78" id="r_a482d6d423e4df4b45e2b3642f3cd8c78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482d6d423e4df4b45e2b3642f3cd8c78">has_prey</a></td></tr>
-<tr class="memitem:a53e39e025a61542f0e1c3d532b9961c1" id="r_a53e39e025a61542f0e1c3d532b9961c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53e39e025a61542f0e1c3d532b9961c1">center_of_mass</a></td></tr>
-<tr class="memitem:a3d5a1321e34c50155563133d267cf3d8" id="r_a3d5a1321e34c50155563133d267cf3d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d5a1321e34c50155563133d267cf3d8">avg_velocity</a></td></tr>
-<tr class="memitem:a3abecbd5498ece03afbb9c4a9e41876e" id="r_a3abecbd5498ece03afbb9c4a9e41876e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3abecbd5498ece03afbb9c4a9e41876e">has_prey_visible</a></td></tr>
-<tr class="memitem:a2474a5474cbff19523a51eb1de01cda4" id="r_a2474a5474cbff19523a51eb1de01cda4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2474a5474cbff19523a51eb1de01cda4">width</a></td></tr>
-<tr class="memitem:ad12fc34ce789bce6c8a05d8a17138534" id="r_ad12fc34ce789bce6c8a05d8a17138534"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad12fc34ce789bce6c8a05d8a17138534">height</a></td></tr>
+<tr class="memitem:af019b330e33bab686912254c4192eab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structShark.html">Shark</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#af019b330e33bab686912254c4192eab4">self</a></td></tr>
+<tr class="separator:af019b330e33bab686912254c4192eab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad45494cc98985eeee349c95945187b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFish.html">Fish</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#acad45494cc98985eeee349c95945187b">closest_fish</a></td></tr>
+<tr class="separator:acad45494cc98985eeee349c95945187b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a482d6d423e4df4b45e2b3642f3cd8c78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#a482d6d423e4df4b45e2b3642f3cd8c78">has_prey</a></td></tr>
+<tr class="separator:a482d6d423e4df4b45e2b3642f3cd8c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e39e025a61542f0e1c3d532b9961c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#a53e39e025a61542f0e1c3d532b9961c1">center_of_mass</a></td></tr>
+<tr class="separator:a53e39e025a61542f0e1c3d532b9961c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5a1321e34c50155563133d267cf3d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#a3d5a1321e34c50155563133d267cf3d8">avg_velocity</a></td></tr>
+<tr class="separator:a3d5a1321e34c50155563133d267cf3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3abecbd5498ece03afbb9c4a9e41876e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#a3abecbd5498ece03afbb9c4a9e41876e">has_prey_visible</a></td></tr>
+<tr class="separator:a3abecbd5498ece03afbb9c4a9e41876e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2474a5474cbff19523a51eb1de01cda4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#a2474a5474cbff19523a51eb1de01cda4">width</a></td></tr>
+<tr class="separator:a2474a5474cbff19523a51eb1de01cda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12fc34ce789bce6c8a05d8a17138534"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPerception.html#ad12fc34ce789bce6c8a05d8a17138534">height</a></td></tr>
+<tr class="separator:ad12fc34ce789bce6c8a05d8a17138534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
-<a id="a3d5a1321e34c50155563133d267cf3d8" name="a3d5a1321e34c50155563133d267cf3d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d5a1321e34c50155563133d267cf3d8">&#9670;&#160;</a></span>avg_velocity</h2>
+<h2 class="groupheader">Documentation des champs</h2>
+<a id="a3d5a1321e34c50155563133d267cf3d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5a1321e34c50155563133d267cf3d8">&#9670;&nbsp;</a></span>avg_velocity</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,11 +134,12 @@ Champs de données</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La velocity moyenne de tout les poissons dans le champ de vision du requin. </p>
 
 </div>
 </div>
-<a id="a53e39e025a61542f0e1c3d532b9961c1" name="a53e39e025a61542f0e1c3d532b9961c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53e39e025a61542f0e1c3d532b9961c1">&#9670;&#160;</a></span>center_of_mass</h2>
+<a id="a53e39e025a61542f0e1c3d532b9961c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53e39e025a61542f0e1c3d532b9961c1">&#9670;&nbsp;</a></span>center_of_mass</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,11 +149,12 @@ Champs de données</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Centre de masse de tout les poissons dans le champ de vision du requin. </p>
 
 </div>
 </div>
-<a id="acad45494cc98985eeee349c95945187b" name="acad45494cc98985eeee349c95945187b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acad45494cc98985eeee349c95945187b">&#9670;&#160;</a></span>closest_fish</h2>
+<a id="acad45494cc98985eeee349c95945187b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad45494cc98985eeee349c95945187b">&#9670;&nbsp;</a></span>closest_fish</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,11 +164,12 @@ Champs de données</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Le poisson le plus proche du requin. </p>
 
 </div>
 </div>
-<a id="a482d6d423e4df4b45e2b3642f3cd8c78" name="a482d6d423e4df4b45e2b3642f3cd8c78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a482d6d423e4df4b45e2b3642f3cd8c78">&#9670;&#160;</a></span>has_prey</h2>
+<a id="a482d6d423e4df4b45e2b3642f3cd8c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a482d6d423e4df4b45e2b3642f3cd8c78">&#9670;&nbsp;</a></span>has_prey</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,11 +179,12 @@ Champs de données</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Booléen permet de savoir si un poisson est dans le champ de vision direct du requin. </p>
 
 </div>
 </div>
-<a id="a3abecbd5498ece03afbb9c4a9e41876e" name="a3abecbd5498ece03afbb9c4a9e41876e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3abecbd5498ece03afbb9c4a9e41876e">&#9670;&#160;</a></span>has_prey_visible</h2>
+<a id="a3abecbd5498ece03afbb9c4a9e41876e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3abecbd5498ece03afbb9c4a9e41876e">&#9670;&nbsp;</a></span>has_prey_visible</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,8 +197,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="ad12fc34ce789bce6c8a05d8a17138534" name="ad12fc34ce789bce6c8a05d8a17138534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad12fc34ce789bce6c8a05d8a17138534">&#9670;&#160;</a></span>height</h2>
+<a id="ad12fc34ce789bce6c8a05d8a17138534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12fc34ce789bce6c8a05d8a17138534">&#9670;&nbsp;</a></span>height</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,11 +208,12 @@ Champs de données</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Largeur de l'écran. </p>
 
 </div>
 </div>
-<a id="af019b330e33bab686912254c4192eab4" name="af019b330e33bab686912254c4192eab4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af019b330e33bab686912254c4192eab4">&#9670;&#160;</a></span>self</h2>
+<a id="af019b330e33bab686912254c4192eab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af019b330e33bab686912254c4192eab4">&#9670;&nbsp;</a></span>self</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,11 +223,12 @@ Champs de données</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>La perception de lui même. </p>
 
 </div>
 </div>
-<a id="a2474a5474cbff19523a51eb1de01cda4" name="a2474a5474cbff19523a51eb1de01cda4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2474a5474cbff19523a51eb1de01cda4">&#9670;&#160;</a></span>width</h2>
+<a id="a2474a5474cbff19523a51eb1de01cda4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2474a5474cbff19523a51eb1de01cda4">&#9670;&nbsp;</a></span>width</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,19 +246,11 @@ Champs de données</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
-</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="structSharkPerception.html">SharkPerception</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+    <li class="navelem"><a class="el" href="structSharkPerception.html">SharkPerception</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

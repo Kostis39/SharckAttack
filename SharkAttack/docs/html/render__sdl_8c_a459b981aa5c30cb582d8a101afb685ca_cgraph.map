@@ -1,0 +1,31 @@
+<map id="Draw_world" name="Draw_world">
+<area shape="rect" id="node1" title="dessine le monde" alt="" coords="5,461,104,488"/>
+<area shape="rect" id="node2" href="$render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="158,132,294,159"/>
+<area shape="rect" id="node11" href="$render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="167,309,285,336"/>
+<area shape="rect" id="node15" href="$render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="155,360,297,387"/>
+<area shape="rect" id="node23" href="$render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="183,512,269,539"/>
+<area shape="rect" id="node25" href="$render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="152,588,300,615"/>
+<area shape="rect" id="node26" href="$render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title="dessine le score en haut a droite de l ecran le score correspond au nbr de poissons mangés par le req..." alt="" coords="177,676,275,703"/>
+<area shape="rect" id="node29" href="$render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="177,461,275,488"/>
+<area shape="rect" id="node3" href="$sdl__draw__tools_8h.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="567,5,681,32"/>
+<area shape="rect" id="node5" href="$sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="351,157,497,184"/>
+<area shape="rect" id="node6" href="$sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="348,512,500,539"/>
+<area shape="rect" id="node8" href="$sdl__draw__tools_8h.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="357,56,491,83"/>
+<area shape="rect" id="node10" href="$sdl__draw__tools_8h.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="375,107,473,133"/>
+<area shape="rect" id="node4" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="748,272,885,299"/>
+<area shape="rect" id="node7" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="595,208,653,235"/>
+<area shape="rect" id="node9" href="$sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="551,56,697,83"/>
+<area shape="rect" id="node12" href="$render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="369,309,479,336"/>
+<area shape="rect" id="node13" href="$sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="553,284,695,311"/>
+<area shape="rect" id="node14" href="$sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="595,461,653,488"/>
+<area shape="rect" id="node16" href="$sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="349,208,499,235"/>
+<area shape="rect" id="node17" href="$sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="355,411,493,437"/>
+<area shape="rect" id="node18" href="$sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="372,259,476,285"/>
+<area shape="rect" id="node19" href="$sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="548,348,700,375"/>
+<area shape="rect" id="node20" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="749,348,884,375"/>
+<area shape="rect" id="node21" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="933,323,1044,349"/>
+<area shape="rect" id="node22" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="937,373,1041,400"/>
+<area shape="rect" id="node24" href="$sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="348,613,500,640"/>
+<area shape="rect" id="node27" href="$sdl__draw__tools_8h.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="373,715,475,741"/>
+<area shape="rect" id="node28" href="$sdl__draw__tools_8h.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="378,765,470,792"/>
+</map>
