@@ -3,64 +3,46 @@
 # ==========================================
 
 # Hyperparameters utilisés :
-gamma 0.999800
-sigma 1.000000
-alpha 0.001000
+gamma 0.999600
+sigma 3.000000
+alpha 0.000100
 nb_gen 10000
 nb_game 10
-nb_occurrence 1000
+nb_occurrence 5000
 
 # Theta de départ :
-center: 15.407196
-alignment: -29.346697
-pursuit: 33.399925
+center: 5.334905
+alignment: -32.192009
+pursuit: 27.829966
+zone_density: 11.345794
 
 # Meilleur gain de départ (historique) :
-gain_initial: 52.188438
+gain_initial: 69.185814
 
 # ==========================================
 # DÉBUT DES LOGS DE GÉNÉRATION
 # ==========================================
-
-# Génération num: 1 
-Theta
-center: 15.275310
-alignment: -29.310186
-pursuit: 33.513363
-
-Avg reward: 55.400002
-Avg gain: 50.830803
-Avg iteration: 1000.000000
-
-# Génération num: 2 
-Theta
-center: 15.226107
-alignment: -29.361145
-pursuit: 33.666073
-
-Avg reward: 49.299999
-Avg gain: 45.170860
-Avg iteration: 1000.000000
 
 # ==========================================
 # INITIALISATION DU LOG DE REINFORCE
 # ==========================================
 
 # Hyperparameters utilisés :
-gamma 0.999800
-sigma 1.000000
-alpha 0.001000
+gamma 0.999600
+sigma 3.000000
+alpha 0.000100
 nb_gen 10000
 nb_game 10
-nb_occurrence 1000
+nb_occurrence 5000
 
 # Theta de départ :
-center: 15.407196
-alignment: -29.346697
-pursuit: 33.399925
+center: 5.334905
+alignment: -32.192009
+pursuit: 27.829966
+zone_density: 11.345794
 
 # Meilleur gain de départ (historique) :
-gain_initial: 52.188438
+gain_initial: 0.000000
 
 # ==========================================
 # DÉBUT DES LOGS DE GÉNÉRATION
@@ -68,13 +50,349 @@ gain_initial: 52.188438
 
 # Génération num: 100 
 Theta
-center: 7.223657
-alignment: -40.082634
-pursuit: 35.858452
+center: 5.700767
+alignment: -31.693062
+pursuit: 27.007549
+zone density: 11.976641
 
-Moyenne reward: 43.299999
-Moyenne gain: 39.263557
-Moyenne iteration: 1000.000000
-Δθ après 100 générations: (0.001349, -0.192997, 0.224003)
-Moyenne de Δθ de chaque génération: (0.000013, -0.001930, 0.002240)
+Moyenne reward: 100.000000
+Moyenne gain: 64.925018
+Moyenne iteration: 3406.100098
+Δθ après 100 générations: (-0.000220, -0.004190, -0.000233, 0.001363)
+Moyenne de Δθ de chaque génération: (-0.000002, -0.000042, -0.000002, 0.000014)
+
+# Génération num: 200 
+Theta
+center: 6.129857
+alignment: -31.440157
+pursuit: 26.207720
+zone density: 12.554137
+
+Moyenne reward: 100.000000
+Moyenne gain: 64.886490
+Moyenne iteration: 3671.500000
+Δθ après 100 générations: (0.007414, 0.003790, -0.013712, 0.008658)
+Moyenne de Δθ de chaque génération: (0.000074, 0.000038, -0.000137, 0.000087)
+
+# Génération num: 300 
+Theta
+center: 6.699826
+alignment: -31.516844
+pursuit: 26.026037
+zone density: 13.370416
+
+Moyenne reward: 100.000000
+Moyenne gain: 64.841034
+Moyenne iteration: 3608.899902
+Δθ après 100 générations: (-0.001641, 0.013763, -0.021681, 0.004907)
+Moyenne de Δθ de chaque génération: (-0.000016, 0.000138, -0.000217, 0.000049)
+
+# Génération num: 400 
+Theta
+center: 7.187594
+alignment: -31.535355
+pursuit: 25.538677
+zone density: 14.133739
+
+Moyenne reward: 100.000000
+Moyenne gain: 63.591705
+Moyenne iteration: 3561.600098
+Δθ après 100 générations: (0.009501, -0.004957, -0.008904, 0.011127)
+Moyenne de Δθ de chaque génération: (0.000095, -0.000050, -0.000089, 0.000111)
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999600
+sigma 3.000000
+alpha 0.005000
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 5.700767
+alignment: -31.693062
+pursuit: 27.007549
+zone_density: 11.976641
+
+# Meilleur gain de départ (historique) :
+gain_initial: 64.925018
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# Génération num: 100 
+Theta
+center: -2.505008
+alignment: -73.213531
+pursuit: 36.880028
+zone density: -1.462425
+
+Moyenne reward: 84.199997
+Moyenne gain: 47.053131
+Moyenne iteration: 5000.000000
+Δθ après 100 générations: (0.053809, -0.543442, 0.034367, -0.016435)
+Moyenne de Δθ de chaque génération: (0.000538, -0.005434, 0.000344, -0.000164)
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999600
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 5.700767
+alignment: -31.693062
+pursuit: 27.007549
+zone_density: 11.976641
+
+# Meilleur gain de départ (historique) :
+gain_initial: 64.925018
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# Génération num: 100 
+Theta
+center: 4.674822
+alignment: -25.774876
+pursuit: 23.214703
+zone density: 11.715899
+
+Moyenne reward: 100.000000
+Moyenne gain: 63.850117
+Moyenne iteration: 3278.800049
+Δθ après 100 générations: (-0.045818, 0.126881, -0.100548, -0.040556)
+Moyenne de Δθ de chaque génération: (-0.000458, 0.001269, -0.001005, -0.000406)
+
+# Génération num: 200 
+Theta
+center: 4.591358
+alignment: -19.048851
+pursuit: 19.777330
+zone density: 11.544787
+
+Moyenne reward: 100.000000
+Moyenne gain: 64.639503
+Moyenne iteration: 3170.800049
+Δθ après 100 générations: (0.057685, 0.159513, -0.141190, 0.030621)
+Moyenne de Δθ de chaque génération: (0.000577, 0.001595, -0.001412, 0.000306)
+
+# Génération num: 300 
+Theta
+center: 3.665898
+alignment: -10.245234
+pursuit: 15.032168
+zone density: 10.263876
+
+Moyenne reward: 100.000000
+Moyenne gain: 66.700668
+Moyenne iteration: 2944.399902
+Δθ après 100 générations: (-0.055203, 0.064371, -0.013825, -0.034346)
+Moyenne de Δθ de chaque génération: (-0.000552, 0.000644, -0.000138, -0.000343)
+
+# Génération num: 400 
+Theta
+center: 1.674793
+alignment: -2.248627
+pursuit: 11.686038
+zone density: 8.315207
+
+Moyenne reward: 100.000000
+Moyenne gain: 66.274002
+Moyenne iteration: 3121.000000
+Δθ après 100 générations: (0.038032, 0.107637, -0.067728, 0.012232)
+Moyenne de Δθ de chaque génération: (0.000380, 0.001076, -0.000677, 0.000122)
+
+# Génération num: 500 
+Theta
+center: -0.404057
+alignment: 5.568069
+pursuit: 6.862320
+zone density: 6.798791
+
+Moyenne reward: 97.800003
+Moyenne gain: 52.241467
+Moyenne iteration: 4477.000000
+Δθ après 100 générations: (0.012510, -0.002798, -0.028268, 0.048840)
+Moyenne de Δθ de chaque génération: (0.000125, -0.000028, -0.000283, 0.000488)
+
+# Génération num: 600 
+Theta
+center: -1.434848
+alignment: 8.457191
+pursuit: 4.491976
+zone density: 6.217241
+
+Moyenne reward: 52.400002
+Moyenne gain: 27.293865
+Moyenne iteration: 5000.000000
+Δθ après 100 générations: (-0.012576, -0.018711, 0.042616, 0.003884)
+Moyenne de Δθ de chaque génération: (-0.000126, -0.000187, 0.000426, 0.000039)
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999600
+sigma 3.000000
+alpha 0.000200
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 3.665898
+alignment: -10.245234
+pursuit: 15.032168
+zone_density: 10.263876
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.700668
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# Génération num: 100 
+Theta
+center: 4.217278
+alignment: -11.990921
+pursuit: 15.907204
+zone density: 10.457897
+
+Moyenne reward: 100.000000
+Moyenne gain: 67.443710
+Moyenne iteration: 3065.100098
+Δθ après 100 générations: (0.016130, 0.008510, -0.026292, 0.010043)
+Moyenne de Δθ de chaque génération: (0.000161, 0.000085, -0.000263, 0.000100)
+
+# Génération num: 200 
+Theta
+center: 4.608977
+alignment: -14.311414
+pursuit: 17.677519
+zone density: 10.469999
+
+Moyenne reward: 100.000000
+Moyenne gain: 64.563644
+Moyenne iteration: 3271.000000
+Δθ après 100 générations: (0.012784, -0.054480, 0.041891, 0.010817)
+Moyenne de Δθ de chaque génération: (0.000128, -0.000545, 0.000419, 0.000108)
+
+# Génération num: 300 
+Theta
+center: 5.057048
+alignment: -16.825857
+pursuit: 20.067610
+zone density: 10.862212
+
+Moyenne reward: 100.000000
+Moyenne gain: 66.213486
+Moyenne iteration: 3184.500000
+Δθ après 100 générations: (0.012393, -0.044783, 0.042084, 0.010698)
+Moyenne de Δθ de chaque génération: (0.000124, -0.000448, 0.000421, 0.000107)
+
+# Génération num: 400 
+Theta
+center: 5.584437
+alignment: -19.274954
+pursuit: 22.586617
+zone density: 11.369970
+
+Moyenne reward: 100.000000
+Moyenne gain: 68.345299
+Moyenne iteration: 3001.199951
+Δθ après 100 générations: (0.005039, -0.025593, 0.031490, 0.005199)
+Moyenne de Δθ de chaque génération: (0.000050, -0.000256, 0.000315, 0.000052)
+
+# Génération num: 500 
+Theta
+center: 5.918876
+alignment: -20.968750
+pursuit: 23.692522
+zone density: 11.860829
+
+Moyenne reward: 100.000000
+Moyenne gain: 70.142220
+Moyenne iteration: 2709.199951
+Δθ après 100 générations: (0.013305, -0.032566, 0.022188, 0.014816)
+Moyenne de Δθ de chaque génération: (0.000133, -0.000326, 0.000222, 0.000148)
+
+# Génération num: 600 
+Theta
+center: 6.401217
+alignment: -21.816189
+pursuit: 23.649996
+zone density: 12.165293
+
+Moyenne reward: 100.000000
+Moyenne gain: 66.726913
+Moyenne iteration: 3173.100098
+Δθ après 100 générations: (0.014102, -0.009903, 0.016562, 0.007945)
+Moyenne de Δθ de chaque génération: (0.000141, -0.000099, 0.000166, 0.000079)
+
+# Génération num: 700 
+Theta
+center: 6.925236
+alignment: -22.607584
+pursuit: 23.213179
+zone density: 12.624138
+
+Moyenne reward: 100.000000
+Moyenne gain: 69.130882
+Moyenne iteration: 3111.399902
+Δθ après 100 générations: (-0.002920, -0.040768, 0.013231, -0.000997)
+Moyenne de Δθ de chaque génération: (-0.000029, -0.000408, 0.000132, -0.000010)
+
+# Génération num: 800 
+Theta
+center: 7.489907
+alignment: -23.811985
+pursuit: 23.491760
+zone density: 12.886686
+
+Moyenne reward: 100.000000
+Moyenne gain: 65.205391
+Moyenne iteration: 3332.500000
+Δθ après 100 générations: (0.001485, -0.021334, -0.017708, -0.015465)
+Moyenne de Δθ de chaque génération: (0.000015, -0.000213, -0.000177, -0.000155)
+
+# Génération num: 900 
+Theta
+center: 8.372952
+alignment: -25.080172
+pursuit: 24.205080
+zone density: 13.038392
+
+Moyenne reward: 100.000000
+Moyenne gain: 66.628807
+Moyenne iteration: 3016.399902
+Δθ après 100 générations: (0.002090, -0.050549, 0.056601, -0.001571)
+Moyenne de Δθ de chaque génération: (0.000021, -0.000505, 0.000566, -0.000016)
+
+# Génération num: 1000 
+Theta
+center: 9.769555
+alignment: -27.109467
+pursuit: 25.951065
+zone density: 13.583510
+
+Moyenne reward: 100.000000
+Moyenne gain: 65.329453
+Moyenne iteration: 3177.000000
+Δθ après 100 générations: (0.002335, -0.016817, -0.015768, -0.001038)
+Moyenne de Δθ de chaque génération: (0.000023, -0.000168, -0.000158, -0.000010)
 
