@@ -17,9 +17,7 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
 bool load_theta(VectorRule *theta, char *filename);
 
 bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
-                     float avg_gain, float avg_iteration,
-                     VectorRule theta_diff_STEP_LOG,
-                     VectorRule theta_diff_1_step, char *filename);
+                     float avg_gain, float avg_iteration, char *filename);
 
 bool init_logs(char *filename_params, char *filename_logs);
 

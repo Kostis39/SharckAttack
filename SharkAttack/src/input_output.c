@@ -156,9 +156,7 @@ bool load_theta(VectorRule *theta, char *filename) {
  * @return true si l'écriture a réussi, false sinon
  */
 bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
-                     float avg_gain, float avg_iteration,
-                     VectorRule theta_diff_STEP_LOG,
-                     VectorRule theta_diff_1_step, char *filename) {
+                     float avg_gain, float avg_iteration, char *filename) {
     if (!theta || !filename) {
         fprintf(stderr, "Erreur: pointeur NULL dans load_theta\n");
         return false;
@@ -177,14 +175,9 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
     fprintf(file, "center: %f\n", theta->vect[Rules_Center]);
     fprintf(file, "alignment: %f\n", theta->vect[Rules_Alignment]);
     fprintf(file, "pursuit: %f\n\n", theta->vect[Rules_Pursuit]);
-    fprintf(file, "Moyenne reward: %f\n", avg_reward);
-    fprintf(file, "Moyenne gain: %f\n", avg_gain);
-    fprintf(file, "Moyenne iteration: %f\n", avg_iteration);
-    fprintf(file, "Δθ après %d générations: ", STEP_LOG);
-    VectorRule_fprint(file, theta_diff_STEP_LOG);
-    fprintf(file, "\nMoyenne de Δθ de chaque génération: ");
-    VectorRule_fprint(file, theta_diff_1_step);
-    fprintf(file, "\n\n");
+    fprintf(file, "Avg reward: %f\n", avg_reward);
+    fprintf(file, "Avg gain: %f\n", avg_gain);
+    fprintf(file, "Avg iteration: %f\n\n", avg_iteration);
 
     fclose(file);
     return true;
@@ -318,7 +311,7 @@ bool init_logs(char *filename_params, char *filename_logs) {
     }
     load_gain_params(&best_gain_initial, filename_params);
 
-    FILE *file = fopen(filename_logs, "a");
+    FILE *file = fopen(filename_logs, "w");
     if (!file) {
         fprintf(stderr,
                 "Erreur: impossible d'initialiser le fichier de log %s\n",

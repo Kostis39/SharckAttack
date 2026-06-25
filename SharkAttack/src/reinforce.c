@@ -217,9 +217,6 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
         float average_reward = 0.0f;
         float average_gain = 0.0f;
         float average_iteration = 0.0f;
-        VectorRule theta_deb = *theta;
-        VectorRule theta_diff_1_step = VectorRule_init();
-        VectorRule theta_before;
 
         /*******THREAD CREATOR*******/
         for (i = 0; i < thread_count; ++i) {
@@ -258,29 +255,15 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
         grad.x = VectorRule_scaled(D_total.x, 1.0f / thread_count);
         grad.y = VectorRule_scaled(D_total.y, 1.0f / thread_count);
 
-        theta_before = *theta;
-
         // mise à jour de theta
         *theta = VectorRule_add(
             *theta, VectorRule_scaled(grad.x, hyperparameters.alpha));
         *theta = VectorRule_add(
             *theta, VectorRule_scaled(grad.y, hyperparameters.alpha));
 
-        theta_diff_1_step = VectorRule_add(
-            theta_diff_1_step, VectorRule_sub(*theta, theta_before));
-
         if ((k + 1) % STEP_LOG == 0) {
-            VectorRule theta_diff_STEP_LOG = VectorRule_sub(*theta, theta_deb);
-            theta_deb = *theta;
-
-            theta_diff_1_step =
-                VectorRule_scaled(theta_diff_1_step, 1.0f / STEP_LOG);
-
             logs_generation(theta, k + 1, average_reward, average_gain,
-                            average_iteration, theta_diff_STEP_LOG,
-                            theta_diff_1_step, FILE_LOG);
-
-            theta_diff_1_step = VectorRule_init();
+                            average_iteration, FILE_LOG);
         }
 
         printf("=== Génération %d / %d ===\n", k + 1, hyperparameters.nb_gen);
