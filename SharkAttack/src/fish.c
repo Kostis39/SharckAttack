@@ -2,6 +2,12 @@
 #include "config.h"
 #include "utils.h"
 
+/**
+ * @brief crée un poisson avec une position et une vitesse aléatoires
+ * @param width largeur du monde
+ * @param height hauteur du monde
+ * @return structure Fish initialisée
+ */
 Fish Fish_create_random_pos(int width, int height) {
     Fish fish;
     fish.position.x = random_float(0, width);
@@ -17,6 +23,13 @@ Fish Fish_create_random_pos(int width, int height) {
     return fish;
 }
 
+/**
+ * @brief crée un tableau de poissons avec des positions et vitesses aléatoires
+ * @param nb_fish nombre de poissons à créer
+ * @param width largeur du monde
+ * @param height hauteur du monde
+ * @return pointeur vers le tableau alloué dynamiquement
+ */
 Fish *Fish_create_random_array(int nb_fish, int width, int height) {
     Fish *fish_array = calloc(nb_fish, sizeof(Fish));
     for (int i = 0; i < nb_fish; i++) {
@@ -25,11 +38,22 @@ Fish *Fish_create_random_array(int nb_fish, int width, int height) {
     return fish_array;
 }
 
+/**
+ * @brief crée un tableau de poissons sans les initialiser
+ * @param nb_fish nombre de poissons
+ * @return pointeur vers le tableau alloué dynamiquement
+ */
 Fish *Fish_create_null_array(int nb_fish) {
     Fish *fish_array = calloc(nb_fish, sizeof(Fish));
     return fish_array;
 }
 
+/**
+ * @brief copie un tableau de poissons
+ * @param fish_array tableau source
+ * @param nb_fish nombre de poissons à copier
+ * @return nouveau tableau alloué dynamiquement contenant une copie des données
+ */
 Fish *Fish_copy_array(Fish *fish_array, int nb_fish) {
     Fish *new_array = calloc(nb_fish, sizeof(Fish));
     for (int i = 0; i < nb_fish; i++) {
@@ -38,11 +62,21 @@ Fish *Fish_copy_array(Fish *fish_array, int nb_fish) {
     return new_array;
 }
 
+/**
+ * @brief libère la mémoire d'un tableau de poissons
+ * @param fish_array tableau à libérer
+ */
 void Fish_destroy_array(Fish *fish_array) {
     free(fish_array);
     fish_array = NULL;
 }
 
+/**
+ * @brief applique une action au poisson met à jour sa vitesse et sa position,
+ * puis applique les bornes de vitesse min/max
+ * @param fish pointeur vers le poisson
+ * @param weighted_velocity vecteur vitesse pondéré
+ */
 void fish_apply_action(Fish *fish, Vector weighted_velocity) {
     Vector new_velocity =
         Vector_add(fish->velocity, Vector_scale(weighted_velocity, TURN_SPEED));
