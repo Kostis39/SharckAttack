@@ -1,21 +1,21 @@
 #include "mj.h"
 
-float Shark_reward(int nb_fish_ate) {
-    if (nb_fish_ate == 0) {
-        return 0;
-    }
-    return nb_fish_ate;
-}
+/**
+ * @brief calcule la récompense du requin en fonction du nombre de poissons
+ * mangés
+ * @param nb_fish_ate nombre de poissons mangés lors de cette itération
+ * @return valeur de la récompense
+ */
+float Shark_reward(int nb_fish_ate) { return nb_fish_ate; }
 
+/**
+ * @brief Initialise la perception d'un poisson
+ * @param fish le poisson à initialiser
+ * @param world le monde contenant les dimensions
+ * @param perception la structure de perception à remplir
+ */
 void fish_perception_init(Fish *fish, World *world,
                           FishPerception *perception) {
-
-    /**
-     * @brief Initialise la perception d'un poisson
-     * @param fish le poisson à initialiser
-     * @param world le monde contenant les dimensions
-     * @param perception la structure de perception à remplir
-     */
     perception->self = *fish;
 
     perception->collider_separation = Vector_init();
@@ -29,15 +29,14 @@ void fish_perception_init(Fish *fish, World *world,
     perception->height = world->height;
 }
 
+/**
+ * @brief Met à jour la perception du requin pour un poisson
+ * @param fish le poisson dont on met à jour la perception
+ * @param world le monde contenant le requin
+ * @param perception la structure de perception à mettre à jour
+ */
 void fish_to_shark_perception(Fish *fish, World *world,
                               FishPerception *perception) {
-
-    /**
-     * @brief Met à jour la perception du requin pour un poisson
-     * @param fish le poisson dont on met à jour la perception
-     * @param world le monde contenant le requin
-     * @param perception la structure de perception à mettre à jour
-     */
     if (world->shark != NULL) {
         Vector to_shark = Vector_sub(world->shark->pos, fish->position);
         float distance = Vector_length2(to_shark);
@@ -53,20 +52,19 @@ void fish_to_shark_perception(Fish *fish, World *world,
     }
 }
 
+/**
+ * @brief fish_neighbor_perception donne la percpetion des voisins de fish
+ * @param fish le poisson
+ * @param world le monde
+ * @param perception la perception actuelle du poisson
+ * @param nb_align pointeur vers le nombre de poissons dans la zone
+ * d'alignement
+ * @param nb_align pointeur vers le nombre de poissons dans la zone de
+ * cohésion
+ */
 void fish_neighbor_perception(Fish *fish, World *world,
                               FishPerception *perception, int *nb_align,
                               int *nb_cohes) {
-    /**
-     * @brief fish_neighbor_perception donne la percpetion des voisins de fish
-     * @param fish le poisson
-     * @param world le monde
-     * @param perception la perception actuelle du poisson
-     * @param nb_align pointeur vers le nombre de poissons dans la zone
-     * d'alignement
-     * @param nb_align pointeur vers le nombre de poissons dans la zone de
-     * cohésion
-     * */
-
     float separation_limit = fish->radius_separation;
     float alignment_limit = separation_limit + fish->radius_alignement;
     float cohesion_limit = alignment_limit + fish->radius_cohesion;
@@ -101,15 +99,14 @@ void fish_neighbor_perception(Fish *fish, World *world,
     }
 }
 
+/**
+ * @brief renvoie la perception d'un poisson dans le monde
+ * @param fish le poisson en question
+ * @param world le monde dans lequel évolue le poisson
+ * @param perception la struct dans laquelle on écrit la perception associée
+ * au poisson fish
+ * */
 void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
-    /**
-     * @brief renvoie la perception d'un poisson dans le monde
-     * @param fish le poisson en question
-     * @param world le monde dans lequel évolue le poisson
-     * @param perception la struct dans laquelle on écrit la perception associée
-     * au poisson fish
-     * */
-
     fish_perception_init(fish, world, perception);
     fish_to_shark_perception(fish, world, perception);
     int nb_cohes = 0;
@@ -147,8 +144,18 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
             : perception->self.position;
 }
 
+/**
+ * @brief libère la mémoire d'une structure FishPerception
+ * @param perception pointeur vers la perception à libérer
+ */
 void FishPerception_destroy(FishPerception *perception) { free(perception); }
 
+/**
+ * @brief construit la perception du requin à partir du monde
+ * @param shark pointeur vers le requin
+ * @param world pointeur vers le monde
+ * @param shark_perception pointeur vers la structure à remplir
+ */
 void Get_shark_perception(Shark *shark, World *world,
                           SharkPerception *shark_perception) {
 
@@ -228,6 +235,12 @@ int handle_shark_eat(World *world) {
     return has_eaten;
 }
 
+/**
+ * @brief mise à jour synchrone du monde en calculant les nouvelles positions
+ * des agents
+ * @param world monde actuel
+ * @param tmp_world monde temporaire
+ */
 void UpdateWorld(World *world, World *tmp_world) {
     FishPerception *perception = malloc(sizeof(FishPerception));
     Vector shark_action;
@@ -285,6 +298,10 @@ void UpdateWorld(World *world, World *tmp_world) {
     }
 }
 
+/**
+ * @brief réalise une itération complète du jeu
+ * @param world pointeur vers le monde à mettre à jour
+ */
 void Game_step(World *world) {
     /**
      * @brief réalise une itération du jeu
