@@ -1,5 +1,6 @@
 #include "render_sdl.h"
-#include "SDL.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include "collider.h"
 #include "sdl_draw_tools.h"
 #include "world.h"
