@@ -4,20 +4,45 @@
 #include "world.h"
 #include <math.h>
 
+/**
+ * @brief règle de séparation, retourne le vecteur de séparation
+ * @param self pointeur vers le poisson
+ * @param separation vecteur de séparation pré-calculé
+ * @return vecteur de séparation
+ */
 Vector Rules_separation(Fish *self, Vector separation) {
     (void)self; // self n'est pas utilisé dans cette règle, mais on le garde en
                 // paramètre pour la cohérence avec les autres règles
     return separation;
 }
 
+/**
+ * @brief règle d'alignement, retourne la direction moyenne des voisins
+ * @param self pointeur vers le poisson
+ * @param avg_velocity vitesse moyenne des voisins
+ * @return vecteur d'alignement
+ */
 Vector Rules_alignment(Fish *self, Vector avg_velocity) {
     return Vector_sub(avg_velocity, self->velocity);
 }
 
+/**
+ * @brief règle de cohésion, attire vers le centre de masse du groupe
+ * @param self pointeur vers le poisson
+ * @param center_of_mass centre de masse des voisins
+ * @return vecteur de cohésion
+ */
 Vector Rules_cohesion(Fish *self, Vector center_of_mass) {
     return Vector_sub(center_of_mass, self->position);
 }
 
+/**
+ * @brief répulsion des bords, empêche le poisson de sortir du monde
+ * @param self pointeur vers le poisson
+ * @param width largeur du monde
+ * @param height hauteur du monde
+ * @return vecteur de répulsion
+ */
 Vector Rules_border_repulsion(Fish *self, int width, int height) {
     Vector repulsion = Vector_init();
     float ratio;
@@ -50,6 +75,12 @@ Vector Rules_border_repulsion(Fish *self, int width, int height) {
     return repulsion;
 }
 
+/**
+ * @brief évitement du requin, fuit si le requin est trop proche
+ * @param self pointeur vers le poisson
+ * @param dist_shark distance entre le poisson et le requin
+ * @return vecteur de fuite
+ */
 Vector Rules_avoid_shark(Fish *self, Vector dist_shark) {
     if (Vector_length(dist_shark) > self->radius_cohesion) {
         return Vector_init();
@@ -63,16 +94,17 @@ Vector Rules_avoid_shark(Fish *self, Vector dist_shark) {
     return Vector_scale(dist_shark, intensity);
 }
 
+/**
+ * @brief calcule l'action du poisson combine linéairement toutes les règles
+ * avec leurs poids
+ * @param p perception du poisson
+ * @param theta poids des règles
+ * @param width largeur du monde
+ * @param height hauteur du monde
+ * @return vecteur vitesse
+ */
 Vector fish_choose_action(FishPerception *p, RulesSetFish *theta, int width,
                           int height) {
-    /** @brief Choix de la direction du poisson comme une combinaison linéaire
-     * de vecteurs
-     * @param p un pointeur vers la perception du poisson
-     * @param theta ensemble de paramètres quantifiant le comportement du
-     * poisson
-     * @return weighted_velocity vecteur vitesse du poisson comprenant son
-     * comportement
-     * */
     Vector separation = Rules_separation(&p->self, p->separation);
     Vector alignement = Rules_alignment(&p->self, p->avg_velocity);
     Vector cohesion = Rules_cohesion(&p->self, p->center_of_mass);
