@@ -662,15 +662,6 @@ void Draw_world(SDLDisplay *display, World *world) {
 /**
  * @brief dessine un texte centre avec SDL_ttf.
  *
- * @param r renderer SDL
- * @param text texte a afficher
- * @param zone zone ou centrer le texte
- * @param size taille du texte
- * @param color couleur du texte
- */
-/**
- * @brief dessine un texte centre avec SDL_ttf.
- *
  * Style choisi : police serif italique pour donner un effet
  * plus marin / aventure.
  *
@@ -728,28 +719,22 @@ void Draw_text_center(SDL_Renderer *r, const char *text, SDL_Rect zone,
  * @brief affiche WINNER ou LOSER avec un filtre transparent.
  *
  * Le fond du jeu reste visible derriere.
- * Si is_winner = 1 : affiche WINNER.
- * Si is_winner = 0 : affiche LOSER.
+ *
+ * Si is_winner = 1 : affiche seulement WINNER.
+ * Si is_winner = 0 : affiche LOSER et le nombre de poissons restants.
+ *
  * @param r renderer SDL utilise pour dessiner
  * @param zone zone de l'ecran ou afficher le resultat
  * @param is_winner 1 si le joueur est gagnant, 0 sinon
- * @param time_ms temps final du joueur en millisecondes
- * @param diff_ms difference de temps entre les deux joueurs en secondes
- * @param show_diff 1 pour afficher la difference, 0 sinon
- * @param remaining nombre de poissons restants a la fin
+ * @param remaining nombre de poissons restants pour le perdant
  */
 void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
-                         int time_ms, int diff_ms, int show_diff,
                          int remaining) {
     char buffer[32];
 
     if (remaining < 0)
         remaining = 0;
 
-    /*
-     * Filtre transparent sur tout le fond.
-     * Vert pour winner, rouge pour loser.
-     */
     if (is_winner)
         SDL_SetRenderDrawColor(r, 20, 220, 100, 55);
     else
@@ -757,9 +742,6 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
 
     SDL_RenderFillRect(r, &zone);
 
-    /*
-     * Bordure.
-     */
     if (is_winner)
         SDL_SetRenderDrawColor(r, 80, 255, 150, 230);
     else
@@ -767,12 +749,9 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
 
     SDL_RenderDrawRect(r, &zone);
 
-    /*
-     * Titre WINNER / LOSER.
-     */
     SDL_Rect title_zone = {
         zone.x,
-        zone.y + zone.h / 2 - 105,
+        zone.y + zone.h / 2 - 80,
         zone.w,
         100
     };
@@ -783,56 +762,18 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
     } else {
         Draw_text_center(r, "LOSER", title_zone, 56,
                          (SDL_Color){255, 130, 140, 255});
-    }
 
-    /*
-     * Petit texte sous WINNER / LOSER.
-     * Winner : reste 0
-     * Loser  : reste X
-     */
-    snprintf(buffer, sizeof(buffer), "reste %d", remaining);
+        snprintf(buffer, sizeof(buffer), "reste %d", remaining);
 
-    SDL_Rect remaining_zone = {
-        zone.x,
-        zone.y + zone.h / 2 - 15,
-        zone.w,
-        40
-    };
-
-    Draw_text_center(r, buffer, remaining_zone, 22,
-                 (SDL_Color){235, 240, 245, 210});
-
-    /*
-     * Temps en bas à gauche.
-     */
-    snprintf(buffer, sizeof(buffer), "%d", time_ms / 1000);
-
-    SDL_Rect time_zone = {
-        zone.x + 20,
-        zone.y + zone.h - 80,
-        140,
-        60
-    };
-
-    Draw_text_center(r, buffer, time_zone, 42,
-                     (SDL_Color){220, 240, 255, 255});
-
-    /*
-     * Différence en bas à droite.
-     * Ici elle vaut souvent 0, car on affiche LOSER dès que WINNER apparaît.
-     */
-    if (show_diff) {
-        snprintf(buffer, sizeof(buffer), "+%d", diff_ms / 1000);
-
-        SDL_Rect diff_zone = {
-            zone.x + zone.w - 170,
-            zone.y + zone.h - 80,
-            150,
-            60
+        SDL_Rect remaining_zone = {
+            zone.x,
+            zone.y + zone.h / 2 + 5,
+            zone.w,
+            40
         };
 
-        Draw_text_center(r, buffer, diff_zone, 42,
-                         (SDL_Color){255, 220, 80, 255});
+        Draw_text_center(r, buffer, remaining_zone, 22,
+                         (SDL_Color){235, 240, 245, 210});
     }
 }
 
@@ -848,8 +789,6 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     static int was_alive[2][FISH_NB] = {{0}};
     static int skeleton_frame[2][FISH_NB] = {{0}};
 
-    static int start_time = 0;
-    static int finish_time[2] = {-1, -1};
     static int remaining_at_end[2] = {0, 0};
     static int winner = -1; /**< personne n'a encore gagné */
 
@@ -1009,43 +948,23 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     SDL_RenderDrawRect(r, &right_screen);
 
     /*
-    * Fin de partie:
-    * Dès qu'un côté mange tous les poissons,
+    * Fin de partie :
+    * Des qu'un cote mange tous les poissons,
     * il devient WINNER et l'autre devient directement LOSER.
     */
-    int now = (int)SDL_GetTicks();
-
-    if (start_time == 0)
-        start_time = now;
-
-    int elapsed = now - start_time;
-
-    /*
-     * Reset simple si une nouvelle partie commence.
-     */
     if (left_world->fish_eaten == 0 && right_world->fish_eaten == 0 &&
         winner != -1) {
-        start_time = now;
-
-        finish_time[0] = -1;
-        finish_time[1] = -1;
-
         remaining_at_end[0] = 0;
         remaining_at_end[1] = 0;
-
         winner = -1;
     }
 
     /*
-    * Détection du gagnant.
-    * Les deux résultats sont affichés au même moment.
+    * Detection du gagnant.
     */
     if (winner == -1) {
         if (left_world->fish_eaten >= left_world->nb_fish) {
             winner = 0;
-
-            finish_time[0] = elapsed;
-            finish_time[1] = elapsed;
 
             remaining_at_end[0] = 0;
             remaining_at_end[1] = right_world->nb_fish - right_world->fish_eaten;
@@ -1054,9 +973,6 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
                 remaining_at_end[1] = 0;
         } else if (right_world->fish_eaten >= right_world->nb_fish) {
             winner = 1;
-
-            finish_time[0] = elapsed;
-            finish_time[1] = elapsed;
 
             remaining_at_end[1] = 0;
             remaining_at_end[0] = left_world->nb_fish - left_world->fish_eaten;
@@ -1067,43 +983,18 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     }
 
     /*
-    * Affichage du résultat.
-    * Winner et Loser apparaissent en même temps.
+    * Affichage du resultat.
     */
     if (winner != -1) {
-        int diff = 0;
-
-        /*
-        * Cas spécial : même monde affiché deux fois.
-        */
         if (left_world == right_world) {
-            Draw_result_overlay(r, left_screen, 1,
-                                finish_time[0], diff, 1, 0);
-
-            Draw_result_overlay(r, right_screen, 1,
-                                finish_time[1], diff, 1, 0);
+            Draw_result_overlay(r, left_screen, 1, 0);
+            Draw_result_overlay(r, right_screen, 1, 0);
         } else if (winner == 0) {
-            /*
-            * Gauche gagne.
-            */
-            Draw_result_overlay(r, left_screen, 1,
-                                finish_time[0], diff, 1,
-                                remaining_at_end[0]);
-
-            Draw_result_overlay(r, right_screen, 0,
-                                finish_time[1], diff, 1,
-                                remaining_at_end[1]);
+            Draw_result_overlay(r, left_screen, 1, 0);
+            Draw_result_overlay(r, right_screen, 0, remaining_at_end[1]);
         } else {
-            /*
-            * Droite gagne.
-            */
-            Draw_result_overlay(r, right_screen, 1,
-                                finish_time[1], diff, 1,
-                                remaining_at_end[1]);
-
-            Draw_result_overlay(r, left_screen, 0,
-                                finish_time[0], diff, 1,
-                                remaining_at_end[0]);
+            Draw_result_overlay(r, right_screen, 1, 0);
+            Draw_result_overlay(r, left_screen, 0, remaining_at_end[0]);
         }
     }
 
