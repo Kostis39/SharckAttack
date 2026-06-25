@@ -20,6 +20,15 @@ Vector Vector_init(); // Initialise à 0 x et y
 Vector Vector_add(Vector a, Vector b);
 Vector Vector_sub(Vector a, Vector b);
 Vector Vector_scale(Vector v, float k);
+
+/**
+ * @brief calcule le produit scalaire de deux vecteurs
+ * @param a premier vecteur
+ * @param b second vecteur
+ * @return produit scalaire de a et b
+ */
+float Vector_dot(Vector a, Vector b);
+
 float Vector_length(Vector v);
 float Vector_length2(Vector v);
 float Vector_distance(Vector a, Vector b);
