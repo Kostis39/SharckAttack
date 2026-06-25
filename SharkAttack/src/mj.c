@@ -8,12 +8,6 @@
  */
 float Shark_reward(int nb_fish_ate) { return nb_fish_ate; }
 
-/**
- * @brief Initialise la perception d'un poisson
- * @param fish le poisson à initialiser
- * @param world le monde contenant les dimensions
- * @param perception la structure de perception à remplir
- */
 void fish_perception_init(Fish *fish, World *world,
                           FishPerception *perception) {
     perception->self = *fish;
@@ -235,12 +229,6 @@ int handle_shark_eat(World *world) {
     return has_eaten;
 }
 
-/**
- * @brief mise à jour synchrone du monde en calculant les nouvelles positions
- * des agents
- * @param world monde actuel
- * @param tmp_world monde temporaire
- */
 void UpdateWorld(World *world, World *tmp_world) {
     FishPerception *perception = malloc(sizeof(FishPerception));
     Vector shark_action;
@@ -298,10 +286,6 @@ void UpdateWorld(World *world, World *tmp_world) {
     }
 }
 
-/**
- * @brief réalise une itération complète du jeu
- * @param world le monde à mettre à jour
- */
 void Game_step(World *world) {
     if (!world || world->nb_fish < 0) {
         fprintf(stderr, "Game_step: monde invalide\n");
