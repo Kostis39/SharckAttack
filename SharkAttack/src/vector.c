@@ -86,3 +86,5 @@ float Vector_angle_fast(Vector a, Vector b) {
     float cross = a.x * b.y - a.y * b.x;
     return fast_atan2f(cross, dot);
 }
+
+float Vector_dot(Vector a, Vector b) { return a.x * b.x + a.y * b.y; }
