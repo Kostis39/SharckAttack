@@ -1,6 +1,14 @@
 #include "shark_controller.h"
 #include "render_sdl.h"
 
+/**
+ * @brief règle d'attraction vers le centre de masse des poissons visibles
+ * @param shark structure du requin
+ * @param center_of_mass centre de masse des poissons visibles
+ * @param has_prey_visible vrai si au moins un poisson est dans le champ de
+ * vision
+ * @return vecteur de centre de masse
+ */
 Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey_visible) {
     if (!has_prey_visible) {
         return Vector_init();
@@ -15,6 +23,14 @@ Vector Rules_center(Shark shark, Vector center_of_mass, bool has_prey_visible) {
     return Vector_scale(local_normalize(to_center), intensity);
 }
 
+/**
+ * @brief règle d'alignement du requin sur la direction moyenne des poissons
+ * @param shark structure du requin
+ * @param avg_velocity direction moyenne des poissons visibles
+ * @param has_prey_visible vrai si au moins un poisson est dans le champ de
+ * vision
+ * @return vecteur d'alignement
+ */
 Vector Rules_alignment_shark(Shark shark, Vector avg_velocity,
                              bool has_prey_visible) {
     if (!has_prey_visible) {
@@ -31,6 +47,15 @@ Vector Rules_alignment_shark(Shark shark, Vector avg_velocity,
     return Vector_scale(local_normalize(diff), intensity);
 }
 
+/**
+ * @brief règle de poursuite vers le poisson la plus proche
+ * @param shark structure du requin
+ * @param fish_pos position de le poisson la plus proche
+ * @param has_prey vrai si il existe un poisson
+ * @param width largeur du monde
+ * @param height hauteur du monde
+ * @return vecteur de poursuite
+ */
 Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
                      int height) {
     if (!has_prey) {
@@ -47,6 +72,18 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
     return Vector_scale(local_normalize(to_fish), intensity);
 }
 
+/**
+ * @brief choisit l'action du requin (joueur ou bot)
+ * en mode joueur : suit la souris
+ * en mode bot : combine centre, alignement et poursuite selon une politique
+ * gaussienne
+ * @param perception perception du requin
+ * @param theta poids des règles
+ * @param step_trajectory pointeur vers le pas de trajectoire à remplir (si
+ * apprentissage)
+ * @param sigma écart-type pour l'exploration
+ * @return vecteur action
+ */
 Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
                            StepTrajectory *step_trajectory, float sigma) {
     if (!perception)
