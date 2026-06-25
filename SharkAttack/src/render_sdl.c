@@ -84,6 +84,12 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
         return false;
     }
 
+    if (TTF_Init() != 0) {
+    fprintf(stderr, "Erreur TTF_Init : %s\n", TTF_GetError());
+    SDL_Quit();
+    return false;
+    } 
+
     display->window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
                                        SDL_WINDOWPOS_CENTERED, width, height,
                                        SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
@@ -843,7 +849,9 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         g_score = world->fish_eaten;
 
         if (g_score > old_score[p]) {
-            audio_play(audio->fish_eaten);
+            if (audio != NULL)
+                audio_play(audio->fish_eaten);
+            
             gain[p] = g_score - old_score[p];
             flash[p] = 10;
         } else if (flash[p] > 0) {
