@@ -1,6 +1,8 @@
 #include "render_sdl.h"
+#include "SDL.h"
 #include "collider.h"
 #include "sdl_draw_tools.h"
+#include "sound.h"
 #include "world.h"
 #include <math.h>
 #include <stdio.h>
@@ -92,7 +94,6 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
         fprintf(stderr, "Erreur SDL_Init : %s\n", SDL_GetError());
         return false;
     }
-
     display->window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
                                        SDL_WINDOWPOS_CENTERED, width, height,
                                        SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
@@ -798,7 +799,7 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
  * @param right_world monde affiché à droite
  */
 void Render_two_worlds(SDLDisplay *display, World *left_world,
-                       World *right_world) {
+                       World *right_world, AudioManager *audio) {
     static int texture_w = 0;
     static int texture_h = 0;
     static int window_was_doubled = 0;
@@ -884,6 +885,7 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         g_score = world->fish_eaten;
 
         if (g_score > old_score[p]) {
+            audio_play(audio->fish_eaten);
             gain[p] = g_score - old_score[p];
             flash[p] = 10;
         } else if (flash[p] > 0) {
@@ -1078,6 +1080,6 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
  * @param display struct sdl
  * @param world monde à afficher
  */
-void Render_world(SDLDisplay *display, World *world) {
-    Render_two_worlds(display, world, world);
-}
+/* void Render_world(SDLDisplay *display, World *world) { */
+/*     Render_two_worlds(display, world, world); */
+/* } */

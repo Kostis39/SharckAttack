@@ -4,6 +4,7 @@
 #include "mj.h"
 #include "render_sdl.h"
 #include "shark.h"
+#include "sound.h"
 #include "utils.h"
 #include "world.h"
 #include <signal.h>
@@ -33,7 +34,7 @@ bool Game_init(Game *game, int width, int height, int nb_fish, int nb_collider,
     if (!Init_sdl_display(&game->display, "Shark Attack", width, height)) {
         return false;
     }
-
+    game->audio = audio_init();
     VectorRule *shark_theta = SharkTheta_init();
     init_seed(seed_for_worlds);
     game->world1 = World_init(width / 2, height, nb_fish, nb_collider,
@@ -44,8 +45,16 @@ bool Game_init(Game *game, int width, int height, int nb_fish, int nb_collider,
     if (!game->world1 || !game->world2) {
         free(shark_theta);
         Destroy_sdl_display(&game->display);
+        audio_quit(game->audio);
         return false;
     }
+    audio_load(AUDIO_PATH, game->audio);
+
+    // Test: play sound immediately at startup
+    printf("[TEST] Playing sound at startup...\n");
+    audio_play(game->audio->fish_eaten);
+    SDL_Delay(1000);
+    printf("[TEST] Done\n");
 
     free(shark_theta);
 
@@ -81,7 +90,7 @@ void Game_run_SDL(bool use_bench, int seed_for_worlds) {
     int it = 0;
     SDL_Event event;
     while (!quit) {
-        Render_two_worlds(&game.display, game.world1, game.world2);
+        Render_two_worlds(&game.display, game.world1, game.world2, game.audio);
         /* Render_world(&game.display, game.world); */
         if (use_bench) {
             it++;
@@ -170,7 +179,7 @@ void Game_run_terminal() {
 void Game_destroy(Game *game) {
     if (!game)
         return;
-
+    audio_quit(game->audio);
     World_destroy(game->world1);
     World_destroy(game->world2);
     Destroy_sdl_display(&game->display);
