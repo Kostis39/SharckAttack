@@ -3,7 +3,13 @@
 
 #define PI 3.14159265358979323846
 
-enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
+enum Rules {
+    Rules_Center = 0,
+    Rules_Alignment,
+    Rules_Pursuit,
+    Rules_zone_density,
+    Rules_Lenght
+};
 
 #define FILE_LOG "logs.txt"
 /* Poids des règles de shark*/
@@ -13,7 +19,6 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 
 #define NB_OCCURRENCE 10000
 
-#define SIGMA 5
 #define TRAJECTORY_LENGHT_ALLOC 200
 #define TRAJECTORY_CAPACITY NB_OCCURRENCE
 
@@ -56,7 +61,7 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 
 #define COLLIDER_RATIO                                                         \
     25 /* mesure au plus un dixième de la largeur du                          \
-monde*/
+          monde*/
 #define COLLIDERS_NB 5
 
 #define SHARK_ATTACK_RANGE 30

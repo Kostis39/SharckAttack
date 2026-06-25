@@ -46,16 +46,16 @@ int main(int argc, char *argv[]) {
         init_logs(THETA_FILE, FILE_LOG);
 
         printf("=== Paramètres chargés ===\n");
-        printf("gamma: %.3f\n", hyperparameters.gamma);
-        printf("sigma: %.3f\n", hyperparameters.sigma);
-        printf("alpha: %.3f\n", hyperparameters.alpha);
+        printf("gamma: %f\n", hyperparameters.gamma);
+        printf("sigma: %f\n", hyperparameters.sigma);
+        printf("alpha: %f\n", hyperparameters.alpha);
         printf("nb_gen: %d\n", hyperparameters.nb_gen);
         printf("nb_game: %d\n", hyperparameters.nb_game);
         printf("nb_occurrence: %d\n", hyperparameters.nb_occurrence);
 
         printf("\n=== Theta ===\n");
         VectorRule_print(theta);
-        printf("\n");
+        printf("\n\n");
 
         signal(SIGINT, handle_sigint);
 

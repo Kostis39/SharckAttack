@@ -1,9 +1,0 @@
-<map id="Fish_create_random_array" name="Fish_create_random_array">
-<area shape="rect" id="Node000001" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="5,5,158,50"/>
-<area shape="rect" id="Node000002" href="$fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="206,14,388,42"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,25,193,27,187,28,158,30"/>
-<area shape="rect" id="Node000003" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title=" " alt="" coords="436,14,543,42"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,25,423,28,417,28,388,30"/>
-<area shape="rect" id="Node000004" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title=" " alt="" coords="591,14,671,42"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="544,25,578,28,573,28,544,30"/>
-</map>

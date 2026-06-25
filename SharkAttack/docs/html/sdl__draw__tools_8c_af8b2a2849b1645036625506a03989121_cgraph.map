@@ -1,9 +1,0 @@
-<map id="direction_or_default" name="direction_or_default">
-<area shape="rect" id="Node000001" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="5,32,157,60"/>
-<area shape="rect" id="Node000002" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="205,32,339,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,43,192,45,186,46,157,48"/>
-<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="387,5,497,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,33,369,31,374,30,340,38"/>
-<area shape="rect" id="Node000004" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="390,57,494,85"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="340,53,378,61,372,61,339,59"/>
-</map>

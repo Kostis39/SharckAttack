@@ -1,7 +1,0 @@
-<map id="Vector_normalize" name="Vector_normalize">
-<area shape="rect" id="Node000001" title="normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="5,32,140,60"/>
-<area shape="rect" id="Node000002" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="188,5,298,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,33,174,29,169,31,141,38"/>
-<area shape="rect" id="Node000003" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="191,57,294,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,53,178,61,173,61,140,59"/>
-</map>

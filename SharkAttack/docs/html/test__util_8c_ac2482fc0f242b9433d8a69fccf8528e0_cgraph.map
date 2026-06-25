@@ -1,7 +1,0 @@
-<map id="test_rand_trsf_zero_seed_does_not_crash" name="test_rand_trsf_zero_seed_does_not_crash">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,24,173,68"/>
-<area shape="rect" id="Node000002" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="221,5,301,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,30,208,27,203,28,173,35"/>
-<area shape="rect" id="Node000003" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title=" " alt="" coords="221,57,300,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,56,209,63,203,63,173,61"/>
-</map>

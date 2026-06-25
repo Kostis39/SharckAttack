@@ -8,12 +8,6 @@
  */
 float Shark_reward(int nb_fish_ate) { return nb_fish_ate; }
 
-/**
- * @brief Initialise la perception d'un poisson
- * @param fish le poisson à initialiser
- * @param world le monde contenant les dimensions
- * @param perception la structure de perception à remplir
- */
 void fish_perception_init(Fish *fish, World *world,
                           FishPerception *perception) {
     perception->self = *fish;
@@ -151,6 +145,27 @@ void get_fish_perception(Fish *fish, World *world, FishPerception *perception) {
 void FishPerception_destroy(FishPerception *perception) { free(perception); }
 
 /**
+ * @brief détermine dans quelle zone directionnelle se trouve un poisson
+ * par rapport à l'orientation du requin
+ * @param shark structure du requin
+ * @param fish_pos position du poisson
+ * @return la zone correspondante (Front, Back, Left, Right)
+ */
+ZoneDirection Shark_get_fish_zone(Shark shark, Vector fish_pos) {
+    Vector forward = Local_normalize(shark.velocity); // (1,0) si vitesse nulle
+    Vector right = {-forward.y, forward.x};           // rotation 90° à droite
+    Vector to_fish = Vector_sub(fish_pos, shark.pos);
+
+    float f = Vector_dot(to_fish, forward);
+    float r = Vector_dot(to_fish, right);
+
+    if (fabsf(f) >= fabsf(r))
+        return (f >= 0.0f) ? Front : Back;
+    else
+        return (r >= 0.0f) ? Right : Left;
+}
+
+/**
  * @brief construit la perception du requin à partir du monde
  * @param shark pointeur vers le requin
  * @param world pointeur vers le monde
@@ -169,6 +184,16 @@ void Get_shark_perception(Shark *shark, World *world,
     int count = 0;
 
     float closest_dist = INFINITY;
+
+    Vector zone_center[Count];
+    Vector zone_vel[Count];
+    int zone_count[Count];
+
+    for (int z = 0; z < Count; z++) {
+        zone_center[z] = Vector_init();
+        zone_vel[z] = Vector_init();
+        zone_count[z] = 0;
+    }
 
     // Parcourir tous les poissons
     for (int i = 0; i < world->nb_fish; i++) {
@@ -192,6 +217,11 @@ void Get_shark_perception(Shark *shark, World *world,
             avg_vel = Vector_add(avg_vel, fish->velocity);
             count++;
         }
+
+        ZoneDirection zone = Shark_get_fish_zone(*shark, fish->position);
+        zone_center[zone] = Vector_add(zone_center[zone], fish->position);
+        zone_vel[zone] = Vector_add(zone_vel[zone], fish->velocity);
+        zone_count[zone]++;
     }
 
     if (count > 0) {
@@ -207,6 +237,23 @@ void Get_shark_perception(Shark *shark, World *world,
         shark_perception->has_prey_visible = false;
     }
     shark_perception->has_prey = closest_dist != INFINITY;
+
+    // moyenne des 4 zones
+    for (int z = 0; z < Count; z++) {
+        shark_perception->zone_count[z] = zone_count[z];
+
+        if (zone_count[z] > 0) {
+            shark_perception->zone_center_of_mass[z] =
+                Vector_scale(zone_center[z], 1.0f / zone_count[z]);
+            shark_perception->zone_avg_velocity[z] =
+                Vector_scale(zone_vel[z], 1.0f / zone_count[z]);
+            shark_perception->zone_has_prey_visible[z] = true;
+        } else {
+            shark_perception->zone_center_of_mass[z] = Vector_init();
+            shark_perception->zone_avg_velocity[z] = Vector_init();
+            shark_perception->zone_has_prey_visible[z] = false;
+        }
+    }
 }
 
 /**
@@ -236,12 +283,6 @@ int handle_shark_eat(World *world) {
     return has_eaten;
 }
 
-/**
- * @brief mise à jour synchrone du monde en calculant les nouvelles positions
- * des agents
- * @param world monde actuel
- * @param tmp_world monde temporaire
- */
 void UpdateWorld(World *world, World *tmp_world) {
     FishPerception *perception = malloc(sizeof(FishPerception));
     Vector shark_action;
@@ -299,10 +340,6 @@ void UpdateWorld(World *world, World *tmp_world) {
     }
 }
 
-/**
- * @brief réalise une itération complète du jeu
- * @param world le monde à mettre à jour
- */
 void Game_step(World *world) {
     if (!world || world->nb_fish < 0) {
         fprintf(stderr, "Game_step: monde invalide\n");
@@ -311,14 +348,14 @@ void Game_step(World *world) {
 
     World tmp_world;
 
-    // 1. Création du monde temporaire
+    // Création du monde temporaire
     if (!World_create_tmp(world, &tmp_world)) {
         return;
     }
 
-    // 2. Mise à jour des perceptions et actions
+    // Mise à jour des perceptions et actions
     UpdateWorld(world, &tmp_world);
 
-    // 3. Échange des données
+    // Échange des données
     World_swap_data(world, &tmp_world);
 }

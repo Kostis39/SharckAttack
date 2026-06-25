@@ -1,9 +1,0 @@
-<map id="test_random_float_crossing_zero" name="test_random_float_crossing_zero">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,32,241,60"/>
-<area shape="rect" id="Node000002" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="302,5,382,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,29,289,25,284,26,241,34"/>
-<area shape="rect" id="Node000003" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title=" " alt="" coords="289,57,396,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="241,57,276,63,271,63,241,62"/>
-<area shape="rect" id="Node000004" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title=" " alt="" coords="444,57,523,85"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="396,69,431,71,425,71,397,74"/>
-</map>

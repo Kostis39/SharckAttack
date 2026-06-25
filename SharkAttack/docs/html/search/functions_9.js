@@ -1,8 +1,0 @@
-var searchData=
-[
-  ['load_5fgain_5fparams_0',['load_gain_params',['../input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3',1,'input_output.c']]],
-  ['load_5fparams_1',['load_params',['../input__output_8h.html#aaaa874a59e88f0ba078ebeef13f55e4a',1,'load_params(VectorRule *theta, Hyperparameters *hyperparams, char *filename):&#160;input_output.c'],['../input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a',1,'load_params(VectorRule *theta, Hyperparameters *hyperparams, char *filename):&#160;input_output.c']]],
-  ['load_5ftheta_2',['load_theta',['../input__output_8h.html#a7d7001b254e2ea098325767fd484cf26',1,'load_theta(VectorRule *theta, char *filename):&#160;input_output.c'],['../input__output_8c.html#a7d7001b254e2ea098325767fd484cf26',1,'load_theta(VectorRule *theta, char *filename):&#160;input_output.c']]],
-  ['local_5fnormalize_3',['local_normalize',['../vector_8h.html#aae4f47f60e365d136220ae860be5516e',1,'local_normalize(Vector v):&#160;vector.c'],['../vector_8c.html#aae4f47f60e365d136220ae860be5516e',1,'local_normalize(Vector v):&#160;vector.c']]],
-  ['logs_5fgeneration_4',['logs_generation',['../input__output_8h.html#af0817f7b7511739d9ad418deb72dda5e',1,'logs_generation(VectorRule *theta, int gen_number, float avg_reward, float avg_gain, float avg_iteration, VectorRule theta_diff_STEP_LOG, VectorRule theta_diff_1_step, char *filename):&#160;input_output.c'],['../input__output_8c.html#af0817f7b7511739d9ad418deb72dda5e',1,'logs_generation(VectorRule *theta, int gen_number, float avg_reward, float avg_gain, float avg_iteration, VectorRule theta_diff_STEP_LOG, VectorRule theta_diff_1_step, char *filename):&#160;input_output.c']]]
-];

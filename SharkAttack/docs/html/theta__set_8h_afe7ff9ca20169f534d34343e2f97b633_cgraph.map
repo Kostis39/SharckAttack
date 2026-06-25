@@ -1,7 +1,0 @@
-<map id="SharkTheta_init" name="SharkTheta_init">
-<area shape="rect" id="Node000001" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="5,32,129,60"/>
-<area shape="rect" id="Node000002" href="$input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="196,5,286,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,34,183,28,178,29,130,39"/>
-<area shape="rect" id="Node000003" href="$vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="177,57,305,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,52,164,59,159,60,129,58"/>
-</map>
