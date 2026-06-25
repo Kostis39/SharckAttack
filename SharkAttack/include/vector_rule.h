@@ -29,6 +29,14 @@ VectorRule VectorRule_init();
 void VectorRule_print(VectorRule v);
 
 /**
+ * @brief écrit dans un fichier les composantes du vecteur sous la
+ * forme (v1, v2, ...).
+ * @param file fichier dans lequel écrire
+ * @param v Le vecteur de règles à afficher.
+ */
+void VectorRule_fprint(FILE *file, VectorRule v);
+
+/**
  * @brief Calcule le produit scalaire entre deux VectorRule.
  * @param a Le premier vecteur.
  * @param b Le second vecteur.
@@ -46,10 +54,18 @@ VectorRule VectorRule_scaled(VectorRule v, float scalar);
 
 /**
  * @brief Additionne deux VectorRule composante par composante.
- * * @param a Le premier vecteur.
+ * @param a Le premier vecteur.
  * @param b Le second vecteur.
  * @return Un nouveau VectorRule contenant le résultat.
  */
 VectorRule VectorRule_add(VectorRule a, VectorRule b);
+
+/**
+ * @brief soustrait deux VectorRule composante par composante.
+ * @param a Le premier vecteur.
+ * @param b Le second vecteur.
+ * @return Un nouveau VectorRule contenant le résultat.
+ */
+VectorRule VectorRule_sub(VectorRule a, VectorRule b);
 
 #endif
