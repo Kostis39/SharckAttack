@@ -4,6 +4,10 @@
 
 extern volatile sig_atomic_t stop_requested;
 
+/**
+ * @brief initialise une trajectoire vide
+ * @return pointeur vers la trajectoire allouée dynamiquement
+ */
 Trajectory *Trajectory_init() {
     Trajectory *new_trajectory = calloc(1, sizeof(Trajectory));
     if (new_trajectory == NULL)
@@ -43,6 +47,10 @@ int Need_trajectory_growing(Trajectory *trajectory) {
 
 /**
  * @brief Ajout un état supplémentaire à notre trajectoire.
+ * @param trajectory pointeur vers la trajectoire
+ * @param phi valeurs des règles à cet l'état
+ * @param action action choisie
+ * @param reward récompense reçue
  */
 void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action,
               float reward) {
@@ -53,16 +61,18 @@ void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action,
     ++trajectory->length;
 }
 
+/**
+ * @brief libère la mémoire d'une trajectoire
+ * @param trajectory pointeur vers la trajectoire à libérer
+ */
 void Trajectory_destroy(Trajectory *trajectory) {
     free(trajectory->steps);
     free(trajectory);
 }
 
 /**
- * @brief Permet d'afficher toutes les trajectoire où le reward est suppérieur à
- * 0
- *
- * @param trajectory La trajectoire à afficher
+ * @brief affiche les pas d'une trajectoire dont la récompense est supérieur à 0
+ * @param trajectory pointeur vers la trajectoire à afficher
  */
 void Trajectory_print(Trajectory *trajectory) {
     printf("taille : %d\n", trajectory->length);
@@ -77,6 +87,10 @@ void Trajectory_print(Trajectory *trajectory) {
     }
 }
 
+/**
+ * @brief affiche un pas de trajectoire
+ * @param step le pas à afficher
+ */
 void StepTrajectory_print(StepTrajectory step) {
     SharkPhi_print(step.phi);
     printf(" Action:(%f, %f) Reward: %f\n", step.action.x, step.action.y,
@@ -84,14 +98,12 @@ void StepTrajectory_print(StepTrajectory step) {
 }
 
 /**
- * @brief Ajout un état supplémentaire à notre trajectoire.
+ * @brief met à jour un pas de trajectoire
+ * @param step pointeur vers le pas à modifier
+ * @param phi valeurs des règles à cet l'état
+ * @param action nouvelle action
+ * @param reward nouvelle récompense
  */
-void New_step(StepTrajectory *step, SharkPhi phi, Vector action, float reward) {
-    step->phi = phi;
-    step->action = action;
-    step->reward = reward;
-}
-
 void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
                  float reward) {
     if (!step)
@@ -101,6 +113,10 @@ void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
     step->reward = reward;
 }
 
+/**
+ * @brief retourne un gradient initialisé à zéro
+ * @return structure Gradient avec tous les champs à zéro
+ */
 Gradient Gradient_zero() {
     Gradient G;
     G.x = VectorRule_init();
@@ -108,6 +124,13 @@ Gradient Gradient_zero() {
     return G;
 }
 
+/**
+ * @brief calcule une trajectoire et son gradient associé
+ * @param theta paramètres de la politique
+ * @param hyperparameters hyperparamètres
+ * @return structure contenant le gradient, la récompense totale, le gain et la
+ * longueur
+ */
 TrajectoryCalculation Compute_trajectory(VectorRule theta,
                                          Hyperparameters hyperparameters) {
     float G = 0;
@@ -155,6 +178,11 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
     return result_iteration;
 }
 
+/**
+ * @brief fonction de travail pour les threads, exécute Compute_trajectory
+ * @param args pointeur vers WorkerArgs contenant les paramètres
+ * @return NULL
+ */
 void *Trajectory_worker(void *args) {
     init_seed((unsigned int)pthread_self());
     WorkerArgs *wargs = (WorkerArgs *)args;
@@ -162,6 +190,13 @@ void *Trajectory_worker(void *args) {
     return NULL;
 }
 
+/**
+ * @brief exécute l'algorithme REINFORCE avec parallélisation
+ * @param theta pointeur vers les paramètres de la politique à mettre à jour
+ * @param hyperparameters hyperparamètres de l'apprentissage
+ * @param thread_count nombre de threads à utiliser pour le calcul des
+ * trajectoires
+ */
 void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
                         int thread_count) {
     int i;
