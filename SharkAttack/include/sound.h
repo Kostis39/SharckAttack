@@ -5,7 +5,7 @@
 
 typedef struct {
     Mix_Chunk *fish_eaten;
-
+    Mix_Music *bg_music;
 } AudioManager;
 /**
  * @brief initialise l'audio SDL
@@ -26,5 +26,9 @@ void audio_play(Mix_Chunk *sound);
 /**
  * @brief libère la mémoire utilisée par l'ensemble de son*/
 void audio_quit(AudioManager *audio);
+
+int audio_load_music(const char *path, AudioManager *audio);
+void audio_play_music(AudioManager *audio);
+void audio_stop_music(void);
 
 #endif

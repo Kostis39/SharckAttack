@@ -49,12 +49,8 @@ bool Game_init(Game *game, int width, int height, int nb_fish, int nb_collider,
         return false;
     }
     audio_load(AUDIO_PATH, game->audio);
-
-    // Test: play sound immediately at startup
-    printf("[TEST] Playing sound at startup...\n");
-    audio_play(game->audio->fish_eaten);
-    SDL_Delay(1000);
-    printf("[TEST] Done\n");
+    audio_load_music(AUDIO_PATH, game->audio);
+    audio_play_music(game->audio);
 
     free(shark_theta);
 
