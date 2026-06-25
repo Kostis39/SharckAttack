@@ -1,0 +1,83 @@
+<map id="Render_two_worlds" name="Render_two_worlds">
+<area shape="rect" id="Node000001" title="affiche deux vues dans une seule fenêtre." alt="" coords="5,360,154,388"/>
+<area shape="rect" id="Node000002" href="$render__sdl_8c.html#a3ba36f909aa718470923a1d6c00806b1" title="affiche le resultat sans cacher le jeu." alt="" coords="202,123,357,150"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,358,257,160,256,165,95,361"/>
+<area shape="rect" id="Node000007" href="$render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="230,513,328,541"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="99,386,250,502,245,505,100,391"/>
+<area shape="rect" id="Node000003" href="$render__sdl_8c.html#a1dd243db3374fdd596cd5a6bd6fb8468" title="dessine un grand W ou un grand L avec des lignes." alt="" coords="405,123,573,150"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="356,134,392,135,387,138,359,139"/>
+<area shape="rect" id="Node000004" href="$render__sdl_8c.html#a4abbccd98f23132911457a0cb7305e6c" title="dessine un nombre avec les chiffres deja existants." alt="" coords="411,57,567,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="325,120,430,88,426,92,328,124"/>
+<area shape="rect" id="Node000005" href="$sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="646,5,748,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="546,54,633,34,629,37,549,59"/>
+<area shape="rect" id="Node000006" href="$sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="651,57,743,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="566,69,638,70,634,73,569,74"/>
+<area shape="rect" id="Node000008" href="$render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="422,299,557,326"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="293,511,465,336,462,340,297,514"/>
+<area shape="rect" id="Node000016" href="$render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="430,793,548,821"/>
+<area shape="poly" id="edge18_Node000007_Node000016" title=" " alt="" coords="286,538,303,580,328,636,363,698,407,755,445,785,440,785,403,758,359,701,323,639,298,582,285,544"/>
+<area shape="rect" id="Node000019" href="$render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="419,464,559,492"/>
+<area shape="poly" id="edge23_Node000007_Node000019" title=" " alt="" coords="327,513,414,494,410,497,330,518"/>
+<area shape="rect" id="Node000026" href="$render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="446,717,532,745"/>
+<area shape="poly" id="edge34_Node000007_Node000026" title=" " alt="" coords="296,539,465,706,460,707,294,544"/>
+<area shape="rect" id="Node000027" href="$render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="416,604,563,632"/>
+<area shape="poly" id="edge39_Node000007_Node000027" title=" " alt="" coords="313,539,444,596,439,599,314,544"/>
+<area shape="rect" id="Node000028" href="$render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title="dessine le score en haut a droite de l ecran le score correspond au nbr de poissons mangés par le req..." alt="" coords="440,199,538,226"/>
+<area shape="poly" id="edge43_Node000007_Node000028" title=" " alt="" coords="283,512,326,414,361,348,403,286,428,258,458,234,455,238,432,262,407,289,366,351,331,416,288,514"/>
+<area shape="rect" id="Node000029" href="$render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="440,528,538,556"/>
+<area shape="poly" id="edge47_Node000007_Node000029" title=" " alt="" coords="328,528,427,536,422,539,330,533"/>
+<area shape="rect" id="Node000009" href="$sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="840,133,953,161"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="507,296,571,236,584,218,592,201,602,185,620,170,670,149,724,138,777,135,827,137,822,140,777,140,725,144,672,154,623,175,606,188,597,203,589,220,575,240,511,300"/>
+<area shape="rect" id="Node000011" href="$sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="824,209,968,237"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="504,297,620,195,649,187,678,182,737,182,793,190,843,204,838,205,792,195,737,187,678,188,650,192,623,200,508,300"/>
+<area shape="rect" id="Node000012" href="$sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="621,515,773,542"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="505,324,675,503,669,504,503,329"/>
+<area shape="rect" id="Node000014" href="$sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="631,209,763,237"/>
+<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="522,296,620,253,650,242,646,245,622,258,525,300"/>
+<area shape="rect" id="Node000015" href="$sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="648,311,746,338"/>
+<area shape="poly" id="edge16_Node000008_Node000015" title=" " alt="" coords="556,314,635,320,631,322,558,319"/>
+<area shape="rect" id="Node000010" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="1020,768,1156,796"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="929,159,954,175,974,196,997,243,1017,309,1050,470,1073,634,1086,754,1082,751,1068,635,1045,471,1012,310,992,245,970,199,951,179,930,164"/>
+<area shape="rect" id="Node000013" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="867,540,926,568"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="773,536,855,548,849,549,774,541"/>
+<area shape="poly" id="edge14_Node000014_Node000011" title=" " alt="" coords="763,221,811,222,806,224,765,226"/>
+<area shape="poly" id="edge15_Node000014_Node000013" title=" " alt="" coords="715,235,746,263,775,298,812,358,844,422,888,527,882,525,840,424,808,361,771,301,742,267,715,240"/>
+<area shape="poly" id="edge17_Node000015_Node000013" title=" " alt="" coords="746,334,774,349,815,391,847,439,871,486,888,526,883,525,866,488,842,441,810,394,771,353,746,339"/>
+<area shape="rect" id="Node000017" href="$render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="642,819,752,846"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="548,812,629,823,624,824,548,817"/>
+<area shape="poly" id="edge22_Node000017_Node000013" title=" " alt="" coords="711,816,771,748,832,657,878,583,882,580,836,660,775,751,714,821"/>
+<area shape="rect" id="Node000018" href="$sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="826,819,967,846"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="752,830,812,832,807,833,753,835"/>
+<area shape="poly" id="edge21_Node000018_Node000010" title=" " alt="" coords="951,816,1016,801,1021,799,952,821"/>
+<area shape="poly" id="edge26_Node000019_Node000010" title=" " alt="" coords="496,462,553,372,588,325,620,297,661,280,697,275,732,281,774,297,809,316,842,338,901,393,951,456,992,524,1025,592,1051,655,1082,754,1077,752,1046,657,1020,594,987,526,946,459,897,396,839,342,806,320,772,302,731,286,697,280,662,285,623,301,592,329,557,375,501,465"/>
+<area shape="poly" id="edge33_Node000019_Node000013" title=" " alt="" coords="559,476,661,482,718,490,773,501,816,514,856,533,851,533,814,519,772,506,717,495,661,487,561,481"/>
+<area shape="rect" id="Node000020" href="$sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="622,363,772,390"/>
+<area shape="poly" id="edge24_Node000019_Node000020" title=" " alt="" coords="515,461,620,406,649,395,644,398,623,411,518,466"/>
+<area shape="rect" id="Node000021" href="$sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="645,667,749,694"/>
+<area shape="poly" id="edge27_Node000019_Node000021" title=" " alt="" coords="531,490,575,514,610,548,640,585,684,654,678,653,636,588,606,551,572,519,532,495"/>
+<area shape="poly" id="edge25_Node000020_Node000013" title=" " alt="" coords="715,388,871,529,865,530,714,393"/>
+<area shape="poly" id="edge32_Node000021_Node000013" title=" " alt="" coords="736,664,771,646,823,611,866,579,870,576,826,615,774,651,738,668"/>
+<area shape="rect" id="Node000022" href="$sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="821,896,972,924"/>
+<area shape="poly" id="edge28_Node000021_Node000022" title=" " alt="" coords="707,692,752,767,785,813,823,856,860,888,854,887,819,860,781,816,748,770,705,697"/>
+<area shape="rect" id="Node000023" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="1021,896,1155,924"/>
+<area shape="poly" id="edge29_Node000022_Node000023" title=" " alt="" coords="972,907,1008,910,1003,910,973,912"/>
+<area shape="rect" id="Node000024" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="1204,869,1315,897"/>
+<area shape="poly" id="edge30_Node000023_Node000024" title=" " alt="" coords="1155,897,1187,894,1192,894,1156,902"/>
+<area shape="rect" id="Node000025" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="1208,921,1311,949"/>
+<area shape="poly" id="edge31_Node000023_Node000025" title=" " alt="" coords="1156,917,1195,925,1190,925,1156,922"/>
+<area shape="poly" id="edge36_Node000026_Node000010" title=" " alt="" coords="527,743,554,759,575,780,590,809,596,836,593,889,591,914,594,937,603,960,623,981,668,1010,710,1026,752,1031,793,1026,835,1012,878,991,970,933,993,912,1019,879,1068,810,1072,807,1023,882,996,916,974,937,880,995,837,1017,794,1031,752,1036,709,1032,665,1015,620,985,599,963,588,939,586,914,588,889,591,837,585,810,571,783,550,763,527,748"/>
+<area shape="poly" id="edge37_Node000026_Node000012" title=" " alt="" coords="503,715,669,554,673,551,506,719"/>
+<area shape="poly" id="edge38_Node000026_Node000013" title=" " alt="" coords="532,734,583,738,645,737,710,726,742,717,771,704,807,678,838,645,862,611,880,583,884,580,866,613,842,648,811,682,774,708,744,722,711,732,645,742,583,743,533,740"/>
+<area shape="poly" id="edge35_Node000026_Node000022" title=" " alt="" coords="526,743,553,759,575,780,589,804,595,828,594,873,594,894,597,914,605,933,623,950,650,966,680,973,712,974,744,970,806,952,855,932,860,931,807,957,745,976,712,980,679,978,648,971,620,955,601,936,591,915,588,894,589,873,589,829,584,806,571,783,550,763,526,748"/>
+<area shape="poly" id="edge41_Node000027_Node000012" title=" " alt="" coords="522,601,651,548,646,550,525,606"/>
+<area shape="poly" id="edge42_Node000027_Node000013" title=" " alt="" coords="563,604,854,559,850,562,564,609"/>
+<area shape="poly" id="edge40_Node000027_Node000022" title=" " alt="" coords="509,629,544,662,576,705,587,734,592,762,590,812,589,836,593,858,603,879,623,900,646,915,671,925,726,935,782,933,830,928,835,927,782,939,726,940,670,930,644,919,620,904,599,882,588,859,584,836,585,812,586,762,582,735,571,707,540,665,508,635"/>
+<area shape="poly" id="edge44_Node000028_Node000005" title=" " alt="" coords="522,196,548,180,571,160,582,145,588,130,593,102,599,73,607,59,619,44,634,36,630,40,623,48,611,62,604,75,598,103,593,132,586,148,575,164,552,185,526,200"/>
+<area shape="poly" id="edge45_Node000028_Node000006" title=" " alt="" coords="517,196,545,180,572,160,586,145,595,130,604,116,620,101,641,90,637,94,623,105,608,119,599,133,590,148,575,164,548,184,521,200"/>
+<area shape="poly" id="edge46_Node000028_Node000012" title=" " alt="" coords="511,224,544,251,575,286,593,316,603,342,610,369,624,401,681,501,676,501,619,403,605,370,598,344,588,318,571,289,541,255,511,229"/>
+<area shape="poly" id="edge49_Node000029_Node000010" title=" " alt="" coords="524,553,551,570,575,591,586,607,592,622,597,652,603,679,610,691,623,704,667,732,715,754,765,770,817,781,918,790,1007,790,1002,791,918,795,816,786,764,775,713,759,664,737,620,708,606,695,598,681,592,653,587,624,582,609,571,594,548,574,524,559"/>
+<area shape="poly" id="edge50_Node000029_Node000011" title=" " alt="" coords="535,525,587,506,649,478,712,443,771,400,806,363,836,323,880,253,883,249,841,326,810,367,774,404,715,447,651,483,589,510,538,530"/>
+<area shape="poly" id="edge51_Node000029_Node000012" title=" " alt="" coords="538,536,608,533,604,535,540,541"/>
+<area shape="poly" id="edge52_Node000029_Node000013" title=" " alt="" coords="538,545,621,551,747,554,854,554,849,556,747,559,621,556,540,550"/>
+<area shape="poly" id="edge48_Node000029_Node000022" title=" " alt="" coords="528,554,554,569,576,591,594,628,600,664,599,698,594,731,590,763,590,794,600,825,623,856,652,872,697,885,808,903,803,904,696,890,650,877,620,860,595,827,585,795,584,762,588,730,593,697,595,664,589,630,571,594,551,573,528,559"/>
+</map>

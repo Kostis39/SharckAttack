@@ -1,0 +1,7 @@
+<map id="Draw_result_number" name="Draw_result_number">
+<area shape="rect" id="Node000001" title="dessine un nombre avec les chiffres deja existants." alt="" coords="5,32,162,60"/>
+<area shape="rect" id="Node000002" href="$sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="210,5,312,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,31,197,28,192,30,163,37"/>
+<area shape="rect" id="Node000003" href="$sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="215,57,306,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,54,203,62,197,63,162,60"/>
+</map>

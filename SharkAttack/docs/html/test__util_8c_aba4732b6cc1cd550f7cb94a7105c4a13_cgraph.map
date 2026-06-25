@@ -1,0 +1,11 @@
+<map id="test_box_muller_mean_near_zero" name="test_box_muller_mean_near_zero">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,24,176,68"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#aad830dd484c2d83732727afff1791d5a" title="Fonction permettant de tirer une variable aléatoire selon une loi gaussienne." alt="" coords="224,5,382,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,33,211,30,206,32,176,38"/>
+<area shape="rect" id="Node000005" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="263,57,343,85"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="176,53,250,64,245,65,176,59"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title=" " alt="" coords="430,5,537,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,17,417,19,411,19,383,22"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title=" " alt="" coords="585,5,665,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="538,17,572,19,567,19,538,22"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Draw_result_overlay" name="Draw_result_overlay">
+<area shape="rect" id="Node000001" title="affiche le resultat sans cacher le jeu." alt="" coords="5,32,161,60"/>
+<area shape="rect" id="Node000002" href="$render__sdl_8c.html#a1dd243db3374fdd596cd5a6bd6fb8468" title="dessine un grand W ou un grand L avec des lignes." alt="" coords="209,5,377,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,33,196,31,191,33,162,39"/>
+<area shape="rect" id="Node000003" href="$render__sdl_8c.html#a4abbccd98f23132911457a0cb7305e6c" title="dessine un nombre avec les chiffres deja existants." alt="" coords="215,57,371,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,53,202,59,197,60,161,58"/>
+<area shape="rect" id="Node000004" href="$sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="425,31,527,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="371,57,407,54,412,54,372,62"/>
+<area shape="rect" id="Node000005" href="$sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="430,83,522,110"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="371,79,418,88,413,88,371,85"/>
+</map>

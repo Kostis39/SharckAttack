@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sharkattack: Référence du fichier src/vector_rule.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="sharky.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Sharkattack the game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('vector__rule_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier vector_rule.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="vector__rule_8h_source.html">vector_rule.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de vector_rule.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector__rule_8c__incl.png" border="0" usemap="#asrc_2vector__rule_8c" loading="lazy" alt=""/></div>
+<map name="asrc_2vector__rule_8c" id="asrc_2vector__rule_8c">
+<area shape="rect" title=" " alt="" coords="24,5,152,33"/>
+<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="35,81,141,109"/>
+<area shape="poly" title=" " alt="" coords="89,31,91,66,86,65,87,36"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="5,157,78,184"/>
+<area shape="poly" title=" " alt="" coords="82,108,60,145,56,142,78,111"/>
+<area shape="rect" title=" " alt="" coords="102,157,168,184"/>
+<area shape="poly" title=" " alt="" coords="98,107,121,144,116,144,95,112"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a080684ca70bd28327ac7992ce6e675ee" id="r_a080684ca70bd28327ac7992ce6e675ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a080684ca70bd28327ac7992ce6e675ee">VectorRule_init</a> ()</td></tr>
+<tr class="memdesc:a080684ca70bd28327ac7992ce6e675ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise un <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> avec toutes ses composantes à 0.  <br /></td></tr>
+<tr class="memitem:a4d63975dce327451f209286ee3dee20e" id="r_a4d63975dce327451f209286ee3dee20e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d63975dce327451f209286ee3dee20e">VectorRule_print</a> (<a class="el" href="structVectorRule.html">VectorRule</a> v)</td></tr>
+<tr class="memdesc:a4d63975dce327451f209286ee3dee20e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...).  <br /></td></tr>
+<tr class="memitem:a992f7d7160220b488586f878c0a2c4a1" id="r_a992f7d7160220b488586f878c0a2c4a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a992f7d7160220b488586f878c0a2c4a1">VectorRule_fprint</a> (FILE *file, <a class="el" href="structVectorRule.html">VectorRule</a> v)</td></tr>
+<tr class="memdesc:a992f7d7160220b488586f878c0a2c4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">écrit dans un fichier les composantes du vecteur sous la forme (v1, v2, ...).  <br /></td></tr>
+<tr class="memitem:a7ba6a93f13cc0e244b559b961d9d99d5" id="r_a7ba6a93f13cc0e244b559b961d9d99d5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ba6a93f13cc0e244b559b961d9d99d5">VectorRule_dot_product</a> (<a class="el" href="structVectorRule.html">VectorRule</a> a, <a class="el" href="structVectorRule.html">VectorRule</a> b)</td></tr>
+<tr class="memdesc:a7ba6a93f13cc0e244b559b961d9d99d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule le produit scalaire entre deux <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a>.  <br /></td></tr>
+<tr class="memitem:a7762dcff21c715334dc5facbc5c85976" id="r_a7762dcff21c715334dc5facbc5c85976"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7762dcff21c715334dc5facbc5c85976">VectorRule_scaled</a> (<a class="el" href="structVectorRule.html">VectorRule</a> v, float scalar)</td></tr>
+<tr class="memdesc:a7762dcff21c715334dc5facbc5c85976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplie toutes les composantes d'un <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> par un scalaire.  <br /></td></tr>
+<tr class="memitem:ac40f4a4667a3f7827ca951218ed1a573" id="r_ac40f4a4667a3f7827ca951218ed1a573"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac40f4a4667a3f7827ca951218ed1a573">VectorRule_add</a> (<a class="el" href="structVectorRule.html">VectorRule</a> a, <a class="el" href="structVectorRule.html">VectorRule</a> b)</td></tr>
+<tr class="memdesc:ac40f4a4667a3f7827ca951218ed1a573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additionne deux <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> composante par composante.  <br /></td></tr>
+<tr class="memitem:a1fed062807bdf06ab9c46fd8117e3abd" id="r_a1fed062807bdf06ab9c46fd8117e3abd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fed062807bdf06ab9c46fd8117e3abd">VectorRule_sub</a> (<a class="el" href="structVectorRule.html">VectorRule</a> a, <a class="el" href="structVectorRule.html">VectorRule</a> b)</td></tr>
+<tr class="memdesc:a1fed062807bdf06ab9c46fd8117e3abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">soustrait deux <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> composante par composante.  <br /></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="ac40f4a4667a3f7827ca951218ed1a573" name="ac40f4a4667a3f7827ca951218ed1a573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac40f4a4667a3f7827ca951218ed1a573">&#9670;&#160;</a></span>VectorRule_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVectorRule.html">VectorRule</a> VectorRule_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Additionne deux <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> composante par composante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Le premier vecteur. </td></tr>
+    <tr><td class="paramname">b</td><td>Le second vecteur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un nouveau <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> contenant le résultat. </dd></dl>
+
+</div>
+</div>
+<a id="a7ba6a93f13cc0e244b559b961d9d99d5" name="a7ba6a93f13cc0e244b559b961d9d99d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba6a93f13cc0e244b559b961d9d99d5">&#9670;&#160;</a></span>VectorRule_dot_product()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float VectorRule_dot_product </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcule le produit scalaire entre deux <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Le premier vecteur. </td></tr>
+    <tr><td class="paramname">b</td><td>Le second vecteur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le résultat du produit scalaire. </dd></dl>
+
+</div>
+</div>
+<a id="a992f7d7160220b488586f878c0a2c4a1" name="a992f7d7160220b488586f878c0a2c4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a992f7d7160220b488586f878c0a2c4a1">&#9670;&#160;</a></span>VectorRule_fprint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VectorRule_fprint </td>
+          <td>(</td>
+          <td class="paramtype">FILE *</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>écrit dans un fichier les composantes du vecteur sous la forme (v1, v2, ...). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>fichier dans lequel écrire </td></tr>
+    <tr><td class="paramname">v</td><td>Le vecteur de règles à afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a080684ca70bd28327ac7992ce6e675ee" name="a080684ca70bd28327ac7992ce6e675ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080684ca70bd28327ac7992ce6e675ee">&#9670;&#160;</a></span>VectorRule_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVectorRule.html">VectorRule</a> VectorRule_init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise un <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> avec toutes ses composantes à 0. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Un <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> mis à zéro. </dd></dl>
+
+</div>
+</div>
+<a id="a4d63975dce327451f209286ee3dee20e" name="a4d63975dce327451f209286ee3dee20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d63975dce327451f209286ee3dee20e">&#9670;&#160;</a></span>VectorRule_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VectorRule_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Le vecteur de règles à afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7762dcff21c715334dc5facbc5c85976" name="a7762dcff21c715334dc5facbc5c85976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7762dcff21c715334dc5facbc5c85976">&#9670;&#160;</a></span>VectorRule_scaled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVectorRule.html">VectorRule</a> VectorRule_scaled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplie toutes les composantes d'un <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> par un scalaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Le vecteur à multiplier. </td></tr>
+    <tr><td class="paramname">scalar</td><td>Le facteur de multiplication. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un nouveau <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> contenant le résultat </dd></dl>
+
+</div>
+</div>
+<a id="a1fed062807bdf06ab9c46fd8117e3abd" name="a1fed062807bdf06ab9c46fd8117e3abd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fed062807bdf06ab9c46fd8117e3abd">&#9670;&#160;</a></span>VectorRule_sub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVectorRule.html">VectorRule</a> VectorRule_sub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>soustrait deux <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> composante par composante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Le premier vecteur. </td></tr>
+    <tr><td class="paramname">b</td><td>Le second vecteur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un nouveau <a class="el" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ...">VectorRule</a> contenant le résultat. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="vector__rule_8c.html">vector_rule.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
