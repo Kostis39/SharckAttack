@@ -15,6 +15,15 @@ static void Handle_terminal_interrupt(int signum) {
     terminal_interrupted = 1;
 }
 
+/**
+ * @brief initialise le jeu (fenêtre, mondes, paramètres)
+ * @param game pointeur vers la structure Game
+ * @param width largeur de la fenêtre
+ * @param height hauteur de la fenêtre
+ * @param nb_fish nombre initial de poissons
+ * @param nb_collider nombre d'obstacles
+ * @return true si l'initialisation a réussi, false sinon
+ */
 bool Game_init(Game *game, int width, int height, int nb_fish,
                int nb_collider) {
     if (!game)
@@ -44,12 +53,20 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
     return true;
 }
 
+/**
+ * @brief inverse l'état de pause du jeu
+ * @param game pointeur vers la structure Game
+ */
 void Game_pause(Game *game) {
     if (!game)
         return;
     game->paused = !game->paused;
 }
 
+/**
+ * @brief lance la boucle de jeu en mode graphique (SDL)
+ * @param use_bench true pour exécuter un benchmark
+ */
 void Game_run_SDL(bool use_bench) {
     Game game;
     if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB)) {
@@ -102,6 +119,10 @@ void Game_run_SDL(bool use_bench) {
     Game_destroy(&game);
 }
 
+/**
+ * @brief lance la boucle de jeu en mode terminal (sans SDL)
+ * affiche les résultats et la trajectoire dans la console
+ */
 void Game_run_terminal() {
     terminal_interrupted = 0;
     int i = 0;
@@ -139,6 +160,10 @@ void Game_run_terminal() {
     free(shark_theta);
 }
 
+/**
+ * @brief libère les ressources allouées par le jeu
+ * @param game pointeur vers la structure Game
+ */
 void Game_destroy(Game *game) {
     if (!game)
         return;
