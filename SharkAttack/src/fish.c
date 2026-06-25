@@ -6,8 +6,8 @@ Fish Fish_create_random_pos(int width, int height) {
     Fish fish;
     fish.position.x = random_float(0, width);
     fish.position.y = random_float(0, height);
-    fish.velocity.x = random_float(FISH_SPEED_MIN, FISH_SPEED_MAX);
-    fish.velocity.y = random_float(FISH_SPEED_MIN, FISH_SPEED_MAX);
+    fish.velocity.x = random_float(-FISH_SPEED_MAX, FISH_SPEED_MAX);
+    fish.velocity.y = random_float(-FISH_SPEED_MAX, FISH_SPEED_MAX);
     fish.is_alive = true;
     fish.radius_separation = RADIUS_SEPARATION;
     fish.radius_alignement = RADIUS_ALIGNEMENT;
