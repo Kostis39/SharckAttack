@@ -46,8 +46,8 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 #define FISH_SIZE 10
 #define SHARK_SIZE 22
 
-#define WIDTH 1400
-#define HEIGHT 500
+#define WIDTH 1920
+#define HEIGHT 1080
 
 #define REPULSION_ZONE 10 // Taille des la zone de répulsion (marges de l'écran)
 #define REPULSION_FACTOR 10.0f // Intensité du virage

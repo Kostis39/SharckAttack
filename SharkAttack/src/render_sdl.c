@@ -119,6 +119,9 @@ bool Init_sdl_display(SDLDisplay *display, char *title, int width, int height) {
 
     SDL_SetRenderDrawBlendMode(display->renderer, SDL_BLENDMODE_BLEND);
 
+    display->left_scene = NULL;
+    display->right_scene = NULL;
+
     return true;
 }
 
