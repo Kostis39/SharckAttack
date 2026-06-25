@@ -4,6 +4,7 @@
 #include "mj.h"
 #include "render_sdl.h"
 #include "shark.h"
+#include "utils.h"
 #include "world.h"
 #include <signal.h>
 #include <stdlib.h>
@@ -24,8 +25,8 @@ static void Handle_terminal_interrupt(int signum) {
  * @param nb_collider nombre d'obstacles
  * @return true si l'initialisation a réussi, false sinon
  */
-bool Game_init(Game *game, int width, int height, int nb_fish,
-               int nb_collider) {
+bool Game_init(Game *game, int width, int height, int nb_fish, int nb_collider,
+               int seed_for_worlds) {
     if (!game)
         return false;
 
@@ -34,9 +35,10 @@ bool Game_init(Game *game, int width, int height, int nb_fish,
     }
 
     VectorRule *shark_theta = SharkTheta_init();
-
+    init_seed(seed_for_worlds);
     game->world1 = World_init(width / 2, height, nb_fish, nb_collider,
                               *shark_theta, 0, NB_OCCURRENCE, true, false);
+    init_seed(seed_for_worlds);
     game->world2 = World_init(width / 2, height, nb_fish, nb_collider,
                               *shark_theta, 0, NB_OCCURRENCE, false, false);
     if (!game->world1 || !game->world2) {
@@ -67,9 +69,10 @@ void Game_pause(Game *game) {
  * @brief lance la boucle de jeu en mode graphique (SDL)
  * @param use_bench true pour exécuter un benchmark
  */
-void Game_run_SDL(bool use_bench) {
+void Game_run_SDL(bool use_bench, int seed_for_worlds) {
     Game game;
-    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB)) {
+    if (!Game_init(&game, WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB,
+                   seed_for_worlds)) {
         fprintf(stderr, "Echec de l'initialisation du jeu.\n");
         return;
     }

@@ -24,8 +24,7 @@ int main(int argc, char *argv[]) {
     bool use_term = false;
     bool learn = false;
     bool benchmark_mode = false;
-    init_seed(time(NULL));
-
+    int seed_for_worlds = init_seed(time(NULL));
     if (argc > 1 && strcmp(argv[1], "term") == 0) {
         use_term = true;
     } else if (argc > 1 && strcmp(argv[1], "bench") == 0) {
@@ -65,7 +64,7 @@ int main(int argc, char *argv[]) {
         // sauvegarder theta quand l'entraînement est terminé
         end_logs(THETA_FILE, FILE_LOG);
     } else {
-        Game_run_SDL(benchmark_mode);
+        Game_run_SDL(benchmark_mode, seed_for_worlds);
     }
 
     return 0;

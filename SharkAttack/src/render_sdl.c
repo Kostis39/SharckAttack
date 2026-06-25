@@ -696,8 +696,7 @@ void Draw_result_number(SDL_Renderer *r, int x, int y, int value) {
  * @param y position y
  * @param is_winner 1 pour W, 0 pour L
  */
-void Draw_big_result_letter(SDL_Renderer *r, int x, int y,
-                                   int is_winner) {
+void Draw_big_result_letter(SDL_Renderer *r, int x, int y, int is_winner) {
     int h = 70;
 
     if (is_winner) {
@@ -727,7 +726,7 @@ void Draw_big_result_letter(SDL_Renderer *r, int x, int y,
  * @param show_diff 1 si on affiche la difference
  */
 void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
-                                int time_ms, int diff_ms, int show_diff) {
+                         int time_ms, int diff_ms, int show_diff) {
     /*
      * Filtre transparent sur tout le fond du jeu.
      * Alpha faible : on voit encore le requin et le monde.
@@ -757,17 +756,14 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
     else
         SDL_SetRenderDrawColor(r, 255, 130, 140, 255);
 
-    Draw_big_result_letter(r,
-                           zone.x + zone.w / 2 - 35,
-                           zone.y + zone.h / 2 - 35,
-                           is_winner);
+    Draw_big_result_letter(r, zone.x + zone.w / 2 - 35,
+                           zone.y + zone.h / 2 - 35, is_winner);
 
     /*
      * Temps final en secondes en bas a gauche.
      */
     SDL_SetRenderDrawColor(r, 220, 240, 255, 255);
-    Draw_result_number(r, zone.x + 25, zone.y + zone.h - 45,
-                       time_ms / 1000);
+    Draw_result_number(r, zone.x + 25, zone.y + zone.h - 45, time_ms / 1000);
 
     /*
      * Difference de temps en bas a droite.
@@ -783,8 +779,7 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
         SDL_RenderDrawLine(r, x, y, x + 15, y);
         SDL_RenderDrawLine(r, x + 7, y - 7, x + 7, y + 7);
 
-        Draw_result_number(r, x + 25, zone.y + zone.h - 45,
-                           diff_ms / 1000);
+        Draw_result_number(r, x + 25, zone.y + zone.h - 45, diff_ms / 1000);
     }
 }
 
@@ -802,7 +797,8 @@ void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
  * @param left_world monde affiché à gauche
  * @param right_world monde affiché à droite
  */
-void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world) {
+void Render_two_worlds(SDLDisplay *display, World *left_world,
+                       World *right_world) {
     static int texture_w = 0;
     static int texture_h = 0;
     static int window_was_doubled = 0;
@@ -844,7 +840,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world
     /*
      * Création des textures où on dessine chaque vue.
      */
-    if (display->left_scene == NULL || texture_w != world_w || texture_h != world_h) {
+    if (display->left_scene == NULL || texture_w != world_w ||
+        texture_h != world_h) {
         if (display->left_scene != NULL)
             SDL_DestroyTexture(display->left_scene);
 
@@ -973,10 +970,11 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world
     SDL_RenderDrawRect(r, &right_screen);
 
     /*
-    * Gestion de fin :
-    * le premier cote qui mange tous ses poissons devient winner.
-    * L'autre continue a jouer. Il devient loser seulement quand il finit aussi.
-    */
+     * Gestion de fin :
+     * le premier cote qui mange tous ses poissons devient winner.
+     * L'autre continue a jouer. Il devient loser seulement quand il finit
+     * aussi.
+     */
     int now = (int)SDL_GetTicks();
 
     if (start_time == 0)
@@ -985,8 +983,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world
     int elapsed = now - start_time;
 
     /*
-    * Reset simple si une nouvelle partie commence.
-    */
+     * Reset simple si une nouvelle partie commence.
+     */
     if (left_world->fish_eaten == 0 && right_world->fish_eaten == 0 &&
         (winner != -1 || finished[0] || finished[1])) {
         start_time = now;
@@ -1001,8 +999,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world
     }
 
     /*
-    * Cote gauche fini.
-    */
+     * Cote gauche fini.
+     */
     if (!finished[0] && left_world->fish_eaten >= left_world->nb_fish) {
         finished[0] = 1;
         finish_time[0] = elapsed;
@@ -1012,8 +1010,8 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world
     }
 
     /*
-    * Cote droit fini.
-    */
+     * Cote droit fini.
+     */
     if (!finished[1] && right_world->fish_eaten >= right_world->nb_fish) {
         finished[1] = 1;
         finish_time[1] = elapsed;
@@ -1023,9 +1021,9 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world
     }
 
     /*
-    * Cas de test : si c'est le meme monde affiche deux fois,
-    * on met W dans les deux ecrans.
-    */
+     * Cas de test : si c'est le meme monde affiche deux fois,
+     * on met W dans les deux ecrans.
+     */
     if (left_world == right_world && finished[0]) {
         Draw_result_overlay(r, left_screen, 1, finish_time[0], 0, 0);
         Draw_result_overlay(r, right_screen, 1, finish_time[0], 0, 0);
@@ -1041,33 +1039,33 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world
         }
 
         /*
-        * Si la gauche a gagne.
-        */
+         * Si la gauche a gagne.
+         */
         if (winner == 0) {
-            Draw_result_overlay(r, left_screen, 1,
-                                finish_time[0], diff, show_diff);
+            Draw_result_overlay(r, left_screen, 1, finish_time[0], diff,
+                                show_diff);
 
             /*
-            * La droite devient loser seulement quand elle finit aussi.
-            */
+             * La droite devient loser seulement quand elle finit aussi.
+             */
             if (finished[1])
-                Draw_result_overlay(r, right_screen, 0,
-                                    finish_time[1], diff, show_diff);
+                Draw_result_overlay(r, right_screen, 0, finish_time[1], diff,
+                                    show_diff);
         }
 
         /*
-        * Si la droite a gagne.
-        */
+         * Si la droite a gagne.
+         */
         if (winner == 1) {
-            Draw_result_overlay(r, right_screen, 1,
-                                finish_time[1], diff, show_diff);
+            Draw_result_overlay(r, right_screen, 1, finish_time[1], diff,
+                                show_diff);
 
             /*
-            * La gauche devient loser seulement quand elle finit aussi.
-            */
+             * La gauche devient loser seulement quand elle finit aussi.
+             */
             if (finished[0])
-                Draw_result_overlay(r, left_screen, 0,
-                                    finish_time[0], diff, show_diff);
+                Draw_result_overlay(r, left_screen, 0, finish_time[0], diff,
+                                    show_diff);
         }
     }
 
