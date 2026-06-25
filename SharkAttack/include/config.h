@@ -65,4 +65,6 @@ monde*/
 
 #define NB_THREADS 10
 
+#define AUDIO_PATH "assets/"
+
 #endif /* CONFIG_H */
