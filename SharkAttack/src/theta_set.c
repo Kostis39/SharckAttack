@@ -2,10 +2,6 @@
 #include "config.h"
 #include "input_output.h"
 
-/**
- * @brief affiche les valeurs des règles phi du requin (composantes x et y)
- * @param phi structure SharkPhi
- */
 void SharkPhi_print(SharkPhi phi) {
     printf("Phi.x :");
     VectorRule_print(phi.x);
@@ -13,23 +9,12 @@ void SharkPhi_print(SharkPhi phi) {
     VectorRule_print(phi.x);
 }
 
-/**
- * @brief ajoute un vecteur à une règle phi du requin
- * @param shark_phi pointeur vers la structure SharkPhi à modifier
- * @param vect vecteur à ajouter
- * @param rule_to_apply règle cible concernée
- */
 void SharkPhi_add_vector(SharkPhi *shark_phi, Vector vect,
                          enum Rules rule_to_apply) {
     shark_phi->x.vect[rule_to_apply] = vect.x;
     shark_phi->y.vect[rule_to_apply] = vect.y;
 }
 
-/**
- * @brief initialise un ensemble de règles pour les poissons avec les valeurs
- * par défaut
- * @return pointeur vers la structure RulesSetFish allouée dynamiquement
- */
 RulesSetFish *RulesSetFish_init() {
     RulesSetFish *theta = malloc(sizeof(RulesSetFish));
     theta->alignment = ALIGNMENT;
@@ -40,11 +25,6 @@ RulesSetFish *RulesSetFish_init() {
     return theta;
 }
 
-/**
- * @brief initialise le vecteur theta du requin en chargeant les valeurs
- * depuis un fichier
- * @return pointeur vers le VectorRule alloué dynamiquement
- */
 VectorRule *SharkTheta_init() {
     VectorRule *theta = calloc(1, sizeof(VectorRule));
 
@@ -60,16 +40,8 @@ VectorRule *SharkTheta_init() {
     return theta;
 }
 
-/**
- * @brief libère la mémoire d'un ensemble de règles pour les poissons
- * @param theta pointeur vers la structure RulesSetFish à libérer
- */
 void RulesSetFish_destroy(RulesSetFish *theta) { free(theta); }
 
-/**
- * @brief libère la mémoire du vecteur theta du requin
- * @param theta pointeur vers le VectorRule à libérer
- */
 void SharkTheta_destroy(VectorRule *theta) {
     if (theta != NULL)
         free(theta);
