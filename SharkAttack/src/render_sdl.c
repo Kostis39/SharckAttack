@@ -669,6 +669,123 @@ void Draw_world(SDLDisplay *display, World *world) {
 }
 
 /**
+ * @brief dessine un nombre avec les chiffres deja existants.
+ *
+ * @param r renderer SDL
+ * @param x position x
+ * @param y position y
+ * @param value nombre a afficher
+ */
+void Draw_result_number(SDL_Renderer *r, int x, int y, int value) {
+    int digits = Count_digits(value);
+
+    for (int i = digits - 1; i >= 0; i--) {
+        Draw_digit(r, x + i * 17, y, value % 10, 2);
+        value = value / 10;
+    }
+}
+
+/**
+ * @brief dessine un grand W ou un grand L avec des lignes.
+ *
+ * @param r renderer SDL
+ * @param x position x
+ * @param y position y
+ * @param is_winner 1 pour W, 0 pour L
+ */
+void Draw_big_result_letter(SDL_Renderer *r, int x, int y,
+                                   int is_winner) {
+    int h = 70;
+
+    if (is_winner) {
+        /* W */
+        SDL_RenderDrawLine(r, x, y, x + 15, y + h);
+        SDL_RenderDrawLine(r, x + 15, y + h, x + 35, y + 35);
+        SDL_RenderDrawLine(r, x + 35, y + 35, x + 55, y + h);
+        SDL_RenderDrawLine(r, x + 55, y + h, x + 70, y);
+    } else {
+        /* L */
+        SDL_RenderDrawLine(r, x, y, x, y + h);
+        SDL_RenderDrawLine(r, x, y + h, x + 65, y + h);
+    }
+}
+
+/**
+ * @brief affiche le resultat sans cacher le jeu.
+ *
+ * Cette fonction colore tout le fond de la moitie avec un filtre transparent :
+ * vert pour winner, rouge pour loser. Le jeu reste visible derriere.
+ *
+ * @param r renderer SDL
+ * @param zone moitie gauche ou droite
+ * @param is_winner 1 = winner, 0 = loser
+ * @param time_ms temps final de cette partie
+ * @param diff_ms difference de temps entre les deux parties
+ * @param show_diff 1 si on affiche la difference
+ */
+void Draw_result_overlay(SDL_Renderer *r, SDL_Rect zone, int is_winner,
+                                int time_ms, int diff_ms, int show_diff) {
+    /*
+     * Filtre transparent sur tout le fond du jeu.
+     * Alpha faible : on voit encore le requin et le monde.
+     */
+    if (is_winner)
+        SDL_SetRenderDrawColor(r, 20, 220, 100, 55);
+    else
+        SDL_SetRenderDrawColor(r, 220, 30, 50, 55);
+
+    SDL_RenderFillRect(r, &zone);
+
+    /*
+     * Bordure de la moitie.
+     */
+    if (is_winner)
+        SDL_SetRenderDrawColor(r, 80, 255, 150, 230);
+    else
+        SDL_SetRenderDrawColor(r, 255, 90, 100, 230);
+
+    SDL_RenderDrawRect(r, &zone);
+
+    /*
+     * Lettre W ou L au centre.
+     */
+    if (is_winner)
+        SDL_SetRenderDrawColor(r, 140, 255, 190, 255);
+    else
+        SDL_SetRenderDrawColor(r, 255, 130, 140, 255);
+
+    Draw_big_result_letter(r,
+                           zone.x + zone.w / 2 - 35,
+                           zone.y + zone.h / 2 - 35,
+                           is_winner);
+
+    /*
+     * Temps final en secondes en bas a gauche.
+     */
+    SDL_SetRenderDrawColor(r, 220, 240, 255, 255);
+    Draw_result_number(r, zone.x + 25, zone.y + zone.h - 45,
+                       time_ms / 1000);
+
+    /*
+     * Difference de temps en bas a droite.
+     * Elle s'affiche seulement quand les deux ont fini.
+     */
+    if (show_diff) {
+        SDL_SetRenderDrawColor(r, 255, 220, 80, 255);
+
+        int x = zone.x + zone.w - 95;
+        int y = zone.y + zone.h - 35;
+
+        /* petit + */
+        SDL_RenderDrawLine(r, x, y, x + 15, y);
+        SDL_RenderDrawLine(r, x + 7, y - 7, x + 7, y + 7);
+
+        Draw_result_number(r, x + 25, zone.y + zone.h - 45,
+                           diff_ms / 1000);
+    }
+}
+
+/**
  * @brief affiche deux vues dans une seule fenêtre.
  *
  * Le premier monde est affiché à gauche.
@@ -682,17 +799,21 @@ void Draw_world(SDLDisplay *display, World *world) {
  * @param left_world monde affiché à gauche
  * @param right_world monde affiché à droite
  */
-void Render_two_worlds(SDLDisplay *display, World *left_world,
-                       World *right_world) {
-    int texture_w = 0;
-    int texture_h = 0;
-    int window_was_doubled = 0;
+void Render_two_worlds(SDLDisplay *display, World *left_world,World *right_world) {
+    static int texture_w = 0;
+    static int texture_h = 0;
+    static int window_was_doubled = 0;
 
     static int old_score[2] = {0, 0};
     static int gain[2] = {0, 0};
     static int flash[2] = {0, 0};
     static int was_alive[2][FISH_NB] = {{0}};
     static int skeleton_frame[2][FISH_NB] = {{0}};
+
+    static int start_time = 0;
+    static int finish_time[2] = {-1, -1};
+    static int finished[2] = {0, 0};
+    static int winner = -1;
 
     if (display == NULL || display->renderer == NULL || left_world == NULL)
         return;
@@ -847,6 +968,105 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
     SDL_SetRenderDrawColor(r, 90, 180, 220, 180);
     SDL_RenderDrawRect(r, &left_screen);
     SDL_RenderDrawRect(r, &right_screen);
+
+    /*
+    * Gestion de fin :
+    * le premier cote qui mange tous ses poissons devient winner.
+    * L'autre continue a jouer. Il devient loser seulement quand il finit aussi.
+    */
+    int now = (int)SDL_GetTicks();
+
+    if (start_time == 0)
+        start_time = now;
+
+    int elapsed = now - start_time;
+
+    /*
+    * Reset simple si une nouvelle partie commence.
+    */
+    if (left_world->fish_eaten == 0 && right_world->fish_eaten == 0 &&
+        (winner != -1 || finished[0] || finished[1])) {
+        start_time = now;
+
+        finish_time[0] = -1;
+        finish_time[1] = -1;
+
+        finished[0] = 0;
+        finished[1] = 0;
+
+        winner = -1;
+    }
+
+    /*
+    * Cote gauche fini.
+    */
+    if (!finished[0] && left_world->fish_eaten >= left_world->nb_fish) {
+        finished[0] = 1;
+        finish_time[0] = elapsed;
+
+        if (winner == -1)
+            winner = 0;
+    }
+
+    /*
+    * Cote droit fini.
+    */
+    if (!finished[1] && right_world->fish_eaten >= right_world->nb_fish) {
+        finished[1] = 1;
+        finish_time[1] = elapsed;
+
+        if (winner == -1)
+            winner = 1;
+    }
+
+    /*
+    * Cas de test : si c'est le meme monde affiche deux fois,
+    * on met W dans les deux ecrans.
+    */
+    if (left_world == right_world && finished[0]) {
+        Draw_result_overlay(r, left_screen, 1, finish_time[0], 0, 0);
+        Draw_result_overlay(r, right_screen, 1, finish_time[0], 0, 0);
+    } else if (winner != -1) {
+        int diff = 0;
+        int show_diff = finished[0] && finished[1];
+
+        if (show_diff) {
+            diff = finish_time[0] - finish_time[1];
+
+            if (diff < 0)
+                diff = -diff;
+        }
+
+        /*
+        * Si la gauche a gagne.
+        */
+        if (winner == 0) {
+            Draw_result_overlay(r, left_screen, 1,
+                                finish_time[0], diff, show_diff);
+
+            /*
+            * La droite devient loser seulement quand elle finit aussi.
+            */
+            if (finished[1])
+                Draw_result_overlay(r, right_screen, 0,
+                                    finish_time[1], diff, show_diff);
+        }
+
+        /*
+        * Si la droite a gagne.
+        */
+        if (winner == 1) {
+            Draw_result_overlay(r, right_screen, 1,
+                                finish_time[1], diff, show_diff);
+
+            /*
+            * La gauche devient loser seulement quand elle finit aussi.
+            */
+            if (finished[0])
+                Draw_result_overlay(r, left_screen, 0,
+                                    finish_time[0], diff, show_diff);
+        }
+    }
 
     SDL_RenderPresent(r);
 }
