@@ -1,4 +1,5 @@
 #include "sound.h"
+#include "config.h"
 #include "SDL_mixer.h"
 #include <SDL.h>
 #include <stdio.h>
@@ -56,9 +57,39 @@ void audio_play(Mix_Chunk *sound) {
     Mix_PlayChannel(1, sound, 0);
 }
 
+int audio_load_music(const char *path, AudioManager *audio) {
+    char path_buf[256];
+    snprintf(path_buf, sizeof(path_buf), "%s%s.mp3", path, MUSIC_FILE);
+    audio->bg_music = Mix_LoadMUS(path_buf);
+    if (!audio->bg_music) {
+        fprintf(stderr, "audio_load_music: Mix_LoadMUS failed: %s\n",
+                Mix_GetError());
+        return -1;
+    }
+    printf("[AUDIO] Music loaded: %s\n", path_buf);
+    return 0;
+}
+
+void audio_play_music(AudioManager *audio) {
+    if (!audio || !audio->bg_music) {
+        fprintf(stderr, "audio_play_music: no music loaded\n");
+        return;
+    }
+    Mix_PlayMusic(audio->bg_music, -1);
+}
+
+void audio_stop_music(void) {
+    Mix_HaltMusic();
+}
+
 void audio_quit(AudioManager *audio) {
     if (audio) {
-        Mix_FreeChunk(audio->fish_eaten);
+        if (audio->bg_music) {
+            Mix_FreeMusic(audio->bg_music);
+        }
+        if (audio->fish_eaten) {
+            Mix_FreeChunk(audio->fish_eaten);
+        }
         free(audio);
     }
 }
