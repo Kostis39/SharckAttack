@@ -13,7 +13,6 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 
 #define NB_OCCURRENCE 10000
 
-#define SIGMA 5
 #define TRAJECTORY_LENGHT_ALLOC 200
 #define TRAJECTORY_CAPACITY NB_OCCURRENCE
 
@@ -54,9 +53,8 @@ enum Rules { Rules_Center = 0, Rules_Alignment, Rules_Pursuit, Rules_Lenght };
 
 #define RANDOM_SEED 42
 
-#define COLLIDER_RATIO                                                         \
-    25 /* mesure au plus un dixième de la largeur du                          \
-monde*/
+#define COLLIDER_RATIO 25 /* mesure au plus un dixième de la largeur du       \
+                             monde*/
 #define COLLIDERS_NB 5
 
 #define SHARK_ATTACK_RANGE 30
