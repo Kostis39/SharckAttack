@@ -2,7 +2,10 @@
 
 __thread unsigned int seed = RANDOM_SEED;
 
-void init_seed(unsigned int set_seed) { seed = set_seed; }
+int init_seed(unsigned int set_seed) {
+    seed = set_seed;
+    return seed;
+}
 
 int rand_trsf() {
     unsigned int next = seed;
