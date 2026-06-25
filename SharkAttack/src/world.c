@@ -1,18 +1,5 @@
 #include "world.h"
 
-/**
- * @brief initialise un monde avec des paramètres
- * @param width largeur du monde en pixels
- * @param height hauteur du monde en pixels
- * @param nb_fish nombre de poissons
- * @param nb_colliders nombre d'obstacles
- * @param theta_shark paramètres de la politique du requin
- * @param sigma écart-type pour l'exploration (pour l'apprentissage)
- * @param nb_occurrence nombre maximum de pas par épisode (pour l'apprentissage)
- * @param is_player true si le requin est contrôlé par le joueur
- * @param learn true si en mode apprentissage
- * @return pointeur vers le monde alloué dynamiquement
- */
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
                   VectorRule theta_shark, float sigma, int nb_occurrence,
                   bool is_player, bool learn) {
@@ -37,10 +24,6 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
     return new_world;
 }
 
-/**
- * @brief libère un monde et tout ses éléments
- * @param world pointeur vers le monde à détruire
- */
 void World_destroy(World *world) {
     Fish_destroy_array(world->fishes);
     Shark_destroy(world->shark);
@@ -51,12 +34,6 @@ void World_destroy(World *world) {
     world = NULL;
 }
 
-/**
- * @brief crée un monde temporaire à partir d'un monde existant
- * @param world pointeur vers le monde source
- * @param tmp_world pointeur vers le monde temporaire à remplir
- * @return true si la création a réussi, false sinon
- */
 bool World_create_tmp(const World *world, World *tmp_world) {
     if (!world || !tmp_world) {
         return false;
@@ -84,12 +61,6 @@ bool World_create_tmp(const World *world, World *tmp_world) {
     return true;
 }
 
-/**
- * @brief échange les données entre le monde réel et le monde temporaire
- * @param world pointeur vers le monde réel à modifier
- * @param tmp_world pointeur vers le monde temporaire qui sera détruit après
- * l'échange
- */
 void World_swap_data(World *world, World *tmp_world) {
     if (!world || !tmp_world) {
         fprintf(stderr, "World_swap_data: pointeur NULL\n");

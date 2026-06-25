@@ -94,15 +94,6 @@ Vector Rules_avoid_shark(Fish *self, Vector dist_shark) {
     return Vector_scale(dist_shark, intensity);
 }
 
-/**
- * @brief calcule l'action du poisson combine linéairement toutes les règles
- * avec leurs poids
- * @param p perception du poisson
- * @param theta poids des règles
- * @param width largeur du monde
- * @param height hauteur du monde
- * @return vecteur vitesse
- */
 Vector fish_choose_action(FishPerception *p, RulesSetFish *theta, int width,
                           int height) {
     Vector separation = Rules_separation(&p->self, p->separation);

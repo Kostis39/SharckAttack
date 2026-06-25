@@ -19,7 +19,6 @@ enum Rules {
 
 #define NB_OCCURRENCE 10000
 
-#define SIGMA 5
 #define TRAJECTORY_LENGHT_ALLOC 200
 #define TRAJECTORY_CAPACITY NB_OCCURRENCE
 
@@ -62,7 +61,7 @@ enum Rules {
 
 #define COLLIDER_RATIO                                                         \
     25 /* mesure au plus un dixième de la largeur du                          \
-monde*/
+          monde*/
 #define COLLIDERS_NB 5
 
 #define SHARK_ATTACK_RANGE 30

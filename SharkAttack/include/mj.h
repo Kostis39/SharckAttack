@@ -10,13 +10,26 @@
 #include "world.h"
 /* #include "shark.h" */
 
-void FishPerception_destroy(FishPerception *perception);
+/**
+ * @brief Initialise la perception d'un poisson
+ * @param fish le poisson à initialiser
+ * @param world le monde contenant les dimensions
+ * @param perception la structure de perception à remplir
+ */
+void fish_perception_init(Fish *fish, World *world, FishPerception *perception);
+
+/**
+ * @brief réalise une itération complète du jeu
+ * @param world le monde à mettre à jour
+ */
 void Game_step(World *world);
 
+/**
+ * @brief mise à jour synchrone du monde en calculant les nouvelles positions
+ * des agents
+ * @param world monde actuel
+ * @param tmp_world monde temporaire
+ */
 void UpdateWorld(World *world, World *tmp_world);
 
-void fish_perception_init(Fish *fish, World *world, FishPerception *perception);
-void get_fish_perception(Fish *fish, World *world, FishPerception *perception);
-void Get_shark_perception(Shark *shark, World *world,
-                          SharkPerception *shark_perception);
 #endif

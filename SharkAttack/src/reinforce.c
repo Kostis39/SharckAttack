@@ -4,10 +4,6 @@
 
 extern volatile sig_atomic_t stop_requested;
 
-/**
- * @brief initialise une trajectoire vide
- * @return pointeur vers la trajectoire allouée dynamiquement
- */
 Trajectory *Trajectory_init() {
     Trajectory *new_trajectory = calloc(1, sizeof(Trajectory));
     if (new_trajectory == NULL)
@@ -20,14 +16,6 @@ Trajectory *Trajectory_init() {
     return new_trajectory;
 }
 
-/**
- * @brief Augmente la taille mémoire de la liste steps de trajectory si la
- * mémoire précédement alloué est pleinne.
- *
- * @param trajectory La trajectoire que l'on doit modifier (ajouter de la place
- * mémoire à steps)
- * @return int 1: Si il y a eu modification de la mémoire (realloc) 0 : sinon
- */
 int Need_trajectory_growing(Trajectory *trajectory) {
     if (trajectory->length == trajectory->lenght_alloc) {
         int new_lenght_alloc =
@@ -45,13 +33,6 @@ int Need_trajectory_growing(Trajectory *trajectory) {
     }
 }
 
-/**
- * @brief Ajout un état supplémentaire à notre trajectoire.
- * @param trajectory pointeur vers la trajectoire
- * @param phi valeurs des règles à cet l'état
- * @param action action choisie
- * @param reward récompense reçue
- */
 void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action,
               float reward) {
     int i = trajectory->length;
@@ -61,19 +42,11 @@ void Add_step(Trajectory *trajectory, SharkPhi phi, Vector action,
     ++trajectory->length;
 }
 
-/**
- * @brief libère la mémoire d'une trajectoire
- * @param trajectory pointeur vers la trajectoire à libérer
- */
 void Trajectory_destroy(Trajectory *trajectory) {
     free(trajectory->steps);
     free(trajectory);
 }
 
-/**
- * @brief affiche les pas d'une trajectoire dont la récompense est supérieur à 0
- * @param trajectory pointeur vers la trajectoire à afficher
- */
 void Trajectory_print(Trajectory *trajectory) {
     printf("taille : %d\n", trajectory->length);
     for (int i = 0; i < trajectory->length; ++i) {
@@ -87,23 +60,12 @@ void Trajectory_print(Trajectory *trajectory) {
     }
 }
 
-/**
- * @brief affiche un pas de trajectoire
- * @param step le pas à afficher
- */
 void StepTrajectory_print(StepTrajectory step) {
     SharkPhi_print(step.phi);
     printf(" Action:(%f, %f) Reward: %f\n", step.action.x, step.action.y,
            step.reward);
 }
 
-/**
- * @brief met à jour un pas de trajectoire
- * @param step pointeur vers le pas à modifier
- * @param phi valeurs des règles à cet l'état
- * @param action nouvelle action
- * @param reward nouvelle récompense
- */
 void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
                  float reward) {
     if (!step)
@@ -113,10 +75,6 @@ void Step_update(StepTrajectory *step, SharkPhi phi, Vector action,
     step->reward = reward;
 }
 
-/**
- * @brief retourne un gradient initialisé à zéro
- * @return structure Gradient avec tous les champs à zéro
- */
 Gradient Gradient_zero() {
     Gradient G;
     G.x = VectorRule_init();
@@ -178,11 +136,6 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
     return result_iteration;
 }
 
-/**
- * @brief fonction de travail pour les threads, exécute Compute_trajectory
- * @param args pointeur vers WorkerArgs contenant les paramètres
- * @return NULL
- */
 void *Trajectory_worker(void *args) {
     init_seed((unsigned int)pthread_self());
     WorkerArgs *wargs = (WorkerArgs *)args;
@@ -190,13 +143,6 @@ void *Trajectory_worker(void *args) {
     return NULL;
 }
 
-/**
- * @brief exécute l'algorithme REINFORCE avec parallélisation
- * @param theta pointeur vers les paramètres de la politique à mettre à jour
- * @param hyperparameters hyperparamètres de l'apprentissage
- * @param thread_count nombre de threads à utiliser pour le calcul des
- * trajectoires
- */
 void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
                         int thread_count) {
     int i;
@@ -279,7 +225,6 @@ void Reinforce_learning(VectorRule *theta, Hyperparameters hyperparameters,
             logs_generation(theta, k + 1, average_reward, average_gain,
                             average_iteration, theta_diff_STEP_LOG,
                             theta_diff_1_step, FILE_LOG);
-
             theta_diff_1_step = VectorRule_init();
         }
 
