@@ -31,13 +31,18 @@ void fish_perception_init(Fish *fish, World *world,
  */
 void fish_to_shark_perception(Fish *fish, World *world,
                               FishPerception *perception) {
-    if (world->shark != NULL) {
-        Vector to_shark = Vector_sub(world->shark->pos, fish->position);
-        float distance = Vector_length2(to_shark);
+    float shark_closest_dist = INFINITY;
+    float dist = 0;
 
-        if (distance < RADIUS_SHARK_VISIBILITY * RADIUS_SHARK_VISIBILITY) {
-            perception->shark_visible = true;
-            perception->shark = *world->shark;
+    for (int i = 0; i < world->nb_sharks; ++i) {
+        if (world->sharks[i] != NULL) {
+            Vector to_shark = Vector_sub(fish->position, world->sharks[i]->pos);
+            dist = Vector_length(to_shark);
+
+            if (dist < RADIUS_SHARK_VISIBILITY && dist < shark_closest_dist) {
+                perception->shark_visible = true;
+                perception->shark = *world->sharks[i];
+            }
         }
     }
     if (perception->shark_visible) {
