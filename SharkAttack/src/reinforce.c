@@ -97,7 +97,7 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
     Gradient D = Gradient_zero();
 
     int total_length = 0;
-    float total_G;
+    float total_G = 0;
 
     World *world =
         World_init(WIDTH / 2, HEIGHT / 2, FISH_NB, COLLIDERS_NB, theta,
