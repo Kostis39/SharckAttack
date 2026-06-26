@@ -3,10 +3,10 @@
 
 Shark *Shark_create(int width, int height, bool is_player) {
     Shark *shark = calloc(1, sizeof(Shark));
-    shark->pos.x = width / 2.0f;
-    shark->pos.y = height;
-    shark->velocity.x = (SHARK_SPEED_MAX / 2.0f);
-    shark->velocity.y = (SHARK_SPEED_MAX / 2.0f);
+    shark->pos.x = random_float(0, width);
+    shark->pos.y = random_float(0, height);
+    shark->velocity.x = random_float(-SHARK_SPEED_MAX, SHARK_SPEED_MAX);
+    shark->velocity.y = random_float(-SHARK_SPEED_MAX, SHARK_SPEED_MAX);
     shark->radius_vision = SHARK_VISION_RANGE;
     shark->player = is_player;
     return shark;

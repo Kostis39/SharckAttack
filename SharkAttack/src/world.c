@@ -13,8 +13,11 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
     // Allocation du tableau de requins
     new_world->sharks = calloc(nb_sharks, sizeof(Shark *));
     new_world->trajectory = calloc(nb_sharks, sizeof(Trajectory *));
-    for (int i = 0; i < nb_sharks; i++) {
-        new_world->sharks[i] = Shark_create(width, height, is_player);
+
+    new_world->sharks[0] = Shark_create(width, height, is_player);
+    new_world->trajectory[0] = Trajectory_init();
+    for (int i = 1; i < nb_sharks; i++) {
+        new_world->sharks[i] = Shark_create(width, height, false);
         new_world->trajectory[i] = Trajectory_init();
     }
     new_world->nb_sharks = nb_sharks;
