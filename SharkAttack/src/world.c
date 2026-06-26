@@ -2,14 +2,21 @@
 
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
                   VectorRule theta_shark, float sigma, int nb_occurrence,
-                  bool is_player, bool learn) {
+                  bool is_player, bool learn, int nb_sharks) {
     World *new_world = calloc(1, sizeof(World));
     new_world->width = width;
     new_world->height = height;
     new_world->nb_fish = nb_fish;
     new_world->nb_colliders = nb_colliders;
     new_world->fishes = Fish_create_random_array(nb_fish, width, height);
-    new_world->shark = Shark_create(width, height, is_player);
+
+    // Allocation du tableau de requins
+    new_world->sharks = calloc(nb_sharks, sizeof(Shark *));
+    for (int i = 0; i < nb_sharks; i++) {
+        new_world->sharks[i] = Shark_create(width, height, is_player);
+    }
+    new_world->nb_sharks = nb_sharks;
+
     new_world->colliders =
         Colliders_random_array(width, height, width / COLLIDER_RATIO,
                                height / COLLIDER_RATIO, nb_colliders, 1);
@@ -26,7 +33,9 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
 
 void World_destroy(World *world) {
     Fish_destroy_array(world->fishes);
-    Shark_destroy(world->shark);
+    for (int i = 0; i < world->nb_sharks; i++) {
+        Shark_destroy(world->sharks[i]);
+    }
     Colliders_destroy_array(world->colliders);
     RulesSetFish_destroy(world->theta_fish);
     Trajectory_destroy(world->trajectory);
@@ -51,11 +60,18 @@ bool World_create_tmp(const World *world, World *tmp_world) {
         return false;
     }
 
-    tmp_world->shark = calloc(1, sizeof(Shark));
-    if (!tmp_world->shark) {
-        free(tmp_world->fishes);
-        fprintf(stderr, "World_create_temp: échec d'allocation du requin\n");
-        return false;
+    for (int i = 0; i < tmp_world->nb_sharks; i++) {
+        tmp_world->sharks[i] = calloc(1, sizeof(Shark));
+        if (!tmp_world->sharks[i]) {
+            // Libérer les requins déjà alloués
+            for (int j = 0; j < i; j++) {
+                free(tmp_world->sharks[j]);
+            }
+            free(tmp_world->sharks);
+            free(tmp_world->fishes);
+            fprintf(stderr, "Erreur allocation requin %d\n", i);
+            return false;
+        }
     }
 
     return true;
@@ -72,9 +88,12 @@ void World_swap_data(World *world, World *tmp_world) {
     world->fishes = tmp_world->fishes;
     world->nb_fish = tmp_world->nb_fish;
 
-    // Requin : copie de la structure puis libération du temporaire
-    *world->shark = *tmp_world->shark;
-    free(tmp_world->shark);
+    // Requins
+    for (int i = 0; i < world->nb_sharks; i++) {
+        free(world->sharks[i]);                  // Libère l'ancien requin
+        world->sharks[i] = tmp_world->sharks[i]; // Prend le nouveau
+    }
+    free(tmp_world->sharks);
 
     world->fish_eaten = tmp_world->fish_eaten;
 }
