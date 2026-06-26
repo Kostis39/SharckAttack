@@ -1,5 +1,6 @@
 #include "input_output.h"
 #include "config.h"
+#include <stdio.h>
 
 bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
                  float best_gain, char *filename) {
@@ -96,6 +97,8 @@ bool load_params(VectorRule *theta, Hyperparameters *hyperparams,
             theta->vect[Rules_zone_Left] = value_f;
         } else if (sscanf(line, "right: %f", &value_f) == 1) {
             theta->vect[Rules_zone_Right] = value_f;
+        } else if (sscanf(line, "closest shark: %f", &value_f)) {
+            theta->vect[Rules_closest_shark] = value_f;
         }
     }
 
@@ -138,6 +141,8 @@ bool load_theta(VectorRule *theta, char *filename) {
             theta->vect[Rules_zone_Left] = value_f;
         } else if (sscanf(line, "right: %f", &value_f) == 1) {
             theta->vect[Rules_zone_Right] = value_f;
+        } else if (sscanf(line, "closest shark: %f", &value_f) == 1) {
+            theta->vect[Rules_closest_shark] = value_f;
         }
     }
 
@@ -172,6 +177,7 @@ bool logs_generation(VectorRule *theta, int gen_number, float avg_reward,
     fprintf(file, "back: %f\n", theta->vect[Rules_zone_Back]);
     fprintf(file, "left: %f\n", theta->vect[Rules_zone_Left]);
     fprintf(file, "right: %f\n\n", theta->vect[Rules_zone_Right]);
+    fprintf(file, "closest shark: %f\n\n", theta->vect[Rules_closest_shark]);
 
     fprintf(file, "Moyenne reward: %f\n", avg_reward);
     fprintf(file, "Moyenne gain: %f\n", avg_gain);
@@ -244,7 +250,8 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
 
     // Variables temporaires pour stocker le bloc en cours de lecture
     int current_gen = -1;
-    float current_center = 0, current_alignment = 0, current_pursuit = 0;
+    float current_center = 0, current_alignment = 0, current_pursuit = 0,
+          current_closest_shark = 0;
     float current_front = 0, current_back = 0, current_left = 0,
           current_right = 0;
     float current_gain = -1.0f;
@@ -275,6 +282,8 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
             continue;
         if (sscanf(line, "right: %f", &current_right) == 1)
             continue;
+        if (sscanf(line, "closest shark: %f", &current_closest_shark) == 1)
+            continue;
 
         // Avg_gain
         if (sscanf(line, "Moyenne gain: %f", &current_gain) == 1) {
@@ -292,6 +301,7 @@ bool get_best_theta(char *filename_logs, VectorRule *best_theta, int *best_gen,
                 best_theta->vect[Rules_zone_Back] = current_back;
                 best_theta->vect[Rules_zone_Left] = current_left;
                 best_theta->vect[Rules_zone_Right] = current_right;
+                best_theta->vect[Rules_closest_shark] = current_closest_shark;
 
                 found_any = true;
             }
@@ -348,6 +358,8 @@ bool init_logs(char *filename_params, char *filename_logs) {
     fprintf(file, "back: %f\n", theta_initial.vect[Rules_zone_Back]);
     fprintf(file, "left: %f\n", theta_initial.vect[Rules_zone_Left]);
     fprintf(file, "right: %f\n\n", theta_initial.vect[Rules_zone_Right]);
+    fprintf(file, "closest shark: %f\n\n",
+            theta_initial.vect[Rules_closest_shark]);
 
     fprintf(file, "# Meilleur gain de départ (historique) :\n");
     fprintf(file, "gain_initial: %f\n\n", best_gain_initial);
@@ -396,6 +408,8 @@ bool end_logs(char *filename_params, char *filename_logs) {
     printf("  Back :          %f\n", theta_params.vect[Rules_zone_Back]);
     printf("  Left :          %f\n", theta_params.vect[Rules_zone_Left]);
     printf("  Right :         %f\n", theta_params.vect[Rules_zone_Right]);
+    printf(" Closest Shark :        %f\n",
+           theta_params.vect[Rules_closest_shark]);
 
     printf("\nMeilleurs Paramètres Trouvés (Fichier logs)\n");
     printf("  Génération :    %d\n", best_gen_logs);
@@ -407,6 +421,7 @@ bool end_logs(char *filename_params, char *filename_logs) {
     printf("  Back :          %f\n", theta_logs.vect[Rules_zone_Back]);
     printf("  Left :          %f\n", theta_logs.vect[Rules_zone_Left]);
     printf("  Right :         %f\n", theta_logs.vect[Rules_zone_Right]);
+    printf("  Closest Shark : %f\n", theta_logs.vect[Rules_closest_shark]);
 
     if (gain_params < best_gain_logs) {
         printf("===Theta Modifié===\n");
