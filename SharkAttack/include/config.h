@@ -28,6 +28,7 @@ enum Rules {
 
 /* Population */
 #define FISH_NB 100
+#define NB_SHARKS 2
 
 #define RADIUS_SEPARATION 32
 #define RADIUS_ALIGNEMENT 160

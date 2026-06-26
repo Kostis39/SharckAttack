@@ -37,11 +37,13 @@ bool Game_init(Game *game, int width, int height, int nb_fish, int nb_collider,
     game->audio = audio_init();
     VectorRule *shark_theta = SharkTheta_init();
     init_seed(seed_for_worlds);
-    game->world1 = World_init(width / 2, height, nb_fish, nb_collider,
-                              *shark_theta, 0, NB_OCCURRENCE, true, false);
+    game->world1 =
+        World_init(width / 2, height, nb_fish, nb_collider, *shark_theta, 0,
+                   NB_OCCURRENCE, true, false, NB_SHARKS);
     init_seed(seed_for_worlds);
-    game->world2 = World_init(width / 2, height, nb_fish, nb_collider,
-                              *shark_theta, 0, NB_OCCURRENCE, false, false);
+    game->world2 =
+        World_init(width / 2, height, nb_fish, nb_collider, *shark_theta, 0,
+                   NB_OCCURRENCE, false, false, NB_SHARKS);
     if (!game->world1 || !game->world2) {
         free(shark_theta);
         Destroy_sdl_display(&game->display);
@@ -122,8 +124,8 @@ void Game_run_SDL(bool use_bench, int seed_for_worlds) {
                 int ww = 0, wh = 0;
                 SDL_GetRendererOutputSize(game.display.renderer, &ww, &wh);
                 int btn_x = ww - BTN_SIZE - BTN_MARGIN;
-                if (mx >= btn_x && mx < btn_x + BTN_SIZE &&
-                    my >= BTN_MARGIN && my < BTN_MARGIN + BTN_SIZE) {
+                if (mx >= btn_x && mx < btn_x + BTN_SIZE && my >= BTN_MARGIN &&
+                    my < BTN_MARGIN + BTN_SIZE) {
                     audio_toggle_mute(game.audio);
                 }
                 break;
@@ -138,8 +140,8 @@ void Game_run_SDL(bool use_bench, int seed_for_worlds) {
             Game_step(game.world1);
             Game_step(game.world2);
 
-            if(game.world1->fish_eaten >= game.world1->nb_fish ||
-               game.world2->fish_eaten >= game.world2->nb_fish) {
+            if (game.world1->fish_eaten >= game.world1->nb_fish ||
+                game.world2->fish_eaten >= game.world2->nb_fish) {
                 game_over = 1;
             }
         }
@@ -161,8 +163,9 @@ void Game_run_terminal() {
     signal(SIGINT, Handle_terminal_interrupt);
 
     VectorRule *shark_theta = SharkTheta_init();
-    World *world = World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB,
-                              *shark_theta, 0, NB_OCCURRENCE, false, false);
+    World *world =
+        World_init(WIDTH, HEIGHT, FISH_NB, COLLIDERS_NB, *shark_theta, 0,
+                   NB_OCCURRENCE, false, false, NB_SHARKS);
 
     for (i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                 i < world->nb_occurrence && !terminal_interrupted;
@@ -174,17 +177,19 @@ void Game_run_terminal() {
     if (terminal_interrupted) {
         printf("Boucle interrompue par l'utilisateur.\n");
     }
-    Trajectory_print(world->trajectory);
-    printf("Iteration: %d\n"
-           "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
-           "Cohesion: %f Shark "
-           "Avoidance: %f\n"
-           "Shark : Position: (%f, %f)\n"
-           "Theta : ",
-           i, world->nb_fish - world->fish_eaten, world->theta_fish->separation,
-           world->theta_fish->alignment, world->theta_fish->cohesion,
-           world->theta_fish->shark_avoidance, world->shark->pos.x,
-           world->shark->pos.y);
+    for (i = 0; i < world->nb_sharks; i++) {
+        Trajectory_print(world->trajectory[i]);
+        printf("Iteration: %d\n"
+               "Fish : Remaining fishes: %d Separation: %f Alignement: %f "
+               "Cohesion: %f Shark "
+               "Avoidance: %f\n"
+               "Shark : Position: (%f, %f)\n"
+               "Theta : ",
+               i, world->nb_fish - world->fish_eaten,
+               world->theta_fish->separation, world->theta_fish->alignment,
+               world->theta_fish->cohesion, world->theta_fish->shark_avoidance,
+               world->sharks[i]->pos.x, world->sharks[i]->pos.y);
+    }
     VectorRule_print(world->theta_shark);
     printf("\n");
 

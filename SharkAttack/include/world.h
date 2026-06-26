@@ -31,10 +31,10 @@ typedef struct {
     int fish_eaten;      /**< Nombre de poissons mangés par le requin. */
     RulesSetFish *theta_fish; /**< Ensemble de règles pour les poissons. */
     VectorRule theta_shark;   /**< Ensemble de règles pour le requin. */
-    Trajectory *trajectory; /**< Tableau stockant chaque étape du jeu, stocke la
-                               trajectoire. */
-    float sigma;            /**< Valeur du sigma pour notre tirage aléatoire. */
-    int nb_occurrence;      /**< Nombre d'occurence maximale d'une partie. */
+    Trajectory **trajectory;  /**< Tableau stockant chaque étape du jeu, stocke
+                                la  trajectoire. */
+    float sigma;       /**< Valeur du sigma pour notre tirage aléatoire. */
+    int nb_occurrence; /**< Nombre d'occurence maximale d'une partie. */
 
     bool learn; /**< Nécessaire pour savoir si on lance le monde en mode
                    apprentissage ou non. */
@@ -55,7 +55,7 @@ typedef struct {
  */
 World *World_init(int width, int height, int nb_fish, int nb_colliders,
                   VectorRule theta_shark, float sigma, int nb_occurrence,
-                  bool is_player, bool learn);
+                  bool is_player, bool learn, int nb_sharks);
 
 /**
  * @brief libère un monde et tout ses éléments

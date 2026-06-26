@@ -91,48 +91,62 @@ Gradient Gradient_zero() {
  */
 TrajectoryCalculation Compute_trajectory(VectorRule theta,
                                          Hyperparameters hyperparameters) {
-    float G = 0;
     float GG;
     float mu_x, mu_y;
     VectorRule score_x, score_y;
     Gradient D = Gradient_zero();
 
-    World *world = World_init(WIDTH / 2, HEIGHT / 2, FISH_NB, COLLIDERS_NB,
-                              theta, hyperparameters.sigma,
-                              hyperparameters.nb_occurrence, false, true);
+    int total_length = 0;
+    float total_G;
+
+    World *world =
+        World_init(WIDTH / 2, HEIGHT / 2, FISH_NB, COLLIDERS_NB, theta,
+                   hyperparameters.sigma, hyperparameters.nb_occurrence, false,
+                   true, NB_SHARKS);
 
     for (int i = 0; (world->nb_fish - world->fish_eaten != 0) &&
                     i < hyperparameters.nb_occurrence;
          i++) {
         Game_step(world);
     }
-    Trajectory trajectory = *world->trajectory;
-    // pour afficher la trajectoir : Trajectory_print(&trajectory);
 
-    for (int u = 0; u < trajectory.length; u++) {
-        int t = trajectory.length - 1 - u;
-        StepTrajectory step = trajectory.steps[t];
-        G = step.reward + hyperparameters.gamma * G;
-        GG = pow(hyperparameters.gamma, t) * G;
+    for (int s = 0; s < world->nb_sharks; s++) {
+        float G = 0;
 
-        mu_x = VectorRule_dot_product(theta, step.phi.x);
-        mu_y = VectorRule_dot_product(theta, step.phi.y);
+        Trajectory *trajectory = world->trajectory[s];
+        // pour afficher la trajectoir : Trajectory_print(&trajectory);
+        total_length += trajectory->length;
 
-        score_x = VectorRule_scaled(step.phi.x,
-                                    (1.0f / pow(hyperparameters.sigma, 2)) *
-                                        (step.action.x - mu_x));
-        score_y = VectorRule_scaled(step.phi.y,
-                                    (1.0f / pow(hyperparameters.sigma, 2)) *
-                                        (step.action.y - mu_y));
+        for (int u = 0; u < trajectory->length; u++) {
+            int t = trajectory->length - 1 - u;
+            StepTrajectory step = trajectory->steps[t];
+            G = step.reward + hyperparameters.gamma * G;
+            GG = pow(hyperparameters.gamma, t) * G;
 
-        D.x = VectorRule_add(D.x, VectorRule_scaled(score_x, GG));
-        D.y = VectorRule_add(D.y, VectorRule_scaled(score_y, GG));
+            mu_x = VectorRule_dot_product(theta, step.phi.x);
+            mu_y = VectorRule_dot_product(theta, step.phi.y);
+
+            score_x = VectorRule_scaled(step.phi.x,
+                                        (1.0f / pow(hyperparameters.sigma, 2)) *
+                                            (step.action.x - mu_x));
+            score_y = VectorRule_scaled(step.phi.y,
+                                        (1.0f / pow(hyperparameters.sigma, 2)) *
+                                            (step.action.y - mu_y));
+
+            D.x = VectorRule_add(D.x, VectorRule_scaled(score_x, GG));
+            D.y = VectorRule_add(D.y, VectorRule_scaled(score_y, GG));
+
+            total_G += G;
+        }
     }
 
     World_destroy(world);
 
-    TrajectoryCalculation result_iteration = {D, world->fish_eaten, G,
-                                              trajectory.length};
+    D.x = VectorRule_scaled(D.x, 1.0f / world->nb_sharks);
+    D.y = VectorRule_scaled(D.y, 1.0f / world->nb_sharks);
+
+    TrajectoryCalculation result_iteration = {D, world->fish_eaten, total_G,
+                                              world->trajectory[0]->length};
     return result_iteration;
 }
 

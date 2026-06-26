@@ -344,9 +344,9 @@ void UpdateWorld(World *world, World *tmp_world) {
         Get_shark_perception(world->sharks[s], world, shark_perception);
 
         if (world->learn) {
-            Need_trajectory_growing(world->trajectory);
+            Need_trajectory_growing(world->trajectory[s]);
             step_trajectory =
-                &world->trajectory->steps[world->trajectory->length];
+                &world->trajectory[s]->steps[world->trajectory[s]->length];
 
             shark_action =
                 shark_choose_action(shark_perception, world->theta_shark,
@@ -358,14 +358,14 @@ void UpdateWorld(World *world, World *tmp_world) {
         Shark_apply_action(tmp_world->sharks[s], shark_action, world->width,
                            world->height);
 
-        nb_fish_ate += handle_shark_eat(tmp_world);
+        nb_fish_ate += handle_shark_eat(tmp_world, s);
+
+        if (world->learn) {
+            step_trajectory->reward = Shark_reward(nb_fish_ate);
+            world->trajectory[s]->length++;
+        }
     }
     free(shark_perception);
-
-    if (world->learn) {
-        step_trajectory->reward = Shark_reward(nb_fish_ate);
-        world->trajectory->length++;
-    }
 }
 
 void Game_step(World *world) {
