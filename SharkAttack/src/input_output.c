@@ -1,4 +1,5 @@
 #include "input_output.h"
+#include "config.h"
 
 bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
                  float best_gain, char *filename) {
@@ -33,6 +34,7 @@ bool save_params(VectorRule *theta, Hyperparameters *hyperparams,
     fprintf(file, "back: %f\n", theta->vect[Rules_zone_Back]);
     fprintf(file, "left: %f\n", theta->vect[Rules_zone_Left]);
     fprintf(file, "right: %f\n\n", theta->vect[Rules_zone_Right]);
+    fprintf(file, "closest shark: %f\n\n", theta->vect[Rules_closest_shark]);
 
     // Sauvegarde du gain max
     fprintf(file, "# Best gain with this parameters\n");
