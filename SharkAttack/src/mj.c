@@ -265,25 +265,24 @@ void Get_shark_perception(Shark *shark, World *world,
  * @param world Le monde où ce passe l'action.
  * @return int Le nombre de poisson mangé.
  */
-int handle_shark_eat(World *world) {
-    Vector shark_pos = world->shark->pos;
-    int has_eaten = 0;
+int handle_shark_eat(World *world, int shark_idx) {
+    Shark *shark = world->sharks[shark_idx];
+    Vector shark_pos = shark->pos;
+    int eaten = 0;
 
     for (int i = 0; i < world->nb_fish; i++) {
-        if (!world->fishes[i].is_alive)
+        Fish *fish = &world->fishes[i];
+        if (!fish->is_alive)
             continue;
 
-        Fish *fish = &world->fishes[i];
         float dist = Vector_length(Vector_sub(fish->position, shark_pos));
-
         if (dist < SHARK_ATTACK_RANGE) {
-
             fish->is_alive = false;
             world->fish_eaten++;
-            has_eaten += 1;
+            eaten++;
         }
     }
-    return has_eaten;
+    return eaten;
 }
 
 void UpdateWorld(World *world, World *tmp_world) {
@@ -312,31 +311,35 @@ void UpdateWorld(World *world, World *tmp_world) {
     FishPerception_destroy(perception);
 
     // Copie de l'état actuel
-    *tmp_world->shark = *world->shark;
+    *tmp_world->sharks = *world->sharks;
+    int nb_fish_ate = 0;
 
     SharkPerception *shark_perception = malloc(sizeof(SharkPerception));
     if (!shark_perception)
         return;
 
-    Get_shark_perception(world->shark, world, shark_perception);
+    for (int s = 0; s < world->nb_sharks; s++) {
+        Get_shark_perception(world->sharks[s], world, shark_perception);
 
-    if (world->learn) {
-        Need_trajectory_growing(world->trajectory);
-        step_trajectory = &world->trajectory->steps[world->trajectory->length];
+        if (world->learn) {
+            Need_trajectory_growing(world->trajectory);
+            step_trajectory =
+                &world->trajectory->steps[world->trajectory->length];
 
-        shark_action = shark_choose_action(shark_perception, world->theta_shark,
-                                           step_trajectory, world->sigma);
-    } else {
-        shark_action = shark_choose_action(shark_perception, world->theta_shark,
-                                           NULL, world->sigma);
+            shark_action =
+                shark_choose_action(shark_perception, world->theta_shark,
+                                    step_trajectory, world->sigma);
+        } else {
+            shark_action = shark_choose_action(
+                shark_perception, world->theta_shark, NULL, world->sigma);
+        }
+        Shark_apply_action(tmp_world->sharks[s], shark_action, world->width,
+                           world->height);
+
+        nb_fish_ate += handle_shark_eat(tmp_world);
     }
-
     free(shark_perception);
 
-    Shark_apply_action(tmp_world->shark, shark_action, world->width,
-                       world->height);
-
-    int nb_fish_ate = handle_shark_eat(tmp_world);
     if (world->learn) {
         step_trajectory->reward = Shark_reward(nb_fish_ate);
         world->trajectory->length++;
