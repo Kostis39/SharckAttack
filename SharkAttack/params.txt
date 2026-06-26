@@ -1,7 +1,7 @@
 # Hyperparameters
 gamma 0.999800
 sigma 3.000000
-alpha 0.000500
+alpha 0.00100
 nb_gen 10000
 nb_game 10
 nb_occurrence 5000

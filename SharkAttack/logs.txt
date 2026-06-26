@@ -1,0 +1,48 @@
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.001000
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.000000
+alignment: 0.000000
+pursuit: 0.000000
+front: 0.000000
+back: 0.000000
+left: 0.000000
+right: 0.000000
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 0.000000
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# Génération num: 10 
+Theta
+center: 0.037298
+alignment: 0.028193
+pursuit: 0.095627
+front: 0.008864
+back: 0.007758
+left: -0.009816
+right: 0.034870
+
+closest shark: 52.371895
+
+Moyenne reward: 6.000000
+Moyenne gain: 5.317292
+Moyenne iteration: 5000.000000
+Δθ après 10 générations:           (-0.000096, 0.001679, -0.001180, -0.000067, 0.000408, -0.001631, 0.001678, -1.747231)
+Moyenne de Δθ de chaque génération: (-0.000010, 0.000168, -0.000118, -0.000007, 0.000041, -0.000163, 0.000168, -0.174723)
+
