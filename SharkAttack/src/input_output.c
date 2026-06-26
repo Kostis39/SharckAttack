@@ -318,8 +318,8 @@ bool init_logs(char *filename_params, char *filename_logs) {
         return false;
     }
 
-    Hyperparameters hyperparams;
-    VectorRule theta_initial;
+    Hyperparameters hyperparams = {0};
+    VectorRule theta_initial = VectorRule_init();
     float best_gain_initial = 0.0f;
 
     if (!load_params(&theta_initial, &hyperparams, filename_params)) {
