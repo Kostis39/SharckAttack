@@ -1,0 +1,9 @@
+<map id="Rules_alignment_shark" name="Rules_alignment_shark">
+<area shape="rect" id="node1" title="règle d&#39;alignement du requin sur la direction moyenne des poissons" alt="" coords="5,81,180,108"/>
+<area shape="rect" id="node2" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="250,5,341,32"/>
+<area shape="rect" id="node3" href="$vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="240,56,351,83"/>
+<area shape="rect" id="node4" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="228,107,363,133"/>
+<area shape="rect" id="node7" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="249,157,342,184"/>
+<area shape="rect" id="node5" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="411,81,521,108"/>
+<area shape="rect" id="node6" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="414,132,518,159"/>
+</map>

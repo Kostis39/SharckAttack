@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sharkattack:  Fichier source de include/shark.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Sharkattack the game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('shark_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">shark.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="shark_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SHARK_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SHARK_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structShark.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structShark.html#ae19a907bc741ffa358691997cd93774b">   14</a></span>&#160;    <a class="code" href="structVector.html">Vector</a> <a class="code" href="structShark.html#ae19a907bc741ffa358691997cd93774b">pos</a>;      </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structShark.html#a92ce6155d43ad196be88b94ad73b7fe4">   15</a></span>&#160;    <a class="code" href="structVector.html">Vector</a> <a class="code" href="structShark.html#a92ce6155d43ad196be88b94ad73b7fe4">velocity</a>; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structShark.html#a89f6625bce8198f992781d439a2f4402">   16</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structShark.html#a89f6625bce8198f992781d439a2f4402">radius_vision</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structShark.html#a4246b1960baa1c48516f9e21ccb31bba">   18</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structShark.html#a4246b1960baa1c48516f9e21ccb31bba">player</a>;         </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} <a class="code" href="structShark.html">Shark</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="structShark.html">Shark</a> *<a class="code" href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667">Shark_create</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> is_player);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">int</span> <a class="code" href="shark_8h.html#a91dd948519e592c84ab141cfac0e0def">Shark_copy</a>(<a class="code" href="structShark.html">Shark</a> *shark_dest, <a class="code" href="structShark.html">Shark</a> *shark_src);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa">Shark_destroy</a>(<a class="code" href="structShark.html">Shark</a> *shark);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95">Is_player</a>(<a class="code" href="structShark.html">Shark</a> *shark);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> <a class="code" href="shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b">Shark_apply_action</a>(<a class="code" href="structShark.html">Shark</a> *shark, <a class="code" href="structVector.html">Vector</a> action, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
+<div class="ttc" id="ashark_8h_html_a2cbb915fa07293da619455bc73c90e95"><div class="ttname"><a href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95">Is_player</a></div><div class="ttdeci">bool Is_player(Shark *shark)</div><div class="ttdoc">vérifie si le requin est contrôlé par le joueur</div><div class="ttdef"><b>Definition:</b> shark.c:29</div></div>
+<div class="ttc" id="ashark_8h_html_a4055f670b1b1fcd10cecd89b23d223aa"><div class="ttname"><a href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa">Shark_destroy</a></div><div class="ttdeci">void Shark_destroy(Shark *shark)</div><div class="ttdoc">libère la mémoire d'un requin</div><div class="ttdef"><b>Definition:</b> shark.c:24</div></div>
+<div class="ttc" id="ashark_8h_html_a90050e6cf481a4c40f50af2ec3fa645b"><div class="ttname"><a href="shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b">Shark_apply_action</a></div><div class="ttdeci">void Shark_apply_action(Shark *shark, Vector action, int width, int height)</div><div class="ttdoc">applique une action au requin et met à jour sa position</div><div class="ttdef"><b>Definition:</b> shark.c:31</div></div>
+<div class="ttc" id="ashark_8h_html_a91dd948519e592c84ab141cfac0e0def"><div class="ttname"><a href="shark_8h.html#a91dd948519e592c84ab141cfac0e0def">Shark_copy</a></div><div class="ttdeci">int Shark_copy(Shark *shark_dest, Shark *shark_src)</div><div class="ttdoc">copie les données d'un requin source vers un requin destination</div><div class="ttdef"><b>Definition:</b> shark.c:15</div></div>
+<div class="ttc" id="ashark_8h_html_abe943d2553c14ccf4c9b04d93303d667"><div class="ttname"><a href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667">Shark_create</a></div><div class="ttdeci">Shark * Shark_create(int width, int height, bool is_player)</div><div class="ttdoc">crée un requin avec une position initiale et un mode joueur ou bot</div><div class="ttdef"><b>Definition:</b> shark.c:4</div></div>
+<div class="ttc" id="astructShark_html"><div class="ttname"><a href="structShark.html">Shark</a></div><div class="ttdoc">Structure représentant le requin dans le jeu.</div><div class="ttdef"><b>Definition:</b> shark.h:13</div></div>
+<div class="ttc" id="astructShark_html_a4246b1960baa1c48516f9e21ccb31bba"><div class="ttname"><a href="structShark.html#a4246b1960baa1c48516f9e21ccb31bba">Shark::player</a></div><div class="ttdeci">bool player</div><div class="ttdef"><b>Definition:</b> shark.h:18</div></div>
+<div class="ttc" id="astructShark_html_a89f6625bce8198f992781d439a2f4402"><div class="ttname"><a href="structShark.html#a89f6625bce8198f992781d439a2f4402">Shark::radius_vision</a></div><div class="ttdeci">float radius_vision</div><div class="ttdef"><b>Definition:</b> shark.h:16</div></div>
+<div class="ttc" id="astructShark_html_a92ce6155d43ad196be88b94ad73b7fe4"><div class="ttname"><a href="structShark.html#a92ce6155d43ad196be88b94ad73b7fe4">Shark::velocity</a></div><div class="ttdeci">Vector velocity</div><div class="ttdef"><b>Definition:</b> shark.h:15</div></div>
+<div class="ttc" id="astructShark_html_ae19a907bc741ffa358691997cd93774b"><div class="ttname"><a href="structShark.html#ae19a907bc741ffa358691997cd93774b">Shark::pos</a></div><div class="ttdeci">Vector pos</div><div class="ttdef"><b>Definition:</b> shark.h:14</div></div>
+<div class="ttc" id="astructVector_html"><div class="ttname"><a href="structVector.html">Vector</a></div><div class="ttdoc">Structure représentant un vecteur 2D.</div><div class="ttdef"><b>Definition:</b> vector.h:12</div></div>
+<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="shark_8h.html">shark.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<map id="Draw_score" name="Draw_score">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,104,83"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8h.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="177,5,279,32"/>
+<area shape="rect" id="node3" href="$sdl__draw__tools_8h.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="182,56,274,83"/>
+<area shape="rect" id="node4" href="$sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="152,107,304,133"/>
+<area shape="rect" id="node5" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="352,107,411,133"/>
+</map>

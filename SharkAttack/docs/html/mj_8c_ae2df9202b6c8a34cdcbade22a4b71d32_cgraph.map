@@ -1,0 +1,8 @@
+<map id="Shark_get_fish_zone" name="Shark_get_fish_zone">
+<area shape="rect" id="node1" title="détermine dans quelle zone directionnelle se trouve un poisson par rapport à l&#39;orientation du requin" alt="" coords="5,81,160,108"/>
+<area shape="rect" id="node2" href="$vector_8h.html#a2e464905dfe98674f7122719e724b339" title="Normalise un vecteur avec une valeur par défaut." alt="" coords="208,31,336,57"/>
+<area shape="rect" id="node5" href="$vector_8h.html#ae698e1348bc99c725adf924ac0feb4a4" title="calcule le produit scalaire de deux vecteurs" alt="" coords="227,81,317,108"/>
+<area shape="rect" id="node6" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="225,132,319,159"/>
+<area shape="rect" id="node3" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="384,5,495,32"/>
+<area shape="rect" id="node4" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="387,56,491,83"/>
+</map>

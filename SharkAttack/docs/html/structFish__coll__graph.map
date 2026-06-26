@@ -1,0 +1,4 @@
+<map id="Fish" name="Fish">
+<area shape="rect" id="node1" title="Structure représentant un poisson dans le jeu." alt="" coords="13,109,61,136"/>
+<area shape="rect" id="node2" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="5,5,68,32"/>
+</map>

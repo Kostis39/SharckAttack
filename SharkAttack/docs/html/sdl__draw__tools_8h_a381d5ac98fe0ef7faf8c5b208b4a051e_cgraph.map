@@ -1,0 +1,4 @@
+<map id="Draw_bubbles" name="Draw_bubbles">
+<area shape="rect" id="node1" title="dessine des bulles" alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="168,5,305,32"/>
+</map>

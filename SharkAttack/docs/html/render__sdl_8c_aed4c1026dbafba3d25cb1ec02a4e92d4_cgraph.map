@@ -1,0 +1,11 @@
+<map id="Clear_sdl_display" name="Clear_sdl_display">
+<area shape="rect" id="node1" title="efface l ecran et dessine le fond marin" alt="" coords="5,107,141,133"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8h.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="208,5,323,32"/>
+<area shape="rect" id="node4" href="$sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="193,56,338,83"/>
+<area shape="rect" id="node5" href="$sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="189,107,341,133"/>
+<area shape="rect" id="node7" href="$sdl__draw__tools_8h.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="199,208,332,235"/>
+<area shape="rect" id="node9" href="$sdl__draw__tools_8h.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="216,157,315,184"/>
+<area shape="rect" id="node3" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="393,5,531,32"/>
+<area shape="rect" id="node6" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="433,157,491,184"/>
+<area shape="rect" id="node8" href="$sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="389,208,535,235"/>
+</map>

@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sharkattack: Référence du fichier src/game.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Sharkattack the game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('game_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier game.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fish_8h_source.html">fish.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mj_8h_source.html">mj.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__sdl_8h_source.html">render_sdl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="shark_8h_source.html">shark.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sound_8h_source.html">sound.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="world_8h_source.html">world.h</a>&quot;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de game.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8c__incl.png" border="0" usemap="#asrc_2game_8c" alt=""/></div>
+<map name="asrc_2game_8c" id="asrc_2game_8c">
+<area shape="rect" title=" " alt="" coords="1061,5,1155,32"/>
+<area shape="rect" href="game_8h.html" title=" " alt="" coords="363,80,434,107"/>
+<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="274,155,377,181"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1259,528,1322,555"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="1203,677,1277,704"/>
+<area shape="rect" title=" " alt="" coords="1449,603,1519,629"/>
+<area shape="rect" href="fish_8h.html" title=" " alt="" coords="606,453,663,480"/>
+<area shape="rect" href="shark_8h.html" title=" " alt="" coords="1449,453,1519,480"/>
+<area shape="rect" href="sound_8h.html" title=" " alt="" coords="38,229,111,256"/>
+<area shape="rect" href="world_8h.html" title=" " alt="" coords="690,229,761,256"/>
+<area shape="rect" title=" " alt="" coords="1798,379,1871,405"/>
+<area shape="rect" href="mj_8h.html" title=" " alt="" coords="1083,155,1133,181"/>
+<area shape="rect" title=" " alt="" coords="136,229,232,256"/>
+<area shape="rect" title=" " alt="" coords="683,528,765,555"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="358,379,439,405"/>
+<area shape="rect" title=" " alt="" coords="459,453,530,480"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="917,603,992,629"/>
+<area shape="rect" title=" " alt="" coords="921,677,989,704"/>
+<area shape="rect" title=" " alt="" coords="508,677,575,704"/>
+<area shape="rect" title=" " alt="" coords="5,304,144,331"/>
+<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1218,304,1310,331"/>
+<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="1089,528,1183,555"/>
+<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="731,379,847,405"/>
+<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="841,453,967,480"/>
+<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="973,379,1112,405"/>
+<area shape="rect" title=" " alt="" coords="1336,379,1411,405"/>
+<area shape="rect" title=" " alt="" coords="1435,379,1519,405"/>
+<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="1045,603,1152,629"/>
+<area shape="rect" href="fish__controller_8h.html" title=" " alt="" coords="1136,379,1261,405"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a3b75c765bb05284d1f9270a979fc0a2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d">Game_init</a> (<a class="el" href="structGame.html">Game</a> *game, int width, int height, int nb_fish, int nb_collider, int seed_for_worlds)</td></tr>
+<tr class="memdesc:a3b75c765bb05284d1f9270a979fc0a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le jeu (fenêtre, mondes, paramètres)  <a href="game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3b75c765bb05284d1f9270a979fc0a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28358f6ca80424c6b25fe847ab88b168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a28358f6ca80424c6b25fe847ab88b168">Game_pause</a> (<a class="el" href="structGame.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a28358f6ca80424c6b25fe847ab88b168"><td class="mdescLeft">&#160;</td><td class="mdescRight">inverse l'état de pause du jeu  <a href="game_8c.html#a28358f6ca80424c6b25fe847ab88b168">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a28358f6ca80424c6b25fe847ab88b168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c0471dd27fbbcaec9370c0dbad9e6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a83c0471dd27fbbcaec9370c0dbad9e6d">Game_run_SDL</a> (bool use_bench, int seed_for_worlds)</td></tr>
+<tr class="memdesc:a83c0471dd27fbbcaec9370c0dbad9e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">lance la boucle de jeu en mode graphique (SDL)  <a href="game_8c.html#a83c0471dd27fbbcaec9370c0dbad9e6d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a83c0471dd27fbbcaec9370c0dbad9e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557884cc21f4886a0523bd645481b95e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a557884cc21f4886a0523bd645481b95e">Game_run_terminal</a> ()</td></tr>
+<tr class="memdesc:a557884cc21f4886a0523bd645481b95e"><td class="mdescLeft">&#160;</td><td class="mdescRight">lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la console  <a href="game_8c.html#a557884cc21f4886a0523bd645481b95e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a557884cc21f4886a0523bd645481b95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074f62ca71d406dfeeb16d2d02b89e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f">Game_destroy</a> (<a class="el" href="structGame.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a074f62ca71d406dfeeb16d2d02b89e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère les ressources allouées par le jeu  <a href="game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a074f62ca71d406dfeeb16d2d02b89e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a074f62ca71d406dfeeb16d2d02b89e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074f62ca71d406dfeeb16d2d02b89e8f">&#9670;&nbsp;</a></span>Game_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>libère les ressources allouées par le jeu </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>pointeur vers la structure <a class="el" href="structGame.html" title="Structure représentant l&#39;état du jeu.">Game</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8c_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph.png" border="0" usemap="#agame_8c_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph" alt=""/></div>
+<map name="agame_8c_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph" id="agame_8c_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph">
+<area shape="rect" title="libère les ressources allouées par le jeu" alt="" coords="5,81,123,108"/>
+<area shape="rect" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="203,5,293,32"/>
+<area shape="rect" href="render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="171,56,325,83"/>
+<area shape="rect" href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="171,107,325,133"/>
+<area shape="rect" href="world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="191,157,305,184"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="373,56,549,83"/>
+<area shape="rect" href="fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="389,107,534,133"/>
+<area shape="rect" href="theta__set_8h.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="381,157,542,184"/>
+<area shape="rect" href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="404,208,519,235"/>
+<area shape="rect" href="reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="390,259,533,285"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b75c765bb05284d1f9270a979fc0a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b75c765bb05284d1f9270a979fc0a2d">&#9670;&nbsp;</a></span>Game_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_fish</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_collider</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seed_for_worlds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initialise le jeu (fenêtre, mondes, paramètres) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>pointeur vers la structure <a class="el" href="structGame.html" title="Structure représentant l&#39;état du jeu.">Game</a> </td></tr>
+    <tr><td class="paramname">width</td><td>largeur de la fenêtre </td></tr>
+    <tr><td class="paramname">height</td><td>hauteur de la fenêtre </td></tr>
+    <tr><td class="paramname">nb_fish</td><td>nombre initial de poissons </td></tr>
+    <tr><td class="paramname">nb_collider</td><td>nombre d'obstacles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si l'initialisation a réussi, false sinon </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8c_a3b75c765bb05284d1f9270a979fc0a2d_cgraph.png" border="0" usemap="#agame_8c_a3b75c765bb05284d1f9270a979fc0a2d_cgraph" alt=""/></div>
+<map name="agame_8c_a3b75c765bb05284d1f9270a979fc0a2d_cgraph" id="agame_8c_a3b75c765bb05284d1f9270a979fc0a2d_cgraph">
+<area shape="rect" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="5,259,95,285"/>
+<area shape="rect" href="sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="176,5,263,32"/>
+<area shape="rect" href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="173,56,266,83"/>
+<area shape="rect" href="sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="150,107,289,133"/>
+<area shape="rect" href="sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="150,157,289,184"/>
+<area shape="rect" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="174,208,265,235"/>
+<area shape="rect" href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="143,259,296,285"/>
+<area shape="rect" href="render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="158,309,281,336"/>
+<area shape="rect" href="utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="179,360,260,387"/>
+<area shape="rect" href="render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="152,411,287,437"/>
+<area shape="rect" href="theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="157,461,281,488"/>
+<area shape="rect" href="world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="176,600,263,627"/>
+<area shape="rect" href="input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="387,411,478,437"/>
+<area shape="rect" href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="368,461,497,488"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="344,512,521,539"/>
+<area shape="rect" href="fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="356,563,509,605"/>
+<area shape="rect" href="theta__set_8h.html#aa254194c894b56f06eaff11768901deb" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="366,629,499,656"/>
+<area shape="rect" href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="379,680,486,707"/>
+<area shape="rect" href="reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50" title="initialise une trajectoire vide" alt="" coords="375,731,490,757"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="587,440,734,467"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="800,541,908,568"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="615,541,706,568"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="956,541,1036,568"/>
+<area shape="rect" href="fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="569,592,752,619"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a28358f6ca80424c6b25fe847ab88b168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28358f6ca80424c6b25fe847ab88b168">&#9670;&nbsp;</a></span>Game_pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game_pause </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>inverse l'état de pause du jeu </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>pointeur vers la structure <a class="el" href="structGame.html" title="Structure représentant l&#39;état du jeu.">Game</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a83c0471dd27fbbcaec9370c0dbad9e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83c0471dd27fbbcaec9370c0dbad9e6d">&#9670;&nbsp;</a></span>Game_run_SDL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game_run_SDL </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_bench</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seed_for_worlds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>lance la boucle de jeu en mode graphique (SDL) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">use_bench</td><td>true pour exécuter un benchmark </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8c_a83c0471dd27fbbcaec9370c0dbad9e6d_cgraph.png" border="0" usemap="#agame_8c_a83c0471dd27fbbcaec9370c0dbad9e6d_cgraph" alt=""/></div>
+<map name="agame_8c_a83c0471dd27fbbcaec9370c0dbad9e6d_cgraph" id="agame_8c_a83c0471dd27fbbcaec9370c0dbad9e6d_cgraph">
+<area shape="rect" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="5,537,127,564"/>
+<area shape="rect" href="sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="176,259,323,285"/>
+<area shape="rect" href="game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="191,537,308,564"/>
+<area shape="rect" href="game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="205,309,294,336"/>
+<area shape="rect" href="mj_8h.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="201,1031,297,1057"/>
+<area shape="rect" href="render__sdl_8h.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="175,740,324,767"/>
+<area shape="rect" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="412,512,503,539"/>
+<area shape="rect" href="render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="380,613,535,640"/>
+<area shape="rect" href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="381,461,534,488"/>
+<area shape="rect" href="world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="400,563,515,589"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="595,727,771,753"/>
+<area shape="rect" href="fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="611,524,756,551"/>
+<area shape="rect" href="theta__set_8h.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="603,575,764,601"/>
+<area shape="rect" href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="626,625,741,652"/>
+<area shape="rect" href="reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="612,676,755,703"/>
+<area shape="rect" href="sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="414,5,501,32"/>
+<area shape="rect" href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="411,56,504,83"/>
+<area shape="rect" href="sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="388,107,527,133"/>
+<area shape="rect" href="sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="388,157,527,184"/>
+<area shape="rect" href="render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="396,208,519,235"/>
+<area shape="rect" href="utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="417,259,498,285"/>
+<area shape="rect" href="render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="390,309,525,336"/>
+<area shape="rect" href="theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="395,360,519,387"/>
+<area shape="rect" href="world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="414,411,501,437"/>
+<area shape="rect" href="input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="638,204,729,231"/>
+<area shape="rect" href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="619,153,748,180"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="595,473,772,500"/>
+<area shape="rect" href="fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="607,255,760,297"/>
+<area shape="rect" href="theta__set_8h.html#aa254194c894b56f06eaff11768901deb" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="617,321,750,348"/>
+<area shape="rect" href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="630,372,737,399"/>
+<area shape="rect" href="reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50" title="initialise une trajectoire vide" alt="" coords="626,423,741,449"/>
+<area shape="rect" href="mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="404,1056,511,1083"/>
+<area shape="rect" href="world_8h.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="387,1005,527,1032"/>
+<area shape="rect" href="world_8h.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire." alt="" coords="389,1107,525,1133"/>
+<area shape="rect" href="fish_8h.html#a264a6701ce107ab411de095019998799" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="616,1259,751,1285"/>
+<area shape="rect" href="fish__controller_8h.html#a9c3a75f267eda127e0417e8c34de6233" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="611,1309,756,1336"/>
+<area shape="rect" href="mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="597,904,770,931"/>
+<area shape="rect" href="mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="609,955,758,981"/>
+<area shape="rect" href="mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="601,1005,765,1032"/>
+<area shape="rect" href="mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="615,1056,752,1083"/>
+<area shape="rect" href="reinforce_8h.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="591,1107,776,1133"/>
+<area shape="rect" href="shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="609,1157,758,1184"/>
+<area shape="rect" href="shark__controller_8h.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="604,853,763,880"/>
+<area shape="rect" href="mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="628,1208,739,1235"/>
+<area shape="rect" href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="824,828,905,855"/>
+<area shape="rect" href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="411,867,504,893"/>
+<area shape="rect" href="sdl__draw__tools_8h.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="372,816,543,843"/>
+<area shape="rect" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="384,664,531,691"/>
+<area shape="rect" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="379,715,535,741"/>
+<area shape="rect" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="408,765,507,792"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a557884cc21f4886a0523bd645481b95e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557884cc21f4886a0523bd645481b95e">&#9670;&nbsp;</a></span>Game_run_terminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game_run_terminal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la console </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="game_8c.html">game.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

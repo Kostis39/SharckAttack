@@ -1,0 +1,24 @@
+<map id="shark_choose_action" name="shark_choose_action">
+<area shape="rect" id="node1" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="5,385,164,412"/>
+<area shape="rect" id="node2" href="$utils_8h.html#aad830dd484c2d83732727afff1791d5a" title="Fonction permettant de tirer une variable aléatoire selon une loi gaussienne." alt="" coords="221,5,379,32"/>
+<area shape="rect" id="node5" href="$shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="259,56,341,83"/>
+<area shape="rect" id="node6" href="$vector_8h.html#a2e464905dfe98674f7122719e724b339" title="Normalise un vecteur avec une valeur par défaut." alt="" coords="439,259,567,285"/>
+<area shape="rect" id="node9" href="$shark__controller_8c.html#a9c487939ad9b1da288a927a6c1bc79c0" title="règle d&#39;alignement du requin sur la direction moyenne des poissons" alt="" coords="213,563,387,589"/>
+<area shape="rect" id="node10" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="458,461,549,488"/>
+<area shape="rect" id="node11" href="$vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="448,537,559,564"/>
+<area shape="rect" id="node13" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="457,360,550,387"/>
+<area shape="rect" id="node14" href="$shark__controller_8c.html#abca1a096aaf3fafb36b4f4c463450023" title="vecteur directionnel vers le centre de masse des poissons dans la zone arrière" alt="" coords="252,360,348,387"/>
+<area shape="rect" id="node15" href="$vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="451,309,555,336"/>
+<area shape="rect" id="node16" href="$shark__controller_8c.html#a5c102d0265c0eaa863cea10366e6131b" title="règle d&#39;attraction vers le centre de masse des poissons visibles" alt="" coords="247,512,353,539"/>
+<area shape="rect" id="node17" href="$shark__controller_8c.html#ae233d8f810b687a62cc8297e46a2c993" title="vecteur directionnel vers le centre de masse des poissons dans la zone avant" alt="" coords="252,411,348,437"/>
+<area shape="rect" id="node18" href="$shark__controller_8c.html#a94be5fa63fcac86740bbaf120e30ff97" title="vecteur directionnel vers le centre de masse des poissons dans la zone gauche" alt="" coords="257,259,343,285"/>
+<area shape="rect" id="node19" href="$shark__controller_8c.html#ad3dadd4360db2e1da97aa0a1c5f6e089" title="règle de poursuite vers le poisson la plus proche" alt="" coords="245,461,355,488"/>
+<area shape="rect" id="node20" href="$shark__controller_8c.html#ab7544a3238867a49bcbb522572636667" title="vecteur directionnel vers le centre de masse des poissons dans la zone droite" alt="" coords="253,309,347,336"/>
+<area shape="rect" id="node21" href="$theta__set_8h.html#a39d61603bd5ed4c86a5ac64b63827aab" title="ajoute un vecteur à une règle phi du requin" alt="" coords="221,715,379,741"/>
+<area shape="rect" id="node22" href="$vector__rule_8h.html#a7ba6a93f13cc0e244b559b961d9d99d5" title="Calcule le produit scalaire entre deux VectorRule." alt="" coords="212,765,388,792"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="449,5,557,32"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="634,5,714,32"/>
+<area shape="rect" id="node7" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="619,385,729,412"/>
+<area shape="rect" id="node8" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="622,309,726,336"/>
+<area shape="rect" id="node12" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="436,411,571,437"/>
+</map>

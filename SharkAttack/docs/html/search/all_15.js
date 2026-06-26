@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['zone_5favg_5fvelocity_1268',['zone_avg_velocity',['../structSharkPerception.html#a6eb6fcbb387265e5e4de79eadd6f622b',1,'SharkPerception']]],
+  ['zone_5fcenter_5fof_5fmass_1269',['zone_center_of_mass',['../structSharkPerception.html#a39566a5206a6bd06b9cf79bb0e22cf67',1,'SharkPerception']]],
+  ['zone_5fcount_1270',['zone_count',['../structSharkPerception.html#af516144f90c60cb9b5af54a48f3c7e48',1,'SharkPerception']]],
+  ['zone_5fhas_5fprey_5fvisible_1271',['zone_has_prey_visible',['../structSharkPerception.html#a3c3aee98fddccac567c6777d9e18e9b1',1,'SharkPerception']]],
+  ['zonedirection_1272',['ZoneDirection',['../shark__controller_8h.html#a1f861254cb2999780a88b33c853d68d2',1,'shark_controller.h']]]
+];

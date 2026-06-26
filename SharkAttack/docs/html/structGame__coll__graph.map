@@ -1,0 +1,15 @@
+<map id="Game" name="Game">
+<area shape="rect" id="node1" title="Structure représentant l&#39;état du jeu." alt="" coords="209,508,270,535"/>
+<area shape="rect" id="node2" href="$structAudioManager.html" title=" " alt="" coords="51,404,167,431"/>
+<area shape="rect" id="node3" href="$structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="191,404,287,431"/>
+<area shape="rect" id="node4" href="$structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="311,404,370,431"/>
+<area shape="rect" id="node5" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,32"/>
+<area shape="rect" id="node11" href="$structSharkPhi.html" title=" " alt="" coords="76,109,155,136"/>
+<area shape="rect" id="node6" href="$structCollider.html" title=" " alt="" coords="251,264,323,291"/>
+<area shape="rect" id="node7" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="319,109,381,136"/>
+<area shape="rect" id="node8" href="$structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="375,264,434,291"/>
+<area shape="rect" id="node10" href="$structStepTrajectory.html" title=" " alt="" coords="135,213,250,240"/>
+<area shape="rect" id="node12" href="$structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="467,213,515,240"/>
+<area shape="rect" id="node9" href="$structTrajectory.html" title=" " alt="" coords="151,315,237,341"/>
+<area shape="rect" id="node13" href="$structRulesSetFish.html" title=" " alt="" coords="552,315,657,341"/>
+</map>

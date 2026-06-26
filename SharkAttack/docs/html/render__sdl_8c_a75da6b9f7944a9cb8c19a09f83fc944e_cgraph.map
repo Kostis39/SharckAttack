@@ -1,0 +1,4 @@
+<map id="Draw_result_overlay" name="Draw_result_overlay">
+<area shape="rect" id="node1" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="209,5,347,32"/>
+</map>

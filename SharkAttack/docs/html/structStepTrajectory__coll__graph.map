@@ -1,0 +1,6 @@
+<map id="StepTrajectory" name="StepTrajectory">
+<area shape="rect" id="node1" title=" " alt="" coords="22,199,137,225"/>
+<area shape="rect" id="node2" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="5,109,68,136"/>
+<area shape="rect" id="node3" href="$structSharkPhi.html" title=" " alt="" coords="92,109,171,136"/>
+<area shape="rect" id="node4" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="85,5,177,32"/>
+</map>

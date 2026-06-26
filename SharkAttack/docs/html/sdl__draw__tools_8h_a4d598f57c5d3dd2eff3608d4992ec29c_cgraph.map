@@ -1,0 +1,4 @@
+<map id="Draw_wave" name="Draw_wave">
+<area shape="rect" id="node1" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="152,5,211,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="FishPerception" name="FishPerception">
+<area shape="rect" id="node1" title="Structure représentant la perception qu&#39;a un poisson du monde." alt="" coords="126,245,244,272"/>
+<area shape="rect" id="node2" href="$structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="156,133,214,159"/>
+<area shape="rect" id="node3" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="147,5,210,32"/>
+<area shape="rect" id="node4" href="$structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="238,133,286,159"/>
+</map>

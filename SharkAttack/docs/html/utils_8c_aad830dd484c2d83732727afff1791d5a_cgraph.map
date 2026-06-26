@@ -1,0 +1,5 @@
+<map id="box_muller_standard" name="box_muller_standard">
+<area shape="rect" id="node1" title="Fonction permettant de tirer une variable aléatoire selon une loi gaussienne." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="212,5,320,32"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="368,5,448,32"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="Game_destroy" name="Game_destroy">
+<area shape="rect" id="node1" title="libère les ressources allouées par le jeu" alt="" coords="5,81,123,108"/>
+<area shape="rect" id="node2" href="$sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="203,5,293,32"/>
+<area shape="rect" id="node3" href="$render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="171,56,325,83"/>
+<area shape="rect" id="node4" href="$render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="171,107,325,133"/>
+<area shape="rect" id="node5" href="$world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="191,157,305,184"/>
+<area shape="rect" id="node6" href="$collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="373,56,549,83"/>
+<area shape="rect" id="node7" href="$fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="389,107,534,133"/>
+<area shape="rect" id="node8" href="$theta__set_8h.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="381,157,542,184"/>
+<area shape="rect" id="node9" href="$shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="404,208,519,235"/>
+<area shape="rect" id="node10" href="$reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="390,259,533,285"/>
+</map>

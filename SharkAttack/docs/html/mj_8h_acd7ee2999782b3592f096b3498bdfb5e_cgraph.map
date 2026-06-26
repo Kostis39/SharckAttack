@@ -1,0 +1,50 @@
+<map id="UpdateWorld" name="UpdateWorld">
+<area shape="rect" id="node1" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="5,897,112,923"/>
+<area shape="rect" id="node2" href="$fish_8h.html#a264a6701ce107ab411de095019998799" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="419,871,553,898"/>
+<area shape="rect" id="node9" href="$fish__controller_8h.html#a9c3a75f267eda127e0417e8c34de6233" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="180,1479,325,1506"/>
+<area shape="rect" id="node17" href="$mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="166,770,339,797"/>
+<area shape="rect" id="node18" href="$mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="178,339,327,366"/>
+<area shape="rect" id="node27" href="$mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="171,669,335,695"/>
+<area shape="rect" id="node31" href="$mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="417,618,555,645"/>
+<area shape="rect" id="node32" href="$reinforce_8h.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="160,973,345,999"/>
+<area shape="rect" id="node33" href="$shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="411,922,561,949"/>
+<area shape="rect" id="node34" href="$shark__controller_8h.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="173,1277,332,1303"/>
+<area shape="rect" id="node48" href="$mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="197,1530,308,1557"/>
+<area shape="rect" id="node3" href="$vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="647,289,741,315"/>
+<area shape="rect" id="node4" href="$vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="639,922,749,949"/>
+<area shape="rect" id="node5" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="627,1023,761,1050"/>
+<area shape="rect" id="node8" href="$vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="642,1226,746,1253"/>
+<area shape="rect" id="node6" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="809,415,920,442"/>
+<area shape="rect" id="node7" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="813,745,917,771"/>
+<area shape="rect" id="node10" href="$fish__controller_8c.html#af42ccf9e03e3ef021ad9754f1eec220e" title="règle d&#39;alignement, retourne la direction moyenne des voisins" alt="" coords="421,821,551,847"/>
+<area shape="rect" id="node12" href="$fish__controller_8c.html#a16eb4465b6c8670bcf6d93bcbb651fb6" title="évitement du requin, fuit si le requin est trop proche." alt="" coords="414,1631,558,1658"/>
+<area shape="rect" id="node13" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="649,1555,739,1582"/>
+<area shape="rect" id="node14" href="$fish__controller_8c.html#a7b32c7a4c3c4696ec88bdf861c0e1098" title="répulsion des bords, empêche le poisson de sortir du monde" alt="" coords="399,1986,573,2013"/>
+<area shape="rect" id="node15" href="$fish__controller_8c.html#a9cbd98c6406bd67d2296c4878e625eaf" title="règle de cohésion, attire vers le centre de masse du groupe" alt="" coords="425,770,547,797"/>
+<area shape="rect" id="node16" href="$fish__controller_8c.html#af97ce461e75310584c00c92a7e0cb1a3" title="règle de séparation, retourne le vecteur de séparation" alt="" coords="419,2037,553,2063"/>
+<area shape="rect" id="node11" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="647,795,741,822"/>
+<area shape="rect" id="node19" href="$collider_8h.html#ab99ce5a9df335c5f8cdcfc59e33be8d0" title="Retourne le point le plus proche du rectangle (AABB) au point p." alt="" coords="403,61,569,87"/>
+<area shape="rect" id="node20" href="$mj_8c.html#a0dfb8479a845f42e8ab9e4b4ccd08b02" title="fish_neighbor_perception donne la percpetion des voisins de fish" alt="" coords="393,111,579,138"/>
+<area shape="rect" id="node23" href="$mj_8c.html#a8f2d1d0890bb9b536b271ea33665b285" title="Initialise la perception d&#39;un poisson." alt="" coords="411,1682,561,1709"/>
+<area shape="rect" id="node24" href="$mj_8c.html#a07da3f4382307cbc78ae023d271efb0c" title="Met à jour la perception du requin pour un poisson." alt="" coords="394,162,578,189"/>
+<area shape="rect" id="node25" href="$vector_8h.html#a4d18706bde5519ef90b2bb4a1311fc55" title="Calcul la distance entre 2 vecteurs." alt="" coords="423,10,549,37"/>
+<area shape="rect" id="node21" href="$vector_8h.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="641,111,747,138"/>
+<area shape="rect" id="node22" href="$vector_8h.html#a3ffcad6a3ae62aa6326809bc11232aab" title="Renvoie la norme du vecteur passé en paramètre au carrée." alt="" coords="635,162,753,189"/>
+<area shape="rect" id="node26" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="647,61,741,87"/>
+<area shape="rect" id="node28" href="$mj_8c.html#ae2df9202b6c8a34cdcbade22a4b71d32" title="détermine dans quelle zone directionnelle se trouve un poisson par rapport à l&#39;orientation du requin" alt="" coords="409,365,563,391"/>
+<area shape="rect" id="node29" href="$vector_8h.html#a2e464905dfe98674f7122719e724b339" title="Normalise un vecteur avec une valeur par défaut." alt="" coords="630,415,758,442"/>
+<area shape="rect" id="node30" href="$vector_8h.html#ae698e1348bc99c725adf924ac0feb4a4" title="calcule le produit scalaire de deux vecteurs" alt="" coords="649,365,739,391"/>
+<area shape="rect" id="node35" href="$utils_8h.html#aad830dd484c2d83732727afff1791d5a" title="Fonction permettant de tirer une variable aléatoire selon une loi gaussienne." alt="" coords="407,1935,565,1962"/>
+<area shape="rect" id="node38" href="$shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="445,1327,527,1354"/>
+<area shape="rect" id="node39" href="$shark__controller_8c.html#a9c487939ad9b1da288a927a6c1bc79c0" title="règle d&#39;alignement du requin sur la direction moyenne des poissons" alt="" coords="399,973,573,999"/>
+<area shape="rect" id="node40" href="$shark__controller_8c.html#abca1a096aaf3fafb36b4f4c463450023" title="vecteur directionnel vers le centre de masse des poissons dans la zone arrière" alt="" coords="438,1125,534,1151"/>
+<area shape="rect" id="node41" href="$shark__controller_8c.html#a5c102d0265c0eaa863cea10366e6131b" title="règle d&#39;attraction vers le centre de masse des poissons visibles" alt="" coords="433,1074,539,1101"/>
+<area shape="rect" id="node42" href="$shark__controller_8c.html#ae233d8f810b687a62cc8297e46a2c993" title="vecteur directionnel vers le centre de masse des poissons dans la zone avant" alt="" coords="438,1429,534,1455"/>
+<area shape="rect" id="node43" href="$shark__controller_8c.html#a94be5fa63fcac86740bbaf120e30ff97" title="vecteur directionnel vers le centre de masse des poissons dans la zone gauche" alt="" coords="443,1479,529,1506"/>
+<area shape="rect" id="node44" href="$shark__controller_8c.html#ad3dadd4360db2e1da97aa0a1c5f6e089" title="règle de poursuite vers le poisson la plus proche" alt="" coords="431,1023,541,1050"/>
+<area shape="rect" id="node45" href="$shark__controller_8c.html#ab7544a3238867a49bcbb522572636667" title="vecteur directionnel vers le centre de masse des poissons dans la zone droite" alt="" coords="439,1378,533,1405"/>
+<area shape="rect" id="node46" href="$theta__set_8h.html#a39d61603bd5ed4c86a5ac64b63827aab" title="ajoute un vecteur à une règle phi du requin" alt="" coords="407,1581,565,1607"/>
+<area shape="rect" id="node47" href="$vector__rule_8h.html#a7ba6a93f13cc0e244b559b961d9d99d5" title="Calcule le produit scalaire entre deux VectorRule." alt="" coords="398,1277,574,1303"/>
+<area shape="rect" id="node36" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="640,1935,748,1962"/>
+<area shape="rect" id="node37" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="825,1935,905,1962"/>
+</map>

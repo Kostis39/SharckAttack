@@ -1,0 +1,52 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,854,60,880"/>
+<area shape="rect" id="node2" href="$input__output_8h.html#a9260306018f557679576d7aa1bfd1e28" title="termine l&#39;apprentissage en comparant le meilleur gain trouvé avec celui du fichier de paramètres,..." alt="" coords="143,752,223,779"/>
+<area shape="rect" id="node7" href="$game_8h.html#ae5a7b2368adc13dbcf61f3f3b1f16c9c" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="123,499,244,526"/>
+<area shape="rect" id="node22" href="$utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="549,955,630,982"/>
+<area shape="rect" id="node25" href="$vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="729,499,858,526"/>
+<area shape="rect" id="node37" href="$game_8h.html#a557884cc21f4886a0523bd645481b95e" title="lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la co..." alt="" coords="108,854,259,880"/>
+<area shape="rect" id="node38" href="$main_8c.html#a8bfc90b3fb9344e9caafec953baacc0b" title=" " alt="" coords="129,904,238,931"/>
+<area shape="rect" id="node39" href="$input__output_8h.html#ad018c759b201a9b03c1eb71b05f4538e" title="Réinitialise le fichier de logs et y écrit la configuration initiale provenant du fichier de paramètr..." alt="" coords="145,803,222,830"/>
+<area shape="rect" id="node40" href="$input__output_8h.html#aaaa874a59e88f0ba078ebeef13f55e4a" title="charge les paramètres theta et les hyperparamètres depuis un fichier" alt="" coords="130,1006,237,1032"/>
+<area shape="rect" id="node41" href="$reinforce_8h.html#a4e6a52c27c2dc4f2957d84166b6a72c8" title="exécute l&#39;algorithme REINFORCE avec parallélisation" alt="" coords="111,1158,255,1184"/>
+<area shape="rect" id="node3" href="$input__output_8c.html#acae31f3286209e935a01648dec589d9d" title="Parcourt le fichier de log et récupère les paramètres associés au avg_gain le plus fort." alt="" coords="322,752,441,779"/>
+<area shape="rect" id="node4" href="$input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3" title="charge le gain stocké dans le fichier de paramètres" alt="" coords="311,803,452,830"/>
+<area shape="rect" id="node5" href="$input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a" title="charge les paramètres theta et les hyperparamètres depuis un fichier" alt="" coords="328,854,435,880"/>
+<area shape="rect" id="node6" href="$input__output_8c.html#abec3cf6bbc82d4470fed8996c54412a4" title="sauvegarde les paramètres theta, les hyperparamètres et le meilleur gain dans un fichier" alt="" coords="327,702,436,728"/>
+<area shape="rect" id="node8" href="$sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="308,144,455,171"/>
+<area shape="rect" id="node9" href="$game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="323,398,440,424"/>
+<area shape="rect" id="node16" href="$game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="337,600,426,627"/>
+<area shape="rect" id="node27" href="$mj_8h.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="745,1082,841,1108"/>
+<area shape="rect" id="node31" href="$render__sdl_8h.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="307,195,456,222"/>
+<area shape="rect" id="node10" href="$sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="544,448,635,475"/>
+<area shape="rect" id="node11" href="$render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="512,296,667,323"/>
+<area shape="rect" id="node12" href="$render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="513,398,666,424"/>
+<area shape="rect" id="node13" href="$world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="736,727,851,754"/>
+<area shape="rect" id="node14" href="$collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="912,702,1088,728"/>
+<area shape="rect" id="node15" href="$fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="927,752,1073,779"/>
+<area shape="rect" id="node17" href="$sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="546,752,633,779"/>
+<area shape="rect" id="node18" href="$sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="543,803,636,830"/>
+<area shape="rect" id="node19" href="$sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="520,550,659,576"/>
+<area shape="rect" id="node20" href="$sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="520,600,659,627"/>
+<area shape="rect" id="node21" href="$render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="528,651,651,678"/>
+<area shape="rect" id="node23" href="$render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="522,702,657,728"/>
+<area shape="rect" id="node24" href="$theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="527,499,651,526"/>
+<area shape="rect" id="node26" href="$world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="750,955,837,982"/>
+<area shape="rect" id="node28" href="$mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="947,1031,1053,1058"/>
+<area shape="rect" id="node29" href="$world_8h.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="930,1082,1070,1108"/>
+<area shape="rect" id="node30" href="$world_8h.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire." alt="" coords="932,1132,1068,1159"/>
+<area shape="rect" id="node32" href="$sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="543,94,636,120"/>
+<area shape="rect" id="node33" href="$sdl__draw__tools_8h.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="504,144,675,171"/>
+<area shape="rect" id="node34" href="$render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="516,195,663,222"/>
+<area shape="rect" id="node35" href="$render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="511,246,667,272"/>
+<area shape="rect" id="node36" href="$render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="540,43,639,70"/>
+<area shape="rect" id="node42" href="$reinforce_8c.html#ae2c19c8939a760c957405dc11da81bd8" title="retourne un gradient initialisé à zéro" alt="" coords="737,1310,850,1336"/>
+<area shape="rect" id="node43" href="$vector__rule_8h.html#a080684ca70bd28327ac7992ce6e675ee" title="Initialise un VectorRule avec toutes ses composantes à 0." alt="" coords="940,1284,1060,1311"/>
+<area shape="rect" id="node44" href="$input__output_8h.html#af0817f7b7511739d9ad418deb72dda5e" title="écrit un log pour une génération d&#39;apprentissage." alt="" coords="318,1310,445,1336"/>
+<area shape="rect" id="node46" href="$reinforce_8c.html#a7e00a068b856fbc2d16c8367be616b3b" title="fonction de travail pour les threads, exécute Compute_trajectory" alt="" coords="313,1107,450,1134"/>
+<area shape="rect" id="node48" href="$vector__rule_8h.html#ac40f4a4667a3f7827ca951218ed1a573" title="Additionne deux VectorRule composante par composante." alt="" coords="732,1132,855,1159"/>
+<area shape="rect" id="node49" href="$vector__rule_8h.html#a7762dcff21c715334dc5facbc5c85976" title="Multiplie toutes les composantes d&#39;un VectorRule par un scalaire." alt="" coords="723,1183,864,1210"/>
+<area shape="rect" id="node50" href="$vector__rule_8h.html#a1fed062807bdf06ab9c46fd8117e3abd" title="soustrait deux VectorRule composante par composante." alt="" coords="320,1056,443,1083"/>
+<area shape="rect" id="node45" href="$vector__rule_8h.html#a992f7d7160220b488586f878c0a2c4a1" title="écrit dans un fichier les composantes du vecteur sous la forme (v1, v2, ...)." alt="" coords="522,1310,657,1336"/>
+<area shape="rect" id="node47" href="$reinforce_8c.html#a6775e31497c1d14547f43add69f6d619" title="calcule une trajectoire et son gradient associé" alt="" coords="514,1107,665,1134"/>
+</map>

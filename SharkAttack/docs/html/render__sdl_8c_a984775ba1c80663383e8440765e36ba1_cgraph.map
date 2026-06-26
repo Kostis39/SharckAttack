@@ -1,0 +1,12 @@
+<map id="Draw_debug_view" name="Draw_debug_view">
+<area shape="rect" id="node1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="5,81,147,108"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="195,5,345,32"/>
+<area shape="rect" id="node4" href="$sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="201,56,339,83"/>
+<area shape="rect" id="node5" href="$sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="218,107,322,133"/>
+<area shape="rect" id="node10" href="$sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="241,157,299,184"/>
+<area shape="rect" id="node3" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="440,31,499,57"/>
+<area shape="rect" id="node6" href="$sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="393,107,545,133"/>
+<area shape="rect" id="node7" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="593,107,728,133"/>
+<area shape="rect" id="node8" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="776,81,887,108"/>
+<area shape="rect" id="node9" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="779,132,883,159"/>
+</map>

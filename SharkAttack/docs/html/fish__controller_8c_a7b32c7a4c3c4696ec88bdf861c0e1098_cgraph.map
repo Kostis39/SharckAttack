@@ -1,0 +1,4 @@
+<map id="Rules_border_repulsion" name="Rules_border_repulsion">
+<area shape="rect" id="node1" title="répulsion des bords, empêche le poisson de sortir du monde" alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="228,5,319,32"/>
+</map>

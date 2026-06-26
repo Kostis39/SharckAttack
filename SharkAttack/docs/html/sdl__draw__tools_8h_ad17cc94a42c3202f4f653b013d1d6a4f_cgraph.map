@@ -1,0 +1,8 @@
+<map id="Draw_vector" name="Draw_vector">
+<area shape="rect" id="node1" title="dessine un vecteur orienté avec une fleche" alt="" coords="5,56,109,83"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="157,31,309,57"/>
+<area shape="rect" id="node6" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="204,81,263,108"/>
+<area shape="rect" id="node3" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="357,31,492,57"/>
+<area shape="rect" id="node4" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="540,5,651,32"/>
+<area shape="rect" id="node5" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="543,56,647,83"/>
+</map>

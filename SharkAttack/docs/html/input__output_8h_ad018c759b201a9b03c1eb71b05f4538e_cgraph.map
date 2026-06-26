@@ -1,0 +1,5 @@
+<map id="init_logs" name="init_logs">
+<area shape="rect" id="node1" title="Réinitialise le fichier de logs et y écrit la configuration initiale provenant du fichier de paramètr..." alt="" coords="5,31,83,57"/>
+<area shape="rect" id="node2" href="$input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3" title="charge le gain stocké dans le fichier de paramètres" alt="" coords="131,5,272,32"/>
+<area shape="rect" id="node3" href="$input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a" title="charge les paramètres theta et les hyperparamètres depuis un fichier" alt="" coords="148,56,255,83"/>
+</map>

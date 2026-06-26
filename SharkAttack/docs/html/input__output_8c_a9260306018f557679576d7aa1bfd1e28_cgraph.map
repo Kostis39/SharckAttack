@@ -1,0 +1,7 @@
+<map id="end_logs" name="end_logs">
+<area shape="rect" id="node1" title="termine l&#39;apprentissage en comparant le meilleur gain trouvé avec celui du fichier de paramètres,..." alt="" coords="5,81,85,108"/>
+<area shape="rect" id="node2" href="$input__output_8c.html#acae31f3286209e935a01648dec589d9d" title="Parcourt le fichier de log et récupère les paramètres associés au avg_gain le plus fort." alt="" coords="145,5,263,32"/>
+<area shape="rect" id="node3" href="$input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3" title="charge le gain stocké dans le fichier de paramètres" alt="" coords="133,56,275,83"/>
+<area shape="rect" id="node4" href="$input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a" title="charge les paramètres theta et les hyperparamètres depuis un fichier" alt="" coords="151,107,257,133"/>
+<area shape="rect" id="node5" href="$input__output_8c.html#abec3cf6bbc82d4470fed8996c54412a4" title="sauvegarde les paramètres theta, les hyperparamètres et le meilleur gain dans un fichier" alt="" coords="149,157,259,184"/>
+</map>

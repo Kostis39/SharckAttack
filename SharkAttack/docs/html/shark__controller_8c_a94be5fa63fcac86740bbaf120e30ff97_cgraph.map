@@ -1,0 +1,9 @@
+<map id="Rules_left" name="Rules_left">
+<area shape="rect" id="node1" title="vecteur directionnel vers le centre de masse des poissons dans la zone gauche" alt="" coords="5,81,92,108"/>
+<area shape="rect" id="node2" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="162,5,253,32"/>
+<area shape="rect" id="node3" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="140,56,275,83"/>
+<area shape="rect" id="node6" href="$vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="155,107,259,133"/>
+<area shape="rect" id="node7" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="161,157,254,184"/>
+<area shape="rect" id="node4" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="323,31,433,57"/>
+<area shape="rect" id="node5" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="326,81,430,108"/>
+</map>

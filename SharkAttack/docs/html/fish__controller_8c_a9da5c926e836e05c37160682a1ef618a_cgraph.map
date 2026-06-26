@@ -1,0 +1,13 @@
+<map id="fish_choose_action" name="fish_choose_action">
+<area shape="rect" id="node1" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="5,183,151,209"/>
+<area shape="rect" id="node2" href="$fish__controller_8c.html#af42ccf9e03e3ef021ad9754f1eec220e" title="règle d&#39;alignement, retourne la direction moyenne des voisins" alt="" coords="221,5,351,32"/>
+<area shape="rect" id="node4" href="$fish__controller_8c.html#a16eb4465b6c8670bcf6d93bcbb651fb6" title="évitement du requin, fuit si le requin est trop proche." alt="" coords="214,208,358,235"/>
+<area shape="rect" id="node5" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="431,157,522,184"/>
+<area shape="rect" id="node7" href="$vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="425,259,529,285"/>
+<area shape="rect" id="node8" href="$fish__controller_8c.html#a7b32c7a4c3c4696ec88bdf861c0e1098" title="répulsion des bords, empêche le poisson de sortir du monde" alt="" coords="199,157,373,184"/>
+<area shape="rect" id="node9" href="$fish__controller_8c.html#a9cbd98c6406bd67d2296c4878e625eaf" title="règle de cohésion, attire vers le centre de masse du groupe" alt="" coords="225,56,347,83"/>
+<area shape="rect" id="node10" href="$fish__controller_8c.html#af97ce461e75310584c00c92a7e0cb1a3" title="règle de séparation, retourne le vecteur de séparation" alt="" coords="219,309,353,336"/>
+<area shape="rect" id="node11" href="$vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="239,360,333,387"/>
+<area shape="rect" id="node3" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="430,31,523,57"/>
+<area shape="rect" id="node6" href="$vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="421,208,532,235"/>
+</map>

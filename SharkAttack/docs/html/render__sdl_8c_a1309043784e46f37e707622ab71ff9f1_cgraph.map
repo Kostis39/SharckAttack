@@ -1,0 +1,12 @@
+<map id="Draw_shark" name="Draw_shark">
+<area shape="rect" id="node1" title="dessine le requin" alt="" coords="5,132,104,159"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="152,31,304,57"/>
+<area shape="rect" id="node6" href="$sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="159,81,297,108"/>
+<area shape="rect" id="node7" href="$sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="155,132,301,159"/>
+<area shape="rect" id="node8" href="$sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="152,183,304,209"/>
+<area shape="rect" id="node10" href="$sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="199,233,257,260"/>
+<area shape="rect" id="node3" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="352,31,487,57"/>
+<area shape="rect" id="node4" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="535,5,645,32"/>
+<area shape="rect" id="node5" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="538,56,642,83"/>
+<area shape="rect" id="node9" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="390,183,449,209"/>
+</map>

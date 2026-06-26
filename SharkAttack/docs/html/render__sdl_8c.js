@@ -1,0 +1,28 @@
+var render__sdl_8c =
+[
+    [ "RENDERED_COLLIDERS", "render__sdl_8c.html#a6af12210354185104bb17220bf94e400", null ],
+    [ "SKELETON_FRAMES", "render__sdl_8c.html#a7c6f8423b050a32d95dc6dd2cb97c9f8", null ],
+    [ "Clear_sdl_display", "render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4", null ],
+    [ "Destroy_mute_icons", "render__sdl_8c.html#aa34345c0fe35a82e740a655f16f8ca08", null ],
+    [ "Destroy_sdl_display", "render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d", null ],
+    [ "Draw_collider", "render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0", null ],
+    [ "Draw_colliders", "render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6", null ],
+    [ "Draw_debug_view", "render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1", null ],
+    [ "Draw_fish", "render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4", null ],
+    [ "Draw_fish_skeleton", "render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e", null ],
+    [ "Draw_mute_button", "render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd", null ],
+    [ "Draw_result_overlay", "render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e", null ],
+    [ "Draw_score", "render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed", null ],
+    [ "Draw_shark", "render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1", null ],
+    [ "Draw_text_center", "render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28", null ],
+    [ "Draw_world", "render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca", null ],
+    [ "Init_sdl_display", "render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f", null ],
+    [ "Load_mute_icons", "render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724", null ],
+    [ "Render_two_worlds", "render__sdl_8c.html#ad1307c29c074f2638c2a842a135f5935", null ],
+    [ "g_debug_view", "render__sdl_8c.html#a7b9f794676c6ed7cf058a0fe8fab5876", null ],
+    [ "g_flash", "render__sdl_8c.html#ad783183e6501a39a96c8cacda55b0495", null ],
+    [ "g_gain", "render__sdl_8c.html#ab94b3c9c237ace9944af90bf6555a1e2", null ],
+    [ "g_score", "render__sdl_8c.html#a61ab2e6d134002deb363436b45030078", null ],
+    [ "g_skeleton_frame", "render__sdl_8c.html#aa3114af0922c437b5cab12ebfbd4dd5a", null ],
+    [ "g_was_alive", "render__sdl_8c.html#a1da60c38bc67767bb94b33b4e8409186", null ]
+];

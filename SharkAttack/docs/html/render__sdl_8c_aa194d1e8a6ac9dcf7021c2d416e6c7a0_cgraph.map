@@ -1,0 +1,6 @@
+<map id="Draw_collider" name="Draw_collider">
+<area shape="rect" id="node1" title="dessine un collider sous forme de mine" alt="" coords="5,31,116,57"/>
+<area shape="rect" id="node2" href="$sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="164,5,307,32"/>
+<area shape="rect" id="node4" href="$sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="206,56,265,83"/>
+<area shape="rect" id="node3" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="355,5,492,32"/>
+</map>

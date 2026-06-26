@@ -1,0 +1,847 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sharkattack: Référence du fichier tests/test_collider.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sharkattack
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Sharkattack the game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('test__collider_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier test_collider.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="collider_8h_source.html">collider.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="unity_8h_source.html">unity.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de test_collider.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c__incl.png" border="0" usemap="#atests_2test__collider_8c" alt=""/></div>
+<map name="atests_2test__collider_8c" id="atests_2test__collider_8c">
+<area shape="rect" title=" " alt="" coords="205,5,353,32"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="160,80,241,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,76,181"/>
+<area shape="rect" title=" " alt="" coords="267,229,337,256"/>
+<area shape="rect" href="unity_8h.html" title=" " alt="" coords="396,80,461,107"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="100,155,163,181"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="165,229,239,256"/>
+<area shape="rect" title=" " alt="" coords="238,155,321,181"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="40,304,113,331"/>
+<area shape="rect" title=" " alt="" coords="137,304,205,331"/>
+<area shape="rect" title=" " alt="" coords="230,304,297,331"/>
+<area shape="rect" href="unity__internals_8h.html" title=" " alt="" coords="363,229,494,256"/>
+<area shape="rect" title=" " alt="" coords="609,304,688,331"/>
+<area shape="rect" title=" " alt="" coords="321,304,395,331"/>
+<area shape="rect" title=" " alt="" coords="420,304,491,331"/>
+<area shape="rect" title=" " alt="" coords="515,304,585,331"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a95c834d6178047ce9e1bce7cbfea2836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a95c834d6178047ce9e1bce7cbfea2836">setUp</a> (void)</td></tr>
+<tr class="separator:a95c834d6178047ce9e1bce7cbfea2836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9909011e5fea0c018842eec4d93d0662"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a9909011e5fea0c018842eec4d93d0662">tearDown</a> (void)</td></tr>
+<tr class="separator:a9909011e5fea0c018842eec4d93d0662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1602f37b18448f5dfb903ad8be023736"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a1602f37b18448f5dfb903ad8be023736">test_Instantiate_collider_origin</a> (void)</td></tr>
+<tr class="separator:a1602f37b18448f5dfb903ad8be023736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83d664cb07201b40321368a0f0f9a2d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a83d664cb07201b40321368a0f0f9a2d9">test_Instantiate_collider_offset_position</a> (void)</td></tr>
+<tr class="separator:a83d664cb07201b40321368a0f0f9a2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aef5f0a292093b766e37023f1208498"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a3aef5f0a292093b766e37023f1208498">test_Instantiate_collider_symmetric</a> (void)</td></tr>
+<tr class="separator:a3aef5f0a292093b766e37023f1208498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7ad53d846a84c93f16ea2574bf559c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#afe7ad53d846a84c93f16ea2574bf559c">test_Instantiate_collider_unit_size</a> (void)</td></tr>
+<tr class="separator:afe7ad53d846a84c93f16ea2574bf559c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51c18513a3ad34be72cbc1dc783f3bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#af51c18513a3ad34be72cbc1dc783f3bd">test_Instantiate_collider_large_size</a> (void)</td></tr>
+<tr class="separator:af51c18513a3ad34be72cbc1dc783f3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915cef9621422e4413c1381c87d3abe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a915cef9621422e4413c1381c87d3abe7">test_Instantiate_collider_non_square</a> (void)</td></tr>
+<tr class="separator:a915cef9621422e4413c1381c87d3abe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72dcd63d5b9a8a2022a33786f51efb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#aa72dcd63d5b9a8a2022a33786f51efb1">test_Instantiate_collider_negative_position</a> (void)</td></tr>
+<tr class="separator:aa72dcd63d5b9a8a2022a33786f51efb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692d917e94897e91d8d4cff40cd3a412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a692d917e94897e91d8d4cff40cd3a412">test_Instantiate_collider_float_dimensions</a> (void)</td></tr>
+<tr class="separator:a692d917e94897e91d8d4cff40cd3a412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d85df9bdca732ab54c40008ef4606e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a5d85df9bdca732ab54c40008ef4606e0">test_Instantiate_collider_returns_copy</a> (void)</td></tr>
+<tr class="separator:a5d85df9bdca732ab54c40008ef4606e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654520a6fd08b70858e6551a627bbfbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a654520a6fd08b70858e6551a627bbfbf">test_random_float_range</a> (void)</td></tr>
+<tr class="separator:a654520a6fd08b70858e6551a627bbfbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2558d9ff55cc09feaa35768175c7744"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#ac2558d9ff55cc09feaa35768175c7744">test_random_float_same_seed_same_result</a> (void)</td></tr>
+<tr class="separator:ac2558d9ff55cc09feaa35768175c7744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00d857d6b28c82c074919a09a0754fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#af00d857d6b28c82c074919a09a0754fe">test_Colliders_random_array_count</a> (void)</td></tr>
+<tr class="separator:af00d857d6b28c82c074919a09a0754fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f0d5f37cbace357c9e4a177284fb2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#ae7f0d5f37cbace357c9e4a177284fb2b">test_Colliders_random_array_reproducible</a> (void)</td></tr>
+<tr class="separator:ae7f0d5f37cbace357c9e4a177284fb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e1dcb8c9bff0db7fb489940913574c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a53e1dcb8c9bff0db7fb489940913574c">test_Colliders_random_array_different_seed</a> (void)</td></tr>
+<tr class="separator:a53e1dcb8c9bff0db7fb489940913574c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6b3f31b06755abf86653a291df26ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a0c6b3f31b06755abf86653a291df26ed">test_Colliders_random_array_null_on_zero_count</a> (void)</td></tr>
+<tr class="separator:a0c6b3f31b06755abf86653a291df26ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990bf4ca89db4e7450caf669ac7d0796"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a990bf4ca89db4e7450caf669ac7d0796">test_Colliders_copy_array_basic</a> (void)</td></tr>
+<tr class="separator:a990bf4ca89db4e7450caf669ac7d0796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e1b33a05c46c0d218d0a2a41acaf14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a25e1b33a05c46c0d218d0a2a41acaf14">test_Colliders_copy_array_independent</a> (void)</td></tr>
+<tr class="separator:a25e1b33a05c46c0d218d0a2a41acaf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a381900cddfe950049b9e3ed7cfb107e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a381900cddfe950049b9e3ed7cfb107e8">test_Colliders_copy_array_null_input</a> (void)</td></tr>
+<tr class="separator:a381900cddfe950049b9e3ed7cfb107e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a916201a1df36daaa4744911a1d8549e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a916201a1df36daaa4744911a1d8549e5">test_Colliders_destroy_array_null</a> (void)</td></tr>
+<tr class="separator:a916201a1df36daaa4744911a1d8549e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2592449901214b791e42906e102ae614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a2592449901214b791e42906e102ae614">test_Colliders_destroy_array_valid</a> (void)</td></tr>
+<tr class="separator:a2592449901214b791e42906e102ae614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__collider_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#atest__collider_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="atest__collider_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
+<area shape="rect" title=" " alt="" coords="5,619,60,646"/>
+<area shape="rect" href="test__collider_8c.html#a990bf4ca89db4e7450caf669ac7d0796" title=" " alt="" coords="131,71,280,112"/>
+<area shape="rect" href="test__collider_8c.html#a25e1b33a05c46c0d218d0a2a41acaf14" title=" " alt="" coords="130,136,281,177"/>
+<area shape="rect" href="test__collider_8c.html#a381900cddfe950049b9e3ed7cfb107e8" title=" " alt="" coords="131,5,280,47"/>
+<area shape="rect" href="test__collider_8c.html#a916201a1df36daaa4744911a1d8549e5" title=" " alt="" coords="122,528,289,569"/>
+<area shape="rect" href="test__collider_8c.html#a2592449901214b791e42906e102ae614" title=" " alt="" coords="122,397,289,439"/>
+<area shape="rect" href="test__collider_8c.html#af00d857d6b28c82c074919a09a0754fe" title=" " alt="" coords="121,463,289,504"/>
+<area shape="rect" href="test__collider_8c.html#a53e1dcb8c9bff0db7fb489940913574c" title=" " alt="" coords="121,267,289,308"/>
+<area shape="rect" href="test__collider_8c.html#a0c6b3f31b06755abf86653a291df26ed" title=" " alt="" coords="108,332,303,373"/>
+<area shape="rect" href="test__collider_8c.html#ae7f0d5f37cbace357c9e4a177284fb2b" title=" " alt="" coords="121,201,289,243"/>
+<area shape="rect" href="test__collider_8c.html#a692d917e94897e91d8d4cff40cd3a412" title=" " alt="" coords="116,1088,295,1129"/>
+<area shape="rect" href="test__collider_8c.html#af51c18513a3ad34be72cbc1dc783f3bd" title=" " alt="" coords="116,1153,295,1195"/>
+<area shape="rect" href="test__collider_8c.html#aa72dcd63d5b9a8a2022a33786f51efb1" title=" " alt="" coords="116,1219,295,1260"/>
+<area shape="rect" href="test__collider_8c.html#a915cef9621422e4413c1381c87d3abe7" title=" " alt="" coords="116,696,295,737"/>
+<area shape="rect" href="test__collider_8c.html#a83d664cb07201b40321368a0f0f9a2d9" title=" " alt="" coords="116,761,295,803"/>
+<area shape="rect" href="test__collider_8c.html#a1602f37b18448f5dfb903ad8be023736" title=" " alt="" coords="116,827,295,868"/>
+<area shape="rect" href="test__collider_8c.html#a5d85df9bdca732ab54c40008ef4606e0" title=" " alt="" coords="116,892,295,933"/>
+<area shape="rect" href="test__collider_8c.html#a3aef5f0a292093b766e37023f1208498" title=" " alt="" coords="116,957,295,999"/>
+<area shape="rect" href="test__collider_8c.html#afe7ad53d846a84c93f16ea2574bf559c" title=" " alt="" coords="116,1023,295,1064"/>
+<area shape="rect" href="test__collider_8c.html#a654520a6fd08b70858e6551a627bbfbf" title=" " alt="" coords="351,586,535,613"/>
+<area shape="rect" href="test__collider_8c.html#ac2558d9ff55cc09feaa35768175c7744" title=" " alt="" coords="351,637,534,679"/>
+<area shape="rect" href="collider_8h.html#ad784096975958a0b40b5df8e2160c9dc" title=" " alt="" coords="363,78,522,105"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="354,311,531,338"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="583,337,729,363"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="602,586,710,613"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="611,286,701,313"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="777,586,857,613"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="355,369,531,395"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="369,965,516,991"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a95c834d6178047ce9e1bce7cbfea2836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c834d6178047ce9e1bce7cbfea2836">&#9670;&nbsp;</a></span>setUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setUp </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9909011e5fea0c018842eec4d93d0662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9909011e5fea0c018842eec4d93d0662">&#9670;&nbsp;</a></span>tearDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tearDown </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a990bf4ca89db4e7450caf669ac7d0796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990bf4ca89db4e7450caf669ac7d0796">&#9670;&nbsp;</a></span>test_Colliders_copy_array_basic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_copy_array_basic </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a990bf4ca89db4e7450caf669ac7d0796_cgraph.png" border="0" usemap="#atest__collider_8c_a990bf4ca89db4e7450caf669ac7d0796_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a990bf4ca89db4e7450caf669ac7d0796_cgraph" id="atest__collider_8c_a990bf4ca89db4e7450caf669ac7d0796_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,155,65"/>
+<area shape="rect" href="collider_8h.html#ad784096975958a0b40b5df8e2160c9dc" title=" " alt="" coords="212,5,371,32"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="203,56,380,83"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="428,5,575,32"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="447,56,555,83"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="456,107,547,133"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="623,56,703,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a25e1b33a05c46c0d218d0a2a41acaf14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e1b33a05c46c0d218d0a2a41acaf14">&#9670;&nbsp;</a></span>test_Colliders_copy_array_independent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_copy_array_independent </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a25e1b33a05c46c0d218d0a2a41acaf14_cgraph.png" border="0" usemap="#atest__collider_8c_a25e1b33a05c46c0d218d0a2a41acaf14_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a25e1b33a05c46c0d218d0a2a41acaf14_cgraph" id="atest__collider_8c_a25e1b33a05c46c0d218d0a2a41acaf14_cgraph">
+<area shape="rect" title=" " alt="" coords="5,49,156,90"/>
+<area shape="rect" href="collider_8h.html#ad784096975958a0b40b5df8e2160c9dc" title=" " alt="" coords="213,5,372,32"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="205,56,381,83"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="204,107,381,133"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="429,56,576,83"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="449,107,557,133"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="457,157,548,184"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="624,107,704,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a381900cddfe950049b9e3ed7cfb107e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a381900cddfe950049b9e3ed7cfb107e8">&#9670;&nbsp;</a></span>test_Colliders_copy_array_null_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_copy_array_null_input </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a381900cddfe950049b9e3ed7cfb107e8_cgraph.png" border="0" usemap="#atest__collider_8c_a381900cddfe950049b9e3ed7cfb107e8_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a381900cddfe950049b9e3ed7cfb107e8_cgraph" id="atest__collider_8c_a381900cddfe950049b9e3ed7cfb107e8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,155,47"/>
+<area shape="rect" href="collider_8h.html#ad784096975958a0b40b5df8e2160c9dc" title=" " alt="" coords="203,13,361,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a916201a1df36daaa4744911a1d8549e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a916201a1df36daaa4744911a1d8549e5">&#9670;&nbsp;</a></span>test_Colliders_destroy_array_null()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_destroy_array_null </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a916201a1df36daaa4744911a1d8549e5_cgraph.png" border="0" usemap="#atest__collider_8c_a916201a1df36daaa4744911a1d8549e5_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a916201a1df36daaa4744911a1d8549e5_cgraph" id="atest__collider_8c_a916201a1df36daaa4744911a1d8549e5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,172,47"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="220,13,396,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2592449901214b791e42906e102ae614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2592449901214b791e42906e102ae614">&#9670;&nbsp;</a></span>test_Colliders_destroy_array_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_destroy_array_valid </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a2592449901214b791e42906e102ae614_cgraph.png" border="0" usemap="#atest__collider_8c_a2592449901214b791e42906e102ae614_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a2592449901214b791e42906e102ae614_cgraph" id="atest__collider_8c_a2592449901214b791e42906e102ae614_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,172,65"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="221,5,397,32"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="220,56,397,83"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="445,5,592,32"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="465,56,573,83"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="473,107,564,133"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="640,56,720,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af00d857d6b28c82c074919a09a0754fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00d857d6b28c82c074919a09a0754fe">&#9670;&nbsp;</a></span>test_Colliders_random_array_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_random_array_count </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_af00d857d6b28c82c074919a09a0754fe_cgraph.png" border="0" usemap="#atest__collider_8c_af00d857d6b28c82c074919a09a0754fe_cgraph" alt=""/></div>
+<map name="atest__collider_8c_af00d857d6b28c82c074919a09a0754fe_cgraph" id="atest__collider_8c_af00d857d6b28c82c074919a09a0754fe_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,173,65"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="222,5,398,32"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="221,56,399,83"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="447,5,593,32"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="466,56,574,83"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="475,107,565,133"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="641,56,721,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a53e1dcb8c9bff0db7fb489940913574c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53e1dcb8c9bff0db7fb489940913574c">&#9670;&nbsp;</a></span>test_Colliders_random_array_different_seed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_random_array_different_seed </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a53e1dcb8c9bff0db7fb489940913574c_cgraph.png" border="0" usemap="#atest__collider_8c_a53e1dcb8c9bff0db7fb489940913574c_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a53e1dcb8c9bff0db7fb489940913574c_cgraph" id="atest__collider_8c_a53e1dcb8c9bff0db7fb489940913574c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,173,65"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="222,5,398,32"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="221,56,399,83"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="447,5,593,32"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="466,56,574,83"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="475,107,565,133"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="641,56,721,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c6b3f31b06755abf86653a291df26ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6b3f31b06755abf86653a291df26ed">&#9670;&nbsp;</a></span>test_Colliders_random_array_null_on_zero_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_random_array_null_on_zero_count </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a0c6b3f31b06755abf86653a291df26ed_cgraph.png" border="0" usemap="#atest__collider_8c_a0c6b3f31b06755abf86653a291df26ed_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a0c6b3f31b06755abf86653a291df26ed_cgraph" id="atest__collider_8c_a0c6b3f31b06755abf86653a291df26ed_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,200,65"/>
+<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="249,5,425,32"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="248,56,425,83"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="473,5,620,32"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="493,56,601,83"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="501,107,592,133"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="668,56,748,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae7f0d5f37cbace357c9e4a177284fb2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f0d5f37cbace357c9e4a177284fb2b">&#9670;&nbsp;</a></span>test_Colliders_random_array_reproducible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Colliders_random_array_reproducible </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_ae7f0d5f37cbace357c9e4a177284fb2b_cgraph.png" border="0" usemap="#atest__collider_8c_ae7f0d5f37cbace357c9e4a177284fb2b_cgraph" alt=""/></div>
+<map name="atest__collider_8c_ae7f0d5f37cbace357c9e4a177284fb2b_cgraph" id="atest__collider_8c_ae7f0d5f37cbace357c9e4a177284fb2b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,49,173,90"/>
+<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="221,56,399,83"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="447,5,593,32"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="466,56,574,83"/>
+<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="475,107,565,133"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="641,56,721,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a692d917e94897e91d8d4cff40cd3a412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a692d917e94897e91d8d4cff40cd3a412">&#9670;&nbsp;</a></span>test_Instantiate_collider_float_dimensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_float_dimensions </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a692d917e94897e91d8d4cff40cd3a412_cgraph.png" border="0" usemap="#atest__collider_8c_a692d917e94897e91d8d4cff40cd3a412_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a692d917e94897e91d8d4cff40cd3a412_cgraph" id="atest__collider_8c_a692d917e94897e91d8d4cff40cd3a412_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af51c18513a3ad34be72cbc1dc783f3bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af51c18513a3ad34be72cbc1dc783f3bd">&#9670;&nbsp;</a></span>test_Instantiate_collider_large_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_large_size </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_af51c18513a3ad34be72cbc1dc783f3bd_cgraph.png" border="0" usemap="#atest__collider_8c_af51c18513a3ad34be72cbc1dc783f3bd_cgraph" alt=""/></div>
+<map name="atest__collider_8c_af51c18513a3ad34be72cbc1dc783f3bd_cgraph" id="atest__collider_8c_af51c18513a3ad34be72cbc1dc783f3bd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa72dcd63d5b9a8a2022a33786f51efb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72dcd63d5b9a8a2022a33786f51efb1">&#9670;&nbsp;</a></span>test_Instantiate_collider_negative_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_negative_position </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_aa72dcd63d5b9a8a2022a33786f51efb1_cgraph.png" border="0" usemap="#atest__collider_8c_aa72dcd63d5b9a8a2022a33786f51efb1_cgraph" alt=""/></div>
+<map name="atest__collider_8c_aa72dcd63d5b9a8a2022a33786f51efb1_cgraph" id="atest__collider_8c_aa72dcd63d5b9a8a2022a33786f51efb1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a915cef9621422e4413c1381c87d3abe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a915cef9621422e4413c1381c87d3abe7">&#9670;&nbsp;</a></span>test_Instantiate_collider_non_square()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_non_square </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a915cef9621422e4413c1381c87d3abe7_cgraph.png" border="0" usemap="#atest__collider_8c_a915cef9621422e4413c1381c87d3abe7_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a915cef9621422e4413c1381c87d3abe7_cgraph" id="atest__collider_8c_a915cef9621422e4413c1381c87d3abe7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a83d664cb07201b40321368a0f0f9a2d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d664cb07201b40321368a0f0f9a2d9">&#9670;&nbsp;</a></span>test_Instantiate_collider_offset_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_offset_position </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a83d664cb07201b40321368a0f0f9a2d9_cgraph.png" border="0" usemap="#atest__collider_8c_a83d664cb07201b40321368a0f0f9a2d9_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a83d664cb07201b40321368a0f0f9a2d9_cgraph" id="atest__collider_8c_a83d664cb07201b40321368a0f0f9a2d9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1602f37b18448f5dfb903ad8be023736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1602f37b18448f5dfb903ad8be023736">&#9670;&nbsp;</a></span>test_Instantiate_collider_origin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_origin </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a1602f37b18448f5dfb903ad8be023736_cgraph.png" border="0" usemap="#atest__collider_8c_a1602f37b18448f5dfb903ad8be023736_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a1602f37b18448f5dfb903ad8be023736_cgraph" id="atest__collider_8c_a1602f37b18448f5dfb903ad8be023736_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d85df9bdca732ab54c40008ef4606e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d85df9bdca732ab54c40008ef4606e0">&#9670;&nbsp;</a></span>test_Instantiate_collider_returns_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_returns_copy </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a5d85df9bdca732ab54c40008ef4606e0_cgraph.png" border="0" usemap="#atest__collider_8c_a5d85df9bdca732ab54c40008ef4606e0_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a5d85df9bdca732ab54c40008ef4606e0_cgraph" id="atest__collider_8c_a5d85df9bdca732ab54c40008ef4606e0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3aef5f0a292093b766e37023f1208498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aef5f0a292093b766e37023f1208498">&#9670;&nbsp;</a></span>test_Instantiate_collider_symmetric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_symmetric </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a3aef5f0a292093b766e37023f1208498_cgraph.png" border="0" usemap="#atest__collider_8c_a3aef5f0a292093b766e37023f1208498_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a3aef5f0a292093b766e37023f1208498_cgraph" id="atest__collider_8c_a3aef5f0a292093b766e37023f1208498_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe7ad53d846a84c93f16ea2574bf559c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7ad53d846a84c93f16ea2574bf559c">&#9670;&nbsp;</a></span>test_Instantiate_collider_unit_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_Instantiate_collider_unit_size </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_afe7ad53d846a84c93f16ea2574bf559c_cgraph.png" border="0" usemap="#atest__collider_8c_afe7ad53d846a84c93f16ea2574bf559c_cgraph" alt=""/></div>
+<map name="atest__collider_8c_afe7ad53d846a84c93f16ea2574bf559c_cgraph" id="atest__collider_8c_afe7ad53d846a84c93f16ea2574bf559c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="collider_8h.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="232,13,379,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a654520a6fd08b70858e6551a627bbfbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654520a6fd08b70858e6551a627bbfbf">&#9670;&nbsp;</a></span>test_random_float_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_random_float_range </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_a654520a6fd08b70858e6551a627bbfbf_cgraph.png" border="0" usemap="#atest__collider_8c_a654520a6fd08b70858e6551a627bbfbf_cgraph" alt=""/></div>
+<map name="atest__collider_8c_a654520a6fd08b70858e6551a627bbfbf_cgraph" id="atest__collider_8c_a654520a6fd08b70858e6551a627bbfbf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,189,32"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="237,5,345,32"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="393,5,473,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac2558d9ff55cc09feaa35768175c7744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2558d9ff55cc09feaa35768175c7744">&#9670;&nbsp;</a></span>test_random_float_same_seed_same_result()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_random_float_same_seed_same_result </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="test__collider_8c_ac2558d9ff55cc09feaa35768175c7744_cgraph.png" border="0" usemap="#atest__collider_8c_ac2558d9ff55cc09feaa35768175c7744_cgraph" alt=""/></div>
+<map name="atest__collider_8c_ac2558d9ff55cc09feaa35768175c7744_cgraph" id="atest__collider_8c_ac2558d9ff55cc09feaa35768175c7744_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,188,47"/>
+<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="236,13,344,39"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="392,13,472,39"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="test__collider_8c.html">test_collider.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

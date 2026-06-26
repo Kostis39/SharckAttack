@@ -1,0 +1,4 @@
+<map id="Draw_intro_countdown" name="Draw_intro_countdown">
+<area shape="rect" id="node1" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node2" href="$shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="224,5,305,32"/>
+</map>

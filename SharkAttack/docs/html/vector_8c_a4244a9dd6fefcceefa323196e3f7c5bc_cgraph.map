@@ -1,0 +1,4 @@
+<map id="Vector_angle_fast" name="Vector_angle_fast">
+<area shape="rect" id="node1" title="Calcule l&#39;angle entre deux vecteurs avec une approximation d&#39;Arctangente." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$vector_8c.html#ab21ec5e11fef312660ed612a7d6ccfd1" title="approximation rapide de atan2 (moins précise mais plus rapide)" alt="" coords="192,5,288,32"/>
+</map>
