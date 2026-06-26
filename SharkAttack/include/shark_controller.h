@@ -35,7 +35,7 @@ typedef struct {
     Vector zone_avg_velocity[Count];
     bool zone_has_prey_visible[Count];
 
-    Vector closest_shark;
+    Vector closest_shark; /**< Position du plus proche requin. */
 
     int nb_fish_remaining;
 } SharkPerception;
