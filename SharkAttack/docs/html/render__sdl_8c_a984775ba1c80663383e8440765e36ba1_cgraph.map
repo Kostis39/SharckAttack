@@ -1,12 +1,21 @@
 <map id="Draw_debug_view" name="Draw_debug_view">
-<area shape="rect" id="node1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="5,81,147,108"/>
-<area shape="rect" id="node2" href="$sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="195,5,345,32"/>
-<area shape="rect" id="node4" href="$sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="201,56,339,83"/>
-<area shape="rect" id="node5" href="$sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="218,107,322,133"/>
-<area shape="rect" id="node10" href="$sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="241,157,299,184"/>
-<area shape="rect" id="node3" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="440,31,499,57"/>
-<area shape="rect" id="node6" href="$sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="393,107,545,133"/>
-<area shape="rect" id="node7" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="593,107,728,133"/>
-<area shape="rect" id="node8" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="776,81,887,108"/>
-<area shape="rect" id="node9" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="779,132,883,159"/>
+<area shape="rect" id="Node000001" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="5,81,146,109"/>
+<area shape="rect" id="Node000002" href="$sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="194,5,343,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,78,219,37,216,41,114,83"/>
+<area shape="rect" id="Node000003" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="438,56,496,84"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="146,88,422,70,421,75,147,93"/>
+<area shape="rect" id="Node000004" href="$sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="200,107,336,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,102,188,109,183,110,146,107"/>
+<area shape="rect" id="Node000005" href="$sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="217,159,320,186"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="109,107,195,143,215,153,209,153,193,148,108,112"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,31,425,58,420,59,325,36"/>
+<area shape="poly" id="edge9_Node000005_Node000003" title=" " alt="" coords="313,155,342,143,389,117,430,94,435,92,392,122,344,148,315,161"/>
+<area shape="rect" id="Node000006" href="$sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="391,159,542,186"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="320,170,378,172,373,173,321,175"/>
+<area shape="rect" id="Node000007" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="590,159,725,186"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="543,170,577,172,572,173,543,175"/>
+<area shape="rect" id="Node000008" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="773,132,883,160"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="725,159,754,157,760,157,725,165"/>
+<area shape="rect" id="Node000009" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="776,184,880,212"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="725,180,763,188,758,188,725,185"/>
 </map>

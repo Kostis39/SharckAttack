@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence de la structure SharkPhi</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('structSharkPhi.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('structSharkPhi.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,16 +76,20 @@ $(document).ready(function(){initNavTree('structSharkPhi.html',''); initResizabl
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Champs de données</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence de la structure SharkPhi</div>  </div>
+  <div class="headertitle"><div class="title">Référence de la structure SharkPhi</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -94,23 +97,22 @@ $(document).ready(function(){initNavTree('structSharkPhi.html',''); initResizabl
 <div class="dynheader">
 Graphe de collaboration de SharkPhi:</div>
 <div class="dyncontent">
-<div class="center"><img src="structSharkPhi__coll__graph.png" border="0" usemap="#aSharkPhi_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="structSharkPhi__coll__graph.png" border="0" usemap="#aSharkPhi_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aSharkPhi_coll__map" id="aSharkPhi_coll__map">
-<area shape="rect" title=" " alt="" coords="12,109,91,136"/>
-<area shape="rect" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,32"/>
+<area shape="rect" title=" " alt="" coords="12,128,90,156"/>
+<area shape="rect" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,33"/>
+<area shape="poly" title=" " alt="" coords="53,48,54,128,48,127,49,50"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Champs de données</h2></td></tr>
-<tr class="memitem:aaaa502cece7e9631b42a828dee3802f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPhi.html#aaaa502cece7e9631b42a828dee3802f8">x</a></td></tr>
-<tr class="separator:aaaa502cece7e9631b42a828dee3802f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5593582a56ed2ec2619ccd8e19df140"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharkPhi.html#ab5593582a56ed2ec2619ccd8e19df140">y</a></td></tr>
-<tr class="separator:ab5593582a56ed2ec2619ccd8e19df140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa502cece7e9631b42a828dee3802f8" id="r_aaaa502cece7e9631b42a828dee3802f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaa502cece7e9631b42a828dee3802f8">x</a></td></tr>
+<tr class="memitem:ab5593582a56ed2ec2619ccd8e19df140" id="r_ab5593582a56ed2ec2619ccd8e19df140"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5593582a56ed2ec2619ccd8e19df140">y</a></td></tr>
 </table>
-<h2 class="groupheader">Documentation des champs</h2>
-<a id="aaaa502cece7e9631b42a828dee3802f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaaa502cece7e9631b42a828dee3802f8">&#9670;&nbsp;</a></span>x</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
+<a id="aaaa502cece7e9631b42a828dee3802f8" name="aaaa502cece7e9631b42a828dee3802f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa502cece7e9631b42a828dee3802f8">&#9670;&#160;</a></span>x</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,8 +125,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="ab5593582a56ed2ec2619ccd8e19df140"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5593582a56ed2ec2619ccd8e19df140">&#9670;&nbsp;</a></span>y</h2>
+<a id="ab5593582a56ed2ec2619ccd8e19df140" name="ab5593582a56ed2ec2619ccd8e19df140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5593582a56ed2ec2619ccd8e19df140">&#9670;&#160;</a></span>y</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,11 +144,19 @@ Champs de données</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structSharkPhi.html">SharkPhi</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="structSharkPhi.html">SharkPhi</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

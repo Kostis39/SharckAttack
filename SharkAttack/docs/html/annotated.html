@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Structures de données</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('annotated.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('annotated.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,46 +76,53 @@ $(document).ready(function(){initNavTree('annotated.html',''); initResizable(); 
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">Structures de données</div>  </div>
+  <div class="headertitle"><div class="title">Structures de données</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock">Liste des structures de données avec une brève description :</div><div class="directory">
 <table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structAudioManager.html" target="_self">AudioManager</a></td><td class="desc"></td></tr>
-<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structCollider.html" target="_self">Collider</a></td><td class="desc"></td></tr>
+<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structCollider.html" target="_self">Collider</a></td><td class="desc"></td></tr>
 <tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structFish.html" target="_self">Fish</a></td><td class="desc">Structure représentant un poisson dans le jeu </td></tr>
-<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structFishPerception.html" target="_self">FishPerception</a></td><td class="desc">Structure représentant la perception qu'a un poisson du monde </td></tr>
+<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structFishPerception.html" target="_self">FishPerception</a></td><td class="desc">Structure représentant la perception qu'a un poisson du monde </td></tr>
 <tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structGame.html" target="_self">Game</a></td><td class="desc">Structure représentant l'état du jeu </td></tr>
-<tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structGradient.html" target="_self">Gradient</a></td><td class="desc"></td></tr>
+<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structGradient.html" target="_self">Gradient</a></td><td class="desc"></td></tr>
 <tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structHyperparameters.html" target="_self">Hyperparameters</a></td><td class="desc"></td></tr>
-<tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structRulesSetFish.html" target="_self">RulesSetFish</a></td><td class="desc"></td></tr>
+<tr id="row_7_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structRulesSetFish.html" target="_self">RulesSetFish</a></td><td class="desc"></td></tr>
 <tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structSDLDisplay.html" target="_self">SDLDisplay</a></td><td class="desc">Structure représentant l'affichage SDL du jeu </td></tr>
-<tr id="row_9_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structShark.html" target="_self">Shark</a></td><td class="desc">Structure représentant le requin dans le jeu </td></tr>
+<tr id="row_9_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structShark.html" target="_self">Shark</a></td><td class="desc">Structure représentant le requin dans le jeu </td></tr>
 <tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structSharkPerception.html" target="_self">SharkPerception</a></td><td class="desc"></td></tr>
-<tr id="row_11_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structSharkPhi.html" target="_self">SharkPhi</a></td><td class="desc"></td></tr>
+<tr id="row_11_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structSharkPhi.html" target="_self">SharkPhi</a></td><td class="desc"></td></tr>
 <tr id="row_12_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structStepTrajectory.html" target="_self">StepTrajectory</a></td><td class="desc"></td></tr>
-<tr id="row_13_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structTrajectory.html" target="_self">Trajectory</a></td><td class="desc"></td></tr>
+<tr id="row_13_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structTrajectory.html" target="_self">Trajectory</a></td><td class="desc"></td></tr>
 <tr id="row_14_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structTrajectoryCalculation.html" target="_self">TrajectoryCalculation</a></td><td class="desc"></td></tr>
-<tr id="row_15_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structUNITY__STORAGE__T.html" target="_self">UNITY_STORAGE_T</a></td><td class="desc"></td></tr>
+<tr id="row_15_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structUNITY__STORAGE__T.html" target="_self">UNITY_STORAGE_T</a></td><td class="desc"></td></tr>
 <tr id="row_16_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structVector.html" target="_self">Vector</a></td><td class="desc">Structure représentant un vecteur 2D </td></tr>
-<tr id="row_17_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structVectorRule.html" target="_self">VectorRule</a></td><td class="desc">Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est définie par la valeur de l'énumération <code>Rules_Lenght</code> dans <code><a class="el" href="config_8h.html">config.h</a></code>. Ce vecteur permet de stocker et de manipuler de manière générique les composantes liées aux différentes règles </td></tr>
+<tr id="row_17_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structVectorRule.html" target="_self">VectorRule</a></td><td class="desc">Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est définie par la valeur de l'énumération <span class="tt"><a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4">Rules_Lenght</a></span> dans <span class="tt"><a class="el" href="config_8h.html">config.h</a></span>. Ce vecteur permet de stocker et de manipuler de manière générique les composantes liées aux différentes règles </td></tr>
 <tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structWorkerArgs.html" target="_self">WorkerArgs</a></td><td class="desc"></td></tr>
-<tr id="row_19_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structWorld.html" target="_self">World</a></td><td class="desc">Structure représentant le monde du jeu, contenant les poissons et le requin </td></tr>
+<tr id="row_19_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structWorld.html" target="_self">World</a></td><td class="desc">Structure représentant le monde du jeu, contenant les poissons et le requin </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

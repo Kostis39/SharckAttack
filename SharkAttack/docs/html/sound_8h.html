@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier include/sound.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('sound_8h.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('sound_8h.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,89 +76,98 @@ $(document).ready(function(){initNavTree('sound_8h.html',''); initResizable(); }
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Structures de données</a> &#124;
-<a href="#func-members">Fonctions</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier sound.h</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier sound.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;SDL2/SDL_mixer.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de sound.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="sound_8h__incl.png" border="0" usemap="#ainclude_2sound_8h" alt=""/></div>
+<div class="center"><img src="sound_8h__incl.png" border="0" usemap="#ainclude_2sound_8h" loading="lazy" alt=""/></div>
 <map name="ainclude_2sound_8h" id="ainclude_2sound_8h">
-<area shape="rect" title=" " alt="" coords="13,5,137,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,144,107"/>
+<area shape="rect" title=" " alt="" coords="13,5,136,33"/>
+<area shape="rect" title=" " alt="" coords="5,81,144,109"/>
+<area shape="poly" title=" " alt="" coords="76,32,77,66,72,65,73,36"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
-<div class="center"><img src="sound_8h__dep__incl.png" border="0" usemap="#ainclude_2sound_8hdep" alt=""/></div>
+<div class="center"><img src="sound_8h__dep__incl.png" border="0" usemap="#ainclude_2sound_8hdep" loading="lazy" alt=""/></div>
 <map name="ainclude_2sound_8hdep" id="ainclude_2sound_8hdep">
-<area shape="rect" title=" " alt="" coords="381,5,505,32"/>
-<area shape="rect" href="game_8h.html" title=" " alt="" coords="772,155,895,181"/>
-<area shape="rect" href="game_8c.html" title=" " alt="" coords="188,229,281,256"/>
-<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="309,80,462,107"/>
-<area shape="rect" href="sound_8c.html" title=" " alt="" coords="538,80,633,107"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="478,229,567,256"/>
-<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="764,229,903,256"/>
-<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="323,155,447,181"/>
-<area shape="rect" href="shark_8c.html" title=" " alt="" coords="471,155,563,181"/>
-<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="588,155,748,181"/>
-<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="27,155,197,181"/>
+<area shape="rect" title=" " alt="" coords="375,5,499,33"/>
+<area shape="rect" href="game_8h.html" title=" " alt="" coords="766,157,887,184"/>
+<area shape="poly" title=" " alt="" coords="454,43,484,77,521,106,615,127,768,158,763,158,614,132,519,111,480,81,453,48"/>
+<area shape="rect" href="game_8c.html" title=" " alt="" coords="186,232,278,260"/>
+<area shape="poly" title=" " alt="" coords="358,21,276,31,229,39,181,52,134,69,89,92,50,122,17,158,8,178,14,194,30,207,55,218,120,233,188,242,182,243,119,238,53,223,27,212,9,197,3,178,12,155,46,118,87,88,131,64,179,47,228,34,275,25,362,19"/>
+<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="305,81,457,109"/>
+<area shape="poly" title=" " alt="" coords="420,44,393,83,389,79,416,47"/>
+<area shape="rect" href="sound_8c.html" title=" " alt="" coords="531,81,626,109"/>
+<area shape="poly" title=" " alt="" coords="476,38,556,80,551,81,475,43"/>
+<area shape="poly" title=" " alt="" coords="753,185,480,222,279,243,278,238,479,216,748,185"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="474,232,563,260"/>
+<area shape="poly" title=" " alt="" coords="759,188,563,237,563,232,753,189"/>
+<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="758,232,895,260"/>
+<area shape="poly" title=" " alt="" coords="828,198,828,234,825,230,825,202"/>
+<area shape="poly" title=" " alt="" coords="473,108,755,154,768,159,763,158,754,159,473,113"/>
+<area shape="poly" title=" " alt="" coords="349,116,299,159,266,198,241,234,238,230,261,195,295,155,344,119"/>
+<area shape="poly" title=" " alt="" coords="346,116,326,134,311,150,305,167,310,183,336,200,378,215,477,238,471,238,377,220,333,205,306,186,300,166,307,147,323,130,341,119"/>
+<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="319,157,443,184"/>
+<area shape="poly" title=" " alt="" coords="383,122,383,158,379,155,379,127"/>
+<area shape="rect" href="shark_8c.html" title=" " alt="" coords="467,157,559,184"/>
+<area shape="poly" title=" " alt="" coords="419,114,492,156,487,156,418,119"/>
+<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="583,157,742,184"/>
+<area shape="poly" title=" " alt="" coords="446,110,615,156,610,157,446,116"/>
+<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="26,157,195,184"/>
+<area shape="poly" title=" " alt="" coords="317,115,160,159,158,154,320,111"/>
 </map>
 </div>
 </div>
 <p><a href="sound_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Structures de données</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAudioManager.html">AudioManager</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:AudioManager" id="r_AudioManager"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAudioManager.html">AudioManager</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:af665563ea996052bcc9e33846f40c262"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#af665563ea996052bcc9e33846f40c262">audio_init</a> ()</td></tr>
-<tr class="memdesc:af665563ea996052bcc9e33846f40c262"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise l'audio SDL  <a href="sound_8h.html#af665563ea996052bcc9e33846f40c262">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af665563ea996052bcc9e33846f40c262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf6d9dcfef2f7fd2016f4c6ec2512741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741">audio_load</a> (const char *path, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="memdesc:acf6d9dcfef2f7fd2016f4c6ec2512741"><td class="mdescLeft">&#160;</td><td class="mdescRight">charge en mémoire les sons nécessaires au bon fonctionnement du jeu  <a href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741">Plus de détails...</a><br /></td></tr>
-<tr class="separator:acf6d9dcfef2f7fd2016f4c6ec2512741"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02e99654bd7e1e1ad27831a0798368ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce">audio_play</a> (Mix_Chunk *sound, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="memdesc:a02e99654bd7e1e1ad27831a0798368ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">joue un son  <a href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a02e99654bd7e1e1ad27831a0798368ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a336eba8d8d039caddf1e0ad4b35b341b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b">audio_quit</a> (<a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="memdesc:a336eba8d8d039caddf1e0ad4b35b341b"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire utilisée par l'ensemble de son  <a href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a336eba8d8d039caddf1e0ad4b35b341b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb2781fd7eff0543d96ec2a5d42f32b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6">audio_load_music</a> (const char *path, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="separator:afb2781fd7eff0543d96ec2a5d42f32b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ae4894679404c800f33fd586dce6e5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a0ae4894679404c800f33fd586dce6e5c">audio_play_music</a> (<a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="separator:a0ae4894679404c800f33fd586dce6e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc3fa016fdf8424cef864189710adfb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#abc3fa016fdf8424cef864189710adfb8">audio_stop_music</a> (void)</td></tr>
-<tr class="separator:abc3fa016fdf8424cef864189710adfb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afde50e965f66f3fdcdc9c3298bfa0952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952">audio_toggle_mute</a> (<a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="separator:afde50e965f66f3fdcdc9c3298bfa0952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8194de9b8feb0047a4658122faaa82" id="r_a3d8194de9b8feb0047a4658122faaa82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d8194de9b8feb0047a4658122faaa82">audio_init</a> ()</td></tr>
+<tr class="memdesc:a3d8194de9b8feb0047a4658122faaa82"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise l'audio SDL  <br /></td></tr>
+<tr class="memitem:acf6d9dcfef2f7fd2016f4c6ec2512741" id="r_acf6d9dcfef2f7fd2016f4c6ec2512741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf6d9dcfef2f7fd2016f4c6ec2512741">audio_load</a> (const char *path, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
+<tr class="memdesc:acf6d9dcfef2f7fd2016f4c6ec2512741"><td class="mdescLeft">&#160;</td><td class="mdescRight">charge en mémoire les sons nécessaires au bon fonctionnement du jeu  <br /></td></tr>
+<tr class="memitem:a02e99654bd7e1e1ad27831a0798368ce" id="r_a02e99654bd7e1e1ad27831a0798368ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02e99654bd7e1e1ad27831a0798368ce">audio_play</a> (Mix_Chunk *sound, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
+<tr class="memdesc:a02e99654bd7e1e1ad27831a0798368ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">joue un son  <br /></td></tr>
+<tr class="memitem:a336eba8d8d039caddf1e0ad4b35b341b" id="r_a336eba8d8d039caddf1e0ad4b35b341b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a336eba8d8d039caddf1e0ad4b35b341b">audio_quit</a> (<a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
+<tr class="memdesc:a336eba8d8d039caddf1e0ad4b35b341b"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire utilisée par l'ensemble de son  <br /></td></tr>
+<tr class="memitem:afb2781fd7eff0543d96ec2a5d42f32b6" id="r_afb2781fd7eff0543d96ec2a5d42f32b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb2781fd7eff0543d96ec2a5d42f32b6">audio_load_music</a> (const char *path, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
+<tr class="memitem:a0ae4894679404c800f33fd586dce6e5c" id="r_a0ae4894679404c800f33fd586dce6e5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ae4894679404c800f33fd586dce6e5c">audio_play_music</a> (<a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
+<tr class="memitem:abc3fa016fdf8424cef864189710adfb8" id="r_abc3fa016fdf8424cef864189710adfb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc3fa016fdf8424cef864189710adfb8">audio_stop_music</a> (void)</td></tr>
+<tr class="memitem:afde50e965f66f3fdcdc9c3298bfa0952" id="r_afde50e965f66f3fdcdc9c3298bfa0952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afde50e965f66f3fdcdc9c3298bfa0952">audio_toggle_mute</a> (<a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="af665563ea996052bcc9e33846f40c262"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af665563ea996052bcc9e33846f40c262">&#9670;&nbsp;</a></span>audio_init()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a3d8194de9b8feb0047a4658122faaa82" name="a3d8194de9b8feb0047a4658122faaa82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8194de9b8feb0047a4658122faaa82">&#9670;&#160;</a></span>audio_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structAudioManager.html">AudioManager</a>* audio_init </td>
+          <td class="memname"><a class="el" href="structAudioManager.html">AudioManager</a> * audio_init </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -169,8 +177,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="acf6d9dcfef2f7fd2016f4c6ec2512741"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf6d9dcfef2f7fd2016f4c6ec2512741">&#9670;&nbsp;</a></span>audio_load()</h2>
+<a id="acf6d9dcfef2f7fd2016f4c6ec2512741" name="acf6d9dcfef2f7fd2016f4c6ec2512741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6d9dcfef2f7fd2016f4c6ec2512741">&#9670;&#160;</a></span>audio_load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,19 +186,12 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void audio_load </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -199,8 +200,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="afb2781fd7eff0543d96ec2a5d42f32b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb2781fd7eff0543d96ec2a5d42f32b6">&#9670;&nbsp;</a></span>audio_load_music()</h2>
+<a id="afb2781fd7eff0543d96ec2a5d42f32b6" name="afb2781fd7eff0543d96ec2a5d42f32b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2781fd7eff0543d96ec2a5d42f32b6">&#9670;&#160;</a></span>audio_load_music()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,27 +209,20 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">int audio_load_music </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a02e99654bd7e1e1ad27831a0798368ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02e99654bd7e1e1ad27831a0798368ce">&#9670;&nbsp;</a></span>audio_play()</h2>
+<a id="a02e99654bd7e1e1ad27831a0798368ce" name="a02e99654bd7e1e1ad27831a0798368ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e99654bd7e1e1ad27831a0798368ce">&#9670;&#160;</a></span>audio_play()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,19 +230,12 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void audio_play </td>
           <td>(</td>
-          <td class="paramtype">Mix_Chunk *&#160;</td>
-          <td class="paramname"><em>sound</em>, </td>
+          <td class="paramtype">Mix_Chunk *</td>          <td class="paramname"><span class="paramname"><em>sound</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -263,8 +250,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ae4894679404c800f33fd586dce6e5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ae4894679404c800f33fd586dce6e5c">&#9670;&nbsp;</a></span>audio_play_music()</h2>
+<a id="a0ae4894679404c800f33fd586dce6e5c" name="a0ae4894679404c800f33fd586dce6e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae4894679404c800f33fd586dce6e5c">&#9670;&#160;</a></span>audio_play_music()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,8 +259,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void audio_play_music </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -281,8 +267,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a336eba8d8d039caddf1e0ad4b35b341b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a336eba8d8d039caddf1e0ad4b35b341b">&#9670;&nbsp;</a></span>audio_quit()</h2>
+<a id="a336eba8d8d039caddf1e0ad4b35b341b" name="a336eba8d8d039caddf1e0ad4b35b341b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336eba8d8d039caddf1e0ad4b35b341b">&#9670;&#160;</a></span>audio_quit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,8 +276,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void audio_quit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -301,8 +286,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="abc3fa016fdf8424cef864189710adfb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc3fa016fdf8424cef864189710adfb8">&#9670;&nbsp;</a></span>audio_stop_music()</h2>
+<a id="abc3fa016fdf8424cef864189710adfb8" name="abc3fa016fdf8424cef864189710adfb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3fa016fdf8424cef864189710adfb8">&#9670;&#160;</a></span>audio_stop_music()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,8 +295,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void audio_stop_music </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -319,8 +303,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="afde50e965f66f3fdcdc9c3298bfa0952"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afde50e965f66f3fdcdc9c3298bfa0952">&#9670;&nbsp;</a></span>audio_toggle_mute()</h2>
+<a id="afde50e965f66f3fdcdc9c3298bfa0952" name="afde50e965f66f3fdcdc9c3298bfa0952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde50e965f66f3fdcdc9c3298bfa0952">&#9670;&#160;</a></span>audio_toggle_mute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,8 +312,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void audio_toggle_mute </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -339,11 +322,19 @@ Fonctions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="sound_8h.html">sound.h</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="sound_8h.html">sound.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

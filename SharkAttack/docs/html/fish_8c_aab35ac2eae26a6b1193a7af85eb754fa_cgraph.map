@@ -1,5 +1,7 @@
 <map id="Fish_create_random_pos" name="Fish_create_random_pos">
-<area shape="rect" id="node1" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="5,5,188,32"/>
-<area shape="rect" id="node2" href="$utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="236,5,344,32"/>
-<area shape="rect" id="node3" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="392,5,472,32"/>
+<area shape="rect" id="Node000001" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="5,5,188,33"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="236,5,343,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,17,222,19,217,19,188,22"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="391,5,470,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,17,378,19,372,19,344,22"/>
 </map>

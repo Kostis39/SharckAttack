@@ -1,4 +1,5 @@
 <map id="test_Vector_angle_aligned" name="test_Vector_angle_aligned">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,199,32"/>
-<area shape="rect" id="node2" href="$vector_8h.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="247,5,353,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,198,33"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#a490279b95a55b0d116341c659033eb31" title=" " alt="" coords="246,5,351,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,17,233,19,228,19,198,22"/>
 </map>

@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence de la structure TrajectoryCalculation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('structTrajectoryCalculation.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('structTrajectoryCalculation.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,16 +76,20 @@ $(document).ready(function(){initNavTree('structTrajectoryCalculation.html','');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Champs de données</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence de la structure TrajectoryCalculation</div>  </div>
+  <div class="headertitle"><div class="title">Référence de la structure TrajectoryCalculation</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -94,28 +97,26 @@ $(document).ready(function(){initNavTree('structTrajectoryCalculation.html','');
 <div class="dynheader">
 Graphe de collaboration de TrajectoryCalculation:</div>
 <div class="dyncontent">
-<div class="center"><img src="structTrajectoryCalculation__coll__graph.png" border="0" usemap="#aTrajectoryCalculation_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="structTrajectoryCalculation__coll__graph.png" border="0" usemap="#aTrajectoryCalculation_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aTrajectoryCalculation_coll__map" id="aTrajectoryCalculation_coll__map">
-<area shape="rect" title=" " alt="" coords="5,199,164,225"/>
-<area shape="rect" href="structGradient.html" title=" " alt="" coords="45,109,124,136"/>
-<area shape="rect" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="39,5,131,32"/>
+<area shape="rect" title=" " alt="" coords="5,229,164,257"/>
+<area shape="rect" href="structGradient.html" title=" " alt="" coords="46,128,123,156"/>
+<area shape="poly" title=" " alt="" coords="87,170,87,229,82,228,82,173"/>
+<area shape="rect" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="39,5,130,33"/>
+<area shape="poly" title=" " alt="" coords="86,46,87,128,82,127,83,51"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Champs de données</h2></td></tr>
-<tr class="memitem:a36252165f274777c06fa5f161d23a9e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGradient.html">Gradient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrajectoryCalculation.html#a36252165f274777c06fa5f161d23a9e4">grad</a></td></tr>
-<tr class="separator:a36252165f274777c06fa5f161d23a9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36e80ecd150875f87f5acc17b5a220bc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrajectoryCalculation.html#a36e80ecd150875f87f5acc17b5a220bc">total_reward</a></td></tr>
-<tr class="separator:a36e80ecd150875f87f5acc17b5a220bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0a0f12ee20f468a906a0ec7347ccd5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrajectoryCalculation.html#a5d0a0f12ee20f468a906a0ec7347ccd5">total_gain</a></td></tr>
-<tr class="separator:a5d0a0f12ee20f468a906a0ec7347ccd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae46891887b5d5a21801b798ee2816569"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrajectoryCalculation.html#ae46891887b5d5a21801b798ee2816569">total_iteration</a></td></tr>
-<tr class="separator:ae46891887b5d5a21801b798ee2816569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36252165f274777c06fa5f161d23a9e4" id="r_a36252165f274777c06fa5f161d23a9e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGradient.html">Gradient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36252165f274777c06fa5f161d23a9e4">grad</a></td></tr>
+<tr class="memitem:a36e80ecd150875f87f5acc17b5a220bc" id="r_a36e80ecd150875f87f5acc17b5a220bc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36e80ecd150875f87f5acc17b5a220bc">total_reward</a></td></tr>
+<tr class="memitem:a5d0a0f12ee20f468a906a0ec7347ccd5" id="r_a5d0a0f12ee20f468a906a0ec7347ccd5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d0a0f12ee20f468a906a0ec7347ccd5">total_gain</a></td></tr>
+<tr class="memitem:ae46891887b5d5a21801b798ee2816569" id="r_ae46891887b5d5a21801b798ee2816569"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae46891887b5d5a21801b798ee2816569">total_iteration</a></td></tr>
 </table>
-<h2 class="groupheader">Documentation des champs</h2>
-<a id="a36252165f274777c06fa5f161d23a9e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36252165f274777c06fa5f161d23a9e4">&#9670;&nbsp;</a></span>grad</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
+<a id="a36252165f274777c06fa5f161d23a9e4" name="a36252165f274777c06fa5f161d23a9e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36252165f274777c06fa5f161d23a9e4">&#9670;&#160;</a></span>grad</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,8 +129,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d0a0f12ee20f468a906a0ec7347ccd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d0a0f12ee20f468a906a0ec7347ccd5">&#9670;&nbsp;</a></span>total_gain</h2>
+<a id="a5d0a0f12ee20f468a906a0ec7347ccd5" name="a5d0a0f12ee20f468a906a0ec7347ccd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0a0f12ee20f468a906a0ec7347ccd5">&#9670;&#160;</a></span>total_gain</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,8 +143,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="ae46891887b5d5a21801b798ee2816569"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae46891887b5d5a21801b798ee2816569">&#9670;&nbsp;</a></span>total_iteration</h2>
+<a id="ae46891887b5d5a21801b798ee2816569" name="ae46891887b5d5a21801b798ee2816569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46891887b5d5a21801b798ee2816569">&#9670;&#160;</a></span>total_iteration</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,8 +157,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="a36e80ecd150875f87f5acc17b5a220bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36e80ecd150875f87f5acc17b5a220bc">&#9670;&nbsp;</a></span>total_reward</h2>
+<a id="a36e80ecd150875f87f5acc17b5a220bc" name="a36e80ecd150875f87f5acc17b5a220bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36e80ecd150875f87f5acc17b5a220bc">&#9670;&#160;</a></span>total_reward</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,11 +176,19 @@ Champs de données</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structTrajectoryCalculation.html">TrajectoryCalculation</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="structTrajectoryCalculation.html">TrajectoryCalculation</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

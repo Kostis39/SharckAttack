@@ -1,6 +1,9 @@
 <map id="src/vector_rule.c" name="src/vector_rule.c">
-<area shape="rect" id="node1" title=" " alt="" coords="24,5,153,32"/>
-<area shape="rect" id="node2" href="$vector__rule_8h.html" title=" " alt="" coords="35,80,142,107"/>
-<area shape="rect" id="node3" href="$config_8h.html" title=" " alt="" coords="5,155,79,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="103,155,170,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="24,5,152,33"/>
+<area shape="rect" id="Node000002" href="$vector__rule_8h.html" title=" " alt="" coords="35,81,141,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,31,91,66,86,65,87,36"/>
+<area shape="rect" id="Node000003" href="$config_8h.html" title=" " alt="" coords="5,157,78,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,108,60,145,56,142,78,111"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="102,157,168,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="98,107,121,144,116,144,95,112"/>
 </map>

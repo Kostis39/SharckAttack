@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier include/shark.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('shark_8h.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('shark_8h.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,17 +76,20 @@ $(document).ready(function(){initNavTree('shark_8h.html',''); initResizable(); }
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Structures de données</a> &#124;
-<a href="#func-members">Fonctions</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier shark.h</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier shark.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
@@ -97,79 +99,125 @@ $(document).ready(function(){initNavTree('shark_8h.html',''); initResizable(); }
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de shark.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="shark_8h__incl.png" border="0" usemap="#ainclude_2shark_8h" alt=""/></div>
+<div class="center"><img src="shark_8h__incl.png" border="0" usemap="#ainclude_2shark_8h" loading="lazy" alt=""/></div>
 <map name="ainclude_2shark_8h" id="ainclude_2shark_8h">
-<area shape="rect" title=" " alt="" coords="121,5,243,32"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="5,155,79,181"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="94,80,169,107"/>
-<area shape="rect" title=" " alt="" coords="193,80,275,107"/>
-<area shape="rect" title=" " alt="" coords="300,80,371,107"/>
-<area shape="rect" title=" " alt="" coords="103,155,171,181"/>
-<area shape="rect" title=" " alt="" coords="195,155,262,181"/>
+<area shape="rect" title=" " alt="" coords="120,5,240,33"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="5,157,78,184"/>
+<area shape="poly" title=" " alt="" coords="147,35,116,55,83,83,64,112,52,143,47,141,60,110,80,79,113,51,151,32"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="93,81,166,109"/>
+<area shape="poly" title=" " alt="" coords="173,32,149,70,145,66,169,35"/>
+<area shape="rect" title=" " alt="" coords="190,81,272,109"/>
+<area shape="poly" title=" " alt="" coords="190,31,216,68,210,68,188,36"/>
+<area shape="rect" title=" " alt="" coords="296,81,366,109"/>
+<area shape="poly" title=" " alt="" coords="207,31,293,73,288,75,207,36"/>
+<area shape="poly" title=" " alt="" coords="116,108,70,149,67,145,111,110"/>
+<area shape="rect" title=" " alt="" coords="101,157,168,184"/>
+<area shape="poly" title=" " alt="" coords="132,107,135,142,130,140,129,111"/>
+<area shape="rect" title=" " alt="" coords="193,157,258,184"/>
+<area shape="poly" title=" " alt="" coords="148,107,199,147,194,147,146,112"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
-<div class="center"><img src="shark_8h__dep__incl.png" border="0" usemap="#ainclude_2shark_8hdep" alt=""/></div>
+<div class="center"><img src="shark_8h__dep__incl.png" border="0" usemap="#ainclude_2shark_8hdep" loading="lazy" alt=""/></div>
 <map name="ainclude_2shark_8hdep" id="ainclude_2shark_8hdep">
-<area shape="rect" title=" " alt="" coords="953,5,1074,32"/>
-<area shape="rect" href="fish__controller_8h.html" title=" " alt="" coords="60,155,236,181"/>
-<area shape="rect" href="mj_8h.html" title=" " alt="" coords="222,229,325,256"/>
-<area shape="rect" href="game_8c.html" title=" " alt="" coords="873,379,967,405"/>
-<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="541,80,683,107"/>
-<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="517,155,707,181"/>
-<area shape="rect" href="world_8h.html" title=" " alt="" coords="731,155,853,181"/>
-<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="1103,229,1257,256"/>
-<area shape="rect" href="shark_8c.html" title=" " alt="" coords="1549,304,1641,331"/>
-<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="1154,80,1337,107"/>
-<area shape="rect" href="test__shark_8c.html" title=" " alt="" coords="1441,80,1578,107"/>
-<area shape="rect" href="fish__controller_8c.html" title=" " alt="" coords="400,229,547,256"/>
-<area shape="rect" href="test__fish__controller_8c.html" title=" " alt="" coords="5,229,197,256"/>
-<area shape="rect" href="mj_8c.html" title=" " alt="" coords="117,304,190,331"/>
-<area shape="rect" href="reinforce_8c.html" title=" " alt="" coords="408,304,523,331"/>
-<area shape="rect" href="test__mj_8c.html" title=" " alt="" coords="214,304,333,331"/>
-<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="723,304,883,331"/>
-<area shape="rect" href="game_8h.html" title=" " alt="" coords="1008,304,1131,331"/>
-<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="1401,304,1525,331"/>
-<area shape="rect" href="world_8c.html" title=" " alt="" coords="723,229,815,256"/>
-<area shape="rect" href="test__world_8c.html" title=" " alt="" coords="839,229,977,256"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="1241,379,1330,405"/>
-<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="1000,379,1139,405"/>
-<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="1155,304,1325,331"/>
-<area shape="rect" href="sdl__draw__tools_8c.html" title=" " alt="" coords="1161,155,1314,181"/>
+<area shape="rect" title=" " alt="" coords="936,5,1056,33"/>
+<area shape="rect" href="fish__controller_8h.html" title=" " alt="" coords="59,157,234,184"/>
+<area shape="poly" title=" " alt="" coords="918,22,764,27,570,36,385,54,310,67,254,83,225,99,198,119,159,158,155,154,195,115,222,95,252,79,309,62,384,49,570,31,763,22,923,20"/>
+<area shape="rect" href="mj_8h.html" title=" " alt="" coords="221,232,322,260"/>
+<area shape="poly" title=" " alt="" coords="917,26,740,46,633,62,527,84,413,105,368,123,317,159,302,176,291,196,277,234,273,231,286,194,298,173,314,155,365,118,412,100,526,78,632,57,739,41,922,24"/>
+<area shape="rect" href="game_8c.html" title=" " alt="" coords="871,384,963,411"/>
+<area shape="poly" title=" " alt="" coords="1000,46,1002,143,997,202,985,261,974,286,959,309,924,386,921,381,955,307,969,283,980,259,991,202,996,143,996,50"/>
+<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="538,81,680,109"/>
+<area shape="poly" title=" " alt="" coords="918,36,679,83,678,78,923,34"/>
+<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="515,157,703,184"/>
+<area shape="poly" title=" " alt="" coords="945,40,644,159,642,154,950,38"/>
+<area shape="rect" href="world_8h.html" title=" " alt="" coords="728,157,848,184"/>
+<area shape="poly" title=" " alt="" coords="968,41,807,158,805,154,963,43"/>
+<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="1096,232,1248,260"/>
+<area shape="poly" title=" " alt="" coords="1031,39,1056,58,1079,79,1110,120,1136,163,1169,233,1164,231,1131,165,1105,123,1075,83,1053,62,1030,45"/>
+<area shape="rect" href="shark_8c.html" title=" " alt="" coords="1542,308,1633,336"/>
+<area shape="poly" title=" " alt="" coords="1071,19,1132,23,1201,34,1273,51,1341,79,1383,103,1423,133,1493,199,1547,261,1581,308,1576,306,1543,264,1489,202,1419,137,1380,108,1338,83,1271,56,1200,39,1132,29,1072,24"/>
+<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="1146,81,1328,109"/>
+<area shape="poly" title=" " alt="" coords="1054,35,1196,80,1191,81,1053,41"/>
+<area shape="rect" href="test__shark_8c.html" title=" " alt="" coords="1434,81,1570,109"/>
+<area shape="poly" title=" " alt="" coords="1071,29,1416,78,1436,83,1431,84,1415,84,1071,34"/>
+<area shape="poly" title=" " alt="" coords="182,190,252,231,247,233,181,195"/>
+<area shape="rect" href="fish__controller_8c.html" title=" " alt="" coords="397,232,544,260"/>
+<area shape="poly" title=" " alt="" coords="219,186,414,230,410,233,219,191"/>
+<area shape="rect" href="test__fish__controller_8c.html" title=" " alt="" coords="5,232,197,260"/>
+<area shape="poly" title=" " alt="" coords="129,200,111,233,107,231,132,196"/>
+<area shape="poly" title=" " alt="" coords="296,268,341,303,367,320,395,333,436,345,490,355,623,372,873,394,868,394,623,378,489,361,434,350,393,338,365,324,338,307,295,273"/>
+<area shape="rect" href="mj_8c.html" title=" " alt="" coords="117,308,189,336"/>
+<area shape="poly" title=" " alt="" coords="240,267,175,310,173,305,236,270"/>
+<area shape="rect" href="reinforce_8c.html" title=" " alt="" coords="406,308,519,336"/>
+<area shape="poly" title=" " alt="" coords="320,263,431,307,426,308,320,269"/>
+<area shape="rect" href="test__mj_8c.html" title=" " alt="" coords="213,308,330,336"/>
+<area shape="poly" title=" " alt="" coords="273,274,274,309,269,306,270,278"/>
+<area shape="poly" title=" " alt="" coords="520,105,439,125,396,139,356,159,332,176,312,196,282,234,278,230,308,192,329,172,353,154,394,135,438,120,525,103"/>
+<area shape="poly" title=" " alt="" coords="545,115,505,135,460,160,419,192,402,212,387,233,384,244,385,254,396,273,415,291,439,308,433,307,412,295,392,277,379,255,379,243,383,231,397,209,415,189,457,155,503,130,550,113"/>
+<area shape="poly" title=" " alt="" coords="602,122,604,158,600,155,599,126"/>
+<area shape="poly" title=" " alt="" coords="655,112,759,156,753,156,655,118"/>
+<area shape="poly" title=" " alt="" coords="531,190,323,236,322,231,536,187"/>
+<area shape="poly" title=" " alt="" coords="615,140,615,111,618,107,620,142"/>
+<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="720,308,879,336"/>
+<area shape="poly" title=" " alt="" coords="634,192,709,258,780,308,775,307,706,262,632,197"/>
+<area shape="poly" title=" " alt="" coords="711,187,323,241,322,236,713,182"/>
+<area shape="poly" title=" " alt="" coords="749,191,726,212,710,234,698,261,692,286,696,309,710,334,735,351,776,366,873,389,868,389,775,371,732,356,706,337,691,311,687,286,693,260,705,231,723,208,744,194"/>
+<area shape="poly" title=" " alt="" coords="748,191,492,310,490,305,743,192"/>
+<area shape="poly" title=" " alt="" coords="713,189,528,234,527,229,718,188"/>
+<area shape="rect" href="game_8h.html" title=" " alt="" coords="1006,308,1127,336"/>
+<area shape="poly" title=" " alt="" coords="863,183,924,202,984,230,1008,248,1029,269,1060,309,1055,307,1025,272,1004,252,981,235,922,207,863,189"/>
+<area shape="poly" title=" " alt="" coords="863,183,1105,231,1100,232,863,189"/>
+<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="1394,308,1517,336"/>
+<area shape="poly" title=" " alt="" coords="863,172,946,178,1046,188,1154,205,1261,230,1431,308,1425,307,1259,235,1153,210,1046,194,946,183,864,177"/>
+<area shape="rect" href="world_8c.html" title=" " alt="" coords="719,232,811,260"/>
+<area shape="poly" title=" " alt="" coords="781,198,771,234,767,230,777,201"/>
+<area shape="rect" href="test__world_8c.html" title=" " alt="" coords="834,232,970,260"/>
+<area shape="poly" title=" " alt="" coords="822,190,885,232,879,232,820,196"/>
+<area shape="poly" title=" " alt="" coords="1029,342,944,386,943,381,1023,344"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="1236,384,1324,411"/>
+<area shape="poly" title=" " alt="" coords="1119,339,1244,383,1239,383,1118,344"/>
+<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="998,384,1135,411"/>
+<area shape="poly" title=" " alt="" coords="1068,350,1068,385,1064,381,1064,353"/>
+<area shape="poly" title=" " alt="" coords="1096,264,1044,285,996,310,974,328,955,348,926,386,924,381,951,345,970,324,993,306,1042,280,1091,265"/>
+<area shape="poly" title=" " alt="" coords="1093,263,867,310,866,305,1087,264"/>
+<area shape="poly" title=" " alt="" coords="1143,268,1086,310,1084,305,1138,270"/>
+<area shape="poly" title=" " alt="" coords="1263,259,1302,277,1320,290,1334,307,1339,317,1339,329,1331,350,1316,370,1298,386,1296,381,1312,366,1327,347,1334,328,1334,319,1329,309,1316,294,1300,282,1262,264"/>
+<area shape="poly" title=" " alt="" coords="1237,262,1408,308,1402,307,1237,267"/>
+<area shape="poly" title=" " alt="" coords="1263,259,1529,305,1544,311,1539,310,1529,311,1263,265"/>
+<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="1152,308,1320,336"/>
+<area shape="poly" title=" " alt="" coords="1194,270,1227,308,1222,307,1192,274"/>
+<area shape="poly" title=" " alt="" coords="1274,115,1300,133,1323,155,1342,182,1352,207,1362,231,1380,258,1408,285,1437,308,1432,307,1405,289,1376,262,1358,234,1347,209,1338,185,1319,158,1296,137,1273,120"/>
+<area shape="rect" href="sdl__draw__tools_8c.html" title=" " alt="" coords="1157,157,1309,184"/>
+<area shape="poly" title=" " alt="" coords="1237,122,1236,158,1232,155,1234,126"/>
 </map>
 </div>
 </div>
 <p><a href="shark_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Structures de données</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structShark.html">Shark</a></td></tr>
+<tr class="memitem:Shark" id="r_Shark"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structShark.html">Shark</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant le requin dans le jeu.  <a href="structShark.html#details">Plus de détails...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:abe943d2553c14ccf4c9b04d93303d667"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structShark.html">Shark</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667">Shark_create</a> (int width, int height, bool is_player)</td></tr>
-<tr class="memdesc:abe943d2553c14ccf4c9b04d93303d667"><td class="mdescLeft">&#160;</td><td class="mdescRight">crée un requin avec une position initiale et un mode joueur ou bot  <a href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667">Plus de détails...</a><br /></td></tr>
-<tr class="separator:abe943d2553c14ccf4c9b04d93303d667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91dd948519e592c84ab141cfac0e0def"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shark_8h.html#a91dd948519e592c84ab141cfac0e0def">Shark_copy</a> (<a class="el" href="structShark.html">Shark</a> *shark_dest, <a class="el" href="structShark.html">Shark</a> *shark_src)</td></tr>
-<tr class="memdesc:a91dd948519e592c84ab141cfac0e0def"><td class="mdescLeft">&#160;</td><td class="mdescRight">copie les données d'un requin source vers un requin destination  <a href="shark_8h.html#a91dd948519e592c84ab141cfac0e0def">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a91dd948519e592c84ab141cfac0e0def"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4055f670b1b1fcd10cecd89b23d223aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa">Shark_destroy</a> (<a class="el" href="structShark.html">Shark</a> *shark)</td></tr>
-<tr class="memdesc:a4055f670b1b1fcd10cecd89b23d223aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire d'un requin  <a href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a4055f670b1b1fcd10cecd89b23d223aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cbb915fa07293da619455bc73c90e95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95">Is_player</a> (<a class="el" href="structShark.html">Shark</a> *shark)</td></tr>
-<tr class="memdesc:a2cbb915fa07293da619455bc73c90e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie si le requin est contrôlé par le joueur  <a href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a2cbb915fa07293da619455bc73c90e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90050e6cf481a4c40f50af2ec3fa645b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b">Shark_apply_action</a> (<a class="el" href="structShark.html">Shark</a> *shark, <a class="el" href="structVector.html">Vector</a> action, int width, int height)</td></tr>
-<tr class="memdesc:a90050e6cf481a4c40f50af2ec3fa645b"><td class="mdescLeft">&#160;</td><td class="mdescRight">applique une action au requin et met à jour sa position  <a href="shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a90050e6cf481a4c40f50af2ec3fa645b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeebabb143d4ec33b5e26b90f6b405eba" id="r_aeebabb143d4ec33b5e26b90f6b405eba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structShark.html">Shark</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeebabb143d4ec33b5e26b90f6b405eba">Shark_create</a> (int width, int height, bool is_player)</td></tr>
+<tr class="memdesc:aeebabb143d4ec33b5e26b90f6b405eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">crée un requin avec une position initiale et un mode joueur ou bot  <br /></td></tr>
+<tr class="memitem:a91dd948519e592c84ab141cfac0e0def" id="r_a91dd948519e592c84ab141cfac0e0def"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91dd948519e592c84ab141cfac0e0def">Shark_copy</a> (<a class="el" href="structShark.html">Shark</a> *shark_dest, <a class="el" href="structShark.html">Shark</a> *shark_src)</td></tr>
+<tr class="memdesc:a91dd948519e592c84ab141cfac0e0def"><td class="mdescLeft">&#160;</td><td class="mdescRight">copie les données d'un requin source vers un requin destination  <br /></td></tr>
+<tr class="memitem:a4055f670b1b1fcd10cecd89b23d223aa" id="r_a4055f670b1b1fcd10cecd89b23d223aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4055f670b1b1fcd10cecd89b23d223aa">Shark_destroy</a> (<a class="el" href="structShark.html">Shark</a> *shark)</td></tr>
+<tr class="memdesc:a4055f670b1b1fcd10cecd89b23d223aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire d'un requin  <br /></td></tr>
+<tr class="memitem:a2cbb915fa07293da619455bc73c90e95" id="r_a2cbb915fa07293da619455bc73c90e95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cbb915fa07293da619455bc73c90e95">Is_player</a> (<a class="el" href="structShark.html">Shark</a> *shark)</td></tr>
+<tr class="memdesc:a2cbb915fa07293da619455bc73c90e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie si le requin est contrôlé par le joueur  <br /></td></tr>
+<tr class="memitem:a90050e6cf481a4c40f50af2ec3fa645b" id="r_a90050e6cf481a4c40f50af2ec3fa645b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90050e6cf481a4c40f50af2ec3fa645b">Shark_apply_action</a> (<a class="el" href="structShark.html">Shark</a> *shark, <a class="el" href="structVector.html">Vector</a> action, int width, int height)</td></tr>
+<tr class="memdesc:a90050e6cf481a4c40f50af2ec3fa645b"><td class="mdescLeft">&#160;</td><td class="mdescRight">applique une action au requin et met à jour sa position  <br /></td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a2cbb915fa07293da619455bc73c90e95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cbb915fa07293da619455bc73c90e95">&#9670;&nbsp;</a></span>Is_player()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a2cbb915fa07293da619455bc73c90e95" name="a2cbb915fa07293da619455bc73c90e95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbb915fa07293da619455bc73c90e95">&#9670;&#160;</a></span>Is_player()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,8 +225,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">bool Is_player </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>shark</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>shark</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -195,8 +242,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a90050e6cf481a4c40f50af2ec3fa645b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90050e6cf481a4c40f50af2ec3fa645b">&#9670;&nbsp;</a></span>Shark_apply_action()</h2>
+<a id="a90050e6cf481a4c40f50af2ec3fa645b" name="a90050e6cf481a4c40f50af2ec3fa645b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90050e6cf481a4c40f50af2ec3fa645b">&#9670;&#160;</a></span>Shark_apply_action()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,31 +251,22 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void Shark_apply_action </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>shark</em>, </td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>shark</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>action</em>, </td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>action</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -246,22 +284,26 @@ Fonctions</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="shark_8h_a90050e6cf481a4c40f50af2ec3fa645b_cgraph.png" border="0" usemap="#ashark_8h_a90050e6cf481a4c40f50af2ec3fa645b_cgraph" alt=""/></div>
+<div class="center"><img src="shark_8h_a90050e6cf481a4c40f50af2ec3fa645b_cgraph.png" border="0" usemap="#ashark_8h_a90050e6cf481a4c40f50af2ec3fa645b_cgraph" loading="lazy" alt=""/></div>
 <map name="ashark_8h_a90050e6cf481a4c40f50af2ec3fa645b_cgraph" id="ashark_8h_a90050e6cf481a4c40f50af2ec3fa645b_cgraph">
-<area shape="rect" title="applique une action au requin et met à jour sa position" alt="" coords="5,81,155,108"/>
-<area shape="rect" href="vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="223,5,317,32"/>
-<area shape="rect" href="vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="215,56,325,83"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="203,107,337,133"/>
-<area shape="rect" href="vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="218,157,322,184"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="385,81,496,108"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="389,132,493,159"/>
+<area shape="rect" title="applique une action au requin et met à jour sa position" alt="" coords="5,81,154,109"/>
+<area shape="rect" href="vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="222,5,316,33"/>
+<area shape="poly" title=" " alt="" coords="115,78,220,37,216,41,118,83"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="384,69,494,97"/>
+<area shape="poly" title=" " alt="" coords="154,90,369,83,367,88,154,95"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="202,107,336,134"/>
+<area shape="poly" title=" " alt="" coords="154,102,189,109,184,110,154,108"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="388,133,491,161"/>
+<area shape="poly" title=" " alt="" coords="107,107,151,127,202,143,246,150,290,153,375,154,370,154,290,158,245,155,201,148,149,132,106,112"/>
+<area shape="poly" title=" " alt="" coords="334,103,366,99,371,98,336,109"/>
+<area shape="poly" title=" " alt="" coords="337,128,375,137,369,137,336,134"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a91dd948519e592c84ab141cfac0e0def"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91dd948519e592c84ab141cfac0e0def">&#9670;&nbsp;</a></span>Shark_copy()</h2>
+<a id="a91dd948519e592c84ab141cfac0e0def" name="a91dd948519e592c84ab141cfac0e0def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91dd948519e592c84ab141cfac0e0def">&#9670;&#160;</a></span>Shark_copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,19 +311,12 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">int Shark_copy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>shark_dest</em>, </td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>shark_dest</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>shark_src</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>shark_src</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -298,34 +333,26 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="abe943d2553c14ccf4c9b04d93303d667"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe943d2553c14ccf4c9b04d93303d667">&#9670;&nbsp;</a></span>Shark_create()</h2>
+<a id="aeebabb143d4ec33b5e26b90f6b405eba" name="aeebabb143d4ec33b5e26b90f6b405eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeebabb143d4ec33b5e26b90f6b405eba">&#9670;&#160;</a></span>Shark_create()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structShark.html">Shark</a>* Shark_create </td>
+          <td class="memname"><a class="el" href="structShark.html">Shark</a> * Shark_create </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>is_player</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>is_player</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -343,8 +370,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a4055f670b1b1fcd10cecd89b23d223aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4055f670b1b1fcd10cecd89b23d223aa">&#9670;&nbsp;</a></span>Shark_destroy()</h2>
+<a id="a4055f670b1b1fcd10cecd89b23d223aa" name="a4055f670b1b1fcd10cecd89b23d223aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4055f670b1b1fcd10cecd89b23d223aa">&#9670;&#160;</a></span>Shark_destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,8 +379,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Shark_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>shark</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>shark</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -371,11 +397,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="shark_8h.html">shark.h</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="shark_8h.html">shark.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

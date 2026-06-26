@@ -1,4 +1,5 @@
 <map id="Rules_border_repulsion" name="Rules_border_repulsion">
-<area shape="rect" id="node1" title="répulsion des bords, empêche le poisson de sortir du monde" alt="" coords="5,5,180,32"/>
-<area shape="rect" id="node2" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="228,5,319,32"/>
+<area shape="rect" id="Node000001" title="répulsion des bords, empêche le poisson de sortir du monde" alt="" coords="5,5,179,33"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="227,5,317,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,17,214,19,208,19,179,22"/>
 </map>

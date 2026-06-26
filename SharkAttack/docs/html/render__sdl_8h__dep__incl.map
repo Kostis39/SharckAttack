@@ -1,11 +1,21 @@
 <map id="include/render_sdl.h" name="include/render_sdl.h">
-<area shape="rect" id="node1" title=" " alt="" coords="314,5,467,32"/>
-<area shape="rect" id="node2" href="$game_8h.html" title=" " alt="" coords="131,80,253,107"/>
-<area shape="rect" id="node3" href="$game_8c.html" title=" " alt="" coords="5,155,99,181"/>
-<area shape="rect" id="node4" href="$main_8c.html" title=" " alt="" coords="286,155,375,181"/>
-<area shape="rect" id="node6" href="$render__sdl_8c.html" title=" " alt="" coords="329,80,453,107"/>
-<area shape="rect" id="node7" href="$shark_8c.html" title=" " alt="" coords="477,80,569,107"/>
-<area shape="rect" id="node8" href="$shark__controller_8c.html" title=" " alt="" coords="593,80,753,107"/>
-<area shape="rect" id="node9" href="$test__render__sdl_8c.html" title=" " alt="" coords="778,80,947,107"/>
-<area shape="rect" id="node5" href="$test__game_8c.html" title=" " alt="" coords="123,155,261,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="311,5,464,33"/>
+<area shape="rect" id="Node000002" href="$game_8h.html" title=" " alt="" coords="130,81,251,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="336,40,226,83,224,78,340,38"/>
+<area shape="rect" id="Node000003" href="$game_8c.html" title=" " alt="" coords="5,157,98,184"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="293,26,253,35,207,45,161,61,120,83,100,100,83,120,60,158,56,154,78,117,96,96,117,79,159,56,205,40,251,29,298,24"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title=" " alt="" coords="283,157,372,184"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="352,41,332,61,317,82,312,101,313,121,324,158,319,155,308,122,307,101,312,80,328,57,347,43"/>
+<area shape="rect" id="Node000006" href="$render__sdl_8c.html" title=" " alt="" coords="326,81,449,109"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="389,47,390,82,385,79,386,51"/>
+<area shape="rect" id="Node000007" href="$shark_8c.html" title=" " alt="" coords="474,81,565,109"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="425,38,499,81,493,81,424,44"/>
+<area shape="rect" id="Node000008" href="$shark__controller_8c.html" title=" " alt="" coords="589,81,748,109"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="452,35,621,80,616,81,452,40"/>
+<area shape="rect" id="Node000009" href="$test__render__sdl_8c.html" title=" " alt="" coords="773,81,941,109"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="479,32,775,80,770,81,479,37"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="154,118,77,159,75,154,150,114"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="229,114,306,156,301,156,227,119"/>
+<area shape="rect" id="Node000005" href="$test__game_8c.html" title=" " alt="" coords="122,157,259,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="192,123,192,158,188,155,188,126"/>
 </map>

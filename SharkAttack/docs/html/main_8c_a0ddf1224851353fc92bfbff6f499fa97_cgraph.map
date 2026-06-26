@@ -1,52 +1,117 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,854,60,880"/>
-<area shape="rect" id="node2" href="$input__output_8h.html#a9260306018f557679576d7aa1bfd1e28" title="termine l&#39;apprentissage en comparant le meilleur gain trouvé avec celui du fichier de paramètres,..." alt="" coords="143,752,223,779"/>
-<area shape="rect" id="node7" href="$game_8h.html#ae5a7b2368adc13dbcf61f3f3b1f16c9c" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="123,499,244,526"/>
-<area shape="rect" id="node22" href="$utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="549,955,630,982"/>
-<area shape="rect" id="node25" href="$vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="729,499,858,526"/>
-<area shape="rect" id="node37" href="$game_8h.html#a557884cc21f4886a0523bd645481b95e" title="lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la co..." alt="" coords="108,854,259,880"/>
-<area shape="rect" id="node38" href="$main_8c.html#a8bfc90b3fb9344e9caafec953baacc0b" title=" " alt="" coords="129,904,238,931"/>
-<area shape="rect" id="node39" href="$input__output_8h.html#ad018c759b201a9b03c1eb71b05f4538e" title="Réinitialise le fichier de logs et y écrit la configuration initiale provenant du fichier de paramètr..." alt="" coords="145,803,222,830"/>
-<area shape="rect" id="node40" href="$input__output_8h.html#aaaa874a59e88f0ba078ebeef13f55e4a" title="charge les paramètres theta et les hyperparamètres depuis un fichier" alt="" coords="130,1006,237,1032"/>
-<area shape="rect" id="node41" href="$reinforce_8h.html#a4e6a52c27c2dc4f2957d84166b6a72c8" title="exécute l&#39;algorithme REINFORCE avec parallélisation" alt="" coords="111,1158,255,1184"/>
-<area shape="rect" id="node3" href="$input__output_8c.html#acae31f3286209e935a01648dec589d9d" title="Parcourt le fichier de log et récupère les paramètres associés au avg_gain le plus fort." alt="" coords="322,752,441,779"/>
-<area shape="rect" id="node4" href="$input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3" title="charge le gain stocké dans le fichier de paramètres" alt="" coords="311,803,452,830"/>
-<area shape="rect" id="node5" href="$input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a" title="charge les paramètres theta et les hyperparamètres depuis un fichier" alt="" coords="328,854,435,880"/>
-<area shape="rect" id="node6" href="$input__output_8c.html#abec3cf6bbc82d4470fed8996c54412a4" title="sauvegarde les paramètres theta, les hyperparamètres et le meilleur gain dans un fichier" alt="" coords="327,702,436,728"/>
-<area shape="rect" id="node8" href="$sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="308,144,455,171"/>
-<area shape="rect" id="node9" href="$game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="323,398,440,424"/>
-<area shape="rect" id="node16" href="$game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="337,600,426,627"/>
-<area shape="rect" id="node27" href="$mj_8h.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="745,1082,841,1108"/>
-<area shape="rect" id="node31" href="$render__sdl_8h.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="307,195,456,222"/>
-<area shape="rect" id="node10" href="$sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="544,448,635,475"/>
-<area shape="rect" id="node11" href="$render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="512,296,667,323"/>
-<area shape="rect" id="node12" href="$render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="513,398,666,424"/>
-<area shape="rect" id="node13" href="$world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="736,727,851,754"/>
-<area shape="rect" id="node14" href="$collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="912,702,1088,728"/>
-<area shape="rect" id="node15" href="$fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="927,752,1073,779"/>
-<area shape="rect" id="node17" href="$sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="546,752,633,779"/>
-<area shape="rect" id="node18" href="$sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="543,803,636,830"/>
-<area shape="rect" id="node19" href="$sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="520,550,659,576"/>
-<area shape="rect" id="node20" href="$sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="520,600,659,627"/>
-<area shape="rect" id="node21" href="$render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="528,651,651,678"/>
-<area shape="rect" id="node23" href="$render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="522,702,657,728"/>
-<area shape="rect" id="node24" href="$theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="527,499,651,526"/>
-<area shape="rect" id="node26" href="$world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="750,955,837,982"/>
-<area shape="rect" id="node28" href="$mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="947,1031,1053,1058"/>
-<area shape="rect" id="node29" href="$world_8h.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="930,1082,1070,1108"/>
-<area shape="rect" id="node30" href="$world_8h.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire." alt="" coords="932,1132,1068,1159"/>
-<area shape="rect" id="node32" href="$sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="543,94,636,120"/>
-<area shape="rect" id="node33" href="$sdl__draw__tools_8h.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="504,144,675,171"/>
-<area shape="rect" id="node34" href="$render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="516,195,663,222"/>
-<area shape="rect" id="node35" href="$render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="511,246,667,272"/>
-<area shape="rect" id="node36" href="$render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="540,43,639,70"/>
-<area shape="rect" id="node42" href="$reinforce_8c.html#ae2c19c8939a760c957405dc11da81bd8" title="retourne un gradient initialisé à zéro" alt="" coords="737,1310,850,1336"/>
-<area shape="rect" id="node43" href="$vector__rule_8h.html#a080684ca70bd28327ac7992ce6e675ee" title="Initialise un VectorRule avec toutes ses composantes à 0." alt="" coords="940,1284,1060,1311"/>
-<area shape="rect" id="node44" href="$input__output_8h.html#af0817f7b7511739d9ad418deb72dda5e" title="écrit un log pour une génération d&#39;apprentissage." alt="" coords="318,1310,445,1336"/>
-<area shape="rect" id="node46" href="$reinforce_8c.html#a7e00a068b856fbc2d16c8367be616b3b" title="fonction de travail pour les threads, exécute Compute_trajectory" alt="" coords="313,1107,450,1134"/>
-<area shape="rect" id="node48" href="$vector__rule_8h.html#ac40f4a4667a3f7827ca951218ed1a573" title="Additionne deux VectorRule composante par composante." alt="" coords="732,1132,855,1159"/>
-<area shape="rect" id="node49" href="$vector__rule_8h.html#a7762dcff21c715334dc5facbc5c85976" title="Multiplie toutes les composantes d&#39;un VectorRule par un scalaire." alt="" coords="723,1183,864,1210"/>
-<area shape="rect" id="node50" href="$vector__rule_8h.html#a1fed062807bdf06ab9c46fd8117e3abd" title="soustrait deux VectorRule composante par composante." alt="" coords="320,1056,443,1083"/>
-<area shape="rect" id="node45" href="$vector__rule_8h.html#a992f7d7160220b488586f878c0a2c4a1" title="écrit dans un fichier les composantes du vecteur sous la forme (v1, v2, ...)." alt="" coords="522,1310,657,1336"/>
-<area shape="rect" id="node47" href="$reinforce_8c.html#a6775e31497c1d14547f43add69f6d619" title="calcule une trajectoire et son gradient associé" alt="" coords="514,1107,665,1134"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,772,60,800"/>
+<area shape="rect" id="Node000002" href="$input__output_8c.html#a9260306018f557679576d7aa1bfd1e28" title="termine l&#39;apprentissage en comparant le meilleur gain trouvé avec celui du fichier de paramètres,..." alt="" coords="143,189,222,217"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="31,771,33,666,42,504,51,418,64,339,82,274,93,248,106,228,130,212,127,216,110,232,98,251,87,276,69,341,56,419,47,504,38,666,36,772"/>
+<area shape="rect" id="Node000005" href="$input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a" title="charge les paramètres theta et les hyperparamètres depuis un fichier" alt="" coords="328,241,433,269"/>
+<area shape="poly" id="edge53_Node000001_Node000005" title=" " alt="" coords="34,771,59,682,80,622,105,563,148,474,185,405,206,375,231,344,264,313,304,280,315,275,312,279,308,284,267,317,235,348,210,378,189,408,153,477,110,566,85,624,64,683,40,772"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a83c0471dd27fbbcaec9370c0dbad9e6d" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="123,576,243,604"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="42,771,162,614,161,619,47,773"/>
+<area shape="rect" id="Node000025" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="547,1223,628,1250"/>
+<area shape="poly" id="edge52_Node000001_Node000025" title=" " alt="" coords="34,798,40,884,51,1007,60,1070,73,1127,89,1173,109,1203,140,1220,185,1232,239,1240,301,1244,427,1244,534,1240,529,1242,427,1249,301,1249,239,1245,183,1237,138,1225,106,1206,84,1175,68,1128,55,1070,46,1007,35,884,34,803"/>
+<area shape="rect" id="Node000029" href="$vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="744,1121,872,1149"/>
+<area shape="poly" id="edge65_Node000001_Node000029" title=" " alt="" coords="39,797,73,863,129,956,165,1006,208,1054,255,1097,307,1133,362,1157,420,1172,480,1179,540,1180,599,1177,653,1170,747,1152,742,1155,654,1175,599,1182,540,1186,480,1185,419,1177,360,1162,305,1137,252,1102,204,1058,161,1009,124,959,69,865,40,803"/>
+<area shape="rect" id="Node000114" href="$game_8c.html#a557884cc21f4886a0523bd645481b95e" title="lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la co..." alt="" coords="108,772,258,800"/>
+<area shape="poly" id="edge39_Node000001_Node000114" title=" " alt="" coords="58,784,94,784,90,788,62,788"/>
+<area shape="rect" id="Node000117" href="$main_8c.html#a8bfc90b3fb9344e9caafec953baacc0b" title=" " alt="" coords="129,1452,237,1480"/>
+<area shape="poly" id="edge48_Node000001_Node000117" title=" " alt="" coords="34,797,35,921,42,1112,50,1213,64,1307,83,1385,96,1415,110,1438,118,1447,113,1448,106,1441,91,1417,78,1386,59,1308,45,1214,37,1113,30,921,33,802"/>
+<area shape="rect" id="Node000118" href="$input__output_8c.html#ad018c759b201a9b03c1eb71b05f4538e" title="Réinitialise le fichier de logs et y écrit la configuration initiale provenant du fichier de paramètr..." alt="" coords="145,241,221,269"/>
+<area shape="poly" id="edge49_Node000001_Node000118" title=" " alt="" coords="33,771,53,620,75,512,105,402,133,336,166,280,164,285,138,338,110,404,80,513,58,621,38,772"/>
+<area shape="rect" id="Node000119" href="$reinforce_8c.html#a4e6a52c27c2dc4f2957d84166b6a72c8" title="exécute l&#39;algorithme REINFORCE avec parallélisation" alt="" coords="111,1400,254,1428"/>
+<area shape="poly" id="edge54_Node000001_Node000119" title=" " alt="" coords="35,797,43,871,55,983,77,1118,110,1254,138,1326,168,1386,163,1386,133,1328,105,1256,72,1119,50,984,37,871,35,803"/>
+<area shape="rect" id="Node000003" href="$input__output_8c.html#acae31f3286209e935a01648dec589d9d" title="Parcourt le fichier de log et récupère les paramètres associés au avg_gain le plus fort." alt="" coords="321,85,439,113"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,187,248,156,305,123,322,117,319,121,307,128,251,160,206,190"/>
+<area shape="rect" id="Node000004" href="$input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3" title="charge le gain stocké dans le fichier de paramètres" alt="" coords="310,189,450,217"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="221,201,296,201,292,205,225,205"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="222,211,315,236,310,239,224,216"/>
+<area shape="rect" id="Node000006" href="$input__output_8c.html#abec3cf6bbc82d4470fed8996c54412a4" title="sauvegarde les paramètres theta, les hyperparamètres et le meilleur gain dans un fichier" alt="" coords="326,137,434,165"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="221,191,313,167,309,171,225,195"/>
+<area shape="rect" id="Node000008" href="$sound_8c.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="307,293,453,321"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="189,575,256,439,267,410,274,385,284,362,304,337,321,327,318,331,308,341,289,365,279,387,272,411,260,442,194,576"/>
+<area shape="rect" id="Node000009" href="$game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="322,395,438,422"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="189,575,232,508,265,468,304,433,316,427,313,432,308,437,269,472,237,511,194,577"/>
+<area shape="rect" id="Node000019" href="$game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="336,447,424,474"/>
+<area shape="poly" id="edge15_Node000007_Node000019" title=" " alt="" coords="204,574,346,481,343,486,208,577"/>
+<area shape="rect" id="Node000041" href="$mj_8c.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="332,915,428,942"/>
+<area shape="poly" id="edge29_Node000007_Node000041" title=" " alt="" coords="193,601,366,900,360,902,192,607"/>
+<area shape="rect" id="Node000086" href="$render__sdl_8c.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="306,732,454,760"/>
+<area shape="poly" id="edge33_Node000007_Node000086" title=" " alt="" coords="202,602,352,721,347,723,203,607"/>
+<area shape="rect" id="Node000010" href="$sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="543,135,632,162"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="429,393,452,375,468,349,475,324,476,300,474,275,473,250,474,225,482,199,500,173,530,156,526,160,504,177,487,201,479,226,478,250,480,274,482,299,481,325,473,351,456,378,433,396"/>
+<area shape="rect" id="Node000011" href="$render__sdl_8c.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="510,83,665,110"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="430,393,452,375,471,342,479,311,478,280,474,249,470,218,470,186,479,154,500,121,507,117,504,122,504,125,484,156,475,187,475,217,479,248,483,279,484,311,476,344,456,378,434,396"/>
+<area shape="rect" id="Node000012" href="$render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="511,187,664,214"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="428,393,452,375,465,356,472,338,475,301,478,263,486,244,500,225,508,221,505,225,504,229,490,247,483,265,480,301,477,339,470,358,456,378,432,396"/>
+<area shape="rect" id="Node000013" href="$world_8c.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="530,31,645,58"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="430,393,452,375,474,335,482,297,480,260,474,223,467,185,466,147,476,109,500,69,518,57,515,62,504,73,480,111,472,148,473,185,479,222,485,259,487,298,479,337,456,378,435,396"/>
+<area shape="rect" id="Node000014" href="$collider_8c.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="721,5,896,33"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="643,36,707,29,703,33,647,40"/>
+<area shape="rect" id="Node000015" href="$fish_8c.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="736,57,880,85"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="644,49,723,59,718,62,646,54"/>
+<area shape="poly" id="edge20_Node000019_Node000010" title=" " alt="" coords="423,451,439,443,452,432,472,400,480,368,480,336,475,304,470,272,470,240,479,207,500,173,530,156,526,160,504,177,484,209,475,240,476,272,480,304,485,336,485,368,477,402,456,436,442,447,427,454"/>
+<area shape="poly" id="edge21_Node000019_Node000012" title=" " alt="" coords="423,451,439,443,452,432,469,406,477,381,477,356,475,330,473,304,474,278,482,252,500,225,507,221,504,226,504,229,487,254,479,279,478,304,480,330,483,356,482,382,474,409,456,436,442,447,427,454"/>
+<area shape="rect" id="Node000020" href="$sound_8c.html#a256ad04f93013a05fb111acb7bcef693" title="initialise l&#39;audio SDL" alt="" coords="545,343,630,370"/>
+<area shape="poly" id="edge16_Node000019_Node000020" title=" " alt="" coords="423,447,453,432,467,419,476,407,485,394,501,381,532,368,528,372,504,385,489,397,480,410,471,423,456,436,427,450"/>
+<area shape="rect" id="Node000021" href="$sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="541,395,634,422"/>
+<area shape="poly" id="edge17_Node000019_Node000021" title=" " alt="" coords="423,447,528,422,524,426,427,452"/>
+<area shape="rect" id="Node000022" href="$sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="518,447,657,474"/>
+<area shape="poly" id="edge18_Node000019_Node000022" title=" " alt="" coords="423,458,505,459,501,462,426,463"/>
+<area shape="rect" id="Node000023" href="$sound_8c.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="518,499,657,526"/>
+<area shape="poly" id="edge19_Node000019_Node000023" title=" " alt="" coords="424,469,517,493,512,496,426,474"/>
+<area shape="rect" id="Node000024" href="$render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="526,239,649,266"/>
+<area shape="poly" id="edge22_Node000019_Node000024" title=" " alt="" coords="423,450,439,442,452,432,466,413,473,394,475,356,478,317,485,297,500,277,514,269,511,273,504,281,490,300,483,318,481,356,478,395,471,416,456,436,442,447,427,454"/>
+<area shape="poly" id="edge23_Node000019_Node000025" title=" " alt="" coords="387,472,421,576,457,720,466,779,470,830,471,918,477,1004,487,1052,505,1109,533,1164,567,1211,561,1211,529,1167,500,1111,482,1054,472,1004,466,918,465,831,461,780,452,721,416,577,386,478"/>
+<area shape="rect" id="Node000026" href="$render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="520,291,655,318"/>
+<area shape="poly" id="edge24_Node000019_Node000026" title=" " alt="" coords="423,449,453,432,463,420,470,407,475,382,482,356,489,342,501,329,510,324,507,329,504,333,493,345,487,357,481,383,475,409,468,423,456,436,427,453"/>
+<area shape="rect" id="Node000027" href="$theta__set_8c.html#afe7ff9ca20169f534d34343e2f97b633" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="526,603,649,630"/>
+<area shape="poly" id="edge25_Node000019_Node000027" title=" " alt="" coords="391,472,437,529,468,560,504,588,516,595,511,597,501,592,465,564,433,532,391,477"/>
+<area shape="rect" id="Node000030" href="$world_8c.html#ab86571984e07c225b57f4173e7d4d080" title="initialise un monde avec des paramètres" alt="" coords="544,551,631,578"/>
+<area shape="poly" id="edge28_Node000019_Node000030" title=" " alt="" coords="400,472,447,504,503,535,532,548,527,550,501,540,444,508,401,477"/>
+<area shape="rect" id="Node000028" href="$input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="763,603,854,630"/>
+<area shape="poly" id="edge26_Node000027_Node000028" title=" " alt="" coords="648,614,750,615,745,618,651,619"/>
+<area shape="poly" id="edge27_Node000027_Node000029" title=" " alt="" coords="649,625,674,641,718,697,751,759,775,825,792,893,802,957,808,1017,810,1107,806,1105,803,1017,797,958,786,894,770,827,746,761,713,699,671,645,650,630"/>
+<area shape="rect" id="Node000042" href="$mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="535,967,640,994"/>
+<area shape="poly" id="edge30_Node000041_Node000042" title=" " alt="" coords="428,938,522,962,517,965,429,943"/>
+<area shape="rect" id="Node000084" href="$world_8c.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="518,1019,657,1046"/>
+<area shape="poly" id="edge31_Node000041_Node000084" title=" " alt="" coords="400,940,447,972,504,1003,522,1012,517,1014,501,1008,444,976,401,945"/>
+<area shape="rect" id="Node000085" href="$world_8c.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire" alt="" coords="520,915,655,942"/>
+<area shape="poly" id="edge32_Node000041_Node000085" title=" " alt="" coords="427,926,506,927,502,930,430,931"/>
+<area shape="rect" id="Node000087" href="$sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="541,811,634,838"/>
+<area shape="poly" id="edge34_Node000086_Node000087" title=" " alt="" coords="412,758,503,795,529,805,524,807,501,800,413,763"/>
+<area shape="rect" id="Node000088" href="$sdl__draw__tools_8c.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="502,863,673,890"/>
+<area shape="poly" id="edge35_Node000086_Node000088" title=" " alt="" coords="394,757,441,802,471,826,504,848,518,856,513,857,501,852,468,831,438,806,395,763"/>
+<area shape="rect" id="Node000089" href="$render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="515,655,660,682"/>
+<area shape="poly" id="edge36_Node000086_Node000089" title=" " alt="" coords="412,729,501,693,526,686,522,689,503,698,415,734"/>
+<area shape="rect" id="Node000090" href="$render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="510,707,665,734"/>
+<area shape="poly" id="edge37_Node000086_Node000090" title=" " alt="" coords="453,735,497,730,492,733,456,739"/>
+<area shape="rect" id="Node000092" href="$render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="538,759,637,786"/>
+<area shape="poly" id="edge38_Node000086_Node000092" title=" " alt="" coords="454,753,525,763,521,766,456,758"/>
+<area shape="poly" id="edge46_Node000114_Node000013" title=" " alt="" coords="189,771,221,704,255,614,264,579,266,548,265,491,266,465,271,438,283,410,304,381,322,366,342,358,380,355,418,353,435,345,452,331,473,298,481,266,480,234,475,202,471,169,470,136,479,103,500,69,518,58,515,62,504,73,483,105,475,137,476,169,481,201,485,234,486,267,478,300,456,334,438,350,419,358,381,361,343,363,325,370,308,385,288,413,276,439,271,465,270,491,272,548,269,580,261,616,226,706,194,772"/>
+<area shape="poly" id="edge41_Node000114_Node000027" title=" " alt="" coords="207,770,305,718,402,676,501,641,527,634,523,637,503,646,404,681,307,723,211,773"/>
+<area shape="poly" id="edge45_Node000114_Node000029" title=" " alt="" coords="186,798,199,849,220,918,236,956,255,992,279,1026,308,1056,355,1089,408,1113,464,1131,522,1141,579,1147,634,1149,731,1145,726,1147,634,1154,579,1152,521,1147,463,1136,406,1118,353,1093,304,1060,275,1030,251,995,231,958,215,920,194,850,186,803"/>
+<area shape="poly" id="edge47_Node000114_Node000030" title=" " alt="" coords="194,770,240,722,271,695,305,670,361,639,421,612,531,577,527,581,423,617,364,643,307,675,274,699,244,726,199,773"/>
+<area shape="poly" id="edge40_Node000114_Node000041" title=" " alt="" coords="204,798,350,904,345,907,204,803"/>
+<area shape="rect" id="Node000115" href="$reinforce_8c.html#a6e6d0061194a9eb0cbf39fb6d2900eba" title="affiche les pas d&#39;une trajectoire dont la récompense est supérieur à 0" alt="" coords="319,1019,441,1046"/>
+<area shape="poly" id="edge42_Node000114_Node000115" title=" " alt="" coords="193,798,243,866,308,952,357,1007,352,1008,304,956,238,869,194,803"/>
+<area shape="rect" id="Node000116" href="$theta__set_8c.html#adf46e950da895d145a7a29506aea6ab1" title="affiche les valeurs des règles phi du requin (composantes x et y)" alt="" coords="530,1071,645,1098"/>
+<area shape="poly" id="edge43_Node000115_Node000116" title=" " alt="" coords="438,1044,517,1065,512,1067,439,1050"/>
+<area shape="poly" id="edge44_Node000116_Node000029" title=" " alt="" coords="645,1095,733,1117,728,1118,646,1100"/>
+<area shape="poly" id="edge50_Node000118_Node000004" title=" " alt="" coords="219,243,312,220,308,224,223,247"/>
+<area shape="poly" id="edge51_Node000118_Node000005" title=" " alt="" coords="220,253,314,253,310,257,223,257"/>
+<area shape="poly" id="edge62_Node000119_Node000029" title=" " alt="" coords="214,1397,305,1361,361,1344,410,1333,494,1320,575,1302,620,1285,671,1260,705,1237,736,1210,785,1162,789,1159,740,1214,708,1241,674,1264,622,1290,576,1307,495,1326,410,1338,362,1349,307,1366,217,1402"/>
+<area shape="rect" id="Node000120" href="$reinforce_8c.html#ae2c19c8939a760c957405dc11da81bd8" title="retourne un gradient initialisé à zéro" alt="" coords="324,1479,436,1506"/>
+<area shape="poly" id="edge55_Node000119_Node000120" title=" " alt="" coords="227,1426,259,1438,307,1463,325,1472,320,1473,305,1468,257,1443,227,1431"/>
+<area shape="rect" id="Node000121" href="$vector__rule_8c.html#a080684ca70bd28327ac7992ce6e675ee" title="Initialise un VectorRule avec toutes ses composantes à 0." alt="" coords="528,1504,647,1532"/>
+<area shape="poly" id="edge61_Node000119_Node000121" title=" " alt="" coords="238,1426,260,1439,276,1459,283,1480,290,1500,307,1516,332,1527,359,1535,414,1542,469,1540,521,1535,516,1536,469,1545,414,1547,358,1540,330,1532,305,1520,286,1503,278,1482,271,1462,256,1442,238,1431"/>
+<area shape="rect" id="Node000122" href="$input__output_8c.html#af0817f7b7511739d9ad418deb72dda5e" title="écrit un log pour une génération d&#39;apprentissage" alt="" coords="318,1632,443,1660"/>
+<area shape="poly" id="edge57_Node000119_Node000122" title=" " alt="" coords="242,1426,260,1439,276,1462,284,1485,285,1530,286,1574,293,1595,308,1617,312,1624,307,1622,304,1621,288,1598,280,1575,279,1530,279,1486,271,1464,256,1442,242,1431"/>
+<area shape="rect" id="Node000124" href="$reinforce_8c.html#ad71458e62f16e2659a3297d66205ffd1" title="fonction de travail pour les threads, exécute Compute_trajectory" alt="" coords="312,1273,448,1301"/>
+<area shape="poly" id="edge58_Node000119_Node000124" title=" " alt="" coords="198,1398,244,1359,305,1317,329,1306,325,1310,307,1321,248,1363,202,1402"/>
+<area shape="rect" id="Node000126" href="$vector__rule_8c.html#ac40f4a4667a3f7827ca951218ed1a573" title="Additionne deux VectorRule composante par composante." alt="" coords="319,1375,441,1402"/>
+<area shape="poly" id="edge60_Node000119_Node000126" title=" " alt="" coords="254,1402,306,1397,301,1400,256,1407"/>
+<area shape="rect" id="Node000127" href="$vector__rule_8c.html#a7762dcff21c715334dc5facbc5c85976" title="Multiplie toutes les composantes d&#39;un VectorRule par un scalaire." alt="" coords="310,1427,450,1454"/>
+<area shape="poly" id="edge63_Node000119_Node000127" title=" " alt="" coords="254,1421,297,1428,292,1430,256,1426"/>
+<area shape="rect" id="Node000128" href="$vector__rule_8c.html#a1fed062807bdf06ab9c46fd8117e3abd" title="soustrait deux VectorRule composante par composante." alt="" coords="320,1580,441,1608"/>
+<area shape="poly" id="edge64_Node000119_Node000128" title=" " alt="" coords="240,1426,260,1439,273,1454,280,1470,285,1500,290,1530,296,1545,308,1560,321,1572,316,1572,304,1564,292,1548,285,1532,280,1501,275,1471,268,1457,256,1442,240,1431"/>
+<area shape="poly" id="edge56_Node000120_Node000121" title=" " alt="" coords="437,1497,515,1508,510,1509,437,1502"/>
+<area shape="poly" id="edge59_Node000124_Node000025" title=" " alt="" coords="438,1270,534,1249,530,1251,441,1275"/>
 </map>

@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier src/utils.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('utils_8c.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('utils_8c.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,58 +76,64 @@ $(document).ready(function(){initNavTree('utils_8c.html',''); initResizable(); }
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Fonctions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier utils.c</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier utils.c</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de utils.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="utils_8c__incl.png" border="0" usemap="#asrc_2utils_8c" alt=""/></div>
+<div class="center"><img src="utils_8c__incl.png" border="0" usemap="#asrc_2utils_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2utils_8c" id="asrc_2utils_8c">
-<area shape="rect" title=" " alt="" coords="132,5,216,32"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="143,80,205,107"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="5,229,79,256"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="99,155,174,181"/>
-<area shape="rect" title=" " alt="" coords="195,229,263,256"/>
-<area shape="rect" title=" " alt="" coords="249,155,320,181"/>
-<area shape="rect" title=" " alt="" coords="103,229,170,256"/>
+<area shape="rect" title=" " alt="" coords="130,5,214,33"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="142,81,203,109"/>
+<area shape="poly" title=" " alt="" coords="173,31,175,66,170,65,171,36"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="5,232,78,260"/>
+<area shape="poly" title=" " alt="" coords="146,111,118,132,89,158,68,188,54,219,49,216,64,186,85,155,115,127,150,107"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="98,157,172,184"/>
+<area shape="poly" title=" " alt="" coords="167,107,150,144,146,141,164,111"/>
+<area shape="rect" title=" " alt="" coords="192,232,259,260"/>
+<area shape="poly" title=" " alt="" coords="179,107,218,217,213,217,175,111"/>
+<area shape="rect" title=" " alt="" coords="247,157,316,184"/>
+<area shape="poly" title=" " alt="" coords="192,107,252,147,247,148,191,112"/>
+<area shape="poly" title=" " alt="" coords="121,184,71,225,68,221,116,186"/>
+<area shape="poly" title=" " alt="" coords="152,182,200,222,195,223,150,187"/>
+<area shape="rect" title=" " alt="" coords="102,232,168,260"/>
+<area shape="poly" title=" " alt="" coords="137,183,137,218,132,216,133,187"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a36a6628193f6fdfc423440e76a35744a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a36a6628193f6fdfc423440e76a35744a">init_seed</a> (unsigned int set_seed)</td></tr>
-<tr class="memdesc:a36a6628193f6fdfc423440e76a35744a"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne  <a href="utils_8c.html#a36a6628193f6fdfc423440e76a35744a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a36a6628193f6fdfc423440e76a35744a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ea35ba59ce0c747196005a67663187a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a">rand_trsf</a> ()</td></tr>
-<tr class="memdesc:a8ea35ba59ce0c747196005a67663187a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction thread safe de randomise.  <a href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8ea35ba59ce0c747196005a67663187a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d944ed48c83eedfe629746ecccd1506"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506">random_float</a> (float min, float max)</td></tr>
-<tr class="memdesc:a9d944ed48c83eedfe629746ecccd1506"><td class="mdescLeft">&#160;</td><td class="mdescRight">petite fonction auxiliaire pour déterminer un float dans une range  <a href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9d944ed48c83eedfe629746ecccd1506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad830dd484c2d83732727afff1791d5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#aad830dd484c2d83732727afff1791d5a">box_muller_standard</a> ()</td></tr>
-<tr class="memdesc:aad830dd484c2d83732727afff1791d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de tirer une variable aléatoire selon une loi gaussienne.  <a href="utils_8c.html#aad830dd484c2d83732727afff1791d5a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aad830dd484c2d83732727afff1791d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36a6628193f6fdfc423440e76a35744a" id="r_a36a6628193f6fdfc423440e76a35744a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36a6628193f6fdfc423440e76a35744a">init_seed</a> (unsigned int set_seed)</td></tr>
+<tr class="memdesc:a36a6628193f6fdfc423440e76a35744a"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne  <br /></td></tr>
+<tr class="memitem:a8ea35ba59ce0c747196005a67663187a" id="r_a8ea35ba59ce0c747196005a67663187a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ea35ba59ce0c747196005a67663187a">rand_trsf</a> ()</td></tr>
+<tr class="memdesc:a8ea35ba59ce0c747196005a67663187a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction thread safe de randomise.  <br /></td></tr>
+<tr class="memitem:a9d944ed48c83eedfe629746ecccd1506" id="r_a9d944ed48c83eedfe629746ecccd1506"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d944ed48c83eedfe629746ecccd1506">random_float</a> (float min, float max)</td></tr>
+<tr class="memdesc:a9d944ed48c83eedfe629746ecccd1506"><td class="mdescLeft">&#160;</td><td class="mdescRight">petite fonction auxiliaire pour déterminer un float dans une range  <br /></td></tr>
+<tr class="memitem:aad830dd484c2d83732727afff1791d5a" id="r_aad830dd484c2d83732727afff1791d5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad830dd484c2d83732727afff1791d5a">box_muller_standard</a> ()</td></tr>
+<tr class="memdesc:aad830dd484c2d83732727afff1791d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de tirer une variable aléatoire selon une loi gaussienne.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:af73df6cfb2b4738194fbd6cd1321c8d0"><td class="memItemLeft" align="right" valign="top">__thread unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#af73df6cfb2b4738194fbd6cd1321c8d0">seed</a> = <a class="el" href="config_8h.html#a990edf51308a42b583fde55e2b9bedb7">RANDOM_SEED</a></td></tr>
-<tr class="separator:af73df6cfb2b4738194fbd6cd1321c8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73df6cfb2b4738194fbd6cd1321c8d0" id="r_af73df6cfb2b4738194fbd6cd1321c8d0"><td class="memItemLeft" align="right" valign="top">__thread unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af73df6cfb2b4738194fbd6cd1321c8d0">seed</a> = <a class="el" href="config_8h.html#a990edf51308a42b583fde55e2b9bedb7">RANDOM_SEED</a></td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="aad830dd484c2d83732727afff1791d5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad830dd484c2d83732727afff1791d5a">&#9670;&nbsp;</a></span>box_muller_standard()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="aad830dd484c2d83732727afff1791d5a" name="aad830dd484c2d83732727afff1791d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad830dd484c2d83732727afff1791d5a">&#9670;&#160;</a></span>box_muller_standard()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,7 +141,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structVector.html">Vector</a> box_muller_standard </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -147,18 +152,20 @@ Variables</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="utils_8c_aad830dd484c2d83732727afff1791d5a_cgraph.png" border="0" usemap="#autils_8c_aad830dd484c2d83732727afff1791d5a_cgraph" alt=""/></div>
+<div class="center"><img src="utils_8c_aad830dd484c2d83732727afff1791d5a_cgraph.png" border="0" usemap="#autils_8c_aad830dd484c2d83732727afff1791d5a_cgraph" loading="lazy" alt=""/></div>
 <map name="autils_8c_aad830dd484c2d83732727afff1791d5a_cgraph" id="autils_8c_aad830dd484c2d83732727afff1791d5a_cgraph">
-<area shape="rect" title="Fonction permettant de tirer une variable aléatoire selon une loi gaussienne." alt="" coords="5,5,164,32"/>
-<area shape="rect" href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="212,5,320,32"/>
-<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="368,5,448,32"/>
+<area shape="rect" title="Fonction permettant de tirer une variable aléatoire selon une loi gaussienne." alt="" coords="5,5,164,33"/>
+<area shape="rect" href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="212,5,319,33"/>
+<area shape="poly" title=" " alt="" coords="164,17,198,19,193,19,164,22"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="367,5,446,33"/>
+<area shape="poly" title=" " alt="" coords="319,17,354,19,348,19,320,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a36a6628193f6fdfc423440e76a35744a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36a6628193f6fdfc423440e76a35744a">&#9670;&nbsp;</a></span>init_seed()</h2>
+<a id="a36a6628193f6fdfc423440e76a35744a" name="a36a6628193f6fdfc423440e76a35744a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a6628193f6fdfc423440e76a35744a">&#9670;&#160;</a></span>init_seed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,8 +173,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">int init_seed </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>set_seed</em></td><td>)</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>set_seed</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -184,8 +190,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a8ea35ba59ce0c747196005a67663187a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ea35ba59ce0c747196005a67663187a">&#9670;&nbsp;</a></span>rand_trsf()</h2>
+<a id="a8ea35ba59ce0c747196005a67663187a" name="a8ea35ba59ce0c747196005a67663187a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea35ba59ce0c747196005a67663187a">&#9670;&#160;</a></span>rand_trsf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +199,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">int rand_trsf </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -204,8 +210,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a9d944ed48c83eedfe629746ecccd1506"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d944ed48c83eedfe629746ecccd1506">&#9670;&nbsp;</a></span>random_float()</h2>
+<a id="a9d944ed48c83eedfe629746ecccd1506" name="a9d944ed48c83eedfe629746ecccd1506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d944ed48c83eedfe629746ecccd1506">&#9670;&#160;</a></span>random_float()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,19 +219,12 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">float random_float </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -234,18 +233,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="utils_8c_a9d944ed48c83eedfe629746ecccd1506_cgraph.png" border="0" usemap="#autils_8c_a9d944ed48c83eedfe629746ecccd1506_cgraph" alt=""/></div>
+<div class="center"><img src="utils_8c_a9d944ed48c83eedfe629746ecccd1506_cgraph.png" border="0" usemap="#autils_8c_a9d944ed48c83eedfe629746ecccd1506_cgraph" loading="lazy" alt=""/></div>
 <map name="autils_8c_a9d944ed48c83eedfe629746ecccd1506_cgraph" id="autils_8c_a9d944ed48c83eedfe629746ecccd1506_cgraph">
-<area shape="rect" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="5,5,113,32"/>
-<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="161,5,241,32"/>
+<area shape="rect" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="5,5,113,33"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="161,5,240,33"/>
+<area shape="poly" title=" " alt="" coords="113,17,147,19,142,19,113,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des variables</h2>
-<a id="af73df6cfb2b4738194fbd6cd1321c8d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af73df6cfb2b4738194fbd6cd1321c8d0">&#9670;&nbsp;</a></span>seed</h2>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentation des variables</h2>
+<a id="af73df6cfb2b4738194fbd6cd1321c8d0" name="af73df6cfb2b4738194fbd6cd1321c8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73df6cfb2b4738194fbd6cd1321c8d0">&#9670;&#160;</a></span>seed</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,11 +260,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="utils_8c.html">utils.c</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="utils_8c.html">utils.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

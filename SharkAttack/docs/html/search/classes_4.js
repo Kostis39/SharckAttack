@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hyperparameters_1279',['Hyperparameters',['../structHyperparameters.html',1,'']]]
+  ['hyperparameters_0',['Hyperparameters',['../structHyperparameters.html',1,'']]]
 ];

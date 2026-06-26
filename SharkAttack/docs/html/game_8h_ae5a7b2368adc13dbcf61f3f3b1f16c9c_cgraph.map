@@ -1,52 +1,104 @@
 <map id="Game_run_SDL" name="Game_run_SDL">
-<area shape="rect" id="node1" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="5,537,127,564"/>
-<area shape="rect" id="node2" href="$sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="176,259,323,285"/>
-<area shape="rect" id="node3" href="$game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="191,537,308,564"/>
-<area shape="rect" id="node13" href="$game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="205,309,294,336"/>
-<area shape="rect" id="node30" href="$mj_8h.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="201,1031,297,1057"/>
-<area shape="rect" id="node45" href="$render__sdl_8h.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="175,740,324,767"/>
-<area shape="rect" id="node4" href="$sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="412,512,503,539"/>
-<area shape="rect" id="node5" href="$render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="380,613,535,640"/>
-<area shape="rect" id="node6" href="$render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="381,461,534,488"/>
-<area shape="rect" id="node7" href="$world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="400,563,515,589"/>
-<area shape="rect" id="node8" href="$collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="595,727,771,753"/>
-<area shape="rect" id="node9" href="$fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="611,524,756,551"/>
-<area shape="rect" id="node10" href="$theta__set_8h.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="603,575,764,601"/>
-<area shape="rect" id="node11" href="$shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="626,625,741,652"/>
-<area shape="rect" id="node12" href="$reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="612,676,755,703"/>
-<area shape="rect" id="node14" href="$sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="414,5,501,32"/>
-<area shape="rect" id="node15" href="$sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="411,56,504,83"/>
-<area shape="rect" id="node16" href="$sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="388,107,527,133"/>
-<area shape="rect" id="node17" href="$sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="388,157,527,184"/>
-<area shape="rect" id="node18" href="$render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="396,208,519,235"/>
-<area shape="rect" id="node19" href="$utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="417,259,498,285"/>
-<area shape="rect" id="node20" href="$render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="390,309,525,336"/>
-<area shape="rect" id="node21" href="$theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="395,360,519,387"/>
-<area shape="rect" id="node24" href="$world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="414,411,501,437"/>
-<area shape="rect" id="node22" href="$input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="638,204,729,231"/>
-<area shape="rect" id="node23" href="$vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="619,153,748,180"/>
-<area shape="rect" id="node25" href="$collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="595,473,772,500"/>
-<area shape="rect" id="node26" href="$fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="607,255,760,297"/>
-<area shape="rect" id="node27" href="$theta__set_8h.html#aa254194c894b56f06eaff11768901deb" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="617,321,750,348"/>
-<area shape="rect" id="node28" href="$shark_8h.html#abe943d2553c14ccf4c9b04d93303d667" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="630,372,737,399"/>
-<area shape="rect" id="node29" href="$reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50" title="initialise une trajectoire vide" alt="" coords="626,423,741,449"/>
-<area shape="rect" id="node31" href="$mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="404,1056,511,1083"/>
-<area shape="rect" id="node43" href="$world_8h.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="387,1005,527,1032"/>
-<area shape="rect" id="node44" href="$world_8h.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire." alt="" coords="389,1107,525,1133"/>
-<area shape="rect" id="node32" href="$fish_8h.html#a264a6701ce107ab411de095019998799" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="616,1259,751,1285"/>
-<area shape="rect" id="node33" href="$fish__controller_8h.html#a9c3a75f267eda127e0417e8c34de6233" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="611,1309,756,1336"/>
-<area shape="rect" id="node34" href="$mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="597,904,770,931"/>
-<area shape="rect" id="node35" href="$mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="609,955,758,981"/>
-<area shape="rect" id="node36" href="$mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="601,1005,765,1032"/>
-<area shape="rect" id="node37" href="$mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="615,1056,752,1083"/>
-<area shape="rect" id="node38" href="$reinforce_8h.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="591,1107,776,1133"/>
-<area shape="rect" id="node39" href="$shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="609,1157,758,1184"/>
-<area shape="rect" id="node40" href="$shark__controller_8h.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="604,853,763,880"/>
-<area shape="rect" id="node42" href="$mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="628,1208,739,1235"/>
-<area shape="rect" id="node41" href="$shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="824,828,905,855"/>
-<area shape="rect" id="node46" href="$sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="411,867,504,893"/>
-<area shape="rect" id="node47" href="$sdl__draw__tools_8h.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="372,816,543,843"/>
-<area shape="rect" id="node48" href="$render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="384,664,531,691"/>
-<area shape="rect" id="node49" href="$render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="379,715,535,741"/>
-<area shape="rect" id="node50" href="$render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="408,765,507,792"/>
+<area shape="rect" id="Node000001" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="5,552,126,580"/>
+<area shape="rect" id="Node000002" href="$sound_8c.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="175,265,321,293"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,551,75,505,93,439,124,367,146,334,172,304,180,299,177,304,176,308,150,337,129,370,98,440,80,506,71,552"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="190,552,306,580"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,564,176,564,172,568,128,568"/>
+<area shape="rect" id="Node000013" href="$game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="204,317,292,345"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="75,550,227,355,226,360,80,553"/>
+<area shape="rect" id="Node000035" href="$mj_8c.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="200,1056,296,1084"/>
+<area shape="poly" id="edge31_Node000001_Node000035" title=" " alt="" coords="74,578,239,1041,234,1042,70,582"/>
+<area shape="rect" id="Node000080" href="$render__sdl_8c.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="174,760,322,788"/>
+<area shape="poly" id="edge46_Node000001_Node000080" title=" " alt="" coords="79,577,227,747,222,749,79,583"/>
+<area shape="rect" id="Node000004" href="$sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="410,525,500,553"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="305,556,397,545,393,549,308,561"/>
+<area shape="rect" id="Node000005" href="$render__sdl_8c.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="378,629,532,657"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="280,578,371,614,394,623,390,625,369,619,282,583"/>
+<area shape="rect" id="Node000006" href="$render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="379,473,531,501"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="278,550,369,511,393,505,389,508,371,516,282,553"/>
+<area shape="rect" id="Node000007" href="$world_8c.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="398,577,512,605"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="305,571,385,581,380,584,307,575"/>
+<area shape="rect" id="Node000008" href="$collider_8c.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="593,747,768,774"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="512,599,542,616,555,631,562,646,567,676,572,704,578,718,590,732,597,738,592,739,586,736,574,721,567,706,562,676,557,647,550,634,539,620,513,604"/>
+<area shape="rect" id="Node000009" href="$fish_8c.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="608,539,753,566"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="511,579,595,566,591,569,514,584"/>
+<area shape="rect" id="Node000010" href="$theta__set_8c.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="600,591,761,618"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="512,592,587,598,582,600,514,597"/>
+<area shape="rect" id="Node000011" href="$shark_8c.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="623,643,738,670"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="505,603,618,637,613,639,507,608"/>
+<area shape="rect" id="Node000012" href="$reinforce_8c.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="610,695,751,722"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="512,601,542,616,558,632,567,649,575,665,590,680,601,687,596,688,587,684,570,668,562,651,554,635,539,620,514,606"/>
+<area shape="poly" id="edge17_Node000013_Node000004" title=" " alt="" coords="254,343,272,378,297,423,330,470,372,510,398,525,393,527,368,515,326,473,292,426,268,380,255,348"/>
+<area shape="poly" id="edge18_Node000013_Node000006" title=" " alt="" coords="258,343,305,399,336,431,371,458,384,466,379,468,369,463,332,435,301,403,259,348"/>
+<area shape="rect" id="Node000014" href="$sound_8c.html#a256ad04f93013a05fb111acb7bcef693" title="initialise l&#39;audio SDL" alt="" coords="412,5,498,33"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="291,322,307,314,320,303,340,270,348,238,347,207,343,175,338,143,338,110,346,77,368,44,381,33,400,26,396,30,384,37,372,48,351,80,343,111,343,142,348,174,353,206,353,239,345,272,324,306,310,318,295,325"/>
+<area shape="rect" id="Node000015" href="$sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="409,57,501,85"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="290,321,307,313,320,303,337,277,344,252,345,226,343,201,341,175,342,149,350,123,368,96,396,79,393,84,372,100,355,125,347,150,346,175,348,200,350,226,349,253,342,279,324,306,310,318,294,325"/>
+<area shape="rect" id="Node000016" href="$sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="386,109,524,137"/>
+<area shape="poly" id="edge15_Node000013_Node000016" title=" " alt="" coords="290,321,307,313,320,303,334,284,341,265,343,227,345,188,353,168,368,148,376,144,373,148,372,152,358,170,351,189,348,227,346,266,339,286,324,306,310,317,294,324"/>
+<area shape="rect" id="Node000017" href="$sound_8c.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="386,161,524,189"/>
+<area shape="poly" id="edge16_Node000013_Node000017" title=" " alt="" coords="290,320,320,302,331,290,337,278,343,252,349,226,356,213,368,200,378,195,375,199,372,204,361,216,354,228,348,253,342,280,335,293,324,307,294,323"/>
+<area shape="rect" id="Node000018" href="$render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="394,213,516,241"/>
+<area shape="poly" id="edge19_Node000013_Node000018" title=" " alt="" coords="290,317,321,302,335,290,344,277,353,264,368,252,383,245,380,250,372,256,357,268,348,281,339,294,323,307,294,321"/>
+<area shape="rect" id="Node000019" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="415,265,495,293"/>
+<area shape="poly" id="edge20_Node000013_Node000019" title=" " alt="" coords="291,318,402,291,398,295,294,322"/>
+<area shape="rect" id="Node000020" href="$render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="388,317,522,345"/>
+<area shape="poly" id="edge21_Node000013_Node000020" title=" " alt="" coords="291,329,374,329,370,333,294,333"/>
+<area shape="rect" id="Node000021" href="$theta__set_8c.html#afe7ff9ca20169f534d34343e2f97b633" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="394,369,517,397"/>
+<area shape="poly" id="edge22_Node000013_Node000021" title=" " alt="" coords="291,340,384,364,380,366,294,345"/>
+<area shape="rect" id="Node000024" href="$world_8c.html#ab86571984e07c225b57f4173e7d4d080" title="initialise un monde avec des paramètres" alt="" coords="412,421,498,449"/>
+<area shape="poly" id="edge25_Node000013_Node000024" title=" " alt="" coords="267,343,315,374,371,406,400,418,395,421,369,411,312,379,269,348"/>
+<area shape="rect" id="Node000022" href="$input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="635,211,726,238"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="515,369,539,354,550,342,556,329,561,302,567,275,574,261,587,248,622,231,618,235,590,252,579,264,572,277,567,303,561,331,554,345,542,359,519,373"/>
+<area shape="rect" id="Node000023" href="$vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="616,159,745,186"/>
+<area shape="poly" id="edge24_Node000021_Node000023" title=" " alt="" coords="515,370,539,355,553,336,560,317,561,277,564,238,571,217,586,197,604,186,601,191,590,201,576,220,569,239,567,278,565,318,557,338,542,358,519,373"/>
+<area shape="rect" id="Node000025" href="$collider_8c.html#a6212dde57007cc15994f34cdd0c27d43" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="592,487,769,514"/>
+<area shape="poly" id="edge26_Node000024_Node000025" title=" " alt="" coords="498,445,618,481,613,483,500,450"/>
+<area shape="rect" id="Node000030" href="$fish_8c.html#aba09af4958a615ad5f14f0f86de2143d" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="604,262,757,307"/>
+<area shape="poly" id="edge27_Node000024_Node000030" title=" " alt="" coords="497,426,519,418,539,407,555,385,562,363,569,340,586,317,594,313,591,318,590,321,574,343,567,365,560,388,542,410,522,423,501,430"/>
+<area shape="rect" id="Node000032" href="$theta__set_8c.html#a1ac05ca81e6a49962501975fd882cb84" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="614,331,747,358"/>
+<area shape="poly" id="edge28_Node000024_Node000032" title=" " alt="" coords="497,423,539,406,563,388,587,369,606,362,602,366,590,373,566,392,542,411,500,427"/>
+<area shape="rect" id="Node000033" href="$shark_8c.html#aeebabb143d4ec33b5e26b90f6b405eba" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="627,383,734,410"/>
+<area shape="poly" id="edge29_Node000024_Node000033" title=" " alt="" coords="498,426,614,406,610,410,500,430"/>
+<area shape="rect" id="Node000034" href="$reinforce_8c.html#ac88234cf163795a0145a71388782afa8" title="initialise une trajectoire vide" alt="" coords="624,435,737,462"/>
+<area shape="poly" id="edge30_Node000024_Node000034" title=" " alt="" coords="498,435,611,443,606,446,500,440"/>
+<area shape="rect" id="Node000036" href="$mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="402,1083,508,1110"/>
+<area shape="poly" id="edge32_Node000035_Node000036" title=" " alt="" coords="296,1073,389,1087,385,1089,297,1079"/>
+<area shape="rect" id="Node000078" href="$world_8c.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="386,1031,525,1058"/>
+<area shape="poly" id="edge44_Node000035_Node000078" title=" " alt="" coords="295,1062,372,1054,368,1056,297,1066"/>
+<area shape="rect" id="Node000079" href="$world_8c.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire" alt="" coords="388,1135,523,1162"/>
+<area shape="poly" id="edge45_Node000035_Node000079" title=" " alt="" coords="280,1081,371,1119,394,1129,388,1130,369,1124,280,1087"/>
+<area shape="rect" id="Node000037" href="$fish_8c.html#aac80e4392c480d450129d60ed3071e48" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="613,1291,748,1318"/>
+<area shape="poly" id="edge33_Node000036_Node000037" title=" " alt="" coords="508,1102,527,1110,542,1121,557,1141,565,1161,567,1201,569,1239,576,1257,590,1276,602,1287,597,1286,586,1280,571,1260,564,1240,561,1201,559,1162,553,1144,538,1125,524,1114,508,1107"/>
+<area shape="rect" id="Node000042" href="$fish__controller_8c.html#a9da5c926e836e05c37160682a1ef618a" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="608,1343,753,1370"/>
+<area shape="poly" id="edge34_Node000036_Node000042" title=" " alt="" coords="508,1101,527,1109,542,1121,561,1148,568,1175,569,1201,567,1227,564,1253,565,1278,573,1303,590,1328,598,1337,593,1335,586,1332,568,1305,560,1279,559,1253,561,1227,564,1201,563,1175,556,1150,538,1125,524,1114,508,1107"/>
+<area shape="rect" id="Node000049" href="$mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="594,927,767,954"/>
+<area shape="poly" id="edge35_Node000036_Node000049" title=" " alt="" coords="507,1085,539,1068,550,1056,556,1043,562,1018,568,991,575,978,587,965,592,964,597,961,590,969,579,981,573,993,567,1019,561,1045,554,1059,542,1072,510,1090"/>
+<area shape="rect" id="Node000050" href="$mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="606,979,755,1006"/>
+<area shape="poly" id="edge36_Node000036_Node000050" title=" " alt="" coords="507,1082,539,1068,553,1055,562,1043,571,1030,587,1017,603,1011,598,1014,590,1021,575,1033,566,1046,557,1059,542,1072,510,1087"/>
+<area shape="rect" id="Node000058" href="$mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="599,1031,762,1058"/>
+<area shape="poly" id="edge37_Node000036_Node000058" title=" " alt="" coords="507,1082,605,1061,600,1064,509,1087"/>
+<area shape="rect" id="Node000062" href="$mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="612,1083,749,1110"/>
+<area shape="poly" id="edge38_Node000036_Node000062" title=" " alt="" coords="508,1094,599,1096,594,1097,509,1099"/>
+<area shape="rect" id="Node000063" href="$reinforce_8c.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="588,1135,773,1162"/>
+<area shape="poly" id="edge39_Node000036_Node000063" title=" " alt="" coords="508,1106,605,1130,600,1131,508,1111"/>
+<area shape="rect" id="Node000064" href="$shark_8c.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="606,1187,755,1214"/>
+<area shape="poly" id="edge40_Node000036_Node000064" title=" " alt="" coords="508,1106,542,1121,557,1134,566,1147,575,1160,590,1172,603,1181,598,1180,587,1176,571,1163,562,1150,553,1138,539,1125,508,1111"/>
+<area shape="rect" id="Node000065" href="$shark__controller_8c.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="602,875,759,902"/>
+<area shape="poly" id="edge41_Node000036_Node000065" title=" " alt="" coords="507,1086,524,1079,538,1068,553,1049,559,1031,561,992,564,953,571,933,586,913,591,913,595,909,590,917,576,936,569,954,567,992,565,1032,557,1052,542,1072,527,1083,509,1091"/>
+<area shape="rect" id="Node000077" href="$mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="625,1239,736,1266"/>
+<area shape="poly" id="edge43_Node000036_Node000077" title=" " alt="" coords="508,1103,542,1121,554,1134,561,1148,567,1174,573,1200,579,1212,590,1224,614,1240,608,1239,587,1228,575,1215,568,1202,562,1175,556,1150,550,1137,539,1125,508,1108"/>
+<area shape="rect" id="Node000067" href="$shark_8c.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="821,849,901,877"/>
+<area shape="poly" id="edge42_Node000065_Node000067" title=" " alt="" coords="759,875,808,870,803,872,761,880"/>
+<area shape="rect" id="Node000081" href="$sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="409,889,501,917"/>
+<area shape="poly" id="edge47_Node000080_Node000081" title=" " alt="" coords="262,786,309,829,339,853,371,874,397,887,392,888,369,879,336,858,306,833,263,791"/>
+<area shape="rect" id="Node000082" href="$sdl__draw__tools_8c.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="370,837,540,865"/>
+<area shape="poly" id="edge48_Node000080_Node000082" title=" " alt="" coords="281,786,371,822,394,831,389,833,369,827,282,791"/>
+<area shape="rect" id="Node000083" href="$render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="382,681,528,709"/>
+<area shape="poly" id="edge50_Node000080_Node000083" title=" " alt="" coords="278,757,369,719,393,713,389,716,371,724,282,762"/>
+<area shape="rect" id="Node000084" href="$render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="378,733,533,761"/>
+<area shape="poly" id="edge51_Node000080_Node000084" title=" " alt="" coords="321,762,364,758,360,761,324,767"/>
+<area shape="rect" id="Node000086" href="$render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="406,785,504,813"/>
+<area shape="poly" id="edge52_Node000080_Node000086" title=" " alt="" coords="321,780,393,790,388,793,323,785"/>
+<area shape="poly" id="edge49_Node000082_Node000067" title=" " alt="" coords="540,851,807,860,803,863,542,856"/>
 </map>

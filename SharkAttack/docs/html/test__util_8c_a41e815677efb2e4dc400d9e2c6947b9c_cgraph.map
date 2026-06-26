@@ -1,5 +1,7 @@
 <map id="test_rand_trsf_reinit_resets_sequence" name="test_rand_trsf_reinit_resets_sequence">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,159,65"/>
-<area shape="rect" id="node2" href="$utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="207,5,288,32"/>
-<area shape="rect" id="node3" href="$utils_8h.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="207,56,287,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,24,158,68"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="206,5,286,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,31,193,27,188,29,159,36"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="206,57,286,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,55,193,63,188,63,158,60"/>
 </map>

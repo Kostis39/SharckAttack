@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier src/render_sdl.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('render__sdl_8c.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('render__sdl_8c.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,18 +76,20 @@ $(document).ready(function(){initNavTree('render__sdl_8c.html',''); initResizabl
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Fonctions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier render_sdl.c</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier render_sdl.c</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="render__sdl_8h_source.html">render_sdl.h</a>&quot;</code><br />
@@ -103,114 +104,169 @@ $(document).ready(function(){initNavTree('render__sdl_8c.html',''); initResizabl
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de render_sdl.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c__incl.png" border="0" usemap="#asrc_2render__sdl_8c" alt=""/></div>
+<div class="center"><img src="render__sdl_8c__incl.png" border="0" usemap="#asrc_2render__sdl_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2render__sdl_8c" id="asrc_2render__sdl_8c">
-<area shape="rect" title=" " alt="" coords="793,5,917,32"/>
-<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="453,80,555,107"/>
-<area shape="rect" title=" " alt="" coords="712,155,808,181"/>
-<area shape="rect" href="collider_8h.html" title=" " alt="" coords="662,304,743,331"/>
-<area shape="rect" title=" " alt="" coords="511,603,579,629"/>
-<area shape="rect" title=" " alt="" coords="1745,603,1812,629"/>
-<area shape="rect" href="world_8h.html" title=" " alt="" coords="922,155,993,181"/>
-<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="789,80,920,107"/>
-<area shape="rect" title=" " alt="" coords="1917,80,2061,107"/>
-<area shape="rect" title=" " alt="" coords="2085,80,2203,107"/>
-<area shape="rect" title=" " alt="" coords="595,453,677,480"/>
-<area shape="rect" href="fish_8h.html" title=" " alt="" coords="359,379,417,405"/>
-<area shape="rect" href="shark_8h.html" title=" " alt="" coords="713,379,783,405"/>
-<area shape="rect" href="sound_8h.html" title=" " alt="" coords="117,155,190,181"/>
-<area shape="rect" title=" " alt="" coords="961,379,1031,405"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="889,453,951,480"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="1172,528,1247,555"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="1286,603,1359,629"/>
-<area shape="rect" title=" " alt="" coords="691,528,762,555"/>
-<area shape="rect" title=" " alt="" coords="43,229,181,256"/>
-<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1017,229,1109,256"/>
-<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="1361,453,1455,480"/>
-<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="1338,304,1454,331"/>
-<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="1361,379,1487,405"/>
-<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1124,304,1263,331"/>
-<area shape="rect" title=" " alt="" coords="819,304,893,331"/>
-<area shape="rect" title=" " alt="" coords="918,304,1002,331"/>
-<area shape="rect" title=" " alt="" coords="1026,304,1099,331"/>
-<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="1411,528,1517,555"/>
+<area shape="rect" title=" " alt="" coords="793,5,916,33"/>
+<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="453,81,555,109"/>
+<area shape="poly" title=" " alt="" coords="790,35,571,82,569,77,795,32"/>
+<area shape="rect" title=" " alt="" coords="712,157,808,184"/>
+<area shape="poly" title=" " alt="" coords="828,35,804,55,780,82,768,112,763,143,758,140,763,110,775,80,800,51,832,32"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="661,308,742,336"/>
+<area shape="poly" title=" " alt="" coords="825,35,795,55,759,82,726,116,712,136,703,158,694,193,692,229,698,294,693,292,687,230,689,192,697,156,708,134,721,113,755,78,792,51,829,32"/>
+<area shape="rect" title=" " alt="" coords="510,611,578,638"/>
+<area shape="poly" title=" " alt="" coords="790,26,587,45,326,75,203,95,101,117,62,130,32,143,14,156,8,170,8,474,12,492,23,508,41,522,64,536,126,560,201,579,282,594,363,605,497,620,492,620,362,610,281,599,200,584,124,565,62,541,38,527,19,511,7,494,3,475,3,169,10,153,30,138,60,125,100,112,202,90,325,70,587,40,795,23"/>
+<area shape="rect" title=" " alt="" coords="1738,611,1803,638"/>
+<area shape="poly" title=" " alt="" coords="916,20,1159,34,1478,61,1628,80,1754,104,1804,118,1841,133,1866,150,1875,169,1875,475,1867,513,1849,548,1825,578,1800,603,1798,598,1821,575,1845,545,1862,511,1869,474,1869,170,1862,153,1839,138,1802,123,1753,109,1628,85,1477,66,1159,39,917,26"/>
+<area shape="rect" href="world_8h.html" title=" " alt="" coords="923,157,992,184"/>
+<area shape="poly" title=" " alt="" coords="879,31,908,52,934,80,949,110,956,142,951,140,944,112,930,82,905,56,878,36"/>
+<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="790,81,920,109"/>
+<area shape="poly" title=" " alt="" coords="856,31,857,67,852,64,853,36"/>
+<area shape="rect" title=" " alt="" coords="1910,81,2053,109"/>
+<area shape="poly" title=" " alt="" coords="916,20,1326,38,1606,55,1891,78,1897,81,1891,82,1890,84,1605,60,1326,43,917,25"/>
+<area shape="rect" title=" " alt="" coords="2076,81,2193,109"/>
+<area shape="poly" title=" " alt="" coords="916,18,1107,21,1388,30,1719,48,2064,80,2058,81,1719,53,1388,35,1107,26,917,23"/>
+<area shape="poly" title=" " alt="" coords="549,107,702,151,697,153,550,112"/>
+<area shape="rect" title=" " alt="" coords="595,459,677,487"/>
+<area shape="poly" title=" " alt="" coords="506,106,523,184,547,259,576,333,626,446,621,445,571,335,542,261,517,185,504,111"/>
+<area shape="poly" title=" " alt="" coords="516,106,682,296,677,296,514,111"/>
+<area shape="rect" href="fish_8h.html" title=" " alt="" coords="358,384,415,411"/>
+<area shape="poly" title=" " alt="" coords="451,103,426,111,399,122,374,137,354,158,342,184,335,212,335,241,339,270,355,325,375,371,370,370,350,327,334,271,330,241,330,211,336,182,350,155,371,133,397,117,425,106,455,100"/>
+<area shape="rect" href="shark_8h.html" title=" " alt="" coords="712,384,781,411"/>
+<area shape="poly" title=" " alt="" coords="508,107,524,150,549,210,585,275,607,306,631,334,664,359,701,379,695,379,661,363,628,338,602,309,580,278,544,212,519,152,507,112"/>
+<area shape="rect" href="sound_8h.html" title=" " alt="" coords="118,157,191,184"/>
+<area shape="poly" title=" " alt="" coords="451,109,207,161,205,156,454,105"/>
+<area shape="poly" title=" " alt="" coords="555,102,910,160,905,163,555,107"/>
+<area shape="poly" title=" " alt="" coords="698,334,650,447,646,443,694,337"/>
+<area shape="rect" title=" " alt="" coords="957,384,1027,411"/>
+<area shape="poly" title=" " alt="" coords="742,331,944,383,939,384,742,336"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="885,459,947,487"/>
+<area shape="poly" title=" " alt="" coords="722,334,795,381,889,450,884,450,792,386,721,339"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="1166,535,1239,563"/>
+<area shape="poly" title=" " alt="" coords="731,334,1008,457,1163,529,1158,528,1006,462,730,339"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="1281,611,1354,638"/>
+<area shape="poly" title=" " alt="" coords="947,483,1270,605,1265,605,946,489"/>
+<area shape="poly" title=" " alt="" coords="948,480,1154,534,1148,534,947,485"/>
+<area shape="poly" title=" " alt="" coords="901,486,845,527,773,565,679,597,594,617,593,612,677,592,771,560,842,522,896,488"/>
+<area shape="rect" title=" " alt="" coords="691,535,760,563"/>
+<area shape="poly" title=" " alt="" coords="888,486,775,532,773,526,882,487"/>
+<area shape="poly" title=" " alt="" coords="1224,561,1287,603,1282,601,1222,566"/>
+<area shape="poly" title=" " alt="" coords="1168,556,593,620,593,615,1163,553"/>
+<area shape="poly" title=" " alt="" coords="1240,552,1725,617,1720,617,1240,558"/>
+<area shape="poly" title=" " alt="" coords="415,405,583,455,578,456,415,410"/>
+<area shape="poly" title=" " alt="" coords="389,409,398,448,407,468,421,485,452,511,481,528,509,539,538,545,601,550,679,560,846,586,1012,603,1268,622,1263,622,1011,609,845,591,678,565,600,556,537,550,508,544,479,533,449,515,417,489,403,471,393,450,386,414"/>
+<area shape="poly" title=" " alt="" coords="410,409,486,448,535,468,585,484,663,503,744,517,904,535,1046,543,1154,548,1148,548,1046,549,904,540,743,522,662,508,583,490,533,473,484,453,409,415"/>
+<area shape="poly" title=" " alt="" coords="356,412,328,432,314,445,304,461,291,488,285,513,289,536,303,561,315,571,334,580,384,596,498,618,492,618,383,601,332,585,312,576,299,564,284,538,280,513,286,487,299,458,310,442,325,428,360,409"/>
+<area shape="poly" title=" " alt="" coords="394,409,418,448,435,468,455,485,510,512,569,529,626,539,678,546,672,547,625,545,567,535,508,517,452,489,431,472,414,451,392,414"/>
+<area shape="poly" title=" " alt="" coords="729,411,669,453,667,448,724,413"/>
+<area shape="poly" title=" " alt="" coords="763,409,812,446,875,485,980,531,1089,568,1188,594,1269,614,1264,614,1187,599,1087,573,978,536,872,489,809,450,762,415"/>
+<area shape="poly" title=" " alt="" coords="782,404,864,426,960,457,1017,485,1154,533,1149,533,1015,489,958,462,863,431,782,410"/>
+<area shape="poly" title=" " alt="" coords="747,410,731,521,727,518,743,413"/>
+<area shape="rect" title=" " alt="" coords="43,232,181,260"/>
+<area shape="poly" title=" " alt="" coords="146,187,130,220,125,218,148,182"/>
+<area shape="poly" title=" " alt="" coords="937,184,738,302,736,297,933,186"/>
+<area shape="poly" title=" " alt="" coords="992,171,1218,191,1343,208,1395,218,1433,230,1466,244,1491,259,1512,279,1535,306,1580,373,1595,407,1603,440,1604,472,1597,504,1580,535,1554,565,1511,593,1462,611,1413,622,1369,626,1369,620,1412,616,1461,606,1508,589,1550,561,1576,532,1592,502,1599,472,1598,440,1590,408,1576,376,1531,310,1508,282,1487,264,1464,249,1431,235,1393,223,1342,213,1218,196,993,177"/>
+<area shape="poly" title=" " alt="" coords="992,170,1064,174,1159,184,1266,202,1371,230,1451,254,1481,273,1510,306,1524,333,1532,358,1534,383,1529,407,1520,430,1505,451,1485,471,1461,489,1410,515,1355,533,1302,543,1255,548,1255,543,1301,538,1354,528,1408,510,1459,485,1482,467,1501,448,1515,427,1524,405,1528,383,1527,359,1519,335,1506,310,1478,277,1449,259,1370,235,1264,207,1158,189,1063,180,993,175"/>
+<area shape="poly" title=" " alt="" coords="992,171,1190,187,1468,217,1602,237,1715,260,1760,274,1794,288,1816,303,1824,320,1824,475,1820,509,1812,542,1787,599,1784,595,1807,541,1815,508,1819,474,1819,321,1812,307,1791,292,1758,279,1714,266,1601,242,1467,222,1190,192,993,177"/>
+<area shape="poly" title=" " alt="" coords="920,176,789,195,706,211,624,235,582,252,551,268,481,310,440,328,405,339,375,354,362,367,349,385,340,407,337,426,342,444,352,459,368,474,388,486,440,507,500,522,564,533,678,545,672,546,563,538,499,527,438,512,386,491,365,478,348,463,337,446,332,427,334,406,344,382,358,363,372,349,403,334,438,323,479,306,548,264,579,247,622,230,705,206,788,189,925,174"/>
+<area shape="poly" title=" " alt="" coords="920,178,818,199,754,215,692,235,613,269,537,308,421,377,418,373,535,303,611,264,690,230,753,209,817,194,925,176"/>
+<area shape="poly" title=" " alt="" coords="920,176,860,188,784,211,745,228,709,250,677,277,652,309,648,319,648,328,657,345,676,361,701,377,695,377,673,365,653,349,642,329,642,318,647,307,674,273,706,246,743,223,782,206,859,183,925,174"/>
+<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1012,232,1103,260"/>
+<area shape="poly" title=" " alt="" coords="976,182,1030,223,1025,223,975,188"/>
+<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="1354,459,1448,487"/>
+<area shape="poly" title=" " alt="" coords="992,173,1104,189,1252,217,1325,235,1392,256,1446,279,1482,306,1500,332,1508,357,1506,383,1494,413,1475,436,1450,454,1448,449,1471,433,1490,410,1501,382,1503,358,1496,334,1478,310,1443,284,1390,261,1324,240,1250,222,1104,195,993,179"/>
+<area shape="poly" title=" " alt="" coords="1008,248,921,253,813,261,760,269,713,279,676,293,651,310,641,324,633,341,626,377,627,413,631,446,627,443,622,413,621,376,628,339,636,322,647,306,674,288,712,274,759,264,812,256,921,247,1014,247"/>
+<area shape="poly" title=" " alt="" coords="1103,247,1167,254,1230,269,1255,281,1273,296,1279,315,1270,337,1240,372,1203,401,1162,424,1119,441,1034,463,962,472,962,467,1032,458,1117,436,1160,419,1200,396,1236,368,1266,334,1273,315,1268,299,1252,285,1228,274,1166,260,1104,253"/>
+<area shape="poly" title=" " alt="" coords="1103,245,1197,248,1309,257,1413,275,1454,288,1482,306,1511,336,1534,367,1551,398,1562,430,1565,463,1560,496,1548,530,1526,564,1501,582,1461,597,1369,618,1369,613,1459,592,1498,578,1522,561,1543,527,1555,495,1560,463,1556,431,1546,400,1529,370,1507,340,1478,310,1451,293,1412,280,1308,262,1196,253,1104,250"/>
+<area shape="poly" title=" " alt="" coords="1008,249,918,254,804,263,698,281,658,294,630,310,591,351,577,371,568,393,564,415,566,437,573,461,586,485,604,505,627,520,678,540,673,540,624,525,601,509,582,489,568,463,561,438,559,414,563,391,573,369,587,347,626,306,656,289,697,276,803,258,917,248,1014,247"/>
+<area shape="poly" title=" " alt="" coords="1009,249,966,256,912,266,857,283,807,310,779,339,760,371,756,367,775,335,804,306,855,278,911,261,965,251,1014,248"/>
+<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="1330,308,1446,336"/>
+<area shape="poly" title=" " alt="" coords="1104,255,1317,304,1312,305,1104,260"/>
+<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="1354,384,1480,411"/>
+<area shape="poly" title=" " alt="" coords="1103,245,1193,247,1299,256,1351,263,1397,274,1434,288,1459,306,1467,323,1464,341,1443,374,1440,370,1459,339,1461,324,1455,310,1432,293,1396,279,1350,268,1299,261,1192,252,1104,250"/>
+<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1118,308,1255,336"/>
+<area shape="poly" title=" " alt="" coords="1074,258,1146,301,1140,300,1073,263"/>
+<area shape="rect" title=" " alt="" coords="817,308,890,336"/>
+<area shape="poly" title=" " alt="" coords="1018,261,905,305,903,300,1023,260"/>
+<area shape="rect" title=" " alt="" coords="914,308,998,336"/>
+<area shape="poly" title=" " alt="" coords="1042,259,988,301,985,296,1037,262"/>
+<area shape="rect" title=" " alt="" coords="1021,308,1094,336"/>
+<area shape="poly" title=" " alt="" coords="1059,258,1060,294,1055,291,1056,263"/>
+<area shape="poly" title=" " alt="" coords="1345,336,1207,375,1039,414,849,447,692,468,691,463,848,441,1038,409,1206,370,1339,337"/>
+<area shape="poly" title=" " alt="" coords="1327,334,1043,389,1042,384,1333,333"/>
+<area shape="poly" title=" " alt="" coords="1377,335,1360,359,1345,385,1329,441,1320,499,1318,597,1314,593,1315,499,1324,440,1340,383,1355,356,1373,338"/>
+<area shape="poly" title=" " alt="" coords="1413,334,1493,381,1595,453,1690,533,1753,600,1748,598,1686,537,1592,457,1491,386,1412,339"/>
+<area shape="poly" title=" " alt="" coords="1355,336,1247,375,1115,414,1047,428,993,434,940,442,874,462,810,494,756,528,754,523,807,489,872,457,939,437,992,428,1046,422,1114,409,1246,370,1350,337"/>
+<area shape="poly" title=" " alt="" coords="1395,334,1409,370,1404,368,1392,339"/>
+<area shape="poly" title=" " alt="" coords="1401,411,1235,528,1233,524,1396,413"/>
+<area shape="poly" title=" " alt="" coords="1416,410,1409,446,1406,442,1412,414"/>
+<area shape="poly" title=" " alt="" coords="1397,486,1334,599,1331,595,1392,488"/>
+<area shape="poly" title=" " alt="" coords="1368,487,1253,532,1252,527,1363,488"/>
+<area shape="poly" title=" " alt="" coords="1351,480,776,545,775,539,1356,479"/>
+<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="1406,535,1512,563"/>
+<area shape="poly" title=" " alt="" coords="1413,485,1442,524,1437,522,1410,490"/>
+<area shape="poly" title=" " alt="" coords="1436,563,1357,606,1355,601,1431,564"/>
+<area shape="poly" title=" " alt="" coords="1513,560,1725,612,1720,612,1512,565"/>
+<area shape="poly" title=" " alt="" coords="1118,337,1013,363,970,376,947,386,937,398,929,413,920,446,916,442,924,412,932,396,944,382,968,371,1012,358,1123,336"/>
+<area shape="poly" title=" " alt="" coords="1189,334,1203,521,1198,518,1186,338"/>
+<area shape="poly" title=" " alt="" coords="1115,335,1106,338,909,359,715,376,431,396,430,391,714,371,908,354,1105,333,1120,334"/>
+<area shape="poly" title=" " alt="" coords="1115,335,797,391,796,385,1120,334"/>
+<area shape="poly" title=" " alt="" coords="1168,307,1101,270,1101,265,1173,308"/>
+<area shape="poly" title=" " alt="" coords="1206,334,1373,451,1368,450,1205,339"/>
+<area shape="poly" title=" " alt="" coords="840,108,790,149,787,145,836,111"/>
+<area shape="poly" title=" " alt="" coords="920,100,1023,115,1153,139,1295,177,1365,201,1433,230,1492,259,1514,278,1536,307,1549,333,1557,358,1560,383,1558,407,1550,430,1537,451,1519,471,1496,489,1467,506,1436,519,1371,538,1309,547,1255,551,1255,545,1308,542,1370,533,1434,514,1465,501,1493,485,1516,467,1533,448,1546,428,1553,406,1555,383,1552,359,1544,335,1531,309,1510,281,1489,263,1431,235,1364,206,1293,182,1152,145,1022,120,921,105"/>
+<area shape="poly" title=" " alt="" coords="855,107,846,147,836,168,822,186,805,199,789,207,757,213,726,218,709,224,692,234,659,266,641,309,638,322,641,334,652,349,666,361,700,382,695,381,663,365,648,353,636,337,632,322,636,307,655,263,689,230,707,219,724,212,757,208,787,202,802,195,818,182,831,165,841,145,851,111"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a6af12210354185104bb17220bf94e400"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a6af12210354185104bb17220bf94e400">RENDERED_COLLIDERS</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:a6af12210354185104bb17220bf94e400"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c6f8423b050a32d95dc6dd2cb97c9f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a7c6f8423b050a32d95dc6dd2cb97c9f8">SKELETON_FRAMES</a>&#160;&#160;&#160;45</td></tr>
-<tr class="separator:a7c6f8423b050a32d95dc6dd2cb97c9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af12210354185104bb17220bf94e400" id="r_a6af12210354185104bb17220bf94e400"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6af12210354185104bb17220bf94e400">RENDERED_COLLIDERS</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:a7c6f8423b050a32d95dc6dd2cb97c9f8" id="r_a7c6f8423b050a32d95dc6dd2cb97c9f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c6f8423b050a32d95dc6dd2cb97c9f8">SKELETON_FRAMES</a>&#160;&#160;&#160;45</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:aa194d1e8a6ac9dcf7021c2d416e6c7a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0">Draw_collider</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structCollider.html">Collider</a> *collider)</td></tr>
-<tr class="memdesc:aa194d1e8a6ac9dcf7021c2d416e6c7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un collider sous forme de mine  <a href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aa194d1e8a6ac9dcf7021c2d416e6c7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5204b1f2999bd29022b99cc17ced3bf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6">Draw_colliders</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structCollider.html">Collider</a> *colliders, int nb_colliders)</td></tr>
-<tr class="memdesc:a5204b1f2999bd29022b99cc17ced3bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un tableau de colliders  <a href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5204b1f2999bd29022b99cc17ced3bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f">Init_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, char *title, int width, int height)</td></tr>
-<tr class="memdesc:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialisation de sdl  <a href="render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74f30377a606ead57a76d40093cb052d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d">Destroy_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
-<tr class="memdesc:a74f30377a606ead57a76d40093cb052d"><td class="mdescLeft">&#160;</td><td class="mdescRight">cette fct libere le renderer, detruit la fenetre puis ferme sdl  <a href="render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a74f30377a606ead57a76d40093cb052d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed4c1026dbafba3d25cb1ec02a4e92d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4">Clear_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
-<tr class="memdesc:aed4c1026dbafba3d25cb1ec02a4e92d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">efface l ecran et dessine le fond marin  <a href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aed4c1026dbafba3d25cb1ec02a4e92d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a324212d13cd701f46dc4aae4366216c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4">Draw_fish</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structFish.html">Fish</a> *fish)</td></tr>
-<tr class="memdesc:a324212d13cd701f46dc4aae4366216c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete, une queue triangulaire animé et un oeil  <a href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a324212d13cd701f46dc4aae4366216c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1309043784e46f37e707622ab71ff9f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1">Draw_shark</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structShark.html">Shark</a> *shark)</td></tr>
-<tr class="memdesc:a1309043784e46f37e707622ab71ff9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le requin  <a href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1309043784e46f37e707622ab71ff9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5e020f716940f9c6e7eff144ebc8724"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724">Load_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, const char *path)</td></tr>
-<tr class="separator:ad5e020f716940f9c6e7eff144ebc8724"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa34345c0fe35a82e740a655f16f8ca08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#aa34345c0fe35a82e740a655f16f8ca08">Destroy_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
-<tr class="separator:aa34345c0fe35a82e740a655f16f8ca08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ccb88621d348cc84f9bc83872d414dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd">Draw_mute_button</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="separator:a3ccb88621d348cc84f9bc83872d414dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4075972e8059c73a55d9c2edeed5aed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed">Draw_score</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
-<tr class="separator:aa4075972e8059c73a55d9c2edeed5aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a984775ba1c80663383e8440765e36ba1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1">Draw_debug_view</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structFish.html">Fish</a> *fishes, int nb_fish, <a class="el" href="structShark.html">Shark</a> *shark, <a class="el" href="structCollider.html">Collider</a> *colliders, int nb_colliders)</td></tr>
-<tr class="memdesc:a984775ba1c80663383e8440765e36ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de perception il permet de comprendre visuellement le comportement multi-agents  <a href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a984775ba1c80663383e8440765e36ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82eb50b158226212bbfe2adcc1a85c1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e">Draw_fish_skeleton</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structFish.html">Fish</a> *fish, int frame)</td></tr>
-<tr class="memdesc:a82eb50b158226212bbfe2adcc1a85c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le squelette d'un poisson mangé le squelette est affiché pendant qlq frames après la mort d un poisson  <a href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a82eb50b158226212bbfe2adcc1a85c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a459b981aa5c30cb582d8a101afb685ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca">Draw_world</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structWorld.html">World</a> *world)</td></tr>
-<tr class="memdesc:a459b981aa5c30cb582d8a101afb685ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le monde  <a href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a459b981aa5c30cb582d8a101afb685ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9d258c3d9271b764471abdbb53c3c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28">Draw_text_center</a> (SDL_Renderer *r, const char *text, SDL_Rect zone, int size, SDL_Color color)</td></tr>
-<tr class="memdesc:aa9d258c3d9271b764471abdbb53c3c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un texte centre avec SDL_ttf.  <a href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aa9d258c3d9271b764471abdbb53c3c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75da6b9f7944a9cb8c19a09f83fc944e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e">Draw_result_overlay</a> (SDL_Renderer *r, SDL_Rect zone, int is_winner, int remaining)</td></tr>
-<tr class="memdesc:a75da6b9f7944a9cb8c19a09f83fc944e"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche WINNER ou LOSER avec un filtre transparent.  <a href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a75da6b9f7944a9cb8c19a09f83fc944e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1307c29c074f2638c2a842a135f5935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#ad1307c29c074f2638c2a842a135f5935">Render_two_worlds</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structWorld.html">World</a> *left_world, <a class="el" href="structWorld.html">World</a> *right_world, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="separator:ad1307c29c074f2638c2a842a135f5935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa194d1e8a6ac9dcf7021c2d416e6c7a0" id="r_aa194d1e8a6ac9dcf7021c2d416e6c7a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa194d1e8a6ac9dcf7021c2d416e6c7a0">Draw_collider</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structCollider.html">Collider</a> *collider)</td></tr>
+<tr class="memdesc:aa194d1e8a6ac9dcf7021c2d416e6c7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un collider sous forme de mine  <br /></td></tr>
+<tr class="memitem:a5204b1f2999bd29022b99cc17ced3bf6" id="r_a5204b1f2999bd29022b99cc17ced3bf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5204b1f2999bd29022b99cc17ced3bf6">Draw_colliders</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structCollider.html">Collider</a> *colliders, int nb_colliders)</td></tr>
+<tr class="memdesc:a5204b1f2999bd29022b99cc17ced3bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un tableau de colliders  <br /></td></tr>
+<tr class="memitem:a68bdd67f121c1fe588b0963cadcf0a1f" id="r_a68bdd67f121c1fe588b0963cadcf0a1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68bdd67f121c1fe588b0963cadcf0a1f">Init_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, char *title, int width, int height)</td></tr>
+<tr class="memdesc:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialisation de sdl  <br /></td></tr>
+<tr class="memitem:a74f30377a606ead57a76d40093cb052d" id="r_a74f30377a606ead57a76d40093cb052d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74f30377a606ead57a76d40093cb052d">Destroy_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
+<tr class="memdesc:a74f30377a606ead57a76d40093cb052d"><td class="mdescLeft">&#160;</td><td class="mdescRight">cette fct libere le renderer, detruit la fenetre puis ferme sdl  <br /></td></tr>
+<tr class="memitem:aed4c1026dbafba3d25cb1ec02a4e92d4" id="r_aed4c1026dbafba3d25cb1ec02a4e92d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed4c1026dbafba3d25cb1ec02a4e92d4">Clear_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
+<tr class="memdesc:aed4c1026dbafba3d25cb1ec02a4e92d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">efface l ecran et dessine le fond marin  <br /></td></tr>
+<tr class="memitem:a324212d13cd701f46dc4aae4366216c4" id="r_a324212d13cd701f46dc4aae4366216c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a324212d13cd701f46dc4aae4366216c4">Draw_fish</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structFish.html">Fish</a> *fish)</td></tr>
+<tr class="memdesc:a324212d13cd701f46dc4aae4366216c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete, une queue triangulaire animé et un oeil  <br /></td></tr>
+<tr class="memitem:a1309043784e46f37e707622ab71ff9f1" id="r_a1309043784e46f37e707622ab71ff9f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1309043784e46f37e707622ab71ff9f1">Draw_shark</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structShark.html">Shark</a> *shark)</td></tr>
+<tr class="memdesc:a1309043784e46f37e707622ab71ff9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le requin  <br /></td></tr>
+<tr class="memitem:ad5e020f716940f9c6e7eff144ebc8724" id="r_ad5e020f716940f9c6e7eff144ebc8724"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5e020f716940f9c6e7eff144ebc8724">Load_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, const char *path)</td></tr>
+<tr class="memitem:aa34345c0fe35a82e740a655f16f8ca08" id="r_aa34345c0fe35a82e740a655f16f8ca08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa34345c0fe35a82e740a655f16f8ca08">Destroy_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
+<tr class="memitem:a3ccb88621d348cc84f9bc83872d414dd" id="r_a3ccb88621d348cc84f9bc83872d414dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ccb88621d348cc84f9bc83872d414dd">Draw_mute_button</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
+<tr class="memitem:aa4075972e8059c73a55d9c2edeed5aed" id="r_aa4075972e8059c73a55d9c2edeed5aed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4075972e8059c73a55d9c2edeed5aed">Draw_score</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
+<tr class="memitem:a984775ba1c80663383e8440765e36ba1" id="r_a984775ba1c80663383e8440765e36ba1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a984775ba1c80663383e8440765e36ba1">Draw_debug_view</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structFish.html">Fish</a> *fishes, int nb_fish, <a class="el" href="structShark.html">Shark</a> *shark, <a class="el" href="structCollider.html">Collider</a> *colliders, int nb_colliders)</td></tr>
+<tr class="memdesc:a984775ba1c80663383e8440765e36ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de perception il permet de comprendre visuellement le comportement multi-agents  <br /></td></tr>
+<tr class="memitem:a82eb50b158226212bbfe2adcc1a85c1e" id="r_a82eb50b158226212bbfe2adcc1a85c1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82eb50b158226212bbfe2adcc1a85c1e">Draw_fish_skeleton</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structFish.html">Fish</a> *fish, int frame)</td></tr>
+<tr class="memdesc:a82eb50b158226212bbfe2adcc1a85c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le squelette d'un poisson mangé le squelette est affiché pendant qlq frames après la mort d un poisson  <br /></td></tr>
+<tr class="memitem:a459b981aa5c30cb582d8a101afb685ca" id="r_a459b981aa5c30cb582d8a101afb685ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a459b981aa5c30cb582d8a101afb685ca">Draw_world</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structWorld.html">World</a> *world)</td></tr>
+<tr class="memdesc:a459b981aa5c30cb582d8a101afb685ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le monde  <br /></td></tr>
+<tr class="memitem:aa9d258c3d9271b764471abdbb53c3c28" id="r_aa9d258c3d9271b764471abdbb53c3c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9d258c3d9271b764471abdbb53c3c28">Draw_text_center</a> (SDL_Renderer *r, const char *text, SDL_Rect zone, int size, SDL_Color color)</td></tr>
+<tr class="memdesc:aa9d258c3d9271b764471abdbb53c3c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un texte centre avec SDL_ttf.  <br /></td></tr>
+<tr class="memitem:a75da6b9f7944a9cb8c19a09f83fc944e" id="r_a75da6b9f7944a9cb8c19a09f83fc944e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75da6b9f7944a9cb8c19a09f83fc944e">Draw_result_overlay</a> (SDL_Renderer *r, SDL_Rect zone, int is_winner, int remaining)</td></tr>
+<tr class="memdesc:a75da6b9f7944a9cb8c19a09f83fc944e"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche WINNER ou LOSER avec un filtre transparent.  <br /></td></tr>
+<tr class="memitem:ad1307c29c074f2638c2a842a135f5935" id="r_ad1307c29c074f2638c2a842a135f5935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1307c29c074f2638c2a842a135f5935">Render_two_worlds</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structWorld.html">World</a> *left_world, <a class="el" href="structWorld.html">World</a> *right_world, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a61ab2e6d134002deb363436b45030078"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a61ab2e6d134002deb363436b45030078">g_score</a> = 0</td></tr>
-<tr class="separator:a61ab2e6d134002deb363436b45030078"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab94b3c9c237ace9944af90bf6555a1e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#ab94b3c9c237ace9944af90bf6555a1e2">g_gain</a> = 0</td></tr>
-<tr class="separator:ab94b3c9c237ace9944af90bf6555a1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad783183e6501a39a96c8cacda55b0495"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#ad783183e6501a39a96c8cacda55b0495">g_flash</a> = 0</td></tr>
-<tr class="separator:ad783183e6501a39a96c8cacda55b0495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b9f794676c6ed7cf058a0fe8fab5876"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a7b9f794676c6ed7cf058a0fe8fab5876">g_debug_view</a> = 0</td></tr>
-<tr class="separator:a7b9f794676c6ed7cf058a0fe8fab5876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1da60c38bc67767bb94b33b4e8409186"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#a1da60c38bc67767bb94b33b4e8409186">g_was_alive</a> [<a class="el" href="config_8h.html#afcae824cfd797ed9f6a5162b96d899ea">FISH_NB</a>] = {0}</td></tr>
-<tr class="separator:a1da60c38bc67767bb94b33b4e8409186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3114af0922c437b5cab12ebfbd4dd5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8c.html#aa3114af0922c437b5cab12ebfbd4dd5a">g_skeleton_frame</a> [<a class="el" href="config_8h.html#afcae824cfd797ed9f6a5162b96d899ea">FISH_NB</a>] = {0}</td></tr>
-<tr class="separator:aa3114af0922c437b5cab12ebfbd4dd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ab2e6d134002deb363436b45030078" id="r_a61ab2e6d134002deb363436b45030078"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61ab2e6d134002deb363436b45030078">g_score</a> = 0</td></tr>
+<tr class="memitem:ab94b3c9c237ace9944af90bf6555a1e2" id="r_ab94b3c9c237ace9944af90bf6555a1e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab94b3c9c237ace9944af90bf6555a1e2">g_gain</a> = 0</td></tr>
+<tr class="memitem:ad783183e6501a39a96c8cacda55b0495" id="r_ad783183e6501a39a96c8cacda55b0495"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad783183e6501a39a96c8cacda55b0495">g_flash</a> = 0</td></tr>
+<tr class="memitem:a7b9f794676c6ed7cf058a0fe8fab5876" id="r_a7b9f794676c6ed7cf058a0fe8fab5876"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9f794676c6ed7cf058a0fe8fab5876">g_debug_view</a> = 0</td></tr>
+<tr class="memitem:a1da60c38bc67767bb94b33b4e8409186" id="r_a1da60c38bc67767bb94b33b4e8409186"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1da60c38bc67767bb94b33b4e8409186">g_was_alive</a> [<a class="el" href="config_8h.html#afcae824cfd797ed9f6a5162b96d899ea">FISH_NB</a>] = {0}</td></tr>
+<tr class="memitem:aa3114af0922c437b5cab12ebfbd4dd5a" id="r_aa3114af0922c437b5cab12ebfbd4dd5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3114af0922c437b5cab12ebfbd4dd5a">g_skeleton_frame</a> [<a class="el" href="config_8h.html#afcae824cfd797ed9f6a5162b96d899ea">FISH_NB</a>] = {0}</td></tr>
 </table>
-<h2 class="groupheader">Documentation des macros</h2>
-<a id="a6af12210354185104bb17220bf94e400"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6af12210354185104bb17220bf94e400">&#9670;&nbsp;</a></span>RENDERED_COLLIDERS</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="a6af12210354185104bb17220bf94e400" name="a6af12210354185104bb17220bf94e400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6af12210354185104bb17220bf94e400">&#9670;&#160;</a></span>RENDERED_COLLIDERS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,8 +279,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7c6f8423b050a32d95dc6dd2cb97c9f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c6f8423b050a32d95dc6dd2cb97c9f8">&#9670;&nbsp;</a></span>SKELETON_FRAMES</h2>
+<a id="a7c6f8423b050a32d95dc6dd2cb97c9f8" name="a7c6f8423b050a32d95dc6dd2cb97c9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6f8423b050a32d95dc6dd2cb97c9f8">&#9670;&#160;</a></span>SKELETON_FRAMES</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,9 +293,9 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="aed4c1026dbafba3d25cb1ec02a4e92d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed4c1026dbafba3d25cb1ec02a4e92d4">&#9670;&nbsp;</a></span>Clear_sdl_display()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="aed4c1026dbafba3d25cb1ec02a4e92d4" name="aed4c1026dbafba3d25cb1ec02a4e92d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed4c1026dbafba3d25cb1ec02a4e92d4">&#9670;&#160;</a></span>Clear_sdl_display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,8 +303,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void Clear_sdl_display </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -264,24 +319,33 @@ Variables</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_aed4c1026dbafba3d25cb1ec02a4e92d4_cgraph.png" border="0" usemap="#arender__sdl_8c_aed4c1026dbafba3d25cb1ec02a4e92d4_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_aed4c1026dbafba3d25cb1ec02a4e92d4_cgraph.png" border="0" usemap="#arender__sdl_8c_aed4c1026dbafba3d25cb1ec02a4e92d4_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_aed4c1026dbafba3d25cb1ec02a4e92d4_cgraph" id="arender__sdl_8c_aed4c1026dbafba3d25cb1ec02a4e92d4_cgraph">
-<area shape="rect" title="efface l ecran et dessine le fond marin" alt="" coords="5,107,141,133"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="208,5,323,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="193,56,338,83"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="189,107,341,133"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="199,208,332,235"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="216,157,315,184"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="393,5,531,32"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="433,157,491,184"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="389,208,535,235"/>
+<area shape="rect" title="efface l ecran et dessine le fond marin" alt="" coords="5,107,141,134"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="208,5,321,33"/>
+<area shape="poly" title=" " alt="" coords="95,104,187,49,215,38,211,41,190,54,98,108"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="388,83,532,110"/>
+<area shape="poly" title=" " alt="" coords="127,104,188,93,283,87,375,90,370,92,284,92,189,98,129,109"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="189,159,340,186"/>
+<area shape="poly" title=" " alt="" coords="127,132,199,153,194,155,127,138"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="198,107,330,134"/>
+<area shape="poly" title=" " alt="" coords="140,118,185,119,180,122,142,123"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="216,211,313,238"/>
+<area shape="poly" title=" " alt="" coords="93,132,137,164,190,195,206,205,200,204,187,200,134,168,92,137"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="392,5,528,33"/>
+<area shape="poly" title=" " alt="" coords="321,17,379,18,374,20,322,22"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="431,159,489,186"/>
+<area shape="poly" title=" " alt="" coords="340,170,418,172,413,173,341,175"/>
+<area shape="poly" title=" " alt="" coords="330,110,375,107,370,108,332,115"/>
+<area shape="poly" title=" " alt="" coords="320,132,418,160,413,161,319,138"/>
+<area shape="poly" title=" " alt="" coords="313,209,414,184,419,184,314,214"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa34345c0fe35a82e740a655f16f8ca08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa34345c0fe35a82e740a655f16f8ca08">&#9670;&nbsp;</a></span>Destroy_mute_icons()</h2>
+<a id="aa34345c0fe35a82e740a655f16f8ca08" name="aa34345c0fe35a82e740a655f16f8ca08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34345c0fe35a82e740a655f16f8ca08">&#9670;&#160;</a></span>Destroy_mute_icons()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,8 +353,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Destroy_mute_icons </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -298,8 +361,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a74f30377a606ead57a76d40093cb052d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74f30377a606ead57a76d40093cb052d">&#9670;&nbsp;</a></span>Destroy_sdl_display()</h2>
+<a id="a74f30377a606ead57a76d40093cb052d" name="a74f30377a606ead57a76d40093cb052d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f30377a606ead57a76d40093cb052d">&#9670;&#160;</a></span>Destroy_sdl_display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,8 +370,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Destroy_sdl_display </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -324,8 +386,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="aa194d1e8a6ac9dcf7021c2d416e6c7a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa194d1e8a6ac9dcf7021c2d416e6c7a0">&#9670;&nbsp;</a></span>Draw_collider()</h2>
+<a id="aa194d1e8a6ac9dcf7021c2d416e6c7a0" name="aa194d1e8a6ac9dcf7021c2d416e6c7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa194d1e8a6ac9dcf7021c2d416e6c7a0">&#9670;&#160;</a></span>Draw_collider()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,19 +395,12 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_collider </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *&#160;</td>
-          <td class="paramname"><em>collider</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>collider</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -361,19 +416,22 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_aa194d1e8a6ac9dcf7021c2d416e6c7a0_cgraph.png" border="0" usemap="#arender__sdl_8c_aa194d1e8a6ac9dcf7021c2d416e6c7a0_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_aa194d1e8a6ac9dcf7021c2d416e6c7a0_cgraph.png" border="0" usemap="#arender__sdl_8c_aa194d1e8a6ac9dcf7021c2d416e6c7a0_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_aa194d1e8a6ac9dcf7021c2d416e6c7a0_cgraph" id="arender__sdl_8c_aa194d1e8a6ac9dcf7021c2d416e6c7a0_cgraph">
-<area shape="rect" title="dessine un collider sous forme de mine" alt="" coords="5,31,116,57"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="164,5,307,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="206,56,265,83"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="355,5,492,32"/>
+<area shape="rect" title="dessine un collider sous forme de mine" alt="" coords="5,32,116,60"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="164,5,305,33"/>
+<area shape="poly" title=" " alt="" coords="115,35,151,31,146,33,117,40"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="205,57,264,85"/>
+<area shape="poly" title=" " alt="" coords="116,51,192,64,187,66,116,57"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="353,5,489,33"/>
+<area shape="poly" title=" " alt="" coords="305,17,340,19,335,19,306,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5204b1f2999bd29022b99cc17ced3bf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5204b1f2999bd29022b99cc17ced3bf6">&#9670;&nbsp;</a></span>Draw_colliders()</h2>
+<a id="a5204b1f2999bd29022b99cc17ced3bf6" name="a5204b1f2999bd29022b99cc17ced3bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5204b1f2999bd29022b99cc17ced3bf6">&#9670;&#160;</a></span>Draw_colliders()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -381,25 +439,17 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_colliders </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *&#160;</td>
-          <td class="paramname"><em>colliders</em>, </td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>colliders</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nb_colliders</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_colliders</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -416,20 +466,24 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_a5204b1f2999bd29022b99cc17ced3bf6_cgraph.png" border="0" usemap="#arender__sdl_8c_a5204b1f2999bd29022b99cc17ced3bf6_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_a5204b1f2999bd29022b99cc17ced3bf6_cgraph.png" border="0" usemap="#arender__sdl_8c_a5204b1f2999bd29022b99cc17ced3bf6_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_a5204b1f2999bd29022b99cc17ced3bf6_cgraph" id="arender__sdl_8c_a5204b1f2999bd29022b99cc17ced3bf6_cgraph">
-<area shape="rect" title="dessine un tableau de colliders" alt="" coords="5,31,124,57"/>
-<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="172,31,283,57"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="331,5,473,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="373,56,431,83"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="521,5,659,32"/>
+<area shape="rect" title="dessine un tableau de colliders" alt="" coords="5,32,123,60"/>
+<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="171,32,281,60"/>
+<area shape="poly" title=" " alt="" coords="123,43,157,45,152,46,124,48"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="329,5,470,33"/>
+<area shape="poly" title=" " alt="" coords="281,35,316,32,311,33,282,40"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="370,57,429,85"/>
+<area shape="poly" title=" " alt="" coords="281,51,358,65,353,65,281,57"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="518,5,655,33"/>
+<area shape="poly" title=" " alt="" coords="470,17,506,19,500,19,471,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a984775ba1c80663383e8440765e36ba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a984775ba1c80663383e8440765e36ba1">&#9670;&nbsp;</a></span>Draw_debug_view()</h2>
+<a id="a984775ba1c80663383e8440765e36ba1" name="a984775ba1c80663383e8440765e36ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a984775ba1c80663383e8440765e36ba1">&#9670;&#160;</a></span>Draw_debug_view()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,43 +491,32 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_debug_view </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structFish.html">Fish</a> *&#160;</td>
-          <td class="paramname"><em>fishes</em>, </td>
+          <td class="paramtype"><a class="el" href="structFish.html">Fish</a> *</td>          <td class="paramname"><span class="paramname"><em>fishes</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nb_fish</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_fish</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>shark</em>, </td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>shark</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *&#160;</td>
-          <td class="paramname"><em>colliders</em>, </td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>colliders</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nb_colliders</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_colliders</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -493,25 +536,34 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_a984775ba1c80663383e8440765e36ba1_cgraph.png" border="0" usemap="#arender__sdl_8c_a984775ba1c80663383e8440765e36ba1_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_a984775ba1c80663383e8440765e36ba1_cgraph.png" border="0" usemap="#arender__sdl_8c_a984775ba1c80663383e8440765e36ba1_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_a984775ba1c80663383e8440765e36ba1_cgraph" id="arender__sdl_8c_a984775ba1c80663383e8440765e36ba1_cgraph">
-<area shape="rect" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="5,81,147,108"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="195,5,345,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="201,56,339,83"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="218,107,322,133"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="241,157,299,184"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="440,31,499,57"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="393,107,545,133"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="593,107,728,133"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="776,81,887,108"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="779,132,883,159"/>
+<area shape="rect" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="5,81,146,109"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="194,5,343,33"/>
+<area shape="poly" title=" " alt="" coords="112,78,219,37,216,41,114,83"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="438,56,496,84"/>
+<area shape="poly" title=" " alt="" coords="146,88,422,70,421,75,147,93"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="200,107,336,134"/>
+<area shape="poly" title=" " alt="" coords="146,102,188,109,183,110,146,107"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="217,159,320,186"/>
+<area shape="poly" title=" " alt="" coords="109,107,195,143,215,153,209,153,193,148,108,112"/>
+<area shape="poly" title=" " alt="" coords="325,31,425,58,420,59,325,36"/>
+<area shape="poly" title=" " alt="" coords="313,155,342,143,389,117,430,94,435,92,392,122,344,148,315,161"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="391,159,542,186"/>
+<area shape="poly" title=" " alt="" coords="320,170,378,172,373,173,321,175"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="590,159,725,186"/>
+<area shape="poly" title=" " alt="" coords="543,170,577,172,572,173,543,175"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="773,132,883,160"/>
+<area shape="poly" title=" " alt="" coords="725,159,754,157,760,157,725,165"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="776,184,880,212"/>
+<area shape="poly" title=" " alt="" coords="725,180,763,188,758,188,725,185"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a324212d13cd701f46dc4aae4366216c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a324212d13cd701f46dc4aae4366216c4">&#9670;&nbsp;</a></span>Draw_fish()</h2>
+<a id="a324212d13cd701f46dc4aae4366216c4" name="a324212d13cd701f46dc4aae4366216c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324212d13cd701f46dc4aae4366216c4">&#9670;&#160;</a></span>Draw_fish()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -519,19 +571,12 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_fish </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structFish.html">Fish</a> *&#160;</td>
-          <td class="paramname"><em>fish</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structFish.html">Fish</a> *</td>          <td class="paramname"><span class="paramname"><em>fish</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -547,24 +592,31 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_a324212d13cd701f46dc4aae4366216c4_cgraph.png" border="0" usemap="#arender__sdl_8c_a324212d13cd701f46dc4aae4366216c4_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_a324212d13cd701f46dc4aae4366216c4_cgraph.png" border="0" usemap="#arender__sdl_8c_a324212d13cd701f46dc4aae4366216c4_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_a324212d13cd701f46dc4aae4366216c4_cgraph" id="arender__sdl_8c_a324212d13cd701f46dc4aae4366216c4_cgraph">
-<area shape="rect" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="5,107,92,133"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="140,31,292,57"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="147,81,285,108"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="140,132,292,159"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="187,183,245,209"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="340,31,475,57"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="523,5,633,32"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="526,56,630,83"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="378,132,437,159"/>
+<area shape="rect" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="5,109,91,137"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="139,31,290,58"/>
+<area shape="poly" title=" " alt="" coords="70,107,137,69,157,63,152,66,140,74,73,111"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="146,83,282,110"/>
+<area shape="poly" title=" " alt="" coords="90,114,133,108,129,111,92,119"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="139,135,290,162"/>
+<area shape="poly" title=" " alt="" coords="91,127,126,134,121,136,91,132"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="376,160,434,188"/>
+<area shape="poly" title=" " alt="" coords="69,135,101,155,139,171,198,182,258,185,358,181,363,180,258,190,198,187,138,176,99,160,67,140"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="338,31,472,58"/>
+<area shape="poly" title=" " alt="" coords="290,42,325,44,320,45,291,47"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="520,5,631,33"/>
+<area shape="poly" title=" " alt="" coords="472,32,507,29,502,30,473,37"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="524,57,627,85"/>
+<area shape="poly" title=" " alt="" coords="473,52,511,60,506,61,473,58"/>
+<area shape="poly" title=" " alt="" coords="291,156,363,168,358,168,290,161"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a82eb50b158226212bbfe2adcc1a85c1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82eb50b158226212bbfe2adcc1a85c1e">&#9670;&nbsp;</a></span>Draw_fish_skeleton()</h2>
+<a id="a82eb50b158226212bbfe2adcc1a85c1e" name="a82eb50b158226212bbfe2adcc1a85c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82eb50b158226212bbfe2adcc1a85c1e">&#9670;&#160;</a></span>Draw_fish_skeleton()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,25 +624,17 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_fish_skeleton </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structFish.html">Fish</a> *&#160;</td>
-          <td class="paramname"><em>fish</em>, </td>
+          <td class="paramtype"><a class="el" href="structFish.html">Fish</a> *</td>          <td class="paramname"><span class="paramname"><em>fish</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>frame</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -607,23 +651,29 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_a82eb50b158226212bbfe2adcc1a85c1e_cgraph.png" border="0" usemap="#arender__sdl_8c_a82eb50b158226212bbfe2adcc1a85c1e_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_a82eb50b158226212bbfe2adcc1a85c1e_cgraph.png" border="0" usemap="#arender__sdl_8c_a82eb50b158226212bbfe2adcc1a85c1e_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_a82eb50b158226212bbfe2adcc1a85c1e_cgraph" id="arender__sdl_8c_a82eb50b158226212bbfe2adcc1a85c1e_cgraph">
-<area shape="rect" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="5,81,153,108"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="201,31,353,57"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="201,81,353,108"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="248,132,307,159"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="401,31,536,57"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="584,5,695,32"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="587,56,691,83"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="439,81,498,108"/>
+<area shape="rect" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="5,83,153,110"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="201,31,352,58"/>
+<area shape="poly" title=" " alt="" coords="134,79,209,62,204,64,135,85"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="201,83,352,110"/>
+<area shape="poly" title=" " alt="" coords="153,94,188,96,183,97,153,99"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="438,108,496,136"/>
+<area shape="poly" title=" " alt="" coords="137,108,201,119,321,125,425,125,420,125,321,130,200,124,137,114"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="400,31,534,58"/>
+<area shape="poly" title=" " alt="" coords="352,42,387,44,382,45,353,47"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="582,5,693,33"/>
+<area shape="poly" title=" " alt="" coords="534,32,569,29,564,30,535,37"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="586,57,689,85"/>
+<area shape="poly" title=" " alt="" coords="535,52,573,61,568,61,535,58"/>
+<area shape="poly" title=" " alt="" coords="353,104,425,116,420,116,352,109"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a3ccb88621d348cc84f9bc83872d414dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ccb88621d348cc84f9bc83872d414dd">&#9670;&nbsp;</a></span>Draw_mute_button()</h2>
+<a id="a3ccb88621d348cc84f9bc83872d414dd" name="a3ccb88621d348cc84f9bc83872d414dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccb88621d348cc84f9bc83872d414dd">&#9670;&#160;</a></span>Draw_mute_button()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -631,27 +681,20 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_mute_button </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a75da6b9f7944a9cb8c19a09f83fc944e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75da6b9f7944a9cb8c19a09f83fc944e">&#9670;&nbsp;</a></span>Draw_result_overlay()</h2>
+<a id="a75da6b9f7944a9cb8c19a09f83fc944e" name="a75da6b9f7944a9cb8c19a09f83fc944e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75da6b9f7944a9cb8c19a09f83fc944e">&#9670;&#160;</a></span>Draw_result_overlay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -659,31 +702,22 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_result_overlay </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SDL_Rect&#160;</td>
-          <td class="paramname"><em>zone</em>, </td>
+          <td class="paramtype">SDL_Rect</td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>is_winner</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>is_winner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>remaining</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>remaining</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -703,17 +737,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_a75da6b9f7944a9cb8c19a09f83fc944e_cgraph.png" border="0" usemap="#arender__sdl_8c_a75da6b9f7944a9cb8c19a09f83fc944e_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_a75da6b9f7944a9cb8c19a09f83fc944e_cgraph.png" border="0" usemap="#arender__sdl_8c_a75da6b9f7944a9cb8c19a09f83fc944e_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_a75da6b9f7944a9cb8c19a09f83fc944e_cgraph" id="arender__sdl_8c_a75da6b9f7944a9cb8c19a09f83fc944e_cgraph">
-<area shape="rect" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="5,5,161,32"/>
-<area shape="rect" href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="209,5,347,32"/>
+<area shape="rect" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="5,5,161,33"/>
+<area shape="rect" href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="209,5,345,33"/>
+<area shape="poly" title=" " alt="" coords="161,17,195,19,190,19,161,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa4075972e8059c73a55d9c2edeed5aed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4075972e8059c73a55d9c2edeed5aed">&#9670;&nbsp;</a></span>Draw_score()</h2>
+<a id="aa4075972e8059c73a55d9c2edeed5aed" name="aa4075972e8059c73a55d9c2edeed5aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4075972e8059c73a55d9c2edeed5aed">&#9670;&#160;</a></span>Draw_score()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -721,8 +756,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_score </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -730,20 +764,24 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_aa4075972e8059c73a55d9c2edeed5aed_cgraph.png" border="0" usemap="#arender__sdl_8c_aa4075972e8059c73a55d9c2edeed5aed_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_aa4075972e8059c73a55d9c2edeed5aed_cgraph.png" border="0" usemap="#arender__sdl_8c_aa4075972e8059c73a55d9c2edeed5aed_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_aa4075972e8059c73a55d9c2edeed5aed_cgraph" id="arender__sdl_8c_aa4075972e8059c73a55d9c2edeed5aed_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,104,83"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="177,5,279,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="182,56,274,83"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="152,107,304,133"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="352,107,411,133"/>
+<area shape="rect" title=" " alt="" coords="5,57,103,85"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="175,5,278,33"/>
+<area shape="poly" title=" " alt="" coords="102,54,166,36,162,40,104,59"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="181,57,272,85"/>
+<area shape="poly" title=" " alt="" coords="103,69,168,70,163,73,103,74"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="151,109,302,137"/>
+<area shape="poly" title=" " alt="" coords="103,83,166,103,161,105,102,88"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="350,109,408,137"/>
+<area shape="poly" title=" " alt="" coords="302,121,337,123,331,123,302,126"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a1309043784e46f37e707622ab71ff9f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1309043784e46f37e707622ab71ff9f1">&#9670;&nbsp;</a></span>Draw_shark()</h2>
+<a id="a1309043784e46f37e707622ab71ff9f1" name="a1309043784e46f37e707622ab71ff9f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1309043784e46f37e707622ab71ff9f1">&#9670;&#160;</a></span>Draw_shark()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -751,19 +789,12 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_shark </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>shark</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>shark</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -779,25 +810,33 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_a1309043784e46f37e707622ab71ff9f1_cgraph.png" border="0" usemap="#arender__sdl_8c_a1309043784e46f37e707622ab71ff9f1_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_a1309043784e46f37e707622ab71ff9f1_cgraph.png" border="0" usemap="#arender__sdl_8c_a1309043784e46f37e707622ab71ff9f1_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_a1309043784e46f37e707622ab71ff9f1_cgraph" id="arender__sdl_8c_a1309043784e46f37e707622ab71ff9f1_cgraph">
-<area shape="rect" title="dessine le requin" alt="" coords="5,132,104,159"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="152,31,304,57"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="159,81,297,108"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="155,132,301,159"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="152,183,304,209"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="199,233,257,260"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="352,31,487,57"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="535,5,645,32"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="538,56,642,83"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="390,183,449,209"/>
+<area shape="rect" title="dessine le requin" alt="" coords="5,135,104,162"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="152,31,303,58"/>
+<area shape="poly" title=" " alt="" coords="68,132,104,101,150,69,166,63,162,67,153,73,107,105,72,136"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="159,83,296,110"/>
+<area shape="poly" title=" " alt="" coords="102,132,167,113,163,117,104,136"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="155,135,300,162"/>
+<area shape="poly" title=" " alt="" coords="103,146,142,147,137,150,105,151"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="152,187,303,214"/>
+<area shape="poly" title=" " alt="" coords="103,160,167,181,162,183,103,166"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="389,212,447,240"/>
+<area shape="poly" title=" " alt="" coords="69,160,104,195,127,211,153,223,211,237,270,241,327,238,371,235,376,234,327,243,270,246,210,242,151,228,125,216,101,199,67,165"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="351,31,485,58"/>
+<area shape="poly" title=" " alt="" coords="303,42,338,44,333,45,304,47"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="533,5,644,33"/>
+<area shape="poly" title=" " alt="" coords="485,32,520,29,515,30,486,37"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="537,57,640,85"/>
+<area shape="poly" title=" " alt="" coords="486,52,524,60,519,61,486,58"/>
+<area shape="poly" title=" " alt="" coords="304,208,376,220,371,220,303,213"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa9d258c3d9271b764471abdbb53c3c28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9d258c3d9271b764471abdbb53c3c28">&#9670;&nbsp;</a></span>Draw_text_center()</h2>
+<a id="aa9d258c3d9271b764471abdbb53c3c28" name="aa9d258c3d9271b764471abdbb53c3c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d258c3d9271b764471abdbb53c3c28">&#9670;&#160;</a></span>Draw_text_center()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -805,37 +844,27 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_text_center </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SDL_Rect&#160;</td>
-          <td class="paramname"><em>zone</em>, </td>
+          <td class="paramtype">SDL_Rect</td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SDL_Color&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">SDL_Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -855,8 +884,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a459b981aa5c30cb582d8a101afb685ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a459b981aa5c30cb582d8a101afb685ca">&#9670;&nbsp;</a></span>Draw_world()</h2>
+<a id="a459b981aa5c30cb582d8a101afb685ca" name="a459b981aa5c30cb582d8a101afb685ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a459b981aa5c30cb582d8a101afb685ca">&#9670;&#160;</a></span>Draw_world()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -864,19 +893,12 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_world </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *&#160;</td>
-          <td class="paramname"><em>world</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *</td>          <td class="paramname"><span class="paramname"><em>world</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -894,44 +916,86 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_a459b981aa5c30cb582d8a101afb685ca_cgraph.png" border="0" usemap="#arender__sdl_8c_a459b981aa5c30cb582d8a101afb685ca_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_a459b981aa5c30cb582d8a101afb685ca_cgraph.png" border="0" usemap="#arender__sdl_8c_a459b981aa5c30cb582d8a101afb685ca_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_a459b981aa5c30cb582d8a101afb685ca_cgraph" id="arender__sdl_8c_a459b981aa5c30cb582d8a101afb685ca_cgraph">
-<area shape="rect" title="dessine le monde" alt="" coords="5,461,104,488"/>
-<area shape="rect" href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="158,132,294,159"/>
-<area shape="rect" href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="167,309,285,336"/>
-<area shape="rect" href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="155,360,297,387"/>
-<area shape="rect" href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="183,512,269,539"/>
-<area shape="rect" href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="152,588,300,615"/>
-<area shape="rect" href="render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title=" " alt="" coords="177,676,275,703"/>
-<area shape="rect" href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="177,461,275,488"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="567,5,681,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="351,157,497,184"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="348,512,500,539"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="357,56,491,83"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="375,107,473,133"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="748,272,885,299"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="595,208,653,235"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="551,56,697,83"/>
-<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="369,309,479,336"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="553,284,695,311"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="595,461,653,488"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="349,208,499,235"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="355,411,493,437"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="372,259,476,285"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="548,348,700,375"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="749,348,884,375"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="933,323,1044,349"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="937,373,1041,400"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="348,613,500,640"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="373,715,475,741"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="378,765,470,792"/>
+<area shape="rect" title="dessine le monde" alt="" coords="5,589,104,617"/>
+<area shape="rect" href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="158,108,293,136"/>
+<area shape="poly" title=" " alt="" coords="57,588,93,468,149,298,212,147,211,152,154,300,98,470,62,590"/>
+<area shape="rect" href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="167,819,284,846"/>
+<area shape="poly" title=" " alt="" coords="61,615,96,690,122,736,154,779,188,809,183,811,150,782,117,739,91,692,61,620"/>
+<area shape="rect" href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="155,741,296,769"/>
+<area shape="poly" title=" " alt="" coords="72,615,199,730,195,732,71,620"/>
+<area shape="rect" href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="183,488,268,516"/>
+<area shape="poly" title=" " alt="" coords="78,587,189,522,186,526,82,591"/>
+<area shape="rect" href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="152,589,299,617"/>
+<area shape="poly" title=" " alt="" coords="103,601,138,601,134,605,106,605"/>
+<area shape="rect" href="render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title=" " alt="" coords="177,920,274,948"/>
+<area shape="poly" title=" " alt="" coords="59,615,92,720,119,789,154,856,175,884,199,909,193,910,171,887,149,859,114,792,87,722,59,620"/>
+<area shape="rect" href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="176,311,274,338"/>
+<area shape="poly" title=" " alt="" coords="62,588,208,349,207,354,67,590"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="565,5,679,33"/>
+<area shape="poly" title=" " alt="" coords="242,106,287,74,316,57,346,45,398,31,452,22,552,16,548,19,452,27,399,36,348,50,318,62,290,78,246,109"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="550,81,694,109"/>
+<area shape="poly" title=" " alt="" coords="250,106,294,84,346,67,400,61,454,61,554,76,549,79,454,67,400,66,348,72,296,89,253,109"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="347,539,498,566"/>
+<area shape="poly" title=" " alt="" coords="234,134,411,524,406,525,232,139"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="356,81,489,109"/>
+<area shape="poly" title=" " alt="" coords="292,111,343,104,339,108,295,115"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="374,133,471,161"/>
+<area shape="poly" title=" " alt="" coords="292,128,361,138,357,141,295,133"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="746,439,882,466"/>
+<area shape="poly" title=" " alt="" coords="656,31,681,47,700,68,722,118,729,165,726,209,719,252,712,294,711,336,721,379,748,424,751,429,745,428,743,427,716,381,706,336,707,293,714,251,721,209,724,165,717,120,695,71,677,51,656,36"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="593,589,651,617"/>
+<area shape="poly" title=" " alt="" coords="479,564,581,591,576,593,480,570"/>
+<area shape="poly" title=" " alt="" coords="488,93,537,94,532,97,491,97"/>
+<area shape="poly" title=" " alt="" coords="483,107,500,120,526,159,540,195,545,229,544,264,538,338,540,379,549,425,578,507,609,576,604,575,574,509,544,427,534,380,533,338,538,264,539,230,535,196,522,161,496,124,484,112"/>
+<area shape="poly" title=" " alt="" coords="432,159,611,575,606,575,429,164"/>
+<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="368,893,478,921"/>
+<area shape="poly" title=" " alt="" coords="264,844,372,887,367,888,264,850"/>
+<area shape="poly" title=" " alt="" coords="439,891,467,864,496,830,531,777,562,722,607,633,611,629,567,724,536,779,500,833,471,868,442,895"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="551,893,693,921"/>
+<area shape="poly" title=" " alt="" coords="478,905,538,907,533,908,479,910"/>
+<area shape="poly" title=" " alt="" coords="673,890,696,873,730,826,756,774,776,718,791,662,806,558,811,484,814,480,812,559,796,663,781,720,761,776,734,829,700,877,675,895"/>
+<area shape="poly" title=" " alt="" coords="247,767,301,803,348,829,390,840,424,845,457,842,497,829,555,797,608,756,655,708,696,657,731,605,760,556,799,482,802,479,765,559,736,608,700,660,659,712,612,760,558,802,499,834,458,847,424,851,389,845,346,834,298,808,246,772"/>
+<area shape="poly" title=" " alt="" coords="295,759,343,759,394,755,447,745,497,727,530,707,559,681,602,631,606,628,563,685,533,711,500,732,449,751,395,761,343,765,297,764"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="348,792,497,820"/>
+<area shape="poly" title=" " alt="" coords="282,767,354,787,349,788,282,772"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="371,691,474,718"/>
+<area shape="poly" title=" " alt="" coords="281,738,358,720,354,723,283,743"/>
+<area shape="poly" title=" " alt="" coords="467,789,497,772,532,738,562,700,605,633,609,629,566,703,536,742,500,776,470,794"/>
+<area shape="poly" title=" " alt="" coords="458,688,497,670,586,624,582,627,500,675,461,692"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="546,387,698,414"/>
+<area shape="poly" title=" " alt="" coords="437,688,466,658,496,620,530,569,561,515,606,430,610,426,565,518,535,571,500,623,470,661,441,692"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="747,387,881,414"/>
+<area shape="poly" title=" " alt="" coords="697,398,733,400,729,401,699,403"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="930,361,1040,389"/>
+<area shape="poly" title=" " alt="" coords="880,388,917,384,913,387,882,393"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="934,413,1037,441"/>
+<area shape="poly" title=" " alt="" coords="881,408,921,416,915,417,882,414"/>
+<area shape="poly" title=" " alt="" coords="268,496,731,457,729,462,269,501"/>
+<area shape="poly" title=" " alt="" coords="268,510,354,533,349,536,269,515"/>
+<area shape="poly" title=" " alt="" coords="267,497,375,501,438,509,499,525,550,549,594,579,589,580,548,553,497,530,437,514,374,506,269,502"/>
+<area shape="poly" title=" " alt="" coords="244,486,289,456,346,430,392,417,440,408,533,400,528,403,441,414,394,422,348,435,292,461,248,489"/>
+<area shape="poly" title=" " alt="" coords="281,587,353,569,349,572,283,591"/>
+<area shape="poly" title=" " alt="" coords="299,614,347,619,423,623,498,619,580,610,575,613,499,624,423,628,347,624,301,619"/>
+<area shape="poly" title=" " alt="" coords="298,610,346,611,397,607,449,596,497,576,536,544,568,504,592,463,609,431,612,426,596,465,572,507,540,548,500,580,451,601,398,612,346,616,300,615"/>
+<area shape="poly" title=" " alt="" coords="243,917,271,891,297,857,316,810,324,770,329,728,345,678,372,624,401,581,404,577,377,626,349,680,334,730,329,770,322,811,301,859,275,894,246,922"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="372,945,474,973"/>
+<area shape="poly" title=" " alt="" coords="274,937,359,950,354,951,274,943"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="377,997,468,1025"/>
+<area shape="poly" title=" " alt="" coords="260,946,348,982,369,992,363,991,346,987,259,951"/>
+<area shape="poly" title=" " alt="" coords="274,312,378,298,439,296,499,302,558,312,604,324,648,342,699,373,714,386,724,399,733,411,747,424,758,431,752,432,744,428,729,415,720,402,711,390,696,377,645,347,602,329,557,318,498,307,438,302,378,303,277,316"/>
+<area shape="poly" title=" " alt="" coords="239,309,285,269,346,228,387,208,421,197,455,188,497,170,545,143,590,116,586,120,547,148,500,175,457,193,423,202,389,213,348,232,289,273,244,312"/>
+<area shape="poly" title=" " alt="" coords="239,336,402,526,397,528,238,341"/>
+<area shape="poly" title=" " alt="" coords="252,336,363,401,432,445,500,493,553,536,598,578,593,579,549,540,497,497,429,450,360,406,253,342"/>
+<area shape="poly" title=" " alt="" coords="274,316,379,313,439,317,499,329,549,349,593,377,587,378,547,354,498,334,439,322,379,318,276,321"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a68bdd67f121c1fe588b0963cadcf0a1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68bdd67f121c1fe588b0963cadcf0a1f">&#9670;&nbsp;</a></span>Init_sdl_display()</h2>
+<a id="a68bdd67f121c1fe588b0963cadcf0a1f" name="a68bdd67f121c1fe588b0963cadcf0a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68bdd67f121c1fe588b0963cadcf0a1f">&#9670;&#160;</a></span>Init_sdl_display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -939,31 +1003,22 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">bool Init_sdl_display </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -984,8 +1039,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ad5e020f716940f9c6e7eff144ebc8724"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5e020f716940f9c6e7eff144ebc8724">&#9670;&nbsp;</a></span>Load_mute_icons()</h2>
+<a id="ad5e020f716940f9c6e7eff144ebc8724" name="ad5e020f716940f9c6e7eff144ebc8724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e020f716940f9c6e7eff144ebc8724">&#9670;&#160;</a></span>Load_mute_icons()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -993,27 +1048,20 @@ false </dd></dl>
         <tr>
           <td class="memname">bool Load_mute_icons </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad1307c29c074f2638c2a842a135f5935"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1307c29c074f2638c2a842a135f5935">&#9670;&nbsp;</a></span>Render_two_worlds()</h2>
+<a id="ad1307c29c074f2638c2a842a135f5935" name="ad1307c29c074f2638c2a842a135f5935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1307c29c074f2638c2a842a135f5935">&#9670;&#160;</a></span>Render_two_worlds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1021,31 +1069,22 @@ false </dd></dl>
         <tr>
           <td class="memname">void Render_two_worlds </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *&#160;</td>
-          <td class="paramname"><em>left_world</em>, </td>
+          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *</td>          <td class="paramname"><span class="paramname"><em>left_world</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *&#160;</td>
-          <td class="paramname"><em>right_world</em>, </td>
+          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *</td>          <td class="paramname"><span class="paramname"><em>right_world</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1053,52 +1092,101 @@ false </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8c_ad1307c29c074f2638c2a842a135f5935_cgraph.png" border="0" usemap="#arender__sdl_8c_ad1307c29c074f2638c2a842a135f5935_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8c_ad1307c29c074f2638c2a842a135f5935_cgraph.png" border="0" usemap="#arender__sdl_8c_ad1307c29c074f2638c2a842a135f5935_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8c_ad1307c29c074f2638c2a842a135f5935_cgraph" id="arender__sdl_8c_ad1307c29c074f2638c2a842a135f5935_cgraph">
-<area shape="rect" title=" " alt="" coords="5,107,155,133"/>
-<area shape="rect" href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="241,5,335,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="203,56,373,83"/>
-<area shape="rect" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="215,107,361,133"/>
-<area shape="rect" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="210,157,366,184"/>
-<area shape="rect" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="239,436,337,463"/>
-<area shape="rect" href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="455,56,536,83"/>
-<area shape="rect" href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="427,132,564,159"/>
-<area shape="rect" href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="427,183,563,209"/>
-<area shape="rect" href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="436,335,555,361"/>
-<area shape="rect" href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="425,385,566,412"/>
-<area shape="rect" href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="452,537,539,564"/>
-<area shape="rect" href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="421,613,569,640"/>
-<area shape="rect" href="render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title=" " alt="" coords="446,701,545,728"/>
-<area shape="rect" href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="446,461,545,488"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="836,31,951,57"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="621,183,766,209"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="617,537,769,564"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="627,81,760,108"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="644,132,743,159"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="1017,297,1155,324"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="864,233,923,260"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="821,81,966,108"/>
-<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="638,335,749,361"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="822,309,965,336"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="864,487,923,513"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="618,233,769,260"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="625,436,762,463"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="641,284,745,311"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="817,373,969,400"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="1019,373,1153,400"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="1203,348,1313,375"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="1206,399,1310,425"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="617,639,769,665"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="642,740,745,767"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="647,791,739,817"/>
+<area shape="rect" title=" " alt="" coords="5,109,154,137"/>
+<area shape="rect" href="sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="241,5,333,33"/>
+<area shape="poly" title=" " alt="" coords="97,107,143,76,201,43,228,34,225,38,203,48,146,80,102,110"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="202,57,372,85"/>
+<area shape="poly" title=" " alt="" coords="136,107,215,87,212,91,140,111"/>
+<area shape="rect" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="214,109,360,137"/>
+<area shape="poly" title=" " alt="" coords="153,121,201,121,197,125,156,125"/>
+<area shape="rect" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="209,161,364,189"/>
+<area shape="poly" title=" " alt="" coords="137,135,216,155,212,159,139,140"/>
+<area shape="rect" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="238,567,336,594"/>
+<area shape="poly" title=" " alt="" coords="88,135,275,552,270,553,86,140"/>
+<area shape="rect" href="shark_8c.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="454,57,534,85"/>
+<area shape="poly" title=" " alt="" coords="371,69,440,70,435,73,374,73"/>
+<area shape="rect" href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="426,135,562,162"/>
+<area shape="poly" title=" " alt="" coords="363,163,413,158,408,161,366,167"/>
+<area shape="rect" href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="426,187,561,214"/>
+<area shape="poly" title=" " alt="" coords="294,565,476,230,479,226,298,567"/>
+<area shape="rect" href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="435,1000,552,1028"/>
+<area shape="poly" title=" " alt="" coords="292,592,308,652,334,738,372,838,396,888,422,935,443,963,467,990,462,988,439,966,418,938,391,890,367,840,329,740,303,653,291,598"/>
+<area shape="rect" href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="424,897,564,925"/>
+<area shape="poly" title=" " alt="" coords="298,592,478,883,473,885,295,597"/>
+<area shape="rect" href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="451,541,536,569"/>
+<area shape="poly" title=" " alt="" coords="335,572,438,561,433,564,338,577"/>
+<area shape="rect" href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="420,708,567,736"/>
+<area shape="poly" title=" " alt="" coords="309,592,462,698,457,700,309,597"/>
+<area shape="rect" href="render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title=" " alt="" coords="445,617,542,645"/>
+<area shape="poly" title=" " alt="" coords="336,590,432,615,428,617,337,595"/>
+<area shape="rect" href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="444,389,543,417"/>
+<area shape="poly" title=" " alt="" coords="303,564,466,425,463,429,306,568"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="834,59,947,86"/>
+<area shape="poly" title=" " alt="" coords="545,184,566,172,581,153,588,133,595,112,614,94,664,72,717,61,770,58,820,61,816,63,770,63,718,66,665,77,617,99,600,115,593,134,586,155,569,176,549,188"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="818,135,962,162"/>
+<area shape="poly" title=" " alt="" coords="542,184,566,172,580,159,588,145,598,132,614,121,643,111,672,106,732,105,790,114,840,129,835,130,788,119,732,111,673,111,644,116,617,126,601,136,593,148,584,162,569,176,545,188"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="615,541,767,569"/>
+<area shape="poly" title=" " alt="" coords="504,212,677,527,672,528,502,217"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="625,135,757,162"/>
+<area shape="poly" title=" " alt="" coords="548,184,623,165,619,169,551,188"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="642,187,740,214"/>
+<area shape="poly" title=" " alt="" coords="561,198,629,199,625,202,563,203"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="1014,389,1150,417"/>
+<area shape="poly" title=" " alt="" coords="920,84,946,100,968,121,1010,187,1042,257,1064,322,1077,375,1072,373,1059,324,1037,259,1006,189,964,125,943,105,921,89"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="861,643,920,670"/>
+<area shape="poly" title=" " alt="" coords="728,567,768,585,855,634,850,635,765,590,728,572"/>
+<area shape="poly" title=" " alt="" coords="757,146,805,147,800,150,759,151"/>
+<area shape="poly" title=" " alt="" coords="750,160,769,173,791,209,812,260,831,323,847,391,873,526,888,628,883,626,867,527,842,392,825,324,807,262,787,212,765,177,751,166"/>
+<area shape="poly" title=" " alt="" coords="702,212,734,265,769,333,837,498,882,628,877,627,832,500,764,335,729,268,701,218"/>
+<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="636,1051,746,1078"/>
+<area shape="poly" title=" " alt="" coords="551,1026,623,1047,618,1046,550,1031"/>
+<area shape="poly" title=" " alt="" coords="711,1048,739,1022,764,987,779,952,787,920,788,861,790,802,797,769,812,733,833,703,856,682,861,679,837,706,817,735,802,771,795,803,793,861,792,920,784,953,769,990,743,1025,713,1053"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="820,1051,961,1078"/>
+<area shape="poly" title=" " alt="" coords="747,1062,806,1064,801,1065,747,1067"/>
+<area shape="poly" title=" " alt="" coords="943,1048,964,1031,988,993,1002,959,1009,926,1009,893,1005,821,1006,780,1011,733,1072,434,1077,431,1017,734,1011,780,1011,821,1015,893,1014,927,1008,960,993,996,968,1034,945,1053"/>
+<area shape="poly" title=" " alt="" coords="511,923,557,957,585,974,616,986,658,998,692,1003,725,1000,766,986,807,965,844,939,878,908,909,874,936,836,960,796,1001,712,1031,628,1053,549,1076,435,1079,430,1058,550,1036,630,1006,714,965,799,940,839,913,877,882,912,847,943,809,970,768,991,726,1005,692,1008,657,1003,614,991,583,978,554,962,510,928"/>
+<area shape="poly" title=" " alt="" coords="521,894,629,834,765,749,858,681,863,679,768,753,632,838,523,899"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="616,897,766,925"/>
+<area shape="poly" title=" " alt="" coords="564,909,604,911,598,912,565,914"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="639,949,743,977"/>
+<area shape="poly" title=" " alt="" coords="549,923,627,946,622,946,549,928"/>
+<area shape="poly" title=" " alt="" coords="741,894,765,877,778,860,786,843,792,809,796,774,802,754,812,732,834,703,858,682,862,679,838,707,817,735,807,756,801,775,797,810,791,844,783,862,769,881,743,899"/>
+<area shape="poly" title=" " alt="" coords="742,950,765,935,782,910,791,886,795,863,795,840,794,790,800,762,812,733,833,703,857,682,862,679,838,706,817,735,805,764,800,790,800,840,800,864,797,888,787,913,769,938,744,955"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="815,745,966,773"/>
+<area shape="poly" title=" " alt="" coords="742,947,765,934,802,900,832,860,874,789,879,785,837,863,806,903,768,939,744,952"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="1015,745,1149,773"/>
+<area shape="poly" title=" " alt="" coords="966,757,1002,759,997,760,967,762"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="1198,719,1309,746"/>
+<area shape="poly" title=" " alt="" coords="1149,746,1186,743,1181,744,1150,751"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="1202,771,1305,798"/>
+<area shape="poly" title=" " alt="" coords="1150,766,1189,774,1184,775,1150,772"/>
+<area shape="poly" title=" " alt="" coords="523,538,566,519,614,501,717,471,820,447,1001,415,996,417,821,452,718,477,616,506,568,524,526,543"/>
+<area shape="poly" title=" " alt="" coords="536,553,602,554,597,556,538,558"/>
+<area shape="poly" title=" " alt="" coords="531,538,581,524,640,513,705,512,737,517,768,527,802,547,832,574,875,630,870,629,828,578,799,552,766,532,736,523,705,518,641,519,582,529,534,543"/>
+<area shape="poly" title=" " alt="" coords="536,561,662,592,724,610,768,629,784,641,795,652,817,680,867,734,862,734,813,684,791,656,781,645,765,633,723,615,661,597,537,567"/>
+<area shape="poly" title=" " alt="" coords="510,705,660,581,664,578,514,709"/>
+<area shape="poly" title=" " alt="" coords="560,734,607,740,659,743,713,741,766,731,792,721,817,708,859,682,864,679,820,713,794,726,767,736,714,747,659,749,606,745,560,739"/>
+<area shape="poly" title=" " alt="" coords="518,734,563,757,616,775,665,782,716,783,813,776,808,777,716,789,665,788,615,780,561,762,518,739"/>
+<area shape="poly" title=" " alt="" coords="531,614,641,574,636,577,533,619"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="640,643,742,670"/>
+<area shape="poly" title=" " alt="" coords="542,635,627,647,622,649,543,640"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="645,695,737,722"/>
+<area shape="poly" title=" " alt="" coords="528,643,616,679,637,689,632,689,614,684,528,648"/>
+<area shape="poly" title=" " alt="" coords="542,395,729,380,847,377,966,382,1001,387,996,389,966,387,847,383,729,385,544,400"/>
+<area shape="poly" title=" " alt="" coords="504,387,548,336,579,307,614,281,654,260,689,249,724,240,766,223,813,197,858,170,854,173,816,201,768,228,725,245,690,254,656,265,617,285,583,311,552,340,508,391"/>
+<area shape="poly" title=" " alt="" coords="514,415,662,531,657,532,513,420"/>
+<area shape="poly" title=" " alt="" coords="542,394,593,391,652,394,712,407,741,418,768,433,793,453,814,476,847,529,871,582,885,628,880,627,866,584,843,532,810,479,789,457,765,437,739,423,711,412,651,399,593,396,544,399"/>
+<area shape="poly" title=" " alt="" coords="536,415,666,467,728,498,769,528,783,548,791,567,797,603,801,639,807,659,817,680,838,709,863,736,858,735,834,712,812,683,802,661,796,640,792,603,786,568,778,550,765,532,725,503,664,472,536,420"/>
 </map>
 </div>
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des variables</h2>
-<a id="a7b9f794676c6ed7cf058a0fe8fab5876"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b9f794676c6ed7cf058a0fe8fab5876">&#9670;&nbsp;</a></span>g_debug_view</h2>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentation des variables</h2>
+<a id="a7b9f794676c6ed7cf058a0fe8fab5876" name="a7b9f794676c6ed7cf058a0fe8fab5876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9f794676c6ed7cf058a0fe8fab5876">&#9670;&#160;</a></span>g_debug_view</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1111,8 +1199,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="ad783183e6501a39a96c8cacda55b0495"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad783183e6501a39a96c8cacda55b0495">&#9670;&nbsp;</a></span>g_flash</h2>
+<a id="ad783183e6501a39a96c8cacda55b0495" name="ad783183e6501a39a96c8cacda55b0495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad783183e6501a39a96c8cacda55b0495">&#9670;&#160;</a></span>g_flash</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1125,8 +1213,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="ab94b3c9c237ace9944af90bf6555a1e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab94b3c9c237ace9944af90bf6555a1e2">&#9670;&nbsp;</a></span>g_gain</h2>
+<a id="ab94b3c9c237ace9944af90bf6555a1e2" name="ab94b3c9c237ace9944af90bf6555a1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94b3c9c237ace9944af90bf6555a1e2">&#9670;&#160;</a></span>g_gain</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1139,8 +1227,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a61ab2e6d134002deb363436b45030078"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61ab2e6d134002deb363436b45030078">&#9670;&nbsp;</a></span>g_score</h2>
+<a id="a61ab2e6d134002deb363436b45030078" name="a61ab2e6d134002deb363436b45030078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ab2e6d134002deb363436b45030078">&#9670;&#160;</a></span>g_score</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1153,8 +1241,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="aa3114af0922c437b5cab12ebfbd4dd5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3114af0922c437b5cab12ebfbd4dd5a">&#9670;&nbsp;</a></span>g_skeleton_frame</h2>
+<a id="aa3114af0922c437b5cab12ebfbd4dd5a" name="aa3114af0922c437b5cab12ebfbd4dd5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3114af0922c437b5cab12ebfbd4dd5a">&#9670;&#160;</a></span>g_skeleton_frame</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1167,8 +1255,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a1da60c38bc67767bb94b33b4e8409186"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1da60c38bc67767bb94b33b4e8409186">&#9670;&nbsp;</a></span>g_was_alive</h2>
+<a id="a1da60c38bc67767bb94b33b4e8409186" name="a1da60c38bc67767bb94b33b4e8409186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da60c38bc67767bb94b33b4e8409186">&#9670;&#160;</a></span>g_was_alive</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1183,11 +1271,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="render__sdl_8c.html">render_sdl.c</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="render__sdl_8c.html">render_sdl.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>
