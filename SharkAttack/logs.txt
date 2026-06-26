@@ -5063,3 +5063,33 @@ Moyenne iteration: 4776.799805
 Δθ après 10 générations:           (-0.035804, 0.135953, -0.117293, -0.084730, -0.002932, -0.025448, 0.011196)
 Moyenne de Δθ de chaque génération: (-0.003580, 0.013595, -0.011729, -0.008473, -0.000293, -0.002545, 0.001120)
 
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.389042
+alignment: -0.754536
+pursuit: 3.793164
+front: 0.069884
+back: -0.349193
+left: 1.086042
+right: 0.186094
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.638657
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+

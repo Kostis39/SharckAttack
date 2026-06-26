@@ -12,8 +12,10 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
 
     // Allocation du tableau de requins
     new_world->sharks = calloc(nb_sharks, sizeof(Shark *));
+    new_world->trajectory = calloc(nb_sharks, sizeof(Trajectory *));
     for (int i = 0; i < nb_sharks; i++) {
         new_world->sharks[i] = Shark_create(width, height, is_player);
+        new_world->trajectory[i] = Trajectory_init();
     }
     new_world->nb_sharks = nb_sharks;
 
@@ -23,7 +25,6 @@ World *World_init(int width, int height, int nb_fish, int nb_colliders,
     new_world->fish_eaten = 0;
     new_world->theta_fish = RulesSetFish_init();
     new_world->theta_shark = theta_shark;
-    new_world->trajectory = Trajectory_init();
     new_world->sigma = sigma;
     new_world->nb_occurrence = nb_occurrence;
     new_world->learn = learn;
@@ -35,10 +36,12 @@ void World_destroy(World *world) {
     Fish_destroy_array(world->fishes);
     for (int i = 0; i < world->nb_sharks; i++) {
         Shark_destroy(world->sharks[i]);
+        Trajectory_destroy(world->trajectory[i]);
     }
     Colliders_destroy_array(world->colliders);
     RulesSetFish_destroy(world->theta_fish);
-    Trajectory_destroy(world->trajectory);
+    free(world->sharks);
+    free(world->trajectory);
     free(world);
     world = NULL;
 }

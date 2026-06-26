@@ -357,6 +357,7 @@ void UpdateWorld(World *world, World *tmp_world) {
         }
         Shark_apply_action(tmp_world->sharks[s], shark_action, world->width,
                            world->height);
+        printf("a\n");
 
         nb_fish_ate += handle_shark_eat(tmp_world, s);
 
