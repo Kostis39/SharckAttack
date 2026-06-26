@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier src/theta_set.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('theta__set_8c.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('theta__set_8c.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,16 +76,20 @@ $(document).ready(function(){initNavTree('theta__set_8c.html',''); initResizable
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Fonctions</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier theta_set.c</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier theta_set.c</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="theta__set_8h_source.html">theta_set.h</a>&quot;</code><br />
@@ -95,47 +98,61 @@ $(document).ready(function(){initNavTree('theta__set_8c.html',''); initResizable
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de theta_set.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="theta__set_8c__incl.png" border="0" usemap="#asrc_2theta__set_8c" alt=""/></div>
+<div class="center"><img src="theta__set_8c__incl.png" border="0" usemap="#asrc_2theta__set_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2theta__set_8c" id="asrc_2theta__set_8c">
-<area shape="rect" title=" " alt="" coords="395,5,512,32"/>
-<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="245,229,339,256"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="321,379,394,405"/>
-<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="266,80,382,107"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="115,304,189,331"/>
-<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="213,304,320,331"/>
-<area shape="rect" title=" " alt="" coords="395,304,466,331"/>
-<area shape="rect" title=" " alt="" coords="165,379,233,405"/>
-<area shape="rect" title=" " alt="" coords="73,379,140,405"/>
-<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="131,155,258,181"/>
-<area shape="rect" title=" " alt="" coords="283,155,365,181"/>
-<area shape="rect" title=" " alt="" coords="37,155,107,181"/>
+<area shape="rect" title=" " alt="" coords="393,5,509,33"/>
+<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="244,232,338,260"/>
+<area shape="poly" title=" " alt="" coords="449,32,425,103,404,146,377,186,354,208,330,226,327,222,351,204,373,183,399,143,420,101,446,36"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="321,384,394,411"/>
+<area shape="poly" title=" " alt="" coords="468,31,495,55,523,87,546,125,552,147,555,169,555,248,551,274,540,298,524,318,504,336,456,365,409,384,408,379,454,360,500,332,520,315,536,295,546,272,549,247,549,169,547,148,541,127,519,90,491,58,468,36"/>
+<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="264,81,379,109"/>
+<area shape="poly" title=" " alt="" coords="426,35,359,75,356,71,430,32"/>
+<area shape="poly" title=" " alt="" coords="302,258,335,307,354,370,349,368,330,309,300,263"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="117,308,190,336"/>
+<area shape="poly" title=" " alt="" coords="264,262,192,303,190,298,269,259"/>
+<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="214,308,320,336"/>
+<area shape="poly" title=" " alt="" coords="288,259,278,295,274,291,285,262"/>
+<area shape="rect" title=" " alt="" coords="395,308,464,336"/>
+<area shape="poly" title=" " alt="" coords="316,258,394,300,389,301,315,263"/>
+<area shape="poly" title=" " alt="" coords="190,334,309,377,304,379,189,339"/>
+<area shape="rect" title=" " alt="" coords="165,384,232,411"/>
+<area shape="poly" title=" " alt="" coords="163,334,185,371,180,370,160,339"/>
+<area shape="rect" title=" " alt="" coords="75,384,141,411"/>
+<area shape="poly" title=" " alt="" coords="148,335,126,372,122,368,143,338"/>
+<area shape="poly" title=" " alt="" coords="284,334,332,374,327,373,282,339"/>
+<area shape="poly" title=" " alt="" coords="241,336,151,379,149,374,236,337"/>
+<area shape="poly" title=" " alt="" coords="343,106,374,128,402,155,432,193,452,225,466,261,479,307,482,322,479,337,465,354,447,368,409,386,408,381,445,363,461,350,474,334,477,322,474,309,461,262,447,228,428,196,398,158,370,132,343,112"/>
+<area shape="poly" title=" " alt="" coords="262,101,198,108,126,119,64,136,41,146,26,158,12,184,8,212,12,241,22,271,54,327,89,372,83,373,50,330,17,273,7,242,3,212,7,182,22,155,38,142,62,131,125,114,197,103,266,98"/>
+<area shape="poly" title=" " alt="" coords="336,107,358,129,377,155,395,191,408,228,426,294,421,292,403,229,390,193,373,158,354,132,336,112"/>
+<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="130,157,257,184"/>
+<area shape="poly" title=" " alt="" coords="297,111,231,151,228,147,301,107"/>
+<area shape="rect" title=" " alt="" coords="281,157,362,184"/>
+<area shape="poly" title=" " alt="" coords="323,107,324,142,319,140,320,112"/>
+<area shape="rect" title=" " alt="" coords="36,157,106,184"/>
+<area shape="poly" title=" " alt="" coords="275,111,122,157,120,152,278,107"/>
+<area shape="poly" title=" " alt="" coords="211,182,264,223,259,224,211,188"/>
+<area shape="poly" title=" " alt="" coords="192,183,163,294,158,292,188,186"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:adf46e950da895d145a7a29506aea6ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="theta__set_8c.html#adf46e950da895d145a7a29506aea6ab1">SharkPhi_print</a> (<a class="el" href="structSharkPhi.html">SharkPhi</a> phi)</td></tr>
-<tr class="memdesc:adf46e950da895d145a7a29506aea6ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche les valeurs des règles phi du requin (composantes x et y)  <a href="theta__set_8c.html#adf46e950da895d145a7a29506aea6ab1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:adf46e950da895d145a7a29506aea6ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39d61603bd5ed4c86a5ac64b63827aab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="theta__set_8c.html#a39d61603bd5ed4c86a5ac64b63827aab">SharkPhi_add_vector</a> (<a class="el" href="structSharkPhi.html">SharkPhi</a> *shark_phi, <a class="el" href="structVector.html">Vector</a> vect, enum <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49b">Rules</a> rule_to_apply)</td></tr>
-<tr class="memdesc:a39d61603bd5ed4c86a5ac64b63827aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute un vecteur à une règle phi du requin  <a href="theta__set_8c.html#a39d61603bd5ed4c86a5ac64b63827aab">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a39d61603bd5ed4c86a5ac64b63827aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa254194c894b56f06eaff11768901deb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRulesSetFish.html">RulesSetFish</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="theta__set_8c.html#aa254194c894b56f06eaff11768901deb">RulesSetFish_init</a> ()</td></tr>
-<tr class="memdesc:aa254194c894b56f06eaff11768901deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise un ensemble de règles pour les poissons avec les valeurs par défaut  <a href="theta__set_8c.html#aa254194c894b56f06eaff11768901deb">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aa254194c894b56f06eaff11768901deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57608a7d7363473bcaed16a378057b77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="theta__set_8c.html#a57608a7d7363473bcaed16a378057b77">SharkTheta_init</a> ()</td></tr>
-<tr class="memdesc:a57608a7d7363473bcaed16a378057b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier  <a href="theta__set_8c.html#a57608a7d7363473bcaed16a378057b77">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a57608a7d7363473bcaed16a378057b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06d6064cce231a0dc61b54392601f785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="theta__set_8c.html#a06d6064cce231a0dc61b54392601f785">RulesSetFish_destroy</a> (<a class="el" href="structRulesSetFish.html">RulesSetFish</a> *theta)</td></tr>
-<tr class="memdesc:a06d6064cce231a0dc61b54392601f785"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire d'un ensemble de règles pour les poissons  <a href="theta__set_8c.html#a06d6064cce231a0dc61b54392601f785">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a06d6064cce231a0dc61b54392601f785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea5647a767094f1130d54c0f7c36b7fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="theta__set_8c.html#aea5647a767094f1130d54c0f7c36b7fa">SharkTheta_destroy</a> (<a class="el" href="structVectorRule.html">VectorRule</a> *theta)</td></tr>
-<tr class="memdesc:aea5647a767094f1130d54c0f7c36b7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire du vecteur theta du requin  <a href="theta__set_8c.html#aea5647a767094f1130d54c0f7c36b7fa">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aea5647a767094f1130d54c0f7c36b7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf46e950da895d145a7a29506aea6ab1" id="r_adf46e950da895d145a7a29506aea6ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf46e950da895d145a7a29506aea6ab1">SharkPhi_print</a> (<a class="el" href="structSharkPhi.html">SharkPhi</a> phi)</td></tr>
+<tr class="memdesc:adf46e950da895d145a7a29506aea6ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche les valeurs des règles phi du requin (composantes x et y)  <br /></td></tr>
+<tr class="memitem:a39d61603bd5ed4c86a5ac64b63827aab" id="r_a39d61603bd5ed4c86a5ac64b63827aab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39d61603bd5ed4c86a5ac64b63827aab">SharkPhi_add_vector</a> (<a class="el" href="structSharkPhi.html">SharkPhi</a> *shark_phi, <a class="el" href="structVector.html">Vector</a> vect, enum <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49b">Rules</a> rule_to_apply)</td></tr>
+<tr class="memdesc:a39d61603bd5ed4c86a5ac64b63827aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute un vecteur à une règle phi du requin  <br /></td></tr>
+<tr class="memitem:a1ac05ca81e6a49962501975fd882cb84" id="r_a1ac05ca81e6a49962501975fd882cb84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRulesSetFish.html">RulesSetFish</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ac05ca81e6a49962501975fd882cb84">RulesSetFish_init</a> ()</td></tr>
+<tr class="memdesc:a1ac05ca81e6a49962501975fd882cb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise un ensemble de règles pour les poissons avec les valeurs par défaut  <br /></td></tr>
+<tr class="memitem:afe7ff9ca20169f534d34343e2f97b633" id="r_afe7ff9ca20169f534d34343e2f97b633"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVectorRule.html">VectorRule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe7ff9ca20169f534d34343e2f97b633">SharkTheta_init</a> ()</td></tr>
+<tr class="memdesc:afe7ff9ca20169f534d34343e2f97b633"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier  <br /></td></tr>
+<tr class="memitem:a06d6064cce231a0dc61b54392601f785" id="r_a06d6064cce231a0dc61b54392601f785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06d6064cce231a0dc61b54392601f785">RulesSetFish_destroy</a> (<a class="el" href="structRulesSetFish.html">RulesSetFish</a> *theta)</td></tr>
+<tr class="memdesc:a06d6064cce231a0dc61b54392601f785"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire d'un ensemble de règles pour les poissons  <br /></td></tr>
+<tr class="memitem:aea5647a767094f1130d54c0f7c36b7fa" id="r_aea5647a767094f1130d54c0f7c36b7fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea5647a767094f1130d54c0f7c36b7fa">SharkTheta_destroy</a> (<a class="el" href="structVectorRule.html">VectorRule</a> *theta)</td></tr>
+<tr class="memdesc:aea5647a767094f1130d54c0f7c36b7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire du vecteur theta du requin  <br /></td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a06d6064cce231a0dc61b54392601f785"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06d6064cce231a0dc61b54392601f785">&#9670;&nbsp;</a></span>RulesSetFish_destroy()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a06d6064cce231a0dc61b54392601f785" name="a06d6064cce231a0dc61b54392601f785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d6064cce231a0dc61b54392601f785">&#9670;&#160;</a></span>RulesSetFish_destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,8 +160,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void RulesSetFish_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structRulesSetFish.html">RulesSetFish</a> *&#160;</td>
-          <td class="paramname"><em>theta</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structRulesSetFish.html">RulesSetFish</a> *</td>          <td class="paramname"><span class="paramname"><em>theta</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -160,16 +176,16 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa254194c894b56f06eaff11768901deb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa254194c894b56f06eaff11768901deb">&#9670;&nbsp;</a></span>RulesSetFish_init()</h2>
+<a id="a1ac05ca81e6a49962501975fd882cb84" name="a1ac05ca81e6a49962501975fd882cb84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ac05ca81e6a49962501975fd882cb84">&#9670;&#160;</a></span>RulesSetFish_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structRulesSetFish.html">RulesSetFish</a>* RulesSetFish_init </td>
+          <td class="memname"><a class="el" href="structRulesSetFish.html">RulesSetFish</a> * RulesSetFish_init </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -180,8 +196,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a39d61603bd5ed4c86a5ac64b63827aab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39d61603bd5ed4c86a5ac64b63827aab">&#9670;&nbsp;</a></span>SharkPhi_add_vector()</h2>
+<a id="a39d61603bd5ed4c86a5ac64b63827aab" name="a39d61603bd5ed4c86a5ac64b63827aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d61603bd5ed4c86a5ac64b63827aab">&#9670;&#160;</a></span>SharkPhi_add_vector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,25 +205,17 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void SharkPhi_add_vector </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSharkPhi.html">SharkPhi</a> *&#160;</td>
-          <td class="paramname"><em>shark_phi</em>, </td>
+          <td class="paramtype"><a class="el" href="structSharkPhi.html">SharkPhi</a> *</td>          <td class="paramname"><span class="paramname"><em>shark_phi</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>vect</em>, </td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>vect</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49b">Rules</a>&#160;</td>
-          <td class="paramname"><em>rule_to_apply</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">enum <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49b">Rules</a></td>          <td class="paramname"><span class="paramname"><em>rule_to_apply</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -224,8 +232,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="adf46e950da895d145a7a29506aea6ab1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf46e950da895d145a7a29506aea6ab1">&#9670;&nbsp;</a></span>SharkPhi_print()</h2>
+<a id="adf46e950da895d145a7a29506aea6ab1" name="adf46e950da895d145a7a29506aea6ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf46e950da895d145a7a29506aea6ab1">&#9670;&#160;</a></span>SharkPhi_print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,8 +241,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void SharkPhi_print </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSharkPhi.html">SharkPhi</a>&#160;</td>
-          <td class="paramname"><em>shark_phi</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structSharkPhi.html">SharkPhi</a></td>          <td class="paramname"><span class="paramname"><em>shark_phi</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -250,17 +257,18 @@ Fonctions</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="theta__set_8c_adf46e950da895d145a7a29506aea6ab1_cgraph.png" border="0" usemap="#atheta__set_8c_adf46e950da895d145a7a29506aea6ab1_cgraph" alt=""/></div>
+<div class="center"><img src="theta__set_8c_adf46e950da895d145a7a29506aea6ab1_cgraph.png" border="0" usemap="#atheta__set_8c_adf46e950da895d145a7a29506aea6ab1_cgraph" loading="lazy" alt=""/></div>
 <map name="atheta__set_8c_adf46e950da895d145a7a29506aea6ab1_cgraph" id="atheta__set_8c_adf46e950da895d145a7a29506aea6ab1_cgraph">
-<area shape="rect" title="affiche les valeurs des règles phi du requin (composantes x et y)" alt="" coords="5,5,121,32"/>
-<area shape="rect" href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="169,5,299,32"/>
+<area shape="rect" title="affiche les valeurs des règles phi du requin (composantes x et y)" alt="" coords="5,5,121,33"/>
+<area shape="rect" href="vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="169,5,297,33"/>
+<area shape="poly" title=" " alt="" coords="121,17,156,19,150,19,121,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aea5647a767094f1130d54c0f7c36b7fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea5647a767094f1130d54c0f7c36b7fa">&#9670;&nbsp;</a></span>SharkTheta_destroy()</h2>
+<a id="aea5647a767094f1130d54c0f7c36b7fa" name="aea5647a767094f1130d54c0f7c36b7fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea5647a767094f1130d54c0f7c36b7fa">&#9670;&#160;</a></span>SharkTheta_destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,8 +276,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void SharkTheta_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a> *&#160;</td>
-          <td class="paramname"><em>theta</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structVectorRule.html">VectorRule</a> *</td>          <td class="paramname"><span class="paramname"><em>theta</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -285,16 +292,16 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a57608a7d7363473bcaed16a378057b77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57608a7d7363473bcaed16a378057b77">&#9670;&nbsp;</a></span>SharkTheta_init()</h2>
+<a id="afe7ff9ca20169f534d34343e2f97b633" name="afe7ff9ca20169f534d34343e2f97b633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7ff9ca20169f534d34343e2f97b633">&#9670;&#160;</a></span>SharkTheta_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structVectorRule.html">VectorRule</a>* SharkTheta_init </td>
+          <td class="memname"><a class="el" href="structVectorRule.html">VectorRule</a> * SharkTheta_init </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -305,11 +312,13 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="theta__set_8c_a57608a7d7363473bcaed16a378057b77_cgraph.png" border="0" usemap="#atheta__set_8c_a57608a7d7363473bcaed16a378057b77_cgraph" alt=""/></div>
-<map name="atheta__set_8c_a57608a7d7363473bcaed16a378057b77_cgraph" id="atheta__set_8c_a57608a7d7363473bcaed16a378057b77_cgraph">
-<area shape="rect" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="5,31,129,57"/>
-<area shape="rect" href="input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="197,5,287,32"/>
-<area shape="rect" href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="177,56,307,83"/>
+<div class="center"><img src="theta__set_8c_afe7ff9ca20169f534d34343e2f97b633_cgraph.png" border="0" usemap="#atheta__set_8c_afe7ff9ca20169f534d34343e2f97b633_cgraph" loading="lazy" alt=""/></div>
+<map name="atheta__set_8c_afe7ff9ca20169f534d34343e2f97b633_cgraph" id="atheta__set_8c_afe7ff9ca20169f534d34343e2f97b633_cgraph">
+<area shape="rect" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="5,32,129,60"/>
+<area shape="rect" href="input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="196,5,286,33"/>
+<area shape="poly" title=" " alt="" coords="129,34,183,28,178,29,130,39"/>
+<area shape="rect" href="vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="177,57,305,85"/>
+<area shape="poly" title=" " alt="" coords="129,52,164,59,159,60,129,58"/>
 </map>
 </div>
 
@@ -317,11 +326,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="theta__set_8c.html">theta_set.c</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="theta__set_8c.html">theta_set.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

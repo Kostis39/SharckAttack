@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier src/collider.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('collider_8c.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('collider_8c.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,60 +76,70 @@ $(document).ready(function(){initNavTree('collider_8c.html',''); initResizable()
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Fonctions</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier collider.c</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier collider.c</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="collider_8h_source.html">collider.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de collider.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="collider_8c__incl.png" border="0" usemap="#asrc_2collider_8c" alt=""/></div>
+<div class="center"><img src="collider_8c__incl.png" border="0" usemap="#asrc_2collider_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2collider_8c" id="asrc_2collider_8c">
-<area shape="rect" title=" " alt="" coords="97,5,200,32"/>
-<area shape="rect" href="collider_8h.html" title=" " alt="" coords="108,80,189,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,76,181"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="152,155,215,181"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="71,229,146,256"/>
-<area shape="rect" title=" " alt="" coords="239,155,322,181"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="103,304,176,331"/>
-<area shape="rect" title=" " alt="" coords="200,304,268,331"/>
-<area shape="rect" title=" " alt="" coords="272,229,343,256"/>
-<area shape="rect" title=" " alt="" coords="11,304,78,331"/>
+<area shape="rect" title=" " alt="" coords="95,5,197,33"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="106,81,186,109"/>
+<area shape="poly" title=" " alt="" coords="147,31,148,66,143,65,145,36"/>
+<area shape="rect" title=" " alt="" coords="5,157,76,184"/>
+<area shape="poly" title=" " alt="" coords="126,112,73,150,70,146,128,107"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="150,157,211,184"/>
+<area shape="poly" title=" " alt="" coords="153,107,171,143,165,142,152,112"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="69,232,142,260"/>
+<area shape="poly" title=" " alt="" coords="144,107,116,218,111,216,140,111"/>
+<area shape="rect" title=" " alt="" coords="236,157,317,184"/>
+<area shape="poly" title=" " alt="" coords="169,107,243,148,238,150,169,112"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="102,308,174,336"/>
+<area shape="poly" title=" " alt="" coords="179,184,148,294,143,292,174,185"/>
+<area shape="poly" title=" " alt="" coords="169,183,132,223,128,219,165,187"/>
+<area shape="rect" title=" " alt="" coords="198,308,265,336"/>
+<area shape="poly" title=" " alt="" coords="187,183,224,293,219,293,183,186"/>
+<area shape="rect" title=" " alt="" coords="268,232,338,260"/>
+<area shape="poly" title=" " alt="" coords="203,182,271,224,266,225,202,188"/>
+<area shape="poly" title=" " alt="" coords="113,258,129,294,124,293,110,263"/>
+<area shape="poly" title=" " alt="" coords="129,258,199,299,194,301,128,263"/>
+<area shape="rect" title=" " alt="" coords="12,308,77,336"/>
+<area shape="poly" title=" " alt="" coords="97,259,67,298,63,294,93,262"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:ab5553354f21001b9145c84332c0cd5cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf">Instantiate_collider</a> (<a class="el" href="structVector.html">Vector</a> pos, float w, float h)</td></tr>
-<tr class="memdesc:ab5553354f21001b9145c84332c0cd5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'instanciation d'objet de collision Crée un rectangle de collision de largeur w, de hauteur h et de barycentre pos.  <a href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ab5553354f21001b9145c84332c0cd5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69860ecdc57c9ad021b62d9799200943"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="collider_8c.html#a69860ecdc57c9ad021b62d9799200943">Colliders_random_array</a> (int x_max, int y_max, int w_max, int h_max, int count, int gen_all_square)</td></tr>
-<tr class="memdesc:a69860ecdc57c9ad021b62d9799200943"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise un tableau de colliders aléatoirement positionnés  <a href="collider_8c.html#a69860ecdc57c9ad021b62d9799200943">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a69860ecdc57c9ad021b62d9799200943"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0800e8e8957986ce4c2593ac68368b87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="collider_8c.html#a0800e8e8957986ce4c2593ac68368b87">Colliders_destroy_array</a> (<a class="el" href="structCollider.html">Collider</a> *array)</td></tr>
-<tr class="memdesc:a0800e8e8957986ce4c2593ac68368b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire utilisée par les colliders  <a href="collider_8c.html#a0800e8e8957986ce4c2593ac68368b87">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a0800e8e8957986ce4c2593ac68368b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab99ce5a9df335c5f8cdcfc59e33be8d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="collider_8c.html#ab99ce5a9df335c5f8cdcfc59e33be8d0">Collider_closest_point</a> (<a class="el" href="structCollider.html">Collider</a> *c, <a class="el" href="structVector.html">Vector</a> p)</td></tr>
-<tr class="memdesc:ab99ce5a9df335c5f8cdcfc59e33be8d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le point le plus proche du rectangle (AABB) au point p.  <a href="collider_8c.html#ab99ce5a9df335c5f8cdcfc59e33be8d0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ab99ce5a9df335c5f8cdcfc59e33be8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42412c8dba2d244f557fd589d50e9cc0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="collider_8c.html#a42412c8dba2d244f557fd589d50e9cc0">Collider_distance_to_point</a> (<a class="el" href="structCollider.html">Collider</a> *c, <a class="el" href="structVector.html">Vector</a> p)</td></tr>
-<tr class="memdesc:a42412c8dba2d244f557fd589d50e9cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance euclidienne entre un point et un rectangle (AABB)  <a href="collider_8c.html#a42412c8dba2d244f557fd589d50e9cc0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a42412c8dba2d244f557fd589d50e9cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad784096975958a0b40b5df8e2160c9dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="collider_8c.html#ad784096975958a0b40b5df8e2160c9dc">Colliders_copy_array</a> (<a class="el" href="structCollider.html">Collider</a> *collider, int count)</td></tr>
-<tr class="separator:ad784096975958a0b40b5df8e2160c9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5553354f21001b9145c84332c0cd5cf" id="r_ab5553354f21001b9145c84332c0cd5cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5553354f21001b9145c84332c0cd5cf">Instantiate_collider</a> (<a class="el" href="structVector.html">Vector</a> pos, float w, float h)</td></tr>
+<tr class="memdesc:ab5553354f21001b9145c84332c0cd5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'instanciation d'objet de collision Crée un rectangle de collision de largeur w, de hauteur h et de barycentre pos.  <br /></td></tr>
+<tr class="memitem:a6212dde57007cc15994f34cdd0c27d43" id="r_a6212dde57007cc15994f34cdd0c27d43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6212dde57007cc15994f34cdd0c27d43">Colliders_random_array</a> (int x_max, int y_max, int w_max, int h_max, int count, int gen_all_square)</td></tr>
+<tr class="memdesc:a6212dde57007cc15994f34cdd0c27d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise un tableau de colliders aléatoirement positionnés  <br /></td></tr>
+<tr class="memitem:a0800e8e8957986ce4c2593ac68368b87" id="r_a0800e8e8957986ce4c2593ac68368b87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0800e8e8957986ce4c2593ac68368b87">Colliders_destroy_array</a> (<a class="el" href="structCollider.html">Collider</a> *array)</td></tr>
+<tr class="memdesc:a0800e8e8957986ce4c2593ac68368b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère la mémoire utilisée par les colliders  <br /></td></tr>
+<tr class="memitem:ab99ce5a9df335c5f8cdcfc59e33be8d0" id="r_ab99ce5a9df335c5f8cdcfc59e33be8d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab99ce5a9df335c5f8cdcfc59e33be8d0">Collider_closest_point</a> (<a class="el" href="structCollider.html">Collider</a> *c, <a class="el" href="structVector.html">Vector</a> p)</td></tr>
+<tr class="memdesc:ab99ce5a9df335c5f8cdcfc59e33be8d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le point le plus proche du rectangle (AABB) au point p.  <br /></td></tr>
+<tr class="memitem:a42412c8dba2d244f557fd589d50e9cc0" id="r_a42412c8dba2d244f557fd589d50e9cc0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42412c8dba2d244f557fd589d50e9cc0">Collider_distance_to_point</a> (<a class="el" href="structCollider.html">Collider</a> *c, <a class="el" href="structVector.html">Vector</a> p)</td></tr>
+<tr class="memdesc:a42412c8dba2d244f557fd589d50e9cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance euclidienne entre un point et un rectangle (AABB).  <br /></td></tr>
+<tr class="memitem:a9fa1fb2bc30efa527ed519e942d9e0fc" id="r_a9fa1fb2bc30efa527ed519e942d9e0fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fa1fb2bc30efa527ed519e942d9e0fc">Colliders_copy_array</a> (<a class="el" href="structCollider.html">Collider</a> *collider, int count)</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="ab99ce5a9df335c5f8cdcfc59e33be8d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab99ce5a9df335c5f8cdcfc59e33be8d0">&#9670;&nbsp;</a></span>Collider_closest_point()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="ab99ce5a9df335c5f8cdcfc59e33be8d0" name="ab99ce5a9df335c5f8cdcfc59e33be8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99ce5a9df335c5f8cdcfc59e33be8d0">&#9670;&#160;</a></span>Collider_closest_point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,19 +147,12 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structVector.html">Vector</a> Collider_closest_point </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -167,8 +169,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a42412c8dba2d244f557fd589d50e9cc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42412c8dba2d244f557fd589d50e9cc0">&#9670;&nbsp;</a></span>Collider_distance_to_point()</h2>
+<a id="a42412c8dba2d244f557fd589d50e9cc0" name="a42412c8dba2d244f557fd589d50e9cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42412c8dba2d244f557fd589d50e9cc0">&#9670;&#160;</a></span>Collider_distance_to_point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,24 +178,17 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">float Collider_distance_to_point </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Distance euclidienne entre un point et un rectangle (AABB) </p>
+<p>Distance euclidienne entre un point et un rectangle (AABB). </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>le collider </td></tr>
@@ -205,48 +200,45 @@ Fonctions</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="collider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph.png" border="0" usemap="#acollider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph" alt=""/></div>
+<div class="center"><img src="collider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph.png" border="0" usemap="#acollider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph" loading="lazy" alt=""/></div>
 <map name="acollider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph" id="acollider_8c_a42412c8dba2d244f557fd589d50e9cc0_cgraph">
-<area shape="rect" title="Distance euclidienne entre un point et un rectangle (AABB)" alt="" coords="5,23,160,65"/>
-<area shape="rect" href="collider_8c.html#ab99ce5a9df335c5f8cdcfc59e33be8d0" title="Retourne le point le plus proche du rectangle (AABB) au point p." alt="" coords="208,5,373,32"/>
-<area shape="rect" href="vector_8h.html#a4d18706bde5519ef90b2bb4a1311fc55" title="Calcul la distance entre 2 vecteurs." alt="" coords="228,56,353,83"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="421,31,532,57"/>
-<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="430,81,523,108"/>
+<area shape="rect" title="Distance euclidienne entre un point et un rectangle (AABB)." alt="" coords="5,24,159,68"/>
+<area shape="rect" href="collider_8c.html#ab99ce5a9df335c5f8cdcfc59e33be8d0" title="Retourne le point le plus proche du rectangle (AABB) au point p." alt="" coords="207,5,371,33"/>
+<area shape="poly" title=" " alt="" coords="158,33,194,31,188,33,159,39"/>
+<area shape="rect" href="vector_8c.html#a4d18706bde5519ef90b2bb4a1311fc55" title="Calcul la distance entre 2 vecteurs." alt="" coords="227,57,351,85"/>
+<area shape="poly" title=" " alt="" coords="159,53,214,61,209,62,159,58"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="419,31,529,58"/>
+<area shape="poly" title=" " alt="" coords="351,60,401,55,407,54,352,65"/>
+<area shape="rect" href="vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="428,83,520,110"/>
+<area shape="poly" title=" " alt="" coords="352,77,415,88,410,88,351,82"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad784096975958a0b40b5df8e2160c9dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad784096975958a0b40b5df8e2160c9dc">&#9670;&nbsp;</a></span>Colliders_copy_array()</h2>
+<a id="a9fa1fb2bc30efa527ed519e942d9e0fc" name="a9fa1fb2bc30efa527ed519e942d9e0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fa1fb2bc30efa527ed519e942d9e0fc">&#9670;&#160;</a></span>Colliders_copy_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structCollider.html">Collider</a>* Colliders_copy_array </td>
+          <td class="memname"><a class="el" href="structCollider.html">Collider</a> * Colliders_copy_array </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *&#160;</td>
-          <td class="paramname"><em>collider</em>, </td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>collider</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a0800e8e8957986ce4c2593ac68368b87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0800e8e8957986ce4c2593ac68368b87">&#9670;&nbsp;</a></span>Colliders_destroy_array()</h2>
+<a id="a0800e8e8957986ce4c2593ac68368b87" name="a0800e8e8957986ce4c2593ac68368b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0800e8e8957986ce4c2593ac68368b87">&#9670;&#160;</a></span>Colliders_destroy_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,8 +246,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">int Colliders_destroy_array </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *&#160;</td>
-          <td class="paramname"><em>array</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structCollider.html">Collider</a> *</td>          <td class="paramname"><span class="paramname"><em>array</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -266,52 +257,41 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a69860ecdc57c9ad021b62d9799200943"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69860ecdc57c9ad021b62d9799200943">&#9670;&nbsp;</a></span>Colliders_random_array()</h2>
+<a id="a6212dde57007cc15994f34cdd0c27d43" name="a6212dde57007cc15994f34cdd0c27d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6212dde57007cc15994f34cdd0c27d43">&#9670;&#160;</a></span>Colliders_random_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structCollider.html">Collider</a>* Colliders_random_array </td>
+          <td class="memname"><a class="el" href="structCollider.html">Collider</a> * Colliders_random_array </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x_max</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x_max</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y_max</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y_max</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>w_max</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w_max</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>h_max</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h_max</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>count</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>gen_all_squared</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>gen_all_squared</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -331,20 +311,24 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="collider_8c_a69860ecdc57c9ad021b62d9799200943_cgraph.png" border="0" usemap="#acollider_8c_a69860ecdc57c9ad021b62d9799200943_cgraph" alt=""/></div>
-<map name="acollider_8c_a69860ecdc57c9ad021b62d9799200943_cgraph" id="acollider_8c_a69860ecdc57c9ad021b62d9799200943_cgraph">
-<area shape="rect" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="5,56,183,83"/>
-<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="231,5,377,32"/>
-<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="250,56,358,83"/>
-<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="259,107,349,133"/>
-<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="425,56,505,83"/>
+<div class="center"><img src="collider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph.png" border="0" usemap="#acollider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph" loading="lazy" alt=""/></div>
+<map name="acollider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph" id="acollider_8c_a6212dde57007cc15994f34cdd0c27d43_cgraph">
+<area shape="rect" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="5,57,182,85"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="230,5,376,33"/>
+<area shape="poly" title=" " alt="" coords="152,54,231,36,227,39,153,59"/>
+<area shape="rect" href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="249,57,356,85"/>
+<area shape="poly" title=" " alt="" coords="182,69,236,71,231,72,182,74"/>
+<area shape="rect" href="vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="258,109,348,137"/>
+<area shape="poly" title=" " alt="" coords="153,83,245,107,240,109,152,88"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="424,57,503,85"/>
+<area shape="poly" title=" " alt="" coords="357,69,411,71,405,71,357,74"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab5553354f21001b9145c84332c0cd5cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5553354f21001b9145c84332c0cd5cf">&#9670;&nbsp;</a></span>Instantiate_collider()</h2>
+<a id="ab5553354f21001b9145c84332c0cd5cf" name="ab5553354f21001b9145c84332c0cd5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5553354f21001b9145c84332c0cd5cf">&#9670;&#160;</a></span>Instantiate_collider()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,25 +336,17 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname"><a class="el" href="structCollider.html">Collider</a> Instantiate_collider </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>h</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -390,11 +366,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="collider_8c.html">collider.c</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="collider_8c.html">collider.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

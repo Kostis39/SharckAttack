@@ -9,7 +9,7 @@ nb_occurrence 5000
 # Theta
 center: 0.389042
 alignment: -0.754536
-pursuit: 2.793164
+pursuit: 3.793164
 front: 0.069884
 back: -0.349193
 left: 1.086042

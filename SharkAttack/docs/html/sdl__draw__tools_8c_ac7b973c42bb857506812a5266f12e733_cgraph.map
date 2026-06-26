@@ -1,4 +1,5 @@
 <map id="Draw_filled_triangle" name="Draw_filled_triangle">
-<area shape="rect" id="node1" title="dessine un triangle" alt="" coords="5,5,157,32"/>
-<area shape="rect" id="node2" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="205,5,264,32"/>
+<area shape="rect" id="Node000001" title="dessine un triangle" alt="" coords="5,5,157,33"/>
+<area shape="rect" id="Node000002" href="$sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="205,5,263,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,17,191,19,186,19,157,22"/>
 </map>

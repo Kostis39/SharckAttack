@@ -1,15 +1,31 @@
 <map id="Game" name="Game">
-<area shape="rect" id="node1" title="Structure représentant l&#39;état du jeu." alt="" coords="209,508,270,535"/>
-<area shape="rect" id="node2" href="$structAudioManager.html" title=" " alt="" coords="51,404,167,431"/>
-<area shape="rect" id="node3" href="$structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="191,404,287,431"/>
-<area shape="rect" id="node4" href="$structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="311,404,370,431"/>
-<area shape="rect" id="node5" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,32"/>
-<area shape="rect" id="node11" href="$structSharkPhi.html" title=" " alt="" coords="76,109,155,136"/>
-<area shape="rect" id="node6" href="$structCollider.html" title=" " alt="" coords="251,264,323,291"/>
-<area shape="rect" id="node7" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="319,109,381,136"/>
-<area shape="rect" id="node8" href="$structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="375,264,434,291"/>
-<area shape="rect" id="node10" href="$structStepTrajectory.html" title=" " alt="" coords="135,213,250,240"/>
-<area shape="rect" id="node12" href="$structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="467,213,515,240"/>
-<area shape="rect" id="node9" href="$structTrajectory.html" title=" " alt="" coords="151,315,237,341"/>
-<area shape="rect" id="node13" href="$structRulesSetFish.html" title=" " alt="" coords="552,315,657,341"/>
+<area shape="rect" id="Node000001" title="Structure représentant l&#39;état du jeu." alt="" coords="386,578,446,606"/>
+<area shape="rect" id="Node000002" href="$structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="285,455,344,483"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,495,341,525,360,552,392,578,386,577,356,556,336,527,323,499"/>
+<area shape="rect" id="Node000003" href="$structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="139,303,186,331"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,341,210,381,255,421,298,454,292,455,252,426,206,384,178,346"/>
+<area shape="rect" id="Node000004" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="180,128,243,156"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="172,168,165,181,155,213,153,247,161,303,156,302,148,247,150,212,160,179,175,163"/>
+<area shape="rect" id="Node000005" href="$structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="226,303,285,331"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="224,168,230,179,247,248,257,303,251,302,242,249,225,181,224,173"/>
+<area shape="rect" id="Node000006" href="$structCollider.html" title=" " alt="" coords="5,251,77,279"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="164,149,91,160,59,170,40,182,32,198,31,216,38,251,33,251,26,216,27,196,36,178,57,165,90,155,167,145"/>
+<area shape="rect" id="Node000010" href="$structStepTrajectory.html" title=" " alt="" coords="410,251,525,279"/>
+<area shape="poly" id="edge14_Node000010_Node000004" title=" " alt="" coords="257,154,323,178,394,214,451,250,446,251,391,219,321,182,259,159"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="259,344,269,381,288,422,308,456,303,455,283,424,264,383,257,349"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="53,290,82,337,99,360,120,380,161,409,206,431,287,460,282,462,204,436,158,413,116,384,95,363,77,340,53,296"/>
+<area shape="rect" id="Node000007" href="$structRulesSetFish.html" title=" " alt="" coords="322,355,426,382"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="361,394,324,457,320,453,356,397"/>
+<area shape="rect" id="Node000008" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="482,5,573,33"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="544,44,566,89,573,115,576,141,576,370,574,391,567,407,555,421,537,434,513,447,491,454,450,456,408,453,356,458,345,461,343,456,355,453,408,448,450,451,490,449,511,442,534,429,551,417,562,405,568,390,570,370,570,141,568,116,561,91,543,49"/>
+<area shape="rect" id="Node000011" href="$structSharkPhi.html" title=" " alt="" coords="443,128,522,156"/>
+<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="519,45,490,129,485,126,516,50"/>
+<area shape="rect" id="Node000009" href="$structTrajectory.html" title=" " alt="" coords="450,355,536,382"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="475,393,454,416,430,434,345,461,343,456,428,429,451,412,470,396"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="476,292,492,355,487,353,473,297"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="480,169,472,252,467,250,478,174"/>
+<area shape="rect" id="Node000012" href="$structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="368,455,463,483"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="418,497,418,579,413,576,414,500"/>
+<area shape="rect" id="Node000013" href="$structAudioManager.html" title=" " alt="" coords="487,455,603,483"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="530,495,506,527,477,556,442,580,440,576,474,552,502,523,525,497"/>
 </map>

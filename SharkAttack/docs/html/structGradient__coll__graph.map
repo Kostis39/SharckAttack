@@ -1,4 +1,5 @@
 <map id="Gradient" name="Gradient">
-<area shape="rect" id="node1" title=" " alt="" coords="12,109,91,136"/>
-<area shape="rect" id="node2" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="12,128,90,156"/>
+<area shape="rect" id="Node000002" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,48,54,128,48,127,49,50"/>
 </map>

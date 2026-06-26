@@ -1,6 +1,6 @@
 var sound_8c =
 [
-    [ "audio_init", "sound_8c.html#a65b1bd328bdc1a8114bb194174d34b4e", null ],
+    [ "audio_init", "sound_8c.html#a256ad04f93013a05fb111acb7bcef693", null ],
     [ "audio_load", "sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741", null ],
     [ "audio_load_music", "sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6", null ],
     [ "audio_play", "sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce", null ],

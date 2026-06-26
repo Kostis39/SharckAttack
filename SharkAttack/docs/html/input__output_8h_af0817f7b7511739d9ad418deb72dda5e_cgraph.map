@@ -1,4 +1,5 @@
 <map id="logs_generation" name="logs_generation">
-<area shape="rect" id="node1" title="écrit un log pour une génération d&#39;apprentissage." alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node2" href="$vector__rule_8h.html#a992f7d7160220b488586f878c0a2c4a1" title="écrit dans un fichier les composantes du vecteur sous la forme (v1, v2, ...)." alt="" coords="180,5,315,32"/>
+<area shape="rect" id="Node000001" title="écrit un log pour une génération d&#39;apprentissage" alt="" coords="5,5,131,33"/>
+<area shape="rect" id="Node000002" href="$vector__rule_8c.html#a992f7d7160220b488586f878c0a2c4a1" title="écrit dans un fichier les composantes du vecteur sous la forme (v1, v2, ...)." alt="" coords="179,5,312,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,17,166,19,160,19,131,22"/>
 </map>

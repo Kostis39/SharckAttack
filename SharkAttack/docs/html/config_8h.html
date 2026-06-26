@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier include/config.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('config_8h.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('config_8h.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,171 +76,247 @@ $(document).ready(function(){initNavTree('config_8h.html',''); initResizable(); 
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Énumérations</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier config.h</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier config.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
-<div class="center"><img src="config_8h__dep__incl.png" border="0" usemap="#ainclude_2config_8hdep" alt=""/></div>
+<div class="center"><img src="config_8h__dep__incl.png" border="0" usemap="#ainclude_2config_8hdep" loading="lazy" alt=""/></div>
 <map name="ainclude_2config_8hdep" id="ainclude_2config_8hdep">
-<area shape="rect" title=" " alt="" coords="1906,5,2030,32"/>
-<area shape="rect" href="fish_8h.html" title=" " alt="" coords="495,229,603,256"/>
-<area shape="rect" href="fish__controller_8h.html" title=" " alt="" coords="660,304,836,331"/>
-<area shape="rect" href="mj_8h.html" title=" " alt="" coords="993,528,1095,555"/>
-<area shape="rect" href="game_8c.html" title=" " alt="" coords="1101,677,1195,704"/>
-<area shape="rect" href="fish__controller_8c.html" title=" " alt="" coords="43,528,189,555"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="2134,677,2223,704"/>
-<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1899,379,2042,405"/>
-<area shape="rect" href="world_8h.html" title=" " alt="" coords="1795,453,1917,480"/>
-<area shape="rect" href="fish_8c.html" title=" " alt="" coords="557,304,635,331"/>
-<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="2510,304,2677,331"/>
-<area shape="rect" href="theta__set_8c.html" title=" " alt="" coords="2752,379,2869,405"/>
-<area shape="rect" href="shark_8h.html" title=" " alt="" coords="1133,229,1254,256"/>
-<area shape="rect" href="sdl__draw__tools_8c.html" title=" " alt="" coords="925,379,1078,405"/>
-<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="2317,155,2464,181"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1946,229,2059,256"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="1687,80,1812,107"/>
-<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="2311,80,2470,107"/>
-<area shape="rect" href="sound_8c.html" title=" " alt="" coords="2995,80,3090,107"/>
-<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="1350,528,1503,555"/>
-<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1584,304,1773,331"/>
-<area shape="rect" href="test__fish_8c.html" title=" " alt="" coords="255,304,379,331"/>
-<area shape="rect" href="test__fish__controller_8c.html" title=" " alt="" coords="556,379,748,405"/>
-<area shape="rect" href="mj_8c.html" title=" " alt="" coords="793,603,866,629"/>
-<area shape="rect" href="reinforce_8c.html" title=" " alt="" coords="1877,603,1992,629"/>
-<area shape="rect" href="test__mj_8c.html" title=" " alt="" coords="890,603,1009,629"/>
-<area shape="rect" href="game_8h.html" title=" " alt="" coords="1680,603,1803,629"/>
-<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="2017,603,2141,629"/>
-<area shape="rect" href="shark_8c.html" title=" " alt="" coords="1033,603,1125,629"/>
-<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="1149,603,1309,629"/>
-<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="1334,603,1503,629"/>
-<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="1672,677,1811,704"/>
-<area shape="rect" href="world_8c.html" title=" " alt="" coords="1681,528,1773,555"/>
-<area shape="rect" href="test__world_8c.html" title=" " alt="" coords="1797,528,1934,555"/>
-<area shape="rect" href="input__output_8c.html" title=" " alt="" coords="2539,379,2677,405"/>
-<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="1275,304,1458,331"/>
-<area shape="rect" href="test__shark_8c.html" title=" " alt="" coords="1114,304,1251,331"/>
-<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="2323,229,2501,256"/>
-<area shape="rect" href="collider_8h.html" title=" " alt="" coords="2254,379,2386,405"/>
-<area shape="rect" href="utils_8c.html" title=" " alt="" coords="2001,304,2085,331"/>
-<area shape="rect" href="test__util_8c.html" title=" " alt="" coords="2109,304,2232,331"/>
-<area shape="rect" href="collider_8c.html" title=" " alt="" coords="2441,453,2543,480"/>
-<area shape="rect" href="test__collider_8c.html" title=" " alt="" coords="2217,453,2365,480"/>
-<area shape="rect" href="vector_8c.html" title=" " alt="" coords="1888,155,1984,181"/>
-<area shape="rect" href="test__vector_8c.html" title=" " alt="" coords="2008,155,2149,181"/>
-<area shape="rect" href="vector__rule_8c.html" title=" " alt="" coords="2489,155,2618,181"/>
+<area shape="rect" title=" " alt="" coords="1897,5,2020,33"/>
+<area shape="rect" href="fish_8h.html" title=" " alt="" coords="477,232,584,260"/>
+<area shape="poly" title=" " alt="" coords="1879,21,1590,23,1201,30,1009,37,841,48,713,63,668,73,640,83,619,98,600,116,570,159,549,201,537,233,532,231,544,199,566,156,596,113,615,94,637,79,667,68,712,58,841,43,1009,32,1201,24,1590,18,1884,19"/>
+<area shape="rect" href="fish__controller_8h.html" title=" " alt="" coords="655,308,830,336"/>
+<area shape="poly" title=" " alt="" coords="1879,22,1654,30,1364,40,1100,58,1006,70,952,83,914,106,879,134,848,166,820,200,777,263,751,309,747,306,773,260,816,196,844,163,876,130,911,102,950,79,1005,64,1100,52,1364,35,1654,24,1884,21"/>
+<area shape="rect" href="mj_8h.html" title=" " alt="" coords="991,535,1092,563"/>
+<area shape="poly" title=" " alt="" coords="1879,23,1242,44,872,61,718,72,602,84,535,87,468,83,344,71,293,73,272,78,254,87,240,100,229,117,222,140,220,169,220,247,226,304,244,349,272,383,309,410,354,431,405,449,522,484,586,502,652,516,783,534,900,543,993,548,988,548,900,548,782,540,651,521,585,507,521,490,404,454,352,436,306,415,268,387,239,352,221,306,215,248,215,169,217,139,224,115,236,96,251,83,271,73,293,68,344,66,468,77,535,82,601,78,718,66,872,56,1242,38,1884,21"/>
+<area shape="rect" href="game_8c.html" title=" " alt="" coords="1111,686,1204,714"/>
+<area shape="poly" title=" " alt="" coords="1879,22,1471,30,893,42,364,60,184,71,128,77,98,84,62,98,33,114,15,136,10,151,8,169,8,550,10,559,17,569,45,586,90,603,148,618,299,643,477,662,666,676,847,686,1113,698,1108,698,847,691,666,681,477,667,298,648,147,623,88,608,43,591,14,572,5,562,3,550,3,169,5,149,10,133,30,110,60,94,97,78,127,72,184,66,363,55,893,37,1471,25,1884,21"/>
+<area shape="rect" href="fish__controller_8c.html" title=" " alt="" coords="43,535,189,563"/>
+<area shape="poly" title=" " alt="" coords="1879,22,1513,28,996,38,509,56,331,69,227,84,169,95,117,105,97,113,81,126,72,144,68,169,68,399,73,438,84,476,111,534,106,535,79,478,67,439,63,399,63,169,67,142,77,122,94,109,116,100,168,90,226,78,331,63,509,51,996,33,1513,23,1884,20"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="2137,686,2226,714"/>
+<area shape="poly" title=" " alt="" coords="2036,18,2215,21,2442,30,2661,48,2751,61,2818,78,2865,92,2905,106,2922,115,2934,128,2942,146,2945,169,2945,550,2939,577,2920,601,2892,621,2855,638,2810,653,2760,665,2646,683,2525,695,2407,700,2226,702,2226,697,2407,695,2524,689,2645,678,2758,660,2809,648,2853,633,2889,616,2917,597,2934,575,2940,550,2940,169,2937,147,2930,131,2918,119,2903,111,2863,97,2817,84,2750,66,2660,53,2442,35,2215,26,2036,23"/>
+<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1889,384,2031,411"/>
+<area shape="poly" title=" " alt="" coords="2036,20,2186,31,2365,53,2450,70,2525,93,2583,121,2605,137,2620,155,2629,179,2627,199,2615,215,2597,228,2552,247,2510,262,2448,291,2383,315,2252,352,2130,377,2032,391,2031,386,2129,372,2251,347,2382,310,2446,286,2508,258,2550,242,2594,223,2611,212,2622,197,2624,180,2615,158,2601,141,2580,125,2523,98,2449,76,2364,58,2186,36,2036,26"/>
+<area shape="rect" href="world_8h.html" title=" " alt="" coords="1754,459,1875,487"/>
+<area shape="poly" title=" " alt="" coords="2035,19,2201,24,2406,35,2604,52,2685,64,2746,78,2799,91,2847,103,2866,112,2881,125,2891,144,2895,169,2895,323,2894,373,2886,394,2868,414,2828,421,2735,428,2447,445,1875,472,1875,467,2446,440,2734,423,2827,415,2865,409,2882,391,2889,373,2889,323,2889,169,2886,145,2877,128,2863,116,2845,108,2798,96,2745,84,2684,69,2603,57,2406,40,2200,30,2036,25"/>
+<area shape="rect" href="fish_8c.html" title=" " alt="" coords="553,308,631,336"/>
+<area shape="poly" title=" " alt="" coords="1879,23,1340,44,1061,61,961,72,902,84,852,106,804,134,717,199,648,263,605,309,601,305,645,259,714,195,801,130,850,101,901,78,960,66,1061,56,1340,38,1884,21"/>
+<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="2497,308,2663,336"/>
+<area shape="poly" title=" " alt="" coords="2035,19,2201,23,2398,33,2571,50,2630,63,2651,71,2663,79,2680,101,2692,123,2697,144,2698,166,2686,211,2664,261,2653,277,2640,290,2610,310,2608,305,2637,286,2649,273,2659,259,2681,209,2692,166,2692,145,2687,125,2676,104,2660,83,2648,75,2629,68,2570,56,2398,38,2201,28,2036,24"/>
+<area shape="rect" href="theta__set_8c.html" title=" " alt="" coords="2738,384,2854,411"/>
+<area shape="poly" title=" " alt="" coords="2036,19,2191,22,2381,32,2562,50,2636,63,2691,78,2734,93,2769,108,2784,118,2795,131,2802,148,2804,169,2804,248,2799,385,2795,381,2799,247,2799,169,2796,149,2790,134,2780,122,2767,113,2732,98,2690,84,2635,68,2561,55,2380,37,2191,28,2036,24"/>
+<area shape="rect" href="shark_8h.html" title=" " alt="" coords="1126,232,1247,260"/>
+<area shape="poly" title=" " alt="" coords="1879,26,1766,40,1619,64,1539,81,1459,102,1380,128,1304,159,1273,176,1245,196,1201,234,1198,230,1241,192,1270,171,1302,154,1378,123,1457,97,1538,76,1618,59,1765,35,1884,25"/>
+<area shape="rect" href="sdl__draw__tools_8c.html" title=" " alt="" coords="921,384,1074,411"/>
+<area shape="poly" title=" " alt="" coords="1879,25,1641,41,1338,69,1197,88,1080,112,1034,125,1000,139,979,154,972,170,972,247,975,286,981,324,996,384,991,382,976,325,969,287,967,248,967,169,975,151,998,135,1033,120,1078,107,1196,83,1338,64,1640,36,1884,23"/>
+<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="2307,157,2453,184"/>
+<area shape="poly" title=" " alt="" coords="2035,33,2114,53,2197,78,2287,117,2359,156,2354,156,2285,122,2195,84,2113,58,2035,39"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1936,232,2048,260"/>
+<area shape="poly" title=" " alt="" coords="2009,37,2048,56,2088,82,2125,115,2154,156,2159,173,2156,188,2146,201,2131,212,2092,229,2049,239,2048,234,2090,224,2129,208,2142,198,2151,186,2154,173,2150,158,2121,119,2085,86,2045,61,2008,42"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="1679,81,1804,109"/>
+<area shape="poly" title=" " alt="" coords="1903,39,1781,83,1779,78,1908,37"/>
+<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="2301,81,2459,109"/>
+<area shape="poly" title=" " alt="" coords="2035,31,2307,80,2301,81,2036,36"/>
+<area shape="rect" href="sound_8c.html" title=" " alt="" coords="2980,81,3074,109"/>
+<area shape="poly" title=" " alt="" coords="2035,19,2203,24,2433,34,2696,51,2962,78,2982,84,2976,84,2961,84,2695,57,2433,39,2203,29,2036,24"/>
+<area shape="poly" title=" " alt="" coords="583,263,707,307,702,308,583,268"/>
+<area shape="poly" title=" " alt="" coords="485,270,466,287,449,309,436,337,431,362,434,385,449,410,464,425,485,439,543,464,615,485,695,503,860,528,993,544,988,544,859,533,694,508,613,490,541,469,483,443,461,429,445,413,429,387,425,361,431,335,444,307,462,283,489,266"/>
+<area shape="poly" title=" " alt="" coords="459,254,399,262,334,273,278,289,258,299,244,310,231,320,214,328,198,335,187,345,183,362,189,388,211,429,251,485,277,510,312,533,356,554,407,574,526,608,658,636,793,658,920,674,1114,695,1108,695,920,680,792,663,657,641,524,613,405,579,354,559,309,538,273,514,247,489,206,432,184,390,177,362,182,342,195,330,212,323,228,316,241,306,255,294,277,284,333,268,399,256,464,251"/>
+<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="1357,535,1510,563"/>
+<area shape="poly" title=" " alt="" coords="520,272,509,306,502,343,504,379,510,395,521,409,537,420,564,431,645,452,755,472,881,490,1146,519,1359,541,1354,542,1145,525,881,495,754,477,644,457,562,436,534,425,517,413,506,398,499,380,497,342,504,305,516,276"/>
+<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1575,308,1764,336"/>
+<area shape="poly" title=" " alt="" coords="600,249,1576,312,1573,317,600,255"/>
+<area shape="poly" title=" " alt="" coords="524,273,520,307,518,344,525,380,532,395,543,409,560,417,596,423,715,436,1071,454,1466,464,1757,471,1751,471,1466,469,1071,459,714,441,595,429,559,422,540,413,528,398,520,381,513,344,514,307,521,277"/>
+<area shape="poly" title=" " alt="" coords="552,269,584,308,578,307,551,275"/>
+<area shape="rect" href="test__fish_8c.html" title=" " alt="" coords="254,308,378,336"/>
+<area shape="poly" title=" " alt="" coords="476,267,356,310,353,305,480,264"/>
+<area shape="poly" title=" " alt="" coords="773,343,1027,534,1021,535,771,348"/>
+<area shape="poly" title=" " alt="" coords="679,342,542,386,316,470,149,537,146,532,314,465,540,381,683,339"/>
+<area shape="rect" href="test__fish__controller_8c.html" title=" " alt="" coords="554,384,745,411"/>
+<area shape="poly" title=" " alt="" coords="716,344,667,385,664,381,712,347"/>
+<area shape="poly" title=" " alt="" coords="973,553,902,562,831,576,805,587,789,601,785,616,795,637,816,652,848,665,934,683,1029,692,1113,698,1108,698,1029,697,933,688,847,670,814,657,791,640,779,617,784,598,802,583,830,571,901,556,978,552"/>
+<area shape="rect" href="mj_8c.html" title=" " alt="" coords="805,611,878,638"/>
+<area shape="poly" title=" " alt="" coords="994,568,878,613,876,608,989,569"/>
+<area shape="rect" href="reinforce_8c.html" title=" " alt="" coords="1883,611,1997,638"/>
+<area shape="poly" title=" " alt="" coords="1107,552,1415,575,1820,608,1886,617,1881,617,1820,613,1415,580,1107,557"/>
+<area shape="rect" href="test__mj_8c.html" title=" " alt="" coords="901,611,1019,638"/>
+<area shape="poly" title=" " alt="" coords="1018,572,976,613,973,608,1013,574"/>
+<area shape="poly" title=" " alt="" coords="1477,568,1501,582,1521,600,1530,619,1529,630,1523,640,1501,657,1468,670,1381,688,1286,697,1204,701,1204,696,1285,692,1381,683,1467,665,1499,652,1519,637,1524,628,1525,620,1517,603,1498,587,1476,573"/>
+<area shape="rect" href="game_8h.html" title=" " alt="" coords="1686,611,1807,638"/>
+<area shape="poly" title=" " alt="" coords="1505,564,1693,610,1688,610,1504,569"/>
+<area shape="poly" title=" " alt="" coords="1525,558,1689,581,1766,594,1821,608,1847,622,1873,636,1944,657,2016,673,2139,694,2134,694,2015,678,1942,662,1871,641,1845,627,1819,613,1765,600,1688,586,1525,564"/>
+<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="2021,611,2144,638"/>
+<area shape="poly" title=" " alt="" coords="1525,555,1746,577,2010,608,2023,612,2018,612,2009,613,1746,582,1525,561"/>
+<area shape="rect" href="shark_8c.html" title=" " alt="" coords="1042,611,1134,638"/>
+<area shape="poly" title=" " alt="" coords="1358,566,1146,613,1135,616,1134,610,1145,608,1353,567"/>
+<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="1158,611,1317,638"/>
+<area shape="poly" title=" " alt="" coords="1387,568,1273,613,1271,608,1381,569"/>
+<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="1341,611,1510,638"/>
+<area shape="poly" title=" " alt="" coords="1432,576,1429,612,1425,608,1428,580"/>
+<area shape="poly" title=" " alt="" coords="1673,638,1667,641,1406,674,1204,697,1204,691,1405,669,1666,636,1668,638"/>
+<area shape="poly" title=" " alt="" coords="1822,636,2139,691,2134,691,1822,641"/>
+<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="1678,686,1815,714"/>
+<area shape="poly" title=" " alt="" coords="1749,652,1749,688,1745,684,1745,656"/>
+<area shape="poly" title=" " alt="" coords="1601,339,1529,362,1456,386,1395,413,1349,437,1303,462,1242,489,1165,516,1093,537,1092,532,1163,511,1240,485,1301,458,1347,433,1392,408,1454,381,1527,357,1595,341"/>
+<area shape="poly" title=" " alt="" coords="1637,343,1507,428,1347,537,1253,613,1251,608,1344,533,1504,423,1632,345"/>
+<area shape="poly" title=" " alt="" coords="1729,337,1904,383,1898,383,1728,343"/>
+<area shape="poly" title=" " alt="" coords="1876,414,1442,490,1093,543,1092,537,1441,484,1871,414"/>
+<area shape="poly" title=" " alt="" coords="1975,423,1987,454,1997,489,2000,526,1993,564,1977,591,1957,613,1955,608,1973,588,1988,562,1995,526,1991,490,1982,455,1972,428"/>
+<area shape="poly" title=" " alt="" coords="1898,379,1729,339,1729,334,1903,379"/>
+<area shape="poly" title=" " alt="" coords="1923,418,1841,461,1840,456,1918,420"/>
+<area shape="poly" title=" " alt="" coords="1736,482,1093,545,1092,540,1742,481"/>
+<area shape="poly" title=" " alt="" coords="1751,492,1711,512,1675,537,1664,550,1656,563,1649,590,1640,616,1631,629,1617,641,1584,656,1539,669,1424,687,1303,696,1204,701,1204,695,1302,691,1423,681,1538,664,1583,651,1615,636,1627,625,1635,613,1644,588,1652,561,1659,547,1672,533,1708,508,1746,493"/>
+<area shape="poly" title=" " alt="" coords="1890,483,1935,501,1955,515,1972,534,1978,554,1974,576,1952,612,1950,608,1969,574,1973,554,1967,536,1952,519,1933,506,1889,488"/>
+<area shape="poly" title=" " alt="" coords="1739,480,190,547,189,542,1739,475"/>
+<area shape="poly" title=" " alt="" coords="1742,488,1502,537,1501,532,1737,489"/>
+<area shape="poly" title=" " alt="" coords="1883,489,1916,502,1943,519,1957,539,1956,552,1950,564,1928,581,1892,595,1808,616,1807,610,1890,590,1925,576,1946,561,1951,550,1952,541,1939,523,1914,507,1883,495"/>
+<area shape="poly" title=" " alt="" coords="1888,489,1940,507,1992,533,2041,572,2075,612,2070,610,2037,576,1989,537,1938,512,1887,494"/>
+<area shape="rect" href="world_8c.html" title=" " alt="" coords="1685,535,1776,563"/>
+<area shape="poly" title=" " alt="" coords="1791,496,1747,537,1744,532,1786,499"/>
+<area shape="rect" href="test__world_8c.html" title=" " alt="" coords="1800,535,1936,563"/>
+<area shape="poly" title=" " alt="" coords="1834,497,1861,536,1856,534,1832,502"/>
+<area shape="poly" title=" " alt="" coords="2548,344,2529,364,2516,385,2513,397,2516,410,2524,424,2535,433,2546,443,2556,458,2560,474,2556,488,2524,532,2485,570,2441,602,2395,629,2303,668,2226,691,2226,686,2301,663,2392,624,2438,597,2482,566,2520,528,2551,486,2555,473,2551,460,2542,446,2532,437,2520,428,2511,412,2507,397,2511,383,2525,361,2543,346"/>
+<area shape="poly" title=" " alt="" coords="2479,336,2479,338,2032,391,2031,385,2478,333,2484,335"/>
+<area shape="rect" href="input__output_8c.html" title=" " alt="" coords="2525,384,2662,411"/>
+<area shape="poly" title=" " alt="" coords="2587,349,2593,385,2589,382,2584,353"/>
+<area shape="poly" title=" " alt="" coords="2633,338,2760,383,2755,383,2632,344"/>
+<area shape="poly" title=" " alt="" coords="1108,261,823,310,822,305,1113,259"/>
+<area shape="poly" title=" " alt="" coords="1114,263,1080,284,1054,310,1050,319,1050,327,1059,343,1075,360,1088,383,1090,397,1088,412,1070,482,1049,537,1045,533,1065,481,1083,411,1085,397,1083,385,1071,363,1055,346,1045,329,1045,318,1050,306,1077,279,1109,265"/>
+<area shape="poly" title=" " alt="" coords="1109,254,1028,273,985,289,945,310,847,383,805,422,771,462,749,504,743,525,741,547,743,569,749,591,761,614,778,636,800,653,834,666,925,684,1026,693,1113,699,1108,699,1025,698,924,689,833,671,798,658,774,640,756,616,744,593,737,570,735,547,737,524,744,502,767,459,801,418,843,379,943,306,983,284,1027,268,1114,252"/>
+<area shape="poly" title=" " alt="" coords="1144,266,1121,283,1104,299,1095,316,1098,335,1125,374,1159,409,1197,440,1238,466,1319,507,1390,535,1385,534,1317,512,1235,471,1194,444,1155,413,1121,377,1094,337,1090,315,1100,295,1118,279,1139,268"/>
+<area shape="poly" title=" " alt="" coords="1109,261,1059,279,1002,303,951,338,929,360,912,385,894,421,893,436,896,452,922,495,981,561,1015,588,1054,610,1049,610,1012,593,977,565,918,498,891,454,887,437,889,420,907,382,925,357,948,334,1000,299,1057,274,1114,260"/>
+<area shape="poly" title=" " alt="" coords="1262,256,1585,307,1580,308,1262,262"/>
+<area shape="poly" title=" " alt="" coords="1262,244,1366,247,1495,256,1637,275,1708,288,1777,305,1824,322,1870,342,1942,383,1936,383,1867,347,1822,327,1775,311,1707,294,1636,280,1495,262,1366,253,1263,250"/>
+<area shape="poly" title=" " alt="" coords="1262,257,1359,277,1462,305,1561,343,1655,386,1794,459,1789,459,1653,391,1559,348,1460,311,1357,282,1262,262"/>
+<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="1268,308,1449,336"/>
+<area shape="poly" title=" " alt="" coords="1232,264,1331,308,1326,308,1231,269"/>
+<area shape="rect" href="test__shark_8c.html" title=" " alt="" coords="1108,308,1244,336"/>
+<area shape="poly" title=" " alt="" coords="1184,273,1180,309,1176,306,1181,277"/>
+<area shape="poly" title=" " alt="" coords="1381,344,1430,392,1499,451,1583,511,1628,538,1674,560,1722,578,1764,589,1838,597,1914,599,2010,608,2023,613,2018,612,2009,613,1913,604,1837,602,1763,594,1721,583,1672,565,1625,543,1580,516,1496,455,1427,395,1380,349"/>
+<area shape="poly" title=" " alt="" coords="1276,340,1063,386,1062,380,1282,339"/>
+<area shape="poly" title=" " alt="" coords="2289,177,2152,187,1860,195,1632,196,1522,198,1405,204,1272,215,1115,235,1023,251,932,271,787,310,785,305,930,266,1022,246,1114,230,1271,210,1405,198,1522,192,1632,190,1860,190,2152,182,2295,176"/>
+<area shape="poly" title=" " alt="" coords="2289,179,2121,200,2022,215,1925,235,1800,272,1701,310,1700,305,1798,267,1923,230,2021,210,2120,194,2295,178"/>
+<area shape="poly" title=" " alt="" coords="2423,188,2579,258,2677,306,2692,335,2698,361,2694,387,2676,413,2641,425,2565,435,2337,452,1876,472,1875,467,2336,446,2565,429,2640,419,2673,409,2689,385,2693,362,2687,337,2673,310,2577,263,2423,194"/>
+<area shape="poly" title=" " alt="" coords="2452,186,2514,205,2583,230,2654,264,2720,306,2761,345,2790,384,2785,382,2757,349,2717,310,2652,269,2581,235,2512,210,2452,191"/>
+<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="2319,232,2497,260"/>
+<area shape="poly" title=" " alt="" coords="2392,197,2405,233,2401,231,2389,201"/>
+<area shape="poly" title=" " alt="" coords="2376,267,2310,305,2233,338,2129,368,2032,388,2031,383,2127,363,2231,333,2308,300,2371,269"/>
+<area shape="poly" title=" " alt="" coords="2453,264,2552,308,2547,307,2453,269"/>
+<area shape="poly" title=" " alt="" coords="1966,269,1828,384,1650,537,1621,567,1601,594,1579,618,1544,641,1516,651,1478,661,1385,678,1204,698,1204,692,1384,672,1477,656,1514,646,1541,636,1575,614,1597,590,1617,564,1646,533,1824,380,1961,271"/>
+<area shape="poly" title=" " alt="" coords="2064,253,2164,273,2207,288,2234,306,2238,321,2235,336,2223,398,2209,460,2193,592,2184,688,2180,684,2188,591,2204,459,2218,397,2229,335,2233,321,2230,310,2205,292,2163,278,2064,259"/>
+<area shape="poly" title=" " alt="" coords="1918,264,1728,310,1727,305,1923,263"/>
+<area shape="poly" title=" " alt="" coords="1988,274,1981,309,1965,385,1961,381,1976,307,1984,277"/>
+<area shape="poly" title=" " alt="" coords="1918,250,1285,269,914,287,760,298,643,311,633,312,631,307,642,305,759,293,914,282,1284,264,1923,248"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="2242,384,2374,411"/>
+<area shape="poly" title=" " alt="" coords="2064,252,2186,272,2241,287,2278,306,2292,324,2302,345,2309,385,2305,382,2297,346,2288,327,2274,310,2239,292,2185,277,2064,258"/>
+<area shape="rect" href="utils_8c.html" title=" " alt="" coords="1990,308,2074,336"/>
+<area shape="poly" title=" " alt="" coords="2008,272,2027,309,2022,306,2005,276"/>
+<area shape="rect" href="test__util_8c.html" title=" " alt="" coords="2098,308,2219,336"/>
+<area shape="poly" title=" " alt="" coords="2036,264,2132,308,2126,307,2035,269"/>
+<area shape="poly" title=" " alt="" coords="2224,401,2129,408,2007,418,1874,435,1743,462,1709,475,1676,490,1582,517,1496,537,1495,532,1580,511,1674,484,1707,470,1742,457,1874,430,2006,413,2128,403,2230,400"/>
+<area shape="poly" title=" " alt="" coords="2344,418,2363,433,2378,450,2385,469,2380,488,2357,517,2331,541,2301,561,2269,578,2204,602,2145,617,2144,612,2203,597,2267,573,2298,557,2328,537,2354,513,2375,486,2379,469,2373,452,2359,437,2343,423"/>
+<area shape="poly" title=" " alt="" coords="2230,410,1876,466,1875,460,2225,411"/>
+<area shape="rect" href="collider_8c.html" title=" " alt="" coords="2440,459,2542,487"/>
+<area shape="poly" title=" " alt="" coords="2355,415,2461,459,2456,459,2354,420"/>
+<area shape="rect" href="test__collider_8c.html" title=" " alt="" coords="2218,459,2366,487"/>
+<area shape="poly" title=" " alt="" coords="2304,425,2297,461,2293,457,2300,429"/>
+<area shape="poly" title=" " alt="" coords="1661,101,1372,121,1188,138,1002,159,769,198,586,235,584,230,768,193,1001,154,1187,133,1372,116,1666,99"/>
+<area shape="poly" title=" " alt="" coords="1661,104,1530,121,1355,147,1160,184,1062,208,966,235,858,274,772,310,770,305,856,269,965,230,1060,203,1159,179,1354,142,1529,116,1666,103"/>
+<area shape="poly" title=" " alt="" coords="1720,118,1613,221,1540,281,1463,338,1355,403,1245,460,1074,537,1072,532,1242,455,1352,398,1460,333,1537,277,1609,217,1716,121"/>
+<area shape="poly" title=" " alt="" coords="1661,100,1285,119,768,150,520,170,313,193,232,206,170,219,131,233,122,239,119,245,119,399,119,535,113,534,113,399,113,244,117,236,129,228,168,214,231,201,312,188,520,165,768,145,1285,114,1666,98"/>
+<area shape="poly" title=" " alt="" coords="1735,121,1676,309,1672,306,1731,125"/>
+<area shape="poly" title=" " alt="" coords="1748,122,1815,460,1810,458,1745,126"/>
+<area shape="poly" title=" " alt="" coords="1661,104,1529,125,1454,140,1379,159,1284,197,1211,234,1208,229,1282,192,1378,154,1452,134,1529,119,1666,102"/>
+<area shape="poly" title=" " alt="" coords="1661,99,1617,106,1566,117,1516,134,1470,159,1431,194,1401,236,1379,277,1365,309,1362,305,1374,275,1397,234,1427,191,1466,154,1514,129,1565,112,1616,101,1666,97"/>
+<area shape="poly" title=" " alt="" coords="1819,101,2288,154,2309,159,2304,159,2288,159,1819,107"/>
+<area shape="poly" title=" " alt="" coords="1771,115,1830,157,1869,182,1906,193,1954,202,2075,218,2322,240,2316,240,2074,223,1953,207,1904,198,1867,187,1827,161,1770,120"/>
+<area shape="poly" title=" " alt="" coords="1760,118,1789,152,1825,182,1881,210,1938,232,1933,232,1879,215,1823,187,1786,155,1758,124"/>
+<area shape="poly" title=" " alt="" coords="1819,99,2003,119,2091,135,2153,154,2208,184,2247,214,2278,252,2306,307,2313,327,2315,348,2312,385,2308,382,2309,349,2307,328,2302,309,2274,255,2244,218,2205,188,2151,159,2090,140,2002,124,1819,104"/>
+<area shape="rect" href="vector_8c.html" title=" " alt="" coords="1880,157,1976,184"/>
+<area shape="poly" title=" " alt="" coords="1789,112,1898,156,1892,156,1789,117"/>
+<area shape="rect" href="test__vector_8c.html" title=" " alt="" coords="1999,157,2140,184"/>
+<area shape="poly" title=" " alt="" coords="1815,110,2013,156,2008,156,1815,115"/>
+<area shape="poly" title=" " alt="" coords="2382,122,2382,158,2378,155,2378,127"/>
+<area shape="rect" href="vector__rule_8c.html" title=" " alt="" coords="2477,157,2606,184"/>
+<area shape="poly" title=" " alt="" coords="2423,113,2515,156,2510,156,2422,118"/>
 </map>
 </div>
 </div>
 <p><a href="config_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a598a3330b3c21701223ee0ca14316eca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a598a3330b3c21701223ee0ca14316eca">PI</a>&#160;&#160;&#160;3.14159265358979323846</td></tr>
-<tr class="separator:a598a3330b3c21701223ee0ca14316eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42cc00b77be9be3ddf2384b12d995d52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a42cc00b77be9be3ddf2384b12d995d52">FILE_LOG</a>&#160;&#160;&#160;&quot;logs.txt&quot;</td></tr>
-<tr class="separator:a42cc00b77be9be3ddf2384b12d995d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae06773cbea10b16b13d7c1ce80225d31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ae06773cbea10b16b13d7c1ce80225d31">THETA_FILE</a>&#160;&#160;&#160;&quot;params.txt&quot;</td></tr>
-<tr class="separator:ae06773cbea10b16b13d7c1ce80225d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a650280af3561ec9a747bb9a8c532a70c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a650280af3561ec9a747bb9a8c532a70c">STEP_LOG</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a650280af3561ec9a747bb9a8c532a70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a166b570f42d4ed5720ee9a96b9281c51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a166b570f42d4ed5720ee9a96b9281c51">NB_OCCURRENCE</a>&#160;&#160;&#160;10000</td></tr>
-<tr class="separator:a166b570f42d4ed5720ee9a96b9281c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2ab4d47bb2f38dfb537e3f52152c0ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ab2ab4d47bb2f38dfb537e3f52152c0ec">TRAJECTORY_LENGHT_ALLOC</a>&#160;&#160;&#160;200</td></tr>
-<tr class="separator:ab2ab4d47bb2f38dfb537e3f52152c0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad93407dc809aa13788d436389dbf3818"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ad93407dc809aa13788d436389dbf3818">TRAJECTORY_CAPACITY</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#a166b570f42d4ed5720ee9a96b9281c51">NB_OCCURRENCE</a></td></tr>
-<tr class="separator:ad93407dc809aa13788d436389dbf3818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcae824cfd797ed9f6a5162b96d899ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#afcae824cfd797ed9f6a5162b96d899ea">FISH_NB</a>&#160;&#160;&#160;100</td></tr>
-<tr class="separator:afcae824cfd797ed9f6a5162b96d899ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a698f5b9a1d29eb6006350e9913864742"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a698f5b9a1d29eb6006350e9913864742">RADIUS_SEPARATION</a>&#160;&#160;&#160;32</td></tr>
-<tr class="separator:a698f5b9a1d29eb6006350e9913864742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc850530814f61cb7e1ba8bf4018ee1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#afc850530814f61cb7e1ba8bf4018ee1a">RADIUS_ALIGNEMENT</a>&#160;&#160;&#160;160</td></tr>
-<tr class="separator:afc850530814f61cb7e1ba8bf4018ee1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a120dd2cde4ff69b90c3759c95ce4885e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a120dd2cde4ff69b90c3759c95ce4885e">RADIUS_COHESION</a>&#160;&#160;&#160;160</td></tr>
-<tr class="separator:a120dd2cde4ff69b90c3759c95ce4885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab04eff6f03d026997d3a58d2df1c83fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ab04eff6f03d026997d3a58d2df1c83fc">RADIUS_SHARK_VISIBILITY</a>&#160;&#160;&#160;200</td></tr>
-<tr class="separator:ab04eff6f03d026997d3a58d2df1c83fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b1a6282f79ca4752cc7118580e4004d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a8b1a6282f79ca4752cc7118580e4004d">VISION_ANGLE</a>&#160;&#160;&#160;(<a class="el" href="config_8h.html#a598a3330b3c21701223ee0ca14316eca">PI</a> * 0.25<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a>)</td></tr>
-<tr class="separator:a8b1a6282f79ca4752cc7118580e4004d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1569580be798ed452dc6b8f4906b985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ac1569580be798ed452dc6b8f4906b985">SHARK_VISION_RANGE</a>&#160;&#160;&#160;500</td></tr>
-<tr class="separator:ac1569580be798ed452dc6b8f4906b985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c5263ced87eb6e208374e32355f829f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a8c5263ced87eb6e208374e32355f829f">SEPARATION</a>&#160;&#160;&#160;0.3<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
-<tr class="separator:a8c5263ced87eb6e208374e32355f829f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a450f9d8af07bfe2f313dbe3a78738a5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a450f9d8af07bfe2f313dbe3a78738a5e">ALIGNMENT</a>&#160;&#160;&#160;0.3<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
-<tr class="separator:a450f9d8af07bfe2f313dbe3a78738a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe027ba6eded021d78ca1f14c57978be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#abe027ba6eded021d78ca1f14c57978be">COHESION</a>&#160;&#160;&#160;0.003<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
-<tr class="separator:abe027ba6eded021d78ca1f14c57978be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebac0cce1beec6a8f21df4e8cf0a1299"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aebac0cce1beec6a8f21df4e8cf0a1299">SHARK_AVOIDANCE</a>&#160;&#160;&#160;0.1<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
-<tr class="separator:aebac0cce1beec6a8f21df4e8cf0a1299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43ec949e3ecf22fb723e94a01a285f1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a43ec949e3ecf22fb723e94a01a285f1b">COLLIDER_AVOIDANCE</a>&#160;&#160;&#160;0.9<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
-<tr class="separator:a43ec949e3ecf22fb723e94a01a285f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af27151f8805da0309c5077acc21584d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#af27151f8805da0309c5077acc21584d9">FISH_SPEED_MAX</a>&#160;&#160;&#160;4.0f</td></tr>
-<tr class="separator:af27151f8805da0309c5077acc21584d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38f49b45c62bd36bdf7b90800450628e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a38f49b45c62bd36bdf7b90800450628e">FISH_SPEED_MIN</a>&#160;&#160;&#160;2.0f</td></tr>
-<tr class="separator:a38f49b45c62bd36bdf7b90800450628e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80d09743ebda6527b52198419e31acdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a80d09743ebda6527b52198419e31acdc">SHARK_SPEED_MAX</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:a80d09743ebda6527b52198419e31acdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa9188776d909e94ead6cf6ffbbdd1e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#afa9188776d909e94ead6cf6ffbbdd1e8">TURN_SPEED</a>&#160;&#160;&#160;0.2<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
-<tr class="separator:afa9188776d909e94ead6cf6ffbbdd1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd9227723fa8369bf2b39bc29e14a295"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#afd9227723fa8369bf2b39bc29e14a295">FISH_SIZE</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:afd9227723fa8369bf2b39bc29e14a295"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a1616dddcba10b8d0429387c4437b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa9a1616dddcba10b8d0429387c4437b7">SHARK_SIZE</a>&#160;&#160;&#160;22</td></tr>
-<tr class="separator:aa9a1616dddcba10b8d0429387c4437b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241aeeb764887ae5e3de58b98f04b16d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>&#160;&#160;&#160;1920</td></tr>
-<tr class="separator:a241aeeb764887ae5e3de58b98f04b16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed89bd71aee8be823e8a20ec4e093c1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>&#160;&#160;&#160;1080</td></tr>
-<tr class="separator:aed89bd71aee8be823e8a20ec4e093c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bc337130504fe4ed34f56a2100aeac8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a6bc337130504fe4ed34f56a2100aeac8">REPULSION_ZONE</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a6bc337130504fe4ed34f56a2100aeac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a6020c95148e263dc9d0002230f3db0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a1a6020c95148e263dc9d0002230f3db0">REPULSION_FACTOR</a>&#160;&#160;&#160;10.0f</td></tr>
-<tr class="separator:a1a6020c95148e263dc9d0002230f3db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a990edf51308a42b583fde55e2b9bedb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a990edf51308a42b583fde55e2b9bedb7">RANDOM_SEED</a>&#160;&#160;&#160;42</td></tr>
-<tr class="separator:a990edf51308a42b583fde55e2b9bedb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc2688401c4fdc8cf5db6b72bf33c376"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#acc2688401c4fdc8cf5db6b72bf33c376">COLLIDER_RATIO</a></td></tr>
-<tr class="separator:acc2688401c4fdc8cf5db6b72bf33c376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa68591f978f4700669c11f9a95d514ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa68591f978f4700669c11f9a95d514ed">COLLIDERS_NB</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:aa68591f978f4700669c11f9a95d514ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25ce23b6491e24dd4a73a67d92996280"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a25ce23b6491e24dd4a73a67d92996280">SHARK_ATTACK_RANGE</a>&#160;&#160;&#160;30</td></tr>
-<tr class="separator:a25ce23b6491e24dd4a73a67d92996280"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae09100a38fd2f3c0840b55298791ee3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ae09100a38fd2f3c0840b55298791ee3c">BENCHMARK_ITERATIONS</a>&#160;&#160;&#160;2000</td></tr>
-<tr class="separator:ae09100a38fd2f3c0840b55298791ee3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93efd606e54bc5bfcc8fd6a0709b5487"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a93efd606e54bc5bfcc8fd6a0709b5487">NB_THREADS</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a93efd606e54bc5bfcc8fd6a0709b5487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b402ad8894b4e8bd93b1a10ce76e70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a54b402ad8894b4e8bd93b1a10ce76e70">AUDIO_PATH</a>&#160;&#160;&#160;&quot;assets/&quot;</td></tr>
-<tr class="separator:a54b402ad8894b4e8bd93b1a10ce76e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3732c0f6d52bfa18916b1e1710484fb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a3732c0f6d52bfa18916b1e1710484fb8">MUSIC_FILE</a>&#160;&#160;&#160;&quot;underwater-ambience&quot;</td></tr>
-<tr class="separator:a3732c0f6d52bfa18916b1e1710484fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598a3330b3c21701223ee0ca14316eca" id="r_a598a3330b3c21701223ee0ca14316eca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a598a3330b3c21701223ee0ca14316eca">PI</a>&#160;&#160;&#160;3.14159265358979323846</td></tr>
+<tr class="memitem:a42cc00b77be9be3ddf2384b12d995d52" id="r_a42cc00b77be9be3ddf2384b12d995d52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42cc00b77be9be3ddf2384b12d995d52">FILE_LOG</a>&#160;&#160;&#160;&quot;logs.txt&quot;</td></tr>
+<tr class="memitem:ae06773cbea10b16b13d7c1ce80225d31" id="r_ae06773cbea10b16b13d7c1ce80225d31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae06773cbea10b16b13d7c1ce80225d31">THETA_FILE</a>&#160;&#160;&#160;&quot;params.txt&quot;</td></tr>
+<tr class="memitem:a650280af3561ec9a747bb9a8c532a70c" id="r_a650280af3561ec9a747bb9a8c532a70c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a650280af3561ec9a747bb9a8c532a70c">STEP_LOG</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a166b570f42d4ed5720ee9a96b9281c51" id="r_a166b570f42d4ed5720ee9a96b9281c51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a166b570f42d4ed5720ee9a96b9281c51">NB_OCCURRENCE</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="memitem:ab2ab4d47bb2f38dfb537e3f52152c0ec" id="r_ab2ab4d47bb2f38dfb537e3f52152c0ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2ab4d47bb2f38dfb537e3f52152c0ec">TRAJECTORY_LENGHT_ALLOC</a>&#160;&#160;&#160;200</td></tr>
+<tr class="memitem:ad93407dc809aa13788d436389dbf3818" id="r_ad93407dc809aa13788d436389dbf3818"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad93407dc809aa13788d436389dbf3818">TRAJECTORY_CAPACITY</a>&#160;&#160;&#160;<a class="el" href="#a166b570f42d4ed5720ee9a96b9281c51">NB_OCCURRENCE</a></td></tr>
+<tr class="memitem:afcae824cfd797ed9f6a5162b96d899ea" id="r_afcae824cfd797ed9f6a5162b96d899ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcae824cfd797ed9f6a5162b96d899ea">FISH_NB</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memitem:a698f5b9a1d29eb6006350e9913864742" id="r_a698f5b9a1d29eb6006350e9913864742"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a698f5b9a1d29eb6006350e9913864742">RADIUS_SEPARATION</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memitem:afc850530814f61cb7e1ba8bf4018ee1a" id="r_afc850530814f61cb7e1ba8bf4018ee1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc850530814f61cb7e1ba8bf4018ee1a">RADIUS_ALIGNEMENT</a>&#160;&#160;&#160;160</td></tr>
+<tr class="memitem:a120dd2cde4ff69b90c3759c95ce4885e" id="r_a120dd2cde4ff69b90c3759c95ce4885e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a120dd2cde4ff69b90c3759c95ce4885e">RADIUS_COHESION</a>&#160;&#160;&#160;160</td></tr>
+<tr class="memitem:ab04eff6f03d026997d3a58d2df1c83fc" id="r_ab04eff6f03d026997d3a58d2df1c83fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab04eff6f03d026997d3a58d2df1c83fc">RADIUS_SHARK_VISIBILITY</a>&#160;&#160;&#160;200</td></tr>
+<tr class="memitem:a8b1a6282f79ca4752cc7118580e4004d" id="r_a8b1a6282f79ca4752cc7118580e4004d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b1a6282f79ca4752cc7118580e4004d">VISION_ANGLE</a>&#160;&#160;&#160;(<a class="el" href="#a598a3330b3c21701223ee0ca14316eca">PI</a> * 0.25<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a>)</td></tr>
+<tr class="memitem:ac1569580be798ed452dc6b8f4906b985" id="r_ac1569580be798ed452dc6b8f4906b985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1569580be798ed452dc6b8f4906b985">SHARK_VISION_RANGE</a>&#160;&#160;&#160;500</td></tr>
+<tr class="memitem:a8c5263ced87eb6e208374e32355f829f" id="r_a8c5263ced87eb6e208374e32355f829f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c5263ced87eb6e208374e32355f829f">SEPARATION</a>&#160;&#160;&#160;0.3<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
+<tr class="memitem:a450f9d8af07bfe2f313dbe3a78738a5e" id="r_a450f9d8af07bfe2f313dbe3a78738a5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a450f9d8af07bfe2f313dbe3a78738a5e">ALIGNMENT</a>&#160;&#160;&#160;0.3<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
+<tr class="memitem:abe027ba6eded021d78ca1f14c57978be" id="r_abe027ba6eded021d78ca1f14c57978be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe027ba6eded021d78ca1f14c57978be">COHESION</a>&#160;&#160;&#160;0.003<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
+<tr class="memitem:aebac0cce1beec6a8f21df4e8cf0a1299" id="r_aebac0cce1beec6a8f21df4e8cf0a1299"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebac0cce1beec6a8f21df4e8cf0a1299">SHARK_AVOIDANCE</a>&#160;&#160;&#160;0.1<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
+<tr class="memitem:a43ec949e3ecf22fb723e94a01a285f1b" id="r_a43ec949e3ecf22fb723e94a01a285f1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43ec949e3ecf22fb723e94a01a285f1b">COLLIDER_AVOIDANCE</a>&#160;&#160;&#160;0.9<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
+<tr class="memitem:af27151f8805da0309c5077acc21584d9" id="r_af27151f8805da0309c5077acc21584d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af27151f8805da0309c5077acc21584d9">FISH_SPEED_MAX</a>&#160;&#160;&#160;4.0f</td></tr>
+<tr class="memitem:a38f49b45c62bd36bdf7b90800450628e" id="r_a38f49b45c62bd36bdf7b90800450628e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38f49b45c62bd36bdf7b90800450628e">FISH_SPEED_MIN</a>&#160;&#160;&#160;2.0f</td></tr>
+<tr class="memitem:a80d09743ebda6527b52198419e31acdc" id="r_a80d09743ebda6527b52198419e31acdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80d09743ebda6527b52198419e31acdc">SHARK_SPEED_MAX</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:afa9188776d909e94ead6cf6ffbbdd1e8" id="r_afa9188776d909e94ead6cf6ffbbdd1e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa9188776d909e94ead6cf6ffbbdd1e8">TURN_SPEED</a>&#160;&#160;&#160;0.2<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a></td></tr>
+<tr class="memitem:afd9227723fa8369bf2b39bc29e14a295" id="r_afd9227723fa8369bf2b39bc29e14a295"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd9227723fa8369bf2b39bc29e14a295">FISH_SIZE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:aa9a1616dddcba10b8d0429387c4437b7" id="r_aa9a1616dddcba10b8d0429387c4437b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9a1616dddcba10b8d0429387c4437b7">SHARK_SIZE</a>&#160;&#160;&#160;22</td></tr>
+<tr class="memitem:a241aeeb764887ae5e3de58b98f04b16d" id="r_a241aeeb764887ae5e3de58b98f04b16d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>&#160;&#160;&#160;1920</td></tr>
+<tr class="memitem:aed89bd71aee8be823e8a20ec4e093c1e" id="r_aed89bd71aee8be823e8a20ec4e093c1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>&#160;&#160;&#160;1080</td></tr>
+<tr class="memitem:a6bc337130504fe4ed34f56a2100aeac8" id="r_a6bc337130504fe4ed34f56a2100aeac8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bc337130504fe4ed34f56a2100aeac8">REPULSION_ZONE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a1a6020c95148e263dc9d0002230f3db0" id="r_a1a6020c95148e263dc9d0002230f3db0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a6020c95148e263dc9d0002230f3db0">REPULSION_FACTOR</a>&#160;&#160;&#160;10.0f</td></tr>
+<tr class="memitem:a990edf51308a42b583fde55e2b9bedb7" id="r_a990edf51308a42b583fde55e2b9bedb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a990edf51308a42b583fde55e2b9bedb7">RANDOM_SEED</a>&#160;&#160;&#160;42</td></tr>
+<tr class="memitem:acc2688401c4fdc8cf5db6b72bf33c376" id="r_acc2688401c4fdc8cf5db6b72bf33c376"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc2688401c4fdc8cf5db6b72bf33c376">COLLIDER_RATIO</a></td></tr>
+<tr class="memitem:aa68591f978f4700669c11f9a95d514ed" id="r_aa68591f978f4700669c11f9a95d514ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa68591f978f4700669c11f9a95d514ed">COLLIDERS_NB</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:a25ce23b6491e24dd4a73a67d92996280" id="r_a25ce23b6491e24dd4a73a67d92996280"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25ce23b6491e24dd4a73a67d92996280">SHARK_ATTACK_RANGE</a>&#160;&#160;&#160;30</td></tr>
+<tr class="memitem:ae09100a38fd2f3c0840b55298791ee3c" id="r_ae09100a38fd2f3c0840b55298791ee3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae09100a38fd2f3c0840b55298791ee3c">BENCHMARK_ITERATIONS</a>&#160;&#160;&#160;2000</td></tr>
+<tr class="memitem:a93efd606e54bc5bfcc8fd6a0709b5487" id="r_a93efd606e54bc5bfcc8fd6a0709b5487"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93efd606e54bc5bfcc8fd6a0709b5487">NB_THREADS</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a54b402ad8894b4e8bd93b1a10ce76e70" id="r_a54b402ad8894b4e8bd93b1a10ce76e70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54b402ad8894b4e8bd93b1a10ce76e70">AUDIO_PATH</a>&#160;&#160;&#160;&quot;assets/&quot;</td></tr>
+<tr class="memitem:a3732c0f6d52bfa18916b1e1710484fb8" id="r_a3732c0f6d52bfa18916b1e1710484fb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3732c0f6d52bfa18916b1e1710484fb8">MUSIC_FILE</a>&#160;&#160;&#160;&quot;underwater-ambience&quot;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Énumérations</h2></td></tr>
-<tr class="memitem:ab2328da06fbeef24daff474b0784b49b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49b">Rules</a> { <br />
-&#160;&#160;<a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49bad495be239ba8cf4950c37d78d983d40d">Rules_Center</a> = 0
-, <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49baf62b4f85b72143ca224b048abc077e62">Rules_Alignment</a>
-, <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49bae6030015f713f47c8fca152913a74c2a">Rules_Pursuit</a>
-, <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49ba32dfded5839b8a1adc88071373632c01">Rules_zone_Front</a>
+<tr class="memitem:ab2328da06fbeef24daff474b0784b49b" id="r_ab2328da06fbeef24daff474b0784b49b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2328da06fbeef24daff474b0784b49b">Rules</a> { <br />
+&#160;&#160;<a class="el" href="#ab2328da06fbeef24daff474b0784b49bad495be239ba8cf4950c37d78d983d40d">Rules_Center</a> = 0
+, <a class="el" href="#ab2328da06fbeef24daff474b0784b49baf62b4f85b72143ca224b048abc077e62">Rules_Alignment</a>
+, <a class="el" href="#ab2328da06fbeef24daff474b0784b49bae6030015f713f47c8fca152913a74c2a">Rules_Pursuit</a>
+, <a class="el" href="#ab2328da06fbeef24daff474b0784b49ba32dfded5839b8a1adc88071373632c01">Rules_zone_Front</a>
 , <br />
-&#160;&#160;<a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49ba5e54b1ec1881526a4a32cfec18a65f71">Rules_zone_Back</a>
-, <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49ba26f87642f4ef4451e0f3d92f6bd2a0b0">Rules_zone_Left</a>
-, <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49ba22c3c0a4222f3f10b64be7f11985df5f">Rules_zone_Right</a>
-, <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4">Rules_Lenght</a>
+&#160;&#160;<a class="el" href="#ab2328da06fbeef24daff474b0784b49ba5e54b1ec1881526a4a32cfec18a65f71">Rules_zone_Back</a>
+, <a class="el" href="#ab2328da06fbeef24daff474b0784b49ba26f87642f4ef4451e0f3d92f6bd2a0b0">Rules_zone_Left</a>
+, <a class="el" href="#ab2328da06fbeef24daff474b0784b49ba22c3c0a4222f3f10b64be7f11985df5f">Rules_zone_Right</a>
+, <a class="el" href="#ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4">Rules_Lenght</a>
 <br />
  }</td></tr>
-<tr class="separator:ab2328da06fbeef24daff474b0784b49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des macros</h2>
-<a id="a450f9d8af07bfe2f313dbe3a78738a5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a450f9d8af07bfe2f313dbe3a78738a5e">&#9670;&nbsp;</a></span>ALIGNMENT</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="a450f9d8af07bfe2f313dbe3a78738a5e" name="a450f9d8af07bfe2f313dbe3a78738a5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a450f9d8af07bfe2f313dbe3a78738a5e">&#9670;&#160;</a></span>ALIGNMENT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,8 +329,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a54b402ad8894b4e8bd93b1a10ce76e70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54b402ad8894b4e8bd93b1a10ce76e70">&#9670;&nbsp;</a></span>AUDIO_PATH</h2>
+<a id="a54b402ad8894b4e8bd93b1a10ce76e70" name="a54b402ad8894b4e8bd93b1a10ce76e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b402ad8894b4e8bd93b1a10ce76e70">&#9670;&#160;</a></span>AUDIO_PATH</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,8 +343,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ae09100a38fd2f3c0840b55298791ee3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae09100a38fd2f3c0840b55298791ee3c">&#9670;&nbsp;</a></span>BENCHMARK_ITERATIONS</h2>
+<a id="ae09100a38fd2f3c0840b55298791ee3c" name="ae09100a38fd2f3c0840b55298791ee3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae09100a38fd2f3c0840b55298791ee3c">&#9670;&#160;</a></span>BENCHMARK_ITERATIONS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,8 +357,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="abe027ba6eded021d78ca1f14c57978be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe027ba6eded021d78ca1f14c57978be">&#9670;&nbsp;</a></span>COHESION</h2>
+<a id="abe027ba6eded021d78ca1f14c57978be" name="abe027ba6eded021d78ca1f14c57978be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe027ba6eded021d78ca1f14c57978be">&#9670;&#160;</a></span>COHESION</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,8 +371,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a43ec949e3ecf22fb723e94a01a285f1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43ec949e3ecf22fb723e94a01a285f1b">&#9670;&nbsp;</a></span>COLLIDER_AVOIDANCE</h2>
+<a id="a43ec949e3ecf22fb723e94a01a285f1b" name="a43ec949e3ecf22fb723e94a01a285f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ec949e3ecf22fb723e94a01a285f1b">&#9670;&#160;</a></span>COLLIDER_AVOIDANCE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,8 +385,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="acc2688401c4fdc8cf5db6b72bf33c376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc2688401c4fdc8cf5db6b72bf33c376">&#9670;&nbsp;</a></span>COLLIDER_RATIO</h2>
+<a id="acc2688401c4fdc8cf5db6b72bf33c376" name="acc2688401c4fdc8cf5db6b72bf33c376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc2688401c4fdc8cf5db6b72bf33c376">&#9670;&#160;</a></span>COLLIDER_RATIO</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,8 +401,8 @@ Macros</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa68591f978f4700669c11f9a95d514ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa68591f978f4700669c11f9a95d514ed">&#9670;&nbsp;</a></span>COLLIDERS_NB</h2>
+<a id="aa68591f978f4700669c11f9a95d514ed" name="aa68591f978f4700669c11f9a95d514ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa68591f978f4700669c11f9a95d514ed">&#9670;&#160;</a></span>COLLIDERS_NB</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,8 +415,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a42cc00b77be9be3ddf2384b12d995d52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42cc00b77be9be3ddf2384b12d995d52">&#9670;&nbsp;</a></span>FILE_LOG</h2>
+<a id="a42cc00b77be9be3ddf2384b12d995d52" name="a42cc00b77be9be3ddf2384b12d995d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42cc00b77be9be3ddf2384b12d995d52">&#9670;&#160;</a></span>FILE_LOG</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,8 +429,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="afcae824cfd797ed9f6a5162b96d899ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcae824cfd797ed9f6a5162b96d899ea">&#9670;&nbsp;</a></span>FISH_NB</h2>
+<a id="afcae824cfd797ed9f6a5162b96d899ea" name="afcae824cfd797ed9f6a5162b96d899ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcae824cfd797ed9f6a5162b96d899ea">&#9670;&#160;</a></span>FISH_NB</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,8 +443,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="afd9227723fa8369bf2b39bc29e14a295"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd9227723fa8369bf2b39bc29e14a295">&#9670;&nbsp;</a></span>FISH_SIZE</h2>
+<a id="afd9227723fa8369bf2b39bc29e14a295" name="afd9227723fa8369bf2b39bc29e14a295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9227723fa8369bf2b39bc29e14a295">&#9670;&#160;</a></span>FISH_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -382,8 +457,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="af27151f8805da0309c5077acc21584d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af27151f8805da0309c5077acc21584d9">&#9670;&nbsp;</a></span>FISH_SPEED_MAX</h2>
+<a id="af27151f8805da0309c5077acc21584d9" name="af27151f8805da0309c5077acc21584d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27151f8805da0309c5077acc21584d9">&#9670;&#160;</a></span>FISH_SPEED_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,8 +471,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a38f49b45c62bd36bdf7b90800450628e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38f49b45c62bd36bdf7b90800450628e">&#9670;&nbsp;</a></span>FISH_SPEED_MIN</h2>
+<a id="a38f49b45c62bd36bdf7b90800450628e" name="a38f49b45c62bd36bdf7b90800450628e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38f49b45c62bd36bdf7b90800450628e">&#9670;&#160;</a></span>FISH_SPEED_MIN</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,8 +485,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aed89bd71aee8be823e8a20ec4e093c1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed89bd71aee8be823e8a20ec4e093c1e">&#9670;&nbsp;</a></span>HEIGHT</h2>
+<a id="aed89bd71aee8be823e8a20ec4e093c1e" name="aed89bd71aee8be823e8a20ec4e093c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed89bd71aee8be823e8a20ec4e093c1e">&#9670;&#160;</a></span>HEIGHT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -424,8 +499,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a3732c0f6d52bfa18916b1e1710484fb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3732c0f6d52bfa18916b1e1710484fb8">&#9670;&nbsp;</a></span>MUSIC_FILE</h2>
+<a id="a3732c0f6d52bfa18916b1e1710484fb8" name="a3732c0f6d52bfa18916b1e1710484fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3732c0f6d52bfa18916b1e1710484fb8">&#9670;&#160;</a></span>MUSIC_FILE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,8 +513,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a166b570f42d4ed5720ee9a96b9281c51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a166b570f42d4ed5720ee9a96b9281c51">&#9670;&nbsp;</a></span>NB_OCCURRENCE</h2>
+<a id="a166b570f42d4ed5720ee9a96b9281c51" name="a166b570f42d4ed5720ee9a96b9281c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a166b570f42d4ed5720ee9a96b9281c51">&#9670;&#160;</a></span>NB_OCCURRENCE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -452,8 +527,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a93efd606e54bc5bfcc8fd6a0709b5487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93efd606e54bc5bfcc8fd6a0709b5487">&#9670;&nbsp;</a></span>NB_THREADS</h2>
+<a id="a93efd606e54bc5bfcc8fd6a0709b5487" name="a93efd606e54bc5bfcc8fd6a0709b5487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93efd606e54bc5bfcc8fd6a0709b5487">&#9670;&#160;</a></span>NB_THREADS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -466,8 +541,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a598a3330b3c21701223ee0ca14316eca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a598a3330b3c21701223ee0ca14316eca">&#9670;&nbsp;</a></span>PI</h2>
+<a id="a598a3330b3c21701223ee0ca14316eca" name="a598a3330b3c21701223ee0ca14316eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598a3330b3c21701223ee0ca14316eca">&#9670;&#160;</a></span>PI</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -480,8 +555,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="afc850530814f61cb7e1ba8bf4018ee1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc850530814f61cb7e1ba8bf4018ee1a">&#9670;&nbsp;</a></span>RADIUS_ALIGNEMENT</h2>
+<a id="afc850530814f61cb7e1ba8bf4018ee1a" name="afc850530814f61cb7e1ba8bf4018ee1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc850530814f61cb7e1ba8bf4018ee1a">&#9670;&#160;</a></span>RADIUS_ALIGNEMENT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,8 +569,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a120dd2cde4ff69b90c3759c95ce4885e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a120dd2cde4ff69b90c3759c95ce4885e">&#9670;&nbsp;</a></span>RADIUS_COHESION</h2>
+<a id="a120dd2cde4ff69b90c3759c95ce4885e" name="a120dd2cde4ff69b90c3759c95ce4885e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a120dd2cde4ff69b90c3759c95ce4885e">&#9670;&#160;</a></span>RADIUS_COHESION</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -508,8 +583,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a698f5b9a1d29eb6006350e9913864742"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a698f5b9a1d29eb6006350e9913864742">&#9670;&nbsp;</a></span>RADIUS_SEPARATION</h2>
+<a id="a698f5b9a1d29eb6006350e9913864742" name="a698f5b9a1d29eb6006350e9913864742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a698f5b9a1d29eb6006350e9913864742">&#9670;&#160;</a></span>RADIUS_SEPARATION</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -522,8 +597,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ab04eff6f03d026997d3a58d2df1c83fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab04eff6f03d026997d3a58d2df1c83fc">&#9670;&nbsp;</a></span>RADIUS_SHARK_VISIBILITY</h2>
+<a id="ab04eff6f03d026997d3a58d2df1c83fc" name="ab04eff6f03d026997d3a58d2df1c83fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04eff6f03d026997d3a58d2df1c83fc">&#9670;&#160;</a></span>RADIUS_SHARK_VISIBILITY</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,8 +611,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a990edf51308a42b583fde55e2b9bedb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a990edf51308a42b583fde55e2b9bedb7">&#9670;&nbsp;</a></span>RANDOM_SEED</h2>
+<a id="a990edf51308a42b583fde55e2b9bedb7" name="a990edf51308a42b583fde55e2b9bedb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990edf51308a42b583fde55e2b9bedb7">&#9670;&#160;</a></span>RANDOM_SEED</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -550,8 +625,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a6020c95148e263dc9d0002230f3db0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a6020c95148e263dc9d0002230f3db0">&#9670;&nbsp;</a></span>REPULSION_FACTOR</h2>
+<a id="a1a6020c95148e263dc9d0002230f3db0" name="a1a6020c95148e263dc9d0002230f3db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6020c95148e263dc9d0002230f3db0">&#9670;&#160;</a></span>REPULSION_FACTOR</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -564,8 +639,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a6bc337130504fe4ed34f56a2100aeac8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bc337130504fe4ed34f56a2100aeac8">&#9670;&nbsp;</a></span>REPULSION_ZONE</h2>
+<a id="a6bc337130504fe4ed34f56a2100aeac8" name="a6bc337130504fe4ed34f56a2100aeac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc337130504fe4ed34f56a2100aeac8">&#9670;&#160;</a></span>REPULSION_ZONE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -578,8 +653,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a8c5263ced87eb6e208374e32355f829f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c5263ced87eb6e208374e32355f829f">&#9670;&nbsp;</a></span>SEPARATION</h2>
+<a id="a8c5263ced87eb6e208374e32355f829f" name="a8c5263ced87eb6e208374e32355f829f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c5263ced87eb6e208374e32355f829f">&#9670;&#160;</a></span>SEPARATION</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,8 +667,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a25ce23b6491e24dd4a73a67d92996280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25ce23b6491e24dd4a73a67d92996280">&#9670;&nbsp;</a></span>SHARK_ATTACK_RANGE</h2>
+<a id="a25ce23b6491e24dd4a73a67d92996280" name="a25ce23b6491e24dd4a73a67d92996280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ce23b6491e24dd4a73a67d92996280">&#9670;&#160;</a></span>SHARK_ATTACK_RANGE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -606,8 +681,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aebac0cce1beec6a8f21df4e8cf0a1299"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebac0cce1beec6a8f21df4e8cf0a1299">&#9670;&nbsp;</a></span>SHARK_AVOIDANCE</h2>
+<a id="aebac0cce1beec6a8f21df4e8cf0a1299" name="aebac0cce1beec6a8f21df4e8cf0a1299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebac0cce1beec6a8f21df4e8cf0a1299">&#9670;&#160;</a></span>SHARK_AVOIDANCE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -620,8 +695,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aa9a1616dddcba10b8d0429387c4437b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9a1616dddcba10b8d0429387c4437b7">&#9670;&nbsp;</a></span>SHARK_SIZE</h2>
+<a id="aa9a1616dddcba10b8d0429387c4437b7" name="aa9a1616dddcba10b8d0429387c4437b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a1616dddcba10b8d0429387c4437b7">&#9670;&#160;</a></span>SHARK_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -634,8 +709,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a80d09743ebda6527b52198419e31acdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80d09743ebda6527b52198419e31acdc">&#9670;&nbsp;</a></span>SHARK_SPEED_MAX</h2>
+<a id="a80d09743ebda6527b52198419e31acdc" name="a80d09743ebda6527b52198419e31acdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d09743ebda6527b52198419e31acdc">&#9670;&#160;</a></span>SHARK_SPEED_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -648,8 +723,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ac1569580be798ed452dc6b8f4906b985"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1569580be798ed452dc6b8f4906b985">&#9670;&nbsp;</a></span>SHARK_VISION_RANGE</h2>
+<a id="ac1569580be798ed452dc6b8f4906b985" name="ac1569580be798ed452dc6b8f4906b985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1569580be798ed452dc6b8f4906b985">&#9670;&#160;</a></span>SHARK_VISION_RANGE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -662,8 +737,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a650280af3561ec9a747bb9a8c532a70c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a650280af3561ec9a747bb9a8c532a70c">&#9670;&nbsp;</a></span>STEP_LOG</h2>
+<a id="a650280af3561ec9a747bb9a8c532a70c" name="a650280af3561ec9a747bb9a8c532a70c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a650280af3561ec9a747bb9a8c532a70c">&#9670;&#160;</a></span>STEP_LOG</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,8 +751,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ae06773cbea10b16b13d7c1ce80225d31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae06773cbea10b16b13d7c1ce80225d31">&#9670;&nbsp;</a></span>THETA_FILE</h2>
+<a id="ae06773cbea10b16b13d7c1ce80225d31" name="ae06773cbea10b16b13d7c1ce80225d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06773cbea10b16b13d7c1ce80225d31">&#9670;&#160;</a></span>THETA_FILE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,22 +765,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ad93407dc809aa13788d436389dbf3818"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad93407dc809aa13788d436389dbf3818">&#9670;&nbsp;</a></span>TRAJECTORY_CAPACITY</h2>
+<a id="ad93407dc809aa13788d436389dbf3818" name="ad93407dc809aa13788d436389dbf3818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93407dc809aa13788d436389dbf3818">&#9670;&#160;</a></span>TRAJECTORY_CAPACITY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TRAJECTORY_CAPACITY&#160;&#160;&#160;<a class="el" href="config_8h.html#a166b570f42d4ed5720ee9a96b9281c51">NB_OCCURRENCE</a></td>
+          <td class="memname">#define TRAJECTORY_CAPACITY&#160;&#160;&#160;<a class="el" href="#a166b570f42d4ed5720ee9a96b9281c51">NB_OCCURRENCE</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ab2ab4d47bb2f38dfb537e3f52152c0ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2ab4d47bb2f38dfb537e3f52152c0ec">&#9670;&nbsp;</a></span>TRAJECTORY_LENGHT_ALLOC</h2>
+<a id="ab2ab4d47bb2f38dfb537e3f52152c0ec" name="ab2ab4d47bb2f38dfb537e3f52152c0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ab4d47bb2f38dfb537e3f52152c0ec">&#9670;&#160;</a></span>TRAJECTORY_LENGHT_ALLOC</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -718,8 +793,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="afa9188776d909e94ead6cf6ffbbdd1e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa9188776d909e94ead6cf6ffbbdd1e8">&#9670;&nbsp;</a></span>TURN_SPEED</h2>
+<a id="afa9188776d909e94ead6cf6ffbbdd1e8" name="afa9188776d909e94ead6cf6ffbbdd1e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9188776d909e94ead6cf6ffbbdd1e8">&#9670;&#160;</a></span>TURN_SPEED</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -732,22 +807,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b1a6282f79ca4752cc7118580e4004d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b1a6282f79ca4752cc7118580e4004d">&#9670;&nbsp;</a></span>VISION_ANGLE</h2>
+<a id="a8b1a6282f79ca4752cc7118580e4004d" name="a8b1a6282f79ca4752cc7118580e4004d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b1a6282f79ca4752cc7118580e4004d">&#9670;&#160;</a></span>VISION_ANGLE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define VISION_ANGLE&#160;&#160;&#160;(<a class="el" href="config_8h.html#a598a3330b3c21701223ee0ca14316eca">PI</a> * 0.25<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a>)</td>
+          <td class="memname">#define VISION_ANGLE&#160;&#160;&#160;(<a class="el" href="#a598a3330b3c21701223ee0ca14316eca">PI</a> * 0.25<a class="el" href="unity_8c.html#af900396d7b72ff2a7002e8befe8cf8f1">f</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a241aeeb764887ae5e3de58b98f04b16d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a241aeeb764887ae5e3de58b98f04b16d">&#9670;&nbsp;</a></span>WIDTH</h2>
+<a id="a241aeeb764887ae5e3de58b98f04b16d" name="a241aeeb764887ae5e3de58b98f04b16d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241aeeb764887ae5e3de58b98f04b16d">&#9670;&#160;</a></span>WIDTH</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -760,38 +835,46 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Documentation du type de l'énumération</h2>
-<a id="ab2328da06fbeef24daff474b0784b49b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2328da06fbeef24daff474b0784b49b">&#9670;&nbsp;</a></span>Rules</h2>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ab2328da06fbeef24daff474b0784b49b" name="ab2328da06fbeef24daff474b0784b49b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2328da06fbeef24daff474b0784b49b">&#9670;&#160;</a></span>Rules</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="config_8h.html#ab2328da06fbeef24daff474b0784b49b">Rules</a></td>
+          <td class="memname">enum <a class="el" href="#ab2328da06fbeef24daff474b0784b49b">Rules</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49bad495be239ba8cf4950c37d78d983d40d"></a>Rules_Center&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49baf62b4f85b72143ca224b048abc077e62"></a>Rules_Alignment&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49bae6030015f713f47c8fca152913a74c2a"></a>Rules_Pursuit&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba32dfded5839b8a1adc88071373632c01"></a>Rules_zone_Front&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba5e54b1ec1881526a4a32cfec18a65f71"></a>Rules_zone_Back&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba26f87642f4ef4451e0f3d92f6bd2a0b0"></a>Rules_zone_Left&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba22c3c0a4222f3f10b64be7f11985df5f"></a>Rules_zone_Right&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4"></a>Rules_Lenght&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49bad495be239ba8cf4950c37d78d983d40d" name="ab2328da06fbeef24daff474b0784b49bad495be239ba8cf4950c37d78d983d40d"></a>Rules_Center&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49baf62b4f85b72143ca224b048abc077e62" name="ab2328da06fbeef24daff474b0784b49baf62b4f85b72143ca224b048abc077e62"></a>Rules_Alignment&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49bae6030015f713f47c8fca152913a74c2a" name="ab2328da06fbeef24daff474b0784b49bae6030015f713f47c8fca152913a74c2a"></a>Rules_Pursuit&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba32dfded5839b8a1adc88071373632c01" name="ab2328da06fbeef24daff474b0784b49ba32dfded5839b8a1adc88071373632c01"></a>Rules_zone_Front&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba5e54b1ec1881526a4a32cfec18a65f71" name="ab2328da06fbeef24daff474b0784b49ba5e54b1ec1881526a4a32cfec18a65f71"></a>Rules_zone_Back&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba26f87642f4ef4451e0f3d92f6bd2a0b0" name="ab2328da06fbeef24daff474b0784b49ba26f87642f4ef4451e0f3d92f6bd2a0b0"></a>Rules_zone_Left&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49ba22c3c0a4222f3f10b64be7f11985df5f" name="ab2328da06fbeef24daff474b0784b49ba22c3c0a4222f3f10b64be7f11985df5f"></a>Rules_zone_Right&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4" name="ab2328da06fbeef24daff474b0784b49bac7df43eaf62668de8c3a8e0a33ffe8c4"></a>Rules_Lenght&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="config_8h.html">config.h</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="config_8h.html">config.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

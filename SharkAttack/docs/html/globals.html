@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Variables globale</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('globals.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('globals.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,68 +76,42 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
 <div class="textblock">Liste de toutes les fonctions, variables, macros, enumérations, et définitions de type avec des liens vers les fichiers auxquels ils appartiennent :</div>
 
-<h3><a id="index_a"></a>- a -</h3><ul>
-<li>Add_step()
-: <a class="el" href="reinforce_8c.html#a2974bf1a3c1d9b4c8da4b30488713c28">reinforce.c</a>
-, <a class="el" href="reinforce_8h.html#a2974bf1a3c1d9b4c8da4b30488713c28">reinforce.h</a>
-</li>
-<li>ALIGNMENT
-: <a class="el" href="config_8h.html#a450f9d8af07bfe2f313dbe3a78738a5e">config.h</a>
-</li>
-<li>ASSERT_FLOAT
-: <a class="el" href="test__util_8c.html#a9a821f617dd961bac1f511761da716ca">test_util.c</a>
-, <a class="el" href="test__vector_8c.html#a9a821f617dd961bac1f511761da716ca">test_vector.c</a>
-</li>
-<li>audio_init()
-: <a class="el" href="sound_8h.html#af665563ea996052bcc9e33846f40c262">sound.h</a>
-, <a class="el" href="sound_8c.html#a65b1bd328bdc1a8114bb194174d34b4e">sound.c</a>
-</li>
-<li>audio_load()
-: <a class="el" href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741">sound.h</a>
-, <a class="el" href="sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741">sound.c</a>
-</li>
-<li>audio_load_music()
-: <a class="el" href="sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6">sound.h</a>
-, <a class="el" href="sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6">sound.c</a>
-</li>
-<li>AUDIO_PATH
-: <a class="el" href="config_8h.html#a54b402ad8894b4e8bd93b1a10ce76e70">config.h</a>
-</li>
-<li>audio_play()
-: <a class="el" href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce">sound.h</a>
-, <a class="el" href="sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce">sound.c</a>
-</li>
-<li>audio_play_music()
-: <a class="el" href="sound_8h.html#a0ae4894679404c800f33fd586dce6e5c">sound.h</a>
-, <a class="el" href="sound_8c.html#a0ae4894679404c800f33fd586dce6e5c">sound.c</a>
-</li>
-<li>audio_quit()
-: <a class="el" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b">sound.h</a>
-, <a class="el" href="sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b">sound.c</a>
-</li>
-<li>audio_stop_music()
-: <a class="el" href="sound_8h.html#abc3fa016fdf8424cef864189710adfb8">sound.h</a>
-, <a class="el" href="sound_8c.html#abc3fa016fdf8424cef864189710adfb8">sound.c</a>
-</li>
-<li>audio_toggle_mute()
-: <a class="el" href="sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952">sound.h</a>
-, <a class="el" href="sound_8c.html#afde50e965f66f3fdcdc9c3298bfa0952">sound.c</a>
-</li>
+<h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>Add_step()&#160;:&#160;<a class="el" href="reinforce_8h.html#a2974bf1a3c1d9b4c8da4b30488713c28">reinforce.h</a>, <a class="el" href="reinforce_8c.html#a2974bf1a3c1d9b4c8da4b30488713c28">reinforce.c</a></li>
+<li>ALIGNMENT&#160;:&#160;<a class="el" href="config_8h.html#a450f9d8af07bfe2f313dbe3a78738a5e">config.h</a></li>
+<li>ASSERT_FLOAT&#160;:&#160;<a class="el" href="test__util_8c.html#a9a821f617dd961bac1f511761da716ca">test_util.c</a>, <a class="el" href="test__vector_8c.html#a9a821f617dd961bac1f511761da716ca">test_vector.c</a></li>
+<li>audio_init()&#160;:&#160;<a class="el" href="sound_8h.html#a3d8194de9b8feb0047a4658122faaa82">sound.h</a>, <a class="el" href="sound_8c.html#a256ad04f93013a05fb111acb7bcef693">sound.c</a></li>
+<li>audio_load()&#160;:&#160;<a class="el" href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741">sound.h</a>, <a class="el" href="sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741">sound.c</a></li>
+<li>audio_load_music()&#160;:&#160;<a class="el" href="sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6">sound.h</a>, <a class="el" href="sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6">sound.c</a></li>
+<li>AUDIO_PATH&#160;:&#160;<a class="el" href="config_8h.html#a54b402ad8894b4e8bd93b1a10ce76e70">config.h</a></li>
+<li>audio_play()&#160;:&#160;<a class="el" href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce">sound.h</a>, <a class="el" href="sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce">sound.c</a></li>
+<li>audio_play_music()&#160;:&#160;<a class="el" href="sound_8h.html#a0ae4894679404c800f33fd586dce6e5c">sound.h</a>, <a class="el" href="sound_8c.html#a0ae4894679404c800f33fd586dce6e5c">sound.c</a></li>
+<li>audio_quit()&#160;:&#160;<a class="el" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b">sound.h</a>, <a class="el" href="sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b">sound.c</a></li>
+<li>audio_stop_music()&#160;:&#160;<a class="el" href="sound_8h.html#abc3fa016fdf8424cef864189710adfb8">sound.h</a>, <a class="el" href="sound_8c.html#abc3fa016fdf8424cef864189710adfb8">sound.c</a></li>
+<li>audio_toggle_mute()&#160;:&#160;<a class="el" href="sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952">sound.h</a>, <a class="el" href="sound_8c.html#afde50e965f66f3fdcdc9c3298bfa0952">sound.c</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

@@ -1,14 +1,11 @@
 var searchData=
 [
-  ['learn_155',['learn',['../structWorld.html#a1950b6870474e81a1906aa4c82ed5e70',1,'World']]],
-  ['left_156',['Left',['../shark__controller_8h.html#a1f861254cb2999780a88b33c853d68d2a9d4d8b0b72fc2659da772d761a3c5ecb',1,'shark_controller.h']]],
-  ['left_5fscene_157',['left_scene',['../structSDLDisplay.html#a101d3c7f6e564fe0114897f2cbfd987c',1,'SDLDisplay']]],
-  ['lenght_5falloc_158',['lenght_alloc',['../structTrajectory.html#a5653ca88dd31644291e1f2a5613c47cb',1,'Trajectory']]],
-  ['length_159',['length',['../structTrajectory.html#a9f59b34b1f25fe00023291b678246bcc',1,'Trajectory']]],
-  ['load_5fgain_5fparams_160',['load_gain_params',['../input__output_8c.html#a9c1e840666904a2db1e0f4b18e2ee5c3',1,'input_output.c']]],
-  ['load_5fmute_5ficons_161',['Load_mute_icons',['../render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724',1,'Load_mute_icons(SDLDisplay *display, const char *path):&#160;render_sdl.c'],['../render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724',1,'Load_mute_icons(SDLDisplay *display, const char *path):&#160;render_sdl.c']]],
-  ['load_5fparams_162',['load_params',['../input__output_8h.html#aaaa874a59e88f0ba078ebeef13f55e4a',1,'load_params(VectorRule *theta, Hyperparameters *hyperparams, char *filename):&#160;input_output.c'],['../input__output_8c.html#aaaa874a59e88f0ba078ebeef13f55e4a',1,'load_params(VectorRule *theta, Hyperparameters *hyperparams, char *filename):&#160;input_output.c']]],
-  ['load_5ftheta_163',['load_theta',['../input__output_8h.html#a7d7001b254e2ea098325767fd484cf26',1,'load_theta(VectorRule *theta, char *filename):&#160;input_output.c'],['../input__output_8c.html#a7d7001b254e2ea098325767fd484cf26',1,'load_theta(VectorRule *theta, char *filename):&#160;input_output.c']]],
-  ['local_5fnormalize_164',['Local_normalize',['../vector_8h.html#a2e464905dfe98674f7122719e724b339',1,'Local_normalize(Vector v):&#160;vector.c'],['../vector_8c.html#a2e464905dfe98674f7122719e724b339',1,'Local_normalize(Vector v):&#160;vector.c']]],
-  ['logs_5fgeneration_165',['logs_generation',['../input__output_8h.html#af0817f7b7511739d9ad418deb72dda5e',1,'logs_generation(VectorRule *theta, int gen_number, float avg_reward, float avg_gain, float avg_iteration, VectorRule theta_diff_STEP_LOG, VectorRule theta_diff_1_step, char *filename):&#160;input_output.c'],['../input__output_8c.html#af0817f7b7511739d9ad418deb72dda5e',1,'logs_generation(VectorRule *theta, int gen_number, float avg_reward, float avg_gain, float avg_iteration, VectorRule theta_diff_STEP_LOG, VectorRule theta_diff_1_step, char *filename):&#160;input_output.c']]]
+  ['handle_5fshark_5feat_0',['handle_shark_eat',['../mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16',1,'mj.c']]],
+  ['handle_5fsigint_1',['handle_sigint',['../main_8c.html#a8bfc90b3fb9344e9caafec953baacc0b',1,'main.c']]],
+  ['has_5fprey_2',['has_prey',['../structSharkPerception.html#a482d6d423e4df4b45e2b3642f3cd8c78',1,'SharkPerception']]],
+  ['has_5fprey_5fvisible_3',['has_prey_visible',['../structSharkPerception.html#a3abecbd5498ece03afbb9c4a9e41876e',1,'SharkPerception']]],
+  ['height_4',['HEIGHT',['../config_8h.html#aed89bd71aee8be823e8a20ec4e093c1e',1,'config.h']]],
+  ['height_5',['height',['../structFishPerception.html#ad12fc34ce789bce6c8a05d8a17138534',1,'FishPerception::height'],['../structSharkPerception.html#ad12fc34ce789bce6c8a05d8a17138534',1,'SharkPerception::height'],['../structWorld.html#ad12fc34ce789bce6c8a05d8a17138534',1,'World::height']]],
+  ['hyperparameters_6',['Hyperparameters',['../structHyperparameters.html',1,'']]],
+  ['hyperparameters_7',['hyperparameters',['../structWorkerArgs.html#a186213f10a839c36caca6a1fd767a38d',1,'WorkerArgs']]]
 ];

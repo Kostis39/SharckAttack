@@ -7,7 +7,7 @@ var reinforce_8h =
     [ "Step_update", "reinforce_8h.html#a265c50331fb40f5c9a244b724f1fec6b", null ],
     [ "StepTrajectory_print", "reinforce_8h.html#a3f90fbeabd71aaeb39384f5cbc96b56f", null ],
     [ "Trajectory_destroy", "reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1", null ],
-    [ "Trajectory_init", "reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50", null ],
+    [ "Trajectory_init", "reinforce_8h.html#ac88234cf163795a0145a71388782afa8", null ],
     [ "Trajectory_print", "reinforce_8h.html#a6e6d0061194a9eb0cbf39fb6d2900eba", null ],
-    [ "Trajectory_worker", "reinforce_8h.html#a7e00a068b856fbc2d16c8367be616b3b", null ]
+    [ "Trajectory_worker", "reinforce_8h.html#ad71458e62f16e2659a3297d66205ffd1", null ]
 ];

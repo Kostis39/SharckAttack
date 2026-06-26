@@ -1,7 +1,11 @@
 <map id="Trajectory" name="Trajectory">
-<area shape="rect" id="node1" title=" " alt="" coords="36,288,123,315"/>
-<area shape="rect" id="node2" href="$structStepTrajectory.html" title=" " alt="" coords="22,199,137,225"/>
-<area shape="rect" id="node3" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="5,109,68,136"/>
-<area shape="rect" id="node4" href="$structSharkPhi.html" title=" " alt="" coords="92,109,171,136"/>
-<area shape="rect" id="node5" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="85,5,177,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="56,330,142,357"/>
+<area shape="rect" id="Node000002" href="$structStepTrajectory.html" title=" " alt="" coords="42,229,156,257"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,271,102,330,96,328,97,274"/>
+<area shape="rect" id="Node000003" href="$structSharkPhi.html" title=" " alt="" coords="12,128,90,156"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,167,95,228,90,229,63,173"/>
+<area shape="rect" id="Node000004" href="$structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="51,46,54,128,48,128,51,51"/>
+<area shape="rect" id="Node000005" href="$structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="114,128,177,156"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="135,168,108,230,103,227,132,172"/>
 </map>

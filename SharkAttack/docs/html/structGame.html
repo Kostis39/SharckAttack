@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence de la structure Game</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('structGame.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('structGame.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,64 +76,78 @@ $(document).ready(function(){initNavTree('structGame.html',''); initResizable();
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Champs de données</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence de la structure Game</div>  </div>
+  <div class="headertitle"><div class="title">Référence de la structure Game</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Structure représentant l'état du jeu.  
- <a href="structGame.html#details">Plus de détails...</a></p>
+ <a href="#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="game_8h_source.html">game.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe de collaboration de Game:</div>
 <div class="dyncontent">
-<div class="center"><img src="structGame__coll__graph.png" border="0" usemap="#aGame_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="structGame__coll__graph.png" border="0" usemap="#aGame_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aGame_coll__map" id="aGame_coll__map">
-<area shape="rect" title="Structure représentant l&#39;état du jeu." alt="" coords="209,508,270,535"/>
-<area shape="rect" href="structAudioManager.html" title=" " alt="" coords="51,404,167,431"/>
-<area shape="rect" href="structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="191,404,287,431"/>
-<area shape="rect" href="structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="311,404,370,431"/>
-<area shape="rect" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="5,5,97,32"/>
-<area shape="rect" href="structSharkPhi.html" title=" " alt="" coords="76,109,155,136"/>
-<area shape="rect" href="structCollider.html" title=" " alt="" coords="251,264,323,291"/>
-<area shape="rect" href="structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="319,109,381,136"/>
-<area shape="rect" href="structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="375,264,434,291"/>
-<area shape="rect" href="structStepTrajectory.html" title=" " alt="" coords="135,213,250,240"/>
-<area shape="rect" href="structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="467,213,515,240"/>
-<area shape="rect" href="structTrajectory.html" title=" " alt="" coords="151,315,237,341"/>
-<area shape="rect" href="structRulesSetFish.html" title=" " alt="" coords="552,315,657,341"/>
+<area shape="rect" title="Structure représentant l&#39;état du jeu." alt="" coords="386,578,446,606"/>
+<area shape="rect" href="structWorld.html" title="Structure représentant le monde du jeu, contenant les poissons et le requin." alt="" coords="285,455,344,483"/>
+<area shape="poly" title=" " alt="" coords="325,495,341,525,360,552,392,578,386,577,356,556,336,527,323,499"/>
+<area shape="rect" href="structFish.html" title="Structure représentant un poisson dans le jeu." alt="" coords="139,303,186,331"/>
+<area shape="poly" title=" " alt="" coords="179,341,210,381,255,421,298,454,292,455,252,426,206,384,178,346"/>
+<area shape="rect" href="structVector.html" title="Structure représentant un vecteur 2D." alt="" coords="180,128,243,156"/>
+<area shape="poly" title=" " alt="" coords="172,168,165,181,155,213,153,247,161,303,156,302,148,247,150,212,160,179,175,163"/>
+<area shape="rect" href="structShark.html" title="Structure représentant le requin dans le jeu." alt="" coords="226,303,285,331"/>
+<area shape="poly" title=" " alt="" coords="224,168,230,179,247,248,257,303,251,302,242,249,225,181,224,173"/>
+<area shape="rect" href="structCollider.html" title=" " alt="" coords="5,251,77,279"/>
+<area shape="poly" title=" " alt="" coords="164,149,91,160,59,170,40,182,32,198,31,216,38,251,33,251,26,216,27,196,36,178,57,165,90,155,167,145"/>
+<area shape="rect" href="structStepTrajectory.html" title=" " alt="" coords="410,251,525,279"/>
+<area shape="poly" title=" " alt="" coords="257,154,323,178,394,214,451,250,446,251,391,219,321,182,259,159"/>
+<area shape="poly" title=" " alt="" coords="259,344,269,381,288,422,308,456,303,455,283,424,264,383,257,349"/>
+<area shape="poly" title=" " alt="" coords="53,290,82,337,99,360,120,380,161,409,206,431,287,460,282,462,204,436,158,413,116,384,95,363,77,340,53,296"/>
+<area shape="rect" href="structRulesSetFish.html" title=" " alt="" coords="322,355,426,382"/>
+<area shape="poly" title=" " alt="" coords="361,394,324,457,320,453,356,397"/>
+<area shape="rect" href="structVectorRule.html" title="Structure représentant un vecteur de poids pour les règles de comportement. La taille du tableau est ..." alt="" coords="482,5,573,33"/>
+<area shape="poly" title=" " alt="" coords="544,44,566,89,573,115,576,141,576,370,574,391,567,407,555,421,537,434,513,447,491,454,450,456,408,453,356,458,345,461,343,456,355,453,408,448,450,451,490,449,511,442,534,429,551,417,562,405,568,390,570,370,570,141,568,116,561,91,543,49"/>
+<area shape="rect" href="structSharkPhi.html" title=" " alt="" coords="443,128,522,156"/>
+<area shape="poly" title=" " alt="" coords="519,45,490,129,485,126,516,50"/>
+<area shape="rect" href="structTrajectory.html" title=" " alt="" coords="450,355,536,382"/>
+<area shape="poly" title=" " alt="" coords="475,393,454,416,430,434,345,461,343,456,428,429,451,412,470,396"/>
+<area shape="poly" title=" " alt="" coords="476,292,492,355,487,353,473,297"/>
+<area shape="poly" title=" " alt="" coords="480,169,472,252,467,250,478,174"/>
+<area shape="rect" href="structSDLDisplay.html" title="Structure représentant l&#39;affichage SDL du jeu." alt="" coords="368,455,463,483"/>
+<area shape="poly" title=" " alt="" coords="418,497,418,579,413,576,414,500"/>
+<area shape="rect" href="structAudioManager.html" title=" " alt="" coords="487,455,603,483"/>
+<area shape="poly" title=" " alt="" coords="530,495,506,527,477,556,442,580,440,576,474,552,502,523,525,497"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Champs de données</h2></td></tr>
-<tr class="memitem:a9356081f31a4ee349731e9aa71c3fcbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWorld.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html#a9356081f31a4ee349731e9aa71c3fcbb">world1</a></td></tr>
-<tr class="separator:a9356081f31a4ee349731e9aa71c3fcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa46baab99b7d7a6a81774c5a0cef3226"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWorld.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html#aa46baab99b7d7a6a81774c5a0cef3226">world2</a></td></tr>
-<tr class="separator:aa46baab99b7d7a6a81774c5a0cef3226"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f0264846ef14870ec9db6f47bee43e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSDLDisplay.html">SDLDisplay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html#aa0f0264846ef14870ec9db6f47bee43e">display</a></td></tr>
-<tr class="separator:aa0f0264846ef14870ec9db6f47bee43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4833241cc52576a5f9bdebe9b043c47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html#aa4833241cc52576a5f9bdebe9b043c47">audio</a></td></tr>
-<tr class="separator:aa4833241cc52576a5f9bdebe9b043c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b8dfe2335a5bf90695960dc6a1c5d3b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html#a8b8dfe2335a5bf90695960dc6a1c5d3b">time</a></td></tr>
-<tr class="separator:a8b8dfe2335a5bf90695960dc6a1c5d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1656129c4a4fd8809254194f08f0ac70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html#a1656129c4a4fd8809254194f08f0ac70">paused</a></td></tr>
-<tr class="separator:a1656129c4a4fd8809254194f08f0ac70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9356081f31a4ee349731e9aa71c3fcbb" id="r_a9356081f31a4ee349731e9aa71c3fcbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWorld.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9356081f31a4ee349731e9aa71c3fcbb">world1</a></td></tr>
+<tr class="memitem:aa46baab99b7d7a6a81774c5a0cef3226" id="r_aa46baab99b7d7a6a81774c5a0cef3226"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWorld.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa46baab99b7d7a6a81774c5a0cef3226">world2</a></td></tr>
+<tr class="memitem:aa0f0264846ef14870ec9db6f47bee43e" id="r_aa0f0264846ef14870ec9db6f47bee43e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSDLDisplay.html">SDLDisplay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0f0264846ef14870ec9db6f47bee43e">display</a></td></tr>
+<tr class="memitem:aa4833241cc52576a5f9bdebe9b043c47" id="r_aa4833241cc52576a5f9bdebe9b043c47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4833241cc52576a5f9bdebe9b043c47">audio</a></td></tr>
+<tr class="memitem:a8b8dfe2335a5bf90695960dc6a1c5d3b" id="r_a8b8dfe2335a5bf90695960dc6a1c5d3b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b8dfe2335a5bf90695960dc6a1c5d3b">time</a></td></tr>
+<tr class="memitem:a1656129c4a4fd8809254194f08f0ac70" id="r_a1656129c4a4fd8809254194f08f0ac70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1656129c4a4fd8809254194f08f0ac70">paused</a></td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Structure représentant l'état du jeu. </p>
-</div><h2 class="groupheader">Documentation des champs</h2>
-<a id="aa4833241cc52576a5f9bdebe9b043c47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4833241cc52576a5f9bdebe9b043c47">&#9670;&nbsp;</a></span>audio</h2>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
+<a id="aa4833241cc52576a5f9bdebe9b043c47" name="aa4833241cc52576a5f9bdebe9b043c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4833241cc52576a5f9bdebe9b043c47">&#9670;&#160;</a></span>audio</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,8 +161,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="aa0f0264846ef14870ec9db6f47bee43e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0f0264846ef14870ec9db6f47bee43e">&#9670;&nbsp;</a></span>display</h2>
+<a id="aa0f0264846ef14870ec9db6f47bee43e" name="aa0f0264846ef14870ec9db6f47bee43e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f0264846ef14870ec9db6f47bee43e">&#9670;&#160;</a></span>display</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,8 +176,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="a1656129c4a4fd8809254194f08f0ac70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1656129c4a4fd8809254194f08f0ac70">&#9670;&nbsp;</a></span>paused</h2>
+<a id="a1656129c4a4fd8809254194f08f0ac70" name="a1656129c4a4fd8809254194f08f0ac70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1656129c4a4fd8809254194f08f0ac70">&#9670;&#160;</a></span>paused</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,8 +191,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b8dfe2335a5bf90695960dc6a1c5d3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b8dfe2335a5bf90695960dc6a1c5d3b">&#9670;&nbsp;</a></span>time</h2>
+<a id="a8b8dfe2335a5bf90695960dc6a1c5d3b" name="a8b8dfe2335a5bf90695960dc6a1c5d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b8dfe2335a5bf90695960dc6a1c5d3b">&#9670;&#160;</a></span>time</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,8 +205,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="a9356081f31a4ee349731e9aa71c3fcbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9356081f31a4ee349731e9aa71c3fcbb">&#9670;&nbsp;</a></span>world1</h2>
+<a id="a9356081f31a4ee349731e9aa71c3fcbb" name="a9356081f31a4ee349731e9aa71c3fcbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9356081f31a4ee349731e9aa71c3fcbb">&#9670;&#160;</a></span>world1</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,8 +220,8 @@ Champs de données</h2></td></tr>
 
 </div>
 </div>
-<a id="aa46baab99b7d7a6a81774c5a0cef3226"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa46baab99b7d7a6a81774c5a0cef3226">&#9670;&nbsp;</a></span>world2</h2>
+<a id="aa46baab99b7d7a6a81774c5a0cef3226" name="aa46baab99b7d7a6a81774c5a0cef3226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa46baab99b7d7a6a81774c5a0cef3226">&#9670;&#160;</a></span>world2</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,11 +239,19 @@ Champs de données</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structGame.html">Game</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="structGame.html">Game</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

@@ -1,6 +1,9 @@
 <map id="test_random_float_produces_varied_values" name="test_random_float_produces_varied_values">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,212,65"/>
-<area shape="rect" id="node2" href="$utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="273,5,355,32"/>
-<area shape="rect" id="node3" href="$utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="260,56,368,83"/>
-<area shape="rect" id="node4" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="416,56,496,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,24,211,68"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="272,5,352,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,30,260,26,254,27,211,35"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="259,57,366,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,56,246,63,241,63,211,61"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="414,57,493,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,69,401,71,395,71,367,74"/>
 </map>
