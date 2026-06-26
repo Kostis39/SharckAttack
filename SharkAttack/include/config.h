@@ -11,6 +11,7 @@ enum Rules {
     Rules_zone_Back,
     Rules_zone_Left,
     Rules_zone_Right,
+    Rules_closest_shark,
     Rules_Lenght
 };
 
