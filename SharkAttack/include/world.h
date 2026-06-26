@@ -23,7 +23,8 @@ typedef struct {
     Fish *fishes; /**< Tableau dynamique de poissons présents dans le monde. */
     int nb_fish;  /**< Nombre de poissons présents dans le monde. */
 
-    Shark *shark;        /**< Pointeur vers le requin présent dans le monde. */
+    Shark **sharks;      // Tableau de pointeurs vers les requins
+    int nb_sharks;       // Nombre de requins
     Collider *colliders; /**< Tableau dynamiques d'objet de collision présent
                             dans le monde. */
     int nb_colliders;    /**< Le nombre de colliders dans notre monde. */
