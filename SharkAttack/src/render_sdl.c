@@ -739,21 +739,21 @@ void Draw_world(SDLDisplay *display, World *world) {
     /*
     * Dessin de tous les requins du monde.
     */
-   if(world->sharks != NULL) {
-    for (int i = 0; i < world->nb_sharks; i++) {
-        Draw_shark(display, world->sharks[i]);
-    }
-
-    /*
-    * Mode debug pour tous les requins.
-    */
-    if (g_debug_view) {
+    if (world->sharks != NULL) {
         for (int i = 0; i < world->nb_sharks; i++) {
-            Draw_debug_view(display, world->fishes, world->nb_fish,
-                            world->sharks[i], world->colliders,
-                            world->nb_colliders);
+            Draw_shark(display, world->sharks[i]);
         }
-    }  
+
+        /*
+        * Mode debug pour tous les requins.
+        */
+        if (g_debug_view) {
+            for (int i = 0; i < world->nb_sharks; i++) {
+                Draw_debug_view(display, world->fishes, world->nb_fish,
+                                world->sharks[i], world->colliders,
+                                world->nb_colliders);
+        }
+    }
 }
     Draw_score(display);
 }
@@ -1055,11 +1055,11 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         Shark *left_shark = NULL;
         Shark *right_shark = NULL;
 
-        if (left_world->nb_sharks > 0)
-            left_shark = left_world->sharks[0];
+    if (left_world->sharks != NULL && left_world->nb_sharks > 0)
+        left_shark = left_world->sharks[0];
 
-        if (right_world->nb_sharks > 0)
-            right_shark = right_world->sharks[0];
+    if (right_world->sharks != NULL && right_world->nb_sharks > 0)
+        right_shark = right_world->sharks[0]; 
 
         Draw_intro_countdown(r, left_screen, right_screen, number,
                             left_shark, right_shark);
