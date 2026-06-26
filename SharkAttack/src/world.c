@@ -57,6 +57,13 @@ bool World_create_tmp(const World *world, World *tmp_world) {
     tmp_world->fish_eaten = world->fish_eaten;
     tmp_world->trajectory = world->trajectory;
 
+    tmp_world->nb_sharks = world->nb_sharks;
+    tmp_world->sharks = calloc(world->nb_sharks, sizeof(Shark *));
+    if (!tmp_world->sharks) {
+        fprintf(stderr, "World_create_temp: échec d'allocation des poissons\n");
+        return false;
+    }
+
     tmp_world->fishes = calloc(tmp_world->nb_fish, sizeof(Fish));
     if (!tmp_world->fishes) {
         fprintf(stderr, "World_create_temp: échec d'allocation des poissons\n");

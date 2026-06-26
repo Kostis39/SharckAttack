@@ -333,7 +333,9 @@ void UpdateWorld(World *world, World *tmp_world) {
     FishPerception_destroy(perception);
 
     // Copie de l'état actuel
-    *tmp_world->sharks = *world->sharks;
+    for (int s = 0; s < world->nb_sharks; s++) {
+        *tmp_world->sharks[s] = *world->sharks[s];
+    }
     int nb_fish_ate = 0;
 
     SharkPerception *shark_perception = malloc(sizeof(SharkPerception));
@@ -357,7 +359,6 @@ void UpdateWorld(World *world, World *tmp_world) {
         }
         Shark_apply_action(tmp_world->sharks[s], shark_action, world->width,
                            world->height);
-        printf("a\n");
 
         nb_fish_ate += handle_shark_eat(tmp_world, s);
 
