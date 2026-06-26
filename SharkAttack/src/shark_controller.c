@@ -78,69 +78,87 @@ Vector Rules_pursuit(Shark shark, Vector fish_pos, bool has_prey, int width,
 }
 
 /**
- * @brief vecteur directionnel pondéré pour la zone devant le requin
+ * @brief vecteur directionnel vers le centre de masse des poissons dans la zone
+ * avant
  * @param shark structure du requin
  * @param perception perception du requin
- * @return vecteur dans la direction devant le requin, pondéré par le ratio de
- * poissons dans la zone
+ * @return vecteur vers le centre de la zone avant, pondéré par le ratio de
+ * poissons
  */
 Vector Rules_front(Shark shark, SharkPerception perception) {
     if (!perception.zone_has_prey_visible[Front] ||
         perception.nb_fish_remaining == 0) {
         return Vector_init();
     }
+
     float ratio = (float)perception.zone_count[Front] /
                   (float)perception.nb_fish_remaining;
-    Vector forward = Vector_normalize(shark.velocity);
 
-    return Vector_scale(forward, ratio);
+    Vector to_center =
+        Vector_sub(perception.zone_center_of_mass[Front], shark.pos);
+
+    Vector direction = Vector_normalize(to_center);
+    return Vector_scale(direction, ratio);
 }
 
 /**
- * @brief vecteur directionnel pondéré pour la zone arrière
+ * @brief vecteur directionnel vers le centre de masse des poissons dans la zone
+ * arrière
  */
 Vector Rules_back(Shark shark, SharkPerception perception) {
     if (!perception.zone_has_prey_visible[Back] ||
         perception.nb_fish_remaining == 0) {
         return Vector_init();
     }
+
     float ratio = (float)perception.zone_count[Back] /
                   (float)perception.nb_fish_remaining;
-    Vector forward = Vector_normalize(shark.velocity);
 
-    return Vector_scale(Vector_scale(forward, -1.0f), ratio);
+    Vector to_center =
+        Vector_sub(perception.zone_center_of_mass[Back], shark.pos);
+
+    Vector direction = Vector_normalize(to_center);
+    return Vector_scale(direction, ratio);
 }
 
 /**
- * @brief vecteur directionnel pondéré pour la zone gauche
+ * @brief vecteur directionnel vers le centre de masse des poissons dans la zone
+ * gauche
  */
 Vector Rules_left(Shark shark, SharkPerception perception) {
     if (!perception.zone_has_prey_visible[Left] ||
         perception.nb_fish_remaining == 0) {
         return Vector_init();
     }
+
     float ratio = (float)perception.zone_count[Left] /
                   (float)perception.nb_fish_remaining;
-    Vector forward = Vector_normalize(shark.velocity);
-    Vector left = {forward.y, -forward.x};
 
-    return Vector_scale(left, ratio);
+    Vector to_center =
+        Vector_sub(perception.zone_center_of_mass[Left], shark.pos);
+
+    Vector direction = Vector_normalize(to_center);
+    return Vector_scale(direction, ratio);
 }
 
 /**
- * @brief vecteur directionnel pondéré pour la zone droite
+ * @brief vecteur directionnel vers le centre de masse des poissons dans la zone
+ * droite
  */
 Vector Rules_right(Shark shark, SharkPerception perception) {
     if (!perception.zone_has_prey_visible[Right] ||
         perception.nb_fish_remaining == 0) {
         return Vector_init();
     }
+
     float ratio = (float)perception.zone_count[Right] /
                   (float)perception.nb_fish_remaining;
-    Vector forward = Vector_normalize(shark.velocity);
-    Vector right = {-forward.y, forward.x};
 
-    return Vector_scale(right, ratio);
+    Vector to_center =
+        Vector_sub(perception.zone_center_of_mass[Right], shark.pos);
+
+    Vector direction = Vector_normalize(to_center);
+    return Vector_scale(direction, ratio);
 }
 
 Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
