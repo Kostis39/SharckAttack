@@ -35,6 +35,8 @@ typedef struct {
     Vector zone_avg_velocity[Count];
     bool zone_has_prey_visible[Count];
 
+    Vector closest_shark;
+
     int nb_fish_remaining;
 } SharkPerception;
 
