@@ -161,6 +161,12 @@ Vector Rules_right(Shark shark, SharkPerception perception) {
     return Vector_scale(direction, ratio);
 }
 
+Vector Rules_closest_shark(Shark shark, SharkPerception perception) {
+    Vector to_shark = Vector_sub(perception.closest_shark, shark.pos);
+
+    return to_shark;
+}
+
 Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
                            StepTrajectory *step_trajectory, float sigma) {
     if (!perception)
@@ -211,6 +217,11 @@ Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
         SharkPhi_add_vector(&phi, back, Rules_zone_Back);
         SharkPhi_add_vector(&phi, left, Rules_zone_Left);
         SharkPhi_add_vector(&phi, right, Rules_zone_Right);
+
+        Vector closest_shark =
+            Rules_closest_shark(perception->self, *perception);
+
+        SharkPhi_add_vector(&phi, closest_shark, Rules_closest_shark);
 
         // Combinaison pondérée des vecteurs
         Vector mu;
