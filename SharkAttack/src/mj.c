@@ -183,7 +183,8 @@ void Get_shark_perception(Shark *shark, World *world,
     Vector avg_vel = Vector_init();
     int count = 0;
 
-    float closest_dist = INFINITY;
+    float fish_closest_dist = INFINITY;
+    float dist = 0;
 
     Vector zone_center[Count];
     Vector zone_vel[Count];
@@ -205,11 +206,11 @@ void Get_shark_perception(Shark *shark, World *world,
 
         // Distance au requin
         Vector to_fish = Vector_sub(fish->position, shark->pos);
-        float dist = Vector_length(to_fish);
+        dist = Vector_length(to_fish);
 
         // Mettre à jour le poisson le plus proche
-        if (dist < closest_dist) {
-            closest_dist = dist;
+        if (dist < fish_closest_dist) {
+            fish_closest_dist = dist;
             shark_perception->closest_fish = *fish;
         }
 
@@ -238,7 +239,7 @@ void Get_shark_perception(Shark *shark, World *world,
 
         shark_perception->has_prey_visible = false;
     }
-    shark_perception->has_prey = closest_dist != INFINITY;
+    shark_perception->has_prey = fish_closest_dist != INFINITY;
 
     // moyenne des 4 zones
     for (int z = 0; z < Count; z++) {
@@ -257,6 +258,22 @@ void Get_shark_perception(Shark *shark, World *world,
             shark_perception->zone_has_prey_visible[z] = false;
         }
     }
+
+    float shark_closest_dist = INFINITY;
+    Vector to_shark = shark->pos;
+
+    for (int i = 0; i < world->nb_sharks; ++i) {
+        if (world->sharks[i] != shark) {
+            to_shark = Vector_sub(world->sharks[i]->pos, shark->pos);
+            dist = Vector_length(to_shark);
+
+            if (dist < shark_closest_dist) {
+                shark_closest_dist = dist;
+                shark_perception->closest_shark = world->sharks[i]->pos;
+            }
+        }
+    }
+    shark_perception->closest_shark = to_shark;
 }
 
 /**

@@ -162,9 +162,9 @@ Vector Rules_right(Shark shark, SharkPerception perception) {
 }
 
 Vector Rules_closest_shark(Shark shark, SharkPerception perception) {
-    Vector to_shark = Vector_sub(perception.closest_shark, shark.pos);
-
-    return to_shark;
+    Vector direction_closest_shark =
+        Vector_sub(perception.closest_shark, shark.pos);
+    return direction_closest_shark;
 }
 
 Vector shark_choose_action(SharkPerception *perception, VectorRule theta,
