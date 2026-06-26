@@ -43,9 +43,11 @@ void World_destroy(World *world) {
     }
     Colliders_destroy_array(world->colliders);
     RulesSetFish_destroy(world->theta_fish);
-    free(world->sharks);
-    free(world->trajectory);
-    free(world);
+    if (world) {
+        free(world->sharks);
+        free(world->trajectory);
+        free(world);
+    }
     world = NULL;
 }
 

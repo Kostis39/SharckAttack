@@ -140,13 +140,17 @@ TrajectoryCalculation Compute_trajectory(VectorRule theta,
         }
     }
 
+    int nb_sharks = world->nb_sharks;
+    int fish_eaten = world->fish_eaten;
+    int traj_length = world->trajectory[0]->length;
+
     World_destroy(world);
 
-    D.x = VectorRule_scaled(D.x, 1.0f / world->nb_sharks);
-    D.y = VectorRule_scaled(D.y, 1.0f / world->nb_sharks);
+    D.x = VectorRule_scaled(D.x, 1.0f / nb_sharks);
+    D.y = VectorRule_scaled(D.y, 1.0f / nb_sharks);
 
-    TrajectoryCalculation result_iteration = {D, world->fish_eaten, total_G,
-                                              world->trajectory[0]->length};
+    TrajectoryCalculation result_iteration = {D, fish_eaten, total_G,
+                                              traj_length};
     return result_iteration;
 }
 

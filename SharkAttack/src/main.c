@@ -36,8 +36,8 @@ int main(int argc, char *argv[]) {
     if (use_term) {
         Game_run_terminal();
     } else if (learn) {
-        VectorRule theta;
-        Hyperparameters hyperparameters;
+        VectorRule theta = VectorRule_init();
+        Hyperparameters hyperparameters = {0};
 
         if (!load_params(&theta, &hyperparameters, THETA_FILE)) {
             fprintf(stderr, "Erreur: échec du chargement des paramètres\n");

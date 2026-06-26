@@ -7,13 +7,15 @@ nb_game 10
 nb_occurrence 5000
 
 # Theta
-center: 0.389042
-alignment: -0.754536
-pursuit: 3.793164
-front: 0.069884
-back: -0.349193
-left: 1.086042
-right: 0.186094
+center: 0.281481
+alignment: -2.018435
+pursuit: 4.271093
+front: 0.484597
+back: -0.471755
+left: 0.255671
+right: 0.619036
+
+closest shark: 0.000000
 
 # Best gain with this parameters
-gain: 66.638657
+gain: 73.693939

@@ -208,6 +208,7 @@ bool load_gain_params(float *gain, char *filename_params) {
     }
     char line[256];
     float value_f;
+    bool found = false;
     while (fgets(line, sizeof(line), file)) {
         // Ignorer les commentaires et les lignes vides
         if (line[0] == '#' || line[0] == '\n')
@@ -215,7 +216,13 @@ bool load_gain_params(float *gain, char *filename_params) {
         // Gain max obtenue à la dernière éxecution
         if (sscanf(line, "gain: %f", &value_f) == 1) {
             *gain = value_f;
+            found = true;
         }
+    }
+    if (!found) {
+        fprintf(stderr, "Erreur: gain non trouvé dans %s\n",
+                filename_params);
+        return false;
     }
     return true;
 }
@@ -373,14 +380,14 @@ bool init_logs(char *filename_params, char *filename_logs) {
 }
 
 bool end_logs(char *filename_params, char *filename_logs) {
-    Hyperparameters hyperparams;
-    VectorRule theta_params;
+    Hyperparameters hyperparams = {0};
+    VectorRule theta_params = VectorRule_init();
 
     load_params(&theta_params, &hyperparams, filename_params);
     float gain_params;
     load_gain_params(&gain_params, filename_params);
 
-    VectorRule theta_logs;
+    VectorRule theta_logs = VectorRule_init();
     int best_gen_logs = 0;
     float best_gain_logs = -1.0f;
 

@@ -5093,3 +5093,243 @@ gain_initial: 66.638657
 # DÉBUT DES LOGS DE GÉNÉRATION
 # ==========================================
 
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.389042
+alignment: -0.754536
+pursuit: 3.793164
+front: 0.069884
+back: -0.349193
+left: 1.086042
+right: 0.186094
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.638657
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.389042
+alignment: -0.754536
+pursuit: 3.793164
+front: 0.069884
+back: -0.349193
+left: 1.086042
+right: 0.186094
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.638657
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.389042
+alignment: -0.754536
+pursuit: 3.793164
+front: 0.069884
+back: -0.349193
+left: 1.086042
+right: 0.186094
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.638657
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.389042
+alignment: -0.754536
+pursuit: 3.793164
+front: 0.069884
+back: -0.349193
+left: 1.086042
+right: 0.186094
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.638657
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.389042
+alignment: -0.754536
+pursuit: 3.793164
+front: 0.069884
+back: -0.349193
+left: 1.086042
+right: 0.186094
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.638657
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.389042
+alignment: -0.754536
+pursuit: 3.793164
+front: 0.069884
+back: -0.349193
+left: 1.086042
+right: 0.186094
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 66.638657
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.281481
+alignment: -2.018435
+pursuit: 4.271093
+front: 0.484597
+back: -0.471755
+left: 0.255671
+right: 0.619036
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 73.693939
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
+# ==========================================
+# INITIALISATION DU LOG DE REINFORCE
+# ==========================================
+
+# Hyperparameters utilisés :
+gamma 0.999800
+sigma 3.000000
+alpha 0.000500
+nb_gen 10000
+nb_game 10
+nb_occurrence 5000
+
+# Theta de départ :
+center: 0.281481
+alignment: -2.018435
+pursuit: 4.271093
+front: 0.484597
+back: -0.471755
+left: 0.255671
+right: 0.619036
+
+closest shark: 0.000000
+
+# Meilleur gain de départ (historique) :
+gain_initial: 73.693939
+
+# ==========================================
+# DÉBUT DES LOGS DE GÉNÉRATION
+# ==========================================
+
