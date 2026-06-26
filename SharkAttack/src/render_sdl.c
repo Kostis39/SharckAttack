@@ -1052,14 +1052,15 @@ void Render_two_worlds(SDLDisplay *display, World *left_world,
         if (number < 1)
             number = 1;
 
+        
         Shark *left_shark = NULL;
         Shark *right_shark = NULL;
 
-    if (left_world->sharks != NULL && left_world->nb_sharks > 0)
-        left_shark = left_world->sharks[0];
+        if (left_world->nb_sharks > 0)
+            left_shark = left_world->sharks[0];
 
-    if (right_world->sharks != NULL && right_world->nb_sharks > 0)
-        right_shark = right_world->sharks[0]; 
+        if (right_world->nb_sharks > 0)
+            right_shark = right_world->sharks[0];
 
         Draw_intro_countdown(r, left_screen, right_screen, number,
                             left_shark, right_shark);
