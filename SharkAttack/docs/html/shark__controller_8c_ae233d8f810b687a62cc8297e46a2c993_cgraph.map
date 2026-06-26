@@ -1,9 +1,14 @@
 <map id="Rules_front" name="Rules_front">
-<area shape="rect" id="node1" title="vecteur directionnel vers le centre de masse des poissons dans la zone avant" alt="" coords="5,81,101,108"/>
-<area shape="rect" id="node2" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="171,5,262,32"/>
-<area shape="rect" id="node3" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="149,56,284,83"/>
-<area shape="rect" id="node6" href="$vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="165,107,269,133"/>
-<area shape="rect" id="node7" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="170,157,263,184"/>
-<area shape="rect" id="node4" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="332,31,443,57"/>
-<area shape="rect" id="node5" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="335,81,439,108"/>
+<area shape="rect" id="Node000001" title="vecteur directionnel vers le centre de masse des poissons dans la zone avant" alt="" coords="5,83,101,110"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="171,5,261,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,80,148,43,165,38,161,41,150,48,81,84"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="149,57,283,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,87,136,83,131,85,102,92"/>
+<area shape="rect" id="Node000005" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="334,108,438,136"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="101,97,320,114,318,119,101,103"/>
+<area shape="rect" id="Node000006" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="170,159,262,186"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="85,108,173,150,168,153,84,114"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="331,56,441,84"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="283,68,318,70,313,71,284,73"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="265,83,325,103,320,103,265,88"/>
 </map>

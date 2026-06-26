@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier include/render_sdl.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('render__sdl_8h.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('render__sdl_8h.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,18 +76,20 @@ $(document).ready(function(){initNavTree('render__sdl_8h.html',''); initResizabl
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Structures de données</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Fonctions</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier render_sdl.h</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier render_sdl.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;SDL2/SDL.h&gt;</code><br />
@@ -101,88 +102,157 @@ $(document).ready(function(){initNavTree('render__sdl_8h.html',''); initResizabl
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de render_sdl.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8h__incl.png" border="0" usemap="#ainclude_2render__sdl_8h" alt=""/></div>
+<div class="center"><img src="render__sdl_8h__incl.png" border="0" usemap="#ainclude_2render__sdl_8h" loading="lazy" alt=""/></div>
 <map name="ainclude_2render__sdl_8h" id="ainclude_2render__sdl_8h">
-<area shape="rect" title=" " alt="" coords="219,5,373,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,101,107"/>
-<area shape="rect" title=" " alt="" coords="784,379,867,405"/>
-<area shape="rect" href="collider_8h.html" title=" " alt="" coords="618,229,699,256"/>
-<area shape="rect" href="fish_8h.html" title=" " alt="" coords="490,304,547,331"/>
-<area shape="rect" href="shark_8h.html" title=" " alt="" coords="971,304,1042,331"/>
-<area shape="rect" href="sound_8h.html" title=" " alt="" coords="259,80,333,107"/>
-<area shape="rect" href="world_8h.html" title=" " alt="" coords="775,80,846,107"/>
-<area shape="rect" title=" " alt="" coords="877,304,947,331"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1217,379,1279,405"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="1073,453,1148,480"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="1199,528,1273,555"/>
-<area shape="rect" title=" " alt="" coords="1077,528,1145,555"/>
-<area shape="rect" title=" " alt="" coords="1455,453,1526,480"/>
-<area shape="rect" title=" " alt="" coords="1556,528,1623,555"/>
-<area shape="rect" title=" " alt="" coords="227,155,365,181"/>
-<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1255,155,1347,181"/>
-<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="1307,379,1402,405"/>
-<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="1497,229,1613,256"/>
-<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="1326,304,1453,331"/>
-<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1232,229,1371,256"/>
-<area shape="rect" title=" " alt="" coords="876,229,951,256"/>
-<area shape="rect" title=" " alt="" coords="975,229,1059,256"/>
-<area shape="rect" title=" " alt="" coords="1083,229,1157,256"/>
-<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="1324,453,1431,480"/>
+<area shape="rect" title=" " alt="" coords="220,5,372,33"/>
+<area shape="rect" title=" " alt="" coords="5,81,101,109"/>
+<area shape="poly" title=" " alt="" coords="251,36,113,78,110,74,254,31"/>
+<area shape="rect" title=" " alt="" coords="783,384,864,411"/>
+<area shape="poly" title=" " alt="" coords="265,36,238,55,212,83,196,110,187,134,187,157,199,182,429,262,772,377,767,380,427,267,195,186,182,158,182,133,192,107,208,79,235,51,269,31"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="617,232,697,260"/>
+<area shape="poly" title=" " alt="" coords="279,35,252,64,221,103,210,124,205,145,206,164,216,182,231,188,264,195,369,210,604,238,599,241,369,215,263,200,229,193,213,186,201,166,200,144,205,122,217,100,248,61,282,31"/>
+<area shape="rect" href="fish_8h.html" title=" " alt="" coords="489,308,545,336"/>
+<area shape="poly" title=" " alt="" coords="306,31,346,79,502,294,496,295,342,83,306,36"/>
+<area shape="rect" href="shark_8h.html" title=" " alt="" coords="966,308,1036,336"/>
+<area shape="poly" title=" " alt="" coords="324,31,537,128,838,258,955,303,949,303,836,262,534,133,324,36"/>
+<area shape="rect" href="sound_8h.html" title=" " alt="" coords="260,81,332,109"/>
+<area shape="poly" title=" " alt="" coords="296,31,298,66,293,65,295,36"/>
+<area shape="rect" href="world_8h.html" title=" " alt="" coords="772,81,841,109"/>
+<area shape="poly" title=" " alt="" coords="372,26,547,47,753,78,760,81,754,82,753,84,547,52,373,31"/>
+<area shape="poly" title=" " alt="" coords="672,258,800,373,795,373,670,263"/>
+<area shape="rect" title=" " alt="" coords="872,308,943,336"/>
+<area shape="poly" title=" " alt="" coords="698,257,860,306,855,306,698,262"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1202,384,1264,411"/>
+<area shape="poly" title=" " alt="" coords="682,258,761,295,862,333,951,355,1041,371,1190,392,1185,393,1040,377,950,360,860,338,759,300,681,263"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="1062,459,1135,487"/>
+<area shape="poly" title=" " alt="" coords="663,258,678,291,701,332,733,374,773,409,823,428,896,444,1049,467,1044,467,895,449,821,434,770,414,729,378,697,335,674,293,661,263"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="1188,535,1260,563"/>
+<area shape="poly" title=" " alt="" coords="1234,410,1227,521,1223,518,1230,413"/>
+<area shape="poly" title=" " alt="" coords="1211,411,1136,454,1134,449,1206,413"/>
+<area shape="rect" title=" " alt="" coords="1065,535,1132,563"/>
+<area shape="poly" title=" " alt="" coords="1224,411,1121,526,1119,521,1219,413"/>
+<area shape="rect" title=" " alt="" coords="1442,459,1512,487"/>
+<area shape="poly" title=" " alt="" coords="1264,405,1430,457,1425,457,1264,411"/>
+<area shape="poly" title=" " alt="" coords="1121,485,1191,528,1186,527,1120,490"/>
+<area shape="poly" title=" " alt="" coords="1100,486,1100,521,1096,518,1096,489"/>
+<area shape="rect" title=" " alt="" coords="1546,535,1611,563"/>
+<area shape="poly" title=" " alt="" coords="1136,478,1533,540,1528,540,1135,483"/>
+<area shape="poly" title=" " alt="" coords="545,328,564,333,770,383,765,384,563,338,546,334"/>
+<area shape="poly" title=" " alt="" coords="522,334,538,373,550,393,567,409,600,424,661,441,832,478,1175,539,1169,540,831,483,659,446,598,429,563,414,546,396,533,375,519,339"/>
+<area shape="poly" title=" " alt="" coords="527,333,563,373,586,393,613,409,648,421,697,432,817,449,943,460,1049,469,1043,469,943,466,816,454,696,437,647,426,611,414,583,397,559,377,526,339"/>
+<area shape="poly" title=" " alt="" coords="513,334,503,368,494,407,495,449,501,468,512,485,539,498,591,510,743,527,913,538,1052,546,1046,546,913,543,742,533,590,515,537,503,509,489,496,471,490,450,489,407,498,366,509,338"/>
+<area shape="poly" title=" " alt="" coords="546,333,645,372,708,392,772,409,870,426,953,434,1097,437,1243,438,1328,443,1430,459,1425,459,1327,449,1242,443,1097,442,953,439,869,431,771,414,706,398,644,377,545,339"/>
+<area shape="poly" title=" " alt="" coords="972,335,870,380,868,375,967,337"/>
+<area shape="poly" title=" " alt="" coords="1003,334,1006,366,1013,406,1028,448,1052,485,1072,498,1102,511,1175,535,1170,535,1100,516,1069,503,1048,489,1023,451,1008,407,1001,367,999,338"/>
+<area shape="poly" title=" " alt="" coords="1011,333,1084,447,1079,445,1008,338"/>
+<area shape="poly" title=" " alt="" coords="1036,323,1227,341,1330,358,1372,369,1402,381,1422,395,1439,411,1465,447,1460,445,1435,415,1418,399,1400,386,1370,374,1329,363,1227,346,1036,328"/>
+<area shape="rect" title=" " alt="" coords="226,157,365,184"/>
+<area shape="poly" title=" " alt="" coords="297,107,298,142,293,140,295,112"/>
+<area shape="poly" title=" " alt="" coords="796,107,682,223,679,219,791,110"/>
+<area shape="poly" title=" " alt="" coords="768,97,721,102,661,111,596,129,566,142,537,159,490,193,457,226,445,245,437,266,430,321,430,398,437,415,457,431,488,446,529,459,634,481,756,498,999,521,1144,532,1175,539,1169,539,1143,538,998,526,756,504,633,486,528,464,486,451,454,436,433,419,425,399,425,320,432,264,441,242,453,223,487,189,534,154,563,137,594,124,659,105,721,96,774,95"/>
+<area shape="poly" title=" " alt="" coords="769,107,715,129,654,162,629,182,611,205,603,231,608,259,630,311,654,349,688,379,736,409,760,419,794,429,878,445,1049,467,1044,468,877,450,792,434,758,424,733,414,684,383,650,352,625,314,602,261,598,230,607,203,625,179,651,158,712,125,774,105"/>
+<area shape="poly" title=" " alt="" coords="841,95,1075,106,1238,117,1411,132,1575,152,1713,176,1768,191,1809,207,1836,224,1844,234,1846,245,1846,399,1840,434,1823,463,1797,487,1765,506,1730,521,1693,532,1627,545,1626,540,1692,527,1728,516,1762,501,1793,482,1818,460,1835,432,1841,399,1841,245,1839,236,1833,228,1807,211,1766,196,1712,182,1574,157,1410,138,1238,122,1074,111,842,100"/>
+<area shape="poly" title=" " alt="" coords="841,94,984,98,1185,108,1386,126,1469,138,1531,154,1568,167,1598,180,1622,199,1643,231,1648,246,1651,271,1650,302,1642,336,1632,361,1621,380,1587,413,1556,436,1523,455,1521,450,1553,432,1583,409,1617,376,1628,359,1637,335,1645,301,1646,271,1643,248,1639,233,1618,203,1595,185,1566,172,1530,159,1468,144,1386,131,1185,113,984,103,842,99"/>
+<area shape="poly" title=" " alt="" coords="769,101,655,123,599,139,577,149,563,159,541,189,528,225,521,261,519,294,514,291,516,261,523,224,536,187,559,155,575,144,597,134,654,118,774,99"/>
+<area shape="poly" title=" " alt="" coords="809,107,814,139,823,178,839,221,864,258,900,280,954,304,949,304,898,285,860,262,834,223,818,180,809,140,806,111"/>
+<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1249,157,1340,184"/>
+<area shape="poly" title=" " alt="" coords="841,99,1235,159,1230,161,842,104"/>
+<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="1295,384,1390,411"/>
+<area shape="poly" title=" " alt="" coords="841,93,1009,97,1124,103,1247,114,1367,131,1475,155,1522,170,1562,188,1595,208,1618,231,1627,246,1631,262,1630,276,1625,290,1604,314,1572,334,1532,352,1489,367,1405,388,1404,382,1487,361,1530,347,1569,330,1601,310,1621,287,1625,275,1626,262,1622,248,1614,234,1591,212,1560,193,1520,175,1474,161,1366,137,1246,120,1124,109,1009,102,842,99"/>
+<area shape="poly" title=" " alt="" coords="1246,172,1154,177,1039,186,933,204,892,218,864,234,842,264,830,300,825,336,824,369,819,366,819,336,825,299,837,262,861,230,890,213,932,199,1039,181,1154,172,1251,171"/>
+<area shape="poly" title=" " alt="" coords="1322,182,1347,197,1368,215,1381,237,1382,249,1378,261,1362,280,1344,289,1325,297,1304,310,1275,341,1251,373,1248,369,1271,338,1301,306,1322,292,1342,285,1359,276,1373,259,1377,248,1376,238,1364,218,1344,201,1322,187"/>
+<area shape="poly" title=" " alt="" coords="1340,170,1418,174,1509,184,1591,202,1622,215,1643,231,1648,243,1652,265,1650,296,1642,336,1629,385,1614,424,1591,457,1553,489,1532,500,1502,510,1428,526,1276,546,1275,541,1427,521,1501,505,1530,495,1550,485,1587,453,1609,421,1624,384,1637,335,1645,296,1646,265,1643,244,1639,234,1619,219,1589,207,1508,189,1418,180,1340,175"/>
+<area shape="poly" title=" " alt="" coords="1340,171,1413,176,1496,186,1570,204,1599,216,1618,231,1633,260,1635,291,1625,322,1608,353,1585,382,1559,409,1509,452,1507,447,1555,405,1580,378,1603,350,1620,320,1629,290,1628,261,1614,234,1596,220,1569,209,1495,192,1412,181,1341,176"/>
+<area shape="poly" title=" " alt="" coords="1280,184,1229,223,1164,262,1106,288,1051,308,1049,303,1104,283,1161,258,1226,219,1275,186"/>
+<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="1489,232,1604,260"/>
+<area shape="poly" title=" " alt="" coords="1340,182,1489,227,1484,228,1339,188"/>
+<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="1314,308,1440,336"/>
+<area shape="poly" title=" " alt="" coords="1340,178,1385,197,1406,212,1422,231,1427,248,1424,266,1403,299,1400,295,1419,265,1422,249,1417,234,1402,216,1383,202,1340,184"/>
+<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1226,232,1363,260"/>
+<area shape="poly" title=" " alt="" coords="1289,183,1288,218,1283,215,1286,187"/>
+<area shape="rect" title=" " alt="" coords="874,232,947,260"/>
+<area shape="poly" title=" " alt="" coords="1246,180,1124,203,963,235,962,229,1123,198,1251,178"/>
+<area shape="rect" title=" " alt="" coords="971,232,1055,260"/>
+<area shape="poly" title=" " alt="" coords="1246,184,1071,233,1069,227,1251,183"/>
+<area shape="rect" title=" " alt="" coords="1078,232,1150,260"/>
+<area shape="poly" title=" " alt="" coords="1265,184,1161,229,1159,224,1260,186"/>
+<area shape="poly" title=" " alt="" coords="1491,259,880,387,879,382,1486,260"/>
+<area shape="poly" title=" " alt="" coords="1486,253,1223,279,1076,294,959,310,958,305,1075,289,1223,273,1491,252"/>
+<area shape="poly" title=" " alt="" coords="1551,258,1561,303,1566,364,1564,398,1557,431,1545,462,1526,489,1508,502,1483,513,1416,529,1342,540,1275,547,1275,542,1341,535,1415,524,1481,508,1505,497,1522,485,1540,459,1552,429,1558,397,1560,364,1556,304,1548,263"/>
+<area shape="poly" title=" " alt="" coords="1563,258,1584,280,1599,307,1613,356,1614,396,1600,488,1590,523,1587,519,1594,486,1609,396,1607,357,1595,309,1579,283,1561,263"/>
+<area shape="poly" title=" " alt="" coords="1545,259,1487,446,1484,442,1540,262"/>
+<area shape="poly" title=" " alt="" coords="1519,260,1422,304,1420,299,1514,261"/>
+<area shape="poly" title=" " alt="" coords="1316,336,1253,357,1192,386,1152,417,1119,450,1117,445,1148,413,1189,381,1251,352,1311,337"/>
+<area shape="poly" title=" " alt="" coords="1373,335,1357,372,1353,367,1369,338"/>
+<area shape="poly" title=" " alt="" coords="1335,410,1245,525,1242,520,1330,413"/>
+<area shape="poly" title=" " alt="" coords="1301,411,1150,459,1149,454,1296,412"/>
+<area shape="poly" title=" " alt="" coords="1367,409,1443,452,1438,451,1366,414"/>
+<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="1312,459,1418,487"/>
+<area shape="poly" title=" " alt="" coords="1348,410,1359,446,1354,443,1345,414"/>
+<area shape="poly" title=" " alt="" coords="1342,487,1263,530,1262,525,1337,488"/>
+<area shape="poly" title=" " alt="" coords="1404,485,1533,531,1528,531,1403,490"/>
+<area shape="poly" title=" " alt="" coords="1291,259,1246,371,1242,367,1287,262"/>
+<area shape="poly" title=" " alt="" coords="1280,259,1219,313,1184,348,1151,385,1130,416,1112,448,1109,443,1125,414,1147,382,1180,344,1216,309,1275,262"/>
+<area shape="poly" title=" " alt="" coords="1223,255,1163,263,561,319,560,314,1162,257,1228,254"/>
+<area shape="poly" title=" " alt="" coords="1244,260,1052,311,1050,305,1239,261"/>
+<area shape="poly" title=" " alt="" coords="1299,230,1301,202,1305,198,1303,234"/>
+<area shape="poly" title=" " alt="" coords="1295,258,1297,295,1305,335,1324,372,1319,370,1300,337,1292,295,1292,263"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8h__dep__incl.png" border="0" usemap="#ainclude_2render__sdl_8hdep" alt=""/></div>
+<div class="center"><img src="render__sdl_8h__dep__incl.png" border="0" usemap="#ainclude_2render__sdl_8hdep" loading="lazy" alt=""/></div>
 <map name="ainclude_2render__sdl_8hdep" id="ainclude_2render__sdl_8hdep">
-<area shape="rect" title=" " alt="" coords="314,5,467,32"/>
-<area shape="rect" href="game_8h.html" title=" " alt="" coords="131,80,253,107"/>
-<area shape="rect" href="game_8c.html" title=" " alt="" coords="5,155,99,181"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="286,155,375,181"/>
-<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="329,80,453,107"/>
-<area shape="rect" href="shark_8c.html" title=" " alt="" coords="477,80,569,107"/>
-<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="593,80,753,107"/>
-<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="778,80,947,107"/>
-<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="123,155,261,181"/>
+<area shape="rect" title=" " alt="" coords="311,5,464,33"/>
+<area shape="rect" href="game_8h.html" title=" " alt="" coords="130,81,251,109"/>
+<area shape="poly" title=" " alt="" coords="336,40,226,83,224,78,340,38"/>
+<area shape="rect" href="game_8c.html" title=" " alt="" coords="5,157,98,184"/>
+<area shape="poly" title=" " alt="" coords="293,26,253,35,207,45,161,61,120,83,100,100,83,120,60,158,56,154,78,117,96,96,117,79,159,56,205,40,251,29,298,24"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="283,157,372,184"/>
+<area shape="poly" title=" " alt="" coords="352,41,332,61,317,82,312,101,313,121,324,158,319,155,308,122,307,101,312,80,328,57,347,43"/>
+<area shape="rect" href="render__sdl_8c.html" title=" " alt="" coords="326,81,449,109"/>
+<area shape="poly" title=" " alt="" coords="389,47,390,82,385,79,386,51"/>
+<area shape="rect" href="shark_8c.html" title=" " alt="" coords="474,81,565,109"/>
+<area shape="poly" title=" " alt="" coords="425,38,499,81,493,81,424,44"/>
+<area shape="rect" href="shark__controller_8c.html" title=" " alt="" coords="589,81,748,109"/>
+<area shape="poly" title=" " alt="" coords="452,35,621,80,616,81,452,40"/>
+<area shape="rect" href="test__render__sdl_8c.html" title=" " alt="" coords="773,81,941,109"/>
+<area shape="poly" title=" " alt="" coords="479,32,775,80,770,81,479,37"/>
+<area shape="poly" title=" " alt="" coords="154,118,77,159,75,154,150,114"/>
+<area shape="poly" title=" " alt="" coords="229,114,306,156,301,156,227,119"/>
+<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="122,157,259,184"/>
+<area shape="poly" title=" " alt="" coords="192,123,192,158,188,155,188,126"/>
 </map>
 </div>
 </div>
 <p><a href="render__sdl_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Structures de données</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSDLDisplay.html">SDLDisplay</a></td></tr>
+<tr class="memitem:SDLDisplay" id="r_SDLDisplay"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSDLDisplay.html">SDLDisplay</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant l'affichage SDL du jeu.  <a href="structSDLDisplay.html#details">Plus de détails...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a01fe2f8eeb71de5233cb45006af6eccb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#a01fe2f8eeb71de5233cb45006af6eccb">BTN_SIZE</a>&#160;&#160;&#160;48</td></tr>
-<tr class="memdesc:a01fe2f8eeb71de5233cb45006af6eccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche deux vues dans une seule fenêtre.  <a href="render__sdl_8h.html#a01fe2f8eeb71de5233cb45006af6eccb">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a01fe2f8eeb71de5233cb45006af6eccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01b9910f8ea1e38840acbe82548bd147"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#a01b9910f8ea1e38840acbe82548bd147">BTN_MARGIN</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:a01b9910f8ea1e38840acbe82548bd147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fe2f8eeb71de5233cb45006af6eccb" id="r_a01fe2f8eeb71de5233cb45006af6eccb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01fe2f8eeb71de5233cb45006af6eccb">BTN_SIZE</a>&#160;&#160;&#160;48</td></tr>
+<tr class="memdesc:a01fe2f8eeb71de5233cb45006af6eccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche deux vues dans une seule fenêtre.  <br /></td></tr>
+<tr class="memitem:a01b9910f8ea1e38840acbe82548bd147" id="r_a01b9910f8ea1e38840acbe82548bd147"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01b9910f8ea1e38840acbe82548bd147">BTN_MARGIN</a>&#160;&#160;&#160;8</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f">Init_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, char *title, int width, int height)</td></tr>
-<tr class="memdesc:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialisation de sdl  <a href="render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74f30377a606ead57a76d40093cb052d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d">Destroy_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
-<tr class="memdesc:a74f30377a606ead57a76d40093cb052d"><td class="mdescLeft">&#160;</td><td class="mdescRight">cette fct libere le renderer, detruit la fenetre puis ferme sdl  <a href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a74f30377a606ead57a76d40093cb052d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1307c29c074f2638c2a842a135f5935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#ad1307c29c074f2638c2a842a135f5935">Render_two_worlds</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structWorld.html">World</a> *left_world, <a class="el" href="structWorld.html">World</a> *right_world, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="separator:ad1307c29c074f2638c2a842a135f5935"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5e020f716940f9c6e7eff144ebc8724"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724">Load_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, const char *path)</td></tr>
-<tr class="separator:ad5e020f716940f9c6e7eff144ebc8724"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa34345c0fe35a82e740a655f16f8ca08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08">Destroy_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
-<tr class="separator:aa34345c0fe35a82e740a655f16f8ca08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ccb88621d348cc84f9bc83872d414dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render__sdl_8h.html#a3ccb88621d348cc84f9bc83872d414dd">Draw_mute_button</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
-<tr class="separator:a3ccb88621d348cc84f9bc83872d414dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68bdd67f121c1fe588b0963cadcf0a1f" id="r_a68bdd67f121c1fe588b0963cadcf0a1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68bdd67f121c1fe588b0963cadcf0a1f">Init_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, char *title, int width, int height)</td></tr>
+<tr class="memdesc:a68bdd67f121c1fe588b0963cadcf0a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialisation de sdl  <br /></td></tr>
+<tr class="memitem:a74f30377a606ead57a76d40093cb052d" id="r_a74f30377a606ead57a76d40093cb052d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74f30377a606ead57a76d40093cb052d">Destroy_sdl_display</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
+<tr class="memdesc:a74f30377a606ead57a76d40093cb052d"><td class="mdescLeft">&#160;</td><td class="mdescRight">cette fct libere le renderer, detruit la fenetre puis ferme sdl  <br /></td></tr>
+<tr class="memitem:ad1307c29c074f2638c2a842a135f5935" id="r_ad1307c29c074f2638c2a842a135f5935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1307c29c074f2638c2a842a135f5935">Render_two_worlds</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structWorld.html">World</a> *left_world, <a class="el" href="structWorld.html">World</a> *right_world, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
+<tr class="memitem:ad5e020f716940f9c6e7eff144ebc8724" id="r_ad5e020f716940f9c6e7eff144ebc8724"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5e020f716940f9c6e7eff144ebc8724">Load_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, const char *path)</td></tr>
+<tr class="memitem:aa34345c0fe35a82e740a655f16f8ca08" id="r_aa34345c0fe35a82e740a655f16f8ca08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa34345c0fe35a82e740a655f16f8ca08">Destroy_mute_icons</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display)</td></tr>
+<tr class="memitem:a3ccb88621d348cc84f9bc83872d414dd" id="r_a3ccb88621d348cc84f9bc83872d414dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ccb88621d348cc84f9bc83872d414dd">Draw_mute_button</a> (<a class="el" href="structSDLDisplay.html">SDLDisplay</a> *display, <a class="el" href="structAudioManager.html">AudioManager</a> *audio)</td></tr>
 </table>
-<h2 class="groupheader">Documentation des macros</h2>
-<a id="a01b9910f8ea1e38840acbe82548bd147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b9910f8ea1e38840acbe82548bd147">&#9670;&nbsp;</a></span>BTN_MARGIN</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="a01b9910f8ea1e38840acbe82548bd147" name="a01b9910f8ea1e38840acbe82548bd147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b9910f8ea1e38840acbe82548bd147">&#9670;&#160;</a></span>BTN_MARGIN</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,8 +265,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a01fe2f8eeb71de5233cb45006af6eccb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01fe2f8eeb71de5233cb45006af6eccb">&#9670;&nbsp;</a></span>BTN_SIZE</h2>
+<a id="a01fe2f8eeb71de5233cb45006af6eccb" name="a01fe2f8eeb71de5233cb45006af6eccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01fe2f8eeb71de5233cb45006af6eccb">&#9670;&#160;</a></span>BTN_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,9 +291,9 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="aa34345c0fe35a82e740a655f16f8ca08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa34345c0fe35a82e740a655f16f8ca08">&#9670;&nbsp;</a></span>Destroy_mute_icons()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="aa34345c0fe35a82e740a655f16f8ca08" name="aa34345c0fe35a82e740a655f16f8ca08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34345c0fe35a82e740a655f16f8ca08">&#9670;&#160;</a></span>Destroy_mute_icons()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,8 +301,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void Destroy_mute_icons </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -240,8 +309,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a74f30377a606ead57a76d40093cb052d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74f30377a606ead57a76d40093cb052d">&#9670;&nbsp;</a></span>Destroy_sdl_display()</h2>
+<a id="a74f30377a606ead57a76d40093cb052d" name="a74f30377a606ead57a76d40093cb052d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f30377a606ead57a76d40093cb052d">&#9670;&#160;</a></span>Destroy_sdl_display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,8 +318,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void Destroy_sdl_display </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -266,8 +334,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3ccb88621d348cc84f9bc83872d414dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ccb88621d348cc84f9bc83872d414dd">&#9670;&nbsp;</a></span>Draw_mute_button()</h2>
+<a id="a3ccb88621d348cc84f9bc83872d414dd" name="a3ccb88621d348cc84f9bc83872d414dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccb88621d348cc84f9bc83872d414dd">&#9670;&#160;</a></span>Draw_mute_button()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,27 +343,20 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void Draw_mute_button </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a68bdd67f121c1fe588b0963cadcf0a1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68bdd67f121c1fe588b0963cadcf0a1f">&#9670;&nbsp;</a></span>Init_sdl_display()</h2>
+<a id="a68bdd67f121c1fe588b0963cadcf0a1f" name="a68bdd67f121c1fe588b0963cadcf0a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68bdd67f121c1fe588b0963cadcf0a1f">&#9670;&#160;</a></span>Init_sdl_display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -303,31 +364,22 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">bool Init_sdl_display </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -348,8 +400,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ad5e020f716940f9c6e7eff144ebc8724"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5e020f716940f9c6e7eff144ebc8724">&#9670;&nbsp;</a></span>Load_mute_icons()</h2>
+<a id="ad5e020f716940f9c6e7eff144ebc8724" name="ad5e020f716940f9c6e7eff144ebc8724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e020f716940f9c6e7eff144ebc8724">&#9670;&#160;</a></span>Load_mute_icons()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,27 +409,20 @@ false </dd></dl>
         <tr>
           <td class="memname">bool Load_mute_icons </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad1307c29c074f2638c2a842a135f5935"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1307c29c074f2638c2a842a135f5935">&#9670;&nbsp;</a></span>Render_two_worlds()</h2>
+<a id="ad1307c29c074f2638c2a842a135f5935" name="ad1307c29c074f2638c2a842a135f5935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1307c29c074f2638c2a842a135f5935">&#9670;&#160;</a></span>Render_two_worlds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -385,31 +430,22 @@ false </dd></dl>
         <tr>
           <td class="memname">void Render_two_worlds </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
+          <td class="paramtype"><a class="el" href="structSDLDisplay.html">SDLDisplay</a> *</td>          <td class="paramname"><span class="paramname"><em>display</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *&#160;</td>
-          <td class="paramname"><em>left_world</em>, </td>
+          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *</td>          <td class="paramname"><span class="paramname"><em>left_world</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *&#160;</td>
-          <td class="paramname"><em>right_world</em>, </td>
+          <td class="paramtype"><a class="el" href="structWorld.html">World</a> *</td>          <td class="paramname"><span class="paramname"><em>right_world</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *&#160;</td>
-          <td class="paramname"><em>audio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structAudioManager.html">AudioManager</a> *</td>          <td class="paramname"><span class="paramname"><em>audio</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -417,44 +453,93 @@ false </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="render__sdl_8h_ad1307c29c074f2638c2a842a135f5935_cgraph.png" border="0" usemap="#arender__sdl_8h_ad1307c29c074f2638c2a842a135f5935_cgraph" alt=""/></div>
+<div class="center"><img src="render__sdl_8h_ad1307c29c074f2638c2a842a135f5935_cgraph.png" border="0" usemap="#arender__sdl_8h_ad1307c29c074f2638c2a842a135f5935_cgraph" loading="lazy" alt=""/></div>
 <map name="arender__sdl_8h_ad1307c29c074f2638c2a842a135f5935_cgraph" id="arender__sdl_8h_ad1307c29c074f2638c2a842a135f5935_cgraph">
-<area shape="rect" title=" " alt="" coords="5,107,155,133"/>
-<area shape="rect" href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="241,5,335,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="203,56,373,83"/>
-<area shape="rect" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="215,107,361,133"/>
-<area shape="rect" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="210,157,366,184"/>
-<area shape="rect" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="239,436,337,463"/>
-<area shape="rect" href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="455,56,536,83"/>
-<area shape="rect" href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="427,132,564,159"/>
-<area shape="rect" href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="427,183,563,209"/>
-<area shape="rect" href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="436,335,555,361"/>
-<area shape="rect" href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="425,385,566,412"/>
-<area shape="rect" href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="452,537,539,564"/>
-<area shape="rect" href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="421,613,569,640"/>
-<area shape="rect" href="render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title=" " alt="" coords="446,701,545,728"/>
-<area shape="rect" href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="446,461,545,488"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="836,31,951,57"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="621,183,766,209"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="617,537,769,564"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="627,81,760,108"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="644,132,743,159"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="1017,297,1155,324"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="864,233,923,260"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="821,81,966,108"/>
-<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="638,335,749,361"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="822,309,965,336"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="864,487,923,513"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="618,233,769,260"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="625,436,762,463"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="641,284,745,311"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="817,373,969,400"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="1019,373,1153,400"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="1203,348,1313,375"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="1206,399,1310,425"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="617,639,769,665"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="642,740,745,767"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="647,791,739,817"/>
+<area shape="rect" title=" " alt="" coords="5,109,154,137"/>
+<area shape="rect" href="sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="241,5,333,33"/>
+<area shape="poly" title=" " alt="" coords="97,107,143,76,201,43,228,34,225,38,203,48,146,80,102,110"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="202,57,372,85"/>
+<area shape="poly" title=" " alt="" coords="136,107,215,87,212,91,140,111"/>
+<area shape="rect" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="214,109,360,137"/>
+<area shape="poly" title=" " alt="" coords="153,121,201,121,197,125,156,125"/>
+<area shape="rect" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="209,161,364,189"/>
+<area shape="poly" title=" " alt="" coords="137,135,216,155,212,159,139,140"/>
+<area shape="rect" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="238,567,336,594"/>
+<area shape="poly" title=" " alt="" coords="88,135,275,552,270,553,86,140"/>
+<area shape="rect" href="shark_8c.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="454,57,534,85"/>
+<area shape="poly" title=" " alt="" coords="371,69,440,70,435,73,374,73"/>
+<area shape="rect" href="render__sdl_8c.html#aa9d258c3d9271b764471abdbb53c3c28" title="dessine un texte centre avec SDL_ttf." alt="" coords="426,135,562,162"/>
+<area shape="poly" title=" " alt="" coords="363,163,413,158,408,161,366,167"/>
+<area shape="rect" href="render__sdl_8c.html#aed4c1026dbafba3d25cb1ec02a4e92d4" title="efface l ecran et dessine le fond marin" alt="" coords="426,187,561,214"/>
+<area shape="poly" title=" " alt="" coords="294,565,476,230,479,226,298,567"/>
+<area shape="rect" href="render__sdl_8c.html#a5204b1f2999bd29022b99cc17ced3bf6" title="dessine un tableau de colliders" alt="" coords="435,1000,552,1028"/>
+<area shape="poly" title=" " alt="" coords="292,592,308,652,334,738,372,838,396,888,422,935,443,963,467,990,462,988,439,966,418,938,391,890,367,840,329,740,303,653,291,598"/>
+<area shape="rect" href="render__sdl_8c.html#a984775ba1c80663383e8440765e36ba1" title="dessine le mode de visualisation debug ce mode affiche les vecteurs de vitesse, les rayons de percept..." alt="" coords="424,897,564,925"/>
+<area shape="poly" title=" " alt="" coords="298,592,478,883,473,885,295,597"/>
+<area shape="rect" href="render__sdl_8c.html#a324212d13cd701f46dc4aae4366216c4" title="dessine un poisson le poisson est representé simplement par un corps circulaire, une petite tete,..." alt="" coords="451,541,536,569"/>
+<area shape="poly" title=" " alt="" coords="335,572,438,561,433,564,338,577"/>
+<area shape="rect" href="render__sdl_8c.html#a82eb50b158226212bbfe2adcc1a85c1e" title="dessine le squelette d&#39;un poisson mangé le squelette est affiché pendant qlq frames après la mort d u..." alt="" coords="420,708,567,736"/>
+<area shape="poly" title=" " alt="" coords="309,592,462,698,457,700,309,597"/>
+<area shape="rect" href="render__sdl_8c.html#aa4075972e8059c73a55d9c2edeed5aed" title=" " alt="" coords="445,617,542,645"/>
+<area shape="poly" title=" " alt="" coords="336,590,432,615,428,617,337,595"/>
+<area shape="rect" href="render__sdl_8c.html#a1309043784e46f37e707622ab71ff9f1" title="dessine le requin" alt="" coords="444,389,543,417"/>
+<area shape="poly" title=" " alt="" coords="303,564,466,425,463,429,306,568"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e" title="dessine des bulles" alt="" coords="834,59,947,86"/>
+<area shape="poly" title=" " alt="" coords="545,184,566,172,581,153,588,133,595,112,614,94,664,72,717,61,770,58,820,61,816,63,770,63,718,66,665,77,617,99,600,115,593,134,586,155,569,176,549,188"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="818,135,962,162"/>
+<area shape="poly" title=" " alt="" coords="542,184,566,172,580,159,588,145,598,132,614,121,643,111,672,106,732,105,790,114,840,129,835,130,788,119,732,111,673,111,644,116,617,126,601,136,593,148,584,162,569,176,545,188"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733" title="dessine un triangle" alt="" coords="615,541,767,569"/>
+<area shape="poly" title=" " alt="" coords="504,212,677,527,672,528,502,217"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="625,135,757,162"/>
+<area shape="poly" title=" " alt="" coords="548,184,623,165,619,169,551,188"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="642,187,740,214"/>
+<area shape="poly" title=" " alt="" coords="561,198,629,199,625,202,563,203"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="1014,389,1150,417"/>
+<area shape="poly" title=" " alt="" coords="920,84,946,100,968,121,1010,187,1042,257,1064,322,1077,375,1072,373,1059,324,1037,259,1006,189,964,125,943,105,921,89"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="861,643,920,670"/>
+<area shape="poly" title=" " alt="" coords="728,567,768,585,855,634,850,635,765,590,728,572"/>
+<area shape="poly" title=" " alt="" coords="757,146,805,147,800,150,759,151"/>
+<area shape="poly" title=" " alt="" coords="750,160,769,173,791,209,812,260,831,323,847,391,873,526,888,628,883,626,867,527,842,392,825,324,807,262,787,212,765,177,751,166"/>
+<area shape="poly" title=" " alt="" coords="702,212,734,265,769,333,837,498,882,628,877,627,832,500,764,335,729,268,701,218"/>
+<area shape="rect" href="render__sdl_8c.html#aa194d1e8a6ac9dcf7021c2d416e6c7a0" title="dessine un collider sous forme de mine" alt="" coords="636,1051,746,1078"/>
+<area shape="poly" title=" " alt="" coords="551,1026,623,1047,618,1046,550,1031"/>
+<area shape="poly" title=" " alt="" coords="711,1048,739,1022,764,987,779,952,787,920,788,861,790,802,797,769,812,733,833,703,856,682,861,679,837,706,817,735,802,771,795,803,793,861,792,920,784,953,769,990,743,1025,713,1053"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="820,1051,961,1078"/>
+<area shape="poly" title=" " alt="" coords="747,1062,806,1064,801,1065,747,1067"/>
+<area shape="poly" title=" " alt="" coords="943,1048,964,1031,988,993,1002,959,1009,926,1009,893,1005,821,1006,780,1011,733,1072,434,1077,431,1017,734,1011,780,1011,821,1015,893,1014,927,1008,960,993,996,968,1034,945,1053"/>
+<area shape="poly" title=" " alt="" coords="511,923,557,957,585,974,616,986,658,998,692,1003,725,1000,766,986,807,965,844,939,878,908,909,874,936,836,960,796,1001,712,1031,628,1053,549,1076,435,1079,430,1058,550,1036,630,1006,714,965,799,940,839,913,877,882,912,847,943,809,970,768,991,726,1005,692,1008,657,1003,614,991,583,978,554,962,510,928"/>
+<area shape="poly" title=" " alt="" coords="521,894,629,834,765,749,858,681,863,679,768,753,632,838,523,899"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae" title="dessine le contour d&#39;un cercle" alt="" coords="616,897,766,925"/>
+<area shape="poly" title=" " alt="" coords="564,909,604,911,598,912,565,914"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f" title="dessine un vecteur orienté avec une fleche" alt="" coords="639,949,743,977"/>
+<area shape="poly" title=" " alt="" coords="549,923,627,946,622,946,549,928"/>
+<area shape="poly" title=" " alt="" coords="741,894,765,877,778,860,786,843,792,809,796,774,802,754,812,732,834,703,858,682,862,679,838,707,817,735,807,756,801,775,797,810,791,844,783,862,769,881,743,899"/>
+<area shape="poly" title=" " alt="" coords="742,950,765,935,782,910,791,886,795,863,795,840,794,790,800,762,812,733,833,703,857,682,862,679,838,706,817,735,805,764,800,790,800,840,800,864,797,888,787,913,769,938,744,955"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="815,745,966,773"/>
+<area shape="poly" title=" " alt="" coords="742,947,765,934,802,900,832,860,874,789,879,785,837,863,806,903,768,939,744,952"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="1015,745,1149,773"/>
+<area shape="poly" title=" " alt="" coords="966,757,1002,759,997,760,967,762"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="1198,719,1309,746"/>
+<area shape="poly" title=" " alt="" coords="1149,746,1186,743,1181,744,1150,751"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="1202,771,1305,798"/>
+<area shape="poly" title=" " alt="" coords="1150,766,1189,774,1184,775,1150,772"/>
+<area shape="poly" title=" " alt="" coords="523,538,566,519,614,501,717,471,820,447,1001,415,996,417,821,452,718,477,616,506,568,524,526,543"/>
+<area shape="poly" title=" " alt="" coords="536,553,602,554,597,556,538,558"/>
+<area shape="poly" title=" " alt="" coords="531,538,581,524,640,513,705,512,737,517,768,527,802,547,832,574,875,630,870,629,828,578,799,552,766,532,736,523,705,518,641,519,582,529,534,543"/>
+<area shape="poly" title=" " alt="" coords="536,561,662,592,724,610,768,629,784,641,795,652,817,680,867,734,862,734,813,684,791,656,781,645,765,633,723,615,661,597,537,567"/>
+<area shape="poly" title=" " alt="" coords="510,705,660,581,664,578,514,709"/>
+<area shape="poly" title=" " alt="" coords="560,734,607,740,659,743,713,741,766,731,792,721,817,708,859,682,864,679,820,713,794,726,767,736,714,747,659,749,606,745,560,739"/>
+<area shape="poly" title=" " alt="" coords="518,734,563,757,616,775,665,782,716,783,813,776,808,777,716,789,665,788,615,780,561,762,518,739"/>
+<area shape="poly" title=" " alt="" coords="531,614,641,574,636,577,533,619"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f" title="compte le nbr de chiffre d un entier (ex: 196 &#45;&gt; 3)" alt="" coords="640,643,742,670"/>
+<area shape="poly" title=" " alt="" coords="542,635,627,647,622,649,543,640"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8" title="dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 seg..." alt="" coords="645,695,737,722"/>
+<area shape="poly" title=" " alt="" coords="528,643,616,679,637,689,632,689,614,684,528,648"/>
+<area shape="poly" title=" " alt="" coords="542,395,729,380,847,377,966,382,1001,387,996,389,966,387,847,383,729,385,544,400"/>
+<area shape="poly" title=" " alt="" coords="504,387,548,336,579,307,614,281,654,260,689,249,724,240,766,223,813,197,858,170,854,173,816,201,768,228,725,245,690,254,656,265,617,285,583,311,552,340,508,391"/>
+<area shape="poly" title=" " alt="" coords="514,415,662,531,657,532,513,420"/>
+<area shape="poly" title=" " alt="" coords="542,394,593,391,652,394,712,407,741,418,768,433,793,453,814,476,847,529,871,582,885,628,880,627,866,584,843,532,810,479,789,457,765,437,739,423,711,412,651,399,593,396,544,399"/>
+<area shape="poly" title=" " alt="" coords="536,415,666,467,728,498,769,528,783,548,791,567,797,603,801,639,807,659,817,680,838,709,863,736,858,735,834,712,812,683,802,661,796,640,792,603,786,568,778,550,765,532,725,503,664,472,536,420"/>
 </map>
 </div>
 
@@ -462,11 +547,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="render__sdl_8h.html">render_sdl.h</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="render__sdl_8h.html">render_sdl.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

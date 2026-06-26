@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier src/sdl_draw_tools.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('sdl__draw__tools_8c.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('sdl__draw__tools_8c.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,16 +76,20 @@ $(document).ready(function(){initNavTree('sdl__draw__tools_8c.html',''); initRes
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Fonctions</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier sdl_draw_tools.c</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier sdl_draw_tools.c</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="sdl__draw__tools_8h_source.html">sdl_draw_tools.h</a>&quot;</code><br />
@@ -96,70 +99,70 @@ $(document).ready(function(){initNavTree('sdl__draw__tools_8c.html',''); initRes
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de sdl_draw_tools.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c__incl.png" border="0" usemap="#asrc_2sdl__draw__tools_8c" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c__incl.png" border="0" usemap="#asrc_2sdl__draw__tools_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2sdl__draw__tools_8c" id="asrc_2sdl__draw__tools_8c">
-<area shape="rect" title=" " alt="" coords="263,5,416,32"/>
-<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="201,80,331,107"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="93,304,167,331"/>
-<area shape="rect" title=" " alt="" coords="352,304,420,331"/>
-<area shape="rect" title=" " alt="" coords="423,80,541,107"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="274,229,349,256"/>
-<area shape="rect" href="shark_8h.html" title=" " alt="" coords="100,155,171,181"/>
-<area shape="rect" title=" " alt="" coords="195,155,291,181"/>
-<area shape="rect" title=" " alt="" coords="261,304,327,331"/>
-<area shape="rect" title=" " alt="" coords="167,229,250,256"/>
-<area shape="rect" title=" " alt="" coords="21,229,92,256"/>
+<area shape="rect" title=" " alt="" coords="259,5,411,33"/>
+<area shape="rect" href="sdl__draw__tools_8h.html" title=" " alt="" coords="197,81,327,109"/>
+<area shape="poly" title=" " alt="" coords="324,32,287,72,284,68,320,35"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="91,308,163,336"/>
+<area shape="poly" title=" " alt="" coords="284,35,217,61,137,101,98,127,63,158,33,193,11,233,8,245,10,256,24,276,48,292,79,305,74,307,46,296,20,279,5,258,3,245,6,231,29,190,59,154,95,123,134,96,215,56,288,32"/>
+<area shape="rect" title=" " alt="" coords="348,308,415,336"/>
+<area shape="poly" title=" " alt="" coords="339,32,380,293,375,292,335,35"/>
+<area shape="rect" title=" " alt="" coords="420,81,536,109"/>
+<area shape="poly" title=" " alt="" coords="361,31,442,73,437,74,361,36"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="270,232,344,260"/>
+<area shape="poly" title=" " alt="" coords="273,107,289,129,302,156,308,187,310,218,306,216,303,188,297,158,285,132,272,112"/>
+<area shape="rect" href="shark_8h.html" title=" " alt="" coords="98,157,167,184"/>
+<area shape="poly" title=" " alt="" coords="237,111,170,151,167,147,241,107"/>
+<area shape="rect" title=" " alt="" coords="191,157,287,184"/>
+<area shape="poly" title=" " alt="" coords="259,107,250,143,245,140,256,111"/>
+<area shape="poly" title=" " alt="" coords="278,260,174,304,172,299,272,261"/>
+<area shape="poly" title=" " alt="" coords="322,258,360,297,355,296,320,263"/>
+<area shape="rect" title=" " alt="" coords="258,308,324,336"/>
+<area shape="poly" title=" " alt="" coords="306,259,299,294,295,291,302,262"/>
+<area shape="poly" title=" " alt="" coords="164,182,265,225,260,227,163,188"/>
+<area shape="poly" title=" " alt="" coords="134,183,131,293,126,291,130,186"/>
+<area shape="rect" title=" " alt="" coords="165,232,246,260"/>
+<area shape="poly" title=" " alt="" coords="146,182,185,221,179,222,145,187"/>
+<area shape="rect" title=" " alt="" coords="20,232,90,260"/>
+<area shape="poly" title=" " alt="" coords="117,187,82,223,78,220,120,183"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a28d6d2a8f0e98c94d4115fd380bd6a52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52">to_int</a> (float x)</td></tr>
-<tr class="memdesc:a28d6d2a8f0e98c94d4115fd380bd6a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">convertir float en int  <a href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a28d6d2a8f0e98c94d4115fd380bd6a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8b2a2849b1645036625506a03989121"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121">direction_or_default</a> (<a class="el" href="structVector.html">Vector</a> v)</td></tr>
-<tr class="memdesc:af8b2a2849b1645036625506a03989121"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur est nul, elle renvoit une direction par défaut vers la droite  <a href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af8b2a2849b1645036625506a03989121"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d65762de41463cfae00a7f2647a90b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0">Draw_filled_circle</a> (SDL_Renderer *r, int cx, int cy, int radius)</td></tr>
-<tr class="memdesc:a8d65762de41463cfae00a7f2647a90b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un cercle plein  <a href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8d65762de41463cfae00a7f2647a90b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76039a4cb026514e3c51b9e3fb4b2a94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94">Draw_filled_ellipse</a> (SDL_Renderer *r, int cx, int cy, int rx, int ry)</td></tr>
-<tr class="memdesc:a76039a4cb026514e3c51b9e3fb4b2a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine une ellipse  <a href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a76039a4cb026514e3c51b9e3fb4b2a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b973c42bb857506812a5266f12e733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733">Draw_filled_triangle</a> (SDL_Renderer *r, int x1, int y1, int x2, int y2, int x3, int y3)</td></tr>
-<tr class="memdesc:ac7b973c42bb857506812a5266f12e733"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un triangle  <a href="sdl__draw__tools_8c.html#ac7b973c42bb857506812a5266f12e733">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ac7b973c42bb857506812a5266f12e733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d598f57c5d3dd2eff3608d4992ec29c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c">Draw_wave</a> (SDL_Renderer *r, int width, int base_y, int move, int amplitude, float time)</td></tr>
-<tr class="memdesc:a4d598f57c5d3dd2eff3608d4992ec29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine une vague la vague est obtenue avec la fct sin  <a href="sdl__draw__tools_8c.html#a4d598f57c5d3dd2eff3608d4992ec29c">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a4d598f57c5d3dd2eff3608d4992ec29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a381d5ac98fe0ef7faf8c5b208b4a051e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e">Draw_bubbles</a> (SDL_Renderer *r, int width, int height)</td></tr>
-<tr class="memdesc:a381d5ac98fe0ef7faf8c5b208b4a051e"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine des bulles  <a href="sdl__draw__tools_8c.html#a381d5ac98fe0ef7faf8c5b208b4a051e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a381d5ac98fe0ef7faf8c5b208b4a051e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27432876421de66710cde7d7541fe984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984">Draw_sea_plants</a> (SDL_Renderer *r, int width, int height, float time)</td></tr>
-<tr class="memdesc:a27432876421de66710cde7d7541fe984"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèrement avec le temps pour donner un effet naturel sous l'eau  <a href="sdl__draw__tools_8c.html#a27432876421de66710cde7d7541fe984">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a27432876421de66710cde7d7541fe984"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9499e4981f1f61f0cf1c589e72fc4eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0">Draw_mine_shape</a> (SDL_Renderer *r, int cx, int cy, int radius)</td></tr>
-<tr class="memdesc:a9499e4981f1f61f0cf1c589e72fc4eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine une mine carre cette fct represente graphiquement un obstacle/collider  <a href="sdl__draw__tools_8c.html#a9499e4981f1f61f0cf1c589e72fc4eb0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9499e4981f1f61f0cf1c589e72fc4eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f6fc10842b3cdb831294005b2a353e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8">Draw_digit</a> (SDL_Renderer *r, int x, int y, int n, int s)</td></tr>
-<tr class="memdesc:a3f6fc10842b3cdb831294005b2a353e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 segments  <a href="sdl__draw__tools_8c.html#a3f6fc10842b3cdb831294005b2a353e8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a3f6fc10842b3cdb831294005b2a353e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43a943b9a0a38568baa725c61c63411f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f">Count_digits</a> (int n)</td></tr>
-<tr class="memdesc:a43a943b9a0a38568baa725c61c63411f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compte le nbr de chiffre d un entier (ex: 196 -&gt; 3)  <a href="sdl__draw__tools_8c.html#a43a943b9a0a38568baa725c61c63411f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a43a943b9a0a38568baa725c61c63411f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a591cad68b00e9cb5e4110285e47da7ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae">Draw_circle_outline</a> (SDL_Renderer *r, int cx, int cy, int radius)</td></tr>
-<tr class="memdesc:a591cad68b00e9cb5e4110285e47da7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le contour d'un cercle  <a href="sdl__draw__tools_8c.html#a591cad68b00e9cb5e4110285e47da7ae">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a591cad68b00e9cb5e4110285e47da7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad17cc94a42c3202f4f653b013d1d6a4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f">Draw_vector</a> (SDL_Renderer *r, <a class="el" href="structVector.html">Vector</a> pos, <a class="el" href="structVector.html">Vector</a> dir, int length)</td></tr>
-<tr class="memdesc:ad17cc94a42c3202f4f653b013d1d6a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un vecteur orienté avec une fleche  <a href="sdl__draw__tools_8c.html#ad17cc94a42c3202f4f653b013d1d6a4f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ad17cc94a42c3202f4f653b013d1d6a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a504aff30d5824e9490352bf759a4c9ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdl__draw__tools_8c.html#a504aff30d5824e9490352bf759a4c9ea">Draw_intro_countdown</a> (SDL_Renderer *r, SDL_Rect left_zone, SDL_Rect right_zone, int number, <a class="el" href="structShark.html">Shark</a> *left_shark, <a class="el" href="structShark.html">Shark</a> *right_shark)</td></tr>
-<tr class="memdesc:a504aff30d5824e9490352bf759a4c9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine l'introduction avec compte a rebours.  <a href="sdl__draw__tools_8c.html#a504aff30d5824e9490352bf759a4c9ea">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a504aff30d5824e9490352bf759a4c9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d6d2a8f0e98c94d4115fd380bd6a52" id="r_a28d6d2a8f0e98c94d4115fd380bd6a52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28d6d2a8f0e98c94d4115fd380bd6a52">to_int</a> (float x)</td></tr>
+<tr class="memdesc:a28d6d2a8f0e98c94d4115fd380bd6a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">convertir float en int  <br /></td></tr>
+<tr class="memitem:af8b2a2849b1645036625506a03989121" id="r_af8b2a2849b1645036625506a03989121"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8b2a2849b1645036625506a03989121">direction_or_default</a> (<a class="el" href="structVector.html">Vector</a> v)</td></tr>
+<tr class="memdesc:af8b2a2849b1645036625506a03989121"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur est nul, elle renvoit une direction par défaut vers la droite  <br /></td></tr>
+<tr class="memitem:a8d65762de41463cfae00a7f2647a90b0" id="r_a8d65762de41463cfae00a7f2647a90b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d65762de41463cfae00a7f2647a90b0">Draw_filled_circle</a> (SDL_Renderer *r, int cx, int cy, int radius)</td></tr>
+<tr class="memdesc:a8d65762de41463cfae00a7f2647a90b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un cercle plein  <br /></td></tr>
+<tr class="memitem:a76039a4cb026514e3c51b9e3fb4b2a94" id="r_a76039a4cb026514e3c51b9e3fb4b2a94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76039a4cb026514e3c51b9e3fb4b2a94">Draw_filled_ellipse</a> (SDL_Renderer *r, int cx, int cy, int rx, int ry)</td></tr>
+<tr class="memdesc:a76039a4cb026514e3c51b9e3fb4b2a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine une ellipse  <br /></td></tr>
+<tr class="memitem:ac7b973c42bb857506812a5266f12e733" id="r_ac7b973c42bb857506812a5266f12e733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7b973c42bb857506812a5266f12e733">Draw_filled_triangle</a> (SDL_Renderer *r, int x1, int y1, int x2, int y2, int x3, int y3)</td></tr>
+<tr class="memdesc:ac7b973c42bb857506812a5266f12e733"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un triangle  <br /></td></tr>
+<tr class="memitem:a4d598f57c5d3dd2eff3608d4992ec29c" id="r_a4d598f57c5d3dd2eff3608d4992ec29c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d598f57c5d3dd2eff3608d4992ec29c">Draw_wave</a> (SDL_Renderer *r, int width, int base_y, int move, int amplitude, float time)</td></tr>
+<tr class="memdesc:a4d598f57c5d3dd2eff3608d4992ec29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine une vague la vague est obtenue avec la fct sin  <br /></td></tr>
+<tr class="memitem:a381d5ac98fe0ef7faf8c5b208b4a051e" id="r_a381d5ac98fe0ef7faf8c5b208b4a051e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a381d5ac98fe0ef7faf8c5b208b4a051e">Draw_bubbles</a> (SDL_Renderer *r, int width, int height)</td></tr>
+<tr class="memdesc:a381d5ac98fe0ef7faf8c5b208b4a051e"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine des bulles  <br /></td></tr>
+<tr class="memitem:a27432876421de66710cde7d7541fe984" id="r_a27432876421de66710cde7d7541fe984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27432876421de66710cde7d7541fe984">Draw_sea_plants</a> (SDL_Renderer *r, int width, int height, float time)</td></tr>
+<tr class="memdesc:a27432876421de66710cde7d7541fe984"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèrement avec le temps pour donner un effet naturel sous l'eau  <br /></td></tr>
+<tr class="memitem:a9499e4981f1f61f0cf1c589e72fc4eb0" id="r_a9499e4981f1f61f0cf1c589e72fc4eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9499e4981f1f61f0cf1c589e72fc4eb0">Draw_mine_shape</a> (SDL_Renderer *r, int cx, int cy, int radius)</td></tr>
+<tr class="memdesc:a9499e4981f1f61f0cf1c589e72fc4eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine une mine carre cette fct represente graphiquement un obstacle/collider  <br /></td></tr>
+<tr class="memitem:a3f6fc10842b3cdb831294005b2a353e8" id="r_a3f6fc10842b3cdb831294005b2a353e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f6fc10842b3cdb831294005b2a353e8">Draw_digit</a> (SDL_Renderer *r, int x, int y, int n, int s)</td></tr>
+<tr class="memdesc:a3f6fc10842b3cdb831294005b2a353e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un chiffre avec des segments rectangulaires le chiffre esr dessiné comme un afficheur a 7 segments  <br /></td></tr>
+<tr class="memitem:a43a943b9a0a38568baa725c61c63411f" id="r_a43a943b9a0a38568baa725c61c63411f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43a943b9a0a38568baa725c61c63411f">Count_digits</a> (int n)</td></tr>
+<tr class="memdesc:a43a943b9a0a38568baa725c61c63411f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compte le nbr de chiffre d un entier (ex: 196 -&gt; 3)  <br /></td></tr>
+<tr class="memitem:a591cad68b00e9cb5e4110285e47da7ae" id="r_a591cad68b00e9cb5e4110285e47da7ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a591cad68b00e9cb5e4110285e47da7ae">Draw_circle_outline</a> (SDL_Renderer *r, int cx, int cy, int radius)</td></tr>
+<tr class="memdesc:a591cad68b00e9cb5e4110285e47da7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine le contour d'un cercle  <br /></td></tr>
+<tr class="memitem:ad17cc94a42c3202f4f653b013d1d6a4f" id="r_ad17cc94a42c3202f4f653b013d1d6a4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad17cc94a42c3202f4f653b013d1d6a4f">Draw_vector</a> (SDL_Renderer *r, <a class="el" href="structVector.html">Vector</a> pos, <a class="el" href="structVector.html">Vector</a> dir, int length)</td></tr>
+<tr class="memdesc:ad17cc94a42c3202f4f653b013d1d6a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine un vecteur orienté avec une fleche  <br /></td></tr>
+<tr class="memitem:a504aff30d5824e9490352bf759a4c9ea" id="r_a504aff30d5824e9490352bf759a4c9ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a504aff30d5824e9490352bf759a4c9ea">Draw_intro_countdown</a> (SDL_Renderer *r, SDL_Rect left_zone, SDL_Rect right_zone, int number, <a class="el" href="structShark.html">Shark</a> *left_shark, <a class="el" href="structShark.html">Shark</a> *right_shark)</td></tr>
+<tr class="memdesc:a504aff30d5824e9490352bf759a4c9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine l'introduction avec compte a rebours.  <br /></td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a43a943b9a0a38568baa725c61c63411f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43a943b9a0a38568baa725c61c63411f">&#9670;&nbsp;</a></span>Count_digits()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a43a943b9a0a38568baa725c61c63411f" name="a43a943b9a0a38568baa725c61c63411f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a943b9a0a38568baa725c61c63411f">&#9670;&#160;</a></span>Count_digits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,8 +170,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">int Count_digits </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -185,8 +187,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="af8b2a2849b1645036625506a03989121"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8b2a2849b1645036625506a03989121">&#9670;&nbsp;</a></span>direction_or_default()</h2>
+<a id="af8b2a2849b1645036625506a03989121" name="af8b2a2849b1645036625506a03989121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b2a2849b1645036625506a03989121">&#9670;&#160;</a></span>direction_or_default()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,8 +196,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structVector.html">Vector</a> direction_or_default </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -212,19 +213,22 @@ Fonctions</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_af8b2a2849b1645036625506a03989121_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_af8b2a2849b1645036625506a03989121_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_af8b2a2849b1645036625506a03989121_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_af8b2a2849b1645036625506a03989121_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_af8b2a2849b1645036625506a03989121_cgraph" id="asdl__draw__tools_8c_af8b2a2849b1645036625506a03989121_cgraph">
-<area shape="rect" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="5,31,157,57"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="205,31,340,57"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="388,5,499,32"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="391,56,495,83"/>
+<area shape="rect" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="5,32,157,60"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="205,32,339,60"/>
+<area shape="poly" title=" " alt="" coords="157,43,192,45,186,46,157,48"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="387,5,497,33"/>
+<area shape="poly" title=" " alt="" coords="339,33,369,31,374,30,340,38"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="390,57,494,85"/>
+<area shape="poly" title=" " alt="" coords="340,53,378,61,372,61,339,59"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a381d5ac98fe0ef7faf8c5b208b4a051e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a381d5ac98fe0ef7faf8c5b208b4a051e">&#9670;&nbsp;</a></span>Draw_bubbles()</h2>
+<a id="a381d5ac98fe0ef7faf8c5b208b4a051e" name="a381d5ac98fe0ef7faf8c5b208b4a051e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a381d5ac98fe0ef7faf8c5b208b4a051e">&#9670;&#160;</a></span>Draw_bubbles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,25 +236,17 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_bubbles </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -267,17 +263,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_a381d5ac98fe0ef7faf8c5b208b4a051e_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a381d5ac98fe0ef7faf8c5b208b4a051e_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_a381d5ac98fe0ef7faf8c5b208b4a051e_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a381d5ac98fe0ef7faf8c5b208b4a051e_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_a381d5ac98fe0ef7faf8c5b208b4a051e_cgraph" id="asdl__draw__tools_8c_a381d5ac98fe0ef7faf8c5b208b4a051e_cgraph">
-<area shape="rect" title="dessine des bulles" alt="" coords="5,5,120,32"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="168,5,305,32"/>
+<area shape="rect" title="dessine des bulles" alt="" coords="5,5,119,33"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="167,5,303,33"/>
+<area shape="poly" title=" " alt="" coords="119,17,154,19,148,19,119,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a591cad68b00e9cb5e4110285e47da7ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a591cad68b00e9cb5e4110285e47da7ae">&#9670;&nbsp;</a></span>Draw_circle_outline()</h2>
+<a id="a591cad68b00e9cb5e4110285e47da7ae" name="a591cad68b00e9cb5e4110285e47da7ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a591cad68b00e9cb5e4110285e47da7ae">&#9670;&#160;</a></span>Draw_circle_outline()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,31 +282,22 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_circle_outline </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cx</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cy</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cy</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>radius</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>radius</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -327,17 +315,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_a591cad68b00e9cb5e4110285e47da7ae_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a591cad68b00e9cb5e4110285e47da7ae_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_a591cad68b00e9cb5e4110285e47da7ae_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a591cad68b00e9cb5e4110285e47da7ae_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_a591cad68b00e9cb5e4110285e47da7ae_cgraph" id="asdl__draw__tools_8c_a591cad68b00e9cb5e4110285e47da7ae_cgraph">
-<area shape="rect" title="dessine le contour d&#39;un cercle" alt="" coords="5,5,156,32"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="204,5,263,32"/>
+<area shape="rect" title="dessine le contour d&#39;un cercle" alt="" coords="5,5,155,33"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="203,5,261,33"/>
+<area shape="poly" title=" " alt="" coords="155,17,189,19,184,19,155,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a3f6fc10842b3cdb831294005b2a353e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f6fc10842b3cdb831294005b2a353e8">&#9670;&nbsp;</a></span>Draw_digit()</h2>
+<a id="a3f6fc10842b3cdb831294005b2a353e8" name="a3f6fc10842b3cdb831294005b2a353e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f6fc10842b3cdb831294005b2a353e8">&#9670;&#160;</a></span>Draw_digit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,37 +334,27 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_digit </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>s</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -394,8 +373,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a8d65762de41463cfae00a7f2647a90b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d65762de41463cfae00a7f2647a90b0">&#9670;&nbsp;</a></span>Draw_filled_circle()</h2>
+<a id="a8d65762de41463cfae00a7f2647a90b0" name="a8d65762de41463cfae00a7f2647a90b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d65762de41463cfae00a7f2647a90b0">&#9670;&#160;</a></span>Draw_filled_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -403,31 +382,22 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_filled_circle </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cx</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cy</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cy</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>radius</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>radius</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -445,8 +415,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="a76039a4cb026514e3c51b9e3fb4b2a94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76039a4cb026514e3c51b9e3fb4b2a94">&#9670;&nbsp;</a></span>Draw_filled_ellipse()</h2>
+<a id="a76039a4cb026514e3c51b9e3fb4b2a94" name="a76039a4cb026514e3c51b9e3fb4b2a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76039a4cb026514e3c51b9e3fb4b2a94">&#9670;&#160;</a></span>Draw_filled_ellipse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,37 +424,27 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_filled_ellipse </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cx</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cy</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cy</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>rx</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>rx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ry</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ry</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -503,8 +463,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="ac7b973c42bb857506812a5266f12e733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7b973c42bb857506812a5266f12e733">&#9670;&nbsp;</a></span>Draw_filled_triangle()</h2>
+<a id="ac7b973c42bb857506812a5266f12e733" name="ac7b973c42bb857506812a5266f12e733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b973c42bb857506812a5266f12e733">&#9670;&#160;</a></span>Draw_filled_triangle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,49 +472,37 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_filled_triangle </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x1</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x1</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y1</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y1</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x2</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x2</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y2</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y2</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x3</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x3</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y3</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y3</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -575,17 +523,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_ac7b973c42bb857506812a5266f12e733_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_ac7b973c42bb857506812a5266f12e733_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_ac7b973c42bb857506812a5266f12e733_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_ac7b973c42bb857506812a5266f12e733_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_ac7b973c42bb857506812a5266f12e733_cgraph" id="asdl__draw__tools_8c_ac7b973c42bb857506812a5266f12e733_cgraph">
-<area shape="rect" title="dessine un triangle" alt="" coords="5,5,157,32"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="205,5,264,32"/>
+<area shape="rect" title="dessine un triangle" alt="" coords="5,5,157,33"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="205,5,263,33"/>
+<area shape="poly" title=" " alt="" coords="157,17,191,19,186,19,157,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a504aff30d5824e9490352bf759a4c9ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a504aff30d5824e9490352bf759a4c9ea">&#9670;&nbsp;</a></span>Draw_intro_countdown()</h2>
+<a id="a504aff30d5824e9490352bf759a4c9ea" name="a504aff30d5824e9490352bf759a4c9ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a504aff30d5824e9490352bf759a4c9ea">&#9670;&#160;</a></span>Draw_intro_countdown()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -593,43 +542,32 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_intro_countdown </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SDL_Rect&#160;</td>
-          <td class="paramname"><em>left_zone</em>, </td>
+          <td class="paramtype">SDL_Rect</td>          <td class="paramname"><span class="paramname"><em>left_zone</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SDL_Rect&#160;</td>
-          <td class="paramname"><em>right_zone</em>, </td>
+          <td class="paramtype">SDL_Rect</td>          <td class="paramname"><span class="paramname"><em>right_zone</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>number</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>left_shark</em>, </td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>left_shark</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *&#160;</td>
-          <td class="paramname"><em>right_shark</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="structShark.html">Shark</a> *</td>          <td class="paramname"><span class="paramname"><em>right_shark</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -650,17 +588,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_a504aff30d5824e9490352bf759a4c9ea_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a504aff30d5824e9490352bf759a4c9ea_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_a504aff30d5824e9490352bf759a4c9ea_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a504aff30d5824e9490352bf759a4c9ea_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_a504aff30d5824e9490352bf759a4c9ea_cgraph" id="asdl__draw__tools_8c_a504aff30d5824e9490352bf759a4c9ea_cgraph">
-<area shape="rect" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="5,5,176,32"/>
-<area shape="rect" href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="224,5,305,32"/>
+<area shape="rect" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="5,5,176,33"/>
+<area shape="rect" href="shark_8c.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="224,5,304,33"/>
+<area shape="poly" title=" " alt="" coords="176,17,211,19,205,19,176,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a9499e4981f1f61f0cf1c589e72fc4eb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9499e4981f1f61f0cf1c589e72fc4eb0">&#9670;&nbsp;</a></span>Draw_mine_shape()</h2>
+<a id="a9499e4981f1f61f0cf1c589e72fc4eb0" name="a9499e4981f1f61f0cf1c589e72fc4eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9499e4981f1f61f0cf1c589e72fc4eb0">&#9670;&#160;</a></span>Draw_mine_shape()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -668,31 +607,22 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_mine_shape </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cx</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cy</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cy</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>radius</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>radius</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -710,17 +640,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_a9499e4981f1f61f0cf1c589e72fc4eb0_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a9499e4981f1f61f0cf1c589e72fc4eb0_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_a9499e4981f1f61f0cf1c589e72fc4eb0_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a9499e4981f1f61f0cf1c589e72fc4eb0_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_a9499e4981f1f61f0cf1c589e72fc4eb0_cgraph" id="asdl__draw__tools_8c_a9499e4981f1f61f0cf1c589e72fc4eb0_cgraph">
-<area shape="rect" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="5,5,148,32"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="196,5,333,32"/>
+<area shape="rect" title="dessine une mine carre cette fct represente graphiquement un obstacle/collider" alt="" coords="5,5,147,33"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a8d65762de41463cfae00a7f2647a90b0" title="dessine un cercle plein" alt="" coords="195,5,331,33"/>
+<area shape="poly" title=" " alt="" coords="147,17,182,19,177,19,147,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a27432876421de66710cde7d7541fe984"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27432876421de66710cde7d7541fe984">&#9670;&nbsp;</a></span>Draw_sea_plants()</h2>
+<a id="a27432876421de66710cde7d7541fe984" name="a27432876421de66710cde7d7541fe984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27432876421de66710cde7d7541fe984">&#9670;&#160;</a></span>Draw_sea_plants()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -728,31 +659,22 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_sea_plants </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>time</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -770,18 +692,20 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_a27432876421de66710cde7d7541fe984_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a27432876421de66710cde7d7541fe984_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_a27432876421de66710cde7d7541fe984_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a27432876421de66710cde7d7541fe984_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_a27432876421de66710cde7d7541fe984_cgraph" id="asdl__draw__tools_8c_a27432876421de66710cde7d7541fe984_cgraph">
-<area shape="rect" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="5,31,139,57"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="187,5,332,32"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="230,56,289,83"/>
+<area shape="rect" title="dessine de grandes plantes les plantes restent fixées au sol, seules les extrémités bougent légèremen..." alt="" coords="5,32,138,60"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a76039a4cb026514e3c51b9e3fb4b2a94" title="dessine une ellipse" alt="" coords="186,5,330,33"/>
+<area shape="poly" title=" " alt="" coords="138,34,173,31,168,32,139,39"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="229,57,287,85"/>
+<area shape="poly" title=" " alt="" coords="138,52,216,65,211,66,138,57"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad17cc94a42c3202f4f653b013d1d6a4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad17cc94a42c3202f4f653b013d1d6a4f">&#9670;&nbsp;</a></span>Draw_vector()</h2>
+<a id="ad17cc94a42c3202f4f653b013d1d6a4f" name="ad17cc94a42c3202f4f653b013d1d6a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad17cc94a42c3202f4f653b013d1d6a4f">&#9670;&#160;</a></span>Draw_vector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -789,31 +713,22 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_vector </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structVector.html">Vector</a>&#160;</td>
-          <td class="paramname"><em>dir</em>, </td>
+          <td class="paramtype"><a class="el" href="structVector.html">Vector</a></td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -831,21 +746,26 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_ad17cc94a42c3202f4f653b013d1d6a4f_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_ad17cc94a42c3202f4f653b013d1d6a4f_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_ad17cc94a42c3202f4f653b013d1d6a4f_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_ad17cc94a42c3202f4f653b013d1d6a4f_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_ad17cc94a42c3202f4f653b013d1d6a4f_cgraph" id="asdl__draw__tools_8c_ad17cc94a42c3202f4f653b013d1d6a4f_cgraph">
-<area shape="rect" title="dessine un vecteur orienté avec une fleche" alt="" coords="5,56,109,83"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="157,31,309,57"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="204,81,263,108"/>
-<area shape="rect" href="vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="357,31,492,57"/>
-<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="540,5,651,32"/>
-<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="543,56,647,83"/>
+<area shape="rect" title="dessine un vecteur orienté avec une fleche" alt="" coords="5,59,109,86"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#af8b2a2849b1645036625506a03989121" title="renvoie une direction normalisée transformer un vecteur vitesse en vecteur direction si le vecteur es..." alt="" coords="157,32,308,60"/>
+<area shape="poly" title=" " alt="" coords="109,62,144,59,139,61,110,67"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="203,84,262,112"/>
+<area shape="poly" title=" " alt="" coords="109,77,190,90,186,93,109,83"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="356,32,490,60"/>
+<area shape="poly" title=" " alt="" coords="308,43,343,46,338,46,309,48"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="538,5,649,33"/>
+<area shape="poly" title=" " alt="" coords="490,33,520,31,525,30,491,38"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="542,57,645,85"/>
+<area shape="poly" title=" " alt="" coords="491,53,529,61,524,61,491,59"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a4d598f57c5d3dd2eff3608d4992ec29c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d598f57c5d3dd2eff3608d4992ec29c">&#9670;&nbsp;</a></span>Draw_wave()</h2>
+<a id="a4d598f57c5d3dd2eff3608d4992ec29c" name="a4d598f57c5d3dd2eff3608d4992ec29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d598f57c5d3dd2eff3608d4992ec29c">&#9670;&#160;</a></span>Draw_wave()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -853,43 +773,32 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Draw_wave </td>
           <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>base_y</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>base_y</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>move</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>move</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>amplitude</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amplitude</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>time</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -909,17 +818,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="sdl__draw__tools_8c_a4d598f57c5d3dd2eff3608d4992ec29c_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a4d598f57c5d3dd2eff3608d4992ec29c_cgraph" alt=""/></div>
+<div class="center"><img src="sdl__draw__tools_8c_a4d598f57c5d3dd2eff3608d4992ec29c_cgraph.png" border="0" usemap="#asdl__draw__tools_8c_a4d598f57c5d3dd2eff3608d4992ec29c_cgraph" loading="lazy" alt=""/></div>
 <map name="asdl__draw__tools_8c_a4d598f57c5d3dd2eff3608d4992ec29c_cgraph" id="asdl__draw__tools_8c_a4d598f57c5d3dd2eff3608d4992ec29c_cgraph">
-<area shape="rect" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="5,5,104,32"/>
-<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="152,5,211,32"/>
+<area shape="rect" title="dessine une vague la vague est obtenue avec la fct sin" alt="" coords="5,5,103,33"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a28d6d2a8f0e98c94d4115fd380bd6a52" title="convertir float en int" alt="" coords="151,5,209,33"/>
+<area shape="poly" title=" " alt="" coords="103,17,137,19,132,19,103,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a28d6d2a8f0e98c94d4115fd380bd6a52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28d6d2a8f0e98c94d4115fd380bd6a52">&#9670;&nbsp;</a></span>to_int()</h2>
+<a id="a28d6d2a8f0e98c94d4115fd380bd6a52" name="a28d6d2a8f0e98c94d4115fd380bd6a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d6d2a8f0e98c94d4115fd380bd6a52">&#9670;&#160;</a></span>to_int()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -927,8 +837,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">int to_int </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -947,11 +856,19 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="sdl__draw__tools_8c.html">sdl_draw_tools.c</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="sdl__draw__tools_8c.html">sdl_draw_tools.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

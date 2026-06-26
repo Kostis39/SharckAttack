@@ -1,10 +1,15 @@
 <map id="Rules_pursuit" name="Rules_pursuit">
-<area shape="rect" id="node1" title="règle de poursuite vers le poisson la plus proche" alt="" coords="5,107,116,133"/>
-<area shape="rect" id="node2" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="186,5,277,32"/>
-<area shape="rect" id="node3" href="$vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="176,56,287,83"/>
-<area shape="rect" id="node4" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="164,107,299,133"/>
-<area shape="rect" id="node7" href="$vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="179,157,283,184"/>
-<area shape="rect" id="node8" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="185,208,278,235"/>
-<area shape="rect" id="node5" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="347,81,457,108"/>
-<area shape="rect" id="node6" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="350,132,454,159"/>
+<area shape="rect" id="Node000001" title="règle de poursuite vers le poisson la plus proche" alt="" coords="5,107,115,134"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="185,5,275,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,104,161,49,185,39,181,42,164,53,82,108"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="345,69,455,97"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,104,162,93,249,84,332,82,327,84,249,89,163,98,112,108"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="163,107,297,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,118,150,119,145,122,116,123"/>
+<area shape="rect" id="Node000005" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="348,133,452,161"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="109,132,163,143,252,149,336,150,331,152,251,154,162,148,109,138"/>
+<area shape="rect" id="Node000006" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="184,208,276,236"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="81,132,164,188,185,201,180,201,161,192,80,137"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="295,104,332,98,327,99,297,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="297,128,336,136,330,137,298,134"/>
 </map>

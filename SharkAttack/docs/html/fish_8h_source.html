@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack:  Fichier source de include/fish.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('fish_8h_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('fish_8h_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,69 +76,79 @@ $(document).ready(function(){initNavTree('fish_8h_source.html',''); initResizabl
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">fish.h</div>  </div>
+  <div class="headertitle"><div class="title">fish.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="fish_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FISH_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FISH_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;math.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structFish.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363">   14</a></span>&#160;    <a class="code" href="structVector.html">Vector</a> <a class="code" href="structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363">position</a>; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structFish.html#a92ce6155d43ad196be88b94ad73b7fe4">   15</a></span>&#160;    <a class="code" href="structVector.html">Vector</a> <a class="code" href="structFish.html#a92ce6155d43ad196be88b94ad73b7fe4">velocity</a>; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structFish.html#aed817fc6d112672f2233bde49f822e16">   17</a></span>&#160;        <a class="code" href="structFish.html#aed817fc6d112672f2233bde49f822e16">is_alive</a>; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3">   19</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3">radius_separation</a>; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6">   21</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6">radius_alignement</a>; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structFish.html#a60e0013f816d835c00613f45665baccf">   23</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structFish.html#a60e0013f816d835c00613f45665baccf">radius_cohesion</a>;   </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structFish.html#a7e8350e51f4d4b89b69c54a313d169d7">   25</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structFish.html#a7e8350e51f4d4b89b69c54a313d169d7">vision_angle</a>;      </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;} <a class="code" href="structFish.html">Fish</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="structFish.html">Fish</a> <a class="code" href="fish_8h.html#aab35ac2eae26a6b1193a7af85eb754fa">Fish_create_random_pos</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="structFish.html">Fish</a> *<a class="code" href="fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1">Fish_create_random_array</a>(<span class="keywordtype">int</span> nb_fish, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<a class="code" href="structFish.html">Fish</a> *<a class="code" href="fish_8h.html#ac0d31eff6b631562f4f429c476439913">Fish_copy_array</a>(<a class="code" href="structFish.html">Fish</a> *fish_array, <span class="keywordtype">int</span> nb_fish);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fish_8h.html#ad32bad07f006130e31d4e163397718e1">Fish_destroy_array</a>(<a class="code" href="structFish.html">Fish</a> *fish_array);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fish_8h.html#a264a6701ce107ab411de095019998799">fish_apply_action</a>(<a class="code" href="structFish.html">Fish</a> *fish, <a class="code" href="structVector.html">Vector</a> action);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="fish_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FISH_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FISH_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;math.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">vector.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structFish.html">   13</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363">   14</a></span>    <a class="code hl_struct" href="structVector.html">Vector</a> <a class="code hl_variable" href="structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363">position</a>; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structFish.html#a92ce6155d43ad196be88b94ad73b7fe4">   15</a></span>    <a class="code hl_struct" href="structVector.html">Vector</a> <a class="code hl_variable" href="structFish.html#a92ce6155d43ad196be88b94ad73b7fe4">velocity</a>; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structFish.html#aed817fc6d112672f2233bde49f822e16">   17</a></span>        <a class="code hl_variable" href="structFish.html#aed817fc6d112672f2233bde49f822e16">is_alive</a>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3">   19</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3">radius_separation</a>; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6">   21</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6">radius_alignement</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structFish.html#a60e0013f816d835c00613f45665baccf">   23</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structFish.html#a60e0013f816d835c00613f45665baccf">radius_cohesion</a>;   </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structFish.html#a7e8350e51f4d4b89b69c54a313d169d7">   25</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structFish.html#a7e8350e51f4d4b89b69c54a313d169d7">vision_angle</a>;      </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>} <a class="code hl_struct" href="structFish.html">Fish</a>;</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><a class="code hl_struct" href="structFish.html">Fish</a> <a class="code hl_function" href="fish_8h.html#aab35ac2eae26a6b1193a7af85eb754fa">Fish_create_random_pos</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><a class="code hl_struct" href="structFish.html">Fish</a> *<a class="code hl_function" href="fish_8h.html#aba09af4958a615ad5f14f0f86de2143d">Fish_create_random_array</a>(<span class="keywordtype">int</span> nb_fish, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_struct" href="structFish.html">Fish</a> *<a class="code hl_function" href="fish_8h.html#a3f90ce99ab81c8bdeeddc5093c4d7851">Fish_copy_array</a>(<a class="code hl_struct" href="structFish.html">Fish</a> *fish_array, <span class="keywordtype">int</span> nb_fish);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> <a class="code hl_function" href="fish_8h.html#ad32bad07f006130e31d4e163397718e1">Fish_destroy_array</a>(<a class="code hl_struct" href="structFish.html">Fish</a> *fish_array);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> <a class="code hl_function" href="fish_8h.html#a264a6701ce107ab411de095019998799">fish_apply_action</a>(<a class="code hl_struct" href="structFish.html">Fish</a> *fish, <a class="code hl_struct" href="structVector.html">Vector</a> action);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
-<div class="ttc" id="afish_8h_html_a264a6701ce107ab411de095019998799"><div class="ttname"><a href="fish_8h.html#a264a6701ce107ab411de095019998799">fish_apply_action</a></div><div class="ttdeci">void fish_apply_action(Fish *fish, Vector action)</div><div class="ttdoc">applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite...</div><div class="ttdef"><b>Definition:</b> fish.c:51</div></div>
-<div class="ttc" id="afish_8h_html_a5b1228d9376f2be2932282e5c10fd8b1"><div class="ttname"><a href="fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1">Fish_create_random_array</a></div><div class="ttdeci">Fish * Fish_create_random_array(int nb_fish, int width, int height)</div><div class="ttdoc">crée un tableau de poissons avec des positions et vitesses aléatoires</div><div class="ttdef"><b>Definition:</b> fish.c:20</div></div>
-<div class="ttc" id="afish_8h_html_aab35ac2eae26a6b1193a7af85eb754fa"><div class="ttname"><a href="fish_8h.html#aab35ac2eae26a6b1193a7af85eb754fa">Fish_create_random_pos</a></div><div class="ttdeci">Fish Fish_create_random_pos(int width, int height)</div><div class="ttdoc">crée un poisson avec une position et une vitesse aléatoires</div><div class="ttdef"><b>Definition:</b> fish.c:5</div></div>
-<div class="ttc" id="afish_8h_html_ac0d31eff6b631562f4f429c476439913"><div class="ttname"><a href="fish_8h.html#ac0d31eff6b631562f4f429c476439913">Fish_copy_array</a></div><div class="ttdeci">Fish * Fish_copy_array(Fish *fish_array, int nb_fish)</div><div class="ttdoc">copie un tableau de poissons</div><div class="ttdef"><b>Definition:</b> fish.c:38</div></div>
-<div class="ttc" id="afish_8h_html_ad32bad07f006130e31d4e163397718e1"><div class="ttname"><a href="fish_8h.html#ad32bad07f006130e31d4e163397718e1">Fish_destroy_array</a></div><div class="ttdeci">void Fish_destroy_array(Fish *fish_array)</div><div class="ttdoc">libère la mémoire d'un tableau de poissons</div><div class="ttdef"><b>Definition:</b> fish.c:46</div></div>
-<div class="ttc" id="astructFish_html"><div class="ttname"><a href="structFish.html">Fish</a></div><div class="ttdoc">Structure représentant un poisson dans le jeu.</div><div class="ttdef"><b>Definition:</b> fish.h:13</div></div>
-<div class="ttc" id="astructFish_html_a1eddec9d6f4db7c7928ac8ff5a349363"><div class="ttname"><a href="structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363">Fish::position</a></div><div class="ttdeci">Vector position</div><div class="ttdef"><b>Definition:</b> fish.h:14</div></div>
-<div class="ttc" id="astructFish_html_a60e0013f816d835c00613f45665baccf"><div class="ttname"><a href="structFish.html#a60e0013f816d835c00613f45665baccf">Fish::radius_cohesion</a></div><div class="ttdeci">float radius_cohesion</div><div class="ttdef"><b>Definition:</b> fish.h:23</div></div>
-<div class="ttc" id="astructFish_html_a7e8350e51f4d4b89b69c54a313d169d7"><div class="ttname"><a href="structFish.html#a7e8350e51f4d4b89b69c54a313d169d7">Fish::vision_angle</a></div><div class="ttdeci">float vision_angle</div><div class="ttdef"><b>Definition:</b> fish.h:25</div></div>
-<div class="ttc" id="astructFish_html_a91c024a581e5a940e0989e8d1fa1ecb3"><div class="ttname"><a href="structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3">Fish::radius_separation</a></div><div class="ttdeci">float radius_separation</div><div class="ttdef"><b>Definition:</b> fish.h:19</div></div>
-<div class="ttc" id="astructFish_html_a92ce6155d43ad196be88b94ad73b7fe4"><div class="ttname"><a href="structFish.html#a92ce6155d43ad196be88b94ad73b7fe4">Fish::velocity</a></div><div class="ttdeci">Vector velocity</div><div class="ttdef"><b>Definition:</b> fish.h:15</div></div>
-<div class="ttc" id="astructFish_html_aa19facafe6ca10559c0aff8c7d8b79b6"><div class="ttname"><a href="structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6">Fish::radius_alignement</a></div><div class="ttdeci">float radius_alignement</div><div class="ttdef"><b>Definition:</b> fish.h:21</div></div>
-<div class="ttc" id="astructFish_html_aed817fc6d112672f2233bde49f822e16"><div class="ttname"><a href="structFish.html#aed817fc6d112672f2233bde49f822e16">Fish::is_alive</a></div><div class="ttdeci">bool is_alive</div><div class="ttdef"><b>Definition:</b> fish.h:17</div></div>
-<div class="ttc" id="astructVector_html"><div class="ttname"><a href="structVector.html">Vector</a></div><div class="ttdoc">Structure représentant un vecteur 2D.</div><div class="ttdef"><b>Definition:</b> vector.h:12</div></div>
+<div class="ttc" id="afish_8h_html_a264a6701ce107ab411de095019998799"><div class="ttname"><a href="fish_8h.html#a264a6701ce107ab411de095019998799">fish_apply_action</a></div><div class="ttdeci">void fish_apply_action(Fish *fish, Vector action)</div><div class="ttdoc">applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite...</div><div class="ttdef"><b>Definition</b> fish.c:51</div></div>
+<div class="ttc" id="afish_8h_html_a3f90ce99ab81c8bdeeddc5093c4d7851"><div class="ttname"><a href="fish_8h.html#a3f90ce99ab81c8bdeeddc5093c4d7851">Fish_copy_array</a></div><div class="ttdeci">Fish * Fish_copy_array(Fish *fish_array, int nb_fish)</div><div class="ttdoc">copie un tableau de poissons</div><div class="ttdef"><b>Definition</b> fish.c:38</div></div>
+<div class="ttc" id="afish_8h_html_aab35ac2eae26a6b1193a7af85eb754fa"><div class="ttname"><a href="fish_8h.html#aab35ac2eae26a6b1193a7af85eb754fa">Fish_create_random_pos</a></div><div class="ttdeci">Fish Fish_create_random_pos(int width, int height)</div><div class="ttdoc">crée un poisson avec une position et une vitesse aléatoires</div><div class="ttdef"><b>Definition</b> fish.c:5</div></div>
+<div class="ttc" id="afish_8h_html_aba09af4958a615ad5f14f0f86de2143d"><div class="ttname"><a href="fish_8h.html#aba09af4958a615ad5f14f0f86de2143d">Fish_create_random_array</a></div><div class="ttdeci">Fish * Fish_create_random_array(int nb_fish, int width, int height)</div><div class="ttdoc">crée un tableau de poissons avec des positions et vitesses aléatoires</div><div class="ttdef"><b>Definition</b> fish.c:20</div></div>
+<div class="ttc" id="afish_8h_html_ad32bad07f006130e31d4e163397718e1"><div class="ttname"><a href="fish_8h.html#ad32bad07f006130e31d4e163397718e1">Fish_destroy_array</a></div><div class="ttdeci">void Fish_destroy_array(Fish *fish_array)</div><div class="ttdoc">libère la mémoire d&#39;un tableau de poissons</div><div class="ttdef"><b>Definition</b> fish.c:46</div></div>
+<div class="ttc" id="astructFish_html"><div class="ttname"><a href="structFish.html">Fish</a></div><div class="ttdoc">Structure représentant un poisson dans le jeu.</div><div class="ttdef"><b>Definition</b> fish.h:13</div></div>
+<div class="ttc" id="astructFish_html_a1eddec9d6f4db7c7928ac8ff5a349363"><div class="ttname"><a href="structFish.html#a1eddec9d6f4db7c7928ac8ff5a349363">Fish::position</a></div><div class="ttdeci">Vector position</div><div class="ttdef"><b>Definition</b> fish.h:14</div></div>
+<div class="ttc" id="astructFish_html_a60e0013f816d835c00613f45665baccf"><div class="ttname"><a href="structFish.html#a60e0013f816d835c00613f45665baccf">Fish::radius_cohesion</a></div><div class="ttdeci">float radius_cohesion</div><div class="ttdef"><b>Definition</b> fish.h:23</div></div>
+<div class="ttc" id="astructFish_html_a7e8350e51f4d4b89b69c54a313d169d7"><div class="ttname"><a href="structFish.html#a7e8350e51f4d4b89b69c54a313d169d7">Fish::vision_angle</a></div><div class="ttdeci">float vision_angle</div><div class="ttdef"><b>Definition</b> fish.h:25</div></div>
+<div class="ttc" id="astructFish_html_a91c024a581e5a940e0989e8d1fa1ecb3"><div class="ttname"><a href="structFish.html#a91c024a581e5a940e0989e8d1fa1ecb3">Fish::radius_separation</a></div><div class="ttdeci">float radius_separation</div><div class="ttdef"><b>Definition</b> fish.h:19</div></div>
+<div class="ttc" id="astructFish_html_a92ce6155d43ad196be88b94ad73b7fe4"><div class="ttname"><a href="structFish.html#a92ce6155d43ad196be88b94ad73b7fe4">Fish::velocity</a></div><div class="ttdeci">Vector velocity</div><div class="ttdef"><b>Definition</b> fish.h:15</div></div>
+<div class="ttc" id="astructFish_html_aa19facafe6ca10559c0aff8c7d8b79b6"><div class="ttname"><a href="structFish.html#aa19facafe6ca10559c0aff8c7d8b79b6">Fish::radius_alignement</a></div><div class="ttdeci">float radius_alignement</div><div class="ttdef"><b>Definition</b> fish.h:21</div></div>
+<div class="ttc" id="astructFish_html_aed817fc6d112672f2233bde49f822e16"><div class="ttname"><a href="structFish.html#aed817fc6d112672f2233bde49f822e16">Fish::is_alive</a></div><div class="ttdeci">bool is_alive</div><div class="ttdef"><b>Definition</b> fish.h:17</div></div>
+<div class="ttc" id="astructVector_html"><div class="ttname"><a href="structVector.html">Vector</a></div><div class="ttdoc">Structure représentant un vecteur 2D.</div><div class="ttdef"><b>Definition</b> vector.h:12</div></div>
 <div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="fish_8h.html">fish.h</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="fish_8h.html">fish.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

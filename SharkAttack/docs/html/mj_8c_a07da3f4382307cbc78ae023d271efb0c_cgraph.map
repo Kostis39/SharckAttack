@@ -1,5 +1,7 @@
 <map id="fish_to_shark_perception" name="fish_to_shark_perception">
-<area shape="rect" id="node1" title="Met à jour la perception du requin pour un poisson." alt="" coords="5,31,189,57"/>
-<area shape="rect" id="node2" href="$vector_8h.html#a3ffcad6a3ae62aa6326809bc11232aab" title="Renvoie la norme du vecteur passé en paramètre au carrée." alt="" coords="237,5,356,32"/>
-<area shape="rect" id="node3" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="250,56,343,83"/>
+<area shape="rect" id="Node000001" title="Met à jour la perception du requin pour un poisson." alt="" coords="5,32,189,60"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#a3ffcad6a3ae62aa6326809bc11232aab" title="Renvoie la norme du vecteur passé en paramètre au carrée." alt="" coords="237,5,355,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,31,224,29,219,30,189,36"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="250,57,342,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,55,237,63,232,64,189,60"/>
 </map>

@@ -1,18 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sharkattack: Référence du fichier include/game.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,10 +24,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sharkattack
-   &#160;<span id="projectnumber">0.1</span>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sharkattack<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Sharkattack the game</div>
   </td>
@@ -35,21 +35,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.1 -->
+<!-- Généré par Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -63,10 +63,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('game_8h.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('game_8h.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -77,17 +76,20 @@ $(document).ready(function(){initNavTree('game_8h.html',''); initResizable(); })
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Structures de données</a> &#124;
-<a href="#func-members">Fonctions</a>  </div>
-  <div class="headertitle">
-<div class="title">Référence du fichier game.h</div>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier game.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="render__sdl_8h_source.html">render_sdl.h</a>&quot;</code><br />
@@ -96,77 +98,145 @@ $(document).ready(function(){initNavTree('game_8h.html',''); initResizable(); })
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de game.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="game_8h__incl.png" border="0" usemap="#ainclude_2game_8h" alt=""/></div>
+<div class="center"><img src="game_8h__incl.png" border="0" usemap="#ainclude_2game_8h" loading="lazy" alt=""/></div>
 <map name="ainclude_2game_8h" id="ainclude_2game_8h">
-<area shape="rect" title=" " alt="" coords="351,5,473,32"/>
-<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="361,80,463,107"/>
-<area shape="rect" href="sound_8h.html" title=" " alt="" coords="165,155,238,181"/>
-<area shape="rect" href="world_8h.html" title=" " alt="" coords="586,155,657,181"/>
-<area shape="rect" title=" " alt="" coords="364,155,460,181"/>
-<area shape="rect" title=" " alt="" coords="588,453,671,480"/>
-<area shape="rect" href="collider_8h.html" title=" " alt="" coords="422,304,503,331"/>
-<area shape="rect" href="fish_8h.html" title=" " alt="" coords="294,379,351,405"/>
-<area shape="rect" href="shark_8h.html" title=" " alt="" coords="775,379,846,405"/>
-<area shape="rect" title=" " alt="" coords="681,379,751,405"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1022,453,1085,480"/>
-<area shape="rect" href="vector_8h.html" title=" " alt="" coords="877,528,952,555"/>
-<area shape="rect" href="config_8h.html" title=" " alt="" coords="1003,603,1077,629"/>
-<area shape="rect" title=" " alt="" coords="881,603,949,629"/>
-<area shape="rect" title=" " alt="" coords="1259,528,1330,555"/>
-<area shape="rect" title=" " alt="" coords="1360,603,1427,629"/>
-<area shape="rect" title=" " alt="" coords="5,229,144,256"/>
-<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1059,229,1151,256"/>
-<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="1111,453,1206,480"/>
-<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="1301,304,1417,331"/>
-<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="1130,379,1257,405"/>
-<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1036,304,1175,331"/>
-<area shape="rect" title=" " alt="" coords="680,304,755,331"/>
-<area shape="rect" title=" " alt="" coords="779,304,863,331"/>
-<area shape="rect" title=" " alt="" coords="887,304,961,331"/>
-<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="1128,528,1235,555"/>
+<area shape="rect" title=" " alt="" coords="350,5,471,33"/>
+<area shape="rect" href="render__sdl_8h.html" title=" " alt="" coords="360,81,461,109"/>
+<area shape="poly" title=" " alt="" coords="411,31,413,66,408,65,410,36"/>
+<area shape="rect" href="sound_8h.html" title=" " alt="" coords="165,157,237,184"/>
+<area shape="poly" title=" " alt="" coords="391,36,234,149,230,145,394,31"/>
+<area shape="rect" href="world_8h.html" title=" " alt="" coords="584,157,653,184"/>
+<area shape="poly" title=" " alt="" coords="429,31,590,146,585,148,428,36"/>
+<area shape="rect" title=" " alt="" coords="363,157,458,184"/>
+<area shape="poly" title=" " alt="" coords="411,107,413,142,408,140,410,112"/>
+<area shape="rect" title=" " alt="" coords="587,459,668,487"/>
+<area shape="poly" title=" " alt="" coords="386,111,364,131,345,158,336,185,333,209,336,230,343,251,371,291,411,334,453,371,498,403,586,452,580,453,496,408,449,375,407,338,367,294,339,253,330,232,327,209,330,183,340,155,361,127,389,107"/>
+<area shape="rect" href="collider_8h.html" title=" " alt="" coords="421,308,501,336"/>
+<area shape="poly" title=" " alt="" coords="390,111,371,131,353,158,350,170,353,183,369,217,390,247,436,297,431,298,386,251,364,219,348,185,345,170,348,156,367,128,393,107"/>
+<area shape="rect" href="fish_8h.html" title=" " alt="" coords="293,384,349,411"/>
+<area shape="poly" title=" " alt="" coords="430,106,451,122,469,142,478,163,478,175,473,186,458,201,442,209,408,213,374,216,357,222,342,234,323,265,315,301,314,337,318,369,313,368,309,337,310,300,318,263,338,231,355,217,373,210,408,208,440,204,455,197,468,183,472,174,473,164,464,145,447,126,430,112"/>
+<area shape="rect" href="shark_8h.html" title=" " alt="" coords="770,384,840,411"/>
+<area shape="poly" title=" " alt="" coords="431,106,494,155,537,205,566,249,596,291,617,312,644,333,692,356,758,381,753,381,690,361,641,338,613,316,592,294,561,252,533,208,490,159,431,112"/>
+<area shape="poly" title=" " alt="" coords="371,111,254,154,251,149,375,107"/>
+<area shape="poly" title=" " alt="" coords="447,107,572,151,567,153,448,112"/>
+<area shape="poly" title=" " alt="" coords="476,333,604,448,599,449,475,338"/>
+<area shape="rect" title=" " alt="" coords="677,384,747,411"/>
+<area shape="poly" title=" " alt="" coords="502,332,664,381,659,382,502,338"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="1009,459,1070,487"/>
+<area shape="poly" title=" " alt="" coords="486,333,565,371,666,409,756,431,846,447,996,468,991,468,846,453,755,436,664,414,563,376,485,339"/>
+<area shape="rect" href="vector_8h.html" title=" " alt="" coords="866,535,939,563"/>
+<area shape="poly" title=" " alt="" coords="467,333,483,366,506,407,537,450,577,485,627,504,700,520,853,543,848,543,699,525,626,509,574,489,533,453,501,410,478,369,465,338"/>
+<area shape="rect" href="config_8h.html" title=" " alt="" coords="992,611,1064,638"/>
+<area shape="poly" title=" " alt="" coords="1041,485,1032,597,1028,593,1037,489"/>
+<area shape="poly" title=" " alt="" coords="1018,487,941,530,939,525,1013,488"/>
+<area shape="rect" title=" " alt="" coords="869,611,936,638"/>
+<area shape="poly" title=" " alt="" coords="1031,486,926,601,923,597,1026,488"/>
+<area shape="rect" title=" " alt="" coords="1246,535,1316,563"/>
+<area shape="poly" title=" " alt="" coords="1071,481,1234,533,1229,532,1071,487"/>
+<area shape="poly" title=" " alt="" coords="926,561,996,603,990,602,924,566"/>
+<area shape="poly" title=" " alt="" coords="904,561,904,597,901,593,901,565"/>
+<area shape="rect" title=" " alt="" coords="1350,611,1415,638"/>
+<area shape="poly" title=" " alt="" coords="940,553,1337,616,1332,616,940,558"/>
+<area shape="poly" title=" " alt="" coords="349,404,368,409,574,458,570,460,367,414,350,409"/>
+<area shape="poly" title=" " alt="" coords="326,409,342,449,354,468,371,485,404,500,465,517,637,553,979,615,973,615,636,559,464,522,402,505,368,489,350,472,337,451,323,414"/>
+<area shape="poly" title=" " alt="" coords="331,409,367,448,390,468,417,485,453,497,501,508,621,525,747,536,853,545,848,545,747,541,620,530,500,513,451,502,415,489,387,473,363,452,330,414"/>
+<area shape="poly" title=" " alt="" coords="317,410,307,443,298,483,299,525,305,544,316,561,343,574,395,585,547,603,717,614,856,622,850,622,717,619,546,608,394,591,342,579,313,565,301,546,294,526,293,483,302,442,314,414"/>
+<area shape="poly" title=" " alt="" coords="350,409,449,448,512,468,576,484,674,501,757,510,901,513,1047,513,1132,519,1234,535,1229,535,1132,524,1047,519,901,518,757,515,673,506,575,490,511,473,448,453,350,414"/>
+<area shape="poly" title=" " alt="" coords="776,411,674,456,672,451,771,413"/>
+<area shape="poly" title=" " alt="" coords="807,410,810,442,817,482,832,524,856,561,876,574,906,587,979,611,974,610,904,592,873,578,853,565,827,526,812,483,805,443,804,414"/>
+<area shape="poly" title=" " alt="" coords="815,409,888,522,883,521,812,414"/>
+<area shape="poly" title=" " alt="" coords="840,398,1032,417,1134,434,1176,445,1206,457,1226,470,1243,487,1269,523,1264,521,1239,490,1222,474,1204,462,1174,450,1133,439,1031,422,840,404"/>
+<area shape="rect" title=" " alt="" coords="5,232,144,260"/>
+<area shape="poly" title=" " alt="" coords="177,187,112,226,108,223,180,183"/>
+<area shape="poly" title=" " alt="" coords="607,183,487,299,484,295,603,186"/>
+<area shape="poly" title=" " alt="" coords="581,175,472,193,405,210,341,235,266,266,253,274,243,286,237,301,234,321,234,474,241,491,261,507,292,521,333,534,438,557,560,574,803,596,948,608,979,615,974,615,948,613,802,602,560,579,437,562,332,540,290,526,258,511,237,494,229,475,229,320,232,299,239,283,250,270,264,261,339,230,404,205,471,188,586,173"/>
+<area shape="poly" title=" " alt="" coords="581,182,524,204,461,236,435,257,416,280,408,306,412,335,434,387,458,424,492,455,540,485,564,495,598,505,682,521,853,543,848,543,681,526,596,510,562,500,537,489,488,459,454,428,429,389,407,336,402,305,411,277,431,253,458,232,522,199,585,180"/>
+<area shape="poly" title=" " alt="" coords="653,170,885,182,1218,208,1381,228,1518,252,1572,267,1614,283,1640,300,1648,310,1650,320,1650,475,1644,509,1627,539,1601,562,1569,581,1534,596,1497,607,1431,621,1430,615,1496,602,1532,591,1567,577,1598,558,1623,535,1639,508,1645,474,1645,321,1643,312,1637,304,1611,287,1571,272,1517,258,1380,233,1218,214,884,187,654,176"/>
+<area shape="poly" title=" " alt="" coords="653,170,795,174,992,184,1189,202,1271,215,1331,230,1370,243,1400,255,1425,274,1447,307,1459,334,1464,359,1464,383,1458,405,1447,427,1432,448,1391,489,1360,512,1327,530,1325,525,1357,508,1387,485,1428,444,1442,424,1453,403,1459,382,1459,359,1454,335,1443,309,1421,278,1397,260,1368,248,1330,235,1269,220,1188,207,991,190,794,180,654,175"/>
+<area shape="poly" title=" " alt="" coords="581,177,463,198,404,214,382,224,367,234,345,265,332,301,325,337,323,369,318,367,320,336,327,299,340,262,363,230,380,219,403,209,462,193,586,174"/>
+<area shape="poly" title=" " alt="" coords="620,182,624,214,631,254,645,296,668,334,682,345,704,356,759,380,754,380,702,361,679,349,665,337,640,298,626,255,618,215,618,187"/>
+<area shape="rect" href="reinforce_8h.html" title=" " alt="" coords="1053,232,1144,260"/>
+<area shape="poly" title=" " alt="" coords="654,175,1040,234,1035,237,654,180"/>
+<area shape="rect" href="theta__set_8h.html" title=" " alt="" coords="1099,459,1194,487"/>
+<area shape="poly" title=" " alt="" coords="653,169,820,173,934,180,1055,191,1174,208,1281,232,1327,247,1367,264,1399,284,1422,306,1431,322,1435,337,1435,352,1429,365,1408,389,1376,410,1336,428,1293,442,1209,463,1208,458,1291,437,1334,423,1373,405,1405,385,1425,362,1429,350,1430,338,1426,324,1418,310,1396,288,1365,269,1325,252,1280,237,1173,213,1054,196,934,185,820,178,654,174"/>
+<area shape="poly" title=" " alt="" coords="1050,248,958,253,843,262,737,280,696,293,668,310,646,340,634,375,629,412,628,445,623,442,624,411,629,374,642,337,665,306,694,288,736,275,843,257,958,248,1055,247"/>
+<area shape="poly" title=" " alt="" coords="1126,258,1151,272,1172,291,1185,312,1186,325,1182,337,1166,356,1148,365,1129,372,1108,386,1080,416,1057,448,1054,444,1076,413,1105,382,1126,367,1146,360,1163,352,1177,334,1181,324,1180,314,1168,294,1148,277,1126,263"/>
+<area shape="poly" title=" " alt="" coords="1144,246,1222,250,1313,260,1395,278,1426,290,1447,306,1453,319,1456,341,1454,372,1446,412,1433,461,1418,500,1395,532,1357,565,1336,576,1306,586,1232,602,1080,622,1080,616,1231,597,1305,581,1334,571,1354,560,1392,529,1413,497,1428,459,1441,411,1449,371,1450,341,1447,320,1443,310,1424,295,1393,283,1312,265,1222,255,1145,251"/>
+<area shape="poly" title=" " alt="" coords="1144,247,1217,252,1300,262,1374,279,1403,291,1422,306,1437,335,1439,366,1429,398,1412,428,1389,458,1363,484,1313,527,1311,523,1359,481,1385,454,1407,425,1424,396,1433,366,1432,337,1418,310,1400,296,1373,284,1299,267,1216,257,1145,252"/>
+<area shape="poly" title=" " alt="" coords="1084,259,1033,299,968,338,910,364,855,384,853,378,908,359,965,333,1030,294,1079,262"/>
+<area shape="rect" href="input__output_8h.html" title=" " alt="" coords="1293,308,1408,336"/>
+<area shape="poly" title=" " alt="" coords="1144,258,1293,303,1288,303,1143,263"/>
+<area shape="rect" href="utils__reinforce_8h.html" title=" " alt="" coords="1118,384,1244,411"/>
+<area shape="poly" title=" " alt="" coords="1145,254,1189,273,1210,288,1226,307,1231,324,1228,342,1207,375,1204,370,1223,340,1226,324,1221,309,1206,291,1187,277,1144,259"/>
+<area shape="rect" href="shark__controller_8h.html" title=" " alt="" coords="1030,308,1167,336"/>
+<area shape="poly" title=" " alt="" coords="1093,258,1092,294,1088,291,1090,263"/>
+<area shape="rect" title=" " alt="" coords="678,308,751,336"/>
+<area shape="poly" title=" " alt="" coords="1050,256,928,279,767,310,766,305,927,274,1055,254"/>
+<area shape="rect" title=" " alt="" coords="776,308,859,336"/>
+<area shape="poly" title=" " alt="" coords="1050,260,875,308,873,303,1055,259"/>
+<area shape="rect" title=" " alt="" coords="882,308,955,336"/>
+<area shape="poly" title=" " alt="" coords="1069,260,965,304,963,299,1064,261"/>
+<area shape="poly" title=" " alt="" coords="1290,336,685,463,684,458,1295,334"/>
+<area shape="poly" title=" " alt="" coords="1290,328,1027,354,880,370,763,386,762,381,879,365,1027,349,1295,327"/>
+<area shape="poly" title=" " alt="" coords="1356,334,1365,379,1370,440,1368,473,1361,506,1349,537,1330,565,1312,577,1287,588,1220,605,1146,616,1079,623,1079,617,1145,611,1219,600,1285,583,1309,573,1326,561,1344,535,1356,505,1363,473,1365,440,1360,380,1353,338"/>
+<area shape="poly" title=" " alt="" coords="1367,334,1388,355,1404,383,1417,432,1418,472,1404,563,1394,598,1391,594,1399,562,1413,472,1412,433,1399,385,1384,359,1365,339"/>
+<area shape="poly" title=" " alt="" coords="1349,334,1292,522,1288,518,1344,337"/>
+<area shape="poly" title=" " alt="" coords="1323,335,1226,380,1224,375,1318,337"/>
+<area shape="poly" title=" " alt="" coords="1122,411,1060,433,999,462,957,493,924,526,921,521,954,489,996,457,1058,428,1117,413"/>
+<area shape="poly" title=" " alt="" coords="1177,410,1161,447,1157,443,1173,413"/>
+<area shape="poly" title=" " alt="" coords="1139,486,1049,601,1046,596,1134,488"/>
+<area shape="poly" title=" " alt="" coords="1105,487,955,535,953,530,1100,488"/>
+<area shape="poly" title=" " alt="" coords="1171,485,1247,528,1242,527,1170,490"/>
+<area shape="rect" href="vector__rule_8h.html" title=" " alt="" coords="1116,535,1222,563"/>
+<area shape="poly" title=" " alt="" coords="1152,485,1163,521,1158,519,1149,490"/>
+<area shape="poly" title=" " alt="" coords="1146,563,1067,606,1066,601,1141,564"/>
+<area shape="poly" title=" " alt="" coords="1208,561,1337,607,1332,607,1207,566"/>
+<area shape="poly" title=" " alt="" coords="1096,334,1052,447,1049,443,1091,337"/>
+<area shape="poly" title=" " alt="" coords="1084,335,1025,389,989,424,957,461,935,492,917,523,914,519,931,489,952,458,986,420,1021,385,1080,337"/>
+<area shape="poly" title=" " alt="" coords="1027,330,967,338,365,395,364,389,966,333,1032,329"/>
+<area shape="poly" title=" " alt="" coords="1043,337,856,386,855,381,1048,336"/>
+<area shape="poly" title=" " alt="" coords="1103,306,1106,278,1109,273,1108,309"/>
+<area shape="poly" title=" " alt="" coords="1099,334,1101,370,1109,410,1128,448,1123,446,1104,412,1096,371,1096,338"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
-<div class="center"><img src="game_8h__dep__incl.png" border="0" usemap="#ainclude_2game_8hdep" alt=""/></div>
+<div class="center"><img src="game_8h__dep__incl.png" border="0" usemap="#ainclude_2game_8hdep" loading="lazy" alt=""/></div>
 <map name="ainclude_2game_8hdep" id="ainclude_2game_8hdep">
-<area shape="rect" title=" " alt="" coords="107,5,229,32"/>
-<area shape="rect" href="game_8c.html" title=" " alt="" coords="5,80,99,107"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="123,80,213,107"/>
-<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="237,80,376,107"/>
+<area shape="rect" title=" " alt="" coords="106,5,227,33"/>
+<area shape="rect" href="game_8c.html" title=" " alt="" coords="5,81,98,109"/>
+<area shape="poly" title=" " alt="" coords="135,42,73,83,70,78,130,41"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="122,81,210,109"/>
+<area shape="poly" title=" " alt="" coords="168,47,168,82,164,79,164,51"/>
+<area shape="rect" href="test__game_8c.html" title=" " alt="" coords="235,81,372,109"/>
+<area shape="poly" title=" " alt="" coords="205,38,282,80,277,81,203,43"/>
 </map>
 </div>
 </div>
 <p><a href="game_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Structures de données</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html">Game</a></td></tr>
+<tr class="memitem:Game" id="r_Game"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGame.html">Game</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant l'état du jeu.  <a href="structGame.html#details">Plus de détails...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a05b67f472600d98168bd13c70d257ed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a05b67f472600d98168bd13c70d257ed9">Game_init</a> (<a class="el" href="structGame.html">Game</a> *game, int width, int height, int nb_fish, int nb_colliders, int seed_for_worlds)</td></tr>
-<tr class="memdesc:a05b67f472600d98168bd13c70d257ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le jeu (fenêtre, mondes, paramètres)  <a href="game_8h.html#a05b67f472600d98168bd13c70d257ed9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a05b67f472600d98168bd13c70d257ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28358f6ca80424c6b25fe847ab88b168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a28358f6ca80424c6b25fe847ab88b168">Game_pause</a> (<a class="el" href="structGame.html">Game</a> *game)</td></tr>
-<tr class="memdesc:a28358f6ca80424c6b25fe847ab88b168"><td class="mdescLeft">&#160;</td><td class="mdescRight">inverse l'état de pause du jeu  <a href="game_8h.html#a28358f6ca80424c6b25fe847ab88b168">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a28358f6ca80424c6b25fe847ab88b168"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5a7b2368adc13dbcf61f3f3b1f16c9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ae5a7b2368adc13dbcf61f3f3b1f16c9c">Game_run_SDL</a> (bool benchmark_mode, int seed_for_worlds)</td></tr>
-<tr class="memdesc:ae5a7b2368adc13dbcf61f3f3b1f16c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">lance la boucle de jeu en mode graphique (SDL)  <a href="game_8h.html#ae5a7b2368adc13dbcf61f3f3b1f16c9c">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae5a7b2368adc13dbcf61f3f3b1f16c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557884cc21f4886a0523bd645481b95e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a557884cc21f4886a0523bd645481b95e">Game_run_terminal</a> ()</td></tr>
-<tr class="memdesc:a557884cc21f4886a0523bd645481b95e"><td class="mdescLeft">&#160;</td><td class="mdescRight">lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la console  <a href="game_8h.html#a557884cc21f4886a0523bd645481b95e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a557884cc21f4886a0523bd645481b95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074f62ca71d406dfeeb16d2d02b89e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a074f62ca71d406dfeeb16d2d02b89e8f">Game_destroy</a> (<a class="el" href="structGame.html">Game</a> *game)</td></tr>
-<tr class="memdesc:a074f62ca71d406dfeeb16d2d02b89e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère les ressources allouées par le jeu  <a href="game_8h.html#a074f62ca71d406dfeeb16d2d02b89e8f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a074f62ca71d406dfeeb16d2d02b89e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b67f472600d98168bd13c70d257ed9" id="r_a05b67f472600d98168bd13c70d257ed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05b67f472600d98168bd13c70d257ed9">Game_init</a> (<a class="el" href="structGame.html">Game</a> *game, int width, int height, int nb_fish, int nb_colliders, int seed_for_worlds)</td></tr>
+<tr class="memdesc:a05b67f472600d98168bd13c70d257ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le jeu (fenêtre, mondes, paramètres)  <br /></td></tr>
+<tr class="memitem:a28358f6ca80424c6b25fe847ab88b168" id="r_a28358f6ca80424c6b25fe847ab88b168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28358f6ca80424c6b25fe847ab88b168">Game_pause</a> (<a class="el" href="structGame.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a28358f6ca80424c6b25fe847ab88b168"><td class="mdescLeft">&#160;</td><td class="mdescRight">inverse l'état de pause du jeu  <br /></td></tr>
+<tr class="memitem:ae5a7b2368adc13dbcf61f3f3b1f16c9c" id="r_ae5a7b2368adc13dbcf61f3f3b1f16c9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5a7b2368adc13dbcf61f3f3b1f16c9c">Game_run_SDL</a> (bool benchmark_mode, int seed_for_worlds)</td></tr>
+<tr class="memdesc:ae5a7b2368adc13dbcf61f3f3b1f16c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">lance la boucle de jeu en mode graphique (SDL)  <br /></td></tr>
+<tr class="memitem:a557884cc21f4886a0523bd645481b95e" id="r_a557884cc21f4886a0523bd645481b95e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a557884cc21f4886a0523bd645481b95e">Game_run_terminal</a> ()</td></tr>
+<tr class="memdesc:a557884cc21f4886a0523bd645481b95e"><td class="mdescLeft">&#160;</td><td class="mdescRight">lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la console  <br /></td></tr>
+<tr class="memitem:a074f62ca71d406dfeeb16d2d02b89e8f" id="r_a074f62ca71d406dfeeb16d2d02b89e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a074f62ca71d406dfeeb16d2d02b89e8f">Game_destroy</a> (<a class="el" href="structGame.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a074f62ca71d406dfeeb16d2d02b89e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">libère les ressources allouées par le jeu  <br /></td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a074f62ca71d406dfeeb16d2d02b89e8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a074f62ca71d406dfeeb16d2d02b89e8f">&#9670;&nbsp;</a></span>Game_destroy()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a074f62ca71d406dfeeb16d2d02b89e8f" name="a074f62ca71d406dfeeb16d2d02b89e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074f62ca71d406dfeeb16d2d02b89e8f">&#9670;&#160;</a></span>Game_destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,8 +244,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void Game_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *</td>          <td class="paramname"><span class="paramname"><em>game</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -191,25 +260,34 @@ Fonctions</h2></td></tr>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="game_8h_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph.png" border="0" usemap="#agame_8h_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph" alt=""/></div>
+<div class="center"><img src="game_8h_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph.png" border="0" usemap="#agame_8h_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph" loading="lazy" alt=""/></div>
 <map name="agame_8h_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph" id="agame_8h_a074f62ca71d406dfeeb16d2d02b89e8f_cgraph">
-<area shape="rect" title="libère les ressources allouées par le jeu" alt="" coords="5,81,123,108"/>
-<area shape="rect" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="203,5,293,32"/>
-<area shape="rect" href="render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="171,56,325,83"/>
-<area shape="rect" href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="171,107,325,133"/>
-<area shape="rect" href="world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="191,157,305,184"/>
-<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="373,56,549,83"/>
-<area shape="rect" href="fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="389,107,534,133"/>
-<area shape="rect" href="theta__set_8h.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="381,157,542,184"/>
-<area shape="rect" href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="404,208,519,235"/>
-<area shape="rect" href="reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="390,259,533,285"/>
+<area shape="rect" title="libère les ressources allouées par le jeu" alt="" coords="5,84,122,112"/>
+<area shape="rect" href="sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="202,5,292,33"/>
+<area shape="poly" title=" " alt="" coords="90,81,169,43,190,37,186,40,171,48,93,86"/>
+<area shape="rect" href="render__sdl_8c.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="170,57,324,85"/>
+<area shape="poly" title=" " alt="" coords="121,87,157,83,152,86,123,92"/>
+<area shape="rect" href="render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="171,109,323,137"/>
+<area shape="poly" title=" " alt="" coords="121,103,158,109,153,112,123,108"/>
+<area shape="rect" href="world_8c.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="190,161,304,189"/>
+<area shape="poly" title=" " alt="" coords="93,110,171,146,190,155,185,156,169,151,92,115"/>
+<area shape="rect" href="collider_8c.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="372,57,547,85"/>
+<area shape="poly" title=" " alt="" coords="299,158,323,146,337,134,346,121,355,108,371,96,381,93,386,90,373,100,359,112,350,125,341,138,325,151,301,163"/>
+<area shape="rect" href="fish_8c.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="388,109,532,137"/>
+<area shape="poly" title=" " alt="" coords="304,159,388,140,383,142,305,164"/>
+<area shape="rect" href="theta__set_8c.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="380,161,540,189"/>
+<area shape="poly" title=" " alt="" coords="304,173,366,175,361,176,305,178"/>
+<area shape="rect" href="shark_8c.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="402,213,517,241"/>
+<area shape="poly" title=" " alt="" coords="305,186,390,209,385,210,304,192"/>
+<area shape="rect" href="reinforce_8c.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="389,265,530,293"/>
+<area shape="poly" title=" " alt="" coords="268,187,315,218,373,250,392,260,387,259,371,255,312,223,267,192"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a05b67f472600d98168bd13c70d257ed9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05b67f472600d98168bd13c70d257ed9">&#9670;&nbsp;</a></span>Game_init()</h2>
+<a id="a05b67f472600d98168bd13c70d257ed9" name="a05b67f472600d98168bd13c70d257ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b67f472600d98168bd13c70d257ed9">&#9670;&#160;</a></span>Game_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,43 +295,32 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">bool Game_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em>, </td>
+          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *</td>          <td class="paramname"><span class="paramname"><em>game</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nb_fish</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_fish</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nb_collider</em>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_collider</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>seed_for_worlds</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>seed_for_worlds</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -273,39 +340,63 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="game_8h_a05b67f472600d98168bd13c70d257ed9_cgraph.png" border="0" usemap="#agame_8h_a05b67f472600d98168bd13c70d257ed9_cgraph" alt=""/></div>
+<div class="center"><img src="game_8h_a05b67f472600d98168bd13c70d257ed9_cgraph.png" border="0" usemap="#agame_8h_a05b67f472600d98168bd13c70d257ed9_cgraph" loading="lazy" alt=""/></div>
 <map name="agame_8h_a05b67f472600d98168bd13c70d257ed9_cgraph" id="agame_8h_a05b67f472600d98168bd13c70d257ed9_cgraph">
-<area shape="rect" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="5,259,95,285"/>
-<area shape="rect" href="sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="176,5,263,32"/>
-<area shape="rect" href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="173,56,266,83"/>
-<area shape="rect" href="sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="150,107,289,133"/>
-<area shape="rect" href="sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="150,157,289,184"/>
-<area shape="rect" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="174,208,265,235"/>
-<area shape="rect" href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="143,259,296,285"/>
-<area shape="rect" href="render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="158,309,281,336"/>
-<area shape="rect" href="utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="179,360,260,387"/>
-<area shape="rect" href="render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="152,411,287,437"/>
-<area shape="rect" href="theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="157,461,281,488"/>
-<area shape="rect" href="world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="176,600,263,627"/>
-<area shape="rect" href="input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="387,411,478,437"/>
-<area shape="rect" href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="368,461,497,488"/>
-<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="344,512,521,539"/>
-<area shape="rect" href="fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="356,563,509,605"/>
-<area shape="rect" href="theta__set_8h.html#aa254194c894b56f06eaff11768901deb" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="366,629,499,656"/>
-<area shape="rect" href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="379,680,486,707"/>
-<area shape="rect" href="reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50" title="initialise une trajectoire vide" alt="" coords="375,731,490,757"/>
-<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="587,440,734,467"/>
-<area shape="rect" href="utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="800,541,908,568"/>
-<area shape="rect" href="vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="615,541,706,568"/>
-<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="956,541,1036,568"/>
-<area shape="rect" href="fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="569,592,752,619"/>
+<area shape="rect" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="5,265,94,293"/>
+<area shape="rect" href="sound_8c.html#a256ad04f93013a05fb111acb7bcef693" title="initialise l&#39;audio SDL" alt="" coords="175,5,260,33"/>
+<area shape="poly" title=" " alt="" coords="50,265,57,222,72,163,99,100,117,70,140,44,162,31,159,35,143,48,121,73,103,102,77,165,62,223,55,265"/>
+<area shape="rect" href="sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="172,57,264,85"/>
+<area shape="poly" title=" " alt="" coords="51,265,61,231,78,186,104,138,140,96,159,85,156,89,143,100,109,141,83,188,66,232,57,266"/>
+<area shape="rect" href="sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="149,109,287,137"/>
+<area shape="poly" title=" " alt="" coords="55,264,86,208,111,176,140,148,151,142,148,147,143,152,115,179,91,211,60,266"/>
+<area shape="rect" href="sound_8c.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="149,161,287,189"/>
+<area shape="poly" title=" " alt="" coords="62,263,96,231,140,200,156,193,152,198,143,204,100,236,67,266"/>
+<area shape="rect" href="sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="173,213,262,241"/>
+<area shape="poly" title=" " alt="" coords="92,264,160,243,157,247,96,268"/>
+<area shape="rect" href="render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="142,265,294,293"/>
+<area shape="poly" title=" " alt="" coords="92,277,128,277,124,281,96,281"/>
+<area shape="rect" href="render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="157,317,279,345"/>
+<area shape="poly" title=" " alt="" coords="93,290,158,311,154,314,95,295"/>
+<area shape="rect" href="utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="178,369,258,397"/>
+<area shape="poly" title=" " alt="" coords="64,291,100,323,143,354,166,366,161,368,140,359,96,327,65,296"/>
+<area shape="rect" href="render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="151,421,285,449"/>
+<area shape="poly" title=" " alt="" coords="57,291,91,347,115,379,143,406,152,413,147,415,140,411,111,383,86,350,57,296"/>
+<area shape="rect" href="theta__set_8c.html#afe7ff9ca20169f534d34343e2f97b633" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="156,473,280,501"/>
+<area shape="poly" title=" " alt="" coords="54,291,66,326,83,371,109,418,144,459,150,465,145,466,140,462,104,421,78,373,61,328,54,296"/>
+<area shape="rect" href="world_8c.html#ab86571984e07c225b57f4173e7d4d080" title="initialise un monde avec des paramètres" alt="" coords="175,615,261,642"/>
+<area shape="poly" title=" " alt="" coords="55,291,90,386,115,449,144,511,172,559,200,602,195,602,167,562,139,514,110,451,85,388,55,296"/>
+<area shape="rect" href="input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="385,421,475,449"/>
+<area shape="poly" title=" " alt="" coords="276,470,372,448,368,451,279,475"/>
+<area shape="rect" href="vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="366,473,494,501"/>
+<area shape="poly" title=" " alt="" coords="279,485,353,486,348,488,281,490"/>
+<area shape="rect" href="collider_8c.html#a6212dde57007cc15994f34cdd0c27d43" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="342,525,518,553"/>
+<area shape="poly" title=" " alt="" coords="242,612,287,587,341,562,361,557,356,559,343,567,290,592,245,616"/>
+<area shape="rect" href="fish_8c.html#aba09af4958a615ad5f14f0f86de2143d" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="354,577,506,622"/>
+<area shape="poly" title=" " alt="" coords="261,620,341,611,336,613,262,625"/>
+<area shape="rect" href="theta__set_8c.html#a1ac05ca81e6a49962501975fd882cb84" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="364,645,496,673"/>
+<area shape="poly" title=" " alt="" coords="261,632,351,647,346,648,262,637"/>
+<area shape="rect" href="shark_8c.html#aeebabb143d4ec33b5e26b90f6b405eba" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="377,697,483,725"/>
+<area shape="poly" title=" " alt="" coords="248,640,343,682,366,692,361,692,341,687,248,646"/>
+<area shape="rect" href="reinforce_8c.html#ac88234cf163795a0145a71388782afa8" title="initialise une trajectoire vide" alt="" coords="374,749,487,777"/>
+<area shape="poly" title=" " alt="" coords="233,640,279,687,310,712,343,734,362,745,357,744,341,739,307,716,276,691,231,645"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="584,453,731,481"/>
+<area shape="poly" title=" " alt="" coords="478,522,518,510,601,485,597,487,519,515,480,527"/>
+<area shape="rect" href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="797,556,904,584"/>
+<area shape="poly" title=" " alt="" coords="518,532,629,531,749,541,792,551,787,552,748,546,629,537,519,537"/>
+<area shape="rect" href="vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="612,555,703,582"/>
+<area shape="poly" title=" " alt="" coords="518,548,600,560,594,561,519,553"/>
+<area shape="rect" href="utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="952,556,1031,584"/>
+<area shape="poly" title=" " alt="" coords="904,567,939,570,934,570,905,572"/>
+<area shape="rect" href="fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="566,607,749,634"/>
+<area shape="poly" title=" " alt="" coords="507,604,553,610,548,611,507,609"/>
+<area shape="poly" title=" " alt="" coords="712,604,779,588,784,587,713,609"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a28358f6ca80424c6b25fe847ab88b168"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28358f6ca80424c6b25fe847ab88b168">&#9670;&nbsp;</a></span>Game_pause()</h2>
+<a id="a28358f6ca80424c6b25fe847ab88b168" name="a28358f6ca80424c6b25fe847ab88b168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28358f6ca80424c6b25fe847ab88b168">&#9670;&#160;</a></span>Game_pause()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -313,8 +404,7 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Game_pause </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structGame.html">Game</a> *</td>          <td class="paramname"><span class="paramname"><em>game</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -330,8 +420,8 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
-<a id="ae5a7b2368adc13dbcf61f3f3b1f16c9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5a7b2368adc13dbcf61f3f3b1f16c9c">&#9670;&nbsp;</a></span>Game_run_SDL()</h2>
+<a id="ae5a7b2368adc13dbcf61f3f3b1f16c9c" name="ae5a7b2368adc13dbcf61f3f3b1f16c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a7b2368adc13dbcf61f3f3b1f16c9c">&#9670;&#160;</a></span>Game_run_SDL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,19 +429,12 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Game_run_SDL </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>use_bench</em>, </td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>use_bench</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>seed_for_worlds</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>seed_for_worlds</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -366,65 +449,117 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="game_8h_ae5a7b2368adc13dbcf61f3f3b1f16c9c_cgraph.png" border="0" usemap="#agame_8h_ae5a7b2368adc13dbcf61f3f3b1f16c9c_cgraph" alt=""/></div>
+<div class="center"><img src="game_8h_ae5a7b2368adc13dbcf61f3f3b1f16c9c_cgraph.png" border="0" usemap="#agame_8h_ae5a7b2368adc13dbcf61f3f3b1f16c9c_cgraph" loading="lazy" alt=""/></div>
 <map name="agame_8h_ae5a7b2368adc13dbcf61f3f3b1f16c9c_cgraph" id="agame_8h_ae5a7b2368adc13dbcf61f3f3b1f16c9c_cgraph">
-<area shape="rect" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="5,537,127,564"/>
-<area shape="rect" href="sound_8h.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="176,259,323,285"/>
-<area shape="rect" href="game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="191,537,308,564"/>
-<area shape="rect" href="game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="205,309,294,336"/>
-<area shape="rect" href="mj_8h.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="201,1031,297,1057"/>
-<area shape="rect" href="render__sdl_8h.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="175,740,324,767"/>
-<area shape="rect" href="sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="412,512,503,539"/>
-<area shape="rect" href="render__sdl_8h.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="380,613,535,640"/>
-<area shape="rect" href="render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="381,461,534,488"/>
-<area shape="rect" href="world_8h.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="400,563,515,589"/>
-<area shape="rect" href="collider_8h.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="595,727,771,753"/>
-<area shape="rect" href="fish_8h.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="611,524,756,551"/>
-<area shape="rect" href="theta__set_8h.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="603,575,764,601"/>
-<area shape="rect" href="shark_8h.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="626,625,741,652"/>
-<area shape="rect" href="reinforce_8h.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="612,676,755,703"/>
-<area shape="rect" href="sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="414,5,501,32"/>
-<area shape="rect" href="sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="411,56,504,83"/>
-<area shape="rect" href="sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="388,107,527,133"/>
-<area shape="rect" href="sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="388,157,527,184"/>
-<area shape="rect" href="render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="396,208,519,235"/>
-<area shape="rect" href="utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="417,259,498,285"/>
-<area shape="rect" href="render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="390,309,525,336"/>
-<area shape="rect" href="theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="395,360,519,387"/>
-<area shape="rect" href="world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="414,411,501,437"/>
-<area shape="rect" href="input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="638,204,729,231"/>
-<area shape="rect" href="vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="619,153,748,180"/>
-<area shape="rect" href="collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="595,473,772,500"/>
-<area shape="rect" href="fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="607,255,760,297"/>
-<area shape="rect" href="theta__set_8h.html#aa254194c894b56f06eaff11768901deb" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="617,321,750,348"/>
-<area shape="rect" href="shark_8h.html#abe943d2553c14ccf4c9b04d93303d667" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="630,372,737,399"/>
-<area shape="rect" href="reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50" title="initialise une trajectoire vide" alt="" coords="626,423,741,449"/>
-<area shape="rect" href="mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="404,1056,511,1083"/>
-<area shape="rect" href="world_8h.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="387,1005,527,1032"/>
-<area shape="rect" href="world_8h.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire." alt="" coords="389,1107,525,1133"/>
-<area shape="rect" href="fish_8h.html#a264a6701ce107ab411de095019998799" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="616,1259,751,1285"/>
-<area shape="rect" href="fish__controller_8h.html#a9c3a75f267eda127e0417e8c34de6233" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="611,1309,756,1336"/>
-<area shape="rect" href="mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="597,904,770,931"/>
-<area shape="rect" href="mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="609,955,758,981"/>
-<area shape="rect" href="mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="601,1005,765,1032"/>
-<area shape="rect" href="mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="615,1056,752,1083"/>
-<area shape="rect" href="reinforce_8h.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="591,1107,776,1133"/>
-<area shape="rect" href="shark_8h.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="609,1157,758,1184"/>
-<area shape="rect" href="shark__controller_8h.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="604,853,763,880"/>
-<area shape="rect" href="mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="628,1208,739,1235"/>
-<area shape="rect" href="shark_8h.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="824,828,905,855"/>
-<area shape="rect" href="sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="411,867,504,893"/>
-<area shape="rect" href="sdl__draw__tools_8h.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="372,816,543,843"/>
-<area shape="rect" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="384,664,531,691"/>
-<area shape="rect" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="379,715,535,741"/>
-<area shape="rect" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="408,765,507,792"/>
+<area shape="rect" title="lance la boucle de jeu en mode graphique (SDL)" alt="" coords="5,552,126,580"/>
+<area shape="rect" href="sound_8c.html#afde50e965f66f3fdcdc9c3298bfa0952" title=" " alt="" coords="175,265,321,293"/>
+<area shape="poly" title=" " alt="" coords="66,551,75,505,93,439,124,367,146,334,172,304,180,299,177,304,176,308,150,337,129,370,98,440,80,506,71,552"/>
+<area shape="rect" href="game_8c.html#a074f62ca71d406dfeeb16d2d02b89e8f" title="libère les ressources allouées par le jeu" alt="" coords="190,552,306,580"/>
+<area shape="poly" title=" " alt="" coords="125,564,176,564,172,568,128,568"/>
+<area shape="rect" href="game_8c.html#a3b75c765bb05284d1f9270a979fc0a2d" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="204,317,292,345"/>
+<area shape="poly" title=" " alt="" coords="75,550,227,355,226,360,80,553"/>
+<area shape="rect" href="mj_8c.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="200,1056,296,1084"/>
+<area shape="poly" title=" " alt="" coords="74,578,239,1041,234,1042,70,582"/>
+<area shape="rect" href="render__sdl_8c.html#ad1307c29c074f2638c2a842a135f5935" title=" " alt="" coords="174,760,322,788"/>
+<area shape="poly" title=" " alt="" coords="79,577,227,747,222,749,79,583"/>
+<area shape="rect" href="sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="410,525,500,553"/>
+<area shape="poly" title=" " alt="" coords="305,556,397,545,393,549,308,561"/>
+<area shape="rect" href="render__sdl_8c.html#aa34345c0fe35a82e740a655f16f8ca08" title=" " alt="" coords="378,629,532,657"/>
+<area shape="poly" title=" " alt="" coords="280,578,371,614,394,623,390,625,369,619,282,583"/>
+<area shape="rect" href="render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="379,473,531,501"/>
+<area shape="poly" title=" " alt="" coords="278,550,369,511,393,505,389,508,371,516,282,553"/>
+<area shape="rect" href="world_8c.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="398,577,512,605"/>
+<area shape="poly" title=" " alt="" coords="305,571,385,581,380,584,307,575"/>
+<area shape="rect" href="collider_8c.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="593,747,768,774"/>
+<area shape="poly" title=" " alt="" coords="512,599,542,616,555,631,562,646,567,676,572,704,578,718,590,732,597,738,592,739,586,736,574,721,567,706,562,676,557,647,550,634,539,620,513,604"/>
+<area shape="rect" href="fish_8c.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="608,539,753,566"/>
+<area shape="poly" title=" " alt="" coords="511,579,595,566,591,569,514,584"/>
+<area shape="rect" href="theta__set_8c.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="600,591,761,618"/>
+<area shape="poly" title=" " alt="" coords="512,592,587,598,582,600,514,597"/>
+<area shape="rect" href="shark_8c.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="623,643,738,670"/>
+<area shape="poly" title=" " alt="" coords="505,603,618,637,613,639,507,608"/>
+<area shape="rect" href="reinforce_8c.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="610,695,751,722"/>
+<area shape="poly" title=" " alt="" coords="512,601,542,616,558,632,567,649,575,665,590,680,601,687,596,688,587,684,570,668,562,651,554,635,539,620,514,606"/>
+<area shape="poly" title=" " alt="" coords="254,343,272,378,297,423,330,470,372,510,398,525,393,527,368,515,326,473,292,426,268,380,255,348"/>
+<area shape="poly" title=" " alt="" coords="258,343,305,399,336,431,371,458,384,466,379,468,369,463,332,435,301,403,259,348"/>
+<area shape="rect" href="sound_8c.html#a256ad04f93013a05fb111acb7bcef693" title="initialise l&#39;audio SDL" alt="" coords="412,5,498,33"/>
+<area shape="poly" title=" " alt="" coords="291,322,307,314,320,303,340,270,348,238,347,207,343,175,338,143,338,110,346,77,368,44,381,33,400,26,396,30,384,37,372,48,351,80,343,111,343,142,348,174,353,206,353,239,345,272,324,306,310,318,295,325"/>
+<area shape="rect" href="sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="409,57,501,85"/>
+<area shape="poly" title=" " alt="" coords="290,321,307,313,320,303,337,277,344,252,345,226,343,201,341,175,342,149,350,123,368,96,396,79,393,84,372,100,355,125,347,150,346,175,348,200,350,226,349,253,342,279,324,306,310,318,294,325"/>
+<area shape="rect" href="sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="386,109,524,137"/>
+<area shape="poly" title=" " alt="" coords="290,321,307,313,320,303,334,284,341,265,343,227,345,188,353,168,368,148,376,144,373,148,372,152,358,170,351,189,348,227,346,266,339,286,324,306,310,317,294,324"/>
+<area shape="rect" href="sound_8c.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="386,161,524,189"/>
+<area shape="poly" title=" " alt="" coords="290,320,320,302,331,290,337,278,343,252,349,226,356,213,368,200,378,195,375,199,372,204,361,216,354,228,348,253,342,280,335,293,324,307,294,323"/>
+<area shape="rect" href="render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="394,213,516,241"/>
+<area shape="poly" title=" " alt="" coords="290,317,321,302,335,290,344,277,353,264,368,252,383,245,380,250,372,256,357,268,348,281,339,294,323,307,294,321"/>
+<area shape="rect" href="utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="415,265,495,293"/>
+<area shape="poly" title=" " alt="" coords="291,318,402,291,398,295,294,322"/>
+<area shape="rect" href="render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="388,317,522,345"/>
+<area shape="poly" title=" " alt="" coords="291,329,374,329,370,333,294,333"/>
+<area shape="rect" href="theta__set_8c.html#afe7ff9ca20169f534d34343e2f97b633" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="394,369,517,397"/>
+<area shape="poly" title=" " alt="" coords="291,340,384,364,380,366,294,345"/>
+<area shape="rect" href="world_8c.html#ab86571984e07c225b57f4173e7d4d080" title="initialise un monde avec des paramètres" alt="" coords="412,421,498,449"/>
+<area shape="poly" title=" " alt="" coords="267,343,315,374,371,406,400,418,395,421,369,411,312,379,269,348"/>
+<area shape="rect" href="input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="635,211,726,238"/>
+<area shape="poly" title=" " alt="" coords="515,369,539,354,550,342,556,329,561,302,567,275,574,261,587,248,622,231,618,235,590,252,579,264,572,277,567,303,561,331,554,345,542,359,519,373"/>
+<area shape="rect" href="vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="616,159,745,186"/>
+<area shape="poly" title=" " alt="" coords="515,370,539,355,553,336,560,317,561,277,564,238,571,217,586,197,604,186,601,191,590,201,576,220,569,239,567,278,565,318,557,338,542,358,519,373"/>
+<area shape="rect" href="collider_8c.html#a6212dde57007cc15994f34cdd0c27d43" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="592,487,769,514"/>
+<area shape="poly" title=" " alt="" coords="498,445,618,481,613,483,500,450"/>
+<area shape="rect" href="fish_8c.html#aba09af4958a615ad5f14f0f86de2143d" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="604,262,757,307"/>
+<area shape="poly" title=" " alt="" coords="497,426,519,418,539,407,555,385,562,363,569,340,586,317,594,313,591,318,590,321,574,343,567,365,560,388,542,410,522,423,501,430"/>
+<area shape="rect" href="theta__set_8c.html#a1ac05ca81e6a49962501975fd882cb84" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="614,331,747,358"/>
+<area shape="poly" title=" " alt="" coords="497,423,539,406,563,388,587,369,606,362,602,366,590,373,566,392,542,411,500,427"/>
+<area shape="rect" href="shark_8c.html#aeebabb143d4ec33b5e26b90f6b405eba" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="627,383,734,410"/>
+<area shape="poly" title=" " alt="" coords="498,426,614,406,610,410,500,430"/>
+<area shape="rect" href="reinforce_8c.html#ac88234cf163795a0145a71388782afa8" title="initialise une trajectoire vide" alt="" coords="624,435,737,462"/>
+<area shape="poly" title=" " alt="" coords="498,435,611,443,606,446,500,440"/>
+<area shape="rect" href="mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="402,1083,508,1110"/>
+<area shape="poly" title=" " alt="" coords="296,1073,389,1087,385,1089,297,1079"/>
+<area shape="rect" href="world_8c.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="386,1031,525,1058"/>
+<area shape="poly" title=" " alt="" coords="295,1062,372,1054,368,1056,297,1066"/>
+<area shape="rect" href="world_8c.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire" alt="" coords="388,1135,523,1162"/>
+<area shape="poly" title=" " alt="" coords="280,1081,371,1119,394,1129,388,1130,369,1124,280,1087"/>
+<area shape="rect" href="fish_8c.html#aac80e4392c480d450129d60ed3071e48" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="613,1291,748,1318"/>
+<area shape="poly" title=" " alt="" coords="508,1102,527,1110,542,1121,557,1141,565,1161,567,1201,569,1239,576,1257,590,1276,602,1287,597,1286,586,1280,571,1260,564,1240,561,1201,559,1162,553,1144,538,1125,524,1114,508,1107"/>
+<area shape="rect" href="fish__controller_8c.html#a9da5c926e836e05c37160682a1ef618a" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="608,1343,753,1370"/>
+<area shape="poly" title=" " alt="" coords="508,1101,527,1109,542,1121,561,1148,568,1175,569,1201,567,1227,564,1253,565,1278,573,1303,590,1328,598,1337,593,1335,586,1332,568,1305,560,1279,559,1253,561,1227,564,1201,563,1175,556,1150,538,1125,524,1114,508,1107"/>
+<area shape="rect" href="mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="594,927,767,954"/>
+<area shape="poly" title=" " alt="" coords="507,1085,539,1068,550,1056,556,1043,562,1018,568,991,575,978,587,965,592,964,597,961,590,969,579,981,573,993,567,1019,561,1045,554,1059,542,1072,510,1090"/>
+<area shape="rect" href="mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="606,979,755,1006"/>
+<area shape="poly" title=" " alt="" coords="507,1082,539,1068,553,1055,562,1043,571,1030,587,1017,603,1011,598,1014,590,1021,575,1033,566,1046,557,1059,542,1072,510,1087"/>
+<area shape="rect" href="mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="599,1031,762,1058"/>
+<area shape="poly" title=" " alt="" coords="507,1082,605,1061,600,1064,509,1087"/>
+<area shape="rect" href="mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="612,1083,749,1110"/>
+<area shape="poly" title=" " alt="" coords="508,1094,599,1096,594,1097,509,1099"/>
+<area shape="rect" href="reinforce_8c.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="588,1135,773,1162"/>
+<area shape="poly" title=" " alt="" coords="508,1106,605,1130,600,1131,508,1111"/>
+<area shape="rect" href="shark_8c.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="606,1187,755,1214"/>
+<area shape="poly" title=" " alt="" coords="508,1106,542,1121,557,1134,566,1147,575,1160,590,1172,603,1181,598,1180,587,1176,571,1163,562,1150,553,1138,539,1125,508,1111"/>
+<area shape="rect" href="shark__controller_8c.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="602,875,759,902"/>
+<area shape="poly" title=" " alt="" coords="507,1086,524,1079,538,1068,553,1049,559,1031,561,992,564,953,571,933,586,913,591,913,595,909,590,917,576,936,569,954,567,992,565,1032,557,1052,542,1072,527,1083,509,1091"/>
+<area shape="rect" href="mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="625,1239,736,1266"/>
+<area shape="poly" title=" " alt="" coords="508,1103,542,1121,554,1134,561,1148,567,1174,573,1200,579,1212,590,1224,614,1240,608,1239,587,1228,575,1215,568,1202,562,1175,556,1150,550,1137,539,1125,508,1108"/>
+<area shape="rect" href="shark_8c.html#a2cbb915fa07293da619455bc73c90e95" title="vérifie si le requin est contrôlé par le joueur" alt="" coords="821,849,901,877"/>
+<area shape="poly" title=" " alt="" coords="759,875,808,870,803,872,761,880"/>
+<area shape="rect" href="sound_8c.html#a02e99654bd7e1e1ad27831a0798368ce" title="joue un son" alt="" coords="409,889,501,917"/>
+<area shape="poly" title=" " alt="" coords="262,786,309,829,339,853,371,874,397,887,392,888,369,879,336,858,306,833,263,791"/>
+<area shape="rect" href="sdl__draw__tools_8c.html#a504aff30d5824e9490352bf759a4c9ea" title="dessine l&#39;introduction avec compte a rebours." alt="" coords="370,837,540,865"/>
+<area shape="poly" title=" " alt="" coords="281,786,371,822,394,831,389,833,369,827,282,791"/>
+<area shape="rect" href="render__sdl_8c.html#a3ccb88621d348cc84f9bc83872d414dd" title=" " alt="" coords="382,681,528,709"/>
+<area shape="poly" title=" " alt="" coords="278,757,369,719,393,713,389,716,371,724,282,762"/>
+<area shape="rect" href="render__sdl_8c.html#a75da6b9f7944a9cb8c19a09f83fc944e" title="affiche WINNER ou LOSER avec un filtre transparent." alt="" coords="378,733,533,761"/>
+<area shape="poly" title=" " alt="" coords="321,762,364,758,360,761,324,767"/>
+<area shape="rect" href="render__sdl_8c.html#a459b981aa5c30cb582d8a101afb685ca" title="dessine le monde" alt="" coords="406,785,504,813"/>
+<area shape="poly" title=" " alt="" coords="321,780,393,790,388,793,323,785"/>
+<area shape="poly" title=" " alt="" coords="540,851,807,860,803,863,542,856"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a557884cc21f4886a0523bd645481b95e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a557884cc21f4886a0523bd645481b95e">&#9670;&nbsp;</a></span>Game_run_terminal()</h2>
+<a id="a557884cc21f4886a0523bd645481b95e" name="a557884cc21f4886a0523bd645481b95e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557884cc21f4886a0523bd645481b95e">&#9670;&#160;</a></span>Game_run_terminal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,23 +567,167 @@ Voici le graphe d'appel pour cette fonction :</div>
         <tr>
           <td class="memname">void Game_run_terminal </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la console </p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a557884cc21f4886a0523bd645481b95e_cgraph.png" border="0" usemap="#agame_8h_a557884cc21f4886a0523bd645481b95e_cgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a557884cc21f4886a0523bd645481b95e_cgraph" id="agame_8h_a557884cc21f4886a0523bd645481b95e_cgraph">
+<area shape="rect" title="lance la boucle de jeu en mode terminal (sans SDL) affiche les résultats et la trajectoire dans la co..." alt="" coords="5,982,156,1009"/>
+<area shape="rect" href="mj_8c.html#a9e75fb0f434e437463e146042d313f79" title="réalise une itération complète du jeu" alt="" coords="218,483,313,511"/>
+<area shape="poly" title=" " alt="" coords="85,980,253,523,254,528,90,982"/>
+<area shape="rect" href="theta__set_8c.html#afe7ff9ca20169f534d34343e2f97b633" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="204,1007,327,1035"/>
+<area shape="poly" title=" " alt="" coords="155,1004,191,1009,186,1012,157,1008"/>
+<area shape="rect" href="vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="626,1058,755,1085"/>
+<area shape="poly" title=" " alt="" coords="108,979,190,944,245,926,305,912,368,903,432,903,494,915,524,926,552,941,565,953,573,965,579,992,583,1018,589,1031,600,1043,615,1054,610,1055,597,1047,585,1034,578,1020,573,993,568,967,561,956,549,946,521,931,493,920,431,908,368,908,306,917,246,931,192,949,112,983"/>
+<area shape="rect" href="reinforce_8c.html#a6e6d0061194a9eb0cbf39fb6d2900eba" title="affiche les pas d&#39;une trajectoire dont la récompense est supérieur à 0" alt="" coords="204,955,326,983"/>
+<area shape="poly" title=" " alt="" coords="154,983,191,978,187,982,158,987"/>
+<area shape="rect" href="world_8c.html#a0d2d77f2b039a1ff614b152a1c82a3d2" title="libère un monde et tout ses éléments" alt="" coords="208,1187,322,1215"/>
+<area shape="poly" title=" " alt="" coords="95,1007,244,1175,239,1177,94,1012"/>
+<area shape="rect" href="world_8c.html#ab86571984e07c225b57f4173e7d4d080" title="initialise un monde avec des paramètres" alt="" coords="222,1446,308,1473"/>
+<area shape="poly" title=" " alt="" coords="89,1008,256,1431,250,1432,85,1012"/>
+<area shape="rect" href="mj_8c.html#acd7ee2999782b3592f096b3498bdfb5e" title="mise à jour synchrone du monde en calculant les nouvelles positions des agents" alt="" coords="410,508,515,536"/>
+<area shape="poly" title=" " alt="" coords="312,501,397,512,393,515,315,505"/>
+<area shape="rect" href="world_8c.html#abdaaaa8c21b241adc68e3b57a9388cc7" title="crée un monde temporaire à partir d&#39;un monde existant" alt="" coords="393,404,532,432"/>
+<area shape="poly" title=" " alt="" coords="292,481,374,442,398,435,394,439,376,447,296,484"/>
+<area shape="rect" href="world_8c.html#a2d5dc687659608dd8042f37056900eed" title="échange les données entre le monde réel et le monde temporaire" alt="" coords="395,456,530,484"/>
+<area shape="poly" title=" " alt="" coords="312,488,382,480,378,483,315,493"/>
+<area shape="rect" href="fish_8c.html#aac80e4392c480d450129d60ed3071e48" title="applique une action au poisson met à jour sa vitesse et sa position, puis applique les bornes de vite..." alt="" coords="623,311,758,339"/>
+<area shape="poly" title=" " alt="" coords="514,511,549,493,566,477,575,460,583,441,596,419,665,347,662,352,600,423,587,444,579,462,570,480,552,498,518,515"/>
+<area shape="rect" href="fish__controller_8c.html#a9da5c926e836e05c37160682a1ef618a" title="calcule l&#39;action du poisson combine linéairement toutes les règles avec leurs poids" alt="" coords="618,636,763,664"/>
+<area shape="poly" title=" " alt="" coords="489,534,653,627,648,629,490,539"/>
+<area shape="rect" href="mj_8c.html#acc22724ad137171591624b0f25002b25" title="libère la mémoire d&#39;une structure FishPerception" alt="" coords="604,508,777,536"/>
+<area shape="poly" title=" " alt="" coords="514,520,591,521,586,524,517,525"/>
+<area shape="rect" href="mj_8c.html#a75b9177629175263d5c929f5a3aa8fbb" title="renvoie la perception d&#39;un poisson dans le monde" alt="" coords="616,954,765,981"/>
+<area shape="poly" title=" " alt="" coords="472,534,678,939,672,940,470,539"/>
+<area shape="rect" href="mj_8c.html#adfe9415b1d1ffae2ede8056f5117386c" title="construit la perception du requin à partir du monde" alt="" coords="841,740,1004,768"/>
+<area shape="poly" title=" " alt="" coords="472,534,522,602,558,641,600,673,655,701,713,721,772,735,828,745,823,747,771,740,712,726,653,706,597,678,554,645,518,606,472,539"/>
+<area shape="rect" href="mj_8c.html#a2a615ea15e5d5dbc58759e920322ba16" title="Calcule combien de poissons sont mangés, et les mange." alt="" coords="622,24,759,52"/>
+<area shape="poly" title=" " alt="" coords="514,515,533,506,548,494,566,470,578,447,590,402,590,357,582,313,573,267,569,219,575,168,583,141,596,113,620,82,652,59,649,63,624,86,601,116,588,143,580,169,574,219,579,266,587,312,595,357,595,402,583,449,570,473,552,497,536,511,518,518"/>
+<area shape="rect" href="reinforce_8c.html#a80a9a5711cd8ef895ee1d00c07be04e1" title="Augmente la taille mémoire de la liste steps de trajectory si la mémoire précédement alloué est plein..." alt="" coords="598,1006,783,1033"/>
+<area shape="poly" title=" " alt="" coords="468,534,529,780,568,917,586,965,600,991,605,997,600,997,596,995,581,968,563,919,524,781,467,539"/>
+<area shape="rect" href="shark_8c.html#a90050e6cf481a4c40f50af2ec3fa645b" title="applique une action au requin et met à jour sa position" alt="" coords="616,126,765,153"/>
+<area shape="poly" title=" " alt="" coords="514,514,533,506,548,494,570,464,580,435,583,407,582,378,578,317,583,283,596,246,626,200,664,162,661,166,630,203,601,249,588,285,584,317,587,378,588,407,585,436,574,466,552,497,536,510,518,518"/>
+<area shape="rect" href="shark__controller_8c.html#a30ab57390d540e0e46062931d133c9f4" title="choisit l&#39;action du requin (joueur ou bot) en mode joueur : suit la souris en mode bot : combine cent..." alt="" coords="844,380,1002,408"/>
+<area shape="poly" title=" " alt="" coords="514,506,857,411,853,415,517,510"/>
+<area shape="rect" href="mj_8c.html#adf1f3485cdbdb3f611f914e853ddaa56" title="calcule la récompense du requin en fonction du nombre de poissons mangés" alt="" coords="635,259,746,287"/>
+<area shape="poly" title=" " alt="" coords="514,514,533,505,548,494,565,470,572,446,574,422,572,398,569,373,571,348,579,323,596,298,622,282,619,286,600,302,583,325,576,349,575,373,577,397,579,422,578,447,570,472,552,497,536,510,518,517"/>
+<area shape="rect" href="vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="1072,830,1165,857"/>
+<area shape="poly" title=" " alt="" coords="703,337,757,399,793,435,832,470,859,487,883,499,929,515,972,533,994,549,1017,571,1039,600,1058,633,1087,700,1105,764,1115,815,1110,814,1100,765,1082,702,1053,635,1035,603,1013,575,991,553,969,538,927,520,881,504,856,492,829,474,789,439,753,402,703,342"/>
+<area shape="rect" href="vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="1063,252,1173,280"/>
+<area shape="poly" title=" " alt="" coords="746,308,782,296,805,282,830,270,886,260,944,255,1050,258,1045,260,944,260,887,265,831,275,808,287,784,301,749,313"/>
+<area shape="rect" href="vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="856,126,990,153"/>
+<area shape="poly" title=" " alt="" coords="756,312,781,296,793,281,800,266,804,235,809,203,816,186,829,170,846,159,842,163,833,174,820,189,814,204,810,236,805,268,798,284,784,300,760,315"/>
+<area shape="rect" href="vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="1066,407,1170,435"/>
+<area shape="poly" title=" " alt="" coords="745,308,804,297,872,292,945,296,982,303,1016,315,1043,330,1067,350,1103,394,1097,394,1063,354,1040,334,1014,319,980,308,945,301,873,297,804,303,748,313"/>
+<area shape="poly" title=" " alt="" coords="976,151,1016,169,1061,203,1097,240,1092,241,1057,207,1014,174,977,157"/>
+<area shape="poly" title=" " alt="" coords="943,151,981,182,1017,221,1047,265,1073,312,1109,393,1103,392,1068,314,1042,268,1013,224,977,186,944,157"/>
+<area shape="poly" title=" " alt="" coords="703,662,755,719,792,751,832,777,889,802,948,819,1006,830,1059,839,1054,840,1005,835,947,824,887,807,829,782,788,755,752,723,703,667"/>
+<area shape="poly" title=" " alt="" coords="716,634,829,571,1078,441,1074,444,832,575,719,638"/>
+<area shape="rect" href="fish__controller_8c.html#af42ccf9e03e3ef021ad9754f1eec220e" title="règle d&#39;alignement, retourne la direction moyenne des voisins" alt="" coords="858,636,988,664"/>
+<area shape="poly" title=" " alt="" coords="762,648,844,649,840,652,764,653"/>
+<area shape="rect" href="fish__controller_8c.html#a16eb4465b6c8670bcf6d93bcbb651fb6" title="évitement du requin, fuit si le requin est trop proche" alt="" coords="851,432,994,460"/>
+<area shape="poly" title=" " alt="" coords="704,634,780,546,802,509,812,493,829,476,851,465,848,469,832,480,816,496,806,512,785,549,708,637"/>
+<area shape="rect" href="vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="1073,906,1163,933"/>
+<area shape="poly" title=" " alt="" coords="699,662,719,699,747,745,786,794,832,836,888,867,947,888,1006,903,1060,913,1055,915,1005,908,946,894,885,871,829,840,782,798,743,748,714,701,698,667"/>
+<area shape="rect" href="fish__controller_8c.html#a7b32c7a4c3c4696ec88bdf861c0e1098" title="répulsion des bords, empêche le poisson de sortir du monde" alt="" coords="836,943,1010,971"/>
+<area shape="poly" title=" " alt="" coords="696,662,711,713,737,782,777,858,803,892,832,923,849,936,844,936,829,927,799,896,773,860,732,785,706,715,694,667"/>
+<area shape="rect" href="fish__controller_8c.html#a9cbd98c6406bd67d2296c4878e625eaf" title="règle de cohésion, attire vers le centre de masse du groupe" alt="" coords="862,688,984,716"/>
+<area shape="poly" title=" " alt="" coords="755,662,849,684,844,686,757,667"/>
+<area shape="rect" href="fish__controller_8c.html#af97ce461e75310584c00c92a7e0cb1a3" title="règle de séparation, retourne le vecteur de séparation" alt="" coords="856,584,990,612"/>
+<area shape="poly" title=" " alt="" coords="754,634,845,615,840,618,757,638"/>
+<area shape="poly" title=" " alt="" coords="991,430,1013,417,1044,389,1069,356,1104,297,1107,292,1073,359,1048,393,1017,422,994,434"/>
+<area shape="poly" title=" " alt="" coords="994,435,1054,428,1049,431,996,439"/>
+<area shape="poly" title=" " alt="" coords="938,458,979,506,1000,538,1017,572,1032,616,1038,654,1037,723,1036,756,1039,790,1048,827,1065,868,1087,896,1082,895,1061,870,1043,828,1034,791,1031,756,1032,723,1033,655,1027,617,1013,574,996,541,975,510,938,463"/>
+<area shape="poly" title=" " alt="" coords="998,940,1060,930,1055,932,1000,945"/>
+<area shape="poly" title=" " alt="" coords="764,977,833,986,906,992,970,991,995,987,1014,980,1033,962,1041,942,1047,919,1061,893,1086,870,1090,866,1065,896,1052,921,1046,944,1037,965,1016,985,997,992,971,997,905,998,833,992,766,983"/>
+<area shape="poly" title=" " alt="" coords="737,951,800,927,875,890,949,841,983,811,1013,778,1040,738,1061,693,1078,647,1091,601,1107,515,1115,453,1117,448,1112,516,1096,602,1083,649,1066,695,1044,740,1017,781,987,815,953,845,877,895,802,931,740,955"/>
+<area shape="poly" title=" " alt="" coords="765,979,785,992,799,1011,805,1030,807,1068,810,1103,817,1119,832,1133,879,1159,900,1166,922,1167,943,1165,965,1158,1014,1133,1036,1116,1055,1094,1083,1044,1101,992,1111,951,1114,947,1106,994,1088,1046,1059,1097,1039,1120,1016,1138,967,1163,944,1170,922,1173,900,1171,877,1164,829,1138,813,1122,805,1104,802,1068,800,1031,794,1013,781,996,765,985"/>
+<area shape="rect" href="collider_8c.html#ab99ce5a9df335c5f8cdcfc59e33be8d0" title="Retourne le point le plus proche du rectangle (AABB) au point p." alt="" coords="841,1096,1005,1124"/>
+<area shape="poly" title=" " alt="" coords="762,979,784,992,802,1015,809,1038,816,1060,833,1082,841,1089,835,1089,829,1086,811,1063,804,1040,798,1017,781,996,762,985"/>
+<area shape="rect" href="mj_8c.html#a0dfb8479a845f42e8ab9e4b4ccd08b02" title="fish_neighbor_perception donne la percpetion des voisins de fish" alt="" coords="831,1044,1015,1072"/>
+<area shape="poly" title=" " alt="" coords="750,979,784,992,808,1008,832,1024,862,1038,857,1039,829,1029,805,1012,781,997,751,985"/>
+<area shape="rect" href="mj_8c.html#a8f2d1d0890bb9b536b271ea33665b285" title="Initialise la perception d&#39;un poisson." alt="" coords="849,1250,997,1277"/>
+<area shape="poly" title=" " alt="" coords="765,978,785,992,805,1024,814,1055,814,1086,809,1116,805,1146,805,1176,813,1205,833,1235,838,1242,833,1241,829,1239,808,1208,800,1177,800,1146,804,1115,808,1085,808,1055,801,1026,781,996,765,984"/>
+<area shape="rect" href="mj_8c.html#a07da3f4382307cbc78ae023d271efb0c" title="Met à jour la perception du requin pour un poisson." alt="" coords="831,1198,1014,1225"/>
+<area shape="poly" title=" " alt="" coords="765,979,785,992,802,1016,810,1040,811,1063,810,1086,810,1132,817,1155,833,1178,845,1190,840,1190,829,1181,812,1157,805,1133,805,1086,806,1063,804,1041,797,1018,781,996,765,984"/>
+<area shape="rect" href="vector_8c.html#a4d18706bde5519ef90b2bb4a1311fc55" title="Calcul la distance entre 2 vecteurs." alt="" coords="861,328,985,356"/>
+<area shape="poly" title=" " alt="" coords="695,952,734,839,758,758,780,675,787,628,788,586,782,511,781,476,787,441,801,405,829,367,848,354,845,358,833,371,806,408,792,442,786,476,787,511,793,586,793,628,785,676,763,760,739,840,699,955"/>
+<area shape="poly" title=" " alt="" coords="987,1042,1013,1024,1026,1009,1034,994,1040,963,1045,930,1050,912,1061,893,1085,869,1089,866,1065,896,1055,914,1050,931,1045,964,1039,995,1031,1012,1017,1028,989,1046"/>
+<area shape="poly" title=" " alt="" coords="996,1247,1013,1235,1041,1203,1062,1166,1080,1126,1092,1086,1108,1009,1115,952,1118,947,1113,1010,1098,1087,1085,1128,1067,1168,1045,1206,1017,1239,999,1252"/>
+<area shape="poly" title=" " alt="" coords="959,326,1068,285,1064,288,962,330"/>
+<area shape="poly" title=" " alt="" coords="955,766,1075,823,1070,824,955,771"/>
+<area shape="poly" title=" " alt="" coords="998,738,1013,726,1041,686,1056,648,1060,611,1058,573,1050,492,1051,446,1060,395,1079,340,1101,297,1104,292,1084,342,1066,396,1056,447,1055,492,1063,573,1065,611,1061,649,1046,688,1017,729,1002,742"/>
+<area shape="poly" title=" " alt="" coords="996,738,1013,726,1040,695,1061,659,1078,621,1091,582,1107,508,1115,453,1117,448,1112,509,1096,584,1083,623,1066,662,1044,698,1017,730,999,742"/>
+<area shape="poly" title=" " alt="" coords="941,766,1091,895,1086,896,941,771"/>
+<area shape="poly" title=" " alt="" coords="738,22,799,9,871,3,909,4,947,10,983,21,1016,39,1040,58,1060,82,1089,136,1107,191,1116,237,1111,236,1102,192,1084,138,1056,85,1037,62,1014,43,981,26,945,15,909,10,871,8,800,14,741,26"/>
+<area shape="poly" title=" " alt="" coords="746,152,812,174,885,207,922,229,957,254,989,283,1017,315,1038,357,1057,414,1086,559,1106,706,1117,815,1112,813,1101,707,1081,560,1052,416,1033,359,1013,318,986,287,954,258,919,234,883,212,810,179,748,157"/>
+<area shape="poly" title=" " alt="" coords="711,123,768,91,805,74,846,59,889,49,933,46,976,51,1016,68,1038,84,1056,104,1085,150,1103,197,1114,238,1109,237,1098,198,1080,152,1052,107,1034,88,1014,73,975,56,933,51,890,54,848,64,807,79,770,96,715,127"/>
+<area shape="poly" title=" " alt="" coords="764,137,842,138,838,141,766,142"/>
+<area shape="poly" title=" " alt="" coords="720,123,781,100,858,82,900,78,941,81,981,92,1017,112,1037,131,1049,151,1054,171,1056,192,1056,238,1059,263,1066,291,1107,393,1101,393,1060,292,1053,264,1051,238,1051,193,1049,172,1044,153,1033,135,1013,116,979,97,940,86,900,84,859,87,782,105,724,127"/>
+<area shape="poly" title=" " alt="" coords="987,378,1014,365,1060,329,1099,290,1095,294,1063,333,1016,370,990,382"/>
+<area shape="poly" title=" " alt="" coords="1001,403,1054,411,1049,413,1003,408"/>
+<area shape="poly" title=" " alt="" coords="1000,406,1017,419,1028,436,1036,458,1046,510,1049,573,1049,640,1048,772,1053,827,1065,868,1087,896,1082,896,1061,870,1048,828,1043,772,1044,640,1044,573,1041,511,1031,459,1023,439,1013,423,1001,411"/>
+<area shape="rect" href="input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="418,1007,508,1035"/>
+<area shape="poly" title=" " alt="" coords="326,1019,404,1019,399,1022,328,1023"/>
+<area shape="poly" title=" " alt="" coords="321,1033,375,1044,499,1058,613,1067,609,1070,499,1064,375,1049,322,1038"/>
+<area shape="rect" href="theta__set_8c.html#adf46e950da895d145a7a29506aea6ab1" title="affiche les valeurs des règles phi du requin (composantes x et y)" alt="" coords="405,955,520,983"/>
+<area shape="poly" title=" " alt="" coords="325,967,391,967,387,970,328,971"/>
+<area shape="poly" title=" " alt="" coords="520,979,552,993,567,1006,576,1019,585,1031,600,1043,614,1052,609,1052,597,1047,582,1035,572,1022,563,1010,549,998,521,985"/>
+<area shape="rect" href="collider_8c.html#a0800e8e8957986ce4c2593ac68368b87" title="libère la mémoire utilisée par les colliders" alt="" coords="375,1212,550,1240"/>
+<area shape="poly" title=" " alt="" coords="322,1206,362,1212,357,1214,324,1211"/>
+<area shape="rect" href="fish_8c.html#ad32bad07f006130e31d4e163397718e1" title="libère la mémoire d&#39;un tableau de poissons" alt="" coords="390,1264,535,1292"/>
+<area shape="poly" title=" " alt="" coords="294,1213,376,1249,398,1258,393,1260,374,1254,295,1218"/>
+<area shape="rect" href="theta__set_8c.html#a06d6064cce231a0dc61b54392601f785" title="libère la mémoire d&#39;un ensemble de règles pour les poissons" alt="" coords="382,1316,543,1344"/>
+<area shape="poly" title=" " alt="" coords="278,1213,320,1257,347,1281,376,1301,390,1310,385,1310,374,1306,343,1285,316,1261,278,1218"/>
+<area shape="rect" href="shark_8c.html#a4055f670b1b1fcd10cecd89b23d223aa" title="libère la mémoire d&#39;un requin" alt="" coords="406,1108,520,1136"/>
+<area shape="poly" title=" " alt="" coords="292,1184,374,1146,398,1140,394,1143,376,1151,295,1189"/>
+<area shape="rect" href="reinforce_8c.html#ae3357d08d1e5d9fb6464fb1fe14221b1" title="libère la mémoire d&#39;une trajectoire" alt="" coords="392,1160,533,1188"/>
+<area shape="poly" title=" " alt="" coords="322,1191,379,1184,374,1187,324,1196"/>
+<area shape="rect" href="collider_8c.html#a6212dde57007cc15994f34cdd0c27d43" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="602,1471,779,1499"/>
+<area shape="poly" title=" " alt="" coords="309,1460,589,1477,585,1480,309,1465"/>
+<area shape="rect" href="fish_8c.html#aba09af4958a615ad5f14f0f86de2143d" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="386,1523,539,1567"/>
+<area shape="poly" title=" " alt="" coords="300,1471,398,1516,393,1516,299,1477"/>
+<area shape="rect" href="theta__set_8c.html#a1ac05ca81e6a49962501975fd882cb84" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="396,1591,529,1619"/>
+<area shape="poly" title=" " alt="" coords="277,1471,317,1524,345,1553,376,1577,386,1585,381,1584,374,1582,341,1557,312,1527,275,1476"/>
+<area shape="rect" href="shark_8c.html#aeebabb143d4ec33b5e26b90f6b405eba" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="410,1368,516,1396"/>
+<area shape="poly" title=" " alt="" coords="294,1443,374,1406,398,1400,393,1403,376,1411,296,1448"/>
+<area shape="rect" href="reinforce_8c.html#ac88234cf163795a0145a71388782afa8" title="initialise une trajectoire vide" alt="" coords="406,1420,519,1448"/>
+<area shape="poly" title=" " alt="" coords="308,1452,393,1443,388,1444,310,1457"/>
+<area shape="poly" title=" " alt="" coords="734,1468,797,1443,872,1404,948,1353,983,1322,1013,1287,1040,1245,1062,1199,1079,1152,1092,1104,1107,1015,1114,951,1117,947,1113,1016,1097,1105,1084,1153,1067,1201,1045,1248,1017,1291,987,1325,952,1357,875,1409,799,1448,736,1473"/>
+<area shape="rect" href="collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="850,1471,996,1499"/>
+<area shape="poly" title=" " alt="" coords="779,1482,837,1485,832,1485,780,1488"/>
+<area shape="rect" href="utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="869,1524,976,1552"/>
+<area shape="poly" title=" " alt="" coords="754,1497,857,1523,851,1523,754,1502"/>
+<area shape="rect" href="fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="599,1528,782,1556"/>
+<area shape="poly" title=" " alt="" coords="539,1541,586,1543,581,1544,539,1547"/>
+<area shape="poly" title=" " alt="" coords="782,1538,856,1539,851,1540,782,1543"/>
+</map>
+</div>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="game_8h.html">game.h</a></li>
-    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="game_8h.html">game.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

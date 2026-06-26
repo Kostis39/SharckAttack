@@ -1,13 +1,22 @@
 <map id="Get_shark_perception" name="Get_shark_perception">
-<area shape="rect" id="node1" title="construit la perception du requin à partir du monde" alt="" coords="5,208,169,235"/>
-<area shape="rect" id="node2" href="$mj_8c.html#ae2df9202b6c8a34cdcbade22a4b71d32" title="détermine dans quelle zone directionnelle se trouve un poisson par rapport à l&#39;orientation du requin" alt="" coords="217,81,372,108"/>
-<area shape="rect" id="node7" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="437,132,531,159"/>
-<area shape="rect" id="node8" href="$vector_8h.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="247,183,342,209"/>
-<area shape="rect" id="node9" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="249,233,340,260"/>
-<area shape="rect" id="node10" href="$vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="239,284,350,311"/>
-<area shape="rect" id="node11" href="$vector_8h.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="243,335,347,361"/>
-<area shape="rect" id="node3" href="$vector_8h.html#a2e464905dfe98674f7122719e724b339" title="Normalise un vecteur avec une valeur par défaut." alt="" coords="420,31,548,57"/>
-<area shape="rect" id="node6" href="$vector_8h.html#ae698e1348bc99c725adf924ac0feb4a4" title="calcule le produit scalaire de deux vecteurs" alt="" coords="439,81,529,108"/>
-<area shape="rect" id="node4" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="596,5,707,32"/>
-<area shape="rect" id="node5" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="599,56,703,83"/>
+<area shape="rect" id="Node000001" title="construit la perception du requin à partir du monde" alt="" coords="5,136,169,163"/>
+<area shape="rect" id="Node000002" href="$mj_8c.html#ae2df9202b6c8a34cdcbade22a4b71d32" title="détermine dans quelle zone directionnelle se trouve un poisson par rapport à l&#39;orientation du requin" alt="" coords="217,109,371,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,136,204,133,199,136,170,141"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="594,45,705,73"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="103,133,151,96,182,76,216,59,304,24,378,7,453,5,547,18,607,38,602,39,546,23,453,10,378,12,306,29,218,64,185,80,154,100,106,137"/>
+<area shape="rect" id="Node000005" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="598,161,701,189"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="169,155,287,164,419,172,585,175,580,177,419,177,287,170,169,160"/>
+<area shape="rect" id="Node000007" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="436,32,529,59"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="117,133,164,113,216,95,324,68,424,53,419,55,325,74,217,100,165,118,120,137"/>
+<area shape="rect" id="Node000008" href="$vector_8c.html#aa8a756d1731156d765e3a09776b920c8" title=" " alt="" coords="247,237,340,265"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="114,161,218,216,245,230,240,230,215,221,113,166"/>
+<area shape="rect" id="Node000009" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="249,289,339,317"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="100,161,148,216,181,247,218,274,237,285,231,285,215,278,178,251,145,220,98,166"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a2e464905dfe98674f7122719e724b339" title="Normalise un vecteur avec une valeur par défaut." alt="" coords="419,136,546,163"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,131,406,138,401,139,372,136"/>
+<area shape="rect" id="Node000006" href="$vector_8c.html#ae698e1348bc99c725adf924ac0feb4a4" title="calcule le produit scalaire de deux vecteurs" alt="" coords="438,84,528,111"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="371,110,425,105,420,106,372,115"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="329,106,435,64,431,67,331,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="519,133,545,120,612,83,617,80,548,125,521,138"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="546,156,585,164,580,165,547,162"/>
 </map>

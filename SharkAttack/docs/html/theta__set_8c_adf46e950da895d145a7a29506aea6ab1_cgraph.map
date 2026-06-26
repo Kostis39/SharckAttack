@@ -1,4 +1,5 @@
 <map id="SharkPhi_print" name="SharkPhi_print">
-<area shape="rect" id="node1" title="affiche les valeurs des règles phi du requin (composantes x et y)" alt="" coords="5,5,121,32"/>
-<area shape="rect" id="node2" href="$vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="169,5,299,32"/>
+<area shape="rect" id="Node000001" title="affiche les valeurs des règles phi du requin (composantes x et y)" alt="" coords="5,5,121,33"/>
+<area shape="rect" id="Node000002" href="$vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="169,5,297,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,17,156,19,150,19,121,22"/>
 </map>

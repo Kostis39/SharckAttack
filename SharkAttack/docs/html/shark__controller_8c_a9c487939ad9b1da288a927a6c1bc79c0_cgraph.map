@@ -1,9 +1,14 @@
 <map id="Rules_alignment_shark" name="Rules_alignment_shark">
-<area shape="rect" id="node1" title="règle d&#39;alignement du requin sur la direction moyenne des poissons" alt="" coords="5,81,180,108"/>
-<area shape="rect" id="node2" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="250,5,341,32"/>
-<area shape="rect" id="node3" href="$vector_8h.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="240,56,351,83"/>
-<area shape="rect" id="node4" href="$vector_8h.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)" alt="" coords="228,107,363,133"/>
-<area shape="rect" id="node7" href="$vector_8h.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="249,157,342,184"/>
-<area shape="rect" id="node5" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="411,81,521,108"/>
-<area shape="rect" id="node6" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="414,132,518,159"/>
+<area shape="rect" id="Node000001" title="règle d&#39;alignement du requin sur la direction moyenne des poissons" alt="" coords="5,81,179,109"/>
+<area shape="rect" id="Node000002" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="249,5,339,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,78,242,37,239,41,132,83"/>
+<area shape="rect" id="Node000003" href="$vector_8c.html#a972d0beb7b16aced09452e06dffd844a" title="calcule la norme d&#39;un vecteur" alt="" coords="409,56,519,84"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,87,395,72,392,77,179,92"/>
+<area shape="rect" id="Node000004" href="$vector_8c.html#aba246eb30c1bff4b95133cfa2d7cdbbb" title="Normalise un vecteur (le rend unitaire / de norme 1)." alt="" coords="227,107,361,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,103,214,110,208,111,179,109"/>
+<area shape="rect" id="Node000006" href="$vector_8c.html#a9efaf2f90f28272b7e1731d6de566edc" title=" " alt="" coords="248,159,340,186"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="131,107,243,151,239,154,130,112"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="342,104,398,89,403,88,343,109"/>
+<area shape="rect" id="Node000005" href="$vector_8c.html#a730e9f26979db151e3cc40f183e336f9" title=" " alt="" coords="412,108,516,136"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="361,118,400,121,394,122,362,124"/>
 </map>

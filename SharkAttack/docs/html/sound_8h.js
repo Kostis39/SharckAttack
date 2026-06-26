@@ -1,7 +1,7 @@
 var sound_8h =
 [
     [ "AudioManager", "structAudioManager.html", "structAudioManager" ],
-    [ "audio_init", "sound_8h.html#af665563ea996052bcc9e33846f40c262", null ],
+    [ "audio_init", "sound_8h.html#a3d8194de9b8feb0047a4658122faaa82", null ],
     [ "audio_load", "sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741", null ],
     [ "audio_load_music", "sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6", null ],
     [ "audio_play", "sound_8h.html#a02e99654bd7e1e1ad27831a0798368ce", null ],

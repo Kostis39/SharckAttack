@@ -1,26 +1,50 @@
 <map id="Game_init" name="Game_init">
-<area shape="rect" id="node1" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="5,259,95,285"/>
-<area shape="rect" id="node2" href="$sound_8h.html#af665563ea996052bcc9e33846f40c262" title="initialise l&#39;audio SDL" alt="" coords="176,5,263,32"/>
-<area shape="rect" id="node3" href="$sound_8h.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="173,56,266,83"/>
-<area shape="rect" id="node4" href="$sound_8h.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="150,107,289,133"/>
-<area shape="rect" id="node5" href="$sound_8h.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="150,157,289,184"/>
-<area shape="rect" id="node6" href="$sound_8h.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="174,208,265,235"/>
-<area shape="rect" id="node7" href="$render__sdl_8h.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="143,259,296,285"/>
-<area shape="rect" id="node8" href="$render__sdl_8h.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="158,309,281,336"/>
-<area shape="rect" id="node9" href="$utils_8h.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="179,360,260,387"/>
-<area shape="rect" id="node10" href="$render__sdl_8h.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="152,411,287,437"/>
-<area shape="rect" id="node11" href="$theta__set_8h.html#a57608a7d7363473bcaed16a378057b77" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="157,461,281,488"/>
-<area shape="rect" id="node14" href="$world_8h.html#ad298f8489d8fa24d82db7225d8c715f3" title="initialise un monde avec des paramètres" alt="" coords="176,600,263,627"/>
-<area shape="rect" id="node12" href="$input__output_8h.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="387,411,478,437"/>
-<area shape="rect" id="node13" href="$vector__rule_8h.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="368,461,497,488"/>
-<area shape="rect" id="node15" href="$collider_8h.html#a8a301f681ecbd2d97db912263d6af91a" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="344,512,521,539"/>
-<area shape="rect" id="node20" href="$fish_8h.html#a5b1228d9376f2be2932282e5c10fd8b1" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="356,563,509,605"/>
-<area shape="rect" id="node22" href="$theta__set_8h.html#aa254194c894b56f06eaff11768901deb" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="366,629,499,656"/>
-<area shape="rect" id="node23" href="$shark_8h.html#abe943d2553c14ccf4c9b04d93303d667" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="379,680,486,707"/>
-<area shape="rect" id="node24" href="$reinforce_8h.html#afd5dd863ec6cb86171a0b5e30add8c50" title="initialise une trajectoire vide" alt="" coords="375,731,490,757"/>
-<area shape="rect" id="node16" href="$collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="587,440,734,467"/>
-<area shape="rect" id="node17" href="$utils_8h.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="800,541,908,568"/>
-<area shape="rect" id="node19" href="$vector_8h.html#a6aa806f74492d120b320a81c8f996195" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="615,541,706,568"/>
-<area shape="rect" id="node18" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="956,541,1036,568"/>
-<area shape="rect" id="node21" href="$fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="569,592,752,619"/>
+<area shape="rect" id="Node000001" title="initialise le jeu (fenêtre, mondes, paramètres)" alt="" coords="5,265,94,293"/>
+<area shape="rect" id="Node000002" href="$sound_8c.html#a256ad04f93013a05fb111acb7bcef693" title="initialise l&#39;audio SDL" alt="" coords="175,5,260,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,265,57,222,72,163,99,100,117,70,140,44,162,31,159,35,143,48,121,73,103,102,77,165,62,223,55,265"/>
+<area shape="rect" id="Node000003" href="$sound_8c.html#acf6d9dcfef2f7fd2016f4c6ec2512741" title="charge en mémoire les sons nécessaires au bon fonctionnement du jeu" alt="" coords="172,57,264,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="51,265,61,231,78,186,104,138,140,96,159,85,156,89,143,100,109,141,83,188,66,232,57,266"/>
+<area shape="rect" id="Node000004" href="$sound_8c.html#afb2781fd7eff0543d96ec2a5d42f32b6" title=" " alt="" coords="149,109,287,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="55,264,86,208,111,176,140,148,151,142,148,147,143,152,115,179,91,211,60,266"/>
+<area shape="rect" id="Node000005" href="$sound_8c.html#a0ae4894679404c800f33fd586dce6e5c" title=" " alt="" coords="149,161,287,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="62,263,96,231,140,200,156,193,152,198,143,204,100,236,67,266"/>
+<area shape="rect" id="Node000006" href="$sound_8c.html#a336eba8d8d039caddf1e0ad4b35b341b" title="libère la mémoire utilisée par l&#39;ensemble de son" alt="" coords="173,213,262,241"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="92,264,160,243,157,247,96,268"/>
+<area shape="rect" id="Node000007" href="$render__sdl_8c.html#a74f30377a606ead57a76d40093cb052d" title="cette fct libere le renderer, detruit la fenetre puis ferme sdl" alt="" coords="142,265,294,293"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="92,277,128,277,124,281,96,281"/>
+<area shape="rect" id="Node000008" href="$render__sdl_8c.html#a68bdd67f121c1fe588b0963cadcf0a1f" title="initialisation de sdl" alt="" coords="157,317,279,345"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="93,290,158,311,154,314,95,295"/>
+<area shape="rect" id="Node000009" href="$utils_8c.html#a36a6628193f6fdfc423440e76a35744a" title="initialise le générateur pseudo aléatoire avec la seed set_seed et la retourne" alt="" coords="178,369,258,397"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="64,291,100,323,143,354,166,366,161,368,140,359,96,327,65,296"/>
+<area shape="rect" id="Node000010" href="$render__sdl_8c.html#ad5e020f716940f9c6e7eff144ebc8724" title=" " alt="" coords="151,421,285,449"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="57,291,91,347,115,379,143,406,152,413,147,415,140,411,111,383,86,350,57,296"/>
+<area shape="rect" id="Node000011" href="$theta__set_8c.html#afe7ff9ca20169f534d34343e2f97b633" title="initialise le vecteur theta du requin en chargeant les valeurs depuis un fichier" alt="" coords="156,473,280,501"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="54,291,66,326,83,371,109,418,144,459,150,465,145,466,140,462,104,421,78,373,61,328,54,296"/>
+<area shape="rect" id="Node000014" href="$world_8c.html#ab86571984e07c225b57f4173e7d4d080" title="initialise un monde avec des paramètres" alt="" coords="175,615,261,642"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="55,291,90,386,115,449,144,511,172,559,200,602,195,602,167,562,139,514,110,451,85,388,55,296"/>
+<area shape="rect" id="Node000012" href="$input__output_8c.html#a7d7001b254e2ea098325767fd484cf26" title="charge uniquement le vecteur theta depuis un fichier" alt="" coords="385,421,475,449"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="276,470,372,448,368,451,279,475"/>
+<area shape="rect" id="Node000013" href="$vector__rule_8c.html#a4d63975dce327451f209286ee3dee20e" title="Affiche les composantes du vecteur sur la console sous la forme (v1, v2, ...)." alt="" coords="366,473,494,501"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="279,485,353,486,348,488,281,490"/>
+<area shape="rect" id="Node000015" href="$collider_8c.html#a6212dde57007cc15994f34cdd0c27d43" title="initialise un tableau de colliders aléatoirement positionnés" alt="" coords="342,525,518,553"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="242,612,287,587,341,562,361,557,356,559,343,567,290,592,245,616"/>
+<area shape="rect" id="Node000020" href="$fish_8c.html#aba09af4958a615ad5f14f0f86de2143d" title="crée un tableau de poissons avec des positions et vitesses aléatoires" alt="" coords="354,577,506,622"/>
+<area shape="poly" id="edge19_Node000014_Node000020" title=" " alt="" coords="261,620,341,611,336,613,262,625"/>
+<area shape="rect" id="Node000022" href="$theta__set_8c.html#a1ac05ca81e6a49962501975fd882cb84" title="initialise un ensemble de règles pour les poissons avec les valeurs par défaut" alt="" coords="364,645,496,673"/>
+<area shape="poly" id="edge22_Node000014_Node000022" title=" " alt="" coords="261,632,351,647,346,648,262,637"/>
+<area shape="rect" id="Node000023" href="$shark_8c.html#aeebabb143d4ec33b5e26b90f6b405eba" title="crée un requin avec une position initiale et un mode joueur ou bot" alt="" coords="377,697,483,725"/>
+<area shape="poly" id="edge23_Node000014_Node000023" title=" " alt="" coords="248,640,343,682,366,692,361,692,341,687,248,646"/>
+<area shape="rect" id="Node000024" href="$reinforce_8c.html#ac88234cf163795a0145a71388782afa8" title="initialise une trajectoire vide" alt="" coords="374,749,487,777"/>
+<area shape="poly" id="edge24_Node000014_Node000024" title=" " alt="" coords="233,640,279,687,310,712,343,734,362,745,357,744,341,739,307,716,276,691,231,645"/>
+<area shape="rect" id="Node000016" href="$collider_8c.html#ab5553354f21001b9145c84332c0cd5cf" title="Fonction d&#39;instanciation d&#39;objet de collision Crée un rectangle de collision de largeur w,..." alt="" coords="584,453,731,481"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="478,522,518,510,601,485,597,487,519,515,480,527"/>
+<area shape="rect" id="Node000017" href="$utils_8c.html#a9d944ed48c83eedfe629746ecccd1506" title="petite fonction auxiliaire pour déterminer un float dans une range" alt="" coords="797,556,904,584"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="518,532,629,531,749,541,792,551,787,552,748,546,629,537,519,537"/>
+<area shape="rect" id="Node000019" href="$vector_8c.html#a29a9ec25237149d862b6fde3b2efd8a9" title="Initialise les composantes d&#39;un vecteur à 0." alt="" coords="612,555,703,582"/>
+<area shape="poly" id="edge18_Node000015_Node000019" title=" " alt="" coords="518,548,600,560,594,561,519,553"/>
+<area shape="rect" id="Node000018" href="$utils_8c.html#a8ea35ba59ce0c747196005a67663187a" title="Fonction thread safe de randomise." alt="" coords="952,556,1031,584"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="904,567,939,570,934,570,905,572"/>
+<area shape="rect" id="Node000021" href="$fish_8c.html#aab35ac2eae26a6b1193a7af85eb754fa" title="crée un poisson avec une position et une vitesse aléatoires" alt="" coords="566,607,749,634"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="507,604,553,610,548,611,507,609"/>
+<area shape="poly" id="edge21_Node000021_Node000017" title=" " alt="" coords="712,604,779,588,784,587,713,609"/>
 </map>

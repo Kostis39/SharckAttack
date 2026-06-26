@@ -1,10 +1,17 @@
 <map id="include/fish_controller.h" name="include/fish_controller.h">
-<area shape="rect" id="node1" title=" " alt="" coords="280,5,456,32"/>
-<area shape="rect" id="node2" href="$mj_8h.html" title=" " alt="" coords="167,80,270,107"/>
-<area shape="rect" id="node7" href="$fish__controller_8c.html" title=" " alt="" coords="295,80,441,107"/>
-<area shape="rect" id="node8" href="$test__fish__controller_8c.html" title=" " alt="" coords="465,80,657,107"/>
-<area shape="rect" id="node3" href="$game_8c.html" title=" " alt="" coords="5,155,99,181"/>
-<area shape="rect" id="node4" href="$mj_8c.html" title=" " alt="" coords="123,155,197,181"/>
-<area shape="rect" id="node5" href="$reinforce_8c.html" title=" " alt="" coords="221,155,336,181"/>
-<area shape="rect" id="node6" href="$test__mj_8c.html" title=" " alt="" coords="361,155,479,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="277,5,452,33"/>
+<area shape="rect" id="Node000002" href="$mj_8h.html" title=" " alt="" coords="166,81,268,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="327,39,244,83,242,78,322,41"/>
+<area shape="rect" id="Node000007" href="$fish__controller_8c.html" title=" " alt="" coords="292,81,438,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="367,47,367,82,363,79,363,51"/>
+<area shape="rect" id="Node000008" href="$test__fish__controller_8c.html" title=" " alt="" coords="462,81,654,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="414,36,527,80,521,81,413,41"/>
+<area shape="rect" id="Node000003" href="$game_8c.html" title=" " alt="" coords="5,157,98,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,118,82,159,80,154,172,113"/>
+<area shape="rect" id="Node000004" href="$mj_8c.html" title=" " alt="" coords="122,157,194,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="199,120,170,158,167,154,194,122"/>
+<area shape="rect" id="Node000005" href="$reinforce_8c.html" title=" " alt="" coords="219,157,332,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="238,119,268,157,263,156,236,123"/>
+<area shape="rect" id="Node000006" href="$test__mj_8c.html" title=" " alt="" coords="357,157,474,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="267,112,383,156,377,156,266,117"/>
 </map>
